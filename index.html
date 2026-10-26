@@ -4,9 +4,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
 <meta name="theme-color" content="#4a6a82" />
-<title>2021 Land Cruiser 200 | Interactive Studio</title>
+<title>2021 Land Cruiser 200 | Studio V3</title>
 <!--
-  2021 GCC Toyota Land Cruiser 200 GXR • procedural 3D studio
+  2021 GCC Toyota Land Cruiser 200 final facelift • rebuilt procedural studio V3
   All car geometry, UI, shading and controls live in THIS HTML file.
   Three.js is loaded from a PINNED CDN version (internet required).
   There are NO external 3D models, images, textures, CSS or scripts other than Three.js.
@@ -17,8 +17,9 @@
   LC200 wheelbase 2850 mm; clearance 230 mm
     Sources: https://www.toyota.co.nz/globalassets/brochures/2020/lc200-fullbrochure-final-web.pdf
              https://www.toyota.com/content/dam/toyota/brochures/pdf/2021/landcruiser_ebrochure.pdf
-  Wheel/tire baseline: 265/70R17 with KM720-inspired solid-face matte-anthracite rims.
-  Accuracy note: manufacturer's overall dimensions are exact for the cited region/grade;
+  Wheel/tire baseline: 265/70R17 with dark steel-type full-face rims.
+  Reference: https://pressroom.toyota.com/album/2021-toyota-land-cruiser/
+  Accuracy note: manufacturer overall dimensions are regional/grade-dependent;
   trim curves, wheel-arch opening, pillars and body surfaces are hand-shaped approximations.
   This is an authored procedural approximation, NOT a scanned/OEM CAD model.
 -->
@@ -102,7 +103,7 @@
   <section class="specs" aria-label="Vehicle specifications">
     <div class="micro">GCC SPECIFICATION</div>
     <div class="specname">2021 · Land Cruiser 200</div>
-    <div class="specdetail">5,095 mm L · 1,980 mm W · 1,930 mm H<br>2,850 mm wheelbase · 230 mm clearance<br>KMC Roswell-inspired 17” · White · Black trim</div>
+    <div class="specdetail">5,095 mm L · 1,980 mm W · 1,930 mm H<br>2,850 mm wheelbase · 230 mm clearance<br>Black steel-style wheels · White · Chrome/black trim</div>
   </section>
   <div class="dock">
     <div class="finishbar" aria-label="Paint finish controls"><label for="customPaint">PAINT</label><div class="swatches">
@@ -169,11 +170,11 @@ const DIM = Object.freeze({
 });
 const TIRE_RADIUS = (DIM.rimDiameter + 2 * DIM.tireWidth * DIM.aspectRatio) / 2; // 0.4013 m
 const HUB_Y = TIRE_RADIUS; // tyre touches studio floor y=0
-const FRONT_X = -1.40;     // visual axle position; overhangs are hand-modelled
-const REAR_X  = FRONT_X + DIM.wheelbase;
+const FRONT_X = -1.60;     // approx 0.95 m front overhang, 2021 LC200
+const REAR_X  = FRONT_X + DIM.wheelbase; // rear overhang approx 1.30 m
 const FRONT = -DIM.length / 2 + .10; // fascia datum inset: outer grille reaches -length/2
 const REAR =  DIM.length / 2 - .065; // tailgate datum inset: bumper reaches +length/2
-const DEFAULT_WHITE = '#f4f4ef';
+const DEFAULT_WHITE = '#f1f1eb';
 
 // ────────────────────────────────────────────────────────────────────────────
 // 2. RENDERER, PHYSICAL MATERIALS AND SOFT STUDIO
@@ -186,14 +187,14 @@ renderer.setClearColor(0x000000,0);
 renderer.shadowMap.enabled=true;
 renderer.shadowMap.type=THREE.PCFSoftShadowMap;
 renderer.toneMapping=THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure=1.36;
+renderer.toneMappingExposure=1.12;
 renderer.outputColorSpace=THREE.SRGBColorSpace;
 holder.appendChild(renderer.domElement);
 const scene=new THREE.Scene();
 scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(),.035).texture;
-scene.environmentIntensity=.85;
-scene.add(new THREE.HemisphereLight(0xe4eefc,0x57606a,2.35));
-const key=new THREE.DirectionalLight(0xfff6eb,3.4);
+scene.environmentIntensity=.92;
+scene.add(new THREE.HemisphereLight(0xe9f2ff,0x4b5260,1.42));
+const key=new THREE.DirectionalLight(0xfff5ee,2.7);
 key.position.set(-3.4,8,6);key.castShadow=true;
 key.shadow.mapSize.set(2048,2048);
 key.shadow.camera.left=-7;key.shadow.camera.right=7;
@@ -202,19 +203,19 @@ key.shadow.camera.near=.5;key.shadow.camera.far=24;
 key.shadow.bias=-.00013;key.shadow.normalBias=.014;
 key.shadow.radius=4;
 scene.add(key);
-const fill=new THREE.DirectionalLight(0xd5e9ff,2.0);fill.position.set(4,6,-5);scene.add(fill);
-const edge=new THREE.DirectionalLight(0xffffff,.85);edge.position.set(0,5,8);scene.add(edge);
+const fill=new THREE.DirectionalLight(0xd5e9ff,1.20);fill.position.set(4,6,-5);scene.add(fill);
+const edge=new THREE.DirectionalLight(0xffffff,.74);edge.position.set(0,5,8);scene.add(edge);
 
 const physical=(color,roughness=.34,metalness=.03,clearcoat=.5)=>new THREE.MeshPhysicalMaterial({
   color,roughness,metalness,clearcoat,clearcoatRoughness:.23,side:THREE.DoubleSide
 });
-const paint=physical(DEFAULT_WHITE,.245,.12,.87);
-paint.envMapIntensity=1.6;
-const chrome=physical('#ced7df',.18,.90,.70);
+const paint=physical(DEFAULT_WHITE,.27,.08,.78);
+paint.envMapIntensity=1.3;
+const chrome=physical('#ccd3d6',.20,.85,.63);
 const softChrome=physical('#9faab2',.25,.66,.45);
 const metalDark=physical('#333b41',.40,.45,.30);
-const windowGlass=physical('#16242d',.12,.12,.83);
-windowGlass.envMapIntensity=2.2;
+const windowGlass=physical('#14232b',.15,.15,.78);
+windowGlass.envMapIntensity=1.45;
 const rearGlass=physical('#1a2933',.16,.08,.75);
 const seal=new THREE.MeshStandardMaterial({color:0x111921,roughness:.74,side:THREE.DoubleSide});
 const crease=new THREE.MeshStandardMaterial({color:0x53606a,roughness:.8});
@@ -257,7 +258,7 @@ function flatPolygon(points,mat,parent=car){
 }
 
 // Soft studio floor: receives contact shadows but shows NO floor material/grid.
-const floor=mesh(new THREE.PlaneGeometry(200,200),new THREE.ShadowMaterial({color:0x14202a,opacity:.30}),scene);
+const floor=mesh(new THREE.PlaneGeometry(200,200),new THREE.ShadowMaterial({color:0x14202a,opacity:.26}),scene);
 floor.rotation.x=-Math.PI/2;floor.position.y=-.018;floor.castShadow=false;
 // A second, very diffuse shadow stays subtle even when light angle changes.
 const blobMat=new THREE.MeshBasicMaterial({color:0x15212b,transparent:true,opacity:.055,depthWrite:false,side:THREE.DoubleSide});
@@ -271,8 +272,8 @@ for(let i=0;i<3;i++){
 // 3. LOWER BODY SHELL WITH REAL CUT-OUT WHEEL ARCHES
 //    The arches are part of the silhouette (NOT circles pasted over a box).
 // ────────────────────────────────────────────────────────────────────────────
-const LOW=.485;
-const ARCH_R=.495;
+const LOW=.495;
+const ARCH_R=.468;
 function addArchToPath(shape,cx){
   const phi=Math.asin((LOW-HUB_Y)/ARCH_R);
   for(let j=0;j<=36;j++){
@@ -324,14 +325,20 @@ for(const sx of [FRONT_X,REAR_X]){
 // 4. CABIN: CUSTOM LOFT, SLIGHTLY TAPERED PILLARS, FULL LENGTH ROOF
 // ────────────────────────────────────────────────────────────────────────────
 const cabinSections=[
-  // x, lower sill, glass-belt, upper shoulder, roof top, side half-width, shoulder width, roof half-width
-  [-1.00, 1.18,1.215,1.250,1.272,.870,.853,.790],
-  [ -.50, 1.18,1.265,1.768,1.856,.925,.840,.758],
-  [ -.38, 1.18,1.265,1.780,1.890,.927,.835,.756],
-  [ 1.98, 1.18,1.265,1.779,1.890,.932,.838,.764],
-  [ 2.25, 1.18,1.265,1.770,1.874,.923,.840,.773],
-  [ 2.47, 1.18,1.265,1.698,1.759,.895,.824,.795],
-  [ 2.50, 1.18,1.250,1.660,1.704,.885,.819,.793]
+  // Cross sections trace the actual 200-series windshield rake, near-flat roof,
+  // rear D-pillar and tailgate. No rectangular cabin box is used.
+  // x, sill, belt, shoulder, roof, belt half-width, shoulder half-width, roof half-width
+  [-1.054, 1.18,1.238,1.250,1.270,.900,.850,.812],
+  [ -.797, 1.18,1.267,1.577,1.646,.915,.841,.780],
+  [ -.623, 1.18,1.291,1.741,1.820,.925,.839,.760],
+  [ -.455, 1.18,1.300,1.784,1.878,.929,.839,.756],
+  [ -.290, 1.18,1.300,1.787,1.891,.932,.840,.758],
+  [  .750, 1.18,1.298,1.790,1.895,.935,.842,.761],
+  [ 1.660, 1.18,1.300,1.787,1.891,.935,.843,.768],
+  [ 2.090, 1.18,1.293,1.772,1.871,.927,.837,.773],
+  [ 2.260, 1.18,1.287,1.703,1.810,.917,.829,.785],
+  [ 2.447, 1.18,1.266,1.643,1.699,.892,.816,.789],
+  [ 2.498, 1.18,1.246,1.585,1.626,.876,.802,.784]
 ];
 function cabinRing(a){
   const [x,yb,belt,sh,top,w,shoulder,roofW]=a;
@@ -358,12 +365,13 @@ mesh(cabGeo,paint);
 const hoodVert=[];
 const hRows=18,hCols=18;
 function bonnetHeight(x,z){
-  const t=(x-(FRONT+.07))/((-1.0)-(FRONT+.07));
-  return 1.168+t*.096+.015*(1-(z/.90)**2)-.015*Math.pow(Math.abs(z/.92),6);
+  const t=(x-(FRONT+.06))/((-0.98)-(FRONT+.06));
+  const ridge=.009*Math.exp(-Math.pow(z/.44,4));
+  return 1.142+t*.078+ridge-.016*Math.pow(Math.abs(z/.96),5);
 }
 for(let ix=0;ix<hRows;ix++){
-  const x1=FRONT+.035+(ix/hRows)*(-1.0-FRONT-.035);
-  const x2=FRONT+.035+((ix+1)/hRows)*(-1.0-FRONT-.035);
+  const x1=FRONT+.035+(ix/hRows)*(-0.98-FRONT-.035);
+  const x2=FRONT+.035+((ix+1)/hRows)*(-0.98-FRONT-.035);
   for(let iz=0;iz<hCols;iz++){
     const z1=-.915+iz/hCols*1.83;
     const z2=-.915+(iz+1)/hCols*1.83;
@@ -379,72 +387,100 @@ for(const sign of [-1,1]){
 }
 
 // Windows are real polygonal panes overlaying the car's tapering cabin surface.
-function sideGlassZ(y){return .932 - Math.max(0,y-1.26)*.187;}
+function sideGlassZ(y){return .946 - Math.max(0,y-1.28)*.185;}
 function windowSide(pts,sign){
   const pos=pts.map(([x,y])=>[x,y,sign*(sideGlassZ(y)+.012)]);
   flatPolygon(pos,seal);
-  const centroid=pts.reduce((s,p)=>[s[0]+p[0]/pts.length,s[1]+p[1]/pts.length],[0,0]);
+  const centroid=pts.reduce((sum,p)=>[sum[0]+p[0]/pts.length,sum[1]+p[1]/pts.length],[0,0]);
   const inner=pts.map(([x,y])=>[centroid[0]+(x-centroid[0])*.953,centroid[1]+(y-centroid[1])*.948]);
   flatPolygon(inner.map(([x,y])=>[x,y,sign*(sideGlassZ(y)+.017)]),windowGlass);
   curvedTube(pos.concat([pos[0]]),.0075,seal);
 }
 for(const sign of [-1,1]){
-  windowSide([[-.825,1.279],[-.467,1.745],[.277,1.745],[.277,1.28]],sign);
-  windowSide([[.355,1.280],[.355,1.745],[1.306,1.745],[1.306,1.280]],sign);
-  windowSide([[1.374,1.280],[1.374,1.745],[2.169,1.739],[2.304,1.579],[2.309,1.28]],sign);
-  // pillars; white strips separate the panes without decals
-  curvedTube([[.312,1.256,sign*.949],[.312,1.755,sign*.847]],.021,paint);
-  curvedTube([[1.345,1.257,sign*.948],[1.345,1.757,sign*.845]],.027,paint);
-  // continuous black weatherstrip / chrome lower glass accent
-  curvedTube([[-.895,1.262,sign*.95],[.35,1.262,sign*.95],[1.37,1.262,sign*.95],[2.326,1.262,sign*.93]],.008,softChrome);
-  // decorative door seam strokes (light falloff helps these remain believable)
-  for(const x of [-.93,.316,1.365]){
-    const low=x>1.2 ? .91 : .54;
-    curvedTube([[x,1.243,sign*.952],[x+.014,1.04,sign*.956],[x+.005,low,sign*.949]],.0055,crease);
+  windowSide([[-.845,1.242],[-.565,1.710],[.110,1.712],[.148,1.286]],sign);
+  windowSide([[.205,1.288],[.205,1.722],[1.165,1.724],[1.165,1.288]],sign);
+  windowSide([[1.255,1.286],[1.255,1.718],[2.075,1.716],[2.262,1.590],[2.262,1.288]],sign);
+  // pillars
+  curvedTube([[.168,1.272,sign*.950],[.168,1.730,sign*.848]],.023,paint);
+  curvedTube([[1.215,1.272,sign*.950],[1.215,1.728,sign*.848]],.026,paint);
+  // lower glass chrome accent / weatherstrip
+  curvedTube([[-.882,1.262,sign*.95],[.165,1.273,sign*.95],[1.220,1.274,sign*.95],[2.274,1.268,sign*.935]],.008,softChrome);
+  // decorative door seam strokes
+  for(const x of [-.95,.175,1.215]){
+    const low=x>1.1 ? .88 : .56;
+    curvedTube([[x,1.244,sign*.953],[x+.015,1.02,sign*.956],[x+.004,low,sign*.950]],.005,crease);
   }
-  // chrome door handle over a shallow black recess
-  for(const x of [-.25,1.00]){
-    rbox(.186,.041,.015,.009,seal,x,1.104,sign*.951);
-    rbox(.163,.028,.043,.012,softChrome,x,1.123,sign*.976);
-    rbox(.026,.02,.014,.006,metalDark,x-.058,1.125,sign*1.003);
+  // chrome door handles
+  for(const x of [-.30,.90]){
+    rbox(.170,.024,.042,.011,softChrome,x,1.115,sign*.978);
+    rbox(.020,.018,.013,.005,metalDark,x-.056,1.115,sign*.996);
   }
-  // A black plastic side protection strip is a deliberate reference-car detail.
-  rbox(1.70,.095,.059,.025,blackPlastic,.01,.760,sign*.947);
-  rbox(1.65,.016,.014,.006,metalDark,.01,.797,sign*.982);
-  // low, all-black running board / footrest (NOT chrome or white)
-  rbox(1.82,.104,.264,.03,footrest,.025,.425,sign*.924);
-  rbox(1.78,.017,.215,.006,blackPlastic,.025,.476,sign*.966);
+  // lower chrome door moulding, matching the uploaded side photo
+  rbox(1.70,.022,.020,.006,softChrome,-.18,.710,sign*.976);
+  rbox(1.73,.010,.010,.003,chrome,-.18,.722,sign*.982);
+  // metallic-topped running board with dark lower body
+  rbox(1.74,.092,.255,.028,blackPlastic,-.18,.425,sign*.923);
+  rbox(1.67,.016,.190,.005,softChrome,-.18,.472,sign*.964);
   for(let i=0;i<12;i++){
-    const x=-.80+i*.150;
-    rbox(.085,.007,.156,.004,metalDark,x,.489,sign*.964);
+    const x=-.95+i*.137;
+    rbox(.086,.006,.145,.003,metalDark,x,.488,sign*.963);
   }
-  // body-coloured mirrors with black lower shell and thin chrome highlights
-  const mirror=rbox(.25,.145,.257,.045,paint,-.83,1.322,sign*1.045);
-  mirror.rotation.y=sign*.14;
-  rbox(.212,.104,.027,.022,seal,-.855,1.320,sign*1.183);
-  rbox(.145,.013,.02,.006,chrome,-.832,1.282,sign*1.195);
-  rbox(.064,.08,.11,.017,blackPlastic,-.75,1.266,sign*.948);
-  // Fuel door on rear-left fender, quietly outlined without printed symbols.
+  // mirrors
+  const mirror=rbox(.23,.135,.235,.042,paint,-.86,1.340,sign*1.038);
+  mirror.rotation.y=sign*.11;
+  rbox(.180,.092,.026,.019,seal,-.875,1.320,sign*1.155);
+  rbox(.060,.075,.100,.016,blackPlastic,-.775,1.285,sign*.950);
+  // Fuel door on rear-left fender
   if(sign<0){
-    rbox(.245,.205,.008,.029,crease,1.91,1.044,-.943);
-    rbox(.225,.188,.014,.024,paint,1.91,1.044,-.951);
+    rbox(.220,.180,.008,.026,crease,1.84,1.055,-.943);
+    rbox(.205,.165,.014,.021,paint,1.84,1.055,-.951);
   }
 }
 
-// Sloped, dark reflective windshield (tapered, with small black wipers).
-const windshieldPoints=[
-  [-.980,1.228,-.836],[-.980,1.228,.836],[-.495,1.773,.774],[-.495,1.773,-.774]
-];
-flatPolygon(windshieldPoints,seal);
-flatPolygon([[-.955,1.258,-.804],[-.955,1.258,.804],[-.509,1.748,.749],[-.509,1.748,-.749]],windowGlass);
+// Subtle upper shoulder crease and pressed-door reflections. The LC200 has a
+// broad side panel below the window line, not an unbroken flat slab.
 for(const sign of [-1,1]){
-  curvedTube([[-.973,1.23,sign*.840],[-.733,1.505,sign*.800],[-.493,1.770,sign*.776]],.014,seal);
-  curvedTube([[-.91,1.255,sign*.17],[-.848,1.273,sign*.39],[-.82,1.28,sign*.46]],.011,blackPlastic);
+  curvedTube([[-2.38,1.160,sign*.948],[-1.82,1.167,sign*.957],[-1.01,1.160,sign*.959],
+              [.45,1.149,sign*.955],[1.53,1.147,sign*.959],[2.42,1.155,sign*.934]],.006,softChrome,car,92);
+  // Illuminated belt-edge relief on the front and rear fenders.
+  curvedTube([[-2.30,1.090,sign*.953],[-1.87,1.087,sign*.964],[-1.54,1.087,sign*.961]],.004,paint);
+  curvedTube([[1.70,1.128,sign*.962],[2.05,1.142,sign*.949],[2.35,1.139,sign*.936]],.004,paint);
+  // Thin door-sill extrusion, the visible pressed sheet edge.
+  rbox(1.72,.023,.036,.009,paint,-.18,.535,sign*.936);
+  // Running-board silver edging and grippy black insert.
+  rbox(1.76,.017,.018,.006,chrome,-.18,.460,sign*1.048);
+  // A restrained chrome frame along the base of the window line.
+  curvedTube([[-.930,1.263,sign*.949],[-.02,1.270,sign*.953],[1.13,1.275,sign*.951],[2.29,1.270,sign*.938]],.006,chrome);
+}
+
+// Sloped, dark reflective windshield (tapered, with small black wipers).
+// Front windshield follows the actual A-pillar plane and lies OUTSIDE the
+// painted cabin shell. V1 put it behind the white body so it disappeared.
+// The three quadrilateral strips conform to the sloped sheet-metal cross sections.
+function windPatch(lower,upper){
+  const [xl,yl,zl]=lower,[xu,yu,zu]=upper;
+  const gl=[ [xl-.031,yl,-zl],[xl-.031,yl,zl],
+             [xu-.031,yu,zu],[xu-.031,yu,-zu] ];
+  flatPolygon(gl,seal);
+  const pane=[[xl-.039,yl+.028,-zl+.035],[xl-.039,yl+.028,zl-.035],
+              [xu-.039,yu-.025,zu-.032],[xu-.039,yu-.025,-zu+.032]];
+  flatPolygon(pane,windowGlass);
+}
+windPatch([-1.050,1.246,.839],[-.806,1.622,.774]);
+windPatch([-.806,1.622,.774],[-.634,1.775,.746]);
+for(const sign of [-1,1]){
+  curvedTube([[-1.068,1.245,sign*.845],[-.820,1.618,sign*.781],[-.638,1.784,sign*.753]],.016,seal);
+  curvedTube([[-.998,1.261,sign*.14],[-.959,1.282,sign*.42],[-.944,1.288,sign*.48]],.008,blackPlastic);
+}
+// Windshield bottom cowl and exposed wiper housings.
+rbox(.060,.029,1.745,.009,blackPlastic,-1.024,1.238,0);
+for(const side of [-1,1]){
+  curvedTube([[-1.051,1.265,side*.57],[-1.018,1.279,side*.14],[-.997,1.280,side*.075]],.009,metalDark);
 }
 
 // Factory-style sculpted roof rails; topmost point fits 1.930 m official height.
 for(const sign of [-1,1]){
-  curvedTube([[-.25,1.885,sign*.694],[-.12,1.916,sign*.70],[1.97,1.916,sign*.70],[2.17,1.887,sign*.68]],.013,metalDark);
+  curvedTube([[-.20,1.887,sign*.690],[-.08,1.918,sign*.698],[1.96,1.918,sign*.698],[2.18,1.888,sign*.682]],.013,metalDark);
   for(const x of [-.15,1.96]){
     rbox(.135,.053,.076,.019,softChrome,x,1.89,sign*.696);
   }
@@ -456,12 +492,12 @@ const fin=mesh(new THREE.ConeGeometry(.035,.047,4),blackPlastic);fin.position.se
 // ────────────────────────────────────────────────────────────────────────────
 // 5. FACELIFT FACE: MULTI-BAR GRILLE, WRAPAROUND LED HEADLIGHTS, BUMPERS
 // ────────────────────────────────────────────────────────────────────────────
-rbox(.127,.395,1.93,.055,paint,FRONT+.070,.998,0);
-rbox(.063,.388,1.094,.021,seal,FRONT-.014,1.002,0);
+rbox(.125,.370,1.90,.050,paint,FRONT+.075,1.002,0);
+rbox(.068,.350,1.120,.020,seal,FRONT-.010,1.005,0);
 rbox(.038,.339,1.005,.025,metalDark,FRONT-.048,1.009,0);
 for(let i=0;i<4;i++){
-  const yy=1.139-i*.088;
-  rbox(.052,.025,1.040,.009,chrome,FRONT-.070,yy,0);
+  const yy=1.130-i*.078;
+  rbox(.055,.022,1.065,.009,chrome,FRONT-.066,yy,0);
 }
 for(const sign of [-1,1]){
   // Sweeping chrome bands framing upper grille
@@ -486,20 +522,37 @@ for(const sign of [-1,1]){
   const sensor=cylinder(.018,.003,softChrome,FRONT-.079,.715,sign*.80);
   sensor.rotation.z=Math.PI/2;
 }
-rbox(.144,.273,1.630,.073,paint,FRONT+.028,.653,0);
-rbox(.067,.112,1.080,.030,seal,FRONT-.057,.595,0);
+rbox(.150,.250,1.620,.065,paint,FRONT+.040,.665,0);
+rbox(.070,.100,1.070,.028,seal,FRONT-.053,.603,0);
 for(let i=0;i<6;i++)rbox(.065,.09,.009,.004,metalDark,FRONT-.090,.595,-.45+i*.18);
 // blank front number plate recess: intentionally NO lettering
 rbox(.021,.132,.345,.014,blackPlastic,FRONT-.093,.752,0);
 rbox(.012,.116,.323,.011,metalDark,FRONT-.105,.752,0);
 rbox(.063,.038,1.40,.011,softChrome,FRONT-.038,.449,0);
 
+// Front-fascia secondary pressings / facelift details:
+// long chrome surround at top of the grille, front bumper split and corner vents.
+rbox(.025,.023,1.50,.007,chrome,FRONT-.076,1.191,0);
+rbox(.022,.015,1.32,.006,softChrome,FRONT-.097,.816,0);
+for(const sign of [-1,1]){
+  // thin horizontal DRL running between reflector housings
+  rbox(.020,.014,.330,.006,chrome,FRONT-.077,1.142,sign*.751);
+  // outer lens contour is carried into the fender rather than stopping flat
+  curvedTube([[FRONT-.035,1.202,sign*.938],[FRONT+.115,1.177,sign*.958],
+              [FRONT+.237,1.134,sign*.947]],.009,chrome);
+  // faceted chrome L-shaped lower-fog surrounds, common to final facelift
+  curvedTube([[FRONT-.080,.733,sign*.908],[FRONT-.089,.553,sign*.920],
+              [FRONT+.050,.465,sign*.916]],.016,softChrome);
+  // bumper lower corner gently returns into the front fender
+  rbox(.177,.135,.070,.029,paint,FRONT+.115,.555,sign*.908);
+}
+
 // ────────────────────────────────────────────────────────────────────────────
 // 6. UPRIGHT REAR: LARGE TINTED TAILGATE WINDOW, WRAPAROUND REAR LAMPS
 // ────────────────────────────────────────────────────────────────────────────
-rbox(.055,.66,1.76,.035,paint,REAR-.063,1.337,0);
-rbox(.032,.461,1.48,.034,seal,REAR-.026,1.472,0);
-rbox(.024,.429,1.439,.030,rearGlass,REAR-.005,1.472,0);
+rbox(.058,.650,1.73,.034,paint,REAR-.060,1.325,0);
+rbox(.032,.435,1.46,.032,seal,REAR-.026,1.455,0);
+rbox(.024,.402,1.418,.028,rearGlass,REAR-.006,1.455,0);
 // horizontal windshield wiper under glass
 rbox(.034,.013,.52,.005,blackPlastic,REAR+.015,1.267,-.17);
 for(const sign of [-1,1]){
@@ -517,6 +570,15 @@ rbox(.028,.170,.375,.016,seal,REAR+.042,.857,0);
 rbox(.018,.151,.342,.012,metalDark,REAR+.057,.857,0); // blank rear plate recess
 rbox(.102,.135,1.27,.047,blackPlastic,REAR-.007,.515,0);
 rbox(.065,.035,1.42,.010,softChrome,REAR+.028,.456,0);
+
+// Rear horizontal hatch shut line and chrome opening-edge trim.
+curvedTube([[REAR+.017,1.057,-.74],[REAR+.029,1.056,0],[REAR+.017,1.057,.74]],.007,softChrome);
+for(const sign of [-1,1]){
+  // corner brake-light enclosure is moulded around the rear panel
+  curvedTube([[REAR-.155,1.477,sign*.952],[REAR+.001,1.471,sign*.889],
+              [REAR+.031,1.076,sign*.886]],.010,paint);
+  rbox(.082,.012,.155,.004,chrome,REAR+.017,1.197,sign*.822);
+}
 
 // ────────────────────────────────────────────────────────────────────────────
 // 7. FOUR PROPER 3D TIRES AND 17-INCH SOLID-FACE ROSWELL-STYLE ALLOYS
@@ -553,35 +615,35 @@ function makeWheel(x,side,isFront){
     }
   }
   tread.instanceMatrix.needsUpdate=true;tread.castShadow=true;car.add(tread);
-  // Black wheel barrel behind KMC disc; rim lip is exactly 17 inches nominal.
-  cylinder(RIM_R-.005,TIRE_W-.019,rimShadow,x,HUB_Y,centerZ);
-  ring(RIM_R-.014,.015,rimMat,x,HUB_Y,outZ+side*.014);
-  ring(RIM_R-.037,.006,softChrome,x,HUB_Y,outZ+side*.019);
-  // Disc with 6 elongated outer windows, inspired by KM720 Roswell solid-face design.
+  // Moulded sidewall shoulder rings and a fine bead seal (no invented tyre text).
+  ring(TIRE_RADIUS-.033,.013,tireGroove,x,HUB_Y,outZ+side*.005);
+  ring(TIRE_RADIUS-.134,.006,tireGroove,x,HUB_Y,outZ+side*.013);
+  // Steel-type black full-face wheel as in the supplied side reference.
+  // Black wheel barrel behind a steel-style disc.
+  cylinder(RIM_R-.010,TIRE_W-.019,rimShadow,x,HUB_Y,centerZ);
+  ring(RIM_R-.015,.014,rimMat,x,HUB_Y,outZ+side*.014);
   const disc=new THREE.Shape();disc.absarc(0,0,RIM_R-.024,0,Math.PI*2,false);
-  for(let i=0;i<6;i++){
-    const a=i*Math.PI/3+.15;
-    const rad=RIM_R-.051;
+  for(let i=0;i<8;i++){
+    const a=i*Math.PI/4;
+    const rad=RIM_R-.068;
     const hole=new THREE.Path();
-    // The oval slot follows the wheel circumference (tangential orientation).
-    hole.absellipse(rad*Math.cos(a),rad*Math.sin(a),.013,.034,0,Math.PI*2,true,a);
+    hole.absellipse(rad*Math.cos(a),rad*Math.sin(a),.016,.026,0,Math.PI*2,true,a);
     disc.holes.push(hole);
   }
-  const dishGeo=new THREE.ExtrudeGeometry(disc,{depth:.010,steps:1,bevelEnabled:true,bevelThickness:.002,bevelSize:.003,bevelSegments:2,curveSegments:14});
-  const dish=mesh(dishGeo,rimMat);
-  dish.position.set(x,HUB_Y,outZ+side*.024);
+  const dishGeo=new THREE.ExtrudeGeometry(disc,{depth:.011,steps:1,bevelEnabled:true,bevelThickness:.002,bevelSize:.002,bevelSegments:2,curveSegments:18});
+  const dish=mesh(dishGeo,new THREE.MeshStandardMaterial({color:0x22272b,roughness:.70,metalness:.12}));
+  dish.position.set(x,HUB_Y,outZ+side*.022);
   dish.rotation.y=side===1?0:Math.PI;
-  ring(RIM_R-.067,.005,metalDark,x,HUB_Y,outZ+side*.034);
-  ring(.070,.008,metalDark,x,HUB_Y,outZ+side*.035);
-  cylinder(.061,.015,rimMat,x,HUB_Y,outZ+side*.039);
-  cylinder(.039,.020,metalDark,x,HUB_Y,outZ+side*.054);
+  ring(RIM_R-.095,.008,metalDark,x,HUB_Y,outZ+side*.034);
+  cylinder(.082,.018,metalDark,x,HUB_Y,outZ+side*.040);
+  cylinder(.052,.018,rimShadow,x,HUB_Y,outZ+side*.052);
   for(let i=0;i<6;i++){
     const a=i*Math.PI/3;
-    const bx=x+Math.cos(a)*.079,by=HUB_Y+Math.sin(a)*.079;
-    cylinder(.012,.013,rimShadow,bx,by,outZ+side*.050);
-    cylinder(.008,.013,softChrome,bx,by,outZ+side*.058);
+    const bx=x+Math.cos(a)*.050,by=HUB_Y+Math.sin(a)*.050;
+    cylinder(.008,.010,softChrome,bx,by,outZ+side*.056);
   }
 }
+
 makeWheel(FRONT_X,1,true);makeWheel(FRONT_X,-1,true);
 makeWheel(REAR_X,1,false);makeWheel(REAR_X,-1,false);
 
@@ -594,14 +656,14 @@ function sizeCamera(){
   const w=holder.clientWidth||window.innerWidth;
   const h=holder.clientHeight||window.innerHeight;
   const aspect=w/h;
-  const halfH=Math.max(1.735,DIM.length*1.23/(2*aspect));
+  const halfH=Math.max(1.68,DIM.length*1.085/(2*aspect));
   camera.left=-halfH*aspect;camera.right=halfH*aspect;
   camera.top=halfH;camera.bottom=-halfH;camera.updateProjectionMatrix();
   renderer.setSize(w,h,false);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1,2));
 }
 sizeCamera();
-camera.position.copy(target).add(new THREE.Vector3(0,.0,10));
+camera.position.copy(target).add(new THREE.Vector3(0,.0,8.4));
 camera.lookAt(target);
 const controls=new OrbitControls(camera,renderer.domElement);
 controls.target.copy(target);
@@ -621,11 +683,11 @@ controls.update();
 
 // Smooth transitions to product-photography angles.
 const PRESET={
-  side:new THREE.Vector3(0,0,10),
-  front:new THREE.Vector3(-10,0,0),
-  rear:new THREE.Vector3(10,0,0),
-  quarter:new THREE.Vector3(-7.4,3.8,8.4),
-  top:new THREE.Vector3(0,10,.002)
+  side:new THREE.Vector3(0,0,8.4),
+  front:new THREE.Vector3(-8.8,.2,0),
+  rear:new THREE.Vector3(8.8,.2,0),
+  quarter:new THREE.Vector3(-6.6,2.8,7.0),
+  top:new THREE.Vector3(0,8.8,.002)
 };
 let tween=null;
 const ease=t=>1-Math.pow(1-t,3);
@@ -640,7 +702,7 @@ function view(id,resetZoom=false){
   if(!PRESET[id])return;
   setAuto(false);activeView(id);
   const from=camera.position.clone().sub(controls.target);
-  const to=PRESET[id].clone().normalize().multiplyScalar(Math.max(7,from.length()));
+  const to=PRESET[id].clone().normalize().multiplyScalar(Math.max(6.5,from.length()));
   tween={from,to,start:performance.now(),duration:820,zoomStart:camera.zoom,zoomEnd:resetZoom?1:camera.zoom,
     panStart:controls.target.clone(),panEnd:target.clone()};
 }
