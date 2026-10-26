@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+<meta name="theme-color" content="#4a6a82" />
+<title>2021 Land Cruiser 200 | Interactive Studio</title>
+<!--
+  2021 GCC Toyota Land Cruiser 200 GXR • procedural 3D studio
+  All car geometry, UI, shading and controls live in THIS HTML file.
+  Three.js is loaded from a PINNED CDN version (internet required).
+  There are NO external 3D models, images, textures, CSS or scripts other than Three.js.
+
+  Dimensions in metres:
+  GCC 2021 GXR length 5095 mm, width 1980 mm, height 1930 mm
+    Source: https://nd-mediagallery2-public-production.s3.amazonaws.com/dbfbe079ddec83c595dd0ec9c4c6a5fa/2021_lc_sw_4.6l.pdf
+  LC200 wheelbase 2850 mm; clearance 230 mm
+    Sources: https://www.toyota.co.nz/globalassets/brochures/2020/lc200-fullbrochure-final-web.pdf
+             https://www.toyota.com/content/dam/toyota/brochures/pdf/2021/landcruiser_ebrochure.pdf
+  Wheel/tire baseline: 265/70R17 with KM720-inspired solid-face matte-anthracite rims.
+  Accuracy note: manufacturer's overall dimensions are exact for the cited region/grade;
+  trim curves, wheel-arch opening, pillars and body surfaces are hand-shaped approximations.
+  This is an authored procedural approximation, NOT a scanned/OEM CAD model.
+-->
+<style>
+  :root { color-scheme: dark; --bg1:#4a6a82; --bg2:#3a4f60; --ink:#edf4f8; --muted:#c3d1de; --panel:rgba(14,27,39,.42); --line:rgba(239,246,255,.16); --accent:#b7d9e6; }
+  * { box-sizing:border-box }
+  html,body { width:100%;height:100%;margin:0;overflow:hidden; }
+  body {font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink);
+    background:linear-gradient(180deg,var(--bg1) 0%,#405b70 52%,var(--bg2) 100%); transition:background .35s ease; }
+  body.cream { color:#283440;--ink:#283440;--muted:#62707c;--panel:rgba(255,252,245,.79);--line:rgba(62,76,86,.14);--accent:#385c73;
+    background:linear-gradient(180deg,#f5f0e7 0%,#ede7dc 55%,#dcd5c9 100%); }
+  #viewer {position:absolute;inset:0;touch-action:none;outline:0; }
+  #viewer canvas {width:100%;height:100%;display:block;touch-action:none;}
+  .topbar {position:absolute;z-index:4;top:0;left:0;right:0;padding:clamp(19px,3.0vw,40px) clamp(19px,4.4vw,70px);display:flex;align-items:start;justify-content:space-between;gap:16px;pointer-events:none}
+  .brand {display:flex;gap:13px;align-items:center;pointer-events:none;}
+  .emblem {width:30px;height:30px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;flex-shrink:0;}
+  .emblem:before {content:"";display:block;width:9px;height:9px;border:1.5px solid currentColor;transform:rotate(45deg);opacity:.75;}
+  .eyebrow {font-size:10px;letter-spacing:.28em;text-transform:uppercase;font-weight:700;opacity:.73;line-height:1.4;}
+  h1 {margin:4px 0 0;font-size:clamp(16px,2vw,26px);font-weight:600;letter-spacing:.025em;line-height:1.15;}
+  .topright {display:flex;gap:9px;align-items:center;pointer-events:auto;flex-wrap:wrap;justify-content:end;}
+  .chip {border:1px solid var(--line);background:var(--panel);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);padding:11px 14px;color:inherit;border-radius:100px;font-size:11px;letter-spacing:.07em;font-weight:650;}
+  button {font:inherit;cursor:pointer;color:inherit;-webkit-tap-highlight-color:transparent;}
+  .utility {display:flex;gap:8px;align-items:center;min-height:40px;border:1px solid var(--line);background:var(--panel);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-radius:100px;padding:0 14px;font-size:11px;font-weight:650;transition:background .2s,border-color .2s;}
+  .utility:hover,.viewbtn:hover {background:rgba(171,200,221,.2)}
+  .utility:focus-visible,.viewbtn:focus-visible,input:focus-visible{outline:2px solid #b9e3ff;outline-offset:3px}
+  .dot {display:inline-block;width:9px;height:9px;border:1.5px solid currentColor;border-radius:50%;}
+  .bottom {position:absolute;z-index:5;bottom:0;left:0;right:0;padding:0 clamp(17px,4.4vw,70px) max(22px,env(safe-area-inset-bottom));display:flex;align-items:end;justify-content:space-between;gap:18px;pointer-events:none}
+  .specs {flex:0 0 auto;padding:0 0 9px;max-width:315px;text-shadow:0 1px 8px rgba(0,0,0,.1);}
+  .micro {font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.21em;opacity:.74;}
+  .specname {margin:9px 0 10px;font-size:18px;font-weight:550;letter-spacing:.01em;}
+  .specdetail {font-size:11px;line-height:1.75;opacity:.77;font-weight:500;}
+  .dock {pointer-events:auto;display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
+  .viewbar,.finishbar {display:flex;align-items:center;gap:5px;border:1px solid var(--line);background:var(--panel);border-radius:16px;padding:7px;box-shadow:0 10px 35px rgba(0,0,0,.06);backdrop-filter:blur(23px);-webkit-backdrop-filter:blur(23px);}
+  .viewbtn {border:1px solid transparent;background:transparent;border-radius:11px;min-height:36px;padding:0 13px;font-size:11px;font-weight:650;letter-spacing:.025em;white-space:nowrap;transition:background .2s,border-color .2s;}
+  .viewbtn.active {background:rgba(225,240,252,.18);border-color:var(--line)}
+  body.cream .viewbtn.active {background:rgba(70,99,121,.14)}
+  .vline {width:1px;height:24px;background:var(--line);margin:0 2px;}
+  .finishbar {gap:12px;min-height:49px;padding:7px 12px 7px 16px;}
+  .finishbar label {font-size:10px;text-transform:uppercase;letter-spacing:.16em;font-weight:750;opacity:.78;}
+  .swatches{display:flex;gap:7px;align-items:center}
+  .swatch {width:21px;height:21px;padding:0;border-radius:50%;border:2px solid rgba(255,255,255,.28);box-shadow:0 0 0 1px rgba(0,0,0,.12) inset;}
+  .swatch.active {outline:1px solid var(--ink);outline-offset:3px;}
+  #customPaint {width:26px;height:26px;padding:0;border:0;background:none;border-radius:50%;overflow:hidden;cursor:pointer;}
+  #customPaint::-webkit-color-swatch-wrapper{padding:0}
+  #customPaint::-webkit-color-swatch{border:2px solid rgba(255,255,255,.38);border-radius:50%;}
+  .hint {position:absolute;bottom:18px;left:50%;transform:translateX(-50%);z-index:2;pointer-events:none;text-align:center;white-space:nowrap;font-size:10px;font-weight:600;letter-spacing:.06em;opacity:.62;}
+  .loader {position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:10;pointer-events:none;background:linear-gradient(180deg,#4a6a82,#3a4f60);transition:opacity .45s;}
+  .loader.hidden{opacity:0;visibility:hidden;}
+  .loaderinner {display:flex;align-items:center;flex-direction:column;gap:15px;color:white;text-align:center;padding:22px;}
+  .spinner {width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,.22);border-top-color:white;animation:spin 1s linear infinite;}
+  @keyframes spin {to{transform:rotate(360deg)}}
+  #loadstatus{font-size:12px;letter-spacing:.08em;line-height:1.7;}
+  #loaderror{font-size:12px;max-width:410px;line-height:1.75;display:none;}
+  #loaderror a{color:white;text-decoration:underline;}
+  #debug {position:absolute;left:8px;top:50%;display:none;}
+  @media (max-width:920px){ .topbar{padding:19px 21px}.bottom{padding-left:20px;padding-right:20px}.specs{max-width:190px}.specname{font-size:15px}.specdetail{font-size:10px}.viewbtn{padding:0 10px;}.hint{display:none}}
+  @media (max-width:650px){ .topbar{align-items:start}.chip{display:none}.topright{gap:5px}.utility{padding:0 11px;font-size:10px;min-height:36px}.eyebrow{font-size:9px;letter-spacing:.13em}h1{font-size:16px}.brand{gap:7px}.emblem{width:23px;height:23px}.bottom{display:flex;align-items:stretch;flex-direction:column;gap:9px;bottom:0;padding:0 13px max(16px,env(safe-area-inset-bottom))}.specs{max-width:unset;padding:0 7px}.specname{font-size:14px;margin:5px 0 2px}.specdetail{font-size:10px}.dock{align-items:stretch;gap:7px}.viewbar{justify-content:space-between;gap:1px;padding:5px;width:100%}.viewbtn{min-height:38px;padding:0 clamp(5px,1.5vw,13px);font-size:10px}.finishbar{align-self:flex-end}.vline{margin:0}}
+  @media (max-width:370px){.viewbtn{font-size:9px;padding:0 4px}.utility{font-size:9px;padding:0 9px}}
+  @media (prefers-reduced-motion:reduce){body{transition:none}.loader{transition:none}}
+</style>
+<!-- Pinned Three.js, no build tools needed. Safari 16.4+ supports import maps. -->
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.166.1/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<main id="viewer" aria-label="Interactive rotatable model of a 2021 Toyota Land Cruiser 200"></main>
+<header class="topbar">
+  <div class="brand"><div class="emblem" aria-hidden="true"></div><div><div class="eyebrow">THE STUDIO SERIES · 2021</div><h1>LAND CRUISER <span style="font-weight:320;opacity:.8">/ 200</span></h1></div></div>
+  <div class="topright">
+    <span class="chip">GCC · GXR · 5 DOOR</span>
+    <button type="button" class="utility" id="bgToggle" title="Switch between steel blue and warm cream backgrounds"><span class="dot" aria-hidden="true"></span><span id="bgLabel">Cream studio</span></button>
+  </div>
+</header>
+<div class="bottom">
+  <section class="specs" aria-label="Vehicle specifications">
+    <div class="micro">GCC SPECIFICATION</div>
+    <div class="specname">2021 · Land Cruiser 200</div>
+    <div class="specdetail">5,095 mm L · 1,980 mm W · 1,930 mm H<br>2,850 mm wheelbase · 230 mm clearance<br>KMC Roswell-inspired 17” · White · Black trim</div>
+  </section>
+  <div class="dock">
+    <div class="finishbar" aria-label="Paint finish controls"><label for="customPaint">PAINT</label><div class="swatches">
+      <button class="swatch active" title="Super White" aria-label="Super White" data-paint="#f4f4ef" style="background:#f4f4ef"></button>
+      <button class="swatch" title="Pearl Silver" aria-label="Pearl Silver" data-paint="#a9b0b8" style="background:#a9b0b8"></button>
+      <button class="swatch" title="Graphite Grey" aria-label="Graphite Grey" data-paint="#575c60" style="background:#575c60"></button>
+      <button class="swatch" title="Midnight Black" aria-label="Midnight Black" data-paint="#15191d" style="background:#15191d"></button>
+    </div><input id="customPaint" type="color" value="#f4f4ef" aria-label="Custom body paint color" title="Choose custom paint colour" /></div>
+    <nav class="viewbar" aria-label="Camera presets">
+      <button class="viewbtn" data-view="front">Front</button>
+      <button class="viewbtn active" data-view="side">Side</button>
+      <button class="viewbtn" data-view="rear">Rear</button>
+      <button class="viewbtn" data-view="quarter">3/4 view</button>
+      <button class="viewbtn" data-view="top">Top</button>
+      <span class="vline" aria-hidden="true"></span>
+      <button class="viewbtn" id="rotate" aria-pressed="false" title="Toggle automatic rotation">↻ Auto</button>
+      <button class="viewbtn" id="reset" title="Reset zoom and camera">Reset</button>
+    </nav>
+  </div>
+</div>
+<div class="hint" aria-hidden="true">DRAG TO ROTATE · SCROLL / PINCH TO ZOOM · TWO-FINGER DRAG TO PAN</div>
+<div id="loader" class="loader" role="status" aria-live="polite"><div class="loaderinner"><div class="spinner" id="spinner"></div><div id="loadstatus">PREPARING THE STUDIO</div><div id="loaderror">The interactive view needs JavaScript, WebGL and access to the Three.js CDN.<br>On iPad, open this page in Safari using a web address (such as GitHub Pages); the Files-app preview cannot reliably run 3D HTML.</div></div></div>
+<script>
+// If CDN loading fails, do not leave the user staring at an endless loading spinner.
+window.addEventListener('error', (e) => {
+  const loader = document.getElementById('loader');
+  if (loader && !loader.classList.contains('hidden')) {
+    document.getElementById('spinner').style.display='none';
+    document.getElementById('loadstatus').textContent='3D COULD NOT START';
+    document.getElementById('loaderror').style.display='block';
+  }
+});
+window.addEventListener('unhandledrejection', (e) => {
+  const loader = document.getElementById('loader');
+  if (loader && !loader.classList.contains('hidden')) {
+    document.getElementById('spinner').style.display='none';
+    document.getElementById('loadstatus').textContent='3D COULD NOT START';
+    document.getElementById('loaderror').style.display='block';
+  }
+});
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+// ────────────────────────────────────────────────────────────────────────────
+// 1. VERIFIED DIMENSIONS AND EASY CUSTOMISATION
+//    THREE UNITS = METRES. x = length (negative is front); y = up;
+//    z = vehicle width (positive is the default camera-facing side).
+// ────────────────────────────────────────────────────────────────────────────
+const DIM = Object.freeze({
+  length: 5.095,   // 2021 GCC GXR: 5,095 mm (bumper-to-bumper)
+  width: 1.980,    // GCC GXR: 1,980 mm excluding mirrors
+  height: 1.930,   // GCC GXR: 1,930 mm including factory roof rails
+  wheelbase: 2.850,// LC200: 2,850 mm
+  clearance: .230, // LC200 published running clearance; underbody is stylised
+  trackF: 1.650,   // representative LC200 front track (2021 Toyota manual)
+  trackR: 1.645,   // representative LC200 rear track
+  tireWidth: .265, // previously specified 265/70R17 all-terrain tyres
+  rimDiameter: 17 * .0254,
+  aspectRatio: .70
+});
+const TIRE_RADIUS = (DIM.rimDiameter + 2 * DIM.tireWidth * DIM.aspectRatio) / 2; // 0.4013 m
+const HUB_Y = TIRE_RADIUS; // tyre touches studio floor y=0
+const FRONT_X = -1.40;     // visual axle position; overhangs are hand-modelled
+const REAR_X  = FRONT_X + DIM.wheelbase;
+const FRONT = -DIM.length / 2 + .10; // fascia datum inset: outer grille reaches -length/2
+const REAR =  DIM.length / 2 - .065; // tailgate datum inset: bumper reaches +length/2
+const DEFAULT_WHITE = '#f4f4ef';
+
+// ────────────────────────────────────────────────────────────────────────────
+// 2. RENDERER, PHYSICAL MATERIALS AND SOFT STUDIO
+// ────────────────────────────────────────────────────────────────────────────
+const holder=document.getElementById('viewer');
+const renderer=new THREE.WebGLRenderer({antialias:true, alpha:true, powerPreference:'high-performance'});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1,2));
+renderer.setSize(holder.clientWidth,holder.clientHeight);
+renderer.setClearColor(0x000000,0);
+renderer.shadowMap.enabled=true;
+renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure=1.36;
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+holder.appendChild(renderer.domElement);
+const scene=new THREE.Scene();
+scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(),.035).texture;
+scene.environmentIntensity=.85;
+scene.add(new THREE.HemisphereLight(0xe4eefc,0x57606a,2.35));
+const key=new THREE.DirectionalLight(0xfff6eb,3.4);
+key.position.set(-3.4,8,6);key.castShadow=true;
+key.shadow.mapSize.set(2048,2048);
+key.shadow.camera.left=-7;key.shadow.camera.right=7;
+key.shadow.camera.top=7;key.shadow.camera.bottom=-7;
+key.shadow.camera.near=.5;key.shadow.camera.far=24;
+key.shadow.bias=-.00013;key.shadow.normalBias=.014;
+key.shadow.radius=4;
+scene.add(key);
+const fill=new THREE.DirectionalLight(0xd5e9ff,2.0);fill.position.set(4,6,-5);scene.add(fill);
+const edge=new THREE.DirectionalLight(0xffffff,.85);edge.position.set(0,5,8);scene.add(edge);
+
+const physical=(color,roughness=.34,metalness=.03,clearcoat=.5)=>new THREE.MeshPhysicalMaterial({
+  color,roughness,metalness,clearcoat,clearcoatRoughness:.23,side:THREE.DoubleSide
+});
+const paint=physical(DEFAULT_WHITE,.245,.12,.87);
+paint.envMapIntensity=1.6;
+const chrome=physical('#ced7df',.18,.90,.70);
+const softChrome=physical('#9faab2',.25,.66,.45);
+const metalDark=physical('#333b41',.40,.45,.30);
+const windowGlass=physical('#16242d',.12,.12,.83);
+windowGlass.envMapIntensity=2.2;
+const rearGlass=physical('#1a2933',.16,.08,.75);
+const seal=new THREE.MeshStandardMaterial({color:0x111921,roughness:.74,side:THREE.DoubleSide});
+const crease=new THREE.MeshStandardMaterial({color:0x53606a,roughness:.8});
+const blackPlastic=new THREE.MeshStandardMaterial({color:0x20272d,roughness:.83});
+const footrest=new THREE.MeshStandardMaterial({color:0x12191d,roughness:.89});
+const tireMat=new THREE.MeshStandardMaterial({color:0x202327,roughness:.94,metalness:0});
+const tireGroove=new THREE.MeshStandardMaterial({color:0x15181b,roughness:1});
+const rimMat=physical('#3b4145',.36,.56,.28); // KMC-style anthracite (not jet black)
+const rimShadow=new THREE.MeshStandardMaterial({color:0x12171a,roughness:.92});
+const lampLens=physical('#e7f1fa',.15,.17,.9);
+const lampSilver=physical('#c5d0d9',.17,.75,.35);
+const tailRed=physical('#a90918',.23,.09,.86);
+const tailWhite=physical('#e6e6e3',.14,.13,.83);
+const orange=physical('#d57a28',.25,.12,.8);
+
+const car=new THREE.Group();scene.add(car);
+function mesh(geo,mat,parent=car){const m=new THREE.Mesh(geo,mat);m.castShadow=true;m.receiveShadow=true;parent.add(m);return m;}
+function rbox(w,h,d,r,mat,x,y,z,parent=car){
+  const m=mesh(new RoundedBoxGeometry(w,h,d,4,Math.min(r,w/2-.0001,h/2-.0001,d/2-.0001)),mat,parent);
+  m.position.set(x,y,z);return m;
+}
+function curvedTube(points,r,mat,parent=car,segments=42){
+  const curve=new THREE.CatmullRomCurve3(points.map(p=>new THREE.Vector3(...p)),false,'centripetal');
+  return mesh(new THREE.TubeGeometry(curve,segments,r,6,false),mat,parent);
+}
+function cylinder(radius,depth,mat,x,y,z,sign=1,parent=car,segments=48){
+  const m=mesh(new THREE.CylinderGeometry(radius,radius,depth,segments),mat,parent);
+  m.rotation.x=Math.PI/2;m.position.set(x,y,z);return m;
+}
+function ring(radius,tube,mat,x,y,z,parent=car){
+  const m=mesh(new THREE.TorusGeometry(radius,tube,8,72),mat,parent);
+  m.position.set(x,y,z);return m;
+}
+function flatPolygon(points,mat,parent=car){
+  // Coordinates are physical XYZ positions, not screen pixels.
+  const vertices=[];
+  for(let i=1;i<points.length-1;i++) vertices.push(...points[0],...points[i],...points[i+1]);
+  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));g.computeVertexNormals();
+  return mesh(g,mat,parent);
+}
+
+// Soft studio floor: receives contact shadows but shows NO floor material/grid.
+const floor=mesh(new THREE.PlaneGeometry(200,200),new THREE.ShadowMaterial({color:0x14202a,opacity:.30}),scene);
+floor.rotation.x=-Math.PI/2;floor.position.y=-.018;floor.castShadow=false;
+// A second, very diffuse shadow stays subtle even when light angle changes.
+const blobMat=new THREE.MeshBasicMaterial({color:0x15212b,transparent:true,opacity:.055,depthWrite:false,side:THREE.DoubleSide});
+for(let i=0;i<3;i++){
+  const sh=mesh(new THREE.CircleGeometry(1,64),blobMat.clone(),scene);
+  sh.rotation.x=-Math.PI/2;sh.position.y=-.012+i*.0004;sh.scale.set(2.51-i*.12,.93-i*.14,1);
+  sh.material.opacity=.027-i*.007;sh.castShadow=false;sh.receiveShadow=false;
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// 3. LOWER BODY SHELL WITH REAL CUT-OUT WHEEL ARCHES
+//    The arches are part of the silhouette (NOT circles pasted over a box).
+// ────────────────────────────────────────────────────────────────────────────
+const LOW=.485;
+const ARCH_R=.495;
+function addArchToPath(shape,cx){
+  const phi=Math.asin((LOW-HUB_Y)/ARCH_R);
+  for(let j=0;j<=36;j++){
+    const a=phi+(Math.PI-2*phi)*j/36;
+    shape.lineTo(cx+ARCH_R*Math.cos(a),HUB_Y+ARCH_R*Math.sin(a));
+  }
+}
+function sideShell(sign){
+  const s=new THREE.Shape();
+  s.moveTo(FRONT+.025,1.205);
+  s.lineTo(REAR-.02,1.205);
+  s.lineTo(REAR-.015,.54);
+  s.quadraticCurveTo(REAR-.05,LOW,REAR-.13,LOW);
+  const span=Math.sqrt(ARCH_R*ARCH_R-(LOW-HUB_Y)**2);
+  s.lineTo(REAR_X+span,LOW);
+  addArchToPath(s,REAR_X);
+  s.lineTo(FRONT_X+span,LOW);
+  addArchToPath(s,FRONT_X);
+  s.lineTo(FRONT+.09,LOW);
+  s.quadraticCurveTo(FRONT+.008,.52,FRONT+.008,.64);
+  s.lineTo(FRONT+.025,1.205);
+  const g=new THREE.ExtrudeGeometry(s,{depth:.065,steps:1,bevelEnabled:true,bevelSegments:3,bevelSize:.012,bevelThickness:.010,curveSegments:8});
+  g.computeVertexNormals();
+  const m=mesh(g,paint);
+  // z extrusion travels +z; both left and right side are physically present.
+  m.position.z=sign>0 ? .870 : -.935;
+}
+sideShell(1);sideShell(-1);
+// Underbody pieces sit inside the visible flank and behind the wheel openings.
+rbox(4.85,.22,1.67,.065,blackPlastic,-.015,.51,0);
+rbox(4.76,.29,1.73,.07,paint,-.01,1.13,0);
+rbox(3.02,.18,1.55,.04,blackPlastic,-.1,.34,0);
+for(const sx of [FRONT_X,REAR_X]){
+  for(const sign of [-1,1]){
+    // Dark wheel-well edging, and painted convex metal fender lips.
+    const archPts=[];
+    const phi=Math.asin((LOW-HUB_Y)/ARCH_R);
+    for(let i=0;i<=28;i++){
+      const a=phi+(Math.PI-2*phi)*i/28;
+      archPts.push([sx+ARCH_R*Math.cos(a),HUB_Y+ARCH_R*Math.sin(a),sign*.943]);
+    }
+    curvedTube(archPts,.024,paint,car,52);
+    const inside=archPts.map(p=>[p[0],p[1]-.015,sign*.925]);
+    curvedTube(inside,.013,seal,car,52);
+  }
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// 4. CABIN: CUSTOM LOFT, SLIGHTLY TAPERED PILLARS, FULL LENGTH ROOF
+// ────────────────────────────────────────────────────────────────────────────
+const cabinSections=[
+  // x, lower sill, glass-belt, upper shoulder, roof top, side half-width, shoulder width, roof half-width
+  [-1.00, 1.18,1.215,1.250,1.272,.870,.853,.790],
+  [ -.50, 1.18,1.265,1.768,1.856,.925,.840,.758],
+  [ -.38, 1.18,1.265,1.780,1.890,.927,.835,.756],
+  [ 1.98, 1.18,1.265,1.779,1.890,.932,.838,.764],
+  [ 2.25, 1.18,1.265,1.770,1.874,.923,.840,.773],
+  [ 2.47, 1.18,1.265,1.698,1.759,.895,.824,.795],
+  [ 2.50, 1.18,1.250,1.660,1.704,.885,.819,.793]
+];
+function cabinRing(a){
+  const [x,yb,belt,sh,top,w,shoulder,roofW]=a;
+  return [
+    [x,yb,-w], [x,belt,-w], [x,sh,-shoulder], [x,top,-roofW],
+    [x,top,roofW], [x,sh,shoulder], [x,belt,w], [x,yb,w]
+  ];
+}
+const vertices=[];
+const rings=cabinSections.map(cabinRing);
+const tri=(a,b,c)=>vertices.push(...a,...b,...c);
+for(let i=0;i<rings.length-1;i++){
+  for(let j=0;j<8;j++){
+    const k=(j+1)%8;
+    tri(rings[i][j],rings[i+1][j],rings[i+1][k]);
+    tri(rings[i][j],rings[i+1][k],rings[i][k]);
+  }
+}
+for(let j=1;j<7;j++){tri(rings[0][0],rings[0][j+1],rings[0][j]);tri(rings[rings.length-1][0],rings[rings.length-1][j],rings[rings.length-1][j+1]);}
+const cabGeo=new THREE.BufferGeometry();cabGeo.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));cabGeo.computeVertexNormals();
+mesh(cabGeo,paint);
+
+// Long flat sculpted bonnet, with rounded fall-away at outer edges.
+const hoodVert=[];
+const hRows=18,hCols=18;
+function bonnetHeight(x,z){
+  const t=(x-(FRONT+.07))/((-1.0)-(FRONT+.07));
+  return 1.168+t*.096+.015*(1-(z/.90)**2)-.015*Math.pow(Math.abs(z/.92),6);
+}
+for(let ix=0;ix<hRows;ix++){
+  const x1=FRONT+.035+(ix/hRows)*(-1.0-FRONT-.035);
+  const x2=FRONT+.035+((ix+1)/hRows)*(-1.0-FRONT-.035);
+  for(let iz=0;iz<hCols;iz++){
+    const z1=-.915+iz/hCols*1.83;
+    const z2=-.915+(iz+1)/hCols*1.83;
+    const a=[x1,bonnetHeight(x1,z1),z1],b=[x2,bonnetHeight(x2,z1),z1],c=[x2,bonnetHeight(x2,z2),z2],d=[x1,bonnetHeight(x1,z2),z2];
+    hoodVert.push(...a,...b,...c,...a,...c,...d);
+  }
+}
+const hoodGeo=new THREE.BufferGeometry();hoodGeo.setAttribute('position',new THREE.Float32BufferAttribute(hoodVert,3));hoodGeo.computeVertexNormals();
+mesh(hoodGeo,paint);
+for(const sign of [-1,1]){
+  curvedTube([[FRONT+.10,1.171,sign*.80],[-1.92,1.197,sign*.84],[-1.08,1.246,sign*.87]],.008,softChrome);
+  curvedTube([[-2.35,1.185,sign*.52],[-1.70,1.22,sign*.48],[-1.08,1.26,sign*.46]],.005,paint);
+}
+
+// Windows are real polygonal panes overlaying the car's tapering cabin surface.
+function sideGlassZ(y){return .932 - Math.max(0,y-1.26)*.187;}
+function windowSide(pts,sign){
+  const pos=pts.map(([x,y])=>[x,y,sign*(sideGlassZ(y)+.012)]);
+  flatPolygon(pos,seal);
+  const centroid=pts.reduce((s,p)=>[s[0]+p[0]/pts.length,s[1]+p[1]/pts.length],[0,0]);
+  const inner=pts.map(([x,y])=>[centroid[0]+(x-centroid[0])*.953,centroid[1]+(y-centroid[1])*.948]);
+  flatPolygon(inner.map(([x,y])=>[x,y,sign*(sideGlassZ(y)+.017)]),windowGlass);
+  curvedTube(pos.concat([pos[0]]),.0075,seal);
+}
+for(const sign of [-1,1]){
+  windowSide([[-.825,1.279],[-.467,1.745],[.277,1.745],[.277,1.28]],sign);
+  windowSide([[.355,1.280],[.355,1.745],[1.306,1.745],[1.306,1.280]],sign);
+  windowSide([[1.374,1.280],[1.374,1.745],[2.169,1.739],[2.304,1.579],[2.309,1.28]],sign);
+  // pillars; white strips separate the panes without decals
+  curvedTube([[.312,1.256,sign*.949],[.312,1.755,sign*.847]],.021,paint);
+  curvedTube([[1.345,1.257,sign*.948],[1.345,1.757,sign*.845]],.027,paint);
+  // continuous black weatherstrip / chrome lower glass accent
+  curvedTube([[-.895,1.262,sign*.95],[.35,1.262,sign*.95],[1.37,1.262,sign*.95],[2.326,1.262,sign*.93]],.008,softChrome);
+  // decorative door seam strokes (light falloff helps these remain believable)
+  for(const x of [-.93,.316,1.365]){
+    const low=x>1.2 ? .91 : .54;
+    curvedTube([[x,1.243,sign*.952],[x+.014,1.04,sign*.956],[x+.005,low,sign*.949]],.0055,crease);
+  }
+  // chrome door handle over a shallow black recess
+  for(const x of [-.25,1.00]){
+    rbox(.186,.041,.015,.009,seal,x,1.104,sign*.951);
+    rbox(.163,.028,.043,.012,softChrome,x,1.123,sign*.976);
+    rbox(.026,.02,.014,.006,metalDark,x-.058,1.125,sign*1.003);
+  }
+  // A black plastic side protection strip is a deliberate reference-car detail.
+  rbox(1.70,.095,.059,.025,blackPlastic,.01,.760,sign*.947);
+  rbox(1.65,.016,.014,.006,metalDark,.01,.797,sign*.982);
+  // low, all-black running board / footrest (NOT chrome or white)
+  rbox(1.82,.104,.264,.03,footrest,.025,.425,sign*.924);
+  rbox(1.78,.017,.215,.006,blackPlastic,.025,.476,sign*.966);
+  for(let i=0;i<12;i++){
+    const x=-.80+i*.150;
+    rbox(.085,.007,.156,.004,metalDark,x,.489,sign*.964);
+  }
+  // body-coloured mirrors with black lower shell and thin chrome highlights
+  const mirror=rbox(.25,.145,.257,.045,paint,-.83,1.322,sign*1.045);
+  mirror.rotation.y=sign*.14;
+  rbox(.212,.104,.027,.022,seal,-.855,1.320,sign*1.183);
+  rbox(.145,.013,.02,.006,chrome,-.832,1.282,sign*1.195);
+  rbox(.064,.08,.11,.017,blackPlastic,-.75,1.266,sign*.948);
+  // Fuel door on rear-left fender, quietly outlined without printed symbols.
+  if(sign<0){
+    rbox(.245,.205,.008,.029,crease,1.91,1.044,-.943);
+    rbox(.225,.188,.014,.024,paint,1.91,1.044,-.951);
+  }
+}
+
+// Sloped, dark reflective windshield (tapered, with small black wipers).
+const windshieldPoints=[
+  [-.980,1.228,-.836],[-.980,1.228,.836],[-.495,1.773,.774],[-.495,1.773,-.774]
+];
+flatPolygon(windshieldPoints,seal);
+flatPolygon([[-.955,1.258,-.804],[-.955,1.258,.804],[-.509,1.748,.749],[-.509,1.748,-.749]],windowGlass);
+for(const sign of [-1,1]){
+  curvedTube([[-.973,1.23,sign*.840],[-.733,1.505,sign*.800],[-.493,1.770,sign*.776]],.014,seal);
+  curvedTube([[-.91,1.255,sign*.17],[-.848,1.273,sign*.39],[-.82,1.28,sign*.46]],.011,blackPlastic);
+}
+
+// Factory-style sculpted roof rails; topmost point fits 1.930 m official height.
+for(const sign of [-1,1]){
+  curvedTube([[-.25,1.885,sign*.694],[-.12,1.916,sign*.70],[1.97,1.916,sign*.70],[2.17,1.887,sign*.68]],.013,metalDark);
+  for(const x of [-.15,1.96]){
+    rbox(.135,.053,.076,.019,softChrome,x,1.89,sign*.696);
+  }
+}
+// Rear roofline spoiler and a tiny aerial fin.
+rbox(.21,.071,1.55,.028,paint,2.402,1.815,0);
+const fin=mesh(new THREE.ConeGeometry(.035,.047,4),blackPlastic);fin.position.set(1.90,1.904,0);fin.rotation.y=Math.PI/4;
+
+// ────────────────────────────────────────────────────────────────────────────
+// 5. FACELIFT FACE: MULTI-BAR GRILLE, WRAPAROUND LED HEADLIGHTS, BUMPERS
+// ────────────────────────────────────────────────────────────────────────────
+rbox(.127,.395,1.93,.055,paint,FRONT+.070,.998,0);
+rbox(.063,.388,1.094,.021,seal,FRONT-.014,1.002,0);
+rbox(.038,.339,1.005,.025,metalDark,FRONT-.048,1.009,0);
+for(let i=0;i<4;i++){
+  const yy=1.139-i*.088;
+  rbox(.052,.025,1.040,.009,chrome,FRONT-.070,yy,0);
+}
+for(const sign of [-1,1]){
+  // Sweeping chrome bands framing upper grille
+  curvedTube([[FRONT-.057,1.196,sign*.01],[FRONT-.059,1.188,sign*.53],[FRONT-.018,1.151,sign*.895]],.018,chrome);
+  // extended headlight clusters at front corners
+  rbox(.070,.208,.455,.030,seal,FRONT-.009,1.110,sign*.746);
+  rbox(.048,.168,.412,.027,lampLens,FRONT-.050,1.112,sign*.758);
+  for(let j=0;j<3;j++){
+    const zz=sign*(.604+j*.104);
+    rbox(.017,.080,.068,.013,lampSilver,FRONT-.079,1.105,zz);
+    rbox(.019,.043,.043,.010,windowGlass,FRONT-.091,1.105,zz);
+  }
+  rbox(.032,.019,.393,.007,chrome,FRONT-.082,1.192,sign*.758);
+  // Indicator visible from side
+  rbox(.165,.042,.027,.009,orange,FRONT+.044,1.073,sign*.953);
+  // lower bumper and rectangular foglight bezels
+  rbox(.137,.395,.226,.043,paint,FRONT+.036,.714,sign*.839);
+  rbox(.044,.107,.178,.022,seal,FRONT-.057,.584,sign*.819);
+  rbox(.049,.066,.110,.022,lampLens,FRONT-.082,.589,sign*.825);
+  rbox(.063,.035,.138,.011,softChrome,FRONT-.090,.508,sign*.82);
+  // small parking sensor, subtle and unlettered
+  const sensor=cylinder(.018,.003,softChrome,FRONT-.079,.715,sign*.80);
+  sensor.rotation.z=Math.PI/2;
+}
+rbox(.144,.273,1.630,.073,paint,FRONT+.028,.653,0);
+rbox(.067,.112,1.080,.030,seal,FRONT-.057,.595,0);
+for(let i=0;i<6;i++)rbox(.065,.09,.009,.004,metalDark,FRONT-.090,.595,-.45+i*.18);
+// blank front number plate recess: intentionally NO lettering
+rbox(.021,.132,.345,.014,blackPlastic,FRONT-.093,.752,0);
+rbox(.012,.116,.323,.011,metalDark,FRONT-.105,.752,0);
+rbox(.063,.038,1.40,.011,softChrome,FRONT-.038,.449,0);
+
+// ────────────────────────────────────────────────────────────────────────────
+// 6. UPRIGHT REAR: LARGE TINTED TAILGATE WINDOW, WRAPAROUND REAR LAMPS
+// ────────────────────────────────────────────────────────────────────────────
+rbox(.055,.66,1.76,.035,paint,REAR-.063,1.337,0);
+rbox(.032,.461,1.48,.034,seal,REAR-.026,1.472,0);
+rbox(.024,.429,1.439,.030,rearGlass,REAR-.005,1.472,0);
+// horizontal windshield wiper under glass
+rbox(.034,.013,.52,.005,blackPlastic,REAR+.015,1.267,-.17);
+for(const sign of [-1,1]){
+  rbox(.075,.441,.225,.045,seal,REAR-.027,1.211,sign*.825);
+  rbox(.082,.224,.211,.032,tailRed,REAR+.003,1.340,sign*.828);
+  rbox(.085,.080,.212,.024,tailWhite,REAR+.007,1.192,sign*.828);
+  rbox(.088,.115,.217,.028,tailRed,REAR+.003,1.107,sign*.828);
+  // sideward red lamp surfaces make the light visibly wrap the rear corner
+  rbox(.205,.28,.050,.022,tailRed,REAR-.082,1.323,sign*.943);
+  rbox(.173,.079,.049,.018,tailWhite,REAR-.103,1.188,sign*.948);
+}
+rbox(.115,.24,1.68,.050,paint,REAR-.023,.780,0);
+rbox(.041,.030,1.18,.009,chrome,REAR+.038,1.058,0);
+rbox(.028,.170,.375,.016,seal,REAR+.042,.857,0);
+rbox(.018,.151,.342,.012,metalDark,REAR+.057,.857,0); // blank rear plate recess
+rbox(.102,.135,1.27,.047,blackPlastic,REAR-.007,.515,0);
+rbox(.065,.035,1.42,.010,softChrome,REAR+.028,.456,0);
+
+// ────────────────────────────────────────────────────────────────────────────
+// 7. FOUR PROPER 3D TIRES AND 17-INCH SOLID-FACE ROSWELL-STYLE ALLOYS
+//    Slots, rings, 6 lug nuts, textured/treaded tires; NO logos or text.
+// ────────────────────────────────────────────────────────────────────────────
+const RIM_R=DIM.rimDiameter/2;
+const TIRE_W=DIM.tireWidth;
+const treadGeo=new THREE.BoxGeometry(.054,.022,.068);
+const treadMat=new THREE.MeshStandardMaterial({color:0x26292c,roughness:.98});
+function makeWheel(x,side,isFront){
+  const track=isFront?DIM.trackF:DIM.trackR;
+  const centerZ=side*track/2;
+  const outZ=centerZ+side*TIRE_W/2;
+  const g=new THREE.Group();car.add(g);
+  // Rubber carcass and molded shoulder bulges
+  cylinder(TIRE_RADIUS-.019,TIRE_W,tireMat,x,HUB_Y,centerZ);
+  for(const face of [-1,1]){
+    const z=centerZ+face*TIRE_W/2;
+    ring(TIRE_RADIUS-.056,.044,tireMat,x,HUB_Y,z);
+    ring(TIRE_RADIUS-.083,.012,tireGroove,x,HUB_Y,z+face*.009);
+    ring(TIRE_RADIUS-.110,.008,tireMat,x,HUB_Y,z+face*.009);
+  }
+  // Three staggered rows of raised staggered tread blocks: InstancedMesh saves draw calls.
+  const count=56*3;
+  const tread=new THREE.InstancedMesh(treadGeo,treadMat,count);
+  const dummy=new THREE.Object3D();let k=0;
+  for(let band=-1;band<=1;band++){
+    for(let i=0;i<56;i++){
+      const ang=(i+(band%2)*.5)*Math.PI*2/56;
+      const rad=TIRE_RADIUS-.013;
+      dummy.position.set(x+Math.sin(ang)*rad,HUB_Y+Math.cos(ang)*rad,centerZ+band*TIRE_W*.30);
+      dummy.rotation.set(0,0,-ang);
+      dummy.updateMatrix();tread.setMatrixAt(k++,dummy.matrix);
+    }
+  }
+  tread.instanceMatrix.needsUpdate=true;tread.castShadow=true;car.add(tread);
+  // Black wheel barrel behind KMC disc; rim lip is exactly 17 inches nominal.
+  cylinder(RIM_R-.005,TIRE_W-.019,rimShadow,x,HUB_Y,centerZ);
+  ring(RIM_R-.014,.015,rimMat,x,HUB_Y,outZ+side*.014);
+  ring(RIM_R-.037,.006,softChrome,x,HUB_Y,outZ+side*.019);
+  // Disc with 6 elongated outer windows, inspired by KM720 Roswell solid-face design.
+  const disc=new THREE.Shape();disc.absarc(0,0,RIM_R-.024,0,Math.PI*2,false);
+  for(let i=0;i<6;i++){
+    const a=i*Math.PI/3+.15;
+    const rad=RIM_R-.051;
+    const hole=new THREE.Path();
+    // The oval slot follows the wheel circumference (tangential orientation).
+    hole.absellipse(rad*Math.cos(a),rad*Math.sin(a),.013,.034,0,Math.PI*2,true,a);
+    disc.holes.push(hole);
+  }
+  const dishGeo=new THREE.ExtrudeGeometry(disc,{depth:.010,steps:1,bevelEnabled:true,bevelThickness:.002,bevelSize:.003,bevelSegments:2,curveSegments:14});
+  const dish=mesh(dishGeo,rimMat);
+  dish.position.set(x,HUB_Y,outZ+side*.024);
+  dish.rotation.y=side===1?0:Math.PI;
+  ring(RIM_R-.067,.005,metalDark,x,HUB_Y,outZ+side*.034);
+  ring(.070,.008,metalDark,x,HUB_Y,outZ+side*.035);
+  cylinder(.061,.015,rimMat,x,HUB_Y,outZ+side*.039);
+  cylinder(.039,.020,metalDark,x,HUB_Y,outZ+side*.054);
+  for(let i=0;i<6;i++){
+    const a=i*Math.PI/3;
+    const bx=x+Math.cos(a)*.079,by=HUB_Y+Math.sin(a)*.079;
+    cylinder(.012,.013,rimShadow,bx,by,outZ+side*.050);
+    cylinder(.008,.013,softChrome,bx,by,outZ+side*.058);
+  }
+}
+makeWheel(FRONT_X,1,true);makeWheel(FRONT_X,-1,true);
+makeWheel(REAR_X,1,false);makeWheel(REAR_X,-1,false);
+
+// ────────────────────────────────────────────────────────────────────────────
+// 8. SIDE-PROFILE ORTHOGRAPHIC CAMERA / IPAD FRIENDLY ORBIT CONTROLS
+// ────────────────────────────────────────────────────────────────────────────
+const target=new THREE.Vector3(.02,.993,0);
+const camera=new THREE.OrthographicCamera(-3,3,2,-2,.06,150);
+function sizeCamera(){
+  const w=holder.clientWidth||window.innerWidth;
+  const h=holder.clientHeight||window.innerHeight;
+  const aspect=w/h;
+  const halfH=Math.max(1.735,DIM.length*1.23/(2*aspect));
+  camera.left=-halfH*aspect;camera.right=halfH*aspect;
+  camera.top=halfH;camera.bottom=-halfH;camera.updateProjectionMatrix();
+  renderer.setSize(w,h,false);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1,2));
+}
+sizeCamera();
+camera.position.copy(target).add(new THREE.Vector3(0,.0,10));
+camera.lookAt(target);
+const controls=new OrbitControls(camera,renderer.domElement);
+controls.target.copy(target);
+controls.enableDamping=true;controls.dampingFactor=.07;
+controls.rotateSpeed=.58;controls.zoomSpeed=.83;controls.panSpeed=.75;
+controls.screenSpacePanning=true;
+controls.minZoom=.60;controls.maxZoom=4.7;
+controls.minPolarAngle=.014;controls.maxPolarAngle=Math.PI/2; // NEVER below the studio floor
+controls.enablePan=true;
+controls.touches.ONE=THREE.TOUCH.ROTATE;
+controls.touches.TWO=THREE.TOUCH.DOLLY_PAN;
+controls.mouseButtons.LEFT=THREE.MOUSE.ROTATE;
+controls.mouseButtons.MIDDLE=THREE.MOUSE.DOLLY;
+controls.mouseButtons.RIGHT=THREE.MOUSE.PAN;
+controls.autoRotateSpeed=.62;
+controls.update();
+
+// Smooth transitions to product-photography angles.
+const PRESET={
+  side:new THREE.Vector3(0,0,10),
+  front:new THREE.Vector3(-10,0,0),
+  rear:new THREE.Vector3(10,0,0),
+  quarter:new THREE.Vector3(-7.4,3.8,8.4),
+  top:new THREE.Vector3(0,10,.002)
+};
+let tween=null;
+const ease=t=>1-Math.pow(1-t,3);
+function activeView(id){document.querySelectorAll('[data-view]').forEach(el=>el.classList.toggle('active',el.dataset.view===id));}
+function setAuto(on){
+  controls.autoRotate=on;
+  const b=document.getElementById('rotate');
+  b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on));
+  b.textContent=on?'↻ Rotating':'↻ Auto';
+}
+function view(id,resetZoom=false){
+  if(!PRESET[id])return;
+  setAuto(false);activeView(id);
+  const from=camera.position.clone().sub(controls.target);
+  const to=PRESET[id].clone().normalize().multiplyScalar(Math.max(7,from.length()));
+  tween={from,to,start:performance.now(),duration:820,zoomStart:camera.zoom,zoomEnd:resetZoom?1:camera.zoom,
+    panStart:controls.target.clone(),panEnd:target.clone()};
+}
+for(const btn of document.querySelectorAll('[data-view]'))btn.addEventListener('click',()=>view(btn.dataset.view));
+document.getElementById('rotate').addEventListener('click',()=>{tween=null;setAuto(!controls.autoRotate);activeView('');});
+document.getElementById('reset').addEventListener('click',()=>view('side',true));
+// A manual drag should stop automatic rotation and preset animation.
+controls.addEventListener('start',()=>{tween=null;if(controls.autoRotate)setAuto(false);activeView('');});
+
+// Personalise the paint live. Every painted surface uses the SAME physical material.
+const paintInput=document.getElementById('customPaint');
+const swatches=Array.from(document.querySelectorAll('[data-paint]'));
+function setPaint(color,clicked){
+  paint.color.set(color);paintInput.value=color;
+  swatches.forEach(s=>s.classList.toggle('active',s===clicked));
+}
+swatches.forEach(s=>s.addEventListener('click',()=>setPaint(s.dataset.paint,s)));
+paintInput.addEventListener('input',e=>setPaint(e.target.value,null));
+const bgToggle=document.getElementById('bgToggle');
+bgToggle.addEventListener('click',()=>{
+  document.body.classList.toggle('cream');
+  document.getElementById('bgLabel').textContent=document.body.classList.contains('cream')?'Blue studio':'Cream studio';
+  bgToggle.setAttribute('aria-pressed',String(document.body.classList.contains('cream')));
+});
+bgToggle.setAttribute('aria-pressed','false');
+window.addEventListener('resize',sizeCamera,{passive:true});
+window.addEventListener('keydown',e=>{if(e.key.toLowerCase()==='r' && e.target.tagName!=='INPUT')view('side',true);});
+
+// ────────────────────────────────────────────────────────────────────────────
+// 9. RENDER LOOP — no external models or fetches, only a pinned Three.js CDN.
+// ────────────────────────────────────────────────────────────────────────────
+const clock=new THREE.Clock();
+function animate(){
+  requestAnimationFrame(animate);
+  if(tween){
+    const t=Math.min(1,(performance.now()-tween.start)/tween.duration);
+    const k=ease(t);
+    const direction=tween.from.clone().lerp(tween.to,k).normalize().multiplyScalar(10);
+    controls.target.copy(tween.panStart).lerp(tween.panEnd,k);
+    camera.position.copy(controls.target).add(direction);
+    camera.zoom=THREE.MathUtils.lerp(tween.zoomStart,tween.zoomEnd,k);
+    camera.updateProjectionMatrix();
+    if(t>=1)tween=null;
+  }
+  controls.update();
+  renderer.render(scene,camera);
+}
+renderer.render(scene,camera);
+document.getElementById('loader').classList.add('hidden');
+animate();
+</script>
+</body>
+</html>
