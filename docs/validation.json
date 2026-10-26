@@ -1,0 +1,128 @@
+{
+  "testedAt": "2026-10-26T18:46:30.062389+00:00",
+  "sourceSha256": "370a29257b673642209c2a7cf8fbddd6abdb7524a2597a4326379a3bd8a17683",
+  "chromium": {
+    "mode": "after",
+    "source": "index.html",
+    "threeVersion": "0.166.1",
+    "snapshots": [
+      "front.png",
+      "side.png",
+      "rear.png",
+      "quarter.png",
+      "top.png",
+      "orbit-000.png",
+      "orbit-045.png",
+      "orbit-090.png",
+      "orbit-135.png",
+      "orbit-180.png",
+      "orbit-225.png",
+      "orbit-270.png",
+      "orbit-315.png"
+    ],
+    "reusedSnapshots": [
+      "front.png",
+      "side.png",
+      "rear.png",
+      "quarter.png",
+      "top.png",
+      "orbit-000.png",
+      "orbit-045.png",
+      "orbit-090.png",
+      "orbit-135.png",
+      "orbit-180.png",
+      "orbit-225.png",
+      "orbit-270.png",
+      "orbit-315.png"
+    ],
+    "errors": [],
+    "checks": {
+      "autoRotate": {
+        "enabled": true,
+        "moved": true
+      },
+      "paintSwatch": true,
+      "customPaint": true,
+      "background": true,
+      "reset": true,
+      "model": {
+        "dimensions": {
+          "length": 5.17,
+          "width": 1.98,
+          "height": 1.93,
+          "wheelbase": 2.85,
+          "clearance": 0.23,
+          "trackF": 1.65,
+          "trackR": 1.645,
+          "tireWidth": 0.285,
+          "rimDiameter": 0.508,
+          "aspectRatio": 0.5
+        },
+        "bounds": {
+          "min": {
+            "x": -2.58500075340271,
+            "y": -2.0717637172318337e-05,
+            "z": -1.148316336250372
+          },
+          "max": {
+            "x": 2.585000514984131,
+            "y": 1.9300327291584547,
+            "z": 1.1483169322968199
+          }
+        },
+        "triangles": 831261,
+        "drawCalls": 40
+      }
+    },
+    "visualInspectionRequired": true
+  },
+  "webkit": {
+    "engine": "Playwright WebKit 27.2 on Linux WPE, iPad Pro 11 emulation",
+    "passed": true,
+    "errors": [],
+    "limitation": "This is WebKit engine emulation, not a physical iPad Safari run."
+  },
+  "touch": {
+    "touchRotate": {
+      "before": {
+        "position": [
+          0.019999999999999997,
+          0.9930000000000005,
+          8.4
+        ],
+        "zoom": 1,
+        "target": [
+          0.02,
+          0.993,
+          0
+        ]
+      },
+      "after": {
+        "position": [
+          -1.9503684935741952,
+          1.3246607407138455,
+          8.158899996482322
+        ],
+        "zoom": 1,
+        "target": [
+          0.02,
+          0.993,
+          0
+        ]
+      },
+      "passed": true
+    },
+    "touchPinch": {
+      "before": 1,
+      "after": 1.6953185806844666,
+      "passed": true
+    },
+    "resetZoom": true
+  },
+  "visualReview": {
+    "passed": true,
+    "presets": 5,
+    "rotatingAngles": 8,
+    "findings": "No visible floating/intersecting attachments, badges or glass/body shading artifacts in the reviewed screenshots. Physical iPad Safari was not available."
+  }
+}
