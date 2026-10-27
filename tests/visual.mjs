@@ -73,6 +73,8 @@ window.__visualSuppressRender=true;
 const __visualOriginalRender=renderer.render.bind(renderer);
 renderer.render=(...args)=>{if(!window.__visualSuppressRender)return __visualOriginalRender(...args)};
 window.__visualTest={camera,controls,car,paint,DIM,scene,renderer,THREE,target,
+ cameraSafety:typeof cameraSafety==='undefined'?null:cameraSafety,
+ enforceCameraSafety:typeof enforceCameraSafety==='function'?enforceCameraSafety:()=>{},
  get fittedDistance(){return typeof fittedDistance==='undefined'?controls.getDistance():fittedDistance},
  updateClipping:typeof updateClipping==='function'?updateClipping:()=>{},
  centreProjection:typeof centreProjection==='function'?centreProjection:()=>{},
@@ -168,6 +170,7 @@ try {
           position: t.camera.position.toArray(), target: t.controls.target.toArray(),
           distance: t.controls.getDistance(), zoom: t.camera.zoom,
           level: Math.abs(t.camera.position.y - t.controls.target.y) < 0.00001,
+          safePolar:!t.cameraSafety || t.controls.getPolarAngle()<=t.cameraSafety.maxPolarAngle+1e-6,
           widthFraction: b ? (b.maxX - b.minX) / 2 : null};
       }, view);
       presetObservations.push({studio, ...observation});
@@ -176,7 +179,9 @@ try {
     }
   }
   checks.presetButtons = presetObservations.every(o => o.active);
-  checks.sideLevel = options.mode === 'before' || presetObservations.filter(o => o.view === 'side').every(o => o.level);
+  const hasCameraSafety=await page.evaluate(()=>!!window.__visualTest.cameraSafety);
+  if(hasCameraSafety)checks.sideSafePolar=presetObservations.filter(o=>o.view==='side').every(o=>o.safePolar);
+  else checks.sideLevel=options.mode==='before'||presetObservations.filter(o=>o.view==='side').every(o=>o.level);
   checks.heroFraming = options.mode === 'before' || presetObservations
     .filter(o => o.view === 'side' || o.view === 'quarter')
     .every(o => o.widthFraction !== null && o.widthFraction >= .75 && o.widthFraction <= .85);

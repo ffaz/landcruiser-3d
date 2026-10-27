@@ -513,7 +513,7 @@ car.position.y=.0001;car.updateMatrixWorld(true);
 bakeContactShadow();
 renderer.shadowMap.needsUpdate=true;
 
-// 4. LONG-LENS CAMERA AND FRAMING; Side stays level at the wheel centres.
+// 4. LONG-LENS CAMERA AND FRAMING; all views stay above the ground.
 const target=new THREE.Vector3(.02,TIRE_RADIUS,0);
 const camera=new THREE.PerspectiveCamera(20,holder.clientWidth/holder.clientHeight,.2,80);
 const PRESET={
@@ -523,6 +523,40 @@ const PRESET={
 };
 let activePreset='side',fittedDistance=15,controls;
 const carBounds=new THREE.Box3().setFromObject(car);
+// Bounds come from the fitted, loaded meshes, including mirrors and rails.
+const cameraSafety=(()=>{
+ const sphere=carBounds.getBoundingSphere(new THREE.Sphere());
+ const panHalf=new THREE.Vector3(.18,.60,.15);
+ const panBox=new THREE.Box3(sphere.center.clone().sub(panHalf),sphere.center.clone().add(panHalf));
+ const collisionBox=carBounds.clone().expandByScalar(.30);
+ return {sphere,panBox,collisionBox,margin:.35,
+  minDistance:sphere.radius+panHalf.length()+.35,maxPolarAngle:THREE.MathUtils.degToRad(85)};
+})();
+const safetyOffset=new THREE.Vector3(),safetyShift=new THREE.Vector3(),safetyHit=new THREE.Vector3();
+const safetyRay=new THREE.Ray(),safetySpherical=new THREE.Spherical();
+function enforceCameraSafety(){
+ if(!controls)return false;
+ const previousPosition=camera.position.clone(),previousTarget=controls.target.clone();
+ // Move the camera with a clamped pan target, preserving the viewing direction.
+ controls.target.clamp(cameraSafety.panBox.min,cameraSafety.panBox.max);
+ safetyShift.copy(controls.target).sub(previousTarget);camera.position.add(safetyShift);
+ safetyOffset.copy(camera.position).sub(controls.target);
+ if(safetyOffset.lengthSq()<1e-10)safetyOffset.set(0,.2,1);
+ safetySpherical.setFromVector3(safetyOffset);
+ safetySpherical.radius=Math.max(cameraSafety.minDistance,safetySpherical.radius);
+ safetySpherical.phi=THREE.MathUtils.clamp(safetySpherical.phi,.014,cameraSafety.maxPolarAngle);
+ safetyOffset.setFromSpherical(safetySpherical);camera.position.copy(controls.target).add(safetyOffset);
+ // A second, explicit guard protects against a scripted pose inside the shell.
+ if(cameraSafety.collisionBox.containsPoint(camera.position)){
+  safetyRay.set(controls.target,safetyOffset.normalize());
+  if(safetyRay.intersectBox(cameraSafety.collisionBox,safetyHit)){
+   const exitDistance=safetyHit.distanceTo(controls.target)+.05;
+   camera.position.copy(controls.target).addScaledVector(safetyRay.direction,Math.max(exitDistance,cameraSafety.minDistance));
+  }
+ }
+ camera.lookAt(controls.target);
+ return previousPosition.distanceToSquared(camera.position)>1e-12 || previousTarget.distanceToSquared(controls.target)>1e-12;
+}
 const framingPoints=[];
 car.updateMatrixWorld(true);
 car.traverse(part=>{
@@ -548,7 +582,10 @@ function frameSpace(){
 }
 function fitView(id,ratio=1){
  const centre=id==='side'?target.clone():new THREE.Vector3(.02,.96,0);
- const direction=PRESET[id].clone().normalize(),right=new THREE.Vector3().crossVectors(camera.up,direction).normalize();
+ const direction=PRESET[id].clone().normalize();
+ const safePose=new THREE.Spherical().setFromVector3(direction);
+ safePose.phi=Math.min(safePose.phi,cameraSafety.maxPolarAngle);direction.setFromSpherical(safePose);
+ const right=new THREE.Vector3().crossVectors(camera.up,direction).normalize();
  const up=new THREE.Vector3().crossVectors(direction,right),space=frameSpace();
  const tanV=Math.tan(THREE.MathUtils.degToRad(camera.fov/2)),tanH=tanV*camera.aspect;
  let distance=4,low=Infinity,high=-Infinity,nearDepth=-Infinity;
@@ -560,14 +597,14 @@ function fitView(id,ratio=1){
  distance=Math.max(distance,nearDepth+(high-low)/2/(tanV*space.fraction*.96));
  // Fit the actual silhouette, avoiding empty corners of a diagonal bounding box.
  const probe=new THREE.PerspectiveCamera(camera.fov,camera.aspect,.1,500);probe.up.copy(camera.up);
- let lowDistance=Math.max(4.2,nearDepth+.5),highDistance=distance*1.1;
+ let lowDistance=Math.max(cameraSafety.minDistance,nearDepth+.5),highDistance=distance*1.1;
  for(let i=0;i<13;i++){
   const d=(lowDistance+highDistance)/2;probe.position.copy(centre).addScaledVector(direction,d);probe.lookAt(centre);probe.updateMatrixWorld(true);
   const b=projectedBounds(probe),fits=(b.maxX-b.minX)/2<=.80 && (b.maxY-b.minY)/2<=space.fraction*.96;
   if(fits)highDistance=d;else lowDistance=d;
  }
  distance=highDistance*1.003;
- return {centre,direction,baseDistance:distance,distance:THREE.MathUtils.clamp(distance*ratio,4.2,100)};
+ return {centre,direction,baseDistance:distance,distance:THREE.MathUtils.clamp(distance*ratio,cameraSafety.minDistance,100)};
 }
 function updateClipping(){
  const distance=camera.position.distanceTo(controls.target);
@@ -582,7 +619,7 @@ function centreProjection(){
 }
 function placeView(id,ratio=1){
  const fit=fitView(id,ratio);controls.target.copy(fit.centre);camera.position.copy(fit.centre).addScaledVector(fit.direction,fit.distance);
- camera.zoom=1;fittedDistance=fit.baseDistance;controls.update();updateClipping();centreProjection();
+ camera.zoom=1;fittedDistance=fit.baseDistance;controls.update();enforceCameraSafety();updateClipping();centreProjection();
 }
 function sizeCamera(){
  camera.aspect=(holder.clientWidth||window.innerWidth)/(holder.clientHeight||window.innerHeight);camera.updateProjectionMatrix();
@@ -593,11 +630,12 @@ function sizeCamera(){
 camera.position.copy(target).add(new THREE.Vector3(0,0,15));camera.lookAt(target);
 controls=new OrbitControls(camera,renderer.domElement);controls.target.copy(target);
 controls.enableDamping=true;controls.dampingFactor=.07;controls.rotateSpeed=.58;controls.zoomSpeed=.83;controls.panSpeed=.75;
-controls.screenSpacePanning=true;controls.minDistance=4.2;controls.maxDistance=100;
-controls.minPolarAngle=.014;controls.maxPolarAngle=Math.PI/2;controls.enablePan=true;
+controls.screenSpacePanning=true;controls.minDistance=cameraSafety.minDistance;controls.maxDistance=100;
+controls.minPolarAngle=.014;controls.maxPolarAngle=cameraSafety.maxPolarAngle;controls.enablePan=true;
 controls.touches.ONE=THREE.TOUCH.ROTATE;controls.touches.TWO=THREE.TOUCH.DOLLY_PAN;
 controls.mouseButtons.LEFT=THREE.MOUSE.ROTATE;controls.mouseButtons.MIDDLE=THREE.MOUSE.DOLLY;controls.mouseButtons.RIGHT=THREE.MOUSE.PAN;
 controls.autoRotateSpeed=.62;
+controls.addEventListener('change',()=>{enforceCameraSafety();requestRender();});
 sizeCamera();placeView('side');
 // Native multisample AA plus DPR<=2 keeps transparent silhouettes clean on iOS.
 controls.addEventListener('change',requestRender);
@@ -705,7 +743,8 @@ function animate(){
     if(t>=1)tween=null;
   }
   const moved=controls.update(Math.min(clock.getDelta(),.1));
-  if(wasTweening || moved || needsRender){updateClipping();renderFrame();needsRender=false;}
+  const guarded=enforceCameraSafety();
+  if(wasTweening || moved || guarded || needsRender){updateClipping();renderFrame();needsRender=false;}
 }
 renderFrame();
 document.getElementById('loader').classList.add('hidden');
