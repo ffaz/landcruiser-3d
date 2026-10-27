@@ -73,6 +73,9 @@ window.__visualSuppressRender=true;
 const __visualOriginalRender=renderer.render.bind(renderer);
 renderer.render=(...args)=>{if(!window.__visualSuppressRender)return __visualOriginalRender(...args)};
 window.__visualTest={camera,controls,car,paint,DIM,scene,renderer,THREE,target,
+ plinth:typeof plinth==='undefined'?null:plinth,
+ getBAKEDLOOK:()=>typeof BAKED_LOOK==='undefined'?null:BAKED_LOOK,
+ toyMaterials:()=>typeof BAKED_LOOK==='undefined'?null:({paint:{roughness:paint.roughness,clearcoat:paint.clearcoat,clearcoatRoughness:paint.clearcoatRoughness},glass:windowGlass.color.getHexString(),chromeRoughness:chrome.roughness,rimColor:rimMat.color.getHexString()}),
  cameraSafety:typeof cameraSafety==='undefined'?null:cameraSafety,
  enforceCameraSafety:typeof enforceCameraSafety==='function'?enforceCameraSafety:()=>{},
  get fittedDistance(){return typeof fittedDistance==='undefined'?controls.getDistance():fittedDistance},
@@ -225,7 +228,9 @@ try {
     checks.orbitPose = orbitPose;
     await page.evaluate(() => document.querySelector('#rotate').click());
     const paintChecks = [];
-    for (const color of ['#f4f4ef', '#a9b0b8', '#575c60', '#15191d']) {
+    const paintColors=await page.locator('[data-paint]').evaluateAll(nodes=>nodes.map(el=>el.dataset.paint));
+    checks.paintColors=paintColors;
+    for (const color of paintColors) {
       await page.evaluate(c => document.querySelector(`[data-paint="${c}"]`).click(), color);
       paintChecks.push(await page.evaluate(c => {
         const t = window.__visualTest;
@@ -286,6 +291,45 @@ try {
     }, initialSide, {timeout: 60000});
     checks.reset = true;
     await page.evaluate(() => window.__visualTest.pause());
+  }
+  // Asset data coverage is checked independently of a particular paint colour.
+  const bakedData=await page.evaluate(()=>{
+    const t=window.__visualTest;if(!t.getBAKEDLOOK())return null;
+    const summary={opaqueMeshes:0,coveredOpaqueMeshes:0,vertices:0,missing:[],strengths:t.getBAKEDLOOK()};
+    for(const root of [t.car,t.plinth].filter(Boolean))root.traverse(part=>{
+      if(!part.isMesh||/satin[ _]arch[ _]liner/i.test(part.name))return;
+      const materials=Array.isArray(part.material)?part.material:[part.material];
+      if(materials.every(m=>m.transparent))return;
+      summary.opaqueMeshes++;const a=part.geometry.getAttribute('bakedShading'),p=part.geometry.getAttribute('position');
+      if(a&&a.count===p.count&&a.itemSize>=2){summary.coveredOpaqueMeshes++;summary.vertices+=a.count}
+      else summary.missing.push(part.name);
+    });return summary;
+  });
+  if(bakedData){
+    checks.bakedCoverage=bakedData.opaqueMeshes>0&&bakedData.missing.length===0;
+    checks.bakedData=bakedData;
+    const materials=await page.evaluate(()=>window.__visualTest.toyMaterials());
+    checks.toyMaterials=Math.abs(materials.paint.roughness-.38)<.015&&Math.abs(materials.paint.clearcoat-.55)<.03&&
+      Math.abs(materials.paint.clearcoatRoughness-.20)<.02&&materials.glass==='20282c'&&Math.abs(materials.chromeRoughness-.24)<.03;
+    checks.materialObservations=materials;
+  }
+  if(!options.viewsOnly&&await page.locator('#baseToggle').count()){
+    await settleView('quarter');
+    const before=await page.evaluate(()=>{const t=window.__visualTest;return{position:t.camera.position.toArray(),target:t.controls.target.toArray(),distance:t.controls.getDistance()}});
+    await page.evaluate(()=>document.querySelector('#baseToggle').click());
+    checks.baseToggle=await page.evaluate(()=>document.querySelector('#baseToggle').getAttribute('aria-pressed')==='true'&&window.__visualTest.plinth?.visible===true);
+    const observations=[];
+    for(const view of ['front','side','rear','quarter','top']){
+      await settleView(view);
+      observations.push(await page.evaluate(view=>{const t=window.__visualTest,b=t.projectedBounds(t.camera);return{view,widthFraction:(b.maxX-b.minX)/2,bounds:b,visible:t.plinth.visible}},view));
+    }
+    checks.baseFraming=observations.every(o=>o.visible&&(!['side','quarter','top'].includes(o.view)||o.widthFraction>=.75)&&o.widthFraction<=.85&&
+      o.bounds.minX>=-1.01&&o.bounds.maxX<=1.01&&o.bounds.minY>=-1.01&&o.bounds.maxY<=1.01);
+    checks.baseObservations=observations;
+    await settleView('quarter');await capture('base-quarter');
+    await page.evaluate(()=>document.querySelector('#baseToggle').click());
+    checks.baseRestores=await page.evaluate(before=>{const t=window.__visualTest;return document.querySelector('#baseToggle').getAttribute('aria-pressed')==='false'&&t.plinth.visible===false&&
+      Math.abs(t.controls.getDistance()-before.distance)<.001&&t.camera.position.distanceTo(new t.THREE.Vector3(...before.position))<.001&&t.controls.target.distanceTo(new t.THREE.Vector3(...before.target))<.001},before);
   }
   const rendererObservations = await page.evaluate(() => {
     const t = window.__visualTest;

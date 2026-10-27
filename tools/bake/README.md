@@ -36,3 +36,9 @@ The rear garnish closes a measured opening in the imported exterior that otherwi
 ```sh
 blender -b -t 4 --python tools/bake/create_garnish.py -- /tmp/lc200-garnish --occluder /tmp/lc200-bake/vehicle.glb
 ```
+
+The optional two-tone bevelled base is also baked with Cycles AO and signed edge curvature. Its top sits just below the existing tyres; no car dimensions change.
+
+```sh
+blender -b -t 4 --python tools/bake/create_plinth.py -- /tmp/lc200-plinth --samples 32 --distance .35
+```

@@ -1,0 +1,87 @@
+{
+  "blenderVersion": "4.3.2",
+  "engine": "Cycles CPU",
+  "samples": 32,
+  "aoDistanceMetres": 0.35,
+  "aoBakeSeconds": 0.01764822006225586,
+  "groundY": -0.2201,
+  "deckTopY": -0.002,
+  "bottomY": -0.22,
+  "materials": [
+    "BaseTop",
+    "BaseEdge"
+  ],
+  "objects": [
+    {
+      "name": "BaseTop",
+      "sourceVertices": 146,
+      "exportedVertices": 252,
+      "triangles": 288,
+      "bounds": {
+        "min": [
+          -3.0,
+          -0.05700000002980232,
+          -1.5499999523162842
+        ],
+        "max": [
+          3.0,
+          -0.0020000000949949026,
+          1.5499999523162842
+        ]
+      },
+      "aoQuantiles": [
+        0.0,
+        0.015625,
+        0.703125,
+        1.0,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        -1.647752008860502e-08,
+        0.026564253565235733,
+        0.8252191172492829,
+        0.9599172846856248,
+        0.9602480005352556
+      ]
+    },
+    {
+      "name": "BaseEdge",
+      "sourceVertices": 146,
+      "exportedVertices": 274,
+      "triangles": 288,
+      "bounds": {
+        "min": [
+          -3.0299999713897705,
+          -0.2199999988079071,
+          -1.5800000429153442
+        ],
+        "max": [
+          3.0299999713897705,
+          -0.05700000002980232,
+          1.5800000429153442
+        ]
+      },
+      "aoQuantiles": [
+        0.0,
+        0.015625,
+        0.3828125,
+        0.9375,
+        0.9375
+      ],
+      "curvatureQuantiles": [
+        0.0,
+        0.03025438913912909,
+        0.6969690533453337,
+        0.9569203978661405,
+        0.9578283202487325
+      ]
+    }
+  ],
+  "encoding": "COLOR_0 normalized U8 VEC3 four-byte stride, linear R=Cycles AO, G=.5+.5signedcurvature, B=1",
+  "triangles": 576,
+  "glbBytes": 20504,
+  "gzipBytes": 6995,
+  "base64Bytes": 9328,
+  "sha256": "3ddee5eeb6d2ae568e0c933c49a0078ac2e8f319642bee094e4071c41b4f9eea",
+  "totalSeconds": 0.09992265701293945
+}
