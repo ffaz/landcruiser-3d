@@ -1,0 +1,71 @@
+{
+  "blenderVersion": "4.3.2",
+  "engine": "Cycles CPU",
+  "samples": 32,
+  "aoDistanceMetres": 0.35,
+  "aoBakeSeconds": 0.1842057704925537,
+  "groundY": -0.0001,
+  "garnishCentre": [
+    2.43,
+    1.065,
+    0
+  ],
+  "width": 1.06,
+  "endTaperMetres": 0.05,
+  "endYRange": [
+    1.029,
+    1.102
+  ],
+  "occluder": "Source LC200 GLB, GXR fitted for AO only; transparent glazing excluded",
+  "materials": [
+    "Garnish"
+  ],
+  "objects": [
+    {
+      "name": "Garnish",
+      "sourceVertices": 666,
+      "exportedVertices": 702,
+      "triangles": 1328,
+      "bounds": {
+        "min": [
+          2.386265754699707,
+          1.0199999809265137,
+          -0.5299999713897705
+        ],
+        "max": [
+          2.430000066757202,
+          1.1100000143051147,
+          0.5299999713897705
+        ]
+      },
+      "aoQuantiles": [
+        0.0,
+        0.0625,
+        0.75,
+        1.0,
+        1.0
+      ],
+      "frontAOQuantiles": [
+        0.0,
+        0.03125,
+        0.71875,
+        1.0,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        -0.2704833361835828,
+        -0.26293037743434017,
+        0.26274712223182917,
+        0.999161078334344,
+        0.9994074539357514
+      ]
+    }
+  ],
+  "encoding": "COLOR_0 normalized U8 VEC3 four-byte stride, linear R=Cycles AO, G=.5+.5signedcurvature, B=1",
+  "triangles": 1328,
+  "glbBytes": 28900,
+  "gzipBytes": 15234,
+  "base64Bytes": 20312,
+  "sha256": "122ed1925aeacdb59cd636187f632478d06374d59713f555072095c72099999d",
+  "totalSeconds": 1.0757811069488525
+}

@@ -17,3 +17,9 @@ The first 10 m AO-distance experiment was rejected because it shaded broad outer
 ## 3. Satin toy materials
 
 Paint uses roughness 0.38, clearcoat 0.55 and clearcoat roughness 0.20. Glazing is neutral #20282c; rims retain the existing shape with brighter satin gunmetal; chrome roughness is 0.24. A single overhead directional key plus hemisphere and the existing environment replaces the previous multi-light reflection rig. Four simple satin arch liners close the openings behind the tyres without adding suspension or underbody details. Front/quarter inspection found no detached or intersecting liners. [Material-stage render check](materials-smoke.json): zero console errors.
+
+## 4. Model and render fixes
+
+The apparent brown garnish was an opening through the imported exterior: rear-view raycasts hit the tan cabin, not a wood material. A fitted, crowned satin-metal backfill now closes it. The new part has real Cycles AO/curvature, is recessed behind the surrounding shell and is trimmed to the measured inner-lamp/black-trim boundary. Raycasts now hit the exterior garnish; clear lamp lenses remain exposed. [Garnish bake](garnish-bake.json) and [rear render/raycast verification](render-fixes.json).
+
+The spoiler is reduced to half its source depth, with a shallow crown and slight trailing-tip drop; its lower feet remain attached and the upper supports/lens move together. These are photo-guided artist adjustments, not OEM dimensions. Side and Top were checked against the existing reference comparison. The second directional floor shadow is removed. One centred, depth-baked contact map is stronger and more softly blurred, eliminating the Rear steps and Quarter offset ghost. It is generated once at load, with no per-frame postprocessing. The initial meta theme colour is Cream and still follows the studio toggle.

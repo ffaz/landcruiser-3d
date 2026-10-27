@@ -28,3 +28,11 @@ The second channel is signed edge curvature. A temporary copy of each opaque mes
 These are **linear data**, not sRGB colours. The viewer reads R/G in a small material shader patch without Three's usual vertex-colour tint multiplication. U8 neutral G is 128/255, so the shader applies a one-quantisation-step dead band around 0.5. All transparent primitives, including the second clear-glass primitive, receive neutral R=255, G=128, B=255.
 
 Outputs are `vehicle-baked.glb`, `interior-baked.glb`, deterministic gzip files (`mtime=0`), and `*.base64` strings for the two embedded script elements. `packing-report.json` measures exact GLB/gzip/Base64 sizes and their increment; `verify_assets.py` checks that original binary data and node/accessor/view prefixes are unchanged and every primitive has the right colour count. `.blend`, GLBs and NumPy intermediates stay outside the single-file application.
+
+## Tailgate backfill and optional base
+
+The rear garnish closes a measured opening in the imported exterior that otherwise exposes the tan cabin between the lamps. It is a separate fitted part loaded after the existing GXR deformation. Its geometry is an artist fit to that opening, not an OEM measurement. Generate its real AO/curvature bake against the GXR-fitted source-body occluder:
+
+```sh
+blender -b -t 4 --python tools/bake/create_garnish.py -- /tmp/lc200-garnish --occluder /tmp/lc200-bake/vehicle.glb
+```

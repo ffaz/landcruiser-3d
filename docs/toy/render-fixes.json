@@ -1,0 +1,1381 @@
+{
+  "mode": "after",
+  "source": "/workspace/lc-toy/stage4-trimmed.html",
+  "sourceSha256": "ad8bd36a7c0897a8036b50f4d0dc2cd24c441d8b0227ba42082c0918699be8fb",
+  "threeVersion": "0.166.1",
+  "checksOnly": false,
+  "bothStudios": false,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "method": "Real UI and camera updates; test-only intermediate GPU draw suppression; product final frame rendered for every screenshot.",
+  "snapshots": [
+    "rear.png"
+  ],
+  "reusedSnapshots": [],
+  "errors": [],
+  "checks": {
+    "defaultCream": true,
+    "presetButtons": true,
+    "sideSafePolar": true,
+    "heroFraming": true,
+    "presetObservations": [
+      {
+        "studio": "cream",
+        "view": "rear",
+        "active": true,
+        "position": [
+          8.832337834507433,
+          1.7309796596799902,
+          5.396000661017323e-16
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 8.845999533412344,
+        "zoom": 1,
+        "level": false,
+        "safePolar": true,
+        "widthFraction": 0.5530382164622007
+      }
+    ],
+    "nativeAntialias": true,
+    "pixelRatioCap": true,
+    "longLens": true,
+    "renderer": {
+      "cameraType": "PerspectiveCamera",
+      "fov": 20,
+      "nativeAntialias": true,
+      "devicePixelRatio": 1,
+      "rendererPixelRatio": 1
+    },
+    "toyDetails": {
+      "garnish": {
+        "garnishTriangles": 1328
+      },
+      "paint": {
+        "roughness": 0.38,
+        "clearcoat": 0.55,
+        "clearcoatRoughness": 0.2
+      },
+      "glassColor": "20282c",
+      "rimColor": "858c92",
+      "chromeRoughness": 0.24,
+      "themeColor": "#EFEAE3"
+    },
+    "garnishRayHits": [
+      {
+        "pixel": [
+          720,
+          501
+        ],
+        "hits": [
+          {
+            "name": "Garnish",
+            "materialName": "",
+            "color": "bdc2c6",
+            "metalness": 0.35,
+            "roughness": 0.42,
+            "materialIndex": 0,
+            "faceIndex": 654,
+            "point": [
+              2.4299312896488034,
+              1.064256077688959,
+              2.2780812858133495e-07
+            ],
+            "localPoint": [
+              2.4299312896488034,
+              1.064156077688959,
+              2.2780812858133495e-07
+            ],
+            "distance": 6.437028033217784
+          },
+          {
+            "name": "Garnish",
+            "materialName": "",
+            "color": "bdc2c6",
+            "metalness": 0.35,
+            "roughness": 0.42,
+            "materialIndex": 0,
+            "faceIndex": 674,
+            "point": [
+              2.411777148111229,
+              1.0623655707070765,
+              2.2845408271918968e-07
+            ],
+            "localPoint": [
+              2.411777148111229,
+              1.0622655707070765,
+              2.2845408271918968e-07
+            ],
+            "distance": 6.455280344622503
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 8880,
+            "point": [
+              0.8644527880778323,
+              0.9012327790614273,
+              2.835104218414918e-07
+            ],
+            "localPoint": [
+              0.8644527880778323,
+              0.9011327790614273,
+              2.835104218414918e-07
+            ],
+            "distance": 8.01097197592232
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 9648,
+            "point": [
+              0.5173691821871511,
+              0.8650887411362462,
+              2.9586022593124086e-07
+            ],
+            "localPoint": [
+              0.5173691821871511,
+              0.8649887411362462,
+              2.9586022593124086e-07
+            ],
+            "distance": 8.35993246216054
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 418,
+            "point": [
+              0.25524979808553816,
+              0.8377925715704677,
+              3.051868636255611e-07
+            ],
+            "localPoint": [
+              0.25524979808553816,
+              0.8376925715704677,
+              3.051868636255611e-07
+            ],
+            "distance": 8.623469276277225
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 458,
+            "point": [
+              -0.35584151128264985,
+              0.7741557212937966,
+              3.269304949108208e-07
+            ],
+            "localPoint": [
+              -0.35584151128264985,
+              0.7740557212937966,
+              3.269304949108208e-07
+            ],
+            "distance": 9.237865107235137
+          }
+        ]
+      },
+      {
+        "pixel": [
+          650,
+          505
+        ],
+        "hits": [
+          {
+            "name": "Garnish",
+            "materialName": "",
+            "color": "bdc2c6",
+            "metalness": 0.35,
+            "roughness": 0.42,
+            "materialIndex": 0,
+            "faceIndex": 834,
+            "point": [
+              2.4275421284876755,
+              1.0548759532207441,
+              0.15896058415660566
+            ],
+            "localPoint": [
+              2.4275421284876755,
+              1.0547759532207441,
+              0.15896058415660566
+            ],
+            "distance": 6.442343729191454
+          },
+          {
+            "name": "Garnish",
+            "materialName": "",
+            "color": "bdc2c6",
+            "metalness": 0.35,
+            "roughness": 0.42,
+            "materialIndex": 0,
+            "faceIndex": 854,
+            "point": [
+              2.4093760149330388,
+              1.052958300063641,
+              0.1594114488141288
+            ],
+            "localPoint": [
+              2.4093760149330388,
+              1.0528583000636411,
+              0.1594114488141288
+            ],
+            "distance": 6.460616341326842
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 9009,
+            "point": [
+              0.8602546753313751,
+              0.8894297930613966,
+              0.1978590815529994
+            ],
+            "localPoint": [
+              0.8602546753313751,
+              0.8893297930613966,
+              0.1978590815529994
+            ],
+            "distance": 8.018819382613458
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 9638,
+            "point": [
+              0.5270834093559671,
+              0.8542595334385992,
+              0.2061280570979757
+            ],
+            "localPoint": [
+              0.5270834093559671,
+              0.8541595334385992,
+              0.2061280570979757
+            ],
+            "distance": 8.35394386036785
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 4280,
+            "point": [
+              -0.00839548905946863,
+              0.7977332546052063,
+              0.21941810449412452
+            ],
+            "localPoint": [
+              -0.00839548905946863,
+              0.7976332546052063,
+              0.21941810449412452
+            ],
+            "distance": 8.892561996162359
+          },
+          {
+            "name": "black_12",
+            "materialName": "",
+            "color": "0d1115",
+            "metalness": 0,
+            "roughness": 0.56,
+            "materialIndex": 0,
+            "faceIndex": 24,
+            "point": [
+              -2.3048163423580834,
+              0.555318239080789,
+              0.2764129591413481
+            ],
+            "localPoint": [
+              -0.8980028251153924,
+              -0.20757155120372767,
+              0.1081574452286959
+            ],
+            "distance": 11.20244558385086
+          }
+        ]
+      },
+      {
+        "pixel": [
+          800,
+          505
+        ],
+        "hits": [
+          {
+            "name": "Garnish",
+            "materialName": "",
+            "color": "bdc2c6",
+            "metalness": 0.35,
+            "roughness": 0.42,
+            "materialIndex": 0,
+            "faceIndex": 438,
+            "point": [
+              2.427038552262842,
+              1.0548227946552375,
+              -0.18168303431507993
+            ],
+            "localPoint": [
+              2.427038552262842,
+              1.0547227946552375,
+              -0.18168303431507993
+            ],
+            "distance": 6.443450607104946
+          },
+          {
+            "name": "Garnish",
+            "materialName": "",
+            "color": "bdc2c6",
+            "metalness": 0.35,
+            "roughness": 0.42,
+            "materialIndex": 0,
+            "faceIndex": 458,
+            "point": [
+              2.4088708909145913,
+              1.0529049781097848,
+              -0.18219835072649396
+            ],
+            "localPoint": [
+              2.4088708909145913,
+              1.0528049781097848,
+              -0.18219835072649396
+            ],
+            "distance": 6.461726478908245
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 8832,
+            "point": [
+              0.8610131927903666,
+              0.8895098637598196,
+              -0.22610254175511643
+            ],
+            "localPoint": [
+              0.8610131927903666,
+              0.8894098637598196,
+              -0.22610254175511643
+            ],
+            "distance": 8.018803546694468
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 9320,
+            "point": [
+              0.5291595996858671,
+              0.8544787004568447,
+              -0.23551539899829266
+            ],
+            "localPoint": [
+              0.5291595996858671,
+              0.8543787004568447,
+              -0.23551539899829266
+            ],
+            "distance": 8.352633730381035
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 5612,
+            "point": [
+              -0.004664479233696284,
+              0.7981271078501536,
+              -0.250657045652869
+            ],
+            "localPoint": [
+              -0.004664479233696284,
+              0.7980271078501536,
+              -0.250657045652869
+            ],
+            "distance": 8.889637379053035
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 5486,
+            "point": [
+              -0.06369312752414302,
+              0.7918959195768196,
+              -0.2523313630360792
+            ],
+            "localPoint": [
+              -0.06369312752414302,
+              0.7917959195768196,
+              -0.2523313630360792
+            ],
+            "distance": 8.949017614527433
+          }
+        ]
+      },
+      {
+        "pixel": [
+          720,
+          470
+        ],
+        "hits": [
+          {
+            "name": "carpaint_6",
+            "materialName": "",
+            "color": "f4f4ef",
+            "metalness": 0.04,
+            "roughness": 0.38,
+            "materialIndex": 0,
+            "faceIndex": 12211,
+            "point": [
+              2.447510409703254,
+              1.1365576275279805,
+              2.269652399881371e-07
+            ],
+            "localPoint": [
+              0.9552065222777372,
+              0.0147303591082798,
+              -1.903805364718156e-06
+            ],
+            "distance": 6.412437820114854
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 8879,
+            "point": [
+              0.8928968978689653,
+              0.9918244246655945,
+              2.8222800662027124e-07
+            ],
+            "localPoint": [
+              0.8928968978689653,
+              0.9917244246655945,
+              2.8222800662027124e-07
+            ],
+            "distance": 7.97377406551126
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 416,
+            "point": [
+              0.09944412924394364,
+              0.9179546431096445,
+              3.1043334180638336e-07
+            ],
+            "localPoint": [
+              0.09944412924394364,
+              0.9178546431096445,
+              3.1043334180638336e-07
+            ],
+            "distance": 8.770658022349291
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 730,
+            "point": [
+              -0.5703893450153306,
+              0.8555937132862592,
+              3.342443087692946e-07
+            ],
+            "localPoint": [
+              -0.5703893450153306,
+              0.8554937132862592,
+              3.342443087692946e-07
+            ],
+            "distance": 9.4433881084958
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 440,
+            "point": [
+              -0.6097308720689458,
+              0.8519310503976236,
+              3.35642805316485e-07
+            ],
+            "localPoint": [
+              -0.6097308720689458,
+              0.8518310503976236,
+              3.35642805316485e-07
+            ],
+            "distance": 9.482899763109927
+          },
+          {
+            "name": "carpaint_6",
+            "materialName": "",
+            "color": "f4f4ef",
+            "metalness": 0.04,
+            "roughness": 0.38,
+            "materialIndex": 0,
+            "faceIndex": 24774,
+            "point": [
+              -2.5276231080533007,
+              0.6733769056241105,
+              4.0381925576925957e-07
+            ],
+            "localPoint": [
+              -0.9781716649199917,
+              -0.16526551462321565,
+              -1.8350784259919505e-06
+            ],
+            "distance": 11.409085686499688
+          }
+        ]
+      },
+      {
+        "pixel": [
+          720,
+          490
+        ],
+        "hits": [
+          {
+            "name": "Garnish",
+            "materialName": "",
+            "color": "bdc2c6",
+            "metalness": 0.35,
+            "roughness": 0.42,
+            "materialIndex": 0,
+            "faceIndex": 658,
+            "point": [
+              2.4265991594265026,
+              1.0890122887692606,
+              2.2784925074523978e-07
+            ],
+            "localPoint": [
+              2.4265991594265026,
+              1.0889122887692606,
+              2.2784925074523978e-07
+            ],
+            "distance": 6.437826502690304
+          },
+          {
+            "name": "Garnish",
+            "materialName": "",
+            "color": "bdc2c6",
+            "metalness": 0.35,
+            "roughness": 0.42,
+            "materialIndex": 0,
+            "faceIndex": 670,
+            "point": [
+              2.4090296796151245,
+              1.0872515187261966,
+              2.2847418925812332e-07
+            ],
+            "localPoint": [
+              2.4090296796151245,
+              1.0871515187261966,
+              2.2847418925812332e-07
+            ],
+            "distance": 6.455483992092452
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 8879,
+            "point": [
+              0.8741235427555392,
+              0.9334270017961419,
+              2.8307011178302604e-07
+            ],
+            "localPoint": [
+              0.8741235427555392,
+              0.9333270017961419,
+              2.8307011178302604e-07
+            ],
+            "distance": 7.998078829040244
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 9646,
+            "point": [
+              0.43638954729562407,
+              0.8895583776643433,
+              2.986401135758014e-07
+            ],
+            "localPoint": [
+              0.43638954729562407,
+              0.8894583776643433,
+              2.986401135758014e-07
+            ],
+            "distance": 8.438005535395426
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 9149,
+            "point": [
+              0.42172638726598066,
+              0.8880888718398093,
+              2.9916167559821054e-07
+            ],
+            "localPoint": [
+              0.42172638726598066,
+              0.8879888718398093,
+              2.9916167559821054e-07
+            ],
+            "distance": 8.452742146587395
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 418,
+            "point": [
+              0.2563319341867061,
+              0.871513446648088,
+              3.050446820762743e-07
+            ],
+            "localPoint": [
+              0.2563319341867061,
+              0.8714134466480881,
+              3.050446820762743e-07
+            ],
+            "distance": 8.618965098762114
+          }
+        ]
+      },
+      {
+        "pixel": [
+          720,
+          510
+        ],
+        "hits": [
+          {
+            "name": "Garnish",
+            "materialName": "",
+            "color": "bdc2c6",
+            "metalness": 0.35,
+            "roughness": 0.42,
+            "materialIndex": 0,
+            "faceIndex": 652,
+            "point": [
+              2.427143816698911,
+              1.0434158643387048,
+              2.2797070562160856e-07
+            ],
+            "localPoint": [
+              2.427143816698911,
+              1.0433158643387048,
+              2.2797070562160856e-07
+            ],
+            "distance": 6.441991491645594
+          },
+          {
+            "name": "Garnish",
+            "materialName": "",
+            "color": "bdc2c6",
+            "metalness": 0.35,
+            "roughness": 0.42,
+            "materialIndex": 0,
+            "faceIndex": 676,
+            "point": [
+              2.4086588912338645,
+              1.0414316050837922,
+              2.2862861254526126e-07
+            ],
+            "localPoint": [
+              2.4086588912338645,
+              1.0413316050837922,
+              2.2862861254526126e-07
+            ],
+            "distance": 6.4605826119517795
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 8880,
+            "point": [
+              0.8566250633683694,
+              0.87482895944678,
+              2.838678832162036e-07
+            ],
+            "localPoint": [
+              0.8566250633683694,
+              0.87472895944678,
+              2.838678832162036e-07
+            ],
+            "distance": 8.021532785523018
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 9476,
+            "point": [
+              0.6313885861733937,
+              0.8506510115690256,
+              2.918843958110702e-07
+            ],
+            "localPoint": [
+              0.6313885861733937,
+              0.8505510115690256,
+              2.918843958110702e-07
+            ],
+            "distance": 8.248063233416412
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 418,
+            "point": [
+              0.25436366339257255,
+              0.8101793746248993,
+              3.053032926065245e-07
+            ],
+            "localPoint": [
+              0.25436366339257255,
+              0.8100793746248993,
+              3.053032926065245e-07
+            ],
+            "distance": 8.627254142847034
+          },
+          {
+            "name": "carpaint_6",
+            "materialName": "",
+            "color": "f4f4ef",
+            "metalness": 0.04,
+            "roughness": 0.38,
+            "materialIndex": 0,
+            "faceIndex": 35569,
+            "point": [
+              -2.5306081398085762,
+              0.5112273401348353,
+              4.0442472184724226e-07
+            ],
+            "localPoint": [
+              -0.9793316730410089,
+              -0.22827818189368515,
+              -1.8348431368476326e-06
+            ],
+            "distance": 11.42822545001018
+          }
+        ]
+      },
+      {
+        "pixel": [
+          500,
+          505
+        ],
+        "hits": [
+          {
+            "name": "Garnish",
+            "materialName": "",
+            "color": "bdc2c6",
+            "metalness": 0.35,
+            "roughness": 0.42,
+            "materialIndex": 0,
+            "faceIndex": 1230,
+            "point": [
+              2.4130369667090967,
+              1.0533447578335016,
+              0.5007213574700807
+            ],
+            "localPoint": [
+              2.4130369667090967,
+              1.0532447578335016,
+              0.5007213574700807
+            ],
+            "distance": 6.474359780653502
+          },
+          {
+            "name": "Garnish",
+            "materialName": "",
+            "color": "bdc2c6",
+            "metalness": 0.35,
+            "roughness": 0.42,
+            "materialIndex": 0,
+            "faceIndex": 1253,
+            "point": [
+              2.394817825605835,
+              1.0514215069768282,
+              0.5021424955742203
+            ],
+            "localPoint": [
+              2.394817825605835,
+              1.0513215069768282,
+              0.5021424955742203
+            ],
+            "distance": 6.492735188945816
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 6513,
+            "point": [
+              0.8598395512367487,
+              0.8893859716888032,
+              0.6218746005273847
+            ],
+            "localPoint": [
+              0.8598395512367487,
+              0.8892859716888032,
+              0.6218746005273847
+            ],
+            "distance": 8.040879108107626
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 6901,
+            "point": [
+              0.5086875471541621,
+              0.8523176275310518,
+              0.6492653260571069
+            ],
+            "localPoint": [
+              0.5086875471541621,
+              0.8522176275310518,
+              0.6492653260571069
+            ],
+            "distance": 8.395042974072041
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 6761,
+            "point": [
+              0.5009802055888706,
+              0.8515040243439363,
+              0.6498665177772859
+            ],
+            "localPoint": [
+              0.5009802055888706,
+              0.8514040243439364,
+              0.6498665177772859
+            ],
+            "distance": 8.402816422189483
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 3922,
+            "point": [
+              -0.007250378306091321,
+              0.7978541349049382,
+              0.6895097613510954
+            ],
+            "localPoint": [
+              -0.007250378306091321,
+              0.7977541349049382,
+              0.6895097613510954
+            ],
+            "distance": 8.915406144876236
+          }
+        ]
+      },
+      {
+        "pixel": [
+          940,
+          505
+        ],
+        "hits": [
+          {
+            "name": "Garnish",
+            "materialName": "",
+            "color": "bdc2c6",
+            "metalness": 0.35,
+            "roughness": 0.42,
+            "materialIndex": 0,
+            "faceIndex": 43,
+            "point": [
+              2.4130486091393033,
+              1.0533459868329227,
+              -0.500719992457556
+            ],
+            "localPoint": [
+              2.4130486091393033,
+              1.0532459868329227,
+              -0.500719992457556
+            ],
+            "distance": 6.474348003030904
+          },
+          {
+            "name": "Garnish",
+            "materialName": "",
+            "color": "bdc2c6",
+            "metalness": 0.35,
+            "roughness": 0.42,
+            "materialIndex": 0,
+            "faceIndex": 65,
+            "point": [
+              2.3948177297634583,
+              1.0514214968595057,
+              -0.5021420448784835
+            ],
+            "localPoint": [
+              2.3948177297634583,
+              1.0513214968595057,
+              -0.5021420448784835
+            ],
+            "distance": 6.492735250175659
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 7737,
+            "point": [
+              0.8586078667963193,
+              0.8892559524885687,
+              -0.6219701074556168
+            ],
+            "localPoint": [
+              0.8586078667963193,
+              0.8891559524885687,
+              -0.6219701074556168
+            ],
+            "distance": 8.042121312924264
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 8129,
+            "point": [
+              0.5065979820000877,
+              0.8520970486382341,
+              -0.6494277247512522
+            ],
+            "localPoint": [
+              0.5065979820000877,
+              0.8519970486382341,
+              -0.6494277247512522
+            ],
+            "distance": 8.39715041578369
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 7804,
+            "point": [
+              0.5023057931646893,
+              0.8516439561566568,
+              -0.6497625257994422
+            ],
+            "localPoint": [
+              0.5023057931646893,
+              0.8515439561566568,
+              -0.6497625257994422
+            ],
+            "distance": 8.401479419079767
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 5394,
+            "point": [
+              -0.007248191944212223,
+              0.7978543657018968,
+              -0.6895089616777562
+            ],
+            "localPoint": [
+              -0.007248191944212223,
+              0.7977543657018968,
+              -0.6895089616777562
+            ],
+            "distance": 8.91540389110526
+          }
+        ]
+      },
+      {
+        "pixel": [
+          480,
+          500
+        ],
+        "hits": [
+          {
+            "name": "clearglass_27_1",
+            "materialName": "",
+            "color": "dce8f2",
+            "metalness": 0,
+            "roughness": 0.055,
+            "materialIndex": 0,
+            "faceIndex": 39154,
+            "point": [
+              2.417082929611704,
+              1.0652043018436852,
+              0.545812841978577
+            ],
+            "localPoint": [
+              0.9832318565285433,
+              0.08447578317120608,
+              0.21700851191460513
+            ],
+            "distance": 6.472763241488098
+          },
+          {
+            "name": "clearglass_27_1",
+            "materialName": "",
+            "color": "dce8f2",
+            "metalness": 0,
+            "roughness": 0.055,
+            "materialIndex": 0,
+            "faceIndex": 39018,
+            "point": [
+              2.4136373609187545,
+              1.0648467206152685,
+              0.5461059925498967
+            ],
+            "localPoint": [
+              0.9818619397997375,
+              0.08433361316956967,
+              0.21712506506083365
+            ],
+            "distance": 6.476239697328492
+          },
+          {
+            "name": "clearglass_27_1",
+            "materialName": "",
+            "color": "dce8f2",
+            "metalness": 0,
+            "roughness": 0.055,
+            "materialIndex": 0,
+            "faceIndex": 51845,
+            "point": [
+              2.4133067130424015,
+              1.0648124059681563,
+              0.546134124223503
+            ],
+            "localPoint": [
+              0.9817304781753946,
+              0.084319970078019,
+              0.21713624987637994
+            ],
+            "distance": 6.476573309235058
+          },
+          {
+            "name": "black_12",
+            "materialName": "",
+            "color": "0d1115",
+            "metalness": 0,
+            "roughness": 0.56,
+            "materialIndex": 0,
+            "faceIndex": 5821,
+            "point": [
+              2.402702304275052,
+              1.0637118800893894,
+              0.5470363522054952
+            ],
+            "localPoint": [
+              0.9439944863152117,
+              -0.008643030643108507,
+              0.21404923235754983
+            ],
+            "distance": 6.487272779214752
+          },
+          {
+            "name": "chrome_2",
+            "materialName": "",
+            "color": "e1e4e5",
+            "metalness": 1,
+            "roughness": 0.24,
+            "materialIndex": 0,
+            "faceIndex": 26511,
+            "point": [
+              2.399791051287245,
+              1.0634097501618274,
+              0.547284042950532
+            ],
+            "localPoint": [
+              0.9853708143103171,
+              0.009737689158719198,
+              0.22312568051254716
+            ],
+            "distance": 6.490210129578144
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 7141,
+            "point": [
+              0.8598388417425662,
+              0.9035934609325404,
+              0.6783038861934453
+            ],
+            "localPoint": [
+              0.8598388417425662,
+              0.9034934609325405,
+              0.6783038861934453
+            ],
+            "distance": 8.043966948809505
+          }
+        ]
+      },
+      {
+        "pixel": [
+          960,
+          500
+        ],
+        "hits": [
+          {
+            "name": "clearglass_27_1",
+            "materialName": "",
+            "color": "dce8f2",
+            "metalness": 0,
+            "roughness": 0.055,
+            "materialIndex": 0,
+            "faceIndex": 43005,
+            "point": [
+              2.4170829070656343,
+              1.065204299503853,
+              -0.545812387380322
+            ],
+            "localPoint": [
+              0.9832318475644968,
+              0.08447578224091695,
+              -0.21700856815270766
+            ],
+            "distance": 6.472763225740747
+          },
+          {
+            "name": "clearglass_27_1",
+            "materialName": "",
+            "color": "dce8f2",
+            "metalness": 0,
+            "roughness": 0.055,
+            "materialIndex": 0,
+            "faceIndex": 42918,
+            "point": [
+              2.4136373377432725,
+              1.0648467182101162,
+              -0.5461055377600018
+            ],
+            "localPoint": [
+              0.9818619305854441,
+              0.08433361221331004,
+              -0.2171251212227425
+            ],
+            "distance": 6.476239682195519
+          },
+          {
+            "name": "clearglass_27_1",
+            "materialName": "",
+            "color": "dce8f2",
+            "metalness": 0,
+            "roughness": 0.055,
+            "materialIndex": 0,
+            "faceIndex": 52082,
+            "point": [
+              2.41330669505416,
+              1.0648124041013358,
+              -0.5461336689687466
+            ],
+            "localPoint": [
+              0.9817304710234858,
+              0.08431996933579361,
+              -0.2171363058534654
+            ],
+            "distance": 6.476573288866362
+          },
+          {
+            "name": "black_12",
+            "materialName": "",
+            "color": "0d1115",
+            "metalness": 0,
+            "roughness": 0.56,
+            "materialIndex": 0,
+            "faceIndex": 6380,
+            "point": [
+              2.402686467404291,
+              1.0637102365384388,
+              -0.5470372420728022
+            ],
+            "localPoint": [
+              0.9439882895318205,
+              -0.008643673745485692,
+              -0.21404904413237769
+            ],
+            "distance": 6.487288719470222
+          },
+          {
+            "name": "chrome_2",
+            "materialName": "",
+            "color": "e1e4e5",
+            "metalness": 1,
+            "roughness": 0.24,
+            "materialIndex": 0,
+            "faceIndex": 32761,
+            "point": [
+              2.3997928320213378,
+              1.063409934966468,
+              -0.5472834336979895
+            ],
+            "localPoint": [
+              0.9853715267494891,
+              0.009737763095679086,
+              -0.21479076642178418
+            ],
+            "distance": 6.490208294281717
+          },
+          {
+            "name": "Original_seats_and_cabin",
+            "materialName": "",
+            "color": "776753",
+            "metalness": 0,
+            "roughness": 0.88,
+            "materialIndex": 0,
+            "faceIndex": 8367,
+            "point": [
+              0.8604529273247499,
+              0.9036571907537683,
+              -0.6782510722213249
+            ],
+            "localPoint": [
+              0.8604529273247499,
+              0.9035571907537683,
+              -0.6782510722213249
+            ],
+            "distance": 8.043347310537238
+          }
+        ]
+      }
+    ],
+    "model": {
+      "dimensions": {
+        "length": 5.095,
+        "width": 1.98,
+        "height": 1.93,
+        "wheelbase": 2.85,
+        "clearance": 0.23,
+        "trackF": 1.65,
+        "trackR": 1.645,
+        "tireWidth": 0.265,
+        "rimDiameter": 0.43179999999999996,
+        "aspectRatio": 0.7
+      },
+      "bounds": {
+        "min": {
+          "x": -2.5475007814613306,
+          "y": 6.6792072143107e-05,
+          "z": -1.1483163726598207
+        },
+        "max": {
+          "x": 2.547500477483922,
+          "y": 1.9301326181007357,
+          "z": 1.1483169687062684
+        }
+      },
+      "triangles": 842726,
+      "drawCalls": 41
+    }
+  },
+  "visualInspectionRequired": true
+}
