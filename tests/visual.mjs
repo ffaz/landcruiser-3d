@@ -125,7 +125,8 @@ try {
   page.on('console', m => { if (m.type() === 'error') errors.push({type: 'console', message: m.text()}); });
   page.on('requestfailed', r => errors.push({type: 'request', url: r.url(), message: r.failure()?.errorText}));
   await page.goto(url, {timeout: 120000});
-  await page.waitForSelector('#loader.hidden', {state: 'attached', timeout: 120000});
+  await page.waitForFunction(()=>document.querySelector('#loader.hidden')||document.querySelector('#loaderror')?.style.display==='block',null,{timeout:120000});
+  if(!await page.locator('#loader.hidden').count())throw Error('Viewer startup failed; see the recorded browser errors');
   await page.waitForFunction(() => !!window.__visualTest, null, {timeout: 120000});
   const capture = async name => {
     if (options.checksOnly) return;

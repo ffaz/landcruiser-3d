@@ -1,0 +1,912 @@
+{
+  "blenderVersion": "4.3.2",
+  "engine": "Cycles CPU",
+  "samples": 32,
+  "aoDistanceMetres": 0.35,
+  "target": "VERTEX_COLORS / POINT FLOAT_COLOR",
+  "ao": "Cycles AO bake, with source cabin and a floor as occluders; transparent glazing excluded from occlusion",
+  "curvature": "signed manifold edge dihedral angle after position welding; positive convex, negative concave; G=.5+.5*tanh(weightedAngle*2.5)",
+  "meshes": [
+    {
+      "label": "vehicle",
+      "object": "chrome_0",
+      "nodeIndex": 0,
+      "meshIndex": 0,
+      "vertices": 65531,
+      "blenderVertices": 65531,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0,
+        0.0,
+        0.09375,
+        0.171875,
+        0.34375,
+        0.90625,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        -0.9990200400352478,
+        -0.9878454208374023,
+        -0.8163459897041321,
+        0.3693917691707611,
+        0.8154979348182678,
+        0.9813548922538757,
+        0.9942919015884399
+      ],
+      "array": "vehicle-node-00.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "chrome_1",
+      "nodeIndex": 1,
+      "meshIndex": 1,
+      "vertices": 52067,
+      "blenderVertices": 52067,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0,
+        0.0,
+        0.0625,
+        0.140625,
+        0.28125,
+        0.625,
+        0.96875
+      ],
+      "curvatureQuantiles": [
+        -0.9967517852783203,
+        -0.8933030962944031,
+        -0.669429212808609,
+        0.04444994777441025,
+        0.8892373442649841,
+        0.9975144863128662,
+        0.9998779296875
+      ],
+      "array": "vehicle-node-01.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "chrome_2",
+      "nodeIndex": 2,
+      "meshIndex": 2,
+      "vertices": 47064,
+      "blenderVertices": 47064,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0,
+        0.0,
+        0.0625,
+        0.3125,
+        0.84375,
+        1.0,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        -0.9975578188896179,
+        -0.7853373885154724,
+        -8.851113619812168e-08,
+        0.008875656872987747,
+        0.3530278503894806,
+        0.7200152277946472,
+        0.9996927380561829
+      ],
+      "array": "vehicle-node-02.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "chrome_3",
+      "nodeIndex": 3,
+      "meshIndex": 3,
+      "vertices": 63265,
+      "blenderVertices": 63265,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0,
+        0.0,
+        0.03125,
+        0.34375,
+        0.75,
+        1.0,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        -0.9999834895133972,
+        -0.5992538332939148,
+        0.0,
+        0.19148263335227966,
+        0.5470937490463257,
+        0.9012753367424011,
+        0.9999843239784241
+      ],
+      "array": "vehicle-node-03.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "chrome_4",
+      "nodeIndex": 4,
+      "meshIndex": 4,
+      "vertices": 36461,
+      "blenderVertices": 36461,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0,
+        0.0,
+        0.03125,
+        0.25,
+        0.59375,
+        0.96875,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        -0.9996018409729004,
+        -0.5543326735496521,
+        -0.013385321013629436,
+        0.12215771526098251,
+        0.4867737591266632,
+        0.8237007260322571,
+        0.9998132586479187
+      ],
+      "array": "vehicle-node-04.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "bumper_chrome01_5",
+      "nodeIndex": 5,
+      "meshIndex": 5,
+      "vertices": 4972,
+      "blenderVertices": 4972,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0,
+        0.0,
+        0.2291666716337204,
+        0.8489583134651184,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        -0.9882979393005371,
+        -0.02035948019474744,
+        0.011143759824335575,
+        0.07260122522711754,
+        0.20876948162913322,
+        0.4529013365507122,
+        0.7259500622749329
+      ],
+      "array": "vehicle-node-05.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "carpaint_6",
+      "nodeIndex": 6,
+      "meshIndex": 6,
+      "vertices": 67868,
+      "blenderVertices": 67868,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0,
+        0.0,
+        0.28125,
+        0.7750000357627869,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        -0.9999074339866638,
+        -0.15390639007091522,
+        0.004727527499198914,
+        0.0704907700419426,
+        0.3394363522529602,
+        0.8413113951683044,
+        0.9989838600158691
+      ],
+      "array": "vehicle-node-06.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "carpaint_7",
+      "nodeIndex": 7,
+      "meshIndex": 7,
+      "vertices": 9943,
+      "blenderVertices": 9943,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0,
+        0.0,
+        0.3869047462940216,
+        0.8125,
+        0.96875,
+        1.0,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        -0.9817047715187073,
+        -0.11908634603023528,
+        0.0031916566658765078,
+        0.12944604456424713,
+        0.46730516850948334,
+        0.852245569229126,
+        0.9999181032180786
+      ],
+      "array": "vehicle-node-07.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "Rear_Bumper_8",
+      "nodeIndex": 8,
+      "meshIndex": 8,
+      "vertices": 5318,
+      "blenderVertices": 5318,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0,
+        0.0,
+        0.203125,
+        0.65625,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        -0.9930196404457092,
+        -0.2074652999639511,
+        0.00037483904452528805,
+        0.06754949316382408,
+        0.3271511495113373,
+        0.8701263457536694,
+        0.9999558925628662
+      ],
+      "array": "vehicle-node-08.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "Front_Doors_9",
+      "nodeIndex": 9,
+      "meshIndex": 9,
+      "vertices": 6869,
+      "blenderVertices": 6869,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0,
+        0.0,
+        0.21875,
+        0.714285671710968,
+        0.96875,
+        1.0,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        -0.6591862440109253,
+        -0.19252629578113556,
+        0.00654164282605052,
+        0.04470274969935417,
+        0.2751937806606293,
+        0.8270990252494796,
+        0.9978207945823669
+      ],
+      "array": "vehicle-node-09.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "black_10",
+      "nodeIndex": 10,
+      "meshIndex": 10,
+      "vertices": 21951,
+      "blenderVertices": 21951,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0,
+        0.0,
+        0.03125,
+        0.2901785969734192,
+        0.609375,
+        0.96875,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        -0.989647626876831,
+        -0.19117793440818787,
+        0.026989801786839962,
+        0.17821486294269562,
+        0.4575846940279007,
+        0.748704582452774,
+        0.9990459680557251
+      ],
+      "array": "vehicle-node-10.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "black_11",
+      "nodeIndex": 11,
+      "meshIndex": 11,
+      "vertices": 30039,
+      "blenderVertices": 30039,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0,
+        0.0,
+        0.03125,
+        0.28125,
+        0.640625,
+        0.96875,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        -0.999967634677887,
+        -0.37075486481189723,
+        -0.0060196928679943085,
+        0.0735318511724472,
+        0.4710511118173599,
+        0.8605377674102783,
+        0.9999990463256836
+      ],
+      "array": "vehicle-node-11.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "black_12",
+      "nodeIndex": 12,
+      "meshIndex": 12,
+      "vertices": 25315,
+      "blenderVertices": 25315,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.15625,
+        0.5,
+        0.90625,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        -0.999991774559021,
+        -0.5812580525875092,
+        0.0,
+        0.06196136400103569,
+        0.4871187210083008,
+        0.9103074431419365,
+        0.9999940395355225
+      ],
+      "array": "vehicle-node-12.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "bumper_black_13",
+      "nodeIndex": 13,
+      "meshIndex": 13,
+      "vertices": 1270,
+      "blenderVertices": 1270,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0,
+        0.0,
+        0.4739583358168602,
+        0.84375,
+        0.9010416865348816,
+        0.96875,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        -0.62956303358078,
+        -0.3020423948764801,
+        -0.019116651266813278,
+        0.07749875634908676,
+        0.3048582673072815,
+        0.7077029347419739,
+        0.9762372970581055
+      ],
+      "array": "vehicle-node-13.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "rim_15",
+      "nodeIndex": 14,
+      "meshIndex": 14,
+      "vertices": 11390,
+      "blenderVertices": 11390,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0,
+        0.0,
+        0.375,
+        0.625,
+        0.90625,
+        1.0,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        -0.9933736324310303,
+        -0.8073847025632859,
+        -5.104584843707016e-08,
+        0.10464981198310852,
+        0.6149043440818787,
+        0.9133702516555786,
+        0.9862244129180908
+      ],
+      "array": "vehicle-node-14.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "brakedisk_16",
+      "nodeIndex": 15,
+      "meshIndex": 15,
+      "vertices": 2240,
+      "blenderVertices": 2240,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.09375,
+        0.21875,
+        0.5208333730697632
+      ],
+      "curvatureQuantiles": [
+        0.3463267982006073,
+        0.34731477648019793,
+        0.34830889850854874,
+        0.4934092015028,
+        0.6370296478271484,
+        0.6383596390485763,
+        0.6389193534851074
+      ],
+      "array": "vehicle-node-15.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "tire_17",
+      "nodeIndex": 16,
+      "meshIndex": 16,
+      "vertices": 55408,
+      "blenderVertices": 55408,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.09375,
+        0.25,
+        0.5625,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        -0.9978770017623901,
+        -0.9569913744926453,
+        -0.777703046798706,
+        0.6081793308258057,
+        0.7703303247690201,
+        0.9576216340065002,
+        0.9985595941543579
+      ],
+      "array": "vehicle-node-16.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "tire_18",
+      "nodeIndex": 17,
+      "meshIndex": 17,
+      "vertices": 55129,
+      "blenderVertices": 55129,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.09375,
+        0.2395833283662796,
+        0.5625,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        -0.9978614449501038,
+        -0.9638876438140869,
+        -0.7757591009140015,
+        0.6071985960006714,
+        0.7694439888000488,
+        0.9574260115623474,
+        0.9975270628929138
+      ],
+      "array": "vehicle-node-17.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "rim_second_19",
+      "nodeIndex": 18,
+      "meshIndex": 18,
+      "vertices": 31853,
+      "blenderVertices": 31853,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0,
+        0.0,
+        0.09375,
+        0.3125,
+        0.625,
+        0.875,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        -0.9885420799255371,
+        -0.8456665873527527,
+        -0.21368372440338135,
+        0.007932435721158981,
+        0.2461557686328888,
+        0.8982458114624023,
+        0.996503472328186
+      ],
+      "array": "vehicle-node-18.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "darkglass_20",
+      "nodeIndex": 19,
+      "meshIndex": 19,
+      "vertices": 811,
+      "blenderVertices": 811,
+      "glazingNeutral": true,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "array": "vehicle-node-19.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "orangeglass_21",
+      "nodeIndex": 20,
+      "meshIndex": 20,
+      "vertices": 1416,
+      "blenderVertices": 1416,
+      "glazingNeutral": true,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "array": "vehicle-node-20.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "mirror_23",
+      "nodeIndex": 21,
+      "meshIndex": 21,
+      "vertices": 631,
+      "blenderVertices": 631,
+      "glazingNeutral": true,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "array": "vehicle-node-21.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "redglass_25",
+      "nodeIndex": 22,
+      "meshIndex": 22,
+      "vertices": 64184,
+      "blenderVertices": 64184,
+      "glazingNeutral": true,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "array": "vehicle-node-22.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "clearglass_33",
+      "nodeIndex": 23,
+      "meshIndex": 23,
+      "vertices": 62008,
+      "blenderVertices": 62008,
+      "glazingNeutral": true,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "array": "vehicle-node-23.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "clearglass_27",
+      "nodeIndex": 24,
+      "meshIndex": 24,
+      "vertices": 46404,
+      "blenderVertices": 51467,
+      "glazingNeutral": true,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "array": "vehicle-node-24.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "windowglass_39",
+      "nodeIndex": 25,
+      "meshIndex": 25,
+      "vertices": 28259,
+      "blenderVertices": 28259,
+      "glazingNeutral": true,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "array": "vehicle-node-25.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "Blank hub cap",
+      "nodeIndex": 26,
+      "meshIndex": 26,
+      "vertices": 96,
+      "blenderVertices": 96,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0625,
+        0.09375,
+        0.125,
+        0.45703125,
+        0.828125,
+        0.8678385466337204,
+        0.90625
+      ],
+      "curvatureQuantiles": [
+        0.14010146260261536,
+        0.14014169201254845,
+        0.6693313121795654,
+        0.840888500213623,
+        0.9423411786556244,
+        0.942360520362854,
+        0.9423627853393555
+      ],
+      "array": "vehicle-node-26.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "Blank hub cap.001",
+      "nodeIndex": 27,
+      "meshIndex": 26,
+      "vertices": 96,
+      "blenderVertices": 96,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0625,
+        0.09375,
+        0.125,
+        0.46875,
+        0.8372395783662796,
+        0.875,
+        0.875
+      ],
+      "curvatureQuantiles": [
+        0.14010146260261536,
+        0.14014169201254845,
+        0.6693313121795654,
+        0.840888500213623,
+        0.9423411786556244,
+        0.942360520362854,
+        0.9423627853393555
+      ],
+      "array": "vehicle-node-27.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "Blank hub cap.002",
+      "nodeIndex": 28,
+      "meshIndex": 26,
+      "vertices": 96,
+      "blenderVertices": 96,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0625,
+        0.09375,
+        0.125,
+        0.455078125,
+        0.8294270783662796,
+        0.869140625,
+        0.90625
+      ],
+      "curvatureQuantiles": [
+        0.14010146260261536,
+        0.14014169201254845,
+        0.6693313121795654,
+        0.840888500213623,
+        0.9423411786556244,
+        0.942360520362854,
+        0.9423627853393555
+      ],
+      "array": "vehicle-node-28.npy"
+    },
+    {
+      "label": "vehicle",
+      "object": "Blank hub cap.003",
+      "nodeIndex": 29,
+      "meshIndex": 26,
+      "vertices": 96,
+      "blenderVertices": 96,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0625,
+        0.09375,
+        0.125,
+        0.46875,
+        0.84375,
+        0.875,
+        0.875
+      ],
+      "curvatureQuantiles": [
+        0.14010146260261536,
+        0.14014169201254845,
+        0.6693313121795654,
+        0.840888500213623,
+        0.9423411786556244,
+        0.942360520362854,
+        0.9423627853393555
+      ],
+      "array": "vehicle-node-29.npy"
+    },
+    {
+      "label": "interior",
+      "object": "Original seats and cabin",
+      "nodeIndex": 0,
+      "meshIndex": 0,
+      "vertices": 10668,
+      "blenderVertices": 10668,
+      "glazingNeutral": false,
+      "originalOrderMaxError": 0.0,
+      "aoQuantiles": [
+        0.0,
+        0.0,
+        0.125,
+        0.40625,
+        0.6875,
+        0.96875,
+        1.0
+      ],
+      "curvatureQuantiles": [
+        -0.9999993443489075,
+        -0.2518274486064911,
+        0.008861680515110493,
+        0.2311210334300995,
+        0.5378721505403519,
+        0.8678102612495421,
+        0.9999204874038696
+      ],
+      "array": "interior-node-00.npy"
+    }
+  ],
+  "aoSeconds": 37.322837591171265,
+  "totalSeconds": 40.8354549407959
+}

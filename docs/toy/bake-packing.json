@@ -1,0 +1,325 @@
+{
+  "encoding": "COLOR_0, normalized UNSIGNED_BYTE VEC3, 4-byte stride, LINEAR data; R=AO, G=.5+.5*signed curvature, B=1",
+  "geometryPreserved": true,
+  "assets": {
+    "vehicle": {
+      "originalGlbBytes": 17567360,
+      "bakedGlbBytes": 20784180,
+      "attributeBytes": 3211300,
+      "originalGzipBytes": 8341377,
+      "bakedGzipBytes": 9379873,
+      "gzipAddedBytes": 1038496,
+      "originalBase64Bytes": 11121836,
+      "bakedBase64Bytes": 12506500,
+      "base64AddedBytes": 1384664,
+      "bakedSha256": "1e69f9866006e034cd9c5425b4fe988a6ad2e63ec6b5d019a7718fd5a7c678c9",
+      "meshes": [
+        {
+          "name": "chrome_0",
+          "primitive": 0,
+          "vertices": 65531,
+          "aoMean": 0.27901697158813477,
+          "aoMin": 0.0,
+          "aoMax": 1.0,
+          "ridgePercent": 50.69051288703057,
+          "valleyPercent": 47.41877889853657
+        },
+        {
+          "name": "chrome_1",
+          "primitive": 0,
+          "vertices": 52067,
+          "aoMean": 0.198188915848732,
+          "aoMin": 0.0,
+          "aoMax": 0.96875,
+          "ridgePercent": 48.13989667159621,
+          "valleyPercent": 45.906236195670964
+        },
+        {
+          "name": "chrome_2",
+          "primitive": 0,
+          "vertices": 47064,
+          "aoMean": 0.41986510157585144,
+          "aoMin": 0.0,
+          "aoMax": 1.0,
+          "ridgePercent": 37.26202617712052,
+          "valleyPercent": 15.421553629100798
+        },
+        {
+          "name": "chrome_3",
+          "primitive": 0,
+          "vertices": 63265,
+          "aoMean": 0.4094301462173462,
+          "aoMin": 0.0,
+          "aoMax": 1.0,
+          "ridgePercent": 60.00316130561922,
+          "valleyPercent": 15.994625780447326
+        },
+        {
+          "name": "chrome_4",
+          "primitive": 0,
+          "vertices": 36461,
+          "aoMean": 0.3369755148887634,
+          "aoMin": 0.0,
+          "aoMax": 1.0,
+          "ridgePercent": 52.39845314171306,
+          "valleyPercent": 18.18929815419215
+        },
+        {
+          "name": "bumper_chrome01_5",
+          "primitive": 0,
+          "vertices": 4972,
+          "aoMean": 0.6559448838233948,
+          "aoMin": 0.0,
+          "aoMax": 1.0,
+          "ridgePercent": 43.644408688656476,
+          "valleyPercent": 2.8559935639581657
+        },
+        {
+          "name": "carpaint_6",
+          "primitive": 0,
+          "vertices": 67868,
+          "aoMean": 0.63266921043396,
+          "aoMin": 0.0,
+          "aoMax": 1.0,
+          "ridgePercent": 45.778570165615605,
+          "valleyPercent": 6.394766311074439
+        },
+        {
+          "name": "carpaint_7",
+          "primitive": 0,
+          "vertices": 9943,
+          "aoMean": 0.659000039100647,
+          "aoMin": 0.0,
+          "aoMax": 1.0,
+          "ridgePercent": 53.74635421904858,
+          "valleyPercent": 5.712561601126421
+        },
+        {
+          "name": "Rear_Bumper_8",
+          "primitive": 0,
+          "vertices": 5318,
+          "aoMean": 0.596933901309967,
+          "aoMin": 0.0,
+          "aoMax": 1.0,
+          "ridgePercent": 43.71944339977435,
+          "valleyPercent": 7.784881534411432
+        },
+        {
+          "name": "Front_Doors_9",
+          "primitive": 0,
+          "vertices": 6869,
+          "aoMean": 0.5988298654556274,
+          "aoMin": 0.0,
+          "aoMax": 1.0,
+          "ridgePercent": 37.98223904498471,
+          "valleyPercent": 7.701266559906827
+        },
+        {
+          "name": "black_10",
+          "primitive": 0,
+          "vertices": 21951,
+          "aoMean": 0.3520148694515228,
+          "aoMin": 0.0,
+          "aoMax": 1.0,
+          "ridgePercent": 59.77859778597786,
+          "valleyPercent": 7.147738144048107
+        },
+        {
+          "name": "black_11",
+          "primitive": 0,
+          "vertices": 30039,
+          "aoMean": 0.3583987057209015,
+          "aoMin": 0.0,
+          "aoMax": 1.0,
+          "ridgePercent": 47.14870668131429,
+          "valleyPercent": 13.206165318419389
+        },
+        {
+          "name": "black_12",
+          "primitive": 0,
+          "vertices": 25315,
+          "aoMean": 0.2819228768348694,
+          "aoMin": 0.0,
+          "aoMax": 1.0,
+          "ridgePercent": 44.96148528540391,
+          "valleyPercent": 13.04760023701363
+        },
+        {
+          "name": "bumper_black_13",
+          "primitive": 0,
+          "vertices": 1270,
+          "aoMean": 0.6580985188484192,
+          "aoMin": 0.0,
+          "aoMax": 1.0,
+          "ridgePercent": 46.2992125984252,
+          "valleyPercent": 13.46456692913386
+        },
+        {
+          "name": "rim_15",
+          "primitive": 0,
+          "vertices": 11390,
+          "aoMean": 0.6032016277313232,
+          "aoMin": 0.0,
+          "aoMax": 1.0,
+          "ridgePercent": 50.43020193151888,
+          "valleyPercent": 14.310798946444251
+        },
+        {
+          "name": "brakedisk_16",
+          "primitive": 0,
+          "vertices": 2240,
+          "aoMean": 0.05944940075278282,
+          "aoMin": 0.0,
+          "aoMax": 0.5208333730697632,
+          "ridgePercent": 100.0,
+          "valleyPercent": 0.0
+        },
+        {
+          "name": "tire_17",
+          "primitive": 0,
+          "vertices": 55408,
+          "aoMean": 0.1568480283021927,
+          "aoMin": 0.0,
+          "aoMax": 1.0,
+          "ridgePercent": 65.44903263066705,
+          "valleyPercent": 33.15044758879584
+        },
+        {
+          "name": "tire_18",
+          "primitive": 0,
+          "vertices": 55129,
+          "aoMean": 0.15652579069137573,
+          "aoMin": 0.0,
+          "aoMax": 1.0,
+          "ridgePercent": 65.18166482250722,
+          "valleyPercent": 33.20938163217181
+        },
+        {
+          "name": "rim_second_19",
+          "primitive": 0,
+          "vertices": 31853,
+          "aoMean": 0.3699673116207123,
+          "aoMin": 0.0,
+          "aoMax": 1.0,
+          "ridgePercent": 35.3341914419364,
+          "valleyPercent": 32.326625435594764
+        },
+        {
+          "name": "darkglass_20",
+          "primitive": 0,
+          "vertices": 811,
+          "aoMean": 1.0,
+          "aoMin": 1.0,
+          "aoMax": 1.0,
+          "ridgePercent": 0.0,
+          "valleyPercent": 0.0
+        },
+        {
+          "name": "orangeglass_21",
+          "primitive": 0,
+          "vertices": 1416,
+          "aoMean": 1.0,
+          "aoMin": 1.0,
+          "aoMax": 1.0,
+          "ridgePercent": 0.0,
+          "valleyPercent": 0.0
+        },
+        {
+          "name": "mirror_23",
+          "primitive": 0,
+          "vertices": 631,
+          "aoMean": 1.0,
+          "aoMin": 1.0,
+          "aoMax": 1.0,
+          "ridgePercent": 0.0,
+          "valleyPercent": 0.0
+        },
+        {
+          "name": "redglass_25",
+          "primitive": 0,
+          "vertices": 64184,
+          "aoMean": 1.0,
+          "aoMin": 1.0,
+          "aoMax": 1.0,
+          "ridgePercent": 0.0,
+          "valleyPercent": 0.0
+        },
+        {
+          "name": "clearglass_33",
+          "primitive": 0,
+          "vertices": 62008,
+          "aoMean": 1.0,
+          "aoMin": 1.0,
+          "aoMax": 1.0,
+          "ridgePercent": 0.0,
+          "valleyPercent": 0.0
+        },
+        {
+          "name": "clearglass_27",
+          "primitive": 0,
+          "vertices": 46404,
+          "aoMean": 1.0,
+          "aoMin": 1.0,
+          "aoMax": 1.0,
+          "ridgePercent": 0.0,
+          "valleyPercent": 0.0
+        },
+        {
+          "name": "clearglass_27",
+          "primitive": 1,
+          "vertices": 5063,
+          "aoMean": 1.0,
+          "aoMin": 1.0,
+          "aoMax": 1.0,
+          "ridgePercent": 0.0,
+          "valleyPercent": 0.0
+        },
+        {
+          "name": "windowglass_39",
+          "primitive": 0,
+          "vertices": 28259,
+          "aoMean": 1.0,
+          "aoMin": 1.0,
+          "aoMax": 1.0,
+          "ridgePercent": 0.0,
+          "valleyPercent": 0.0
+        },
+        {
+          "name": "Cylinder",
+          "primitive": 0,
+          "vertices": 96,
+          "aoMean": 0.4765414893627167,
+          "aoMin": 0.4375,
+          "aoMax": 0.5,
+          "ridgePercent": 100.0,
+          "valleyPercent": 0.0
+        }
+      ]
+    },
+    "interior": {
+      "originalGlbBytes": 315676,
+      "bakedGlbBytes": 358544,
+      "attributeBytes": 42672,
+      "originalGzipBytes": 221338,
+      "bakedGzipBytes": 245652,
+      "gzipAddedBytes": 24314,
+      "originalBase64Bytes": 295120,
+      "bakedBase64Bytes": 327536,
+      "base64AddedBytes": 32416,
+      "bakedSha256": "a4a269b31960ef07553e82c3ea0cdae47406bee85fa70e436025df3a0135a7c4",
+      "meshes": [
+        {
+          "name": "Original interior",
+          "primitive": 0,
+          "vertices": 10668,
+          "aoMean": 0.4273437559604645,
+          "aoMin": 0.0,
+          "aoMax": 1.0,
+          "ridgePercent": 62.3734533183352,
+          "valleyPercent": 8.661417322834646
+        }
+      ]
+    }
+  },
+  "combinedBase64AddedBytes": 1417080
+}
