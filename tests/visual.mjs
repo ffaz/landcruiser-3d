@@ -346,6 +346,14 @@ try {
     const t = window.__visualTest, box = new t.THREE.Box3().setFromObject(t.car);
     return {dimensions: t.DIM, bounds: {min: box.min, max: box.max}, triangles: t.renderer.info.render.triangles, drawCalls: t.renderer.info.render.calls};
   });
+  if(options.mode !== 'before'){
+    const noJs=await browser.newPage({viewport:{width:1000,height:800},javaScriptEnabled:false});
+    await noJs.goto(url,{timeout:120000});
+    const fallback=await noJs.locator('.nojs').textContent();
+    checks.noJsFallback=await noJs.locator('.nojs').isVisible()&&/satin gunmetal/.test(fallback)&&/265\/70R17/.test(fallback);
+    if(!options.checksOnly){await noJs.screenshot({path:path.join(output,'no-js.png'),timeout:120000});snapshots.push('no-js.png');}
+    await noJs.close();
+  }
   const failed = errors.length || Object.values(checks).some(v => v === false) ||
     (checks.autoRotate && (!checks.autoRotate.enabled || !checks.autoRotate.moved));
   if (failed) process.exitCode = 1;

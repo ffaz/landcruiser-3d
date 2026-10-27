@@ -1,0 +1,1709 @@
+{
+  "source": "/workspace/landcruiser-3d/index.html",
+  "sourceSha256": "38bde8608d78ef799dd065460eeb772e077edb22a30dffbf978db30f325a4cc7",
+  "label": "camera-limits",
+  "testedAt": "2026-10-27T11:36:36.869Z",
+  "engine": "Playwright WebKit Linux WPE iPad touch emulation plus desktop Chromium wheel input;1366x1024 DPR1",
+  "method": "Real preset buttons/tweens, trusted native wheel,pinch,two-finger pan and one-finger rotation. IntermediateGPUdraws suppressed only in test copy; camera controls and safety guard run normally.",
+  "config": {
+    "sphere": {
+      "radius": 2.956294835860063,
+      "centre": [
+        -1.5198870428889677e-7,
+        0.9650997050864394,
+        2.980232238769531e-7
+      ]
+    },
+    "minDistance": 3.95042215246758,
+    "margin": 0.35,
+    "maxPolarDegrees": 85,
+    "panBox": {
+      "min": [
+        -0.18000015198870428,
+        0.3650997050864394,
+        -0.14999970197677612
+      ],
+      "max": [
+        0.1799998480112957,
+        1.5650997050864395,
+        0.15000029802322387
+      ]
+    },
+    "collisionBox": {
+      "min": [
+        -2.8475007814613305,
+        -0.2999332079278569,
+        -1.4483163726598207
+      ],
+      "max": [
+        2.847500477483922,
+        2.2301326181007357,
+        1.4483169687062685
+      ]
+    }
+  },
+  "observations": [
+    {
+      "view": "front",
+      "input": "preset",
+      "position": [
+        -9.00432175700376,
+        1.749525849748177,
+        5.525803377095237e-16
+      ],
+      "target": [
+        0.020000000000000004,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 9.05879320005441,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "front",
+      "input": "pinch-in-1",
+      "position": [
+        -4.7461692364365895,
+        1.3769857766342108,
+        0.013277025736086245
+      ],
+      "target": [
+        0.020000000000000014,
+        0.9600000000000002,
+        0.013277025736085954
+      ],
+      "distance": 4.784375228623877,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "front",
+      "input": "pinch-in-2",
+      "position": [
+        -3.9153896035123843,
+        1.3043019768651143,
+        0.024339090185448192
+      ],
+      "target": [
+        0.02000000000000001,
+        0.9600000000000001,
+        0.024339090185447953
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "front",
+      "input": "pinch-in-3",
+      "position": [
+        -3.9153896035123843,
+        1.3043019768651143,
+        0.03458202658087641
+      ],
+      "target": [
+        0.02000000000000001,
+        0.9600000000000001,
+        0.03458202658087617
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "front",
+      "input": "pinch-in-4",
+      "position": [
+        -3.9153896035123843,
+        1.3043019768651143,
+        0.04064972428779174
+      ],
+      "target": [
+        0.02000000000000001,
+        0.96,
+        0.0406497242877915
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "front",
+      "input": "two-finger-pan-1",
+      "position": [
+        -3.913191245701349,
+        1.3294293216254345,
+        0.004153730930770283
+      ],
+      "target": [
+        0.022198357811035546,
+        0.98512734476032,
+        0.004153730930770042
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "front",
+      "input": "two-finger-pan-2",
+      "position": [
+        -3.9087462620607427,
+        1.380235717122478,
+        -0.07245116592023747
+      ],
+      "target": [
+        0.026643341451641413,
+        1.0359337402573636,
+        -0.0724511659202377
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "front",
+      "input": "two-finger-pan-3",
+      "position": [
+        -3.9005237216061883,
+        1.47421978457961,
+        -0.14999970197677587
+      ],
+      "target": [
+        0.03486588190619618,
+        1.1299178077144956,
+        -0.14999970197677612
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "front",
+      "input": "two-finger-pan-4",
+      "position": [
+        -3.8895549379585574,
+        1.5995935553697045,
+        -0.14999970197677587
+      ],
+      "target": [
+        0.045834665553827064,
+        1.2552915785045902,
+        -0.14999970197677612
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "front",
+      "input": "rotate-below-floor-1",
+      "position": [
+        -3.8344575379900183,
+        2.0403652157408563,
+        -0.14999970197677587
+      ],
+      "target": [
+        0.05311393085846554,
+        1.338493961662284,
+        -0.14999970197677612
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.3921781175965515,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "front",
+      "input": "rotate-below-floor-2",
+      "position": [
+        -3.541115485004035,
+        3.0168357035035207,
+        -0.1499997019767759
+      ],
+      "target": [
+        0.05734229867070179,
+        1.3868244269114571,
+        -0.14999970197677612
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.145471176300899,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "front",
+      "input": "rotate-below-floor-3",
+      "position": [
+        -3.076288095652963,
+        3.8160578323489798,
+        -0.14999970197677592
+      ],
+      "target": [
+        0.05969091804502988,
+        1.4136692691993056,
+        -0.14999970197677612
+      ],
+      "distance": 3.9504221524675804,
+      "polar": 0.9170876652395302,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "front",
+      "input": "rotate-below-floor-4",
+      "position": [
+        -1.8269642413342668,
+        4.916479316860964,
+        -0.149999701976776
+      ],
+      "target": [
+        0.06263254435312514,
+        1.4472922117560134,
+        -0.14999970197677612
+      ],
+      "distance": 3.95042215246758,
+      "polar": 0.4987495742589142,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "side",
+      "input": "preset",
+      "position": [
+        0.020000000000000007,
+        0.9301983141402071,
+        6.044192388234592
+      ],
+      "target": [
+        0.020000000000000007,
+        0.4014000000000001,
+        0
+      ],
+      "distance": 6.067280221238385,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "side",
+      "input": "pinch-in-1",
+      "position": [
+        0.02889251292820588,
+        0.7457019768651144,
+        3.9353896035123843
+      ],
+      "target": [
+        0.02889251292820588,
+        0.4014000000000001,
+        0
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "side",
+      "input": "pinch-in-2",
+      "position": [
+        0.03587114282267648,
+        0.7457019768651145,
+        3.9353896035123843
+      ],
+      "target": [
+        0.03587114282267648,
+        0.4014000000000002,
+        0
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "side",
+      "input": "pinch-in-3",
+      "position": [
+        0.041484452628703164,
+        0.7457019768651145,
+        3.9353896035123843
+      ],
+      "target": [
+        0.041484452628703164,
+        0.40140000000000015,
+        0
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "side",
+      "input": "pinch-in-4",
+      "position": [
+        0.045999557664349364,
+        0.7457019768651145,
+        3.9353896035123843
+      ],
+      "target": [
+        0.045999557664349364,
+        0.4014000000000002,
+        0
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "side",
+      "input": "two-finger-pan-1",
+      "position": [
+        0.022613197021216853,
+        0.760949940426606,
+        3.9340555795588976
+      ],
+      "target": [
+        0.022613197021216853,
+        0.41664796356149164,
+        -0.0013340239534868758
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "side",
+      "input": "two-finger-pan-2",
+      "position": [
+        -0.08503453817653135,
+        0.8308235416373888,
+        3.9279424315732228
+      ],
+      "target": [
+        -0.08503453817653135,
+        0.48652156477227443,
+        -0.007447171939161635
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "side",
+      "input": "two-finger-pan-3",
+      "position": [
+        -0.18000015198870428,
+        0.9004875277963004,
+        3.921847622528291
+      ],
+      "target": [
+        -0.18000015198870428,
+        0.556185550931186,
+        -0.013541980984093283
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "side",
+      "input": "two-finger-pan-4",
+      "position": [
+        -0.18000015198870428,
+        1.0390108971231617,
+        3.909728398078776
+      ],
+      "target": [
+        -0.18000015198870428,
+        0.6947089202580473,
+        -0.025661205433608347
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "side",
+      "input": "rotate-below-floor-1",
+      "position": [
+        -0.18000015198870428,
+        1.441462961573344,
+        3.8579835283442163
+      ],
+      "target": [
+        -0.18000015198870428,
+        0.7395917074947718,
+        -0.029587940504267756
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.3921781175965515,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "side",
+      "input": "rotate-below-floor-2",
+      "position": [
+        -0.18000015198870428,
+        2.277180496086377,
+        3.6276472975364533
+      ],
+      "target": [
+        -0.18000015198870428,
+        0.7958070266560394,
+        -0.03450614364737034
+      ],
+      "distance": 3.950422152467581,
+      "polar": 1.1864090652299946,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "side",
+      "input": "rotate-below-floor-3",
+      "position": [
+        -0.18000015198870428,
+        3.4551450182618684,
+        2.9233291464719713
+      ],
+      "target": [
+        -0.18000015198870428,
+        0.8410242121306393,
+        -0.038462134772946896
+      ],
+      "distance": 3.9504221524675818,
+      "polar": 0.8476697631187686,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "side",
+      "input": "rotate-below-floor-4",
+      "position": [
+        -0.18000015198870428,
+        4.195905006292268,
+        2.085016634402036
+      ],
+      "target": [
+        -0.18000015198870428,
+        0.8661398034353764,
+        -0.04065946428986167
+      ],
+      "distance": 3.9504221524675818,
+      "polar": 0.5681674763796771,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "rear",
+      "input": "preset",
+      "position": [
+        3.9553896035123843,
+        1.3043019768651143,
+        2.4097311406696064e-16
+      ],
+      "target": [
+        0.019999999999999993,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "rear",
+      "input": "pinch-in-1",
+      "position": [
+        3.9553896035123843,
+        1.3043019768651143,
+        -0.003397662274093231
+      ],
+      "target": [
+        0.01999999999999999,
+        0.9600000000000001,
+        -0.003397662274093472
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "rear",
+      "input": "pinch-in-2",
+      "position": [
+        3.9553896035123843,
+        1.3043019768651143,
+        -0.006130595707896234
+      ],
+      "target": [
+        0.019999999999999987,
+        0.9600000000000001,
+        -0.006130595707896475
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "rear",
+      "input": "pinch-in-3",
+      "position": [
+        3.9553896035123843,
+        1.3043019768651143,
+        -0.008328849845909715
+      ],
+      "target": [
+        0.019999999999999987,
+        0.9600000000000001,
+        -0.008328849845909956
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "rear",
+      "input": "pinch-in-4",
+      "position": [
+        3.9553896035123843,
+        1.3043019768651143,
+        -0.010857022526451442
+      ],
+      "target": [
+        0.019999999999999983,
+        0.9600000000000001,
+        -0.010857022526451683
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "rear",
+      "input": "two-finger-pan-1",
+      "position": [
+        3.9523874152138285,
+        1.3386171461403453,
+        0.044872609625910366
+      ],
+      "target": [
+        0.016997811701444213,
+        0.9943151692752309,
+        0.04487260962591012
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "rear",
+      "input": "two-finger-pan-2",
+      "position": [
+        3.9480996953812926,
+        1.387626008085818,
+        0.12214780545274115
+      ],
+      "target": [
+        0.012710091868908273,
+        1.0433240312207037,
+        0.12214780545274091
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "rear",
+      "input": "two-finger-pan-3",
+      "position": [
+        3.9440537560539464,
+        1.4338713062111856,
+        0.15000029802322412
+      ],
+      "target": [
+        0.008664152541561937,
+        1.0895693293460713,
+        0.15000029802322387
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "rear",
+      "input": "two-finger-pan-4",
+      "position": [
+        3.9360430200068377,
+        1.5254344382132528,
+        0.15000029802322412
+      ],
+      "target": [
+        0.0006534164944533282,
+        1.1811324613481384,
+        0.15000029802322387
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "rear",
+      "input": "rotate-below-floor-1",
+      "position": [
+        3.849320773493033,
+        2.1206373215018934,
+        0.15000029802322412
+      ],
+      "target": [
+        -0.00626843645595004,
+        1.2602496026032721,
+        0.15000029802322387
+      ],
+      "distance": 3.950422152467581,
+      "polar": 1.3512402286674563,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "rear",
+      "input": "rotate-below-floor-2",
+      "position": [
+        3.4742335829462556,
+        3.197460006974002,
+        0.1500002980232241
+      ],
+      "target": [
+        -0.013438414053678138,
+        1.3422028215549318,
+        0.15000029802322387
+      ],
+      "distance": 3.950422152467581,
+      "polar": 1.081918828676992,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "rear",
+      "input": "rotate-below-floor-3",
+      "position": [
+        2.9829441513511146,
+        3.9461231125963767,
+        0.15000029802322407
+      ],
+      "target": [
+        -0.01631444823976612,
+        1.375076042726447,
+        0.15000029802322387
+      ],
+      "distance": 3.9504221524675818,
+      "polar": 0.8621212397796131,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "rear",
+      "input": "rotate-below-floor-4",
+      "position": [
+        1.7145016615404787,
+        4.965563255568331,
+        0.15000029802322398
+      ],
+      "target": [
+        -0.01991665722997259,
+        1.416249479889984,
+        0.15000029802322387
+      ],
+      "distance": 3.9504221524675818,
+      "polar": 0.45453694517525234,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "quarter",
+      "input": "preset",
+      "position": [
+        -3.6947509609976668,
+        1.8605456875145863,
+        3.939887382876314
+      ],
+      "target": [
+        0.02,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 5.489359691920559,
+      "polar": 1.4059984428613883,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "quarter",
+      "input": "pinch-in-1",
+      "position": [
+        -2.647016823338876,
+        1.6080784340845584,
+        2.841289482536442
+      ],
+      "target": [
+        0.026306717259924967,
+        0.9600000000000002,
+        0.00594633341650068
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4059984428613883,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "quarter",
+      "input": "pinch-in-2",
+      "position": [
+        -2.6422990708160876,
+        1.6080784340845584,
+        2.8457376492007853
+      ],
+      "target": [
+        0.031024469782713525,
+        0.9600000000000002,
+        0.010394500080844183
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4059984428613883,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "quarter",
+      "input": "pinch-in-3",
+      "position": [
+        -2.6388717933354005,
+        1.6080784340845584,
+        2.848969082254005
+      ],
+      "target": [
+        0.03445174726340083,
+        0.9600000000000002,
+        0.013625933134063637
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4059984428613883,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "quarter",
+      "input": "pinch-in-4",
+      "position": [
+        -2.6362061647504773,
+        1.6080784340845584,
+        2.8514823892055037
+      ],
+      "target": [
+        0.03711737584832395,
+        0.9600000000000004,
+        0.016139240085562584
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4059984428613883,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "quarter",
+      "input": "two-finger-pan-1",
+      "position": [
+        -2.6711925653151836,
+        1.6420579878902029,
+        2.8107284563746355
+      ],
+      "target": [
+        0.0021309752836185785,
+        0.9939795538056446,
+        -0.024614692745306803
+      ],
+      "distance": 3.9504221524675813,
+      "polar": 1.4059984428613883,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "quarter",
+      "input": "two-finger-pan-2",
+      "position": [
+        -2.7371848081185948,
+        1.706491238833102,
+        2.7337795986587565
+      ],
+      "target": [
+        -0.06386126751979271,
+        1.0584128047485437,
+        -0.10156355046118581
+      ],
+      "distance": 3.9504221524675813,
+      "polar": 1.4059984428613883,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "quarter",
+      "input": "two-finger-pan-3",
+      "position": [
+        -2.8049044892159256,
+        1.7727106695306158,
+        2.685343447143166
+      ],
+      "target": [
+        -0.1315809486171236,
+        1.1246322354460576,
+        -0.14999970197677612
+      ],
+      "distance": 3.9504221524675813,
+      "polar": 1.4059984428613883,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "quarter",
+      "input": "two-finger-pan-4",
+      "position": [
+        -2.853323692587506,
+        1.873157830705586,
+        2.685343447143166
+      ],
+      "target": [
+        -0.18000015198870428,
+        1.2250793966210278,
+        -0.14999970197677612
+      ],
+      "distance": 3.950422152467581,
+      "polar": 1.4059984428613883,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "quarter",
+      "input": "rotate-below-floor-1",
+      "position": [
+        -2.7713222042932233,
+        2.450834687564157,
+        2.5983721716795323
+      ],
+      "target": [
+        -0.18000015198870428,
+        1.2944017028902481,
+        -0.14999970197677612
+      ],
+      "distance": 3.950422152467581,
+      "polar": 1.2737088073336644,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "quarter",
+      "input": "rotate-below-floor-2",
+      "position": [
+        -2.5102772311499306,
+        3.366916910800347,
+        2.3215062910730104
+      ],
+      "target": [
+        -0.18000015198870428,
+        1.3501615851940394,
+        -0.14999970197677612
+      ],
+      "distance": 3.9504221524675804,
+      "polar": 1.0350110774417671,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "quarter",
+      "input": "rotate-below-floor-3",
+      "position": [
+        -2.1448575536951715,
+        4.101862001106388,
+        1.9339399664997798
+      ],
+      "target": [
+        -0.18000015198870428,
+        1.3811330488188363,
+        -0.14999970197677612
+      ],
+      "distance": 3.95042215246758,
+      "polar": 0.8110762307140714,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "quarter",
+      "input": "rotate-below-floor-4",
+      "position": [
+        -1.2311198071482166,
+        5.061098863351722,
+        0.9648241747075547
+      ],
+      "target": [
+        -0.18000015198870428,
+        1.4199245504111206,
+        -0.14999970197677612
+      ],
+      "distance": 3.9504221524675804,
+      "polar": 0.3983100549543128,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "top",
+      "input": "preset",
+      "position": [
+        0.019999999999999993,
+        5.227616636113483,
+        0.05975053665832643
+      ],
+      "target": [
+        0.019999999999999993,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 4.268034896701703,
+      "polar": 0.014,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "top",
+      "input": "pinch-in-1",
+      "position": [
+        0.024280406726340104,
+        4.910035017419906,
+        0.05530410349254518
+      ],
+      "target": [
+        0.024280406726340104,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 3.9504221524675804,
+      "polar": 0.014000000000006311,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "top",
+      "input": "pinch-in-2",
+      "position": [
+        0.027979119860149546,
+        4.910035017419906,
+        0.05530410349254518
+      ],
+      "target": [
+        0.027979119860149546,
+        0.96,
+        0
+      ],
+      "distance": 3.9504221524675804,
+      "polar": 0.014000000000006311,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "top",
+      "input": "pinch-in-3",
+      "position": [
+        0.03095420566032112,
+        4.910035017419905,
+        0.05530410349254517
+      ],
+      "target": [
+        0.03095420566032112,
+        0.9599999999999999,
+        0
+      ],
+      "distance": 3.9504221524675796,
+      "polar": 0.014000000000006311,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "top",
+      "input": "pinch-in-4",
+      "position": [
+        0.03309149872865902,
+        4.910035017419905,
+        0.05530410349254517
+      ],
+      "target": [
+        0.03309149872865902,
+        0.9599999999999997,
+        0
+      ],
+      "distance": 3.9504221524675796,
+      "polar": 0.014000000000006311,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "top",
+      "input": "two-finger-pan-1",
+      "position": [
+        -0.007392135574404028,
+        4.910388132464443,
+        0.030083248203030426
+      ],
+      "target": [
+        -0.007392135574404028,
+        0.9603531150445374,
+        -0.025220855289514746
+      ],
+      "distance": 3.95042215246758,
+      "polar": 0.014000000000006311,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "top",
+      "input": "two-finger-pan-2",
+      "position": [
+        -0.08720451933384699,
+        4.9111021156878945,
+        -0.020912221506745703
+      ],
+      "target": [
+        -0.08720451933384699,
+        0.9610670982679885,
+        -0.07621632499932221
+      ],
+      "distance": 3.950422152467581,
+      "polar": 0.01400000000001424,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "top",
+      "input": "two-finger-pan-3",
+      "position": [
+        -0.18000015198870428,
+        4.912106365757133,
+        -0.09263968274781657
+      ],
+      "target": [
+        -0.18000015198870428,
+        0.962071348337226,
+        -0.1479437862403931
+      ],
+      "distance": 3.9504221524675813,
+      "polar": 0.01400000000001424,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "top",
+      "input": "two-finger-pan-4",
+      "position": [
+        -0.18000015198870428,
+        4.912931509555639,
+        -0.0946955984841996
+      ],
+      "target": [
+        -0.18000015198870428,
+        0.9628964921357323,
+        -0.14999970197677612
+      ],
+      "distance": 3.9504221524675813,
+      "polar": 0.01400000000001424,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "top",
+      "input": "rotate-below-floor-1",
+      "position": [
+        -0.18000015198870428,
+        4.914416506989429,
+        -0.0946955984842309
+      ],
+      "target": [
+        -0.18000015198870428,
+        0.96438148956952,
+        -0.14999970197677612
+      ],
+      "distance": 3.9504221524675835,
+      "polar": 0.014,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "top",
+      "input": "rotate-below-floor-2",
+      "position": [
+        -0.18000015198870428,
+        4.91501217180534,
+        -0.09469559848423088
+      ],
+      "target": [
+        -0.18000015198870428,
+        0.9649771543854295,
+        -0.14999970197677612
+      ],
+      "distance": 3.9504221524675844,
+      "polar": 0.014,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "top",
+      "input": "rotate-below-floor-3",
+      "position": [
+        -0.18000015198870428,
+        4.9157582370522,
+        -0.09469559848423087
+      ],
+      "target": [
+        -0.18000015198870428,
+        0.9657232196322888,
+        -0.14999970197677612
+      ],
+      "distance": 3.9504221524675858,
+      "polar": 0.014,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "top",
+      "input": "rotate-below-floor-4",
+      "position": [
+        -0.18000015198870428,
+        4.916172634136632,
+        -0.09469559848423084
+      ],
+      "target": [
+        -0.18000015198870428,
+        0.9661376167167185,
+        -0.14999970197677612
+      ],
+      "distance": 3.9504221524675875,
+      "polar": 0.014,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "front",
+      "input": "desktop-scroll-in",
+      "position": [
+        -3.9153896035123843,
+        1.3043019768651143,
+        2.4097311406696064e-16
+      ],
+      "target": [
+        0.020000000000000004,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "front",
+      "input": "desktop-scroll-out",
+      "position": [
+        -99.59946980917456,
+        9.675574274765815,
+        6.099933241728101e-15
+      ],
+      "target": [
+        0.020000000000000004,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 100,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "side",
+      "input": "desktop-scroll-in",
+      "position": [
+        0.02,
+        0.7457019768651144,
+        3.9353896035123843
+      ],
+      "target": [
+        0.02,
+        0.4014000000000001,
+        0
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "side",
+      "input": "desktop-scroll-out",
+      "position": [
+        0.02,
+        9.116974274765814,
+        99.61946980917456
+      ],
+      "target": [
+        0.02,
+        0.4014000000000001,
+        0
+      ],
+      "distance": 100,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "rear",
+      "input": "desktop-scroll-in",
+      "position": [
+        3.9553896035123843,
+        1.3043019768651143,
+        2.4097311406696064e-16
+      ],
+      "target": [
+        0.020000000000000004,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "rear",
+      "input": "desktop-scroll-out",
+      "position": [
+        99.63946980917456,
+        9.675574274765815,
+        6.099933241728101e-15
+      ],
+      "target": [
+        0.020000000000000004,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 100,
+      "polar": 1.4835298641951802,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "quarter",
+      "input": "desktop-scroll-in",
+      "position": [
+        -2.6533235405988016,
+        1.6080784340845582,
+        2.8353431491199403
+      ],
+      "target": [
+        0.020000000000000004,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 3.95042215246758,
+      "polar": 1.4059984428613883,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "quarter",
+      "input": "desktop-scroll-out",
+      "position": [
+        -67.65184461359263,
+        17.365295663901247,
+        71.77316852956791
+      ],
+      "target": [
+        0.020000000000000004,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 100,
+      "polar": 1.4059984428613883,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "top",
+      "input": "desktop-scroll-in",
+      "position": [
+        0.020000000000000004,
+        4.910035017419906,
+        0.05530410349254518
+      ],
+      "target": [
+        0.020000000000000004,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 3.9504221524675804,
+      "polar": 0.014000000000006311,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    },
+    {
+      "view": "top",
+      "input": "desktop-scroll-out",
+      "position": [
+        0.020000000000000004,
+        100.9502001600656,
+        1.3999542671154823
+      ],
+      "target": [
+        0.020000000000000004,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 100,
+      "polar": 0.014000000000006311,
+      "insideCollisionBox": false,
+      "targetInsidePanBox": true,
+      "cameraAboveFloor": true,
+      "distanceSafe": true,
+      "polarSafe": true,
+      "passed": true
+    }
+  ],
+  "collisionRecovery": {
+    "cameraOutside": true,
+    "targetInside": true,
+    "aboveFloor": true,
+    "distanceSafe": true
+  },
+  "trustedInputs": {
+    "touch": true,
+    "wheel": true
+  },
+  "errors": [],
+  "passed": true
+}

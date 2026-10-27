@@ -1,0 +1,21 @@
+{
+  "unit": "decimal MB = 1,000,000 bytes",
+  "beforeHtmlBytes": 11465444,
+  "afterHtmlBytes": 12922088,
+  "htmlAddedBytes": 1456644,
+  "sameGzipSettingsBakedAttributeBase64AddedBytes": 1417080,
+  "embeddedAssetChanges": {
+    "vehicle": {
+      "beforeBase64Bytes": 11121836,
+      "afterBase64Bytes": 12506500,
+      "actualAddedBytes": 1384664
+    },
+    "interior": {
+      "beforeBase64Bytes": 295120,
+      "afterBase64Bytes": 327536,
+      "actualAddedBytes": 32416
+    }
+  },
+  "garnishBase64Bytes": 20312,
+  "baseBase64Bytes": 9328
+}

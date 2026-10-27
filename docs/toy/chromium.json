@@ -1,0 +1,391 @@
+{
+  "mode": "after",
+  "source": "/workspace/landcruiser-3d/index.html",
+  "sourceSha256": "38bde8608d78ef799dd065460eeb772e077edb22a30dffbf978db30f325a4cc7",
+  "threeVersion": "0.166.1",
+  "checksOnly": false,
+  "bothStudios": true,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "method": "Real UI and camera updates; test-only intermediate GPU draw suppression; product final frame rendered for every screenshot.",
+  "snapshots": [
+    "cream/front.png",
+    "cream/side.png",
+    "cream/rear.png",
+    "cream/quarter.png",
+    "cream/top.png",
+    "slate/front.png",
+    "slate/side.png",
+    "slate/rear.png",
+    "slate/quarter.png",
+    "slate/top.png",
+    "orbit-000.png",
+    "orbit-045.png",
+    "orbit-090.png",
+    "orbit-135.png",
+    "orbit-180.png",
+    "orbit-225.png",
+    "orbit-270.png",
+    "orbit-315.png",
+    "base-quarter.png",
+    "no-js.png"
+  ],
+  "reusedSnapshots": [],
+  "errors": [],
+  "checks": {
+    "defaultCream": true,
+    "presetButtons": true,
+    "sideSafePolar": true,
+    "heroFraming": true,
+    "presetObservations": [
+      {
+        "studio": "cream",
+        "view": "front",
+        "active": true,
+        "position": [
+          -8.960987253378077,
+          1.7457345719414068,
+          5.49926864651632e-16
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 9.015293165664854,
+        "zoom": 1,
+        "level": false,
+        "safePolar": true,
+        "widthFraction": 0.5519183217271589
+      },
+      {
+        "studio": "cream",
+        "view": "side",
+        "active": true,
+        "position": [
+          0.02,
+          1.5288658153762364,
+          12.886993239325852
+        ],
+        "target": [
+          0.02,
+          0.4014000000000001,
+          0
+        ],
+        "distance": 12.936219459922293,
+        "zoom": 1,
+        "level": false,
+        "safePolar": true,
+        "widthFraction": 0.7974649551951124
+      },
+      {
+        "studio": "cream",
+        "view": "rear",
+        "active": true,
+        "position": [
+          8.832337834507433,
+          1.7309796596799902,
+          5.396000661017323e-16
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 8.845999533412344,
+        "zoom": 1,
+        "level": false,
+        "safePolar": true,
+        "widthFraction": 0.5530382164622007
+      },
+      {
+        "studio": "cream",
+        "view": "quarter",
+        "active": true,
+        "position": [
+          -7.730469837615196,
+          2.838901778815805,
+          8.220195282319143
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 11.453019910821862,
+        "zoom": 1,
+        "level": false,
+        "safePolar": true,
+        "widthFraction": 0.7974652955085275
+      },
+      {
+        "studio": "cream",
+        "view": "top",
+        "active": true,
+        "position": [
+          0.020000000000000004,
+          13.323094301203598,
+          0.1730946292137307
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 12.364305983398967,
+        "zoom": 1,
+        "level": false,
+        "safePolar": true,
+        "widthFraction": 0.7975625195845134
+      },
+      {
+        "studio": "slate",
+        "view": "front",
+        "active": true,
+        "position": [
+          -8.960987253378077,
+          1.7457345719414068,
+          5.49926864651632e-16
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 9.015293165664854,
+        "zoom": 1,
+        "level": false,
+        "safePolar": true,
+        "widthFraction": 0.5519183217271589
+      },
+      {
+        "studio": "slate",
+        "view": "side",
+        "active": true,
+        "position": [
+          0.02,
+          1.5288658153762364,
+          12.886993239325852
+        ],
+        "target": [
+          0.02,
+          0.4014000000000001,
+          0
+        ],
+        "distance": 12.936219459922293,
+        "zoom": 1,
+        "level": false,
+        "safePolar": true,
+        "widthFraction": 0.7974649551951124
+      },
+      {
+        "studio": "slate",
+        "view": "rear",
+        "active": true,
+        "position": [
+          8.832337834507433,
+          1.7309796596799902,
+          5.396000661017323e-16
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 8.845999533412344,
+        "zoom": 1,
+        "level": false,
+        "safePolar": true,
+        "widthFraction": 0.5530382164622007
+      },
+      {
+        "studio": "slate",
+        "view": "quarter",
+        "active": true,
+        "position": [
+          -7.730469837615196,
+          2.838901778815805,
+          8.220195282319143
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 11.453019910821862,
+        "zoom": 1,
+        "level": false,
+        "safePolar": true,
+        "widthFraction": 0.7974652955085275
+      },
+      {
+        "studio": "slate",
+        "view": "top",
+        "active": true,
+        "position": [
+          0.020000000000000004,
+          13.323094301203598,
+          0.1730946292137307
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 12.364305983398967,
+        "zoom": 1,
+        "level": false,
+        "safePolar": true,
+        "widthFraction": 0.7975625195845134
+      }
+    ],
+    "autoRotate": {
+      "enabled": true,
+      "moved": true
+    },
+    "orbitPose": {
+      "distance": 11.453019910821865,
+      "fittedDistance": 11.453019910821864,
+      "horizontal": 11.297849051179826,
+      "height": 1.878901778815806
+    },
+    "paintColors": [
+      "#f4f4ef",
+      "#a9b0b8",
+      "#575c60",
+      "#15191d"
+    ],
+    "paintSwatches": true,
+    "customPaint": true,
+    "background": true,
+    "backgroundRestores": true,
+    "cleanViewHides": true,
+    "cleanViewRestores": true,
+    "reset": true,
+    "bakedCoverage": true,
+    "bakedData": {
+      "opaqueMeshes": 31,
+      "coveredOpaqueMeshes": 31,
+      "vertices": 677527,
+      "missing": [],
+      "strengths": {
+        "ao": 0.9,
+        "ridge": 0.7,
+        "valley": 0.9
+      }
+    },
+    "toyMaterials": true,
+    "materialObservations": {
+      "paint": {
+        "roughness": 0.38,
+        "clearcoat": 0.55,
+        "clearcoatRoughness": 0.2
+      },
+      "glass": "20282c",
+      "chromeRoughness": 0.24,
+      "rimColor": "858c92"
+    },
+    "baseToggle": true,
+    "baseFraming": true,
+    "baseObservations": [
+      {
+        "view": "front",
+        "widthFraction": 0.7217098635463304,
+        "bounds": {
+          "minX": -0.7217098635463304,
+          "maxX": 0.7217098635463304,
+          "minY": -0.6992010414828403,
+          "maxY": 0.7423260414828393
+        },
+        "visible": true
+      },
+      {
+        "view": "side",
+        "widthFraction": 0.7973381117711537,
+        "bounds": {
+          "minX": -0.7973381117711535,
+          "maxX": 0.7973381117711538,
+          "minY": -0.38878898715311067,
+          "maxY": 0.4319139871531107
+        },
+        "visible": true
+      },
+      {
+        "view": "rear",
+        "widthFraction": 0.7235724867621459,
+        "bounds": {
+          "minX": -0.723572486762145,
+          "maxX": 0.7235724867621468,
+          "minY": -0.6990260760624083,
+          "maxY": 0.7421510760624083
+        },
+        "visible": true
+      },
+      {
+        "view": "quarter",
+        "widthFraction": 0.797527199466932,
+        "bounds": {
+          "minX": -0.797527199466932,
+          "maxX": 0.797527199466932,
+          "minY": -0.5452436504894667,
+          "maxY": 0.5883686504894665
+        },
+        "visible": true
+      },
+      {
+        "view": "top",
+        "widthFraction": 0.7977014975844814,
+        "bounds": {
+          "minX": -0.7977014980526246,
+          "maxX": 0.7977014971163383,
+          "minY": -0.5765695533188055,
+          "maxY": 0.6196937226623999
+        },
+        "visible": true
+      }
+    ],
+    "baseRestores": true,
+    "nativeAntialias": true,
+    "pixelRatioCap": true,
+    "longLens": true,
+    "renderer": {
+      "cameraType": "PerspectiveCamera",
+      "fov": 20,
+      "nativeAntialias": true,
+      "devicePixelRatio": 1,
+      "rendererPixelRatio": 1
+    },
+    "model": {
+      "dimensions": {
+        "length": 5.095,
+        "width": 1.98,
+        "height": 1.93,
+        "wheelbase": 2.85,
+        "clearance": 0.23,
+        "trackF": 1.65,
+        "trackR": 1.645,
+        "tireWidth": 0.265,
+        "rimDiameter": 0.43179999999999996,
+        "aspectRatio": 0.7
+      },
+      "bounds": {
+        "min": {
+          "x": -2.5475007814613306,
+          "y": 0.000066792072143107,
+          "z": -1.1483163726598207
+        },
+        "max": {
+          "x": 2.547500477483922,
+          "y": 1.9301326181007357,
+          "z": 1.1483169687062684
+        }
+      },
+      "triangles": 843302,
+      "drawCalls": 43
+    },
+    "noJsFallback": true
+  },
+  "visualInspectionRequired": true
+}

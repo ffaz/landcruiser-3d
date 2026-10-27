@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
 <link rel="icon" href="data:," />
 <meta name="theme-color" content="#EFEAE3" />
-<title>2021 Land Cruiser 200 | Studio V3</title>
+<title>2021 Land Cruiser 200 | Collectible Studio</title>
 <!--
   Single-file LC200 studio. Three.js 0.166.1 stays on the pinned CDN.
   Vehicle: "Land cruise 2016" by ZIRODESIGN, supplied by the user:
@@ -21,6 +21,11 @@
   Toyota UAE May 2021 5.7L GXR sheet verifies 5095 x 1980 x 1930 mm;
   factory 285/60R18 differs from the owner's confirmed wheel/tyre setup.
   https://dam.alfuttaim.com/dx/api/dam/v1/collections/24e5d2dd-5aa6-4fd2-ad4d-83ba5a1d1be4/items/1d6c9972-e9fd-49a5-aec3-faa9aaa1713c/renditions/2b4bd368-b103-4b18-a18e-d1c1609420d1?binary=true
+  Toyota Jordan's regional LC200 catalogue separately lists 1890 mm +40 with
+  roof rails (not a 2021 UAE grade sheet); keep the direct GCC sheet's 1930 mm.
+  https://www.toyota.com.jo/sites/default/files/2020-07/Land%20Cruiser%20Catalog_0.pdf
+  Wheel/tyre geometry and spec text retain the existing 265/70R17 setup;
+  satin gunmetal is the viewer finish, not a newly verified owner wheel style.
   Existing geometry is refitted at runtime; spoiler depth is photo-guided,
   reduced 50% with a shallow crown/tip drop and matched lamp/support movement.
 
@@ -127,6 +132,10 @@
 </head>
 <body class="cream">
 <main id="viewer" aria-label="Interactive rotatable model of a 2021 Toyota Land Cruiser 200"></main>
+<noscript>
+ <style>#loader{display:none}.nojs{position:absolute;inset:25% 8%;display:grid;place-content:center;text-align:center;font:14px/1.8 system-ui;color:#283440}.nojs strong{font-size:22px}</style>
+ <div class="nojs"><strong>Land Cruiser 200 · GXR</strong><span>Viewer finish: white body, satin gunmetal alloys · 265/70R17.</span><span>Enable JavaScript and WebGL to rotate the collectible studio model.</span></div>
+</noscript>
 <header class="topbar">
   <div class="brand"><div class="emblem" aria-hidden="true"></div><div><div class="eyebrow">THE STUDIO SERIES · 2021</div><h1>LAND CRUISER <span style="font-weight:320;opacity:.8">/ 200</span></h1></div></div>
   <div class="topright">
@@ -140,7 +149,7 @@
   <section class="specs" aria-label="Vehicle specifications">
     <div class="micro">GCC SPECIFICATION</div>
     <div class="specname">2021 · Land Cruiser 200</div>
-    <div class="specdetail">5,095 mm L · 1,980 mm W · 1,930 mm H<br>2,850 mm wheelbase · 230 mm nominal clearance<br>17-inch alloys · 265/70R17 · White</div>
+    <div class="specdetail">5,095 mm L · 1,980 mm W · 1,930 mm H<br>2,850 mm wheelbase · clearance unverified<br>17-inch alloys · 265/70R17 · White</div>
   </section>
   <div class="dock">
     <div class="finishbar" aria-label="Paint finish controls"><label for="customPaint">PAINT</label><div class="swatches">

@@ -42,3 +42,13 @@ For a shared dependency directory, pass `--deps /path/to/deps --three-dir /path/
 The benchmark runs Cream, selects 3/4, starts Auto, warms four frames and records 24 animation-frame intervals plus the CPU time spent inside actual `renderer.render` calls. `--frames 24` may be changed from 12 to 120. It saves the source SHA-256, raw samples, p50/p95/mean times, render count, settings, errors and a screenshot in `performance.json`. It does not suppress draws. Run before and after with the same settings and avoid other heavy CPU/GPU work during either measurement. These are software-rendered WebKit emulation timings, not physical iPad Safari FPS or a smoothness guarantee.
 
 When the baked toy asset is present, the report checks that every opaque mesh has matching baked shading attributes (the simple satin arch liners are excluded), records the shared AO/ridge/valley strengths and verifies satin paint plus neutral glass. When the optional base is available, it checks the toggle, all five preset fits and restoration after hiding it; a full capture also saves `base-quarter.png`.
+
+The current source also checks the no-JavaScript fallback for the rendered gunmetal finish and retained tyre text. The preset paint check reads every actual swatch button, rather than assuming a fixed colour count. Base framing checks full visibility in all five views; Front/Rear may be height-limited, while Side/Quarter/Top target 75–85% width.
+
+For trusted native gesture stress at every preset (WebKit touch plus Chromium scroll):
+
+```sh
+node tests/camera-limits.mjs --output /tmp/lc200-camera-limits
+```
+
+It verifies every intermediate pose after extreme pinch, two-finger pan and downward rotation, plus a deliberately invalid pose and both scroll directions. It uses the same external Playwright dependency directory and locally served Three.js; override them with `--deps` and `--three-dir`. WebKit is installed with Playwright and requires its platform libraries. Use `--library-path` for an explicitly installed local library directory and `--chromium` for a different Chromium executable. Touch rendering is suppressed only in the temporary gesture-test page; this test checks camera safety, not frame rate.
