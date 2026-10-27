@@ -5,14 +5,15 @@ import path from 'node:path';
 import {createServer} from 'node:http';
 import {createRequire} from 'node:module';
 import {createHash} from 'node:crypto';
+import {serveAsset,snapshotAssets,routeTestPath,testBasePath} from './serve-assets.mjs';
 import {fileURLToPath} from 'node:url';
 import os from 'node:os';
 const repo=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const options={source:path.join(repo,'index.html'),output:path.join(os.tmpdir(),'lc200-webkit-benchmark'),
- deps:path.join(os.tmpdir(),'lc200-visual-deps'),frames:24};
+ assetRoot:repo,deps:path.join(os.tmpdir(),'lc200-visual-deps'),frames:24};
 for(let i=2;i<process.argv.length;i++){
  const key=process.argv[i];
- if(!['--source','--output','--deps','--three-dir','--frames','--library-path'].includes(key)||!process.argv[i+1])throw Error('Expected --source, --output, --deps, --three-dir, --frames or --library-path followed by a value');
+ if(!['--source','--output','--deps','--three-dir','--frames','--library-path','--asset-root'].includes(key)||!process.argv[i+1])throw Error('Expected --source, --output, --deps, --three-dir, --frames or --library-path followed by a value');
  options[key.slice(2)]=process.argv[++i];
 }
 options.frames=Number(options.frames);
@@ -29,14 +30,14 @@ const original=await fs.readFile(source,'utf8');
 let html=original.replaceAll('https://cdn.jsdelivr.net/npm/three@0.166.1/','/three/');
 const i=html.lastIndexOf('</script>');
 html=html.slice(0,i)+`\nwindow.__perf={camera,controls,renderer,scene,car,THREE,isTweening:()=>!!tween};\n`+html.slice(i);
-const server=createServer(async(req,res)=>{try{const p=new URL(req.url,'http://local').pathname;if(p==='/favicon.ico'){res.writeHead(204);res.end();return}if(p==='/'){res.setHeader('content-type','text/html');res.end(html);return}if(p.startsWith('/three/')){const f=path.resolve(three,p.slice(7));if(!f.startsWith(three+'/'))throw Error();res.setHeader('content-type',f.endsWith('.js')?'text/javascript':'application/octet-stream');res.end(await fs.readFile(f));return}res.writeHead(404);res.end()}catch{res.writeHead(500);res.end()}});
+const server=createServer(async(req,res)=>{try{const p=routeTestPath(new URL(req.url,'http://local').pathname);if(p===null){res.writeHead(404);res.end('Use the project subpath');return;}if(p==='/favicon.ico'){res.writeHead(204);res.end();return}if(p==='/'){res.setHeader('content-type','text/html');res.end(html);return}await serveAsset(res,p,{assetRoot:options['asset-root']||options.assetRoot,threeRoot:three});}catch{res.writeHead(500);res.end()}});
 await new Promise(r=>server.listen(0,'127.0.0.1',r));
 let browser;const errors=[];let result;
 try{
  browser=await webkit.launch({env:{...process.env,LIBGL_ALWAYS_SOFTWARE:'1',...(options['library-path']?{LD_LIBRARY_PATH:options['library-path']+(process.env.LD_LIBRARY_PATH?':'+process.env.LD_LIBRARY_PATH:'')}:{})}});
  const page=await browser.newPage({...devices['iPad Pro 11'],viewport:{width:1366,height:1024},deviceScaleFactor:1});
  page.on('pageerror',e=>errors.push({type:'pageerror',message:e.message}));page.on('console',m=>{if(m.type()==='error')errors.push({type:'console',message:m.text()})});page.on('requestfailed',r=>errors.push({type:'request',url:r.url(),message:r.failure()?.errorText}));
- await page.goto(`http://127.0.0.1:${server.address().port}/`,{timeout:120000});await page.waitForSelector('#loader.hidden',{state:'attached',timeout:120000});
+ await page.goto(`http://127.0.0.1:${server.address().port}${testBasePath}`,{timeout:120000});await page.waitForSelector('#loader.hidden',{state:'attached',timeout:120000});
  await page.evaluate(()=>document.querySelector('[data-view=quarter]').click());
  await page.waitForFunction(()=>window.__perf&&!window.__perf.isTweening(),null,{timeout:120000});
  result=await page.evaluate(async(frameCount)=>{
@@ -54,5 +55,5 @@ try{
  console.log('MEASURED',JSON.stringify(result.raf));
  await page.screenshot({path:path.join(out,'timing-view.png'),timeout:120000});
 }catch(e){errors.push({type:'test',message:e.stack})}finally{await browser?.close();await new Promise(r=>server.close(r))}
-const report={source,sourceSha256:createHash('sha256').update(original).digest('hex'),testedAt:new Date().toISOString(),engine:'Playwright WebKit on Linux WPE with software GL; iPad touch emulation',conditions:'1366x1024 CSS pixels, DPR1, native product renderer, Cream Quarter auto-rotate, four warmup frames then'+options.frames+' measured rAF intervals; no frame suppression',limitation:'Emulated WebKit, not a physical iPad. CPU and software GPU timing depends on host workload; not a hardware performance claim.',passed:!errors.length&&!!result?.rotated&&result?.actualRenderCalls>=options.frames-1,errors,...result};
+const report={source,sourceSha256:createHash('sha256').update(original).digest('hex'),testedAt:new Date().toISOString(),engine:'Playwright WebKit on Linux WPE with software GL; iPad touch emulation',conditions:'1366x1024 CSS pixels, DPR1, native product renderer, Cream Quarter auto-rotate, four warmup frames then'+options.frames+' measured rAF intervals; no frame suppression',limitation:'Emulated WebKit, not a physical iPad. CPU and software GPU timing depends on host workload; not a hardware performance claim.',passed:!errors.length&&!!result?.rotated&&result?.actualRenderCalls>=options.frames-1,errors,assets:await snapshotAssets(options['asset-root']||options.assetRoot),...result};
 await fs.writeFile(path.join(out,'performance.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));if(!report.passed)process.exitCode=1;

@@ -9,11 +9,12 @@ import path from 'node:path';
 import os from 'node:os';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
+import {serveAsset,snapshotAssets,routeTestPath,testBasePath} from './serve-assets.mjs';
 
 const run = promisify(execFile);
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const options = {source: path.join(repo, 'index.html'), output: path.join(os.tmpdir(), 'lc200-visual'),
-  mode: 'after', deps: path.join(os.tmpdir(), 'lc200-visual-deps'), viewsOnly: false,
+  assetRoot: repo, mode: 'after', deps: path.join(os.tmpdir(), 'lc200-visual-deps'), viewsOnly: false,
   checksOnly: false, bothStudios: false, resume: false};
 for (let i = 2; i < process.argv.length; i++) {
   const key = process.argv[i];
@@ -21,7 +22,7 @@ for (let i = 2; i < process.argv.length; i++) {
   else if (key === '--checks-only') options.checksOnly = true;
   else if (key === '--both-studios') options.bothStudios = true;
   else if (key === '--resume') options.resume = true;
-  else if (['--source', '--output', '--mode', '--deps', '--three-dir', '--chromium'].includes(key)) {
+  else if (['--source', '--output', '--mode', '--deps', '--three-dir', '--chromium', '--asset-root'].includes(key)) {
     if (!process.argv[i + 1] || process.argv[i + 1].startsWith('--')) throw new Error(`Missing value for ${key}`);
     options[key.slice(2)] = process.argv[++i];
   } else throw new Error(`Unknown option: ${key}`);
@@ -57,6 +58,8 @@ if (packageInfo.version !== '0.166.1') throw new Error(`Expected Three.js 0.166.
 
 let html = await fs.readFile(options.source, 'utf8');
 const sourceSha256 = createHash('sha256').update(html).digest('hex');
+const initialAssets=await snapshotAssets(options['asset-root']||options.assetRoot);
+const assetSha256=createHash('sha256').update(JSON.stringify(initialAssets)).digest('hex');
 const cdn = 'https://cdn.jsdelivr.net/npm/three@0.166.1/';
 if (!html.includes(cdn)) throw new Error('Expected the pinned CDN importmap in the source file');
 html = html.replaceAll(cdn, '/three/');
@@ -91,6 +94,7 @@ window.__visualTest={camera,controls,car,paint,DIM,scene,renderer,THREE,target,
  }finally{window.__visualSuppressRender=true}}
 };
 ` + html.slice(end);
+html+='\n<!-- Test asset snapshot '+assetSha256+' -->\n';
 const testPage = path.join(output, 'test.html');
 const previousPage = await fs.readFile(testPage, 'utf8').catch(() => null);
 const resume = options.resume && previousPage === html;
@@ -99,22 +103,17 @@ await fs.writeFile(testPage, html);
 
 const server = createServer(async (request, response) => {
   try {
-    const pathname = decodeURIComponent(new URL(request.url, 'http://localhost').pathname);
+    const pathname = routeTestPath(decodeURIComponent(new URL(request.url, 'http://localhost').pathname));
+    if(pathname===null){response.writeHead(404);response.end('Use the project subpath');return;}
     if (pathname === '/favicon.ico') { response.writeHead(204); response.end(); return; }
     if (pathname === '/' || pathname === '/test.html') {
       response.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'}); response.end(html); return;
     }
-    const root = pathname.startsWith('/three/') ? three : path.dirname(options.source);
-    const relative = pathname.startsWith('/three/') ? pathname.slice(7) : pathname.slice(1);
-    const filename = path.resolve(root, relative);
-    if (!filename.startsWith(root + path.sep)) throw new Error('Path outside served directory');
-    const data = await fs.readFile(filename);
-    const type = {'.js': 'text/javascript', '.json': 'application/json', '.glb': 'model/gltf-binary', '.png': 'image/png'}[path.extname(filename)] || 'application/octet-stream';
-    response.writeHead(200, {'Content-Type': type}); response.end(data);
+    await serveAsset(response,pathname,{assetRoot:options['asset-root']||options.assetRoot,threeRoot:three});
   } catch { response.writeHead(404); response.end('Not found'); }
 });
 await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
-const url = `http://127.0.0.1:${server.address().port}/test.html`;
+const url = `http://127.0.0.1:${server.address().port}${testBasePath}test.html`;
 const errors = [], checks = {}, snapshots = [], reusedSnapshots = [];
 let browser;
 try {
@@ -174,7 +173,9 @@ try {
           position: t.camera.position.toArray(), target: t.controls.target.toArray(),
           distance: t.controls.getDistance(), zoom: t.camera.zoom,
           level: Math.abs(t.camera.position.y - t.controls.target.y) < 0.00001,
-          safePolar:!t.cameraSafety || t.controls.getPolarAngle()<=t.cameraSafety.maxPolarAngle+1e-6,
+          safePolar:!t.cameraSafety || !Number.isFinite(t.cameraSafety.maxPolarAngle) || t.controls.getPolarAngle()<=t.cameraSafety.maxPolarAngle+1e-6,
+          minCameraY:t.cameraSafety?.minCameraY??null,
+          aboveMinimum:!Number.isFinite(t.cameraSafety?.minCameraY)||t.camera.position.y>=t.cameraSafety.minCameraY-1e-6,
           widthFraction: b ? (b.maxX - b.minX) / 2 : null};
       }, view);
       presetObservations.push({studio, ...observation});
@@ -184,7 +185,15 @@ try {
   }
   checks.presetButtons = presetObservations.every(o => o.active);
   const hasCameraSafety=await page.evaluate(()=>!!window.__visualTest.cameraSafety);
-  if(hasCameraSafety)checks.sideSafePolar=presetObservations.filter(o=>o.view==='side').every(o=>o.safePolar);
+  if(presetObservations.some(o=>o.minCameraY!==null)){
+    checks.sideLevel=presetObservations.filter(o=>o.view==='side').every(o=>o.level&&Math.abs(o.position[1]-.40)<.002);
+    checks.cameraMinHeight=presetObservations.every(o=>o.aboveMinimum);
+    checks.frontRearElevation=presetObservations.filter(o=>['front','rear'].includes(o.view)).every(o=>Math.abs(Math.atan2(o.position[1]-o.target[1],Math.hypot(o.position[0]-o.target[0],o.position[2]-o.target[2]))*180/Math.PI-1.432096184)<.01);
+    // Measured from commit1169290 at this harness's1440x1000 viewport.
+    const legacyDistances={front:8.546460333579578,side:12.924356919649727,rear:9.012538234850643,quarter:11.451917407298048,top:12.365216278656563};
+    checks.legacyPresetDistances=presetObservations.every(o=>Math.abs(o.distance-legacyDistances[o.view])<1e-6);
+  }
+  else if(hasCameraSafety)checks.sideSafePolar=presetObservations.filter(o=>o.view==='side').every(o=>o.safePolar);
   else checks.sideLevel=options.mode==='before'||presetObservations.filter(o=>o.view==='side').every(o=>o.level);
   checks.heroFraming = options.mode === 'before' || presetObservations
     .filter(o => o.view === 'side' || o.view === 'quarter')
@@ -331,6 +340,59 @@ try {
     checks.baseRestores=await page.evaluate(before=>{const t=window.__visualTest;return document.querySelector('#baseToggle').getAttribute('aria-pressed')==='false'&&t.plinth.visible===false&&
       Math.abs(t.controls.getDistance()-before.distance)<.001&&t.camera.position.distanceTo(new t.THREE.Vector3(...before.position))<.001&&t.controls.target.distanceTo(new t.THREE.Vector3(...before.target))<.001},before);
   }
+  if(!options.viewsOnly && await page.evaluate(()=>!!window.lcBuild)){
+    const foundation=await page.evaluate(async()=>{
+      const api=window.lcBuild,t=window.__visualTest,initial=api.getState();
+      const snapshot=()=>{
+        t.car.updateMatrixWorld(true);const result=[];
+        for(const [kind,root] of Object.entries(api.groups))root.traverse(m=>{if(m.isMesh){const a=m.geometry.getAttribute('position').array;result.push({kind,id:m.uuid,position:m.getWorldPosition(new t.THREE.Vector3()).toArray(),array:a,copy:a.slice()});}});
+        return result;
+      };
+      const baseline=snapshot();
+      await api.setState({lift_mm:50});
+      const raised=snapshot(),raisedById=new Map(raised.map(x=>[x.id,x]));
+      let maxBodyDeltaError=0,maxWheelMovement=0,positionArraysUnchanged=true,bodyMeshes=0,wheelMeshes=0;
+      for(const old of baseline){const now=raisedById.get(old.id);if(!now){positionArraysUnchanged=false;continue;}
+        for(let i=0;i<old.copy.length;i++)if(now.array[i]!==old.copy[i]){positionArraysUnchanged=false;break;}
+        const delta=now.position.map((v,i)=>v-old.position[i]);
+        if(old.kind==='body'){bodyMeshes++;maxBodyDeltaError=Math.max(maxBodyDeltaError,Math.hypot(delta[0],delta[1]-.05,delta[2]));}
+        if(old.kind==='wheels'){wheelMeshes++;maxWheelMovement=Math.max(maxWheelMovement,Math.hypot(...delta));}
+      }
+      await api.setState({lift_mm:initial.lift_mm});
+      const paintedEntry=[...api.parts].find(([,group])=>group.userData.zones?.includes('paint'));
+      let globalPaint=false,partPaint=null,partPaintIsolated=null,paintOverrideKey=null;
+      await api.setState({paint:{paint:'#345678'}});
+      globalPaint=t.paint.color.getHexString()==='345678';
+      if(paintedEntry){const [id,group]=paintedEntry;paintOverrideKey=id+':paint';
+        await api.setState({paint:{[paintOverrideKey]:'#8a6543'}});
+        let paintedMeshes=0;group.traverse(m=>{if(m.isMesh)for(const material of(Array.isArray(m.material)?m.material:[m.material]))if(material.color?.getHexString()==='8a6543')paintedMeshes++;});
+        partPaint=paintedMeshes>0;
+        let leakedMeshes=0;for(const [otherId,other] of api.parts)if(otherId!==id)other.traverse(m=>{if(m.isMesh)for(const material of(Array.isArray(m.material)?m.material:[m.material]))if(material.color?.getHexString()==='8a6543')leakedMeshes++;});
+        partPaintIsolated=paintedMeshes>0&&leakedMeshes===0;
+      }
+      const selected=Object.entries(initial.slots).find(([,id])=>id&&api.parts.has(id));
+      let hidden=false,slotEmpty=false,slotRestored=false;
+      if(selected){const [slot,id]=selected;
+        await api.setState({hidden:[...initial.hidden,id]});hidden=api.parts.get(id).visible===false;
+        await api.setState({hidden:initial.hidden,slots:{[slot]:null}});slotEmpty=api.getState().slots[slot]===null && (!api.parts.has(id)||api.parts.get(id).visible===false);
+        await api.setState({slots:{[slot]:id}});slotRestored=api.getState().slots[slot]===id&&api.parts.get(id)?.visible===true;
+      }
+      if(paintOverrideKey)await api.setState({paint:{[paintOverrideKey]:null}});
+      await api.setState(initial);
+      // Restore UI colour controls too; state and uniforms already match.
+      document.querySelector('[data-paint="#f4f4ef"]')?.click();
+      return{defaultLift:initial.lift_mm,rootScale:t.car.scale.toArray(),bodyMeshes,wheelMeshes,maxBodyDeltaError,maxWheelMovement,positionArraysUnchanged,
+        globalPaint,partPaint,partPaintIsolated,hidden,slotEmpty,slotRestored,restoredLift:api.getState().lift_mm};
+    });
+    checks.buildState=foundation.defaultLift===0&&foundation.bodyMeshes>0&&foundation.wheelMeshes>0&&foundation.maxBodyDeltaError<1e-9&&foundation.maxWheelMovement<1e-9&&foundation.positionArraysUnchanged&&foundation.globalPaint&&foundation.partPaint!==false&&foundation.partPaintIsolated!==false&&foundation.hidden&&foundation.slotEmpty&&foundation.slotRestored&&foundation.restoredLift===0&&foundation.rootScale.every(v=>v===1);
+    checks.buildStateObservations=foundation;
+    await page.evaluate(()=>{location.hash='lift_mm=50'});
+    await page.waitForFunction(()=>window.lcBuild.getState().lift_mm===50,null,{timeout:30000});
+    checks.hashLift=await page.evaluate(()=>Math.abs(window.lcBuild.groups.body.position.y-.05)<1e-9&&window.lcBuild.groups.wheels.position.y===0);
+    await page.evaluate(()=>{location.hash=''});
+    await page.waitForFunction(()=>window.lcBuild.getState().lift_mm===0,null,{timeout:30000});
+    checks.hashRestoresDefault=await page.evaluate(()=>Math.abs(window.lcBuild.groups.body.position.y)<1e-9&&window.lcBuild.groups.wheels.position.y===0);
+  }
   const rendererObservations = await page.evaluate(() => {
     const t = window.__visualTest;
     return {cameraType: t.camera.type, fov: t.camera.fov ?? null,
@@ -346,11 +408,17 @@ try {
     const t = window.__visualTest, box = new t.THREE.Box3().setFromObject(t.car);
     return {dimensions: t.DIM, bounds: {min: box.min, max: box.max}, triangles: t.renderer.info.render.triangles, drawCalls: t.renderer.info.render.calls};
   });
+  if(await page.evaluate(()=>!!window.lcBuild)){
+    const b=checks.model.bounds;
+    const actual=[b.max.x-b.min.x,b.max.y-b.min.y,b.max.z-b.min.z];
+    checks.trueScaleBounds=Math.abs(actual[0]-5.170)<.0001&&Math.abs(actual[1]-1.930)<.0001&&Math.abs(actual[2]-2.297)<.001;
+    checks.trueScaleBoundsMetres={length:actual[0],height:actual[1],widthIncludingMirrors:actual[2]};
+  }
   if(options.mode !== 'before'){
     const noJs=await browser.newPage({viewport:{width:1000,height:800},javaScriptEnabled:false});
     await noJs.goto(url,{timeout:120000});
     const fallback=await noJs.locator('.nojs').textContent();
-    checks.noJsFallback=await noJs.locator('.nojs').isVisible()&&/satin gunmetal/.test(fallback)&&/265\/70R17/.test(fallback);
+    checks.noJsFallback=await noJs.locator('.nojs').isVisible()&&/gunmetal/i.test(fallback)&&/JavaScript/i.test(fallback);
     if(!options.checksOnly){await noJs.screenshot({path:path.join(output,'no-js.png'),timeout:120000});snapshots.push('no-js.png');}
     await noJs.close();
   }
@@ -361,10 +429,12 @@ try {
   errors.push({type: 'test', message: error.stack}); process.exitCode = 1;
 } finally {
   await browser?.close(); await new Promise(resolve => server.close(resolve));
+  const finalAssets=await snapshotAssets(options['asset-root']||options.assetRoot);
+  checks.assetsStable=JSON.stringify(initialAssets)===JSON.stringify(finalAssets);if(!checks.assetsStable)process.exitCode=1;
   const report = {mode: options.mode, source: options.source, sourceSha256, threeVersion: packageInfo.version,
     checksOnly: options.checksOnly, bothStudios: options.bothStudios, viewport: {width: 1440, height: 1000},
     method: 'Real UI and camera updates; test-only intermediate GPU draw suppression; product final frame rendered for every screenshot.',
-    snapshots, reusedSnapshots, errors, checks, visualInspectionRequired: true};
+    snapshots, reusedSnapshots, errors, checks, assets:initialAssets,assetSha256,visualInspectionRequired: true};
   await fs.writeFile(path.join(output, 'results.json'), JSON.stringify(report, null, 2));
   console.log(JSON.stringify(report, null, 2));
 }

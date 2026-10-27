@@ -1,0 +1,63 @@
+{
+  "source": "/workspace/landcruiser-3d/index.html",
+  "sourceSha256": "2d8e3c8dd9a7ed28e5962b0ee933378d226473f6a78577ba0676653fb45972e6",
+  "label": "camera-limits",
+  "testedAt": "2026-10-27T17:45:20.537Z",
+  "engine": "Playwright WebKit Linux WPE iPad touch emulation plus desktop Chromium wheel input;1366x1024 DPR1",
+  "method": "Real preset buttons/tweens, trusted native wheel,pinch,two-finger pan and one-finger rotation. IntermediateGPUdraws suppressed only in test copy; camera controls and safety guard run normally.",
+  "config": {
+    "sphere": {
+      "radius": 2.9886679220351238,
+      "centre": [
+        -1.1920928955078125e-07,
+        0.9650060057606412,
+        2.980232238769531e-07
+      ]
+    },
+    "minDistance": 3.9827952386426406,
+    "margin": 0.35,
+    "minCameraY": 0.15,
+    "maxPolarDegrees": 179.19785908681686,
+    "panBox": {
+      "min": [
+        -0.18000011920928954,
+        0.36500600576064124,
+        -0.14999970197677612
+      ],
+      "max": [
+        0.17999988079071044,
+        1.5650060057606412,
+        0.15000029802322387
+      ]
+    },
+    "collisionBox": {
+      "min": [
+        -2.88500075340271,
+        -0.3000207176371723,
+        -1.4483163362503721
+      ],
+      "max": [
+        2.8850005149841307,
+        2.2300327291584545,
+        1.44831693229682
+      ]
+    }
+  },
+  "collisionRecovery": {
+    "cameraOutside": true,
+    "targetInside": true,
+    "aboveFloor": true,
+    "distanceSafe": true
+  },
+  "trustedInputs": {
+    "touch": true,
+    "wheel": true
+  },
+  "groundLimitReached": true,
+  "errors": [],
+  "passed": true,
+  "observationCount": 75,
+  "everyObservedPoseSafe": true,
+  "minimumObservedCameraY": 0.15,
+  "minimumObservedDistance": 3.98279523864264
+}

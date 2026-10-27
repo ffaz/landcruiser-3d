@@ -1,39 +1,35 @@
-# Land Cruiser 200 collectible studio
+# Land Cruiser 200 parts foundation
 
-[Open the viewer](https://ffaz.github.io/landcruiser-3d/). The app remains a single `index.html`, including the embedded model, interior, fitted garnish and optional display base. Only pinned Three.js **0.166.1** modules load from the CDN; models, shading data and textures are embedded or generated locally.
+[Open the viewer](https://ffaz.github.io/landcruiser-3d/). The app remains one `index.html` using pinned **Three.js 0.166.1** modules; the vehicle now loads from external, losslessly Meshopt-compressed GLBs in [`model/`](model/), described by [`manifest.json`](model/manifest.json). [`build.json`](build.json) holds selected slots, material-zone colours, lift and hidden parts. There is no workshop UI yet.
 
-The finish follows a premium die-cast collectible: satin white paint, neutral tinted glass, readable gunmetal spokes, soft overhead light, dark crevices and thin convex-edge highlights. **Blender 4.3.2 / Cycles** bakes local ambient occlusion into vertex R; signed edge curvature occupies G. Three.js reads the linear data through a small `onBeforeCompile` material patch. `BAKED_LOOK` holds AO/ridge/valley strengths together. There is no screen-space AO or live cavity pass. The existing reflection environment and the single blurred ground contact map are generated once at load. Rendering stops when the scene is idle.
+The physical car root uses uniform **scale 1.0**. Source vertex positions, normals, baked `COLOR_0` AO/curvature and encoded node transforms are retained. Runtime length, height, tyre and spoiler reshaping has been removed. Blender **4.3.2** identifies loose pieces; export selects original triangles and copies original attribute values. The lossless Meshopt roundtrip is verified with the decoder shipped in Three.js 0.166.1.
 
-Front, Side, Rear, 3/4 and Top, Auto, Reset, the existing **four paint swatches plus custom picker**, Cream/Slate and Clean view remain. Touch uses one finger to rotate, pinch to zoom and two fingers to pan. Camera distance derives from the loaded car's bounding sphere; target clamping, an expanded-box collision guard and an 85° polar limit block cabin/underside entry. The requested above-ground limit replaces the previous perfectly level Side elevation. Reset clears pan/damping inertia.
+Front, Side, Rear, 3/4, Top, Auto, Reset, the existing **four paint swatches plus custom picker**, Cream/Slate, Clean view, Base and touch controls remain. Presets restore the distances and directions from commit `1169290`: Side is level at y=0.40 m. A camera y≥0.15 m rule replaces the old 85° limit; sphere-distance, cabin-collision and pan-target guards remain. One finger rotates; pinch zooms; two fingers pan. Clean view restores with a stationary canvas tap, H or Escape.
 
-**Base** adds an optional two-tone bevelled plinth with its own baked AO/curvature. It is off by default; fitting includes the full base when enabled. **Clean view** hides all UI; a stationary canvas tap, H or Escape restores it while rotation/pinch remain active. The no-JavaScript fallback describes the rendered satin gunmetal finish.
+The satin collectible materials and baked crevice/edge shading remain. No screen-space AO or live cavity pass is added. The blurred contact map updates when build state changes; rendering stops when controls are idle.
 
-## Model and specification
+## Foundation data
 
-The retained vehicle is adapted from [Land cruise 2016 by ZIRODESIGN](https://sketchfab.com/3d-models/land-cruise-2016-6bd227c034894019907f7eaf4fe23ded), selected by the owner. Original transforms, normals and mesh tessellation are preserved; logos, lettering and wheel emblems were removed. This pass adds fitted arch liners, closes a tailgate opening that exposed the tan interior, and shortens/crowns the spoiler with its attachments moving together. Those shape adjustments are photo-guided artist fits, not OEM CAD. Grade-specific curves remain approximate. Model authorship remains with ZIRODESIGN; an extraction tool's license does not license the model.
+The vehicle contains **24 named parts and 10 unsorted pieces**, each with material-zone metadata and a review thumbnail. Integrated flare surfaces cannot be detached by loose-piece separation; a standalone frame/axle assembly could not be identified confidently. `arch_flares` and `chassis` therefore remain empty manifest slots. Other pivots are part-bbox centres, **not verified door hinges or mounting points**; wheel pivots use the authored hub coordinates.
 
-The owner previously confirmed **GXR and 265/70R17**. Existing wheel geometry and tyre text remain unchanged; rim material brightness was adjusted as requested. The viewer's satin gunmetal finish is not a newly verified description of the owner's wheel colour/style. The owner's engine variant remains unconfirmed.
+Use the browser console or a URL hash to exercise the data foundation:
 
-Toyota UAE's official [May 2021 5.7L GXR sheet](https://dam.alfuttaim.com/dx/api/dam/v1/collections/24e5d2dd-5aa6-4fd2-ad4d-83ba5a1d1be4/items/1d6c9972-e9fd-49a5-aec3-faa9aaa1713c/renditions/2b4bd368-b103-4b18-a18e-d1c1609420d1?binary=true) explicitly gives **5,095 × 1,980 × 1,930 mm** and factory **285/60R18**. Keep the verified 1,930 mm height and model scale. Toyota Jordan's [regional LC200 catalogue](https://www.toyota.com.jo/sites/default/files/2020-07/Land%20Cruiser%20Catalog_0.pdf) separately lists **1,890 mm +40 mm with roof rails**; it supports a rail allowance for the LC200 family, but is not a 2021 UAE grade certificate. The staging-domain figure does not override the public GCC sheet.
+```js
+await lcBuild.setState({ lift_mm: 50 }); // rigid body/parts lift; wheels stay fixed
+await lcBuild.setState({ paint: { 'door_FL:paint': '#cc3333' } });
+await lcBuild.setState({ hidden: ['roof_rails'] });
+await lcBuild.setState({ slots: { spoiler: null } });
+const state = lcBuild.getState();
+```
 
-| Datum | Viewer value | Source or limitation |
-| --- | --- | --- |
-| Length / body width / overall height | 5,095 / 1,980 / 1,930 mm | Official 2021 UAE GXR sheet; width excludes mirrors |
-| Wheel / tyre | 17-inch / 265/70R17 | Owner's earlier confirmation; retained |
-| Wheelbase | 2,850 mm | [Toyota 2021 LC200 owner manual, p572](https://assets.sia.toyota.com/publications/en/om-s/OM60T03U/pdf/OM60T03U.pdf) |
-| Front / rear track | 1,650 / 1,645 mm | Same US manual; not independently verified against a GCC axle sheet |
-| Clearance | Unverified | Inherited 230 mm target is not a sourced GCC value or exact mesh measurement; UI now says unverified |
+Open [the 50 mm lift override](https://ffaz.github.io/landcruiser-3d/#lift_mm=50); clearing the hash restores `build.json`. `#build=` accepts URL-encoded JSON. `paint` accepts a global zone (`paint`) or `partId:zone`; a `null` value removes a colour override. `lcBuild.getManifest()` exposes slot/pivot/zone metadata. State changes use rigid group transforms and material properties, never vertex edits.
 
-The side silhouette/spoiler were compared with the [real final-facelift profile](https://commons.wikimedia.org/wiki/File:2018_Toyota_Land_Cruiser_200_Executive_Lounge_white_side.jpg), [Toyota dealer 2021 exterior photos](https://www.rustywallacetoyota.com/2021-toyota-land-cruiser-research-morristown-tn/) and [GCC rear-quarter photos](https://qatar.yallamotor.com/new-cars/toyota/land-cruiser/2021/4-6l-gxr-gt). Accessories vary by grade. No reference branding was transferred into the model or base.
+## Scale, provenance and evidence
 
-## Evidence and repeatable checks
+[Foundation report](docs/foundation/README.md) records measured dimensions, byte counts, emulated WebKit timing and validation. [Part table and thumbnails](docs/foundation/parts-review.md) list every part and triangle count. [Overhang/source investigation](docs/foundation/overhang-notes.md) explains the inherited 1.370 m rear overhang: Toyota's grade-specific 5,095/5,170 mm envelopes do not prove the full 75 mm difference belongs at the rear. No corrective geometry change is made.
 
-- [Current before/after comparisons and report](docs/toy/README.md): every preset in Cream and Slate, front details, optional base, file sizes and WebKit timing.
-- [Current validation JSON](docs/validation.json).
-- [Visual/camera tests](tests/README.md), retaining `tests/visual.mjs` and adding a repeatable WebKit benchmark.
-- [Offline Blender bake scripts and encoding](tools/bake/README.md).
-- [Previous studio iteration evidence](docs/refinement/README.md), retained as history.
+The retained vehicle is adapted from [Land cruise 2016 by ZIRODESIGN](https://sketchfab.com/3d-models/land-cruise-2016-6bd227c034894019907f7eaf4fe23ded), selected by the owner; model authorship remains with ZIRODESIGN. An extraction tool's licence does not license the model. The stored asset is an earlier artist adaptation, not OEM CAD. No reference logos or wording are added.
 
-The visual harness npm-packs the exact Three.js release, rewrites only a temporary page's importmap, and runs Chromium with SwiftShader. Screenshots wait at least 2.5 seconds after actual preset clicks. Test-only frame suppression speeds final-image captures; the benchmark uses the untouched product renderer and measures actual auto-rotation frame intervals. Production CDN URLs remain unchanged.
+The owner confirmed GXR and 265/70R17; those sidewall dimensions do **not** describe this unchanged stored wheel geometry. The UI and no-JavaScript fallback now identify stored-model dimensions and satin gunmetal wheels instead of implying an exact owner-car specification.
 
-WebKit uses trusted touch input and a 1366×1024 software-rendered iPad viewport. Timing is **emulated WebKit, not physical iPad Safari**; hardware smoothness cannot be certified here. Safari 16.4+ is required for the existing importmap setup.
+See [tests](tests/README.md), [parts pipeline](tools/foundation/README.md) and [original bake pipeline](tools/bake/README.md). Tests use an npm-packed local Three.js copy only in temporary pages, including its matching Meshopt decoder. Production CDN URLs stay pinned. WebKit results use a software-rendered 1366×1024 iPad viewport, **not physical iPad Safari**; hardware smoothness is unverified. [Earlier collectible iteration](docs/toy/README.md) remains as history.

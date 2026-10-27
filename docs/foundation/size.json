@@ -1,0 +1,13 @@
+{
+  "unit": "decimal MB = 1000000 bytes",
+  "beforeIndexBytes": 12922088,
+  "afterIndexBytes": 51780,
+  "beforeModelRawGlbBytes": 21192128,
+  "beforeModelEmbeddedGzipBytes": 9647754,
+  "beforeModelEmbeddedBase64Bytes": 12863676,
+  "afterModelGlbBytes": 9884184,
+  "afterModelDirectoryBytes": 9988729,
+  "afterBuildJsonBytes": 1195,
+  "indexSha256": "2d8e3c8dd9a7ed28e5962b0ee933378d226473f6a78577ba0676653fb45972e6",
+  "note": "Model directory includes manifest and camera reference JSON. Gzip payload byte count excludes Base64 overhead; production response HTTP compression is not measured."
+}

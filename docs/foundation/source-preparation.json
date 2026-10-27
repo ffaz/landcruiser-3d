@@ -1,0 +1,22 @@
+{
+  "historicalArtifact": "build_model.py",
+  "artifactSha256": "27497cff884868a4e405bf2879f37b3e7644ea34bed7eccdf485d4c6b7553aea",
+  "context": "Earlier source-asset preparation; not executed in the foundation session. The stored asset is now preserved unchanged.",
+  "constants": {
+    "length": 5.17,
+    "width": 1.98,
+    "height": 1.93,
+    "wheelbase": 2.85,
+    "frontOverhang": 0.95,
+    "frontAxle": -1.635,
+    "rearAxle": 1.215,
+    "rearOverhangDerived": 1.37
+  },
+  "evidenceLines": [
+    "L,W,H,WB=5.170,1.980,1.930,2.850",
+    "src_f,src_r=-1.60065,1.24003",
+    "front_axle=-L/2+.950; rear_axle=front_axle+WB",
+    "radius=.3965; src_radius=.4078672"
+  ],
+  "interpretation": "Rear overhang is an arithmetic consequence of previously chosen anchors, not a sourced Toyota individual-overhang figure."
+}

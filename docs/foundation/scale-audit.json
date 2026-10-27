@@ -1,0 +1,227 @@
+{
+  "generatedAt": "2026-10-27T17:38:50.079595+00:00",
+  "method": "Decode stored accessor arrays and original glTF node transforms in float64; no runtime deformation, added vertex offset, global resize or mutation. x length,y up,z width.",
+  "physicalRootScale": [
+    1,
+    1,
+    1
+  ],
+  "boundsMetres": {
+    "min": [
+      -2.58500075340271,
+      -2.0717637172318337e-05,
+      -1.148316336250372
+    ],
+    "max": [
+      2.585000514984131,
+      1.9300327291584547,
+      1.1483169322968199
+    ],
+    "lengthX": 5.170001268386841,
+    "heightY": 1.930053446795627,
+    "widthIncludingMirrorsZ": 2.296633268547192
+  },
+  "authoredWheelPivotsMetres": {
+    "wheel_FL": [
+      -1.635,
+      0.3965,
+      0.825
+    ],
+    "wheel_FR": [
+      -1.635,
+      0.3965,
+      -0.825
+    ],
+    "wheel_RL": [
+      1.215,
+      0.3965,
+      0.8225
+    ],
+    "wheel_RR": [
+      1.215,
+      0.3965,
+      -0.8225
+    ]
+  },
+  "wheelCentreEvidence": "x/y measured from explicit blank hub-cap source node translations; z pivot is authored track centre (cap surfaces sit further out). L/R uses +z/\u2212z.",
+  "measuredHubCapCentresMetres": [
+    [
+      -1.6349999904632568,
+      0.39649999141693115,
+      0.953000009059906
+    ],
+    [
+      -1.6349999904632568,
+      0.39649999141693115,
+      -0.953000009059906
+    ],
+    [
+      1.215000033378601,
+      0.39649999141693115,
+      0.9505000114440918
+    ],
+    [
+      1.215000033378601,
+      0.39649999141693115,
+      -0.9505000114440918
+    ]
+  ],
+  "measuredFrontAxleX": -1.6349999904632568,
+  "measuredRearAxleX": 1.215000033378601,
+  "measuredHubY": 0.39649999141693115,
+  "measuredWheelbaseMetres": 2.850000023841858,
+  "authoredWheelbaseMetres": 2.85,
+  "nominalTyreDiameterMetres": 0.793,
+  "measuredTyres": [
+    {
+      "name": "tire_17",
+      "axle": "front",
+      "side": "+z",
+      "bboxCentre": [
+        -1.6350088526363518,
+        0.3965005816189673,
+        0.8248431930422444
+      ],
+      "diameterX": 0.7929839274177262,
+      "diameterY": 0.7930395168973909,
+      "widthZ": 0.2846737253632089
+    },
+    {
+      "name": "tire_17",
+      "axle": "rear",
+      "side": "+z",
+      "bboxCentre": [
+        1.2150081802959587,
+        0.3965005816189673,
+        0.8226752033353191
+      ],
+      "diameterX": 0.7929839274177262,
+      "diameterY": 0.7930395168973909,
+      "widthZ": 0.2846737253632089
+    },
+    {
+      "name": "tire_18",
+      "axle": "front",
+      "side": "-z",
+      "bboxCentre": [
+        -1.635007788740647,
+        0.3965001047818091,
+        -0.824843941008957
+      ],
+      "diameterX": 0.7929860552091361,
+      "diameterY": 0.7930416448379627,
+      "widthZ": 0.28467448922018834
+    },
+    {
+      "name": "tire_18",
+      "axle": "rear",
+      "side": "-z",
+      "bboxCentre": [
+        1.215016891561997,
+        0.3965001047818091,
+        -0.8226759454847259
+      ],
+      "diameterX": 0.7929860552091361,
+      "diameterY": 0.7930416448379627,
+      "widthZ": 0.28467448922018834
+    }
+  ],
+  "overhangsMetres": {
+    "frontMeasured": 0.9500007629394531,
+    "rearMeasured": 1.3700004816055298,
+    "frontAuthored": 0.95,
+    "rearAuthored": 1.37,
+    "rearIf5095WithSameWheelbaseAndFront": 1.295,
+    "difference": 0.075
+  },
+  "storedToStoredVertexDeviationMm": 0.0,
+  "deliveredVertexDeviationMm": 0,
+  "deliveryAuditNote": "Original source codes, selected world positions and triangle coverage verified by segmentation; lossless compressed roundtrip verified with the pinned Three.js0.166.1 Meshopt decoder. Source quantisation transforms retained; physical car root scale1.0.",
+  "assets": [
+    {
+      "path": "/workspace/lc-foundation/source/vehicle.glb",
+      "sha256": "1e69f9866006e034cd9c5425b4fe988a6ad2e63ec6b5d019a7718fd5a7c678c9",
+      "bytes": 20784180,
+      "bounds": {
+        "min": [
+          -2.58500075340271,
+          -2.0717637172318337e-05,
+          -1.148316336250372
+        ],
+        "max": [
+          2.585000514984131,
+          1.9300327291584547,
+          1.1483169322968199
+        ],
+        "sizeXYZ": [
+          5.170001268386841,
+          1.930053446795627,
+          2.296633268547192
+        ]
+      },
+      "verticesIncludingInstances": 803113,
+      "triangles": 730442,
+      "primitives": 31,
+      "allHaveCOLOR0": true
+    },
+    {
+      "path": "/workspace/lc-foundation/source/interior.glb",
+      "sha256": "a4a269b31960ef07553e82c3ea0cdae47406bee85fa70e436025df3a0135a7c4",
+      "bytes": 358544,
+      "bounds": {
+        "min": [
+          -1.3559015989303589,
+          0.5334251523017883,
+          -0.858132004737854
+        ],
+        "max": [
+          2.3630080223083496,
+          1.6456698179244995,
+          0.8581305146217346
+        ],
+        "sizeXYZ": [
+          3.7189096212387085,
+          1.1122446656227112,
+          1.7162625193595886
+        ]
+      },
+      "verticesIncludingInstances": 10668,
+      "triangles": 9751,
+      "primitives": 1,
+      "allHaveCOLOR0": true
+    },
+    {
+      "path": "/workspace/lc-foundation/source/garnish.glb",
+      "sha256": "122ed1925aeacdb59cd636187f632478d06374d59713f555072095c72099999d",
+      "bytes": 28900,
+      "bounds": {
+        "min": [
+          2.386265754699707,
+          1.0199999809265137,
+          -0.5299999713897705
+        ],
+        "max": [
+          2.430000066757202,
+          1.1100000143051147,
+          0.5299999713897705
+        ],
+        "sizeXYZ": [
+          0.04373431205749512,
+          0.09000003337860107,
+          1.059999942779541
+        ]
+      },
+      "verticesIncludingInstances": 702,
+      "triangles": 1328,
+      "primitives": 1,
+      "allHaveCOLOR0": true
+    }
+  ],
+  "deliveryProof": {
+    "segmentationSha256": "884c44e8fe9fe7b1576b4ba1c01df3922bb3b6f88838adb3bdccdaaa373dd673",
+    "compressionSha256": "4332ab81af96c61bfd25161d4faf9d0e6f87996d9b54613e7a8b94b71ae28bc8",
+    "vehicleParts": 34,
+    "compressedGLBsIncludingDisplayBase": 35,
+    "pinnedDecoderSha256": "01f48524f4bac6141eaba07e94cc36e7ee56f311796fa6117c159842941b0468"
+  }
+}

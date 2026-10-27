@@ -1,0 +1,828 @@
+{
+  "blenderVersion": "4.3.2",
+  "engine": "Blender Workbench / studio material-zone review lighting",
+  "resolution": [
+    384,
+    320
+  ],
+  "geometryModified": false,
+  "note": "Review thumbnails use temporary material-zone colours and Workbench cavity. They do not alter delivered geometry, normals or baked AO/curvature.",
+  "parts": [
+    {
+      "id": "body_shell",
+      "thumbnail": "body_shell.png",
+      "source": "/workspace/lc-foundation/uncompressed/base.glb",
+      "sourceSha256": "a34b617e8983e798054c23025edea5ccfca22ded6c17c3b3edade945ff1d2398",
+      "triangles": 72487,
+      "manifestTriangles": 72487,
+      "meshCount": 8,
+      "reviewBoundsBlender": {
+        "min": [
+          -2.2074642181396484,
+          -0.9942818880081177,
+          0.23604857921600342
+        ],
+        "max": [
+          2.3630080223083496,
+          0.9942916631698608,
+          1.8947474956512451
+        ]
+      },
+      "renderSeconds": 1.551,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "bonnet",
+      "thumbnail": "bonnet.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/bonnet.glb",
+      "sourceSha256": "5befba4890ef97867d92bbb94478532afedd0bb143124e30bd43ecbcd10fdfce",
+      "triangles": 3184,
+      "manifestTriangles": 3184,
+      "meshCount": 1,
+      "reviewBoundsBlender": {
+        "min": [
+          -2.510286808013916,
+          -0.8377932906150818,
+          1.0873219966888428
+        ],
+        "max": [
+          -1.2353848218917847,
+          0.8377830386161804,
+          1.291428804397583
+        ]
+      },
+      "renderSeconds": 0.155,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "bumper_front",
+      "thumbnail": "bumper_front.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/bumper_front.glb",
+      "sourceSha256": "c5516d794093bbe0f3a5d3cd9a56b90cc9f239d2673fc9ec879bfe1050b27f95",
+      "triangles": 21282,
+      "manifestTriangles": 21282,
+      "meshCount": 6,
+      "reviewBoundsBlender": {
+        "min": [
+          -2.585000514984131,
+          -0.9814298748970032,
+          0.31047528982162476
+        ],
+        "max": [
+          -1.9559235572814941,
+          0.9814196228981018,
+          0.9341830015182495
+        ]
+      },
+      "renderSeconds": 0.485,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "bumper_rear",
+      "thumbnail": "bumper_rear.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/bumper_rear.glb",
+      "sourceSha256": "404eeaca6d43bb1d455dc793cd4d3f4d432d2387fcd497d1d270b12da4e46f79",
+      "triangles": 16605,
+      "manifestTriangles": 16605,
+      "meshCount": 5,
+      "reviewBoundsBlender": {
+        "min": [
+          1.544888973236084,
+          -0.9845764636993408,
+          0.33850526809692383
+        ],
+        "max": [
+          2.585000514984131,
+          0.9845759868621826,
+          1.012818694114685
+        ]
+      },
+      "renderSeconds": 0.418,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "door_FL",
+      "thumbnail": "door_FL.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/door_FL.glb",
+      "sourceSha256": "2166d9aac4dc243621b86cc4cf60c96ed25577bdbda5815c009c9bec47dd6e8d",
+      "triangles": 14147,
+      "manifestTriangles": 14147,
+      "meshCount": 7,
+      "reviewBoundsBlender": {
+        "min": [
+          -1.1242181062698364,
+          -0.977188229560852,
+          0.4556417465209961
+        ],
+        "max": [
+          0.06395229697227478,
+          -0.6538525223731995,
+          1.777944564819336
+        ]
+      },
+      "renderSeconds": 0.267,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "door_FR",
+      "thumbnail": "door_FR.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/door_FR.glb",
+      "sourceSha256": "b001ed9dc9e6e66e3bb6b109898cf10802242d5b0b435d50e6abb49825fb9c44",
+      "triangles": 13897,
+      "manifestTriangles": 13897,
+      "meshCount": 7,
+      "reviewBoundsBlender": {
+        "min": [
+          -1.1242181062698364,
+          0.6538572907447815,
+          0.4556417465209961
+        ],
+        "max": [
+          0.06395229697227478,
+          0.9771883487701416,
+          1.777944564819336
+        ]
+      },
+      "renderSeconds": 0.424,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "door_RL",
+      "thumbnail": "door_RL.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/door_RL.glb",
+      "sourceSha256": "f7b57d75f1907c5301a8b87c033b5db7eee8090c4b55c18928f27b7adf40b866",
+      "triangles": 18983,
+      "manifestTriangles": 18983,
+      "meshCount": 4,
+      "reviewBoundsBlender": {
+        "min": [
+          -0.01977529190480709,
+          -0.9871627688407898,
+          0.4800276756286621
+        ],
+        "max": [
+          1.040967583656311,
+          -0.6498085856437683,
+          1.7995543479919434
+        ]
+      },
+      "renderSeconds": 0.285,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "door_RR",
+      "thumbnail": "door_RR.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/door_RR.glb",
+      "sourceSha256": "f065f2b8ca82828ffce20355606a8657f67cf90be3cca8a4c440b727a215b60b",
+      "triangles": 18984,
+      "manifestTriangles": 18984,
+      "meshCount": 4,
+      "reviewBoundsBlender": {
+        "min": [
+          -0.01977529190480709,
+          0.6497817635536194,
+          0.4800276756286621
+        ],
+        "max": [
+          1.040967583656311,
+          0.9871525168418884,
+          1.7995543479919434
+        ]
+      },
+      "renderSeconds": 0.283,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "grille",
+      "thumbnail": "grille.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/grille.glb",
+      "sourceSha256": "4b9eb79260f88afe9147219a08ad59c6d7ac04682121ab7dc5384c9c19bf7629",
+      "triangles": 34967,
+      "manifestTriangles": 34967,
+      "meshCount": 4,
+      "reviewBoundsBlender": {
+        "min": [
+          -2.565486431121826,
+          -0.6094516515731812,
+          0.7496203780174255
+        ],
+        "max": [
+          -2.3558058738708496,
+          0.609687089920044,
+          1.1188483238220215
+        ]
+      },
+      "renderSeconds": 0.77,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "lamp_front_L",
+      "thumbnail": "lamp_front_L.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/lamp_front_L.glb",
+      "sourceSha256": "c166a36729e2fa4e5782613489da23b234d4833ef36b7b76e5fb7dde2b00824e",
+      "triangles": 67619,
+      "manifestTriangles": 67619,
+      "meshCount": 7,
+      "reviewBoundsBlender": {
+        "min": [
+          -2.5308566093444824,
+          -0.958184540271759,
+          0.5766276121139526
+        ],
+        "max": [
+          -1.9604015350341797,
+          -0.37086519598960876,
+          1.1073050498962402
+        ]
+      },
+      "renderSeconds": 2.474,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "lamp_front_R",
+      "thumbnail": "lamp_front_R.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/lamp_front_R.glb",
+      "sourceSha256": "8239945e536bdbc9bf1e8981a4b342facbb88cb1ba176462e84b0902f0cdd556",
+      "triangles": 67618,
+      "manifestTriangles": 67618,
+      "meshCount": 8,
+      "reviewBoundsBlender": {
+        "min": [
+          -2.5308566093444824,
+          0.3708665668964386,
+          0.5766276121139526
+        ],
+        "max": [
+          -1.9604015350341797,
+          0.9581839442253113,
+          1.1073050498962402
+        ]
+      },
+      "renderSeconds": 1.587,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "lamp_rear_L",
+      "thumbnail": "lamp_rear_L.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/lamp_rear_L.glb",
+      "sourceSha256": "35f8c42f7a5ba01381b1cf5bcd5847078ea729ba26e3a9d07bef42840e2d5e0b",
+      "triangles": 64045,
+      "manifestTriangles": 64045,
+      "meshCount": 8,
+      "reviewBoundsBlender": {
+        "min": [
+          2.1558618545532227,
+          -0.9258020520210266,
+          0.6407978534698486
+        ],
+        "max": [
+          2.503952980041504,
+          -0.44065889716148376,
+          1.285679578781128
+        ]
+      },
+      "renderSeconds": 1.659,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "lamp_rear_R",
+      "thumbnail": "lamp_rear_R.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/lamp_rear_R.glb",
+      "sourceSha256": "9628cd59bfbad1eb510ed63eaca87fdd8a831cb7619c131c448e155dbb2f9ad0",
+      "triangles": 64460,
+      "manifestTriangles": 64460,
+      "meshCount": 8,
+      "reviewBoundsBlender": {
+        "min": [
+          2.1558618545532227,
+          0.44719526171684265,
+          0.6407978534698486
+        ],
+        "max": [
+          2.503952980041504,
+          0.9258083701133728,
+          1.2857575416564941
+        ]
+      },
+      "renderSeconds": 1.295,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "mirror_L",
+      "thumbnail": "mirror_L.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/mirror_L.glb",
+      "sourceSha256": "ecd96158dee4c99140cdd91db409212f87eda932d49abd1cdbded51dd02e9d3d",
+      "triangles": 10168,
+      "manifestTriangles": 10168,
+      "meshCount": 5,
+      "reviewBoundsBlender": {
+        "min": [
+          -0.9852538704872131,
+          -1.1483168601989746,
+          1.2511049509048462
+        ],
+        "max": [
+          -0.7863199710845947,
+          -0.8882636427879333,
+          1.4595372676849365
+        ]
+      },
+      "renderSeconds": 0.224,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "mirror_R",
+      "thumbnail": "mirror_R.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/mirror_R.glb",
+      "sourceSha256": "4b5e1d710355bd87c35b7c022316307c1521147e0ce840cb7b472ef1d3180727",
+      "triangles": 10161,
+      "manifestTriangles": 10161,
+      "meshCount": 5,
+      "reviewBoundsBlender": {
+        "min": [
+          -0.9852538704872131,
+          0.888255774974823,
+          1.2511049509048462
+        ],
+        "max": [
+          -0.7863199710845947,
+          1.1483163833618164,
+          1.4595372676849365
+        ]
+      },
+      "renderSeconds": 0.167,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "roof_rails",
+      "thumbnail": "roof_rails.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/roof_rails.glb",
+      "sourceSha256": "2eff1398067cab70c0795564f24d2332f5d322599e6e618a14fde40290eb0005",
+      "triangles": 10368,
+      "manifestTriangles": 10368,
+      "meshCount": 3,
+      "reviewBoundsBlender": {
+        "min": [
+          -0.1290753036737442,
+          -0.6261406540870667,
+          1.8145909309387207
+        ],
+        "max": [
+          1.8569657802581787,
+          0.6261407732963562,
+          1.930032730102539
+        ]
+      },
+      "renderSeconds": 0.185,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "side_step_L",
+      "thumbnail": "side_step_L.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/side_step_L.glb",
+      "sourceSha256": "ca29b032079a92c772f36607f11c042be5a680373a56e96993a1a1c497f55618",
+      "triangles": 16756,
+      "manifestTriangles": 16756,
+      "meshCount": 4,
+      "reviewBoundsBlender": {
+        "min": [
+          -1.1853594779968262,
+          -1.054386854171753,
+          0.31236010789871216
+        ],
+        "max": [
+          0.7264435887336731,
+          -0.857155442237854,
+          0.5442675352096558
+        ]
+      },
+      "renderSeconds": 0.344,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "side_step_R",
+      "thumbnail": "side_step_R.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/side_step_R.glb",
+      "sourceSha256": "8aaaed666998812679b9fdbcd7a2f221fc336f8c05b8d9370ddcdf2493972c3d",
+      "triangles": 14979,
+      "manifestTriangles": 14979,
+      "meshCount": 4,
+      "reviewBoundsBlender": {
+        "min": [
+          -1.1853594779968262,
+          0.857160210609436,
+          0.31236010789871216
+        ],
+        "max": [
+          0.7264435887336731,
+          1.0543766021728516,
+          0.5442675352096558
+        ]
+      },
+      "renderSeconds": 0.243,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "spoiler",
+      "thumbnail": "spoiler.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/spoiler.glb",
+      "sourceSha256": "81c2b47440d7100e82af8bb1ccde048e226baca83727de5be660dc8a7f906bf9",
+      "triangles": 16540,
+      "manifestTriangles": 16540,
+      "meshCount": 5,
+      "reviewBoundsBlender": {
+        "min": [
+          1.9762150049209595,
+          -0.6383199095726013,
+          1.7522594928741455
+        ],
+        "max": [
+          2.432961940765381,
+          0.6383096575737,
+          1.8866291046142578
+        ]
+      },
+      "renderSeconds": 0.553,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "tailgate",
+      "thumbnail": "tailgate.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/tailgate.glb",
+      "sourceSha256": "dd1876216a185fbf6579d1c27a42526df591a4fc760c5b5213329b55b2959202",
+      "triangles": 30791,
+      "manifestTriangles": 30791,
+      "meshCount": 7,
+      "reviewBoundsBlender": {
+        "min": [
+          2.035902500152588,
+          -0.739784300327301,
+          0.6835062503814697
+        ],
+        "max": [
+          2.4792962074279785,
+          0.7397740483283997,
+          1.824073314666748
+        ]
+      },
+      "renderSeconds": 0.706,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "unsorted_01",
+      "thumbnail": "unsorted_01.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/unsorted_01.glb",
+      "sourceSha256": "e896b9d76dc2fa3366f93275a34a4f5558ccb35a99e8c09b996d4e8afdc759d6",
+      "triangles": 1088,
+      "manifestTriangles": 1088,
+      "meshCount": 1,
+      "reviewBoundsBlender": {
+        "min": [
+          0.009094096720218658,
+          -0.8538179397583008,
+          1.2563880681991577
+        ],
+        "max": [
+          1.6764806509017944,
+          -0.8035751581192017,
+          1.3498059511184692
+        ]
+      },
+      "renderSeconds": 0.062,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "unsorted_02",
+      "thumbnail": "unsorted_02.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/unsorted_02.glb",
+      "sourceSha256": "2ef05fd06c9a2720e5a7869671b8f312898c6983069f61acc9509e170f517cc3",
+      "triangles": 1088,
+      "manifestTriangles": 1088,
+      "meshCount": 1,
+      "reviewBoundsBlender": {
+        "min": [
+          0.009094096720218658,
+          0.8035814762115479,
+          1.2563880681991577
+        ],
+        "max": [
+          1.6764806509017944,
+          0.853824257850647,
+          1.3498059511184692
+        ]
+      },
+      "renderSeconds": 0.06,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "unsorted_03",
+      "thumbnail": "unsorted_03.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/unsorted_03.glb",
+      "sourceSha256": "1c5dab558908b901a776b37223cc8d8213b6683a1dab6db0c76ff8586554c34c",
+      "triangles": 676,
+      "manifestTriangles": 676,
+      "meshCount": 1,
+      "reviewBoundsBlender": {
+        "min": [
+          -2.4454522132873535,
+          -0.9881170988082886,
+          0.31706053018569946
+        ],
+        "max": [
+          2.5237607955932617,
+          0.9881184101104736,
+          0.9311925768852234
+        ]
+      },
+      "renderSeconds": 0.042,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "unsorted_04",
+      "thumbnail": "unsorted_04.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/unsorted_04.glb",
+      "sourceSha256": "e38e45ed51520dd1feeeba2d29ac19fcf3ef60c2c84b94f7d747a09376450645",
+      "triangles": 557,
+      "manifestTriangles": 557,
+      "meshCount": 1,
+      "reviewBoundsBlender": {
+        "min": [
+          1.6503735780715942,
+          -0.5527493953704834,
+          0.3371052145957947
+        ],
+        "max": [
+          2.515181064605713,
+          -0.3697732388973236,
+          0.523279070854187
+        ]
+      },
+      "renderSeconds": 0.072,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "unsorted_05",
+      "thumbnail": "unsorted_05.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/unsorted_05.glb",
+      "sourceSha256": "844a008c95f205363f33b955e93a607331675583ce398a5c8a82b656db0636e1",
+      "triangles": 1823,
+      "manifestTriangles": 1823,
+      "meshCount": 1,
+      "reviewBoundsBlender": {
+        "min": [
+          0.5872558951377869,
+          -0.7402653694152832,
+          0.3504754304885864
+        ],
+        "max": [
+          2.458796977996826,
+          0.9712330102920532,
+          1.0981093645095825
+        ]
+      },
+      "renderSeconds": 0.052,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "unsorted_06",
+      "thumbnail": "unsorted_06.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/unsorted_06.glb",
+      "sourceSha256": "ad6ad5ff0f8a6fc07613dab0a1f6ab888cb1085d19153ce1333bd532b0577e7b",
+      "triangles": 800,
+      "manifestTriangles": 800,
+      "meshCount": 1,
+      "reviewBoundsBlender": {
+        "min": [
+          -2.571075439453125,
+          -0.012435277923941612,
+          0.8610771894454956
+        ],
+        "max": [
+          -2.563629627227783,
+          0.012434681877493858,
+          0.8863309025764465
+        ]
+      },
+      "renderSeconds": 0.042,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "unsorted_07",
+      "thumbnail": "unsorted_07.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/unsorted_07.glb",
+      "sourceSha256": "32e3b471ee681aa19d792d01f12c0a3a3788c4f811a4b323496ef9e18fd4b1e2",
+      "triangles": 44,
+      "manifestTriangles": 44,
+      "meshCount": 1,
+      "reviewBoundsBlender": {
+        "min": [
+          -2.5062103271484375,
+          -0.6099976301193237,
+          0.5508112907409668
+        ],
+        "max": [
+          -2.1743416786193848,
+          0.6099990606307983,
+          1.1027034521102905
+        ]
+      },
+      "renderSeconds": 0.045,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "unsorted_08",
+      "thumbnail": "unsorted_08.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/unsorted_08.glb",
+      "sourceSha256": "3ca3e4119e584c9bf62bc44db8c02f7dca09016e7b17716b561f4d1194d66a8d",
+      "triangles": 466,
+      "manifestTriangles": 466,
+      "meshCount": 1,
+      "reviewBoundsBlender": {
+        "min": [
+          -2.5117478370666504,
+          -0.8096646070480347,
+          1.0758731365203857
+        ],
+        "max": [
+          -2.157806873321533,
+          0.8098219633102417,
+          1.114168643951416
+        ]
+      },
+      "renderSeconds": 0.047,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "unsorted_09",
+      "thumbnail": "unsorted_09.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/unsorted_09.glb",
+      "sourceSha256": "3692171a951c0d6c9113238943fd18b1502893829377482192c9d98dcb9dc273",
+      "triangles": 1152,
+      "manifestTriangles": 1152,
+      "meshCount": 1,
+      "reviewBoundsBlender": {
+        "min": [
+          1.8028782606124878,
+          -0.5697346925735474,
+          1.86871337890625
+        ],
+        "max": [
+          1.8373916149139404,
+          -0.5308480262756348,
+          1.8967084884643555
+        ]
+      },
+      "renderSeconds": 0.075,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "unsorted_10",
+      "thumbnail": "unsorted_10.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/unsorted_10.glb",
+      "sourceSha256": "241a99acee9f22c18aa4921de0c873a09c861406b7a043f7c141e56027209315",
+      "triangles": 3393,
+      "manifestTriangles": 3393,
+      "meshCount": 1,
+      "reviewBoundsBlender": {
+        "min": [
+          1.8028782606124878,
+          -0.36351820826530457,
+          1.8312194347381592
+        ],
+        "max": [
+          2.4306366443634033,
+          0.5697346925735474,
+          1.8967084884643555
+        ]
+      },
+      "renderSeconds": 0.102,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "wheel_FL",
+      "thumbnail": "wheel_FL.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/wheel_FL.glb",
+      "sourceSha256": "f601269adf08682959ec825a691f514ced10d1e6ed853573f5e7ad22adef5b46",
+      "triangles": 40111,
+      "manifestTriangles": 40111,
+      "meshCount": 8,
+      "reviewBoundsBlender": {
+        "min": [
+          -2.031500816345215,
+          -0.967180073261261,
+          -1.919269561767578e-05
+        ],
+        "max": [
+          -1.2385168075561523,
+          -0.6825063228607178,
+          0.7930203676223755
+        ]
+      },
+      "renderSeconds": 0.984,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "wheel_FR",
+      "thumbnail": "wheel_FR.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/wheel_FR.glb",
+      "sourceSha256": "1a0a89841a6af1f925dc574695ca74b1092c8e341472d03d271c50d74763d302",
+      "triangles": 34724,
+      "manifestTriangles": 34724,
+      "meshCount": 8,
+      "reviewBoundsBlender": {
+        "min": [
+          -2.031500816345215,
+          0.6825066804885864,
+          -2.0712614059448242e-05
+        ],
+        "max": [
+          -1.2385146617889404,
+          0.9671811461448669,
+          0.7930209636688232
+        ]
+      },
+      "renderSeconds": 0.715,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "wheel_RL",
+      "thumbnail": "wheel_RL.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/wheel_RL.glb",
+      "sourceSha256": "9ae0ae8e063dfafd29a486ed27a1c110f497e006779cff818096e1c89e79f05a",
+      "triangles": 33772,
+      "manifestTriangles": 33772,
+      "meshCount": 7,
+      "reviewBoundsBlender": {
+        "min": [
+          0.818516194820404,
+          -0.9650120735168457,
+          -1.919269561767578e-05
+        ],
+        "max": [
+          1.6115002632141113,
+          -0.6787821650505066,
+          0.7930203676223755
+        ]
+      },
+      "renderSeconds": 0.905,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    },
+    {
+      "id": "wheel_RR",
+      "thumbnail": "wheel_RR.png",
+      "source": "/workspace/lc-foundation/uncompressed/parts/wheel_RR.glb",
+      "sourceSha256": "00908e7230a2104727d19d54df913c5d056191bdcb3efa3d338ce7d793ea561b",
+      "triangles": 33786,
+      "manifestTriangles": 33786,
+      "meshCount": 7,
+      "reviewBoundsBlender": {
+        "min": [
+          0.8185238242149353,
+          0.6803386807441711,
+          -2.0712614059448242e-05
+        ],
+        "max": [
+          1.6115097999572754,
+          0.9650131464004517,
+          0.7930209636688232
+        ]
+      },
+      "renderSeconds": 0.85,
+      "renderEngine": "BLENDER_WORKBENCH",
+      "reused": false
+    }
+  ]
+}

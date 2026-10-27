@@ -1,0 +1,96 @@
+{
+  "sourceSha256": "2d8e3c8dd9a7ed28e5962b0ee933378d226473f6a78577ba0676653fb45972e6",
+  "assetSetSha256": "255b2491716244de8545ba4a4986de7f886a80bc5afbf35f9ab8ae24d4d146f4",
+  "passed": true,
+  "consoleErrors": 0,
+  "presetCaptures": 10,
+  "orbitCaptures": 8,
+  "additionalCaptures": [
+    "base-quarter",
+    "no-js"
+  ],
+  "visualChecks": {
+    "defaultCream": true,
+    "presetButtons": true,
+    "sideLevel": true,
+    "cameraMinHeight": true,
+    "frontRearElevation": true,
+    "legacyPresetDistances": true,
+    "heroFraming": true,
+    "paintSwatches": true,
+    "customPaint": true,
+    "background": true,
+    "backgroundRestores": true,
+    "cleanViewHides": true,
+    "cleanViewRestores": true,
+    "reset": true,
+    "bakedCoverage": true,
+    "toyMaterials": true,
+    "baseToggle": true,
+    "baseFraming": true,
+    "baseRestores": true,
+    "buildState": true,
+    "hashLift": true,
+    "hashRestoresDefault": true,
+    "nativeAntialias": true,
+    "pixelRatioCap": true,
+    "longLens": true,
+    "trueScaleBounds": true,
+    "noJsFallback": true,
+    "assetsStable": true
+  },
+  "boundsMetres": {
+    "length": 5.170001268386841,
+    "height": 1.930053446795627,
+    "widthIncludingMirrors": 2.296633268547192
+  },
+  "buildState": {
+    "defaultLift": 0,
+    "rootScale": [
+      1,
+      1,
+      1
+    ],
+    "bodyMeshes": 122,
+    "wheelMeshes": 30,
+    "maxBodyDeltaError": 4.163336342344337e-17,
+    "maxWheelMovement": 0,
+    "positionArraysUnchanged": true,
+    "globalPaint": true,
+    "partPaint": true,
+    "partPaintIsolated": true,
+    "hidden": true,
+    "slotEmpty": true,
+    "slotRestored": true,
+    "restoredLift": 0
+  },
+  "nativeCamera": {
+    "passed": true,
+    "observationCount": 75,
+    "everyObservedPoseSafe": true,
+    "minimumObservedCameraY": 0.15,
+    "minimumObservedDistance": 3.98279523864264,
+    "groundLimitReached": true,
+    "trustedInputs": {
+      "touch": true,
+      "wheel": true
+    },
+    "collisionRecovery": {
+      "cameraOutside": true,
+      "targetInside": true,
+      "aboveFloor": true,
+      "distanceSafe": true
+    }
+  },
+  "webkitTiming": {
+    "conditions": "1366x1024 CSS pixels, DPR1, native product renderer, Cream Quarter auto-rotate, four warmup frames then24 measured rAF intervals; no frame suppression",
+    "engine": "Playwright WebKit on Linux WPE with software GL; iPad touch emulation",
+    "limitation": "Emulated WebKit, not a physical iPad. CPU and software GPU timing depends on host workload; not a hardware performance claim.",
+    "p50ms": 477,
+    "p95ms": 489,
+    "meanMs": 471.2083333333333,
+    "errors": []
+  },
+  "screenshots": "final-cream.jpg, final-slate.jpg, orbit.jpg, base-quarter.jpg, front-closeup.jpg",
+  "limitation": "WebKit touch and timing are Linux emulation; no physical iPad was available. Screenshot rendering suppresses intermediate draws in the test copy; the benchmark runs the real renderer without suppression."
+}
