@@ -1,0 +1,289 @@
+{
+  "mode": "after",
+  "source": "/workspace/landcruiser-3d/index.html",
+  "sourceSha256": "95622fc8066ed4aac8f54f8c079920daaacc87f392612fd2ab8687f1b4ae44e6",
+  "threeVersion": "0.166.1",
+  "checksOnly": false,
+  "bothStudios": true,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "method": "Real UI and camera updates; test-only intermediate GPU draw suppression; product final frame rendered for every screenshot.",
+  "snapshots": [
+    "cream/front.png",
+    "cream/side.png",
+    "cream/rear.png",
+    "cream/quarter.png",
+    "cream/top.png",
+    "slate/front.png",
+    "slate/side.png",
+    "slate/rear.png",
+    "slate/quarter.png",
+    "slate/top.png",
+    "orbit-000.png",
+    "orbit-045.png",
+    "orbit-090.png",
+    "orbit-135.png",
+    "orbit-180.png",
+    "orbit-225.png",
+    "orbit-270.png",
+    "orbit-315.png"
+  ],
+  "reusedSnapshots": [],
+  "errors": [],
+  "checks": {
+    "defaultCream": true,
+    "presetButtons": true,
+    "sideLevel": true,
+    "heroFraming": true,
+    "presetObservations": [
+      {
+        "studio": "cream",
+        "view": "front",
+        "active": true,
+        "position": [
+          -8.523790815996549,
+          1.1735947703999137,
+          5.231563037697363e-16
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 8.546460333579578,
+        "zoom": 1,
+        "level": false,
+        "widthFraction": 0.5926071899963581
+      },
+      {
+        "studio": "cream",
+        "view": "side",
+        "active": true,
+        "position": [
+          0.02,
+          0.40140000000000087,
+          12.924356919649727
+        ],
+        "target": [
+          0.02,
+          0.4014000000000001,
+          0
+        ],
+        "distance": 12.924356919649727,
+        "zoom": 1,
+        "level": true,
+        "widthFraction": 0.7974239228203285
+      },
+      {
+        "studio": "cream",
+        "view": "rear",
+        "active": true,
+        "position": [
+          9.029723136161056,
+          1.1852430784040264,
+          5.516864299951746e-16
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 9.012538234850643,
+        "zoom": 1,
+        "level": false,
+        "widthFraction": 0.5408570912236828
+      },
+      {
+        "studio": "cream",
+        "view": "quarter",
+        "active": true,
+        "position": [
+          -7.7297237531437,
+          2.8387209098530186,
+          8.219403980606952
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 11.451917407298048,
+        "zoom": 1,
+        "level": false,
+        "widthFraction": 0.7975435162758742
+      },
+      {
+        "studio": "cream",
+        "view": "top",
+        "active": true,
+        "position": [
+          0.020000000000000004,
+          13.324004507253717,
+          0.17310737293103276
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 12.365216278656563,
+        "zoom": 1,
+        "level": false,
+        "widthFraction": 0.7975033128352211
+      },
+      {
+        "studio": "slate",
+        "view": "front",
+        "active": true,
+        "position": [
+          -8.523790815996547,
+          1.1735947703999137,
+          5.231563037697362e-16
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 8.546460333579576,
+        "zoom": 1,
+        "level": false,
+        "widthFraction": 0.5926071899963583
+      },
+      {
+        "studio": "slate",
+        "view": "side",
+        "active": true,
+        "position": [
+          0.02,
+          0.40140000000000087,
+          12.924356919649723
+        ],
+        "target": [
+          0.02,
+          0.4014000000000001,
+          0
+        ],
+        "distance": 12.924356919649723,
+        "zoom": 1,
+        "level": true,
+        "widthFraction": 0.7974239228203287
+      },
+      {
+        "studio": "slate",
+        "view": "rear",
+        "active": true,
+        "position": [
+          9.029723136161055,
+          1.1852430784040264,
+          5.516864299951745e-16
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 9.012538234850641,
+        "zoom": 1,
+        "level": false,
+        "widthFraction": 0.5408570912236828
+      },
+      {
+        "studio": "slate",
+        "view": "quarter",
+        "active": true,
+        "position": [
+          -7.7297237531436975,
+          2.8387209098530177,
+          8.219403980606948
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 11.451917407298042,
+        "zoom": 1,
+        "level": false,
+        "widthFraction": 0.7975435162758744
+      },
+      {
+        "studio": "slate",
+        "view": "top",
+        "active": true,
+        "position": [
+          0.020000000000000004,
+          13.324004507253713,
+          0.1731073729310327
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 12.36521627865656,
+        "zoom": 1,
+        "level": false,
+        "widthFraction": 0.7975033128352209
+      }
+    ],
+    "autoRotate": {
+      "enabled": true,
+      "moved": true
+    },
+    "orbitPose": {
+      "distance": 11.451917407298042,
+      "fittedDistance": 11.451917407298048,
+      "horizontal": 11.296761484888355,
+      "height": 1.8787209098530178
+    },
+    "paintSwatches": true,
+    "customPaint": true,
+    "background": true,
+    "backgroundRestores": true,
+    "cleanViewHides": true,
+    "cleanViewRestores": true,
+    "reset": true,
+    "nativeAntialias": true,
+    "pixelRatioCap": true,
+    "longLens": true,
+    "renderer": {
+      "cameraType": "PerspectiveCamera",
+      "fov": 20,
+      "nativeAntialias": true,
+      "devicePixelRatio": 1,
+      "rendererPixelRatio": 1
+    },
+    "model": {
+      "dimensions": {
+        "length": 5.095,
+        "width": 1.98,
+        "height": 1.93,
+        "wheelbase": 2.85,
+        "clearance": 0.23,
+        "trackF": 1.65,
+        "trackR": 1.645,
+        "tireWidth": 0.265,
+        "rimDiameter": 0.43179999999999996,
+        "aspectRatio": 0.7
+      },
+      "bounds": {
+        "min": {
+          "x": -2.5475007814613306,
+          "y": 0.000066792072143107,
+          "z": -1.1483163726598207
+        },
+        "max": {
+          "x": 2.547500477483922,
+          "y": 1.9301326181007357,
+          "z": 1.1483169687062684
+        }
+      },
+      "triangles": 840632,
+      "drawCalls": 37
+    }
+  },
+  "visualInspectionRequired": true
+}

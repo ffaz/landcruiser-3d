@@ -1,0 +1,253 @@
+{
+  "label": "final-webkit-consolidated",
+  "source": "/workspace/landcruiser-3d/index.html",
+  "sourceSha256": "95622fc8066ed4aac8f54f8c079920daaacc87f392612fd2ab8687f1b4ae44e6",
+  "testedAt": "2026-10-26T21:29:50.887Z",
+  "engine": "Playwright WebKit on Linux WPE, iPad Pro 11 emulation, DPR 2",
+  "passed": true,
+  "errors": [],
+  "checks": {
+    "browser": {
+      "userAgent": "Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+      "viewport": [
+        834,
+        1194
+      ],
+      "devicePixelRatio": 2,
+      "webgl2": true,
+      "antialias": true,
+      "samples": 4,
+      "canvasPixels": [
+        1668,
+        2388
+      ],
+      "touchSupport": true
+    },
+    "levelSide": {
+      "cameraY": 0.4014000000000017,
+      "targetY": 0.4014000000000001,
+      "passed": true
+    },
+    "touchRotate": {
+      "before": {
+        "position": [
+          0.02,
+          0.4014000000000017,
+          26.095026554354956
+        ],
+        "target": [
+          0.02,
+          0.4014000000000001,
+          0
+        ],
+        "distance": 26.095026554354956,
+        "zoom": 1,
+        "azimuth": 0,
+        "polar": 1.5707963267948966,
+        "clean": false,
+        "draws": 16
+      },
+      "after": {
+        "position": [
+          -5.896759034751576,
+          1.2970612500434535,
+          25.399609530903156
+        ],
+        "target": [
+          0.02,
+          0.4014000000000001,
+          0
+        ],
+        "distance": 26.095026554354956,
+        "zoom": 1,
+        "azimuth": -0.2288653741431171,
+        "polar": 1.5364665206734291,
+        "clean": false,
+        "draws": 23
+      },
+      "changedMoves": 8,
+      "totalMoves": 8,
+      "passed": true
+    },
+    "frameTiming": {
+      "samples": 7,
+      "p50ms": 644,
+      "p95ms": 879,
+      "note": "Measured in Linux software-rendered WebKit emulation; physical iPad frame rate was not measured."
+    },
+    "touchPinch": {
+      "beforeDistance": 26.095026554354956,
+      "afterDistance": 15.392402850807773,
+      "passed": true
+    },
+    "twoFingerPan": {
+      "beforeTarget": [
+        0.028905919517752766,
+        0.40140000000000015,
+        0.002834271951231878
+      ],
+      "afterTarget": [
+        -0.07495396710862676,
+        0.4298693256663439,
+        -0.04978216443539662
+      ],
+      "passed": true
+    },
+    "reset": {
+      "initial": {
+        "position": [
+          0.02,
+          0.4014000000000017,
+          26.095026554354956
+        ],
+        "target": [
+          0.02,
+          0.4014000000000001,
+          0
+        ],
+        "distance": 26.095026554354956,
+        "zoom": 1,
+        "azimuth": 0,
+        "polar": 1.5707963267948966,
+        "clean": false,
+        "draws": 16
+      },
+      "after": {
+        "position": [
+          0.019999999999999993,
+          0.4014000000000017,
+          26.095026554354956
+        ],
+        "target": [
+          0.019999999999999993,
+          0.4014000000000001,
+          0
+        ],
+        "distance": 26.095026554354956,
+        "zoom": 1,
+        "azimuth": 0,
+        "polar": 1.5707963267948966,
+        "clean": false,
+        "draws": 40
+      },
+      "timedOut": false,
+      "passed": true
+    },
+    "background": {
+      "initialCream": true,
+      "initialLabel": "Slate studio",
+      "slate": {
+        "cream": false,
+        "label": "Cream studio"
+      },
+      "cream": {
+        "cream": true,
+        "label": "Slate studio"
+      },
+      "passed": true
+    },
+    "paintSwatches": [
+      {
+        "color": "#f4f4ef",
+        "physical": true,
+        "clearcoat": 1,
+        "clearcoatRoughness": 0.05,
+        "roughness": 0.3,
+        "envMapIntensity": 1.15,
+        "hasPMREM": true,
+        "passed": true
+      },
+      {
+        "color": "#a9b0b8",
+        "physical": true,
+        "clearcoat": 1,
+        "clearcoatRoughness": 0.05,
+        "roughness": 0.3,
+        "envMapIntensity": 1.15,
+        "hasPMREM": true,
+        "passed": true
+      },
+      {
+        "color": "#575c60",
+        "physical": true,
+        "clearcoat": 1,
+        "clearcoatRoughness": 0.05,
+        "roughness": 0.3,
+        "envMapIntensity": 1.15,
+        "hasPMREM": true,
+        "passed": true
+      },
+      {
+        "color": "#15191d",
+        "physical": true,
+        "clearcoat": 1,
+        "clearcoatRoughness": 0.05,
+        "roughness": 0.3,
+        "envMapIntensity": 1.15,
+        "hasPMREM": true,
+        "passed": true
+      }
+    ],
+    "paint": {
+      "passed": true
+    },
+    "cleanView": {
+      "classActive": true,
+      "hidden": true,
+      "rotateStaysClean": true,
+      "rotateWorks": true,
+      "pinchStaysClean": true,
+      "pinchWorks": true,
+      "tapRestores": true,
+      "passed": true
+    },
+    "idleDraws": {
+      "before": 64,
+      "after": 64,
+      "delta": 0,
+      "settlingSeconds": 0,
+      "passed": true
+    },
+    "trustedTouches": true
+  },
+  "evidenceRuns": [
+    {
+      "path": "final-webkit-verified/results.json",
+      "testedAt": "2026-10-26T21:26:25.022Z",
+      "role": "Presets, native touch rotate/pinch/pan/reset, paint, theme, idle draws and WebGL settings. The Clean assertion in this initial report is superseded by the focused follow-up below."
+    },
+    {
+      "path": "final-webkit-clean/results.json",
+      "testedAt": "2026-10-26T21:29:50.887Z",
+      "role": "Corrected Clean check waits for actual computed visibility and uses one native touchscreen.tap backend command to test a tap; native drag and pinch remain hidden and operate the camera."
+    }
+  ],
+  "harnessCorrection": "The initial Clean test sampled CSS before its transition settled, and issued touchStart/touchEnd as separate remote commands. Software rendering delayed those separate commands beyond the app 600 ms short-tap limit. The follow-up waits on actual computed visibility and uses Playwright native touchscreen.tap. It passed without modifying the product.",
+  "visualInspection": {
+    "cleanViewScreenshot": "final-webkit-clean/clean-view.png",
+    "uiFullyHidden": true,
+    "note": "Clean screenshot visually inspected: header, footer, hints and controls absent; car and studio remain visible."
+  },
+  "screenshots": [
+    "cream-front.png",
+    "cream-side.png",
+    "cream-rear.png",
+    "cream-quarter.png",
+    "cream-top.png",
+    "touch-rotate.png",
+    "touch-pinch.png",
+    "reset.png",
+    "slate-side.png",
+    "paint-f4f4ef.png",
+    "paint-a9b0b8.png",
+    "paint-575c60.png",
+    "paint-15191d.png",
+    "clean-view.png",
+    "clean-gesture.png"
+  ],
+  "cleanScreenshots": [
+    "clean-view.png",
+    "clean-gesture.png"
+  ],
+  "limitation": "Native trusted WebKit touch events and software-rendered iPad viewport were tested. This is not a physical iPad Safari or hardware performance test."
+}

@@ -1,0 +1,65 @@
+{
+  "label": "08-final-qa",
+  "source": "/workspace/landcruiser-3d/index.html",
+  "sourceSha256": "95622fc8066ed4aac8f54f8c079920daaacc87f392612fd2ab8687f1b4ae44e6",
+  "capturedAt": "2026-10-26T21:24:47.843Z",
+  "viewport": {
+    "width": 1200,
+    "height": 900
+  },
+  "threeVersion": "0.166.1",
+  "snapshots": [
+    "cream/front.png",
+    "cream/side.png",
+    "cream/rear.png",
+    "cream/quarter.png",
+    "cream/top.png",
+    "slate/front.png",
+    "slate/side.png",
+    "slate/rear.png",
+    "slate/quarter.png",
+    "slate/top.png",
+    "paint-f4f4ef.png",
+    "paint-a9b0b8.png",
+    "paint-575c60.png",
+    "paint-15191d.png"
+  ],
+  "errors": [],
+  "checks": {
+    "cameraType": "PerspectiveCamera",
+    "dimensions": {
+      "length": 5.095,
+      "width": 1.98,
+      "height": 1.93,
+      "wheelbase": 2.85,
+      "clearance": 0.23,
+      "trackF": 1.65,
+      "trackR": 1.645,
+      "tireWidth": 0.265,
+      "rimDiameter": 0.43179999999999996,
+      "aspectRatio": 0.7
+    },
+    "bounds": {
+      "min": {
+        "x": -2.5475007814613306,
+        "y": 0.000066792072143107,
+        "z": -1.1483163726598207
+      },
+      "max": {
+        "x": 2.547500477483922,
+        "y": 1.9301326181007357,
+        "z": 1.1483169687062684
+      }
+    },
+    "triangles": 840632,
+    "drawCalls": 37,
+    "paint": {
+      "roughness": 0.3,
+      "clearcoat": 1,
+      "clearcoatRoughness": 0.05
+    },
+    "toneMapping": 6,
+    "exposure": 1.2
+  },
+  "method": "Real UI preset clicks; 2.5s settle; test-only intermediate GPU frame suppression; final product frame rendered before screenshot."
+}

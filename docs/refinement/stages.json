@@ -1,0 +1,130 @@
+[
+  {
+    "step": "01-lighting",
+    "title": "Lighting and reflections",
+    "before": {
+      "stage": "00-baseline",
+      "mode": "slate",
+      "sha256": "370a29257b673642209c2a7cf8fbddd6abdb7524a2597a4326379a3bd8a17683"
+    },
+    "after": {
+      "stage": "01-lighting-final",
+      "mode": "slate",
+      "sha256": "8cb564eff68e1f64f6005fff0adc1e274021955be94d599a042be5389521401d"
+    },
+    "errors": [],
+    "comparison": "01-lighting.jpg"
+  },
+  {
+    "step": "02-materials",
+    "title": "Materials",
+    "before": {
+      "stage": "01-lighting-final",
+      "mode": "slate",
+      "sha256": "8cb564eff68e1f64f6005fff0adc1e274021955be94d599a042be5389521401d"
+    },
+    "after": {
+      "stage": "02-materials-final",
+      "mode": "slate",
+      "sha256": "bcaaf13b510df967c55f1e84be5f1f94eeb923e78baf3f04d834182a8f29da0f"
+    },
+    "errors": [],
+    "comparison": "02-materials.jpg"
+  },
+  {
+    "step": "03-shadows",
+    "title": "Contact and directional shadows",
+    "before": {
+      "stage": "02-materials-final",
+      "mode": "slate",
+      "sha256": "bcaaf13b510df967c55f1e84be5f1f94eeb923e78baf3f04d834182a8f29da0f"
+    },
+    "after": {
+      "stage": "03-shadows-final",
+      "mode": "slate",
+      "sha256": "a38077d7cad208a26607f79a7638fae716381e3e8e6935fdbafea302f9814eea"
+    },
+    "errors": [],
+    "comparison": "03-shadows.jpg"
+  },
+  {
+    "step": "04-framing",
+    "title": "Cream studio and long-lens framing",
+    "before": {
+      "stage": "03-shadows-final",
+      "mode": "slate",
+      "sha256": "a38077d7cad208a26607f79a7638fae716381e3e8e6935fdbafea302f9814eea"
+    },
+    "after": {
+      "stage": "04-framing-final",
+      "mode": "cream",
+      "sha256": "5b42819447ec5f31b095600a256d9e8aab2a4c9cafefdfe7284b1fc6dea18209"
+    },
+    "errors": [],
+    "comparison": "04-framing.jpg"
+  },
+  {
+    "step": "05-edges",
+    "title": "Edge quality and idle rendering",
+    "before": {
+      "stage": "04-framing-final",
+      "mode": "cream",
+      "sha256": "5b42819447ec5f31b095600a256d9e8aab2a4c9cafefdfe7284b1fc6dea18209"
+    },
+    "after": {
+      "stage": "05-edges-final",
+      "mode": "cream",
+      "sha256": "07f0da97618265a06d44eeeacebccdb052ae65e517e5d258aeed5546793433b0"
+    },
+    "errors": [],
+    "comparison": "05-edges.jpg"
+  },
+  {
+    "step": "06-model",
+    "title": "Spoiler, owner wheels and verified spec",
+    "before": {
+      "stage": "05-edges-final",
+      "mode": "cream",
+      "sha256": "07f0da97618265a06d44eeeacebccdb052ae65e517e5d258aeed5546793433b0"
+    },
+    "after": {
+      "stage": "06-model-details",
+      "mode": "cream",
+      "sha256": "44efcd894271fd1c36621e96fd73e82f35f797e6ad9293544f6195eb69fb133d"
+    },
+    "errors": [],
+    "comparison": "06-model.jpg"
+  },
+  {
+    "step": "07-ui",
+    "title": "Compact UI and Clean view",
+    "before": {
+      "stage": "06-model-details",
+      "mode": "cream",
+      "sha256": "44efcd894271fd1c36621e96fd73e82f35f797e6ad9293544f6195eb69fb133d"
+    },
+    "after": {
+      "stage": "07-ui-final",
+      "mode": "cream",
+      "sha256": "b0412f7ba26fe43e6bb23d0235e625f6d4e6a2543ffe50fec5c82f275b00e617"
+    },
+    "errors": [],
+    "comparison": "07-ui.jpg"
+  },
+  {
+    "step": "08-qa",
+    "title": "Final tyre contact and Reset QA",
+    "before": {
+      "stage": "07-ui-final",
+      "mode": "cream",
+      "sha256": "b0412f7ba26fe43e6bb23d0235e625f6d4e6a2543ffe50fec5c82f275b00e617"
+    },
+    "after": {
+      "stage": "08-final-qa",
+      "mode": "cream",
+      "sha256": "95622fc8066ed4aac8f54f8c079920daaacc87f392612fd2ab8687f1b4ae44e6"
+    },
+    "errors": [],
+    "comparison": "08-qa.jpg"
+  }
+]

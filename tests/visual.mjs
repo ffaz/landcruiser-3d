@@ -8,14 +8,18 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import os from 'node:os';
 import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
 
 const run = promisify(execFile);
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const options = {source: path.join(repo, 'index.html'), output: path.join(os.tmpdir(), 'lc200-visual'),
-  mode: 'after', deps: path.join(os.tmpdir(), 'lc200-visual-deps'), viewsOnly: false, resume: false};
+  mode: 'after', deps: path.join(os.tmpdir(), 'lc200-visual-deps'), viewsOnly: false,
+  checksOnly: false, bothStudios: false, resume: false};
 for (let i = 2; i < process.argv.length; i++) {
   const key = process.argv[i];
   if (key === '--views-only') options.viewsOnly = true;
+  else if (key === '--checks-only') options.checksOnly = true;
+  else if (key === '--both-studios') options.bothStudios = true;
   else if (key === '--resume') options.resume = true;
   else if (['--source', '--output', '--mode', '--deps', '--three-dir', '--chromium'].includes(key)) {
     if (!process.argv[i + 1] || process.argv[i + 1].startsWith('--')) throw new Error(`Missing value for ${key}`);
@@ -23,6 +27,7 @@ for (let i = 2; i < process.argv.length; i++) {
   } else throw new Error(`Unknown option: ${key}`);
 }
 if (!['before', 'after'].includes(options.mode)) throw new Error('--mode must be before or after');
+if (options.viewsOnly && options.checksOnly) throw new Error('--views-only and --checks-only are mutually exclusive');
 for (const key of ['source', 'output', 'deps']) options[key] = path.resolve(options[key]);
 const output = path.join(options.output, options.mode);
 await fs.mkdir(output, {recursive: true});
@@ -51,12 +56,36 @@ const packageInfo = JSON.parse(await fs.readFile(path.join(three, 'package.json'
 if (packageInfo.version !== '0.166.1') throw new Error(`Expected Three.js 0.166.1, found ${packageInfo.version}`);
 
 let html = await fs.readFile(options.source, 'utf8');
+const sourceSha256 = createHash('sha256').update(html).digest('hex');
 const cdn = 'https://cdn.jsdelivr.net/npm/three@0.166.1/';
 if (!html.includes(cdn)) throw new Error('Expected the pinned CDN importmap in the source file');
 html = html.replaceAll(cdn, '/three/');
+// Run the real UI and camera tween without filling SwiftShader's GPU queue with
+// redundant intermediate frames. Each saved screenshot renders the product's
+// final frame; these wrappers exist only in this temporary test page.
+html = html.replace('requestAnimationFrame(animate);',
+  'if(window.__visualPaused)return; window.__visualRaf=requestAnimationFrame(animate);');
 const end = html.lastIndexOf('</script>');
 if (end < 0) throw new Error('No module script found for test-only instrumentation');
-html = html.slice(0, end) + '\nwindow.__visualTest = {camera, controls, car, paint, DIM, scene, renderer, THREE, target};\n' + html.slice(end);
+html = html.slice(0, end) + `
+window.__visualPaused=false;
+window.__visualSuppressRender=true;
+const __visualOriginalRender=renderer.render.bind(renderer);
+renderer.render=(...args)=>{if(!window.__visualSuppressRender)return __visualOriginalRender(...args)};
+window.__visualTest={camera,controls,car,paint,DIM,scene,renderer,THREE,target,
+ get fittedDistance(){return typeof fittedDistance==='undefined'?controls.getDistance():fittedDistance},
+ updateClipping:typeof updateClipping==='function'?updateClipping:()=>{},
+ centreProjection:typeof centreProjection==='function'?centreProjection:()=>{},
+ renderFrame:typeof renderFrame==='function'?renderFrame:()=>renderer.render(scene,camera),
+ projectedBounds:typeof projectedBounds==='function'?projectedBounds:null,
+ isTweening:()=>typeof tween!=='undefined'&&!!tween,
+ pause:()=>{window.__visualPaused=true;cancelAnimationFrame(window.__visualRaf)},
+ resume:()=>{if(window.__visualPaused){window.__visualPaused=false;animate()}},
+ draw:()=>{window.__visualSuppressRender=false;try{
+  if(typeof renderFrame==='function')renderFrame();else renderer.render(scene,camera);
+ }finally{window.__visualSuppressRender=true}}
+};
+` + html.slice(end);
 const testPage = path.join(output, 'test.html');
 const previousPage = await fs.readFile(testPage, 'utf8').catch(() => null);
 const resume = options.resume && previousPage === html;
@@ -93,28 +122,78 @@ try {
   page.on('pageerror', e => errors.push({type: 'pageerror', message: e.message}));
   page.on('console', m => { if (m.type() === 'error') errors.push({type: 'console', message: m.text()}); });
   page.on('requestfailed', r => errors.push({type: 'request', url: r.url(), message: r.failure()?.errorText}));
-  await page.goto(url);
-  await page.waitForSelector('#loader.hidden', {state: 'attached', timeout: 60000});
-  await page.waitForFunction(() => !!window.__visualTest);
+  await page.goto(url, {timeout: 120000});
+  await page.waitForSelector('#loader.hidden', {state: 'attached', timeout: 120000});
+  await page.waitForFunction(() => !!window.__visualTest, null, {timeout: 120000});
   const capture = async name => {
+    if (options.checksOnly) return;
     const filename = `${name}.png`, destination = path.join(output, filename);
     if (resume && (await fs.stat(destination).catch(() => null))?.size > 0) {
       snapshots.push(filename); reusedSnapshots.push(filename);
       console.log('Reused matching-page capture', options.mode, name); return;
     }
-    await page.screenshot({path: destination, timeout: 120000});
-    snapshots.push(`${name}.png`); console.log('Captured', options.mode, name);
+    await fs.mkdir(path.dirname(destination), {recursive: true});
+    await page.evaluate(() => window.__visualTest.draw());
+    await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    await page.screenshot({path: destination, timeout: 120000, animations: 'disabled'});
+    snapshots.push(filename); console.log('Captured', options.mode, name);
   };
-  // Preserve the requested UI-driven preset transitions and settling time.
-  for (const view of ['front', 'side', 'rear', 'quarter', 'top']) {
-    await page.evaluate(v => document.querySelector(`[data-view=${v}]`).click(), view);
+  const settleView = async view => {
+    await page.evaluate(v => {
+      window.__visualTest.resume(); document.querySelector(`[data-view=${v}]`).click();
+    }, view);
     await page.waitForTimeout(2500);
-    await capture(view);
+    await page.waitForFunction(() => !window.__visualTest.isTweening(), null, {timeout: 60000});
+    await page.evaluate(() => window.__visualTest.pause());
+  };
+  const initialStudio = await page.evaluate(() => document.body.classList.contains('cream') ? 'cream' : 'slate');
+  checks.defaultCream = options.mode === 'before' || initialStudio === 'cream';
+  const setStudio = async studio => {
+    if (await page.evaluate(s => document.body.classList.contains('cream') !== (s === 'cream'), studio)) {
+      await page.evaluate(() => document.querySelector('#bgToggle').click());
+    }
+  };
+  let initialSide;
+  const presetObservations = [];
+  // The real preset buttons, tween and projection fitting still run normally.
+  // Only intermediate GPU draws are suppressed in the temporary page.
+  for (const studio of options.bothStudios ? ['cream', 'slate'] : [initialStudio]) {
+    await setStudio(studio);
+    for (const view of ['front', 'side', 'rear', 'quarter', 'top']) {
+      await settleView(view);
+      const observation = await page.evaluate(v => {
+        const t = window.__visualTest;
+        const b = t.projectedBounds?.(t.camera);
+        return {view: v, active: document.querySelector(`[data-view=${v}]`).classList.contains('active'),
+          position: t.camera.position.toArray(), target: t.controls.target.toArray(),
+          distance: t.controls.getDistance(), zoom: t.camera.zoom,
+          level: Math.abs(t.camera.position.y - t.controls.target.y) < 0.00001,
+          widthFraction: b ? (b.maxX - b.minX) / 2 : null};
+      }, view);
+      presetObservations.push({studio, ...observation});
+      if (view === 'side' && !initialSide) initialSide = observation;
+      await capture(options.bothStudios ? `${studio}/${view}` : view);
+    }
   }
+  checks.presetButtons = presetObservations.every(o => o.active);
+  checks.sideLevel = options.mode === 'before' || presetObservations.filter(o => o.view === 'side').every(o => o.level);
+  checks.heroFraming = options.mode === 'before' || presetObservations
+    .filter(o => o.view === 'side' || o.view === 'quarter')
+    .every(o => o.widthFraction !== null && o.widthFraction >= .75 && o.widthFraction <= .85);
+  checks.presetObservations = presetObservations;
+  await setStudio(initialStudio);
   if (!options.viewsOnly) {
-    await page.evaluate(() => document.querySelector('[data-view=quarter]').click());
-    await page.waitForTimeout(2500);
-    await page.evaluate(() => document.querySelector('#rotate').click());
+    await settleView('quarter');
+    // Preserve the real fitted long-lens radius/elevation. The old fixed 9 m
+    // orbit would crop a PerspectiveCamera with a 20 degree field of view.
+    const orbitPose = await page.evaluate(() => {
+      const t = window.__visualTest, d = t.camera.position.clone().sub(t.controls.target);
+      return {distance: t.controls.getDistance(), fittedDistance: t.fittedDistance,
+        horizontal: Math.hypot(d.x, d.z), height: d.y};
+    });
+    await page.evaluate(() => {
+      window.__visualTest.resume(); document.querySelector('#rotate').click();
+    });
     const start = await page.evaluate(() => window.__visualTest.controls.getAzimuthalAngle());
     await page.waitForFunction(start =>
       Math.abs(window.__visualTest.controls.getAzimuthalAngle() - start) > 0.00001,
@@ -123,39 +202,96 @@ try {
       const {controls} = window.__visualTest;
       return {enabled: controls.autoRotate, moved: Math.abs(controls.getAzimuthalAngle() - start) > 0.00001};
     }, start);
-    for (let i = 0; i < 8; i++) {
-      // Sample all eight sides while the real auto-rotation control stays active.
-      await page.evaluate(i => {
-        const t = window.__visualTest, a = i * Math.PI / 4;
-        t.camera.position.copy(t.controls.target).add(new t.THREE.Vector3(Math.sin(a) * 9, 3, Math.cos(a) * 9));
-        t.controls.update(); t.renderer.render(t.scene, t.camera);
-      }, i);
-      await capture(`orbit-${String(i * 45).padStart(3, '0')}`);
+    await page.evaluate(() => window.__visualTest.pause());
+    if (!options.checksOnly) {
+      for (let i = 0; i < 8; i++) {
+        await page.evaluate(({i, pose}) => {
+          const t = window.__visualTest, a = i * Math.PI / 4;
+          t.camera.position.copy(t.controls.target).add(new t.THREE.Vector3(
+            Math.sin(a) * pose.horizontal, pose.height, Math.cos(a) * pose.horizontal));
+          const damping = t.controls.enableDamping;
+          t.controls.enableDamping = false; t.controls.update(0); t.controls.enableDamping = damping;
+          t.updateClipping(); t.centreProjection();
+        }, {i, pose: orbitPose});
+        await capture(`orbit-${String(i * 45).padStart(3, '0')}`);
+      }
     }
+    checks.orbitPose = orbitPose;
     await page.evaluate(() => document.querySelector('#rotate').click());
-    await page.evaluate(() => document.querySelector('[data-paint="#575c60"]').click());
-    checks.paintSwatch = await page.evaluate(() => window.__visualTest.paint.color.getHexString() === '575c60');
+    const paintChecks = [];
+    for (const color of ['#f4f4ef', '#a9b0b8', '#575c60', '#15191d']) {
+      await page.evaluate(c => document.querySelector(`[data-paint="${c}"]`).click(), color);
+      paintChecks.push(await page.evaluate(c => {
+        const t = window.__visualTest;
+        return t.paint.color.getHexString() === c.slice(1) && document.querySelector('#customPaint').value === c;
+      }, color));
+    }
+    checks.paintSwatches = paintChecks.every(Boolean);
     await page.evaluate(() => {
-      const input = document.querySelector('#customPaint'); input.value = '#aabbcc'; input.dispatchEvent(new Event('input', {bubbles: true}));
+      const input = document.querySelector('#customPaint'); input.value = '#aabbcc';
+      input.dispatchEvent(new Event('input', {bubbles: true}));
     });
     checks.customPaint = await page.evaluate(() => window.__visualTest.paint.color.getHexString() === 'aabbcc');
     await page.evaluate(() => document.querySelector('#bgToggle').click());
-    checks.background = await page.evaluate(() => document.body.classList.contains('cream') && document.querySelector('#bgToggle').getAttribute('aria-pressed') === 'true');
-    await page.evaluate(() => {
-      document.querySelector('#bgToggle').click(); document.querySelector('[data-paint="#f4f4ef"]').click();
-      const t = window.__visualTest; t.camera.zoom = 1.5; t.controls.target.x += 0.5; t.camera.updateProjectionMatrix();
-      document.querySelector('#reset').click();
-    });
-    await page.waitForTimeout(2500);
-    // Software rendering can delay the final tween frame past the nominal wait.
-    await page.waitForFunction(() => {
+    const alternate = await page.evaluate(() => ({cream: document.body.classList.contains('cream'),
+      label: document.querySelector('#bgLabel').textContent,
+      pressed: document.querySelector('#bgToggle').getAttribute('aria-pressed')}));
+    const expectedLabel = alternate.cream ? 'Slate studio' : 'Cream studio';
+    checks.background = alternate.cream !== (initialStudio === 'cream') &&
+      alternate.pressed === String(alternate.cream) &&
+      (alternate.label === expectedLabel || (options.mode === 'before' && alternate.cream && alternate.label === 'Blue studio'));
+    await page.evaluate(() => document.querySelector('#bgToggle').click());
+    checks.backgroundRestores = await page.evaluate(studio => document.body.classList.contains('cream') === (studio === 'cream'), initialStudio);
+    const hasCleanView = !!await page.locator('#cleanToggle').count();
+    if (hasCleanView) {
+      await page.locator('#cleanToggle').click();
+      await page.waitForFunction(() => [...document.querySelectorAll('.topbar,.bottom')]
+        .every(el => getComputedStyle(el).visibility === 'hidden'), null, {timeout: 5000});
+      checks.cleanViewHides = await page.evaluate(() => document.body.classList.contains('clean-view') &&
+        document.querySelector('#cleanToggle').getAttribute('aria-pressed') === 'true' &&
+        [...document.querySelectorAll('.topbar,.bottom')].every(el => el.inert &&
+          el.getAttribute('aria-hidden') === 'true' && getComputedStyle(el).visibility === 'hidden'));
+      // Use native pointer input so the actual tap detector, not a synthetic
+      // DOM click, restores the controls from the canvas.
+      await page.locator('#viewer canvas').click({position: {x: 24, y: 24}});
+      await page.waitForFunction(() => !document.body.classList.contains('clean-view'), null, {timeout: 5000});
+      checks.cleanViewRestores = await page.evaluate(() =>
+        document.querySelector('#cleanToggle').getAttribute('aria-pressed') === 'false' &&
+        [...document.querySelectorAll('.topbar,.bottom')].every(el => !el.inert && el.getAttribute('aria-hidden') === 'false'));
+    } else if (options.mode !== 'before') {
+      checks.cleanViewHides = checks.cleanViewRestores = false;
+    }
+    await page.evaluate(initial => {
+      document.querySelector('[data-paint="#f4f4ef"]').click();
       const t = window.__visualTest;
-      return Math.abs(t.camera.zoom - 1) < 0.00001 && t.controls.target.distanceTo(t.target) < 0.00001;
-    }, null, {timeout: 15000});
-    checks.reset = await page.evaluate(() => {
-      const t = window.__visualTest; return Math.abs(t.camera.zoom - 1) < 0.00001 && t.controls.target.distanceTo(t.target) < 0.00001;
-    });
+      const centre = new t.THREE.Vector3(...initial.target);
+      const offset = new t.THREE.Vector3(...initial.position).sub(centre).multiplyScalar(.72);
+      t.controls.target.copy(centre).add(new t.THREE.Vector3(.35, .15, 0));
+      t.camera.position.copy(t.controls.target).add(offset); t.camera.zoom = 1.25; t.camera.updateProjectionMatrix();
+      t.resume(); document.querySelector('#reset').click();
+    }, initialSide);
+    await page.waitForTimeout(2500);
+    await page.waitForFunction(initial => {
+      const t = window.__visualTest;
+      return !t.isTweening() && Math.abs(t.camera.zoom - 1) < .00001 &&
+        Math.abs(t.controls.getDistance() - initial.distance) < .0001 &&
+        t.controls.target.distanceTo(new t.THREE.Vector3(...initial.target)) < .0001 &&
+        t.camera.position.distanceTo(new t.THREE.Vector3(...initial.position)) < .001;
+    }, initialSide, {timeout: 60000});
+    checks.reset = true;
+    await page.evaluate(() => window.__visualTest.pause());
   }
+  const rendererObservations = await page.evaluate(() => {
+    const t = window.__visualTest;
+    return {cameraType: t.camera.type, fov: t.camera.fov ?? null,
+      nativeAntialias: t.renderer.getContext().getContextAttributes().antialias,
+      devicePixelRatio: window.devicePixelRatio, rendererPixelRatio: t.renderer.getPixelRatio()};
+  });
+  checks.nativeAntialias = rendererObservations.nativeAntialias;
+  checks.pixelRatioCap = rendererObservations.rendererPixelRatio <= Math.min(rendererObservations.devicePixelRatio, 2);
+  checks.longLens = options.mode === 'before' || (rendererObservations.cameraType === 'PerspectiveCamera' &&
+    rendererObservations.fov >= 18 && rendererObservations.fov <= 22);
+  checks.renderer = rendererObservations;
   checks.model = await page.evaluate(() => {
     const t = window.__visualTest, box = new t.THREE.Box3().setFromObject(t.car);
     return {dimensions: t.DIM, bounds: {min: box.min, max: box.max}, triangles: t.renderer.info.render.triangles, drawCalls: t.renderer.info.render.calls};
@@ -167,7 +303,9 @@ try {
   errors.push({type: 'test', message: error.stack}); process.exitCode = 1;
 } finally {
   await browser?.close(); await new Promise(resolve => server.close(resolve));
-  const report = {mode: options.mode, source: options.source, threeVersion: packageInfo.version,
+  const report = {mode: options.mode, source: options.source, sourceSha256, threeVersion: packageInfo.version,
+    checksOnly: options.checksOnly, bothStudios: options.bothStudios, viewport: {width: 1440, height: 1000},
+    method: 'Real UI and camera updates; test-only intermediate GPU draw suppression; product final frame rendered for every screenshot.',
     snapshots, reusedSnapshots, errors, checks, visualInspectionRequired: true};
   await fs.writeFile(path.join(output, 'results.json'), JSON.stringify(report, null, 2));
   console.log(JSON.stringify(report, null, 2));

@@ -1,16 +1,30 @@
 {
-  "testedAt": "2026-10-26T18:46:30.062389+00:00",
-  "sourceSha256": "370a29257b673642209c2a7cf8fbddd6abdb7524a2597a4326379a3bd8a17683",
+  "testedAt": "2026-10-27T06:18:41.657173+00:00",
+  "sourceSha256": "95622fc8066ed4aac8f54f8c079920daaacc87f392612fd2ab8687f1b4ae44e6",
+  "passed": true,
   "chromium": {
     "mode": "after",
-    "source": "index.html",
+    "source": "/workspace/landcruiser-3d/index.html",
+    "sourceSha256": "95622fc8066ed4aac8f54f8c079920daaacc87f392612fd2ab8687f1b4ae44e6",
     "threeVersion": "0.166.1",
+    "checksOnly": false,
+    "bothStudios": true,
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "method": "Real UI and camera updates; test-only intermediate GPU draw suppression; product final frame rendered for every screenshot.",
     "snapshots": [
-      "front.png",
-      "side.png",
-      "rear.png",
-      "quarter.png",
-      "top.png",
+      "cream/front.png",
+      "cream/side.png",
+      "cream/rear.png",
+      "cream/quarter.png",
+      "cream/top.png",
+      "slate/front.png",
+      "slate/side.png",
+      "slate/rear.png",
+      "slate/quarter.png",
+      "slate/top.png",
       "orbit-000.png",
       "orbit-045.png",
       "orbit-090.png",
@@ -20,109 +34,607 @@
       "orbit-270.png",
       "orbit-315.png"
     ],
-    "reusedSnapshots": [
-      "front.png",
-      "side.png",
-      "rear.png",
-      "quarter.png",
-      "top.png",
-      "orbit-000.png",
-      "orbit-045.png",
-      "orbit-090.png",
-      "orbit-135.png",
-      "orbit-180.png",
-      "orbit-225.png",
-      "orbit-270.png",
-      "orbit-315.png"
-    ],
+    "reusedSnapshots": [],
     "errors": [],
     "checks": {
+      "defaultCream": true,
+      "presetButtons": true,
+      "sideLevel": true,
+      "heroFraming": true,
+      "presetObservations": [
+        {
+          "studio": "cream",
+          "view": "front",
+          "active": true,
+          "position": [
+            -8.523790815996549,
+            1.1735947703999137,
+            5.231563037697363e-16
+          ],
+          "target": [
+            0.020000000000000004,
+            0.9600000000000001,
+            0
+          ],
+          "distance": 8.546460333579578,
+          "zoom": 1,
+          "level": false,
+          "widthFraction": 0.5926071899963581
+        },
+        {
+          "studio": "cream",
+          "view": "side",
+          "active": true,
+          "position": [
+            0.02,
+            0.40140000000000087,
+            12.924356919649727
+          ],
+          "target": [
+            0.02,
+            0.4014000000000001,
+            0
+          ],
+          "distance": 12.924356919649727,
+          "zoom": 1,
+          "level": true,
+          "widthFraction": 0.7974239228203285
+        },
+        {
+          "studio": "cream",
+          "view": "rear",
+          "active": true,
+          "position": [
+            9.029723136161056,
+            1.1852430784040264,
+            5.516864299951746e-16
+          ],
+          "target": [
+            0.020000000000000004,
+            0.9600000000000001,
+            0
+          ],
+          "distance": 9.012538234850643,
+          "zoom": 1,
+          "level": false,
+          "widthFraction": 0.5408570912236828
+        },
+        {
+          "studio": "cream",
+          "view": "quarter",
+          "active": true,
+          "position": [
+            -7.7297237531437,
+            2.8387209098530186,
+            8.219403980606952
+          ],
+          "target": [
+            0.020000000000000004,
+            0.9600000000000001,
+            0
+          ],
+          "distance": 11.451917407298048,
+          "zoom": 1,
+          "level": false,
+          "widthFraction": 0.7975435162758742
+        },
+        {
+          "studio": "cream",
+          "view": "top",
+          "active": true,
+          "position": [
+            0.020000000000000004,
+            13.324004507253717,
+            0.17310737293103276
+          ],
+          "target": [
+            0.020000000000000004,
+            0.9600000000000001,
+            0
+          ],
+          "distance": 12.365216278656563,
+          "zoom": 1,
+          "level": false,
+          "widthFraction": 0.7975033128352211
+        },
+        {
+          "studio": "slate",
+          "view": "front",
+          "active": true,
+          "position": [
+            -8.523790815996547,
+            1.1735947703999137,
+            5.231563037697362e-16
+          ],
+          "target": [
+            0.020000000000000004,
+            0.9600000000000001,
+            0
+          ],
+          "distance": 8.546460333579576,
+          "zoom": 1,
+          "level": false,
+          "widthFraction": 0.5926071899963583
+        },
+        {
+          "studio": "slate",
+          "view": "side",
+          "active": true,
+          "position": [
+            0.02,
+            0.40140000000000087,
+            12.924356919649723
+          ],
+          "target": [
+            0.02,
+            0.4014000000000001,
+            0
+          ],
+          "distance": 12.924356919649723,
+          "zoom": 1,
+          "level": true,
+          "widthFraction": 0.7974239228203287
+        },
+        {
+          "studio": "slate",
+          "view": "rear",
+          "active": true,
+          "position": [
+            9.029723136161055,
+            1.1852430784040264,
+            5.516864299951745e-16
+          ],
+          "target": [
+            0.020000000000000004,
+            0.9600000000000001,
+            0
+          ],
+          "distance": 9.012538234850641,
+          "zoom": 1,
+          "level": false,
+          "widthFraction": 0.5408570912236828
+        },
+        {
+          "studio": "slate",
+          "view": "quarter",
+          "active": true,
+          "position": [
+            -7.7297237531436975,
+            2.8387209098530177,
+            8.219403980606948
+          ],
+          "target": [
+            0.020000000000000004,
+            0.9600000000000001,
+            0
+          ],
+          "distance": 11.451917407298042,
+          "zoom": 1,
+          "level": false,
+          "widthFraction": 0.7975435162758744
+        },
+        {
+          "studio": "slate",
+          "view": "top",
+          "active": true,
+          "position": [
+            0.020000000000000004,
+            13.324004507253713,
+            0.1731073729310327
+          ],
+          "target": [
+            0.020000000000000004,
+            0.9600000000000001,
+            0
+          ],
+          "distance": 12.36521627865656,
+          "zoom": 1,
+          "level": false,
+          "widthFraction": 0.7975033128352209
+        }
+      ],
       "autoRotate": {
         "enabled": true,
         "moved": true
       },
-      "paintSwatch": true,
+      "orbitPose": {
+        "distance": 11.451917407298042,
+        "fittedDistance": 11.451917407298048,
+        "horizontal": 11.296761484888355,
+        "height": 1.8787209098530178
+      },
+      "paintSwatches": true,
       "customPaint": true,
       "background": true,
+      "backgroundRestores": true,
+      "cleanViewHides": true,
+      "cleanViewRestores": true,
       "reset": true,
+      "nativeAntialias": true,
+      "pixelRatioCap": true,
+      "longLens": true,
+      "renderer": {
+        "cameraType": "PerspectiveCamera",
+        "fov": 20,
+        "nativeAntialias": true,
+        "devicePixelRatio": 1,
+        "rendererPixelRatio": 1
+      },
       "model": {
         "dimensions": {
-          "length": 5.17,
+          "length": 5.095,
           "width": 1.98,
           "height": 1.93,
           "wheelbase": 2.85,
           "clearance": 0.23,
           "trackF": 1.65,
           "trackR": 1.645,
-          "tireWidth": 0.285,
-          "rimDiameter": 0.508,
-          "aspectRatio": 0.5
+          "tireWidth": 0.265,
+          "rimDiameter": 0.43179999999999996,
+          "aspectRatio": 0.7
         },
         "bounds": {
           "min": {
-            "x": -2.58500075340271,
-            "y": -2.0717637172318337e-05,
-            "z": -1.148316336250372
+            "x": -2.5475007814613306,
+            "y": 6.6792072143107e-05,
+            "z": -1.1483163726598207
           },
           "max": {
-            "x": 2.585000514984131,
-            "y": 1.9300327291584547,
-            "z": 1.1483169322968199
+            "x": 2.547500477483922,
+            "y": 1.9301326181007357,
+            "z": 1.1483169687062684
           }
         },
-        "triangles": 831261,
-        "drawCalls": 40
+        "triangles": 840632,
+        "drawCalls": 37
       }
     },
     "visualInspectionRequired": true
   },
+  "finalPresetsAndPaint": {
+    "label": "08-final-qa",
+    "source": "/workspace/landcruiser-3d/index.html",
+    "sourceSha256": "95622fc8066ed4aac8f54f8c079920daaacc87f392612fd2ab8687f1b4ae44e6",
+    "capturedAt": "2026-10-26T21:24:47.843Z",
+    "viewport": {
+      "width": 1200,
+      "height": 900
+    },
+    "threeVersion": "0.166.1",
+    "snapshots": [
+      "cream/front.png",
+      "cream/side.png",
+      "cream/rear.png",
+      "cream/quarter.png",
+      "cream/top.png",
+      "slate/front.png",
+      "slate/side.png",
+      "slate/rear.png",
+      "slate/quarter.png",
+      "slate/top.png",
+      "paint-f4f4ef.png",
+      "paint-a9b0b8.png",
+      "paint-575c60.png",
+      "paint-15191d.png"
+    ],
+    "errors": [],
+    "checks": {
+      "cameraType": "PerspectiveCamera",
+      "dimensions": {
+        "length": 5.095,
+        "width": 1.98,
+        "height": 1.93,
+        "wheelbase": 2.85,
+        "clearance": 0.23,
+        "trackF": 1.65,
+        "trackR": 1.645,
+        "tireWidth": 0.265,
+        "rimDiameter": 0.43179999999999996,
+        "aspectRatio": 0.7
+      },
+      "bounds": {
+        "min": {
+          "x": -2.5475007814613306,
+          "y": 6.6792072143107e-05,
+          "z": -1.1483163726598207
+        },
+        "max": {
+          "x": 2.547500477483922,
+          "y": 1.9301326181007357,
+          "z": 1.1483169687062684
+        }
+      },
+      "triangles": 840632,
+      "drawCalls": 37,
+      "paint": {
+        "roughness": 0.3,
+        "clearcoat": 1,
+        "clearcoatRoughness": 0.05
+      },
+      "toneMapping": 6,
+      "exposure": 1.2
+    },
+    "method": "Real UI preset clicks; 2.5s settle; test-only intermediate GPU frame suppression; final product frame rendered before screenshot."
+  },
   "webkit": {
-    "engine": "Playwright WebKit 27.2 on Linux WPE, iPad Pro 11 emulation",
+    "label": "final-webkit-consolidated",
+    "source": "/workspace/landcruiser-3d/index.html",
+    "sourceSha256": "95622fc8066ed4aac8f54f8c079920daaacc87f392612fd2ab8687f1b4ae44e6",
+    "testedAt": "2026-10-26T21:29:50.887Z",
+    "engine": "Playwright WebKit on Linux WPE, iPad Pro 11 emulation, DPR 2",
     "passed": true,
     "errors": [],
-    "limitation": "This is WebKit engine emulation, not a physical iPad Safari run."
-  },
-  "touch": {
-    "touchRotate": {
-      "before": {
-        "position": [
-          0.019999999999999997,
-          0.9930000000000005,
-          8.4
+    "checks": {
+      "browser": {
+        "userAgent": "Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+        "viewport": [
+          834,
+          1194
         ],
-        "zoom": 1,
-        "target": [
-          0.02,
-          0.993,
-          0
-        ]
-      },
-      "after": {
-        "position": [
-          -1.9503684935741952,
-          1.3246607407138455,
-          8.158899996482322
+        "devicePixelRatio": 2,
+        "webgl2": true,
+        "antialias": true,
+        "samples": 4,
+        "canvasPixels": [
+          1668,
+          2388
         ],
-        "zoom": 1,
-        "target": [
-          0.02,
-          0.993,
-          0
-        ]
+        "touchSupport": true
       },
-      "passed": true
+      "levelSide": {
+        "cameraY": 0.4014000000000017,
+        "targetY": 0.4014000000000001,
+        "passed": true
+      },
+      "touchRotate": {
+        "before": {
+          "position": [
+            0.02,
+            0.4014000000000017,
+            26.095026554354956
+          ],
+          "target": [
+            0.02,
+            0.4014000000000001,
+            0
+          ],
+          "distance": 26.095026554354956,
+          "zoom": 1,
+          "azimuth": 0,
+          "polar": 1.5707963267948966,
+          "clean": false,
+          "draws": 16
+        },
+        "after": {
+          "position": [
+            -5.896759034751576,
+            1.2970612500434535,
+            25.399609530903156
+          ],
+          "target": [
+            0.02,
+            0.4014000000000001,
+            0
+          ],
+          "distance": 26.095026554354956,
+          "zoom": 1,
+          "azimuth": -0.2288653741431171,
+          "polar": 1.5364665206734291,
+          "clean": false,
+          "draws": 23
+        },
+        "changedMoves": 8,
+        "totalMoves": 8,
+        "passed": true
+      },
+      "frameTiming": {
+        "samples": 7,
+        "p50ms": 644,
+        "p95ms": 879,
+        "note": "Measured in Linux software-rendered WebKit emulation; physical iPad frame rate was not measured."
+      },
+      "touchPinch": {
+        "beforeDistance": 26.095026554354956,
+        "afterDistance": 15.392402850807773,
+        "passed": true
+      },
+      "twoFingerPan": {
+        "beforeTarget": [
+          0.028905919517752766,
+          0.40140000000000015,
+          0.002834271951231878
+        ],
+        "afterTarget": [
+          -0.07495396710862676,
+          0.4298693256663439,
+          -0.04978216443539662
+        ],
+        "passed": true
+      },
+      "reset": {
+        "initial": {
+          "position": [
+            0.02,
+            0.4014000000000017,
+            26.095026554354956
+          ],
+          "target": [
+            0.02,
+            0.4014000000000001,
+            0
+          ],
+          "distance": 26.095026554354956,
+          "zoom": 1,
+          "azimuth": 0,
+          "polar": 1.5707963267948966,
+          "clean": false,
+          "draws": 16
+        },
+        "after": {
+          "position": [
+            0.019999999999999993,
+            0.4014000000000017,
+            26.095026554354956
+          ],
+          "target": [
+            0.019999999999999993,
+            0.4014000000000001,
+            0
+          ],
+          "distance": 26.095026554354956,
+          "zoom": 1,
+          "azimuth": 0,
+          "polar": 1.5707963267948966,
+          "clean": false,
+          "draws": 40
+        },
+        "timedOut": false,
+        "passed": true
+      },
+      "background": {
+        "initialCream": true,
+        "initialLabel": "Slate studio",
+        "slate": {
+          "cream": false,
+          "label": "Cream studio"
+        },
+        "cream": {
+          "cream": true,
+          "label": "Slate studio"
+        },
+        "passed": true
+      },
+      "paintSwatches": [
+        {
+          "color": "#f4f4ef",
+          "physical": true,
+          "clearcoat": 1,
+          "clearcoatRoughness": 0.05,
+          "roughness": 0.3,
+          "envMapIntensity": 1.15,
+          "hasPMREM": true,
+          "passed": true
+        },
+        {
+          "color": "#a9b0b8",
+          "physical": true,
+          "clearcoat": 1,
+          "clearcoatRoughness": 0.05,
+          "roughness": 0.3,
+          "envMapIntensity": 1.15,
+          "hasPMREM": true,
+          "passed": true
+        },
+        {
+          "color": "#575c60",
+          "physical": true,
+          "clearcoat": 1,
+          "clearcoatRoughness": 0.05,
+          "roughness": 0.3,
+          "envMapIntensity": 1.15,
+          "hasPMREM": true,
+          "passed": true
+        },
+        {
+          "color": "#15191d",
+          "physical": true,
+          "clearcoat": 1,
+          "clearcoatRoughness": 0.05,
+          "roughness": 0.3,
+          "envMapIntensity": 1.15,
+          "hasPMREM": true,
+          "passed": true
+        }
+      ],
+      "paint": {
+        "passed": true
+      },
+      "cleanView": {
+        "classActive": true,
+        "hidden": true,
+        "rotateStaysClean": true,
+        "rotateWorks": true,
+        "pinchStaysClean": true,
+        "pinchWorks": true,
+        "tapRestores": true,
+        "passed": true
+      },
+      "idleDraws": {
+        "before": 64,
+        "after": 64,
+        "delta": 0,
+        "settlingSeconds": 0,
+        "passed": true
+      },
+      "trustedTouches": true
     },
-    "touchPinch": {
-      "before": 1,
-      "after": 1.6953185806844666,
-      "passed": true
+    "evidenceRuns": [
+      {
+        "path": "final-webkit-verified/results.json",
+        "testedAt": "2026-10-26T21:26:25.022Z",
+        "role": "Presets, native touch rotate/pinch/pan/reset, paint, theme, idle draws and WebGL settings. The Clean assertion in this initial report is superseded by the focused follow-up below."
+      },
+      {
+        "path": "final-webkit-clean/results.json",
+        "testedAt": "2026-10-26T21:29:50.887Z",
+        "role": "Corrected Clean check waits for actual computed visibility and uses one native touchscreen.tap backend command to test a tap; native drag and pinch remain hidden and operate the camera."
+      }
+    ],
+    "harnessCorrection": "The initial Clean test sampled CSS before its transition settled, and issued touchStart/touchEnd as separate remote commands. Software rendering delayed those separate commands beyond the app 600 ms short-tap limit. The follow-up waits on actual computed visibility and uses Playwright native touchscreen.tap. It passed without modifying the product.",
+    "visualInspection": {
+      "cleanViewScreenshot": "final-webkit-clean/clean-view.png",
+      "uiFullyHidden": true,
+      "note": "Clean screenshot visually inspected: header, footer, hints and controls absent; car and studio remain visible."
     },
-    "resetZoom": true
+    "screenshots": [
+      "cream-front.png",
+      "cream-side.png",
+      "cream-rear.png",
+      "cream-quarter.png",
+      "cream-top.png",
+      "touch-rotate.png",
+      "touch-pinch.png",
+      "reset.png",
+      "slate-side.png",
+      "paint-f4f4ef.png",
+      "paint-a9b0b8.png",
+      "paint-575c60.png",
+      "paint-15191d.png",
+      "clean-view.png",
+      "clean-gesture.png"
+    ],
+    "cleanScreenshots": [
+      "clean-view.png",
+      "clean-gesture.png"
+    ],
+    "limitation": "Native trusted WebKit touch events and software-rendered iPad viewport were tested. This is not a physical iPad Safari or hardware performance test."
   },
   "visualReview": {
     "passed": true,
     "presets": 5,
+    "backgrounds": [
+      "Cream",
+      "Slate"
+    ],
     "rotatingAngles": 8,
-    "findings": "No visible floating/intersecting attachments, badges or glass/body shading artifacts in the reviewed screenshots. Physical iPad Safari was not available."
-  }
+    "paintSwatches": 4,
+    "findings": "Reviewed all final presets, eight orbit angles and four paint swatches. Tyres meet the floor; no visible detached/intersecting trim, rails, mirrors, spoiler or glass. No badges on the car. Side silhouette compared with a real final-facelift LC200 photo.",
+    "evidence": "docs/refinement/README.md"
+  },
+  "specification": {
+    "ownerConfirmed": "GXR, 265/70R17",
+    "bodyMm": [
+      5095,
+      1980,
+      1930
+    ],
+    "source": "Toyota UAE official 2021 5.7L GXR sheet, May 2021",
+    "url": "https://dam.alfuttaim.com/dx/api/dam/v1/collections/24e5d2dd-5aa6-4fd2-ad4d-83ba5a1d1be4/items/1d6c9972-e9fd-49a5-aec3-faa9aaa1713c/renditions/2b4bd368-b103-4b18-a18e-d1c1609420d1?binary=true",
+    "factoryTyre": "285/60R18",
+    "notes": "Owner tyre size overrides factory fitment. Engine variant unconfirmed. Track and nominal clearance limitations are documented in README."
+  },
+  "limitations": [
+    "Physical iPad Safari and hardware frame rate were not tested.",
+    "Model curves and spoiler adjustment are photo-guided approximations, not OEM CAD."
+  ]
 }

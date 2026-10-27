@@ -1,0 +1,43 @@
+{
+  "label": "final-webkit-clean",
+  "source": "/workspace/landcruiser-3d/index.html",
+  "sourceSha256": "95622fc8066ed4aac8f54f8c079920daaacc87f392612fd2ab8687f1b4ae44e6",
+  "testedAt": "2026-10-26T21:29:50.887Z",
+  "engine": "Playwright WebKit on Linux WPE, iPad Pro 11 emulation, DPR 2",
+  "passed": true,
+  "errors": [],
+  "checks": {
+    "browser": {
+      "userAgent": "Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+      "viewport": [
+        834,
+        1194
+      ],
+      "devicePixelRatio": 2,
+      "webgl2": true,
+      "antialias": true,
+      "samples": 4,
+      "canvasPixels": [
+        1668,
+        2388
+      ],
+      "touchSupport": true
+    },
+    "cleanView": {
+      "classActive": true,
+      "hidden": true,
+      "rotateStaysClean": true,
+      "rotateWorks": true,
+      "pinchStaysClean": true,
+      "pinchWorks": true,
+      "tapRestores": true,
+      "passed": true
+    },
+    "trustedTouches": true
+  },
+  "screenshots": [
+    "clean-view.png",
+    "clean-gesture.png"
+  ],
+  "limitation": "Native trusted WebKit touch events and software-rendered iPad viewport were tested. This is not a physical iPad Safari or hardware performance test."
+}
