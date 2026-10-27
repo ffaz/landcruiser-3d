@@ -60,3 +60,27 @@ It verifies every intermediate pose after extreme pinch, two-finger pan and down
 All test servers serve external GLBs, JSON and the pinned Three.js Meshopt decoder. They use the `/landcruiser-3d/` project path and reject absolute host-root model/build requests, matching GitHub Pages project hosting. `--asset-root /path/to/frozen/repo` selects the model/build snapshot independently of `--source`; reports record every GLB/JSON asset hash.
 
 When `window.lcBuild` is available, the full visual check additionally verifies a 50 mm rigid body lift with every wheel fixed, byte-identical POSITION buffers, uniform root scale 1, global/per-part paint, hidden parts, empty/restored slots, `#lift_mm=50`, and clearing the hash back to defaults. The viewer API is tested as data-only state; no workshop UI is introduced. Geometry provenance and lossless compression are checked separately by the offline asset audit.
+
+## Clay material regression
+
+`clay.mjs` captures Front, Side and 3/4 in Cream/Slate before the change, then those
+same views and the three requested Clay views after it. Its temporary page keeps
+byte snapshots of POSITION/NORMAL/COLOR_0 and every vehicle node transform. It
+checks those through studio changes, all four swatches, custom colours, per-part
+paint overrides and restoration. It compares Cream/Slate material, lighting,
+background and camera state against the baseline; actual images remain available
+for visual/pixel comparison. Clay may reduce transparent-lens draw passes, and
+must not add draws or rendered triangles relative to Cream.
+
+```sh
+node tests/clay.mjs --mode before --source /tmp/before/index.html --output /tmp/clay-evidence
+node tests/clay.mjs --mode after --output /tmp/clay-evidence
+node tests/clay.mjs --mode stock --output /tmp/clay-evidence
+```
+
+Pass `--deps` and `--three-dir` as with the other harnesses. Defaults expect their
+already prepared local Playwright and Three.js dependencies. The warm orange
+custom paint in Clay screenshots is a test-only choice; production paint defaults
+and build.json are unchanged. `webkit-benchmark.mjs --studio clay` selects Clay
+before measuring the actual renderer; compare with `--studio cream` on the same
+idle host. This remains software-rendered emulation, not physical iPad timing.

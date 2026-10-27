@@ -1,0 +1,285 @@
+{
+  "source": "/workspace/landcruiser-3d/index.html",
+  "sourceSha256": "3d8a78d9a832fa07219e93127983e31922eb4088878dffb7ea4434a4a6db6638",
+  "testedAt": "2026-10-27T21:51:18.752Z",
+  "engine": "Playwright WebKit on Linux WPE with software GL; iPad touch emulation",
+  "studio": "clay",
+  "conditions": "1366x1024 CSS pixels, DPR1, native product renderer, clay Quarter auto-rotate, four warmup frames then24 measured rAF intervals; no frame suppression",
+  "limitation": "Emulated WebKit, not a physical iPad. CPU and software GPU timing depends on host workload; not a hardware performance claim.",
+  "passed": true,
+  "errors": [],
+  "assets": [
+    {
+      "path": "build.json",
+      "bytes": 1195,
+      "sha256": "6d39f5f18710507b49baaf29e1daac31049874d041cbebb0167dad8f9ba2ed69"
+    },
+    {
+      "path": "model/base.glb",
+      "bytes": 956224,
+      "sha256": "645e6b42f81a25a28680110b014bcd3539fad46580f945c26552f0cfd3f84c1c"
+    },
+    {
+      "path": "model/camera-reference.json",
+      "bytes": 36909,
+      "sha256": "02cf92bb363de60e93a45fe24a158a78fc762997290c924cbffc659a86a042c1"
+    },
+    {
+      "path": "model/display-base.glb",
+      "bytes": 13848,
+      "sha256": "a005849acbb6bc74d4be8089019518fb1516e343c610f02366caa5c15977a798"
+    },
+    {
+      "path": "model/manifest.json",
+      "bytes": 67636,
+      "sha256": "45b97d6731796838c40c0e31e6d64e58b0e9faf9573013c2f250bc023bbe9c31"
+    },
+    {
+      "path": "model/parts/bonnet.glb",
+      "bytes": 67584,
+      "sha256": "5ba6b66701bf29a97835e276b482bab1d99dde0fdccbff4bcf3cc7d61ab9fdb0"
+    },
+    {
+      "path": "model/parts/bumper_front.glb",
+      "bytes": 321568,
+      "sha256": "3499b4fc6b63e4c9fbeb39da19ac2b93b0a31a20387f89e64d05275b76366f43"
+    },
+    {
+      "path": "model/parts/bumper_rear.glb",
+      "bytes": 226196,
+      "sha256": "1fc973c60a52b11bfdc68c9218047a8b8f7b69183d60c0b3fa6240e2fb5b0ec7"
+    },
+    {
+      "path": "model/parts/door_FL.glb",
+      "bytes": 171704,
+      "sha256": "c02fd81291983bc3ff94e99b6878b7a42401f06b454d47b3bfd3fc84e318095b"
+    },
+    {
+      "path": "model/parts/door_FR.glb",
+      "bytes": 168372,
+      "sha256": "dd405b7b30ceb224919865e97a4811ce4959042352d1fbfbea72259ac25efbfe"
+    },
+    {
+      "path": "model/parts/door_RL.glb",
+      "bytes": 193360,
+      "sha256": "51f6df45bcddb933678e6ac841dec73a15ef03065d86c9a1f186fd6a87d87445"
+    },
+    {
+      "path": "model/parts/door_RR.glb",
+      "bytes": 194388,
+      "sha256": "db246b44362a522121bcfae6a3f61afb2328840a023a6121adbcfa56d65eba9e"
+    },
+    {
+      "path": "model/parts/grille.glb",
+      "bytes": 387008,
+      "sha256": "01bc6a06f89ff1b51aa6726f5d7a434dabc8365ada998d633d8b9729b6248866"
+    },
+    {
+      "path": "model/parts/lamp_front_L.glb",
+      "bytes": 1013968,
+      "sha256": "87457fd7efe6ae03faa4ef2a9f262edc04d9c277e89b55e6ba33991c2473fba8"
+    },
+    {
+      "path": "model/parts/lamp_front_R.glb",
+      "bytes": 996016,
+      "sha256": "32d86bcd59cd402d921bd0f0154cf90ed1dede5b39151ee4b0619e35612acd66"
+    },
+    {
+      "path": "model/parts/lamp_rear_L.glb",
+      "bytes": 742192,
+      "sha256": "0c7619b24bbb8424a2573db232033df615bf3cad44ae9cc518e8cefd3783e2d0"
+    },
+    {
+      "path": "model/parts/lamp_rear_R.glb",
+      "bytes": 749440,
+      "sha256": "e6a990cb25b03ef2c5d5a97b8959580a7c1d98ccc7af560d1c33e37a1534173c"
+    },
+    {
+      "path": "model/parts/mirror_L.glb",
+      "bytes": 100320,
+      "sha256": "6a13b02bc934fe7d8118bbab81882ac453e940e308e79633547e7291e0c56a4a"
+    },
+    {
+      "path": "model/parts/mirror_R.glb",
+      "bytes": 101060,
+      "sha256": "1724ce5f9211f6555bc16eb97ffd4c3e25e34e9de2f96adeca5503a916fb053e"
+    },
+    {
+      "path": "model/parts/roof_rails.glb",
+      "bytes": 103704,
+      "sha256": "ffcfeadeb43f9fda507e7080cd9fdeaf46c38aab97cd4e4561d1e6c24857d4b8"
+    },
+    {
+      "path": "model/parts/side_step_L.glb",
+      "bytes": 192180,
+      "sha256": "bffa4e60e19829e8577c4f2f74ce48fdc3a6f65439151b1ae8967b5c35d6e59a"
+    },
+    {
+      "path": "model/parts/side_step_R.glb",
+      "bytes": 180484,
+      "sha256": "7e459c5d54a86d6cdea1864edfa8ed6238fe9f4d77c966ae1f5c8570a27f341e"
+    },
+    {
+      "path": "model/parts/spoiler.glb",
+      "bytes": 232608,
+      "sha256": "f4a165f5862030ee69516076bbce27ef45ea21c9ad6839bdcb327f8376c714e1"
+    },
+    {
+      "path": "model/parts/tailgate.glb",
+      "bytes": 431076,
+      "sha256": "375ff4aec9593fce113e0c943f378ade22684196a5b4bd355445b2a2d17a3dfe"
+    },
+    {
+      "path": "model/parts/unsorted_01.glb",
+      "bytes": 15900,
+      "sha256": "82dd5cb662c53dc8bfe76dc7428bf8e5d0edb039e5bc6d86cbd7e47d2b5bd689"
+    },
+    {
+      "path": "model/parts/unsorted_02.glb",
+      "bytes": 16040,
+      "sha256": "df3329aed22f08ce0724f92dbe2d65b583528104dd95031d615f005b3e5e1348"
+    },
+    {
+      "path": "model/parts/unsorted_03.glb",
+      "bytes": 10504,
+      "sha256": "4af808fa715708c1f3c691d0ed9069ec8119a3118ca96859cb869c48efd3f8d1"
+    },
+    {
+      "path": "model/parts/unsorted_04.glb",
+      "bytes": 15332,
+      "sha256": "84e32b32a96d9c00e4ef0439dd6b045b431acf633167cfb0eb4d25b982ff4ef7"
+    },
+    {
+      "path": "model/parts/unsorted_05.glb",
+      "bytes": 16624,
+      "sha256": "01a86b41d12192fc5a02f596d5ca8b57be9f98f292db4032cc611ceb09684902"
+    },
+    {
+      "path": "model/parts/unsorted_06.glb",
+      "bytes": 8728,
+      "sha256": "090f240ad85896afdcd2670e9eb34aba887e9f065d70b5173e8b9583965d0aa7"
+    },
+    {
+      "path": "model/parts/unsorted_07.glb",
+      "bytes": 3752,
+      "sha256": "b45468ef7b33e798aec5e2ae93beba5b4491c42fc74ae719ecf368fe79b186b6"
+    },
+    {
+      "path": "model/parts/unsorted_08.glb",
+      "bytes": 9660,
+      "sha256": "494bd90ab37b6e3edbde2c61b1b31f659ab5c4a70572ccf5d39c45fed21e5fbe"
+    },
+    {
+      "path": "model/parts/unsorted_09.glb",
+      "bytes": 15964,
+      "sha256": "494e7bc4bf406a476f6bc95161d56f1a3e32c81cc11fcd789bd60ac687f13c0a"
+    },
+    {
+      "path": "model/parts/unsorted_10.glb",
+      "bytes": 39720,
+      "sha256": "b68bd56b2f5ba10d09bb7a694ac716e0c7908be88fc2f7c40dcf14ef6d3d1bf0"
+    },
+    {
+      "path": "model/parts/wheel_FL.glb",
+      "bytes": 590088,
+      "sha256": "f34286896012460f6b8da3a6ed95742a55fd016d206283ceb56da1446fed7d8e"
+    },
+    {
+      "path": "model/parts/wheel_FR.glb",
+      "bytes": 531204,
+      "sha256": "a4e5badcfb3cf990ca3e9c99e8bb434ef18235261f9d3c6c9373d41be99c5382"
+    },
+    {
+      "path": "model/parts/wheel_RL.glb",
+      "bytes": 541520,
+      "sha256": "a2c5735bb2ef5fb48415d499258c3d56523add26b0cd3bd76c1f1a8b4b40f9a5"
+    },
+    {
+      "path": "model/parts/wheel_RR.glb",
+      "bytes": 525848,
+      "sha256": "44ee9b4fa9e8adb4ad0e223a7f6c343b1e807fb0a55a92fe37ebeb8930d9bd96"
+    }
+  ],
+  "raf": {
+    "samples": 24,
+    "meanMs": 404.2916666666667,
+    "p50ms": 399,
+    "p95ms": 425,
+    "minMs": 394,
+    "maxMs": 437
+  },
+  "renderCpu": {
+    "samples": 25,
+    "meanMs": 90.28,
+    "p50ms": 92,
+    "p95ms": 111,
+    "minMs": 40,
+    "maxMs": 116
+  },
+  "intervalsMs": [
+    411,
+    420,
+    396,
+    397,
+    437,
+    425,
+    404,
+    399,
+    394,
+    411,
+    399,
+    397,
+    398,
+    394,
+    408,
+    396,
+    411,
+    405,
+    395,
+    396,
+    396,
+    416,
+    400,
+    398
+  ],
+  "renderCpuMs": [
+    100,
+    111,
+    99,
+    91,
+    96,
+    116,
+    88,
+    98,
+    90,
+    92,
+    93,
+    92,
+    90,
+    89,
+    94,
+    40,
+    88,
+    41,
+    92,
+    88,
+    93,
+    88,
+    99,
+    92,
+    97
+  ],
+  "actualRenderCalls": 25,
+  "rotated": true,
+  "viewport": [
+    1366,
+    1024
+  ],
+  "devicePixelRatio": 1,
+  "rendererPixelRatio": 1,
+  "drawCalls": 154,
+  "triangles": 741525,
+  "antialias": true,
+  "samples": 4,
+  "userAgent": "Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1"
+}

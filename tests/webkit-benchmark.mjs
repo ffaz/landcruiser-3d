@@ -10,12 +10,13 @@ import {fileURLToPath} from 'node:url';
 import os from 'node:os';
 const repo=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const options={source:path.join(repo,'index.html'),output:path.join(os.tmpdir(),'lc200-webkit-benchmark'),
- assetRoot:repo,deps:path.join(os.tmpdir(),'lc200-visual-deps'),frames:24};
+ assetRoot:repo,studio:'cream',deps:path.join(os.tmpdir(),'lc200-visual-deps'),frames:24};
 for(let i=2;i<process.argv.length;i++){
  const key=process.argv[i];
- if(!['--source','--output','--deps','--three-dir','--frames','--library-path','--asset-root'].includes(key)||!process.argv[i+1])throw Error('Expected --source, --output, --deps, --three-dir, --frames or --library-path followed by a value');
+ if(!['--source','--output','--deps','--three-dir','--frames','--library-path','--asset-root','--studio'].includes(key)||!process.argv[i+1])throw Error('Expected --source, --output, --deps, --three-dir, --frames or --library-path followed by a value');
  options[key.slice(2)]=process.argv[++i];
 }
+if(!['cream','slate','clay'].includes(options.studio))throw Error('--studio must be cream, slate or clay');
 options.frames=Number(options.frames);
 if(!Number.isInteger(options.frames)||options.frames<12||options.frames>120)throw Error('--frames must be an integer from12 to120');
 for(const key of ['source','output','deps'])options[key]=path.resolve(options[key]);
@@ -38,6 +39,7 @@ try{
  const page=await browser.newPage({...devices['iPad Pro 11'],viewport:{width:1366,height:1024},deviceScaleFactor:1});
  page.on('pageerror',e=>errors.push({type:'pageerror',message:e.message}));page.on('console',m=>{if(m.type()==='error')errors.push({type:'console',message:m.text()})});page.on('requestfailed',r=>errors.push({type:'request',url:r.url(),message:r.failure()?.errorText}));
  await page.goto(`http://127.0.0.1:${server.address().port}${testBasePath}`,{timeout:120000});await page.waitForSelector('#loader.hidden',{state:'attached',timeout:120000});
+ await page.evaluate(desired=>{const current=()=>document.body.dataset.studio||(document.body.classList.contains('clay')?'clay':document.body.classList.contains('cream')?'cream':'slate');for(let tries=0;tries<3&&current()!==desired;tries++)document.querySelector('#bgToggle').click();if(current()!==desired)throw Error('Could not select '+desired+' studio')},options.studio);
  await page.evaluate(()=>document.querySelector('[data-view=quarter]').click());
  await page.waitForFunction(()=>window.__perf&&!window.__perf.isTweening(),null,{timeout:120000});
  result=await page.evaluate(async(frameCount)=>{
@@ -50,10 +52,10 @@ try{
   const frame=stamp=>{if(previous!==undefined)intervals.push(stamp-previous);previous=stamp;if(intervals.length<frameCount)requestAnimationFrame(frame);else{active=false;done()}};requestAnimationFrame(frame);await finished;
   document.querySelector('#rotate').click();t.renderer.render=original;
   const summarize=a=>{const sorted=[...a].sort((a,b)=>a-b);return{samples:a.length,meanMs:a.reduce((a,b)=>a+b,0)/a.length,p50ms:sorted[Math.floor(a.length*.5)],p95ms:sorted[Math.min(a.length-1,Math.floor(a.length*.95))],minMs:sorted[0],maxMs:sorted.at(-1)}};
-  const gl=t.renderer.getContext();return{raf:summarize(intervals),renderCpu:summarize(renders),intervalsMs:intervals,renderCpuMs:renders,actualRenderCalls:renders.length,rotated:t.camera.position.distanceTo(new t.THREE.Vector3(...before))>.01,viewport:[innerWidth,innerHeight],devicePixelRatio,rendererPixelRatio:t.renderer.getPixelRatio(),antialias:gl.getContextAttributes().antialias,samples:gl.getParameter(gl.SAMPLES),userAgent:navigator.userAgent};
+  const gl=t.renderer.getContext();return{raf:summarize(intervals),renderCpu:summarize(renders),intervalsMs:intervals,renderCpuMs:renders,actualRenderCalls:renders.length,rotated:t.camera.position.distanceTo(new t.THREE.Vector3(...before))>.01,viewport:[innerWidth,innerHeight],devicePixelRatio,rendererPixelRatio:t.renderer.getPixelRatio(),drawCalls:t.renderer.info.render.calls,triangles:t.renderer.info.render.triangles,antialias:gl.getContextAttributes().antialias,samples:gl.getParameter(gl.SAMPLES),userAgent:navigator.userAgent};
  },options.frames);
  console.log('MEASURED',JSON.stringify(result.raf));
  await page.screenshot({path:path.join(out,'timing-view.png'),timeout:120000});
 }catch(e){errors.push({type:'test',message:e.stack})}finally{await browser?.close();await new Promise(r=>server.close(r))}
-const report={source,sourceSha256:createHash('sha256').update(original).digest('hex'),testedAt:new Date().toISOString(),engine:'Playwright WebKit on Linux WPE with software GL; iPad touch emulation',conditions:'1366x1024 CSS pixels, DPR1, native product renderer, Cream Quarter auto-rotate, four warmup frames then'+options.frames+' measured rAF intervals; no frame suppression',limitation:'Emulated WebKit, not a physical iPad. CPU and software GPU timing depends on host workload; not a hardware performance claim.',passed:!errors.length&&!!result?.rotated&&result?.actualRenderCalls>=options.frames-1,errors,assets:await snapshotAssets(options['asset-root']||options.assetRoot),...result};
+const report={source,sourceSha256:createHash('sha256').update(original).digest('hex'),testedAt:new Date().toISOString(),engine:'Playwright WebKit on Linux WPE with software GL; iPad touch emulation',studio:options.studio,conditions:'1366x1024 CSS pixels, DPR1, native product renderer, '+options.studio+' Quarter auto-rotate, four warmup frames then'+options.frames+' measured rAF intervals; no frame suppression',limitation:'Emulated WebKit, not a physical iPad. CPU and software GPU timing depends on host workload; not a hardware performance claim.',passed:!errors.length&&!!result?.rotated&&result?.actualRenderCalls>=options.frames-1,errors,assets:await snapshotAssets(options['asset-root']||options.assetRoot),...result};
 await fs.writeFile(path.join(out,'performance.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));if(!report.passed)process.exitCode=1;

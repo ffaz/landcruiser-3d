@@ -1,0 +1,291 @@
+{
+  "sourceSha256": "3d8a78d9a832fa07219e93127983e31922eb4088878dffb7ea4434a4a6db6638",
+  "errors": [],
+  "booleanChecks": {
+    "defaultCream": true,
+    "presetButtons": true,
+    "sideLevel": true,
+    "cameraMinHeight": true,
+    "frontRearElevation": true,
+    "legacyPresetDistances": true,
+    "heroFraming": true,
+    "paintSwatches": true,
+    "customPaint": true,
+    "background": true,
+    "backgroundRestores": true,
+    "cleanViewHides": true,
+    "cleanViewRestores": true,
+    "reset": true,
+    "bakedCoverage": true,
+    "toyMaterials": true,
+    "baseToggle": true,
+    "baseFraming": true,
+    "baseRestores": true,
+    "clayBase": true,
+    "clayBaseRestores": true,
+    "buildState": true,
+    "hashLift": true,
+    "hashRestoresDefault": true,
+    "nativeAntialias": true,
+    "pixelRatioCap": true,
+    "longLens": true,
+    "trueScaleBounds": true,
+    "noJsFallback": true,
+    "assetsStable": true
+  },
+  "clayBaseObservation": {
+    "visible": true,
+    "bounds": {
+      "minX": -0.7975476129150266,
+      "maxX": 0.797547612915025,
+      "minY": -0.5452759036195057,
+      "maxY": 0.5884009036195077
+    },
+    "widthFraction": 0.7975476129150258,
+    "matte": true
+  },
+  "buildStateObservations": {
+    "defaultLift": 0,
+    "rootScale": [
+      1,
+      1,
+      1
+    ],
+    "bodyMeshes": 122,
+    "wheelMeshes": 30,
+    "maxBodyDeltaError": 4.163336342344337e-17,
+    "maxWheelMovement": 0,
+    "positionArraysUnchanged": true,
+    "globalPaint": true,
+    "partPaint": true,
+    "partPaintIsolated": true,
+    "hidden": true,
+    "slotEmpty": true,
+    "slotRestored": true,
+    "restoredLift": 0
+  },
+  "presetObservations": [
+    {
+      "studio": "cream",
+      "view": "front",
+      "active": true,
+      "position": [
+        -8.523790815996549,
+        1.1735947703999137,
+        5.231563037697363e-16
+      ],
+      "target": [
+        0.020000000000000004,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 8.546460333579578,
+      "zoom": 1,
+      "level": false,
+      "safePolar": true,
+      "minCameraY": 0.15,
+      "aboveMinimum": true,
+      "widthFraction": 0.5952480030476327
+    },
+    {
+      "studio": "cream",
+      "view": "side",
+      "active": true,
+      "position": [
+        0.02,
+        0.4000000000000008,
+        12.924356919649727
+      ],
+      "target": [
+        0.02,
+        0.4,
+        0
+      ],
+      "distance": 12.924356919649727,
+      "zoom": 1,
+      "level": true,
+      "safePolar": true,
+      "minCameraY": 0.15,
+      "aboveMinimum": true,
+      "widthFraction": 0.8086928111665688
+    },
+    {
+      "studio": "cream",
+      "view": "rear",
+      "active": true,
+      "position": [
+        9.029723136161056,
+        1.1852430784040264,
+        5.516864299951746e-16
+      ],
+      "target": [
+        0.020000000000000004,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 9.012538234850643,
+      "zoom": 1,
+      "level": false,
+      "safePolar": true,
+      "minCameraY": 0.15,
+      "aboveMinimum": true,
+      "widthFraction": 0.5405098913713544
+    },
+    {
+      "studio": "cream",
+      "view": "quarter",
+      "active": true,
+      "position": [
+        -7.7297237531437,
+        2.8387209098530186,
+        8.219403980606952
+      ],
+      "target": [
+        0.020000000000000004,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 11.451917407298048,
+      "zoom": 1,
+      "level": false,
+      "safePolar": true,
+      "minCameraY": 0.15,
+      "aboveMinimum": true,
+      "widthFraction": 0.8063876359845685
+    },
+    {
+      "studio": "cream",
+      "view": "top",
+      "active": true,
+      "position": [
+        0.020000000000000004,
+        13.324004507253717,
+        0.17310737293103276
+      ],
+      "target": [
+        0.020000000000000004,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 12.365216278656563,
+      "zoom": 1,
+      "level": false,
+      "safePolar": true,
+      "minCameraY": 0.15,
+      "aboveMinimum": true,
+      "widthFraction": 0.8246542852105112
+    },
+    {
+      "studio": "slate",
+      "view": "front",
+      "active": true,
+      "position": [
+        -8.523790815996549,
+        1.1735947703999137,
+        5.231563037697363e-16
+      ],
+      "target": [
+        0.020000000000000004,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 8.546460333579578,
+      "zoom": 1,
+      "level": false,
+      "safePolar": true,
+      "minCameraY": 0.15,
+      "aboveMinimum": true,
+      "widthFraction": 0.5952480030476327
+    },
+    {
+      "studio": "slate",
+      "view": "side",
+      "active": true,
+      "position": [
+        0.02,
+        0.4000000000000008,
+        12.924356919649727
+      ],
+      "target": [
+        0.02,
+        0.4,
+        0
+      ],
+      "distance": 12.924356919649727,
+      "zoom": 1,
+      "level": true,
+      "safePolar": true,
+      "minCameraY": 0.15,
+      "aboveMinimum": true,
+      "widthFraction": 0.8086928111665688
+    },
+    {
+      "studio": "slate",
+      "view": "rear",
+      "active": true,
+      "position": [
+        9.029723136161056,
+        1.1852430784040264,
+        5.516864299951746e-16
+      ],
+      "target": [
+        0.020000000000000004,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 9.012538234850643,
+      "zoom": 1,
+      "level": false,
+      "safePolar": true,
+      "minCameraY": 0.15,
+      "aboveMinimum": true,
+      "widthFraction": 0.5405098913713544
+    },
+    {
+      "studio": "slate",
+      "view": "quarter",
+      "active": true,
+      "position": [
+        -7.7297237531437,
+        2.8387209098530186,
+        8.219403980606952
+      ],
+      "target": [
+        0.020000000000000004,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 11.451917407298048,
+      "zoom": 1,
+      "level": false,
+      "safePolar": true,
+      "minCameraY": 0.15,
+      "aboveMinimum": true,
+      "widthFraction": 0.8063876359845685
+    },
+    {
+      "studio": "slate",
+      "view": "top",
+      "active": true,
+      "position": [
+        0.020000000000000004,
+        13.324004507253717,
+        0.17310737293103276
+      ],
+      "target": [
+        0.020000000000000004,
+        0.9600000000000001,
+        0
+      ],
+      "distance": 12.365216278656563,
+      "zoom": 1,
+      "level": false,
+      "safePolar": true,
+      "minCameraY": 0.15,
+      "aboveMinimum": true,
+      "widthFraction": 0.8246542852105112
+    }
+  ],
+  "assetSetSha256": "255b2491716244de8545ba4a4986de7f886a80bc5afbf35f9ab8ae24d4d146f4",
+  "passed": true
+}

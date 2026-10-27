@@ -24,6 +24,10 @@
     background:linear-gradient(180deg,var(--bg1) 0%,#405b70 52%,var(--bg2) 100%); transition:background .35s ease; }
   body.cream { color:#283440;--ink:#283440;--muted:#62707c;--panel:rgba(255,252,245,.79);--line:rgba(62,76,86,.14);--accent:#385c73;
     color-scheme:light;background:radial-gradient(ellipse at 50% 42%,#EFEAE3 0%,#EDE7DF 50%,#E4DED5 100%); }
+  body.clay {color:#4a3f4a;--ink:#4a3f4a;--muted:#806e7b;--panel:rgba(255,245,236,.57);--line:rgba(91,66,84,.16);--accent:#73556a;
+    color-scheme:light;background:radial-gradient(ellipse at 50% 42%,var(--clay-centre,#f1e1d7) 0%,var(--clay-mid,#ecdbd1) 53%,var(--clay-edge,#dfcabe) 100%);}
+  body.clay .viewbtn.active{background:rgba(111,78,101,.13)}
+  body.clay::after{background:radial-gradient(ellipse at 50% 45%,transparent 50%,rgba(83,56,76,.035) 100%)}
   body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:2;background:radial-gradient(ellipse at 50% 45%,transparent 48%,rgba(25,22,18,.045) 100%);}
   #viewer {position:absolute;inset:0;touch-action:none;outline:0; }
   #viewer canvas {width:100%;height:100%;display:block;touch-action:none;}
@@ -107,7 +111,7 @@
 }
 </script>
 </head>
-<body class="cream">
+<body class="cream" data-studio="cream">
 <main id="viewer" aria-label="Interactive rotatable model of a 2021 Toyota Land Cruiser 200"></main>
 <noscript>
  <style>#loader{display:none}.nojs{position:absolute;inset:25% 8%;display:grid;place-content:center;text-align:center;font:14px/1.8 system-ui;color:#283440}.nojs strong{font-size:22px}</style>
@@ -119,7 +123,7 @@
     <span class="chip">GCC · GXR · 5 DOOR</span>
     <button type="button" class="utility" id="baseToggle" aria-pressed="false" title="Show the collectible display base">Base</button>
     <button type="button" class="utility" id="cleanToggle" aria-pressed="false" title="Hide all controls. Tap the canvas or press H to show them again.">Clean view</button>
-    <button type="button" class="utility" id="bgToggle" title="Switch between steel blue and warm cream backgrounds"><span class="dot" aria-hidden="true"></span><span id="bgLabel">Slate studio</span></button>
+    <button type="button" class="utility" id="bgToggle" title="Switch to Slate studio"><span class="dot" aria-hidden="true"></span><span id="bgLabel">Slate studio</span></button>
   </div>
 </header>
 <div class="bottom">
@@ -192,6 +196,7 @@ const DEFAULT_WHITE = '#f4f4ef';
 // ────────────────────────────────────────────────────────────────────────────
 const holder=document.getElementById('viewer');
 let needsRender=true;
+let studioMode='cream';
 function requestRender(){needsRender=true;}
 const renderer=new THREE.WebGLRenderer({antialias:true, alpha:true, powerPreference:'high-performance'});
 renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1,2));
@@ -237,7 +242,7 @@ const pmrem=new THREE.PMREMGenerator(renderer);
 const studioTarget=pmrem.fromScene(studio,.025,.1,80);
 scene.environment=studioTarget.texture;scene.environmentIntensity=.65;
 studio.dispose();pmrem.dispose();
-scene.add(new THREE.HemisphereLight(0xf7f5f0,0x52565c,.60));
+const fill=new THREE.HemisphereLight(0xf7f5f0,0x52565c,.60);scene.add(fill);
 const key=new THREE.DirectionalLight(0xfffbf5,1.65);
 key.position.set(-1.5,8,2);key.castShadow=false;
 key.shadow.mapSize.set(2048,2048);
@@ -277,31 +282,43 @@ const BAKED_LOOK=Object.freeze({ao:.90,ridge:.70,valley:.90});
 const bakedUniforms={
  uBakedAO:{value:BAKED_LOOK.ao},uBakedRidge:{value:BAKED_LOOK.ridge},uBakedValley:{value:BAKED_LOOK.valley}
 };
-function useBakedShading(material){
+// Clay has its own material programs/uniforms; the original studio math is unchanged.
+const CLAY_LOOK=Object.freeze({ao:.65,ridge:.22,valley:.35});
+const clayBakedUniforms={uBakedAO:{value:CLAY_LOOK.ao},uBakedRidge:{value:CLAY_LOOK.ridge},
+ uBakedValley:{value:CLAY_LOOK.valley},uClayOcclusionTint:{value:new THREE.Color('#9d8799')}};
+function useBakedShading(material,clay=false){
  material.onBeforeCompile=shader=>{
-  Object.assign(shader.uniforms,bakedUniforms);
+  Object.assign(shader.uniforms,clay?clayBakedUniforms:bakedUniforms);
   shader.vertexShader=shader.vertexShader.replace('#include <common>',
    '#include <common>\nattribute vec3 bakedShading; varying vec2 vBakedShading;');
   shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>',
    '#include <begin_vertex>\nvBakedShading=bakedShading.rg;');
   shader.fragmentShader=shader.fragmentShader.replace('#include <common>',
-   '#include <common>\nvarying vec2 vBakedShading; uniform float uBakedAO; uniform float uBakedRidge; uniform float uBakedValley;');
+   '#include <common>\nvarying vec2 vBakedShading; uniform float uBakedAO; uniform float uBakedRidge; uniform float uBakedValley;'+(clay?' uniform vec3 uClayOcclusionTint;':''));
   shader.fragmentShader=shader.fragmentShader.replace('#include <aomap_fragment>',`#include <aomap_fragment>
    float bakedAO=clamp(vBakedShading.r,0.0,1.0);
    float bakedRidge=max(0.0,(vBakedShading.g-0.5-1.0/255.0)*2.0);
    float bakedValley=max(0.0,(0.5-vBakedShading.g-1.0/255.0)*2.0);
-   float bakedCavity=clamp(1.0-(1.0-bakedAO)*uBakedAO-bakedValley*uBakedValley*0.35,0.18,1.0);
+   float bakedCavity=clamp(1.0-(1.0-bakedAO)*uBakedAO-bakedValley*uBakedValley*0.35,${clay?'0.42':'0.18'},1.0);
+   ${clay?`vec3 clayCavity=mix(vec3(1.0),uClayOcclusionTint,1.0-bakedCavity);
+   reflectedLight.directDiffuse*=mix(vec3(1.0),clayCavity,0.65);
+   reflectedLight.indirectDiffuse*=clayCavity;
+   reflectedLight.indirectSpecular*=mix(vec3(1.0),clayCavity,0.72);
+   reflectedLight.directSpecular*=mix(vec3(1.0),clayCavity,0.25);
+   #ifdef USE_CLEARCOAT
+    clearcoatSpecularIndirect*=mix(vec3(1.0),clayCavity,0.72);
+   #endif`:`
    reflectedLight.directDiffuse*=mix(1.0,bakedCavity,0.65);
    reflectedLight.indirectDiffuse*=bakedCavity;
    reflectedLight.indirectSpecular*=mix(1.0,bakedCavity,0.72);
    reflectedLight.directSpecular*=mix(1.0,bakedCavity,0.25);
    #ifdef USE_CLEARCOAT
     clearcoatSpecularIndirect*=mix(1.0,bakedCavity,0.72);
-   #endif
+   #endif`}
    reflectedLight.indirectDiffuse+=diffuseColor.rgb*bakedRidge*uBakedRidge*0.13;
   `);
  };
- material.customProgramCacheKey=()=> 'lc200-baked-ao-curvature-v1';
+ material.customProgramCacheKey=()=> clay?'lc200-baked-ao-curvature-clay-v1':'lc200-baked-ao-curvature-v1';
  return material;
 }
 function bindBakedAttribute(root){
@@ -316,7 +333,7 @@ function bindBakedAttribute(root){
  return bakedVertices;
 }
 
-[paint,chrome,softChrome,metalDark,blackPlastic,tireMat,rimMat,tailRed,orange,interiorMat].forEach(useBakedShading);
+[paint,chrome,softChrome,metalDark,blackPlastic,tireMat,rimMat,tailRed,orange,interiorMat].forEach(material=>useBakedShading(material));
 const car=new THREE.Group();scene.add(car);
 function mesh(geo,mat,parent=car){const m=new THREE.Mesh(geo,mat);m.castShadow=true;m.receiveShadow=true;parent.add(m);return m;}
 // Seamless, colourless floor receives directional light shadows over the CSS studio.
@@ -331,10 +348,13 @@ contactPlane.rotation.x=-Math.PI/2;contactPlane.scale.y=-1;contactPlane.position
 contactPlane.castShadow=false;contactPlane.receiveShadow=false;contactPlane.renderOrder=2;
 const contactCamera=new THREE.OrthographicCamera(-3.4,3.4,1.9,-1.9,.001,1.8);
 contactCamera.position.set(0,-.001,0);contactCamera.up.set(0,0,1);contactCamera.lookAt(0,1,0);
+const contactTint={value:new THREE.Color(0x000000)};
 const contactDepth=new THREE.MeshDepthMaterial({depthPacking:THREE.BasicDepthPacking,blending:THREE.NoBlending,side:THREE.DoubleSide});
 contactDepth.onBeforeCompile=shader=>{
+ shader.uniforms.uContactTint=contactTint;
+ shader.fragmentShader='uniform vec3 uContactTint;\n'+shader.fragmentShader;
  shader.fragmentShader=shader.fragmentShader.replace('gl_FragColor = vec4( vec3( 1.0 - fragCoordZ ), opacity );',
- 'float proximity=max(0.0,1.0-fragCoordZ); gl_FragColor=vec4(0.0,0.0,0.0,.34*pow(proximity,2.5)+.66*pow(proximity,24.0));');
+ 'float proximity=max(0.0,1.0-fragCoordZ); gl_FragColor=vec4(uContactTint,.34*pow(proximity,2.5)+.66*pow(proximity,24.0));');
 };
 const blurScene=new THREE.Scene();
 const blurCamera=new THREE.OrthographicCamera(-1,1,1,-1,0,2);blurCamera.position.z=1;
@@ -372,6 +392,45 @@ const entryById=new Map(partEntries.map(entry=>[entry.id,entry]));
 const parts=new Map();
 const zoneTemplates={paint,chrome,black:blackPlastic,tyre:tireMat,rim:rimMat,brake:softChrome,
  glass:windowGlass,mirror:chrome,lamp_red:tailRed,lamp_clear:lampLens,lamp_orange:orange,interior:interiorMat};
+// Retain every original studio material; Clay variants are created once, on demand.
+const clayMaterials=new Map(),originalMaterials=new WeakMap();
+const CLAY_COLORS=Object.freeze({black:'#4a3f4a',tyre:'#4a3f4a',glass:'#403240',
+ chrome:'#c8bcc0',rim:'#b8a8af',brake:'#95858f',mirror:'#746572',interior:'#7c6977',
+ lamp_red:'#eadbc2',lamp_clear:'#eadbc2',lamp_orange:'#eadbc2',base_top:'#d7c1b5',base_edge:'#806d7d'});
+function studioMaterial(current,zone,hex,authored=false){
+ const original=originalMaterials.get(current)||current;
+ if(hex!==undefined)original.color.set(hex);
+ if(studioMode!=='clay')return original;
+ let material=clayMaterials.get(original);
+ if(!material){
+  material=original.clone();
+  material.metalness=0;material.roughness=zone==='paint'?.85:.90;
+  if('clearcoat' in material){material.clearcoat=0;material.clearcoatRoughness=1;material.specularIntensity=.10;}
+  material.envMapIntensity=zone==='paint'?.035:.02;
+  material.emissive?.set(0x000000);material.emissiveIntensity=0;
+  if(zone==='glass'){material.opacity=.94;material.envMapIntensity=.015;}
+  if(zone.startsWith('lamp_')){material.transparent=false;material.opacity=1;material.depthWrite=true;}
+  if(!['glass','lamp_clear','mirror'].includes(zone))useBakedShading(material,true);
+  material.userData={...original.userData,studio:'clay'};
+  clayMaterials.set(original,material);originalMaterials.set(material,original);
+ }
+ material.color.set(authored?hex:(CLAY_COLORS[zone]||('#'+original.color.getHexString())));
+ return material;
+}
+function updateClayBackground(){
+ if(studioMode!=='clay')return;
+ const color=new THREE.Color(buildState.paint.paint||DEFAULT_WHITE),hsl={};color.getHSL(hsl,THREE.SRGBColorSpace);
+ const rgb={};color.getRGB(rgb,THREE.SRGBColorSpace);
+ const chroma=Math.max(rgb.r,rgb.g,rgb.b)-Math.min(rgb.r,rgb.g,rgb.b);
+ // Neutral finishes have no useful hue; keep them in a warm porcelain family.
+ const hasHue=hsl.s>.20&&chroma>.025;
+ const hue=hasHue?hsl.h:.065,saturation=hasHue?Math.min(.40,Math.max(.18,hsl.s*.55)):.22;
+ for(const [name,lightness] of [['centre',.89],['mid',.87],['edge',.82]]){
+  const bg=new THREE.Color().setHSL(hue,saturation,lightness,THREE.SRGBColorSpace);
+  document.body.style.setProperty('--clay-'+name,'#'+bg.getHexString());
+  if(name==='centre')document.querySelector('meta[name="theme-color"]').content='#'+bg.getHexString();
+ }
+}
 const aliases={carpaint:'paint',tire:'tyre',rim_second:'rim',brakedisk:'brake',windowglass:'glass',darkglass:'glass',redglass:'lamp_red',clearglass:'lamp_clear',orangeglass:'lamp_orange',garnish:'chrome'};
 function zoneFor(material){const name=material.name.replace(/\.\d+$/,'').toLowerCase();return material.userData.zone||aliases[name]||name;}
 // Source lens normals are retained byte-for-byte. Standard flat lens shading
@@ -435,12 +494,18 @@ function mergeBuild(base,patch){
 const baseBuild=mergeBuild({slots:defaultSlots,paint:{paint:DEFAULT_WHITE},lift_mm:0,hidden:[]},buildFile);
 let buildState=cloneJSON(baseBuild);
 function applyZonePaint(){
- for(const [id,root] of parts){root.traverse(part=>{if(!part.isMesh)return;for(const material of (Array.isArray(part.material)?part.material:[part.material])){
-  const zone=material.userData.zone,hex=buildState.paint[id+':'+zone]??buildState.paint[zone]??('#'+material.userData.defaultColor);material.color.set(hex);
- }});}
+ for(const [id,root] of parts){root.traverse(part=>{if(!part.isMesh)return;
+  const update=material=>{const original=originalMaterials.get(material)||material;
+   const zone=original.userData.zone,authored=buildState.paint[id+':'+zone]??buildState.paint[zone];
+   const hex=authored??('#'+original.userData.defaultColor);
+   return studioMaterial(original,zone,hex,authored!==undefined);
+  };
+  part.material=Array.isArray(part.material)?part.material.map(update):update(part.material);
+ });}
  paint.color.set(buildState.paint.paint||DEFAULT_WHITE);
  const input=document.getElementById('customPaint');if(input)input.value='#'+paint.color.getHexString();
  document.querySelectorAll('[data-paint]').forEach(button=>button.classList.toggle('active',button.dataset.paint==='#'+paint.color.getHexString()));
+ updateClayBackground();
 }
 function applyBuild(){
  // A lift changes one group translation. All mesh buffers and wheel poses stay fixed.
@@ -648,19 +713,36 @@ function setPaint(color,clicked){
 swatches.forEach(s=>s.addEventListener('click',()=>setPaint(s.dataset.paint,s)));
 paintInput.addEventListener('input',e=>setPaint(e.target.value,null));
 const bgToggle=document.getElementById('bgToggle');
-bgToggle.addEventListener('click',()=>{
-  document.body.classList.toggle('cream');
-  document.getElementById('bgLabel').textContent=document.body.classList.contains('cream')?'Slate studio':'Cream studio';
-  bgToggle.setAttribute('aria-pressed',String(document.body.classList.contains('cream')));
-});
-bgToggle.setAttribute('aria-pressed','true');
-function syncStudioLabel(){
- const cream=document.body.classList.contains('cream');
- document.getElementById('bgLabel').textContent=cream?'Slate studio':'Cream studio';
- bgToggle.title=cream?'Switch to Slate studio':'Switch to Cream studio';
- document.querySelector('meta[name="theme-color"]').content=cream?'#EFEAE3':'#4a6a82';
+const studioModes=['cream','slate','clay'],studioLabels={cream:'Cream',slate:'Slate',clay:'Clay'};
+const originalLighting={exposure:renderer.toneMappingExposure,environment:scene.environmentIntensity,
+ keyColor:key.color.clone(),keyIntensity:key.intensity,keyPosition:key.position.clone(),
+ fillColor:fill.color.clone(),groundColor:fill.groundColor.clone(),fillIntensity:fill.intensity};
+function setStudio(mode){
+ studioMode=mode;const clay=mode==='clay';
+ document.body.classList.toggle('cream',mode==='cream');document.body.classList.toggle('clay',clay);document.body.dataset.studio=mode;
+ const next=studioModes[(studioModes.indexOf(mode)+1)%studioModes.length];
+ document.getElementById('bgLabel').textContent=studioLabels[next]+' studio';
+ bgToggle.title='Switch to '+studioLabels[next]+' studio';
+ bgToggle.setAttribute('aria-label',studioLabels[mode]+' studio. '+bgToggle.title);bgToggle.removeAttribute('aria-pressed');
+ if(clay){
+  renderer.toneMappingExposure=1.10;scene.environmentIntensity=.10;
+  key.color.set('#ffe8dc');key.intensity=.95;key.position.set(-3,7,4);
+  fill.color.set('#ffe9dd');fill.groundColor.set('#9a7d91');fill.intensity=.90;
+ }else{
+  renderer.toneMappingExposure=originalLighting.exposure;scene.environmentIntensity=originalLighting.environment;
+  key.color.copy(originalLighting.keyColor);key.intensity=originalLighting.keyIntensity;key.position.copy(originalLighting.keyPosition);
+  fill.color.copy(originalLighting.fillColor);fill.groundColor.copy(originalLighting.groundColor);fill.intensity=originalLighting.fillIntensity;
+  document.querySelector('meta[name="theme-color"]').content=mode==='cream'?'#EFEAE3':'#4a6a82';
+ }
+ applyZonePaint();
+ plinth.traverse(part=>{if(part.isMesh){const current=originalMaterials.get(part.material)||part.material;
+  part.material=studioMaterial(current,current===baseTopMaterial?'base_top':'base_edge');
+ }});
+ contactTint.value.set(clay?'#70586c':0x000000);contactMaterial.opacity=clay?.72:1;
+ const displayedBase=plinth.visible;plinth.visible=false;bakeContactShadow();plinth.visible=displayedBase;
+ requestRender();
 }
-bgToggle.addEventListener('click',syncStudioLabel);syncStudioLabel();
+bgToggle.addEventListener('click',()=>setStudio(studioModes[(studioModes.indexOf(studioMode)+1)%studioModes.length]));
 const cleanToggle=document.getElementById('cleanToggle');
 renderer.domElement.tabIndex=0;
 function setCleanView(hidden){
@@ -714,6 +796,7 @@ function animate(){
   const guarded=enforceCameraSafety();
   if(wasTweening || moved || guarded || needsRender){updateClipping();renderFrame();needsRender=false;}
 }
+bgToggle.setAttribute('aria-label','Cream studio. Switch to Slate studio');
 hashBuild();
 renderFrame();
 document.getElementById('loader').classList.add('hidden');

@@ -1,0 +1,95 @@
+{
+  "method": "Exact RGB PNG pixel comparison cropped to x40 y100 width1360 height780 to exclude intentional studio-button/UI text changes. Same Chromium SwiftShader, viewport1440x1000 DPR1; no thresholding.",
+  "results": [
+    {
+      "studio": "cream",
+      "view": "front",
+      "crop": [
+        40,
+        100,
+        1360,
+        780
+      ],
+      "differingPixels": 0,
+      "totalPixels": 1060800,
+      "maxChannelDelta": 0,
+      "meanAbsoluteChannelDelta": 0.0,
+      "rmsChannelDelta": 0.0
+    },
+    {
+      "studio": "cream",
+      "view": "side",
+      "crop": [
+        40,
+        100,
+        1360,
+        780
+      ],
+      "differingPixels": 0,
+      "totalPixels": 1060800,
+      "maxChannelDelta": 0,
+      "meanAbsoluteChannelDelta": 0.0,
+      "rmsChannelDelta": 0.0
+    },
+    {
+      "studio": "cream",
+      "view": "quarter",
+      "crop": [
+        40,
+        100,
+        1360,
+        780
+      ],
+      "differingPixels": 0,
+      "totalPixels": 1060800,
+      "maxChannelDelta": 0,
+      "meanAbsoluteChannelDelta": 0.0,
+      "rmsChannelDelta": 0.0
+    },
+    {
+      "studio": "slate",
+      "view": "front",
+      "crop": [
+        40,
+        100,
+        1360,
+        780
+      ],
+      "differingPixels": 0,
+      "totalPixels": 1060800,
+      "maxChannelDelta": 0,
+      "meanAbsoluteChannelDelta": 0.0,
+      "rmsChannelDelta": 0.0
+    },
+    {
+      "studio": "slate",
+      "view": "side",
+      "crop": [
+        40,
+        100,
+        1360,
+        780
+      ],
+      "differingPixels": 0,
+      "totalPixels": 1060800,
+      "maxChannelDelta": 0,
+      "meanAbsoluteChannelDelta": 0.0,
+      "rmsChannelDelta": 0.0
+    },
+    {
+      "studio": "slate",
+      "view": "quarter",
+      "crop": [
+        40,
+        100,
+        1360,
+        780
+      ],
+      "differingPixels": 0,
+      "totalPixels": 1060800,
+      "maxChannelDelta": 0,
+      "meanAbsoluteChannelDelta": 0.0,
+      "rmsChannelDelta": 0.0
+    }
+  ]
+}

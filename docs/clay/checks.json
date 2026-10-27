@@ -1,0 +1,93 @@
+{
+  "sourceSha256": "3d8a78d9a832fa07219e93127983e31922eb4088878dffb7ea4434a4a6db6638",
+  "assetSetSha256": "255b2491716244de8545ba4a4986de7f886a80bc5afbf35f9ab8ae24d4d146f4",
+  "passed": true,
+  "checks": {
+    "modeIsClay": true,
+    "defaultBuildPreserved": true,
+    "geometryUnchanged": true,
+    "paintIsMatte": true,
+    "darkPartsMatte": true,
+    "chromeIsMatte": true,
+    "glassLowReflection": true,
+    "lampsMatte": true,
+    "noExtraDraws": true,
+    "paintSwatches": true,
+    "backgroundFollowsHue": true,
+    "perPartPaintInClay": true,
+    "nonPaintOverrideInClay": true,
+    "perPartPaintSurvivesSwitch": true,
+    "nonPaintOverrideSurvivesSwitch": true,
+    "creamRestores": true,
+    "slateRestores": true,
+    "geometryUnchangedAfterCycle": true,
+    "creamUnchangedFromBaseline": true,
+    "slateUnchangedFromBaseline": true,
+    "presetCamerasUnchanged": true,
+    "assetsUnchangedDuringTest": true
+  },
+  "errors": [],
+  "baselineModelAndBuildFilesUnchanged": true,
+  "baselineAssetFiles": 38,
+  "geometryMethod": "Runtime byte snapshots of POSITION/NORMAL/COLOR_0 plus every vehicle node local/world matrix; compared through studio, paint and build-override changes. Model/build source files also match pre-edit SHA256.",
+  "stockWhiteDefault": {
+    "stockBuildDefault": true,
+    "geometryUnchanged": true,
+    "assetsUnchangedDuringTest": true
+  },
+  "creamDrawCalls": 167,
+  "clayDrawCalls": 154,
+  "creamRenderedTriangles": 841958,
+  "clayRenderedTriangles": 741525,
+  "coloursTested": [
+    {
+      "color": "#f4f4ef",
+      "background": "radial-gradient(at 50% 42%, rgb(233, 226, 221) 0%, rgb(229, 220, 215) 53%, rgb(219, 207, 199) 100%)",
+      "actualPaint": "f4f4ef",
+      "buildPaint": "#f4f4ef",
+      "geometryIntact": true
+    },
+    {
+      "color": "#a9b0b8",
+      "background": "radial-gradient(at 50% 42%, rgb(233, 226, 221) 0%, rgb(229, 220, 215) 53%, rgb(219, 207, 199) 100%)",
+      "actualPaint": "a9b0b8",
+      "buildPaint": "#a9b0b8",
+      "geometryIntact": true
+    },
+    {
+      "color": "#575c60",
+      "background": "radial-gradient(at 50% 42%, rgb(233, 226, 221) 0%, rgb(229, 220, 215) 53%, rgb(219, 207, 199) 100%)",
+      "actualPaint": "575c60",
+      "buildPaint": "#575c60",
+      "geometryIntact": true
+    },
+    {
+      "color": "#15191d",
+      "background": "radial-gradient(at 50% 42%, rgb(233, 226, 221) 0%, rgb(229, 220, 215) 53%, rgb(219, 207, 199) 100%)",
+      "actualPaint": "15191d",
+      "buildPaint": "#15191d",
+      "geometryIntact": true
+    },
+    {
+      "color": "#cf855f",
+      "background": "radial-gradient(at 50% 42%, rgb(235, 224, 219) 0%, rgb(232, 219, 212) 53%, rgb(223, 205, 196) 100%)",
+      "actualPaint": "cf855f",
+      "buildPaint": "#cf855f",
+      "geometryIntact": true
+    },
+    {
+      "color": "#4f8da5",
+      "background": "radial-gradient(at 50% 42%, rgb(222, 229, 232) 0%, rgb(215, 225, 228) 53%, rgb(200, 213, 218) 100%)",
+      "actualPaint": "4f8da5",
+      "buildPaint": "#4f8da5",
+      "geometryIntact": true
+    }
+  ],
+  "captureMethod": "Chromium SwiftShader1440x1000DPR1; real preset clicks and2.5s tween waits. Intermediate screen draws suppressed in test copy; offscreen contact-shadow bakes always run. Paint#cf855f is test-only for3requestedviews; productiondefault remains#f4f4ef.",
+  "screenshots": [
+    "front.jpg",
+    "side.jpg",
+    "quarter.jpg",
+    "stock-white-quarter.jpg"
+  ]
+}

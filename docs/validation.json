@@ -1,15 +1,34 @@
 {
-  "sourceSha256": "2d8e3c8dd9a7ed28e5962b0ee933378d226473f6a78577ba0676653fb45972e6",
-  "assetSetSha256": "255b2491716244de8545ba4a4986de7f886a80bc5afbf35f9ab8ae24d4d146f4",
+  "session": "Clay studio material/lighting addition",
+  "testedAt": "2026-10-27T21:51:18.752Z",
+  "sourceSha256": "3d8a78d9a832fa07219e93127983e31922eb4088878dffb7ea4434a4a6db6638",
   "passed": true,
   "consoleErrors": 0,
-  "presetCaptures": 10,
-  "orbitCaptures": 8,
-  "additionalCaptures": [
-    "base-quarter",
-    "no-js"
-  ],
-  "visualChecks": {
+  "clayChecks": {
+    "modeIsClay": true,
+    "defaultBuildPreserved": true,
+    "geometryUnchanged": true,
+    "paintIsMatte": true,
+    "darkPartsMatte": true,
+    "chromeIsMatte": true,
+    "glassLowReflection": true,
+    "lampsMatte": true,
+    "noExtraDraws": true,
+    "paintSwatches": true,
+    "backgroundFollowsHue": true,
+    "perPartPaintInClay": true,
+    "nonPaintOverrideInClay": true,
+    "perPartPaintSurvivesSwitch": true,
+    "nonPaintOverrideSurvivesSwitch": true,
+    "creamRestores": true,
+    "slateRestores": true,
+    "geometryUnchangedAfterCycle": true,
+    "creamUnchangedFromBaseline": true,
+    "slateUnchangedFromBaseline": true,
+    "presetCamerasUnchanged": true,
+    "assetsUnchangedDuringTest": true
+  },
+  "coreControls": {
     "defaultCream": true,
     "presetButtons": true,
     "sideLevel": true,
@@ -29,6 +48,8 @@
     "baseToggle": true,
     "baseFraming": true,
     "baseRestores": true,
+    "clayBase": true,
+    "clayBaseRestores": true,
     "buildState": true,
     "hashLift": true,
     "hashRestoresDefault": true,
@@ -39,97 +60,45 @@
     "noJsFallback": true,
     "assetsStable": true
   },
-  "boundsMetres": {
-    "length": 5.170001268386841,
-    "height": 1.930053446795627,
-    "widthIncludingMirrors": 2.296633268547192
-  },
-  "buildState": {
-    "defaultLift": 0,
-    "rootScale": [
-      1,
-      1,
-      1
+  "modelAndBuildFilesUnchanged": true,
+  "geometryVerification": "Runtime byte snapshots of POSITION/NORMAL/COLOR_0 plus every vehicle node local/world matrix; compared through studio, paint and build-override changes. Model/build source files also match pre-edit SHA256.",
+  "creamSlateBaselineComparison": "Zero differing pixels in six 1360x780 car/background crops; excludes UI destination-label changes. See docs/clay/comparisons.json.",
+  "performance": {
+    "viewport": [
+      1366,
+      1024
     ],
-    "bodyMeshes": 122,
-    "wheelMeshes": 30,
-    "maxBodyDeltaError": 4.163336342344337e-17,
-    "maxWheelMovement": 0,
-    "positionArraysUnchanged": true,
-    "globalPaint": true,
-    "partPaint": true,
-    "partPaintIsolated": true,
-    "hidden": true,
-    "slotEmpty": true,
-    "slotRestored": true,
-    "restoredLift": 0
-  },
-  "nativeCamera": {
-    "passed": true,
-    "observationCount": 75,
-    "everyObservedPoseSafe": true,
-    "minimumObservedCameraY": 0.15,
-    "minimumObservedDistance": 3.98279523864264,
-    "groundLimitReached": true,
-    "trustedInputs": {
-      "touch": true,
-      "wheel": true
-    },
-    "collisionRecovery": {
-      "cameraOutside": true,
-      "targetInside": true,
-      "aboveFloor": true,
-      "distanceSafe": true
-    }
-  },
-  "webkitTiming": {
-    "conditions": "1366x1024 CSS pixels, DPR1, native product renderer, Cream Quarter auto-rotate, four warmup frames then24 measured rAF intervals; no frame suppression",
-    "engine": "Playwright WebKit on Linux WPE with software GL; iPad touch emulation",
+    "devicePixelRatio": 1,
+    "conditions": "1366x1024 CSS pixels, DPR1, native product renderer, clay Quarter auto-rotate, four warmup frames then24 measured rAF intervals; no frame suppression",
     "limitation": "Emulated WebKit, not a physical iPad. CPU and software GPU timing depends on host workload; not a hardware performance claim.",
-    "p50ms": 477,
-    "p95ms": 489,
-    "meanMs": 471.2083333333333,
-    "errors": []
-  },
-  "screenshots": "final-cream.jpg, final-slate.jpg, orbit.jpg, base-quarter.jpg, front-closeup.jpg",
-  "limitation": "WebKit touch and timing are Linux emulation; no physical iPad was available. Screenshot rendering suppresses intermediate draws in the test copy; the benchmark runs the real renderer without suppression.",
-  "testedAt": "2026-10-27T17:40:33.039Z",
-  "session": "Parts foundation, 27 October 2026",
-  "geometry": {
-    "deliveredParts": 34,
-    "unsortedParts": 10,
-    "sourceTriangles": 741521,
-    "deliveredTriangles": 741521,
-    "triangleCoverageExactlyOnce": true,
-    "maxVertexDeviationMm": 0,
-    "allAttributesByteExact": true,
-    "allStoredNodeTransformsExact": true,
-    "pinnedDecoder": "Three.js0.166.1 addons/libs/meshopt_decoder.module.js",
-    "missingTargets": {
-      "arch_flares": "Flare surfaces are integrated into larger connected fender/body panels; separating them would require arbitrary face cutting.",
-      "chassis": "No confidently isolated frame/axle component; broad connected underside/body geometry is retained as unsorted_03 and rear underside attachment as unsorted_04."
+    "cream": {
+      "frameIntervals": {
+        "samples": 24,
+        "meanMs": 472.0833333333333,
+        "p50ms": 478,
+        "p95ms": 488,
+        "minMs": 445,
+        "maxMs": 498
+      },
+      "drawCalls": 167
+    },
+    "clay": {
+      "frameIntervals": {
+        "samples": 24,
+        "meanMs": 404.2916666666667,
+        "p50ms": 399,
+        "p95ms": 425,
+        "minMs": 394,
+        "maxMs": 437
+      },
+      "drawCalls": 154
     }
   },
-  "sizes": {
-    "unit": "decimal MB = 1000000 bytes",
-    "beforeIndexBytes": 12922088,
-    "afterIndexBytes": 51780,
-    "beforeModelRawGlbBytes": 21192128,
-    "beforeModelEmbeddedGzipBytes": 9647754,
-    "beforeModelEmbeddedBase64Bytes": 12863676,
-    "afterModelGlbBytes": 9884184,
-    "afterModelDirectoryBytes": 9988729,
-    "afterBuildJsonBytes": 1195,
-    "indexSha256": "2d8e3c8dd9a7ed28e5962b0ee933378d226473f6a78577ba0676653fb45972e6",
-    "note": "Model directory includes manifest and camera reference JSON. Gzip payload byte count excludes Base64 overhead; production response HTTP compression is not measured."
+  "retainedFoundationEvidence": {
+    "commit": "fb71c42a359618752db26e2aae8d4eda5b09b9f4",
+    "geometry": "docs/foundation/scale-audit.json",
+    "losslessCompression": "docs/foundation/compression.json",
+    "partInventory": "docs/foundation/parts-review.md"
   },
-  "webkitTimingBefore": {
-    "samples": 24,
-    "meanMs": 496.2083333333333,
-    "p50ms": 485,
-    "p95ms": 585,
-    "minMs": 448,
-    "maxMs": 590
-  },
-  "evidence": "docs/foundation/README.md"
+  "evidence": "docs/clay/README.md"
 }

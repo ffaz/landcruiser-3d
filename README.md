@@ -4,9 +4,15 @@
 
 The physical car root uses uniform **scale 1.0**. Source vertex positions, normals, baked `COLOR_0` AO/curvature and encoded node transforms are retained. Runtime length, height, tyre and spoiler reshaping has been removed. Blender **4.3.2** identifies loose pieces; export selects original triangles and copies original attribute values. The lossless Meshopt roundtrip is verified with the decoder shipped in Three.js 0.166.1.
 
-Front, Side, Rear, 3/4, Top, Auto, Reset, the existing **four paint swatches plus custom picker**, Cream/Slate, Clean view, Base and touch controls remain. Presets restore the distances and directions from commit `1169290`: Side is level at y=0.40 m. A camera y≥0.15 m rule replaces the old 85° limit; sphere-distance, cabin-collision and pan-target guards remain. One finger rotates; pinch zooms; two fingers pan. Clean view restores with a stationary canvas tap, H or Escape.
+Front, Side, Rear, 3/4, Top, Auto, Reset, the existing **four paint swatches plus custom picker**, Cream/Slate/Clay, Clean view, Base and touch controls remain. Presets restore the distances and directions from commit `1169290`: Side is level at y=0.40 m. A camera y≥0.15 m rule replaces the old 85° limit; sphere-distance, cabin-collision and pan-target guards remain. One finger rotates; pinch zooms; two fingers pan. Clean view restores with a stationary canvas tap, H or Escape.
 
 The satin collectible materials and baked crevice/edge shading remain. No screen-space AO or live cavity pass is added. The blurred contact map updates when build state changes; rendering stops when controls are idle.
+
+## Clay studio
+
+The studio button cycles **Cream → Slate → Clay → Cream**, naming the mode you will switch to. Clay uses matte paint (roughness 0.85, no clearcoat), muted plum trim and glass, cream lamps, matte light-grey chrome, a warm key/fill and a plum-tinted contact shadow. Its background follows the selected paint hue; neutral finishes use a warm porcelain background. All four swatches and the custom picker work. Explicit build-state zone colours remain valid.
+
+Clay retains the original geometry, pivots, wheel assemblies, normals and baked COLOR_0 data. It uses a softer AO/curvature material variant, with no additional per-frame pass or real-time effect. Cream and Slate use their original materials and lighting. [Screenshots and verification](docs/clay/README.md).
 
 ## Foundation data
 
