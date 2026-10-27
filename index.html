@@ -193,7 +193,6 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { gunzipSync } from 'three/addons/libs/fflate.module.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-import { RectAreaLightUniformsLib } from 'three/addons/lights/RectAreaLightUniformsLib.js';
 import { HorizontalBlurShader } from 'three/addons/shaders/HorizontalBlurShader.js';
 import { VerticalBlurShader } from 'three/addons/shaders/VerticalBlurShader.js';
 
@@ -262,37 +261,32 @@ const pmrem=new THREE.PMREMGenerator(renderer);
 const studioTarget=pmrem.fromScene(studio,.025,.1,80);
 scene.environment=studioTarget.texture;scene.environmentIntensity=.65;
 studio.dispose();pmrem.dispose();
-scene.add(new THREE.HemisphereLight(0xfff5e8,0x313942,.28));
-RectAreaLightUniformsLib.init();
-const softKey=new THREE.RectAreaLight(0xfff1df,3.5,6,3);
-softKey.position.set(-3.5,6,4.5);softKey.lookAt(0,.8,0);scene.add(softKey);
-const key=new THREE.DirectionalLight(0xfff4e5,1.5);
-key.position.set(-2.8,10,3.5);key.castShadow=true;
+scene.add(new THREE.HemisphereLight(0xf7f5f0,0x52565c,.60));
+const key=new THREE.DirectionalLight(0xfffbf5,1.65);
+key.position.set(-1.5,8,2);key.castShadow=true;
 key.shadow.mapSize.set(2048,2048);
 key.shadow.camera.left=-4.5;key.shadow.camera.right=4.5;
 key.shadow.camera.top=3.5;key.shadow.camera.bottom=-3.5;
 key.shadow.camera.near=.5;key.shadow.camera.far=24;
 key.shadow.bias=-.00013;key.shadow.normalBias=.014;key.shadow.radius=4;
 scene.add(key);
-const fill=new THREE.DirectionalLight(0xdae7f0,.22);fill.position.set(4,3,6);scene.add(fill);
-const edge=new THREE.DirectionalLight(0xfff4e9,.65);edge.position.set(2,5,-5);scene.add(edge);
 
 const physical=(color,roughness=.34,metalness=.03,clearcoat=.5)=>new THREE.MeshPhysicalMaterial({
   color,roughness,metalness,clearcoat,clearcoatRoughness:.23,envMap:scene.environment,side:THREE.DoubleSide
 });
-const paint=physical(DEFAULT_WHITE,.30,.04,1.0);
-paint.clearcoatRoughness=.05;paint.envMapIntensity=1.15;
-const chrome=physical('#e1e4e5',.10,1.0,.15);chrome.envMapIntensity=1.15;
+const paint=physical(DEFAULT_WHITE,.38,.04,.55);
+paint.clearcoatRoughness=.20;paint.envMapIntensity=.90;
+const chrome=physical('#e1e4e5',.24,1.0,.15);chrome.envMapIntensity=.95;
 const softChrome=physical('#a4adb3',.32,.92,.10);
 const metalDark=physical('#434b52',.35,.80,.12);
-const windowGlass=physical('#162b34',.10,.02,.20);
+const windowGlass=physical('#20282c',.13,.02,.20);
 windowGlass.specularIntensity=.25;
 windowGlass.clearcoatRoughness=.045;windowGlass.envMapIntensity=1.05;
 windowGlass.transparent=true;windowGlass.opacity=.88;windowGlass.depthWrite=true;
 windowGlass.side=THREE.FrontSide;windowGlass.ior=1.5;
 const blackPlastic=new THREE.MeshStandardMaterial({color:'#0d1115',roughness:.56,metalness:0});
 const tireMat=new THREE.MeshStandardMaterial({color:'#202123',roughness:.93,metalness:0});
-const rimMat=physical('#596168',.35,.80,.12);
+const rimMat=physical('#858c92',.35,.80,.12);
 const lampLens=physical('#dce8f2',.055,0,.9);
 lampLens.transparent=true;lampLens.opacity=.16;lampLens.depthWrite=false;
 lampLens.envMapIntensity=1.0;lampLens.emissive.set('#bfd4ef');lampLens.emissiveIntensity=.025;
@@ -562,6 +556,24 @@ refineModelDetails(car,DIM);
 car.traverse(part=>{
  if(part.isMesh && /redglass|clearglass|orangeglass/.test(part.name.toLowerCase()))alignLensNormals(part.geometry);
 });
+// Simple satin arch liners close the dark openings behind the existing tyres.
+// They add no suspension, underbody detail or per-frame effect.
+const archLinerMaterial=new THREE.MeshStandardMaterial({color:'#25282b',roughness:.91,metalness:0,side:THREE.DoubleSide});
+function addArchLiners(){
+ const r=.47,steps=48;
+ for(const axle of [FRONT_X,REAR_X])for(const side of [-1,1]){
+  const vertices=[],indices=[];
+  for(let i=0;i<=steps;i++){
+   const a=i/steps*Math.PI,x=axle+Math.cos(a)*r,y=TIRE_RADIUS+Math.sin(a)*r;
+   vertices.push(x,y,side*.955,x,y,side*.63,axle+Math.cos(a)*.09,TIRE_RADIUS+Math.sin(a)*.09,side*.63);
+   if(i<steps){const k=i*3;indices.push(k,k+1,k+3,k+1,k+4,k+3,k+1,k+2,k+4,k+2,k+5,k+4);}
+  }
+  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));g.setIndex(indices);g.computeVertexNormals();
+  const liner=mesh(g,archLinerMaterial);liner.name='Satin arch liner';liner.receiveShadow=false;
+ }
+}
+
+addArchLiners();
 car.position.y=.0001;car.updateMatrixWorld(true);
 bakeContactShadow();
 renderer.shadowMap.needsUpdate=true;

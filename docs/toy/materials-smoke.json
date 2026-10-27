@@ -1,0 +1,106 @@
+{
+  "mode": "after",
+  "source": "/workspace/lc-toy/stage3.html",
+  "sourceSha256": "d32bdc47343e387d4f1d1430c0e783f32ed024cfddfedde3b0ff9afedd7146ba",
+  "threeVersion": "0.166.1",
+  "checksOnly": false,
+  "bothStudios": false,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "method": "Real UI and camera updates; test-only intermediate GPU draw suppression; product final frame rendered for every screenshot.",
+  "snapshots": [
+    "front.png",
+    "quarter.png"
+  ],
+  "reusedSnapshots": [],
+  "errors": [],
+  "checks": {
+    "defaultCream": true,
+    "presetButtons": true,
+    "sideSafePolar": true,
+    "heroFraming": true,
+    "presetObservations": [
+      {
+        "studio": "cream",
+        "view": "front",
+        "active": true,
+        "position": [
+          -8.960987253378077,
+          1.7457345719414068,
+          5.49926864651632e-16
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 9.015293165664854,
+        "zoom": 1,
+        "level": false,
+        "safePolar": true,
+        "widthFraction": 0.5519183217271589
+      },
+      {
+        "studio": "cream",
+        "view": "quarter",
+        "active": true,
+        "position": [
+          -7.730469837615196,
+          2.838901778815806,
+          8.220195282319148
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 11.453019910821865,
+        "zoom": 1,
+        "level": false,
+        "safePolar": true,
+        "widthFraction": 0.7974652955085275
+      }
+    ],
+    "nativeAntialias": true,
+    "pixelRatioCap": true,
+    "longLens": true,
+    "renderer": {
+      "cameraType": "PerspectiveCamera",
+      "fov": 20,
+      "nativeAntialias": true,
+      "devicePixelRatio": 1,
+      "rendererPixelRatio": 1
+    },
+    "model": {
+      "dimensions": {
+        "length": 5.095,
+        "width": 1.98,
+        "height": 1.93,
+        "wheelbase": 2.85,
+        "clearance": 0.23,
+        "trackF": 1.65,
+        "trackR": 1.645,
+        "tireWidth": 0.265,
+        "rimDiameter": 0.43179999999999996,
+        "aspectRatio": 0.7
+      },
+      "bounds": {
+        "min": {
+          "x": -2.5475007814613306,
+          "y": 6.6792072143107e-05,
+          "z": -1.1483163726598207
+        },
+        "max": {
+          "x": 2.547500477483922,
+          "y": 1.9301326181007357,
+          "z": 1.1483169687062684
+        }
+      },
+      "triangles": 841400,
+      "drawCalls": 41
+    }
+  },
+  "visualInspectionRequired": true
+}

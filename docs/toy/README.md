@@ -13,3 +13,7 @@ Blender **4.3.2** performed a real Cycles CPU AO vertex-colour bake: 32 samples,
 The first 10 m AO-distance experiment was rejected because it shaded broad outer panels. The accepted 0.35 m bake preserves open white panels and concentrates shading at crevices. Attribute coverage checks also caught additional glass primitives and shared hub geometry during integration; the accepted asset covers every primitive, with neutral data on glazing.
 
 [Reproducible offline pipeline](../../tools/bake/README.md), [Cycles report](bake.json), [packing/storage report](bake-packing.json), and [renderer smoke check](baked-smoke.json). Original geometry, normals, indices and transforms are preserved byte-for-byte; the new attribute uses normalized 8-bit values while existing position/normal quantisation stays intact. Its compressed Base64 increment is **1,417,080 bytes** under the same gzip settings. Front and 3/4 renders were inspected with zero console errors.
+
+## 3. Satin toy materials
+
+Paint uses roughness 0.38, clearcoat 0.55 and clearcoat roughness 0.20. Glazing is neutral #20282c; rims retain the existing shape with brighter satin gunmetal; chrome roughness is 0.24. A single overhead directional key plus hemisphere and the existing environment replaces the previous multi-light reflection rig. Four simple satin arch liners close the openings behind the tyres without adding suspension or underbody details. Front/quarter inspection found no detached or intersecting liners. [Material-stage render check](materials-smoke.json): zero console errors.
