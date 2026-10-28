@@ -1,4 +1,6 @@
-# Clay studio
+# Clay studio — initial release
+
+This records commit `833b3b3`. See [the later Clay tuning](../clay-tune/README.md) for the current lighting, white finish and lamp treatment.
 
 The existing studio button now cycles **Cream → Slate → Clay → Cream**, showing the destination mode. Clay changes materials, colours and lighting only. The build file, model files, geometry buffers, original normals, baked COLOR_0, root scale, pivots and camera presets are preserved.
 

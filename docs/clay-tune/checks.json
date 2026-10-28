@@ -1,0 +1,145 @@
+{
+  "sourceSha256": "4ae6f94f2c85af96f488be7ce217b76517cb3f07b020403329b19fb1a6bb316c",
+  "assetSetSha256": "255b2491716244de8545ba4a4986de7f886a80bc5afbf35f9ab8ae24d4d146f4",
+  "passed": true,
+  "checks": {
+    "modeIsClay": true,
+    "defaultBuildPreserved": true,
+    "geometryUnchanged": true,
+    "paintIsMatte": true,
+    "darkPartsMatte": true,
+    "chromeIsMatte": true,
+    "glassLowReflection": true,
+    "lampsMatte": true,
+    "clayCurvatureRaised": true,
+    "tailLampsMutedRed": true,
+    "noExtraDraws": true,
+    "paintSwatches": true,
+    "backgroundFollowsHue": true,
+    "pastelBluePreserved": true,
+    "whitePaintIsWarmCream": true,
+    "perPartPaintInClay": true,
+    "nonPaintOverrideInClay": true,
+    "perPartPaintSurvivesSwitch": true,
+    "nonPaintOverrideSurvivesSwitch": true,
+    "creamRestores": true,
+    "slateRestores": true,
+    "geometryUnchangedAfterCycle": true,
+    "creamUnchangedFromBaseline": true,
+    "slateUnchangedFromBaseline": true,
+    "presetCamerasUnchanged": true,
+    "assetsUnchangedDuringTest": true
+  },
+  "errors": [],
+  "baselineModelAndBuildFilesUnchanged": true,
+  "baselineAssetFiles": 38,
+  "geometryMethod": "Runtime POSITION/NORMAL/COLOR buffer byte clones and attribute identity checks, all model local/world transform comparisons, root scale1; source model/build SHA256 matches frozen pre-change files.",
+  "whitePaint": {
+    "authored": "#f4f4ef",
+    "visible": [
+      "efe6da"
+    ]
+  },
+  "clayUniforms": {
+    "uBakedAO": 0.65,
+    "uBakedRidge": 0.52,
+    "uBakedValley": 0.72,
+    "uClayOcclusionTint": "9d8799"
+  },
+  "lighting": [
+    {
+      "type": "HemisphereLight",
+      "color": "ffe9dd",
+      "ground": "9a7d91",
+      "intensity": 0.5,
+      "position": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "type": "DirectionalLight",
+      "color": "fff2e5",
+      "intensity": 1.85,
+      "position": [
+        -3.8,
+        7.5,
+        4
+      ]
+    }
+  ],
+  "contact": {
+    "opacity": 0.94,
+    "tint": "604450"
+  },
+  "creamDrawCalls": 167,
+  "clayDrawCalls": 154,
+  "coloursTested": [
+    {
+      "color": "#f4f4ef",
+      "background": "radial-gradient(at 50% 42%, rgb(250, 249, 247) 0%, rgb(246, 243, 240) 53%, rgb(242, 238, 232) 100%)",
+      "actualPaint": "efe6da",
+      "buildPaint": "#f4f4ef",
+      "geometryIntact": true
+    },
+    {
+      "color": "#a9b0b8",
+      "background": "radial-gradient(at 50% 42%, rgb(240, 236, 233) 0%, rgb(235, 231, 226) 53%, rgb(230, 225, 219) 100%)",
+      "actualPaint": "a9b0b8",
+      "buildPaint": "#a9b0b8",
+      "geometryIntact": true
+    },
+    {
+      "color": "#575c60",
+      "background": "radial-gradient(at 50% 42%, rgb(234, 230, 225) 0%, rgb(229, 224, 218) 53%, rgb(225, 219, 211) 100%)",
+      "actualPaint": "575c60",
+      "buildPaint": "#575c60",
+      "geometryIntact": true
+    },
+    {
+      "color": "#15191d",
+      "background": "radial-gradient(at 50% 42%, rgb(234, 230, 225) 0%, rgb(229, 224, 218) 53%, rgb(225, 219, 211) 100%)",
+      "actualPaint": "15191d",
+      "buildPaint": "#15191d",
+      "geometryIntact": true
+    },
+    {
+      "color": "#ffffff",
+      "background": "radial-gradient(at 50% 42%, rgb(250, 249, 247) 0%, rgb(246, 243, 240) 53%, rgb(242, 238, 232) 100%)",
+      "actualPaint": "efe6da",
+      "buildPaint": "#ffffff",
+      "geometryIntact": true
+    },
+    {
+      "color": "#dde9f1",
+      "background": "radial-gradient(at 50% 42%, rgb(248, 250, 251) 0%, rgb(240, 244, 247) 53%, rgb(233, 239, 243) 100%)",
+      "actualPaint": "dde9f1",
+      "buildPaint": "#dde9f1",
+      "geometryIntact": true
+    },
+    {
+      "color": "#cf855f",
+      "background": "radial-gradient(at 50% 42%, rgb(239, 227, 221) 0%, rgb(236, 221, 213) 53%, rgb(232, 214, 205) 100%)",
+      "actualPaint": "cf855f",
+      "buildPaint": "#cf855f",
+      "geometryIntact": true
+    },
+    {
+      "color": "#4f8da5",
+      "background": "radial-gradient(at 50% 42%, rgb(223, 232, 236) 0%, rgb(216, 227, 231) 53%, rgb(209, 222, 227) 100%)",
+      "actualPaint": "4f8da5",
+      "buildPaint": "#4f8da5",
+      "geometryIntact": true
+    }
+  ],
+  "captureMethod": "Actual preset button clicks,2.5s tween waits, native product finaldraw. Testcopy suppresses only redundant screen draws; all static renderTarget/depth/blur draws remain enabled.",
+  "screenshots": {
+    "orange-front": "orange-front.jpg",
+    "orange-side": "orange-side.jpg",
+    "orange-quarter": "orange-quarter.jpg",
+    "white-front": "white-front.jpg",
+    "white-side": "white-side.jpg",
+    "white-quarter": "white-quarter.jpg"
+  }
+}

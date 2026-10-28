@@ -283,7 +283,7 @@ const bakedUniforms={
  uBakedAO:{value:BAKED_LOOK.ao},uBakedRidge:{value:BAKED_LOOK.ridge},uBakedValley:{value:BAKED_LOOK.valley}
 };
 // Clay has its own material programs/uniforms; the original studio math is unchanged.
-const CLAY_LOOK=Object.freeze({ao:.65,ridge:.22,valley:.35});
+const CLAY_LOOK=Object.freeze({ao:.65,ridge:.52,valley:.72});
 const clayBakedUniforms={uBakedAO:{value:CLAY_LOOK.ao},uBakedRidge:{value:CLAY_LOOK.ridge},
  uBakedValley:{value:CLAY_LOOK.valley},uClayOcclusionTint:{value:new THREE.Color('#9d8799')}};
 function useBakedShading(material,clay=false){
@@ -393,15 +393,46 @@ const parts=new Map();
 const zoneTemplates={paint,chrome,black:blackPlastic,tyre:tireMat,rim:rimMat,brake:softChrome,
  glass:windowGlass,mirror:chrome,lamp_red:tailRed,lamp_clear:lampLens,lamp_orange:orange,interior:interiorMat};
 // Retain every original studio material; Clay variants are created once, on demand.
-const clayMaterials=new Map(),originalMaterials=new WeakMap();
+const clayMaterials=new Map(),clayLensMaterials=new WeakMap(),originalMaterials=new WeakMap();
 const CLAY_COLORS=Object.freeze({black:'#4a3f4a',tyre:'#4a3f4a',glass:'#403240',
  chrome:'#c8bcc0',rim:'#b8a8af',brake:'#95858f',mirror:'#746572',interior:'#7c6977',
- lamp_red:'#eadbc2',lamp_clear:'#eadbc2',lamp_orange:'#eadbc2',base_top:'#d7c1b5',base_edge:'#806d7d'});
-function studioMaterial(current,zone,hex,authored=false){
+ lamp_red:'#a16f73',lamp_clear:'#eadbc2',lamp_orange:'#eadbc2',base_top:'#d7c1b5',base_edge:'#806d7d'});
+function clayPaintColor(hex){
+ const color=new THREE.Color(hex),rgb={};color.getRGB(rgb,THREE.SRGBColorSpace);
+ const low=Math.min(rgb.r,rgb.g,rgb.b),high=Math.max(rgb.r,rgb.g,rgb.b);
+ // A display-only white finish: the authored build colour remains unchanged.
+ return low>.86&&high-low<.04?'#efe6da':'#'+color.getHexString();
+}
+function useClayLampCentre(material,node){
+ // Read the existing bounds/decoding frame once. Never add or edit an attribute.
+ // Projection into the source lamp's up/width plane stays attached under rigid lift.
+ node.updateWorldMatrix(true,false);
+ const box=node.geometry.boundingBox||new THREE.Box3().setFromBufferAttribute(node.geometry.getAttribute('position'));
+ const size=box.getSize(new THREE.Vector3()),centre=box.getCenter(new THREE.Vector3()),m=node.matrixWorld.elements;
+ const rowY=new THREE.Vector3(m[1],m[5],m[9]),rowZ=new THREE.Vector3(m[2],m[6],m[10]);
+ const extent=row=>Math.max(.000001,(Math.abs(row.x)*size.x+Math.abs(row.y)*size.y+Math.abs(row.z)*size.z)/2);
+ rowY.divideScalar(extent(rowY));rowZ.divideScalar(extent(rowZ));
+ const uniforms={uClayLampRowY:{value:rowY},uClayLampRowZ:{value:rowZ},
+  uClayLampCentre:{value:new THREE.Vector2(centre.dot(rowY),centre.dot(rowZ))}};
+ material.onBeforeCompile=shader=>{
+  Object.assign(shader.uniforms,uniforms);
+  shader.vertexShader=shader.vertexShader.replace('#include <common>',
+   '#include <common>\nvarying float vClayLampCentre; uniform vec3 uClayLampRowY; uniform vec3 uClayLampRowZ; uniform vec2 uClayLampCentre;');
+  shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>',`#include <begin_vertex>
+   vec2 lampOffset=vec2(dot(position,uClayLampRowY),dot(position,uClayLampRowZ))-uClayLampCentre;
+   vClayLampCentre=max(0.0,1.0-dot(lampOffset,lampOffset));`);
+  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying float vClayLampCentre;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <color_fragment>',
+   '#include <color_fragment>\ndiffuseColor.rgb*=1.0+0.12*vClayLampCentre;');
+ };
+ material.customProgramCacheKey=()=> 'lc200-clay-front-lens-centre-v1';
+}
+function studioMaterial(current,zone,hex,authored=false,node=null){
  const original=originalMaterials.get(current)||current;
  if(hex!==undefined)original.color.set(hex);
  if(studioMode!=='clay')return original;
- let material=clayMaterials.get(original);
+ const frontLens=zone==='lamp_clear'&&original.userData.partId?.startsWith('lamp_front_')&&node;
+ let material=frontLens?clayLensMaterials.get(node):clayMaterials.get(original);
  if(!material){
   material=original.clone();
   material.metalness=0;material.roughness=zone==='paint'?.85:.90;
@@ -411,21 +442,26 @@ function studioMaterial(current,zone,hex,authored=false){
   if(zone==='glass'){material.opacity=.94;material.envMapIntensity=.015;}
   if(zone.startsWith('lamp_')){material.transparent=false;material.opacity=1;material.depthWrite=true;}
   if(!['glass','lamp_clear','mirror'].includes(zone))useBakedShading(material,true);
+  if(frontLens)useClayLampCentre(material,node);
   material.userData={...original.userData,studio:'clay'};
-  clayMaterials.set(original,material);originalMaterials.set(material,original);
+  if(frontLens)clayLensMaterials.set(node,material);else clayMaterials.set(original,material);
+  originalMaterials.set(material,original);
  }
- material.color.set(authored?hex:(CLAY_COLORS[zone]||('#'+original.color.getHexString())));
+ const color=authored?hex:(CLAY_COLORS[zone]||('#'+original.color.getHexString()));
+ material.color.set(zone==='paint'?clayPaintColor(color):color);
  return material;
 }
 function updateClayBackground(){
  if(studioMode!=='clay')return;
- const color=new THREE.Color(buildState.paint.paint||DEFAULT_WHITE),hsl={};color.getHSL(hsl,THREE.SRGBColorSpace);
+ const color=new THREE.Color(clayPaintColor(buildState.paint.paint||DEFAULT_WHITE)),hsl={};color.getHSL(hsl,THREE.SRGBColorSpace);
  const rgb={};color.getRGB(rgb,THREE.SRGBColorSpace);
  const chroma=Math.max(rgb.r,rgb.g,rgb.b)-Math.min(rgb.r,rgb.g,rgb.b);
  // Neutral finishes have no useful hue; keep them in a warm porcelain family.
  const hasHue=hsl.s>.20&&chroma>.025;
- const hue=hasHue?hsl.h:.065,saturation=hasHue?Math.min(.40,Math.max(.18,hsl.s*.55)):.22;
- for(const [name,lightness] of [['centre',.89],['mid',.87],['edge',.82]]){
+ const hue=hasHue?hsl.h:.09,saturation=hasHue?Math.min(.52,Math.max(.12,hsl.s*.70)):.18;
+ const centre=Math.min(.99,Math.max(.90,hsl.l+(1-hsl.l)*.76));
+ const edge=Math.max(hsl.l+(1-hsl.l)*.30,centre-.045),mid=(centre+edge)/2;
+ for(const [name,lightness] of [['centre',centre],['mid',mid],['edge',edge]]){
   const bg=new THREE.Color().setHSL(hue,saturation,lightness,THREE.SRGBColorSpace);
   document.body.style.setProperty('--clay-'+name,'#'+bg.getHexString());
   if(name==='centre')document.querySelector('meta[name="theme-color"]').content='#'+bg.getHexString();
@@ -498,7 +534,7 @@ function applyZonePaint(){
   const update=material=>{const original=originalMaterials.get(material)||material;
    const zone=original.userData.zone,authored=buildState.paint[id+':'+zone]??buildState.paint[zone];
    const hex=authored??('#'+original.userData.defaultColor);
-   return studioMaterial(original,zone,hex,authored!==undefined);
+   return studioMaterial(original,zone,hex,authored!==undefined,part);
   };
   part.material=Array.isArray(part.material)?part.material.map(update):update(part.material);
  });}
@@ -726,8 +762,8 @@ function setStudio(mode){
  bgToggle.setAttribute('aria-label',studioLabels[mode]+' studio. '+bgToggle.title);bgToggle.removeAttribute('aria-pressed');
  if(clay){
   renderer.toneMappingExposure=1.10;scene.environmentIntensity=.10;
-  key.color.set('#ffe8dc');key.intensity=.95;key.position.set(-3,7,4);
-  fill.color.set('#ffe9dd');fill.groundColor.set('#9a7d91');fill.intensity=.90;
+  key.color.set('#fff2e5');key.intensity=1.85;key.position.set(-3.8,7.5,4);
+  fill.color.set('#ffe9dd');fill.groundColor.set('#9a7d91');fill.intensity=.50;
  }else{
   renderer.toneMappingExposure=originalLighting.exposure;scene.environmentIntensity=originalLighting.environment;
   key.color.copy(originalLighting.keyColor);key.intensity=originalLighting.keyIntensity;key.position.copy(originalLighting.keyPosition);
@@ -738,7 +774,7 @@ function setStudio(mode){
  plinth.traverse(part=>{if(part.isMesh){const current=originalMaterials.get(part.material)||part.material;
   part.material=studioMaterial(current,current===baseTopMaterial?'base_top':'base_edge');
  }});
- contactTint.value.set(clay?'#70586c':0x000000);contactMaterial.opacity=clay?.72:1;
+ contactTint.value.set(clay?'#604450':0x000000);contactMaterial.opacity=clay?.94:1;
  const displayedBase=plinth.visible;plinth.visible=false;bakeContactShadow();plinth.visible=displayedBase;
  requestRender();
 }

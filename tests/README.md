@@ -64,7 +64,7 @@ When `window.lcBuild` is available, the full visual check additionally verifies 
 ## Clay material regression
 
 `clay.mjs` captures Front, Side and 3/4 in Cream/Slate before the change, then those
-same views and the three requested Clay views after it. Its temporary page keeps
+same views and six Clay views (orange and white, each in Front/Side/3/4) after it. Its temporary page keeps
 byte snapshots of POSITION/NORMAL/COLOR_0 and every vehicle node transform. It
 checks those through studio changes, all four swatches, custom colours, per-part
 paint overrides and restoration. It compares Cream/Slate material, lighting,
@@ -84,3 +84,5 @@ custom paint in Clay screenshots is a test-only choice; production paint default
 and build.json are unchanged. `webkit-benchmark.mjs --studio clay` selects Clay
 before measuring the actual renderer; compare with `--studio cream` on the same
 idle host. This remains software-rendered emulation, not physical iPad timing.
+
+The Clay tuning regression checks that authored white `#f4f4ef` stays unchanged in build state while its Clay material displays warm cream `#efe6da`. It also tests custom pure white and pastel blue (`#dde9f1`), so light coloured finishes are not mistaken for white. Raised ridge/valley strengths and muted red tail-lamp materials are recorded and checked.

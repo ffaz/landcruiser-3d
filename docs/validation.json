@@ -1,10 +1,10 @@
 {
-  "session": "Clay studio material/lighting addition",
-  "testedAt": "2026-10-27T21:51:18.752Z",
-  "sourceSha256": "3d8a78d9a832fa07219e93127983e31922eb4088878dffb7ea4434a4a6db6638",
+  "session": "Clay-only lighting, shading and colour tuning",
+  "testedAt": "2026-10-27T22:19:19.283Z",
+  "sourceSha256": "4ae6f94f2c85af96f488be7ce217b76517cb3f07b020403329b19fb1a6bb316c",
   "passed": true,
   "consoleErrors": 0,
-  "clayChecks": {
+  "checks": {
     "modeIsClay": true,
     "defaultBuildPreserved": true,
     "geometryUnchanged": true,
@@ -13,9 +13,13 @@
     "chromeIsMatte": true,
     "glassLowReflection": true,
     "lampsMatte": true,
+    "clayCurvatureRaised": true,
+    "tailLampsMutedRed": true,
     "noExtraDraws": true,
     "paintSwatches": true,
     "backgroundFollowsHue": true,
+    "pastelBluePreserved": true,
+    "whitePaintIsWarmCream": true,
     "perPartPaintInClay": true,
     "nonPaintOverrideInClay": true,
     "perPartPaintSurvivesSwitch": true,
@@ -28,77 +32,55 @@
     "presetCamerasUnchanged": true,
     "assetsUnchangedDuringTest": true
   },
-  "coreControls": {
-    "defaultCream": true,
-    "presetButtons": true,
-    "sideLevel": true,
-    "cameraMinHeight": true,
-    "frontRearElevation": true,
-    "legacyPresetDistances": true,
-    "heroFraming": true,
-    "paintSwatches": true,
-    "customPaint": true,
-    "background": true,
-    "backgroundRestores": true,
-    "cleanViewHides": true,
-    "cleanViewRestores": true,
-    "reset": true,
-    "bakedCoverage": true,
-    "toyMaterials": true,
-    "baseToggle": true,
-    "baseFraming": true,
-    "baseRestores": true,
-    "clayBase": true,
-    "clayBaseRestores": true,
-    "buildState": true,
-    "hashLift": true,
-    "hashRestoresDefault": true,
-    "nativeAntialias": true,
-    "pixelRatioCap": true,
-    "longLens": true,
-    "trueScaleBounds": true,
-    "noJsFallback": true,
-    "assetsStable": true
-  },
+  "geometryVerification": "Runtime POSITION/NORMAL/COLOR buffer byte clones and attribute identity checks, all model local/world transform comparisons, root scale1; source model/build SHA256 matches frozen pre-change files.",
   "modelAndBuildFilesUnchanged": true,
-  "geometryVerification": "Runtime byte snapshots of POSITION/NORMAL/COLOR_0 plus every vehicle node local/world matrix; compared through studio, paint and build-override changes. Model/build source files also match pre-edit SHA256.",
-  "creamSlateBaselineComparison": "Zero differing pixels in six 1360x780 car/background crops; excludes UI destination-label changes. See docs/clay/comparisons.json.",
+  "baselineAssetFiles": 38,
+  "creamSlateFullScreenshotComparisons": {
+    "count": 6,
+    "differingPixels": 0,
+    "evidence": "docs/clay-tune/comparisons.json"
+  },
+  "whitePaint": {
+    "authored": "#f4f4ef",
+    "visible": [
+      "efe6da"
+    ]
+  },
+  "clayUniforms": {
+    "uBakedAO": 0.65,
+    "uBakedRidge": 0.52,
+    "uBakedValley": 0.72,
+    "uClayOcclusionTint": "9d8799"
+  },
   "performance": {
-    "viewport": [
-      1366,
-      1024
-    ],
-    "devicePixelRatio": 1,
     "conditions": "1366x1024 CSS pixels, DPR1, native product renderer, clay Quarter auto-rotate, four warmup frames then24 measured rAF intervals; no frame suppression",
     "limitation": "Emulated WebKit, not a physical iPad. CPU and software GPU timing depends on host workload; not a hardware performance claim.",
-    "cream": {
+    "before": {
       "frameIntervals": {
         "samples": 24,
-        "meanMs": 472.0833333333333,
-        "p50ms": 478,
-        "p95ms": 488,
-        "minMs": 445,
-        "maxMs": 498
-      },
-      "drawCalls": 167
-    },
-    "clay": {
-      "frameIntervals": {
-        "samples": 24,
-        "meanMs": 404.2916666666667,
-        "p50ms": 399,
-        "p95ms": 425,
-        "minMs": 394,
+        "meanMs": 397.2083333333333,
+        "p50ms": 397,
+        "p95ms": 407,
+        "minMs": 368,
         "maxMs": 437
+      },
+      "drawCalls": 154
+    },
+    "after": {
+      "frameIntervals": {
+        "samples": 24,
+        "meanMs": 399.4166666666667,
+        "p50ms": 399,
+        "p95ms": 424,
+        "minMs": 364,
+        "maxMs": 431
       },
       "drawCalls": 154
     }
   },
-  "retainedFoundationEvidence": {
-    "commit": "fb71c42a359618752db26e2aae8d4eda5b09b9f4",
-    "geometry": "docs/foundation/scale-audit.json",
-    "losslessCompression": "docs/foundation/compression.json",
-    "partInventory": "docs/foundation/parts-review.md"
+  "retainedEvidence": {
+    "foundation": "docs/foundation/README.md",
+    "initialClayControls": "docs/clay/core-controls.json"
   },
-  "evidence": "docs/clay/README.md"
+  "evidence": "docs/clay-tune/README.md"
 }

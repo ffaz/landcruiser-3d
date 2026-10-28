@@ -1,0 +1,103 @@
+{
+  "method": "Exact RGB PNG pixel comparison, same Chromium SwiftShader1440x1000 DPR1. Main comparison cropx40y100w1360h780 excludesUI; full screenshot difference also recorded. No thresholds.",
+  "beforeSourceSha256": "3d8a78d9a832fa07219e93127983e31922eb4088878dffb7ea4434a4a6db6638",
+  "afterSourceSha256": "4ae6f94f2c85af96f488be7ce217b76517cb3f07b020403329b19fb1a6bb316c",
+  "results": [
+    {
+      "studio": "cream",
+      "view": "front",
+      "crop": [
+        40,
+        100,
+        1360,
+        780
+      ],
+      "differingPixels": 0,
+      "totalPixels": 1060800,
+      "maxChannelDelta": 0,
+      "meanAbsoluteChannelDelta": 0.0,
+      "rmsChannelDelta": 0.0,
+      "fullScreenshotDifferingPixels": 0
+    },
+    {
+      "studio": "cream",
+      "view": "side",
+      "crop": [
+        40,
+        100,
+        1360,
+        780
+      ],
+      "differingPixels": 0,
+      "totalPixels": 1060800,
+      "maxChannelDelta": 0,
+      "meanAbsoluteChannelDelta": 0.0,
+      "rmsChannelDelta": 0.0,
+      "fullScreenshotDifferingPixels": 0
+    },
+    {
+      "studio": "cream",
+      "view": "quarter",
+      "crop": [
+        40,
+        100,
+        1360,
+        780
+      ],
+      "differingPixels": 0,
+      "totalPixels": 1060800,
+      "maxChannelDelta": 0,
+      "meanAbsoluteChannelDelta": 0.0,
+      "rmsChannelDelta": 0.0,
+      "fullScreenshotDifferingPixels": 0
+    },
+    {
+      "studio": "slate",
+      "view": "front",
+      "crop": [
+        40,
+        100,
+        1360,
+        780
+      ],
+      "differingPixels": 0,
+      "totalPixels": 1060800,
+      "maxChannelDelta": 0,
+      "meanAbsoluteChannelDelta": 0.0,
+      "rmsChannelDelta": 0.0,
+      "fullScreenshotDifferingPixels": 0
+    },
+    {
+      "studio": "slate",
+      "view": "side",
+      "crop": [
+        40,
+        100,
+        1360,
+        780
+      ],
+      "differingPixels": 0,
+      "totalPixels": 1060800,
+      "maxChannelDelta": 0,
+      "meanAbsoluteChannelDelta": 0.0,
+      "rmsChannelDelta": 0.0,
+      "fullScreenshotDifferingPixels": 0
+    },
+    {
+      "studio": "slate",
+      "view": "quarter",
+      "crop": [
+        40,
+        100,
+        1360,
+        780
+      ],
+      "differingPixels": 0,
+      "totalPixels": 1060800,
+      "maxChannelDelta": 0,
+      "meanAbsoluteChannelDelta": 0.0,
+      "rmsChannelDelta": 0.0,
+      "fullScreenshotDifferingPixels": 0
+    }
+  ]
+}
