@@ -1,0 +1,825 @@
+[
+  {
+    "name": "Paint roughness",
+    "old": 0.38,
+    "new": 0.42,
+    "file": "index.html",
+    "line": 262
+  },
+  {
+    "name": "Paint clearcoat",
+    "old": 0.55,
+    "new": 0.35,
+    "file": "index.html",
+    "line": 262
+  },
+  {
+    "name": "Paint clearcoat roughness",
+    "old": 0.2,
+    "new": 0.3,
+    "file": "index.html",
+    "line": 262
+  },
+  {
+    "name": "Paint environment intensity",
+    "old": 0.9,
+    "new": 0.7,
+    "file": "index.html",
+    "line": 262
+  },
+  {
+    "name": "Chrome roughness",
+    "old": 0.24,
+    "new": 0.52,
+    "file": "index.html",
+    "line": 263
+  },
+  {
+    "name": "Chrome metalness",
+    "old": 1,
+    "new": 0.45,
+    "file": "index.html",
+    "line": 263
+  },
+  {
+    "name": "Chrome environment intensity",
+    "old": 0.95,
+    "new": 0.85,
+    "file": "index.html",
+    "line": 263
+  },
+  {
+    "name": "Chrome clearcoat",
+    "old": 0.15,
+    "new": 0.08,
+    "file": "index.html",
+    "line": 270
+  },
+  {
+    "name": "Chrome clearcoat roughness",
+    "old": 0.23,
+    "new": 0.3,
+    "file": "index.html",
+    "line": 270
+  },
+  {
+    "name": "Glass colour",
+    "old": "#20282c",
+    "new": "#46545f",
+    "file": "index.html",
+    "line": 264
+  },
+  {
+    "name": "Glass roughness",
+    "old": 0.13,
+    "new": 0.28,
+    "file": "index.html",
+    "line": 264
+  },
+  {
+    "name": "Glass opacity",
+    "old": 0.88,
+    "new": 0.8,
+    "file": "index.html",
+    "line": 264
+  },
+  {
+    "name": "Glass environment intensity",
+    "old": 1.05,
+    "new": 0.4,
+    "file": "index.html",
+    "line": 264
+  },
+  {
+    "name": "Glass clearcoat",
+    "old": 0.2,
+    "new": 0.1,
+    "file": "index.html",
+    "line": 273
+  },
+  {
+    "name": "Glass specular intensity",
+    "old": 0.25,
+    "new": 0.45,
+    "file": "index.html",
+    "line": 274
+  },
+  {
+    "name": "Glass clearcoat roughness",
+    "old": 0.045,
+    "new": 0.22,
+    "file": "index.html",
+    "line": 275
+  },
+  {
+    "name": "Cream black trim colour",
+    "old": "#050607",
+    "new": "#282a2c",
+    "file": "index.html",
+    "line": 265
+  },
+  {
+    "name": "Slate black trim colour",
+    "old": "#0d1115",
+    "new": "#282a2c",
+    "file": "index.html",
+    "line": 265
+  },
+  {
+    "name": "Cream black trim roughness",
+    "old": 0.72,
+    "new": 0.65,
+    "file": "index.html",
+    "line": 265
+  },
+  {
+    "name": "Slate black trim roughness",
+    "old": 0.56,
+    "new": 0.65,
+    "file": "index.html",
+    "line": 265
+  },
+  {
+    "name": "Cream black trim environment intensity",
+    "old": 0.2,
+    "new": 0.3,
+    "file": "index.html",
+    "line": 265
+  },
+  {
+    "name": "Slate black trim environment intensity",
+    "old": 1,
+    "new": 0.3,
+    "file": "index.html",
+    "line": 265
+  },
+  {
+    "name": "Slate black trim specular multiplier",
+    "old": 1,
+    "new": 0.25,
+    "file": "index.html",
+    "line": 265
+  },
+  {
+    "name": "Paint direct diffuse gain",
+    "old": 9,
+    "new": 2.2,
+    "file": "index.html",
+    "line": 296
+  },
+  {
+    "name": "Paint indirect fill gain",
+    "old": 2.5,
+    "new": 3.4,
+    "file": "index.html",
+    "line": 296
+  },
+  {
+    "name": "Rear-facing indirect multiplier",
+    "old": 3.8,
+    "new": 0.5,
+    "file": "index.html",
+    "line": 297
+  },
+  {
+    "name": "Paint baked AO strength",
+    "old": 1.12,
+    "new": 1.2,
+    "file": "index.html",
+    "line": 297
+  },
+  {
+    "name": "Paint concave curvature strength",
+    "old": 1.35,
+    "new": 1.65,
+    "file": "index.html",
+    "line": 297
+  },
+  {
+    "name": "Paint cavity floor",
+    "old": 0.1,
+    "new": 0.06,
+    "file": "index.html",
+    "line": 333
+  },
+  {
+    "name": "Paint diffuse cavity weight",
+    "old": 0.9,
+    "new": 1.0,
+    "file": "index.html",
+    "line": 353
+  },
+  {
+    "name": "Paint indirect specular cavity weight",
+    "old": 0.85,
+    "new": 1.0,
+    "file": "index.html",
+    "line": 355
+  },
+  {
+    "name": "Paint direct specular cavity weight",
+    "old": 0.5,
+    "new": 1.0,
+    "file": "index.html",
+    "line": 355
+  },
+  {
+    "name": "Paint indirect clearcoat cavity weight",
+    "old": 0.85,
+    "new": 1.0,
+    "file": "index.html",
+    "line": 358
+  },
+  {
+    "name": "Paint direct clearcoat cavity weight",
+    "old": 0,
+    "new": 1.0,
+    "file": "index.html",
+    "line": 359
+  },
+  {
+    "name": "Occluded ridge lift multiplier",
+    "old": 1,
+    "new": "bakedCavity \u00d7 bakedAO\u00b3",
+    "file": "index.html",
+    "line": 361
+  },
+  {
+    "name": "Concave seam attenuation strength",
+    "old": 0,
+    "new": 0.7,
+    "file": "index.html",
+    "line": 266
+  },
+  {
+    "name": "Concave seam curvature gate",
+    "old": null,
+    "new": [
+      0.04,
+      0.18
+    ],
+    "file": "index.html",
+    "line": 266
+  },
+  {
+    "name": "Concave seam occlusion gate",
+    "old": null,
+    "new": [
+      0.12,
+      0.5
+    ],
+    "file": "index.html",
+    "line": 266
+  },
+  {
+    "name": "Bonnet reflection emitter size",
+    "old": [
+      6,
+      0.9
+    ],
+    "new": [
+      1.4,
+      0.6
+    ],
+    "file": "index.html",
+    "line": 240
+  },
+  {
+    "name": "Bonnet reflection emitter position",
+    "old": [
+      0.8,
+      2.8,
+      -5
+    ],
+    "new": [
+      3.7,
+      1.9,
+      -5
+    ],
+    "file": "index.html",
+    "line": 240
+  },
+  {
+    "name": "Bonnet reflection emitter radiance",
+    "old": 2.8,
+    "new": 215,
+    "file": "index.html",
+    "line": 240
+  },
+  {
+    "name": "Side reflection emitter radiance",
+    "old": 6.5,
+    "new": 2.5,
+    "file": "index.html",
+    "line": 242
+  },
+  {
+    "name": "Roof reflection emitter size",
+    "old": [
+      7,
+      0.55
+    ],
+    "new": [
+      1.8,
+      0.6
+    ],
+    "file": "index.html",
+    "line": 243
+  },
+  {
+    "name": "Roof reflection emitter position",
+    "old": [
+      0.5,
+      2.4,
+      -6
+    ],
+    "new": [
+      5,
+      0.9,
+      -5
+    ],
+    "file": "index.html",
+    "line": 243
+  },
+  {
+    "name": "Roof reflection emitter radiance",
+    "old": 4,
+    "new": 200,
+    "file": "index.html",
+    "line": 243
+  },
+  {
+    "name": "Rear red lens colour",
+    "old": "#ab0616",
+    "new": "#9e0818",
+    "file": "index.html",
+    "line": 655
+  },
+  {
+    "name": "Rear red lens clearcoat roughness",
+    "old": 0.05,
+    "new": 0.06,
+    "file": "index.html",
+    "line": 656
+  },
+  {
+    "name": "Rear red lens environment intensity",
+    "old": 1,
+    "new": 1.1,
+    "file": "index.html",
+    "line": 656
+  },
+  {
+    "name": "Rear red lens emissive colour",
+    "old": "#6a0410",
+    "new": "#430007",
+    "file": "index.html",
+    "line": 657
+  },
+  {
+    "name": "Rear red lens emissive intensity",
+    "old": 0.12,
+    "new": 0.035,
+    "file": "index.html",
+    "line": 657
+  },
+  {
+    "name": "Rear red lens transparent",
+    "old": false,
+    "new": true,
+    "file": "index.html",
+    "line": 658
+  },
+  {
+    "name": "Rear red lens opacity",
+    "old": 1,
+    "new": 0.55,
+    "file": "index.html",
+    "line": 658
+  },
+  {
+    "name": "Rear red lens depth write",
+    "old": true,
+    "new": false,
+    "file": "index.html",
+    "line": 658
+  },
+  {
+    "name": "Rear red lens side",
+    "old": "DoubleSide",
+    "new": "FrontSide",
+    "file": "index.html",
+    "line": 659
+  },
+  {
+    "name": "Rear lenses flat shading",
+    "old": true,
+    "new": false,
+    "file": "index.html",
+    "line": 659
+  },
+  {
+    "name": "Rear lenses force single pass",
+    "old": false,
+    "new": true,
+    "file": "index.html",
+    "line": 659
+  },
+  {
+    "name": "Rear clear lens colour",
+    "old": "#dce8f2",
+    "new": "#f2f5f4",
+    "file": "index.html",
+    "line": 662
+  },
+  {
+    "name": "Rear clear lens roughness",
+    "old": 0.055,
+    "new": 0.1,
+    "file": "index.html",
+    "line": 662
+  },
+  {
+    "name": "Rear clear lens clearcoat",
+    "old": 0.9,
+    "new": 0.75,
+    "file": "index.html",
+    "line": 662
+  },
+  {
+    "name": "Rear clear lens clearcoat roughness",
+    "old": 0.23,
+    "new": 0.08,
+    "file": "index.html",
+    "line": 663
+  },
+  {
+    "name": "Rear clear lens environment intensity",
+    "old": 1,
+    "new": 1.1,
+    "file": "index.html",
+    "line": 663
+  },
+  {
+    "name": "Rear clear lens opacity",
+    "old": 0.16,
+    "new": 0.35,
+    "file": "index.html",
+    "line": 664
+  },
+  {
+    "name": "Rear clear lens emissive colour",
+    "old": "#bfd4ef",
+    "new": "#bfc6c4",
+    "file": "index.html",
+    "line": 664
+  },
+  {
+    "name": "Rear clear lens emissive intensity",
+    "old": 0.025,
+    "new": 0.12,
+    "file": "index.html",
+    "line": 664
+  },
+  {
+    "name": "Rear reflector chrome roughness",
+    "old": 0.24,
+    "new": 0.22,
+    "file": "index.html",
+    "line": 668
+  },
+  {
+    "name": "Rear reflector chrome metalness",
+    "old": 1,
+    "new": 0.95,
+    "file": "index.html",
+    "line": 668
+  },
+  {
+    "name": "Rear reflector chrome environment intensity",
+    "old": 0.95,
+    "new": 1.1,
+    "file": "index.html",
+    "line": 669
+  },
+  {
+    "name": "Rear reflector chrome clearcoat roughness",
+    "old": 0.23,
+    "new": 0.3,
+    "file": "index.html",
+    "line": 270
+  },
+  {
+    "name": "Tailgate garnish roughness",
+    "old": 0.24,
+    "new": 0.45,
+    "file": "index.html",
+    "line": 672
+  },
+  {
+    "name": "Tailgate garnish metalness",
+    "old": 1,
+    "new": 0.45,
+    "file": "index.html",
+    "line": 672
+  },
+  {
+    "name": "Tailgate garnish environment intensity",
+    "old": 0.95,
+    "new": 0.85,
+    "file": "index.html",
+    "line": 672
+  },
+  {
+    "name": "Slate paint variant",
+    "old": "original studio paint",
+    "new": "same satin paint variant as Cream",
+    "file": "index.html",
+    "line": 583
+  },
+  {
+    "name": "Clay paint variant",
+    "old": "matte warm-white height-shaded clay",
+    "new": "common satin painted metal",
+    "file": "index.html",
+    "line": 583
+  },
+  {
+    "name": "Clay white display colour",
+    "old": "#efe6da",
+    "new": "#f4f4ef",
+    "file": "index.html",
+    "line": 537
+  },
+  {
+    "name": "Clay paint roughness",
+    "old": 0.85,
+    "new": 0.42,
+    "file": "index.html",
+    "line": 262
+  },
+  {
+    "name": "Clay paint clearcoat",
+    "old": 0,
+    "new": 0.35,
+    "file": "index.html",
+    "line": 262
+  },
+  {
+    "name": "Clay paint clearcoat roughness",
+    "old": 1,
+    "new": 0.3,
+    "file": "index.html",
+    "line": 262
+  },
+  {
+    "name": "Clay paint specular intensity",
+    "old": 0.1,
+    "new": 1,
+    "file": "index.html",
+    "line": 268
+  },
+  {
+    "name": "Clay paint environment intensity",
+    "old": 0.035,
+    "new": 0.7,
+    "file": "index.html",
+    "line": 262
+  },
+  {
+    "name": "Clay glass variant",
+    "old": "unlit plum gradient",
+    "new": "physical blue-grey tinted glass",
+    "file": "index.html",
+    "line": 597
+  },
+  {
+    "name": "Clay exterior chrome variant",
+    "old": "matte pink-grey",
+    "new": "common satin metal",
+    "file": "index.html",
+    "line": 597
+  },
+  {
+    "name": "Clay exterior black variant",
+    "old": "matte plum-grey",
+    "new": "common neutral dark grey",
+    "file": "index.html",
+    "line": 597
+  },
+  {
+    "name": "Clay rear lamp variant",
+    "old": "matte dusty red",
+    "new": "common optical lens/reflector materials",
+    "file": "index.html",
+    "line": 597
+  },
+  {
+    "name": "Clay exposure",
+    "old": 2.4,
+    "new": 1.2,
+    "file": "index.html",
+    "line": 968
+  },
+  {
+    "name": "Clay environment intensity",
+    "old": 0.1,
+    "new": 0.65,
+    "file": "index.html",
+    "line": 968
+  },
+  {
+    "name": "Clay key colour",
+    "old": "#ffe0b0",
+    "new": "#fffbf5",
+    "file": "index.html",
+    "line": 968
+  },
+  {
+    "name": "Clay key intensity",
+    "old": 5.8,
+    "new": 1.65,
+    "file": "index.html",
+    "line": 968
+  },
+  {
+    "name": "Clay key position",
+    "old": [
+      -3.8,
+      10,
+      1.2
+    ],
+    "new": [
+      -1.5,
+      8,
+      2
+    ],
+    "file": "index.html",
+    "line": 968
+  },
+  {
+    "name": "Clay fill sky",
+    "old": "#fff0df",
+    "new": "#f7f5f0",
+    "file": "index.html",
+    "line": 968
+  },
+  {
+    "name": "Clay fill ground",
+    "old": "#c2a688",
+    "new": "#52565c",
+    "file": "index.html",
+    "line": 968
+  },
+  {
+    "name": "Clay fill intensity",
+    "old": 0.45,
+    "new": 0.6,
+    "file": "index.html",
+    "line": 968
+  },
+  {
+    "name": "Sharp occluded-convex gap strength",
+    "old": 0,
+    "new": 0.45,
+    "file": "index.html",
+    "line": 266
+  },
+  {
+    "name": "Sharp gap ridge gate",
+    "old": null,
+    "new": [
+      0.5,
+      0.75
+    ],
+    "file": "index.html",
+    "line": 337
+  },
+  {
+    "name": "Sharp gap occlusion gate",
+    "old": null,
+    "new": [
+      0.02,
+      0.2
+    ],
+    "file": "index.html",
+    "line": 337
+  },
+  {
+    "name": "Slate paint direct diffuse gain",
+    "old": 1,
+    "new": 2.2,
+    "file": "index.html",
+    "line": 296
+  },
+  {
+    "name": "Slate paint indirect diffuse gain",
+    "old": 1,
+    "new": 3.4,
+    "file": "index.html",
+    "line": 296
+  },
+  {
+    "name": "Clay painted-surface AO/ridge/valley",
+    "old": [
+      0.65,
+      0.52,
+      0.72
+    ],
+    "new": [
+      1.2,
+      1.0,
+      1.65
+    ],
+    "file": "index.html",
+    "line": 297
+  },
+  {
+    "name": "Clay painted-surface height modulation",
+    "old": {
+      "lowerKey": 0.09,
+      "start": 0.65,
+      "end": 1.14
+    },
+    "new": "not applied to common satin paint",
+    "file": "index.html",
+    "line": 583
+  },
+  {
+    "name": "Bonnet missing-shutline boundary strength",
+    "old": 0,
+    "new": 0.98,
+    "file": "index.html",
+    "line": 508
+  },
+  {
+    "name": "Bonnet boundary radius (metres)",
+    "old": null,
+    "new": 0.006,
+    "file": "index.html",
+    "line": 508
+  },
+  {
+    "name": "Bonnet boundary profile samples",
+    "old": null,
+    "new": 24,
+    "file": "index.html",
+    "line": 494
+  },
+  {
+    "name": "Bonnet boundary derivation",
+    "old": null,
+    "new": "read-only stored triangle cross-sections; colour varying only",
+    "file": "index.html",
+    "line": 487
+  },
+  {
+    "name": "Paint shader program",
+    "old": "lc200-cream-paint-lighting-v4",
+    "new": "lc200-base-paint-lighting-v9",
+    "file": "index.html",
+    "line": 383
+  },
+  {
+    "name": "Baked shader program",
+    "old": "lc200-baked-ao-curvature-v1",
+    "new": "lc200-baked-ao-curvature-v4 + zone suffix",
+    "file": "index.html",
+    "line": 365
+  },
+  {
+    "name": "Cream detail shader program",
+    "old": "lc200-cream-baked-detail-v1",
+    "new": "lc200-cream-baked-detail-v4 + zone suffix",
+    "file": "index.html",
+    "line": 365
+  },
+  {
+    "name": "Default left lamp part",
+    "old": "lamp_rear_L",
+    "new": "lamp_rear_L_finish",
+    "file": "build.json",
+    "line": 14
+  },
+  {
+    "name": "Default right lamp part",
+    "old": "lamp_rear_R",
+    "new": "lamp_rear_R_finish",
+    "file": "build.json",
+    "line": 15
+  },
+  {
+    "name": "Front emblem slot",
+    "old": null,
+    "new": "emblem_front",
+    "file": "build.json",
+    "line": 39
+  },
+  {
+    "name": "Rear emblem slot",
+    "old": null,
+    "new": "emblem_rear",
+    "file": "build.json",
+    "line": 40
+  }
+]

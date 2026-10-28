@@ -1,76 +1,24 @@
 {
-  "session": "Cream baked-detail, neutral background, near-black trim and rear white fill",
-  "sourceSha256": "8c519e561fdb0890140f273da327146141fdf8970a2a0c4c9452f760ca8116da",
-  "passed": true,
+  "status": "pending_owner_reference_photos",
+  "automatedPassed": true,
+  "ownerReferenceVerified": false,
+  "sourceSha256": "c0ece8bdc3706c15b93ab71e6f5a326610ca59038d37d0498a1b1068caeb5c38",
   "consoleErrors": 0,
-  "checks": {
-    "noAdditionalFramePasses": true,
-    "defaultStudioAndWhite": true,
-    "creamInitialAndReturnMatch": true,
-    "defaultBuildPreserved": true,
-    "creamLightingUnchanged": true,
-    "creamGlassLampsChromeWheelsTyresUnchanged": true,
-    "creamNearBlackTrim": true,
-    "creamDetailUsesSeparateUniforms": true,
-    "creamContactSettingsUnchanged": true,
-    "paintPhysicalPropertiesUnchanged": true,
-    "creamNeutralBackground": true,
-    "bakedPanelSettingsUnchanged": true,
-    "creamGeometryUnchanged": true,
-    "creamOriginalGainsPreserved": true,
-    "creamUsesExistingFloor": true,
-    "creamBaseClipping": true,
-    "creamBaseRestores": true,
-    "noExtraDrawsOrTriangles": true,
-    "noAdditionalShadowMaps": true,
-    "allFivePresetCamerasUnchanged": true,
-    "slateWhiteImagesUnchanged": true,
-    "slateAppearanceUnchanged": true,
-    "slateOrangeImageUnchanged": true,
-    "clayWhiteImagesUnchanged": true,
-    "clayAppearanceUnchanged": true,
-    "clayOrangeImageUnchanged": true,
-    "allSwatchesAndCustomWork": true,
-    "perPartPaintAndTrimOverride": true,
-    "perPartOverridesSurviveModes": true,
-    "rigidLiftKeepsWheelsAndBuffers": true,
-    "liftRestores": true,
-    "hiddenAndEmptySlotsWork": true,
-    "defaultBuildRestores": true,
-    "geometryAndScaleIntactAfterEdits": true,
-    "modelAndBuildFilesUnchanged": true
+  "overhangLock": true,
+  "bounds": {
+    "length": 4.99998990836446,
+    "height": 1.930053446795627,
+    "widthIncludingMirrors": 2.296633268547192,
+    "minX": -2.58500075340271,
+    "maxX": 2.4149891549617504
   },
-  "studioComparisons": {
-    "count": 12,
-    "differingPixels": 0
-  },
-  "renderer": {
-    "drawCalls": 167,
-    "triangles": 841958,
-    "shadowEnabled": false,
-    "shadowAutoUpdate": false,
-    "keyShadowMapSize": [
-      2048,
-      2048
-    ]
-  },
-  "baselineAssetFiles": 38,
-  "pixels": "docs/cream-detail/pixels.json",
-  "evidence": "docs/cream-detail/README.md",
-  "gallery": "docs/cream-detail/index.html",
-  "changedValues": "docs/cream-detail/changed-values.json",
-  "webkit": {
-    "passed": true,
-    "errors": [],
-    "evidence": "docs/cream-detail/webkit.json",
-    "emulated": true
-  },
-  "retainedEvidence": {
-    "priorCream": "docs/cream-edges/README.md",
-    "foundation": "docs/foundation/README.md"
-  },
+  "originalGeometryGLBsByteIdentical": true,
+  "originalGLBCount": 35,
+  "evidence": "docs/base-finish/README.md",
+  "pixels": "docs/base-finish/pixels.json",
+  "changedValues": "docs/base-finish/changed-values.json",
   "limitations": [
-    "Physical iPad performance unmeasured.",
-    "Mixed 7x7 patch medians can miss a narrow one-pixel gap; material counts are included."
+    "Owner photos were unavailable; exact badge placement, optional grade/word badges and lamp-pattern match are pending.",
+    "WebKit is emulated software GL; physical iPad performance is unmeasured."
   ]
 }

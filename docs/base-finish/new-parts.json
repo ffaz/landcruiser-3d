@@ -1,0 +1,144 @@
+[
+  {
+    "id": "emblem_front",
+    "slot": "emblem_front",
+    "url": "parts/emblem_front.glb",
+    "rootNode": "emblem_front",
+    "pivot": [
+      -2.5565,
+      0.94,
+      0
+    ],
+    "pivotBasis": "badge centre on measured mounting face",
+    "zones": [
+      "chrome"
+    ],
+    "triangles": 4608,
+    "bounds": {
+      "min": [
+        -2.56565,
+        0.8889999999999999,
+        -0.0775
+      ],
+      "max": [
+        -2.545302880592229,
+        0.991,
+        0.0775
+      ]
+    },
+    "rigidClass": "body",
+    "authored": {
+      "reliefMetres": 0.0025,
+      "widthMetres": 0.155,
+      "heightMetres": 0.102,
+      "geometry": "three bevelled elliptical bands; new geometry only"
+    }
+  },
+  {
+    "id": "emblem_rear",
+    "slot": "emblem_rear",
+    "url": "parts/emblem_rear.glb",
+    "rootNode": "emblem_rear",
+    "pivot": [
+      2.32096,
+      1.177,
+      0
+    ],
+    "pivotBasis": "badge centre on measured mounting face",
+    "zones": [
+      "chrome"
+    ],
+    "triangles": 4608,
+    "bounds": {
+      "min": [
+        2.320193431457505,
+        1.1300000000000001,
+        -0.0715
+      ],
+      "max": [
+        2.324526568542495,
+        1.224,
+        0.0715
+      ]
+    },
+    "rigidClass": "body",
+    "authored": {
+      "reliefMetres": 0.0025,
+      "widthMetres": 0.143,
+      "heightMetres": 0.094,
+      "geometry": "three bevelled elliptical bands; new geometry only"
+    }
+  },
+  {
+    "id": "lamp_rear_L_finish",
+    "slot": "lamp_rear_L",
+    "url": "parts/lamp_rear_L_finish.glb",
+    "pivot": [
+      2.1915613357507393,
+      0.963238707959341,
+      0.683230474193339
+    ],
+    "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
+    "zones": [
+      "black",
+      "chrome",
+      "lamp_clear",
+      "lamp_orange",
+      "lamp_red"
+    ],
+    "triangles": 64045,
+    "bounds": {
+      "min": [
+        2.039112731038501,
+        0.640797887088982,
+        0.4406589110344298
+      ],
+      "max": [
+        2.344009940462977,
+        1.2856795288296998,
+        0.9258020373522483
+      ]
+    },
+    "rigidClass": "body",
+    "classification": "Base-finish variant: identical opening/positions/COLOR_0; repaired lens/reflector normals on this new copy only",
+    "thumbnail": "../docs/foundation/parts/lamp_rear_L.png",
+    "rootNode": "lamp_rear_L",
+    "derivedFrom": "lamp_rear_L"
+  },
+  {
+    "id": "lamp_rear_R_finish",
+    "slot": "lamp_rear_R",
+    "url": "parts/lamp_rear_R_finish.glb",
+    "pivot": [
+      2.1915613357507393,
+      0.9632777054246286,
+      -0.6865018093670008
+    ],
+    "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
+    "zones": [
+      "black",
+      "chrome",
+      "lamp_clear",
+      "lamp_orange",
+      "lamp_red"
+    ],
+    "triangles": 64460,
+    "bounds": {
+      "min": [
+        2.039112731038501,
+        0.640797887088982,
+        -0.9258083554445945
+      ],
+      "max": [
+        2.344009940462977,
+        1.2857575237602754,
+        -0.447195263289407
+      ]
+    },
+    "rigidClass": "body",
+    "classification": "Base-finish variant: identical opening/positions/COLOR_0; repaired lens/reflector normals on this new copy only",
+    "thumbnail": "../docs/foundation/parts/lamp_rear_R.png",
+    "rootNode": "lamp_rear_R",
+    "derivedFrom": "lamp_rear_R"
+  }
+]

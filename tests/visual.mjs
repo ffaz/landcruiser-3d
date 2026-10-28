@@ -78,7 +78,7 @@ renderer.render=(...args)=>{if(!window.__visualSuppressRender||renderer.getRende
 window.__visualTest={camera,controls,car,paint,DIM,scene,renderer,THREE,target,
  plinth:typeof plinth==='undefined'?null:plinth,
  getBAKEDLOOK:()=>typeof BAKED_LOOK==='undefined'?null:BAKED_LOOK,
- toyMaterials:()=>typeof BAKED_LOOK==='undefined'?null:({paint:{roughness:paint.roughness,clearcoat:paint.clearcoat,clearcoatRoughness:paint.clearcoatRoughness},glass:windowGlass.color.getHexString(),chromeRoughness:chrome.roughness,rimColor:rimMat.color.getHexString()}),
+ toyMaterials:()=>typeof BAKED_LOOK==='undefined'?null:({paint:{roughness:paint.roughness,clearcoat:paint.clearcoat,clearcoatRoughness:paint.clearcoatRoughness},glass:windowGlass.color.getHexString(),chromeRoughness:chrome.roughness,glassTransmission:windowGlass.transmission,glassOpacity:windowGlass.opacity,rimColor:rimMat.color.getHexString()}),
  cameraSafety:typeof cameraSafety==='undefined'?null:cameraSafety,
  enforceCameraSafety:typeof enforceCameraSafety==='function'?enforceCameraSafety:()=>{},
  get fittedDistance(){return typeof fittedDistance==='undefined'?controls.getDistance():fittedDistance},
@@ -326,8 +326,8 @@ try {
     checks.bakedCoverage=bakedData.opaqueMeshes>0&&bakedData.missing.length===0;
     checks.bakedData=bakedData;
     const materials=await page.evaluate(()=>window.__visualTest.toyMaterials());
-    checks.toyMaterials=Math.abs(materials.paint.roughness-.38)<.015&&Math.abs(materials.paint.clearcoat-.55)<.03&&
-      Math.abs(materials.paint.clearcoatRoughness-.20)<.02&&materials.glass==='20282c'&&Math.abs(materials.chromeRoughness-.24)<.03;
+    checks.toyMaterials=Math.abs(materials.paint.roughness-.42)<.015&&Math.abs(materials.paint.clearcoat-.35)<.03&&
+      Math.abs(materials.paint.clearcoatRoughness-.30)<.02&&materials.glass==='46545f'&&Math.abs(materials.chromeRoughness-.52)<.03&&materials.glassTransmission===0&&Math.abs(materials.glassOpacity-.80)<.01;
     checks.materialObservations=materials;
   }
   if(!options.viewsOnly&&await page.locator('#baseToggle').count()){
@@ -435,11 +435,14 @@ try {
     checks.trueScaleBoundsMetres={length:actual[0],height:actual[1],widthIncludingMirrors:actual[2],minX:b.min.x,maxX:b.max.x};
   }
   if(options.mode !== 'before'){
+    // Isolate the no-JS compositor from the software WebGL process used by the car.
+    await browser.close();
+    browser=await playwright.chromium.launch({executablePath,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader','--ignore-gpu-blocklist']});
     const noJs=await browser.newPage({viewport:{width:1000,height:800},javaScriptEnabled:false});
     await noJs.goto(url,{timeout:120000});
     const fallback=await noJs.locator('.nojs').textContent();
     checks.noJsFallback=await noJs.locator('.nojs').isVisible()&&/gunmetal/i.test(fallback)&&/JavaScript/i.test(fallback);
-    if(!options.checksOnly){await noJs.screenshot({path:path.join(output,'no-js.png'),timeout:120000});snapshots.push('no-js.png');}
+    if(!options.checksOnly){await noJs.bringToFront();await noJs.screenshot({path:path.join(output,'no-js.png'),timeout:120000,animations:'disabled'});snapshots.push('no-js.png');}
     await noJs.close();
   }
   const failed = errors.length || Object.values(checks).some(v => v === false) ||

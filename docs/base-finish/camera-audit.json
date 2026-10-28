@@ -1,0 +1,38 @@
+[
+  {
+    "view": "cream-front",
+    "maxPositionDelta": 0.0,
+    "maxTargetDelta": 0.0,
+    "fovEqual": true
+  },
+  {
+    "view": "cream-side",
+    "maxPositionDelta": 0.0,
+    "maxTargetDelta": 0.0,
+    "fovEqual": true
+  },
+  {
+    "view": "cream-rear",
+    "maxPositionDelta": 0.0,
+    "maxTargetDelta": 0.0,
+    "fovEqual": true
+  },
+  {
+    "view": "cream-quarter",
+    "maxPositionDelta": 0.0,
+    "maxTargetDelta": 0.0,
+    "fovEqual": true
+  },
+  {
+    "view": "slate-quarter",
+    "maxPositionDelta": 0.0,
+    "maxTargetDelta": 0.0,
+    "fovEqual": true
+  },
+  {
+    "view": "clay-quarter",
+    "maxPositionDelta": 0.0,
+    "maxTargetDelta": 0.0,
+    "fovEqual": true
+  }
+]

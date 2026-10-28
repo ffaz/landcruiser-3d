@@ -1,0 +1,108 @@
+[
+  {
+    "id": "lamp_rear_L_finish",
+    "source": "parts/lamp_rear_L.glb",
+    "sourcePositionsExact": true,
+    "sourceColor0Exact": true,
+    "sourceTriangleTopologyExact": true,
+    "repair": "angle-weighted geometric normals, 1 micrometre position bins, 65 degree crease threshold",
+    "primitives": [
+      {
+        "node": "chrome_1",
+        "vertices": 15879,
+        "triangles": 7893,
+        "oldComponentType": 5122,
+        "newComponentType": 5126
+      },
+      {
+        "node": "chrome_2",
+        "vertices": 6561,
+        "triangles": 5566,
+        "oldComponentType": 5122,
+        "newComponentType": 5126
+      },
+      {
+        "node": "chrome_4",
+        "vertices": 2639,
+        "triangles": 1627,
+        "oldComponentType": 5122,
+        "newComponentType": 5126
+      },
+      {
+        "node": "redglass_25",
+        "vertices": 29518,
+        "triangles": 35168,
+        "oldComponentType": 5122,
+        "newComponentType": 5126
+      },
+      {
+        "node": "clearglass_27",
+        "vertices": 4908,
+        "triangles": 7408,
+        "oldComponentType": 5122,
+        "newComponentType": 5126
+      },
+      {
+        "node": "clearglass_27",
+        "vertices": 2530,
+        "triangles": 3574,
+        "oldComponentType": 5122,
+        "newComponentType": 5126
+      }
+    ],
+    "bytes": 1368768
+  },
+  {
+    "id": "lamp_rear_R_finish",
+    "source": "parts/lamp_rear_R.glb",
+    "sourcePositionsExact": true,
+    "sourceColor0Exact": true,
+    "sourceTriangleTopologyExact": true,
+    "repair": "angle-weighted geometric normals, 1 micrometre position bins, 65 degree crease threshold",
+    "primitives": [
+      {
+        "node": "chrome_1",
+        "vertices": 15855,
+        "triangles": 7893,
+        "oldComponentType": 5122,
+        "newComponentType": 5126
+      },
+      {
+        "node": "chrome_2",
+        "vertices": 6547,
+        "triangles": 5566,
+        "oldComponentType": 5122,
+        "newComponentType": 5126
+      },
+      {
+        "node": "chrome_4",
+        "vertices": 2922,
+        "triangles": 1914,
+        "oldComponentType": 5122,
+        "newComponentType": 5126
+      },
+      {
+        "node": "redglass_25",
+        "vertices": 29532,
+        "triangles": 35168,
+        "oldComponentType": 5122,
+        "newComponentType": 5126
+      },
+      {
+        "node": "clearglass_27",
+        "vertices": 5067,
+        "triangles": 7534,
+        "oldComponentType": 5122,
+        "newComponentType": 5126
+      },
+      {
+        "node": "clearglass_27",
+        "vertices": 2533,
+        "triangles": 3574,
+        "oldComponentType": 5122,
+        "newComponentType": 5126
+      }
+    ],
+    "bytes": 1384148
+  }
+]

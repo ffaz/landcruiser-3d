@@ -188,7 +188,7 @@
       "pivot": [
         -1.8728359352735762,
         1.189375429359158,
-        0.000005125999450683594
+        5.125999450683594e-06
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -221,7 +221,7 @@
       "pivot": [
         -2.270462211108562,
         0.6223291344332419,
-        0.000005125999450683594
+        5.125999450683594e-06
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -275,7 +275,7 @@
       "pivot": [
         1.9594771415627399,
         0.6756618916344885,
-        2.384185791015625e-7
+        2.384185791015625e-07
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2352,7 +2352,7 @@
       "pivot": [
         0.8241151872408866,
         1.872311859156035,
-        -5.960464477539063e-8
+        -5.960464477539063e-08
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2522,7 +2522,7 @@
       "pivot": [
         2.0817929070861054,
         1.8194443199056058,
-        0.000005125999450683594
+        5.125999450683594e-06
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2569,7 +2569,7 @@
       "pivot": [
         2.1282257953603483,
         1.2537897721212183,
-        0.000005125999450683594
+        5.125999450683594e-06
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2703,7 +2703,7 @@
       "pivot": [
         -0.04204621113618656,
         0.6241265276863783,
-        -6.854534149169922e-7
+        -6.854534149169922e-07
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2802,7 +2802,7 @@
       "pivot": [
         -2.567352621487733,
         0.8737040222628849,
-        2.980232238769531e-7
+        2.980232238769531e-07
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2835,7 +2835,7 @@
       "pivot": [
         -2.340276069084413,
         0.8267573573221186,
-        -6.854534149169922e-7
+        -6.854534149169922e-07
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2868,7 +2868,7 @@
       "pivot": [
         -2.3347774264788237,
         1.0950209210373338,
-        -0.00007868038399067023
+        -7.868038399067023e-05
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2981,7 +2981,7 @@
       "bounds": {
         "min": [
           -2.031500816345215,
-          -0.000019176829728240197,
+          -1.9176829728240197e-05,
           0.68250633036064
         ],
         "max": [
@@ -3080,7 +3080,7 @@
       "bounds": {
         "min": [
           -2.031500816345215,
-          -0.000020717637172318337,
+          -2.0717637172318337e-05,
           -0.9671811856190511
         ],
         "max": [
@@ -3182,7 +3182,7 @@
       "bounds": {
         "min": [
           0.8185162165870956,
-          -0.000019176829728240197,
+          -1.9176829728240197e-05,
           0.6787821572395277
         ],
         "max": [
@@ -3281,7 +3281,7 @@
       "bounds": {
         "min": [
           0.8185238639574288,
-          -0.000020717637172318337,
+          -2.0717637172318337e-05,
           -0.9650131900948201
         ],
         "max": [
@@ -3364,6 +3364,148 @@
       ],
       "classification": "Blender loose pieces assigned by source family and bounding-box location",
       "thumbnail": "../docs/foundation/parts/wheel_RR.png"
+    },
+    {
+      "id": "emblem_front",
+      "slot": "emblem_front",
+      "url": "parts/emblem_front.glb",
+      "rootNode": "emblem_front",
+      "pivot": [
+        -2.5565,
+        0.94,
+        0
+      ],
+      "pivotBasis": "badge centre on measured mounting face",
+      "zones": [
+        "chrome"
+      ],
+      "triangles": 4608,
+      "bounds": {
+        "min": [
+          -2.56565,
+          0.8889999999999999,
+          -0.0775
+        ],
+        "max": [
+          -2.545302880592229,
+          0.991,
+          0.0775
+        ]
+      },
+      "rigidClass": "body",
+      "authored": {
+        "reliefMetres": 0.0025,
+        "widthMetres": 0.155,
+        "heightMetres": 0.102,
+        "geometry": "three bevelled elliptical bands; new geometry only"
+      }
+    },
+    {
+      "id": "emblem_rear",
+      "slot": "emblem_rear",
+      "url": "parts/emblem_rear.glb",
+      "rootNode": "emblem_rear",
+      "pivot": [
+        2.32096,
+        1.177,
+        0
+      ],
+      "pivotBasis": "badge centre on measured mounting face",
+      "zones": [
+        "chrome"
+      ],
+      "triangles": 4608,
+      "bounds": {
+        "min": [
+          2.320193431457505,
+          1.1300000000000001,
+          -0.0715
+        ],
+        "max": [
+          2.324526568542495,
+          1.224,
+          0.0715
+        ]
+      },
+      "rigidClass": "body",
+      "authored": {
+        "reliefMetres": 0.0025,
+        "widthMetres": 0.143,
+        "heightMetres": 0.094,
+        "geometry": "three bevelled elliptical bands; new geometry only"
+      }
+    },
+    {
+      "id": "lamp_rear_L_finish",
+      "slot": "lamp_rear_L",
+      "url": "parts/lamp_rear_L_finish.glb",
+      "pivot": [
+        2.1915613357507393,
+        0.963238707959341,
+        0.683230474193339
+      ],
+      "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
+      "zones": [
+        "black",
+        "chrome",
+        "lamp_clear",
+        "lamp_orange",
+        "lamp_red"
+      ],
+      "triangles": 64045,
+      "bounds": {
+        "min": [
+          2.039112731038501,
+          0.640797887088982,
+          0.4406589110344298
+        ],
+        "max": [
+          2.344009940462977,
+          1.2856795288296998,
+          0.9258020373522483
+        ]
+      },
+      "rigidClass": "body",
+      "classification": "Base-finish variant: identical opening/positions/COLOR_0; repaired lens/reflector normals on this new copy only",
+      "thumbnail": "../docs/foundation/parts/lamp_rear_L.png",
+      "rootNode": "lamp_rear_L",
+      "derivedFrom": "lamp_rear_L"
+    },
+    {
+      "id": "lamp_rear_R_finish",
+      "slot": "lamp_rear_R",
+      "url": "parts/lamp_rear_R_finish.glb",
+      "pivot": [
+        2.1915613357507393,
+        0.9632777054246286,
+        -0.6865018093670008
+      ],
+      "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
+      "zones": [
+        "black",
+        "chrome",
+        "lamp_clear",
+        "lamp_orange",
+        "lamp_red"
+      ],
+      "triangles": 64460,
+      "bounds": {
+        "min": [
+          2.039112731038501,
+          0.640797887088982,
+          -0.9258083554445945
+        ],
+        "max": [
+          2.344009940462977,
+          1.2857575237602754,
+          -0.447195263289407
+        ]
+      },
+      "rigidClass": "body",
+      "classification": "Base-finish variant: identical opening/positions/COLOR_0; repaired lens/reflector normals on this new copy only",
+      "thumbnail": "../docs/foundation/parts/lamp_rear_R.png",
+      "rootNode": "lamp_rear_R",
+      "derivedFrom": "lamp_rear_R"
     }
   ],
   "displayBase": {
@@ -3384,7 +3526,7 @@
       "pivot": [
         -1.8728359352735762,
         1.189375429359158,
-        0.000005125999450683594
+        5.125999450683594e-06
       ],
       "rigidClass": "body"
     },
@@ -3393,7 +3535,7 @@
       "pivot": [
         -2.270462211108562,
         0.6223291344332419,
-        0.000005125999450683594
+        5.125999450683594e-06
       ],
       "rigidClass": "body"
     },
@@ -3402,7 +3544,7 @@
       "pivot": [
         1.9594771415627399,
         0.6756618916344885,
-        2.384185791015625e-7
+        2.384185791015625e-07
       ],
       "rigidClass": "body"
     },
@@ -3470,7 +3612,7 @@
       "rigidClass": "body"
     },
     "lamp_rear_L": {
-      "default": "lamp_rear_L",
+      "default": "lamp_rear_L_finish",
       "pivot": [
         2.1915613357507393,
         0.963238707959341,
@@ -3479,7 +3621,7 @@
       "rigidClass": "body"
     },
     "lamp_rear_R": {
-      "default": "lamp_rear_R",
+      "default": "lamp_rear_R_finish",
       "pivot": [
         2.1915613357507393,
         0.9632777054246286,
@@ -3510,7 +3652,7 @@
       "pivot": [
         0.8241151872408866,
         1.872311859156035,
-        -5.960464477539063e-8
+        -5.960464477539063e-08
       ],
       "rigidClass": "body"
     },
@@ -3537,7 +3679,7 @@
       "pivot": [
         2.0817929070861054,
         1.8194443199056058,
-        0.000005125999450683594
+        5.125999450683594e-06
       ],
       "rigidClass": "body"
     },
@@ -3546,7 +3688,7 @@
       "pivot": [
         2.1282257953603483,
         1.2537897721212183,
-        0.000005125999450683594
+        5.125999450683594e-06
       ],
       "rigidClass": "body"
     },
@@ -3573,7 +3715,7 @@
       "pivot": [
         -0.04204621113618656,
         0.6241265276863783,
-        -6.854534149169922e-7
+        -6.854534149169922e-07
       ],
       "rigidClass": "body"
     },
@@ -3600,7 +3742,7 @@
       "pivot": [
         -2.567352621487733,
         0.8737040222628849,
-        2.980232238769531e-7
+        2.980232238769531e-07
       ],
       "rigidClass": "body"
     },
@@ -3609,7 +3751,7 @@
       "pivot": [
         -2.340276069084413,
         0.8267573573221186,
-        -6.854534149169922e-7
+        -6.854534149169922e-07
       ],
       "rigidClass": "body"
     },
@@ -3618,7 +3760,7 @@
       "pivot": [
         -2.3347774264788237,
         1.0950209210373338,
-        -0.00007868038399067023
+        -7.868038399067023e-05
       ],
       "rigidClass": "body"
     },
@@ -3685,6 +3827,24 @@
       "default": null,
       "reason": "No confidently isolated frame/axle component; broad connected underside/body geometry is retained as unsorted_03 and rear underside attachment as unsorted_04.",
       "rigidClass": "body"
+    },
+    "emblem_front": {
+      "default": "emblem_front",
+      "pivot": [
+        -2.5565,
+        0.94,
+        0
+      ],
+      "rigidClass": "body"
+    },
+    "emblem_rear": {
+      "default": "emblem_rear",
+      "pivot": [
+        2.32096,
+        1.177,
+        0
+      ],
+      "rigidClass": "body"
     }
   },
   "missingTargets": {
@@ -3711,5 +3871,15 @@
       "rim",
       "tyre"
     ]
+  },
+  "additions": {
+    "baseFinish": {
+      "parts": [
+        "emblem_front",
+        "emblem_rear"
+      ],
+      "existingMeshesChanged": false,
+      "mountingReference": "supplied model-face coordinates; owner photo height confirmation pending"
+    }
   }
 }

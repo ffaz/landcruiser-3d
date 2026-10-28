@@ -8,23 +8,19 @@ Front, Side, Rear, 3/4, Top, Auto, Reset, the existing **four paint swatches plu
 
 The satin collectible materials and baked crevice/edge shading remain. No screen-space AO or live cavity pass is added. The blurred contact map updates when build state changes; rendering stops when controls are idle.
 
-## Cream studio
+## Clean base finish preview
 
-[Latest Cream detail refinement: full-size before/after screenshots, 7×7 samples and every changed value](docs/cream-detail/README.md). [Open the comparison gallery](https://ffaz.github.io/landcruiser-3d/docs/cream-detail/).
+[Before/after renders, pixel measurements, all changed values and new parts](docs/base-finish/README.md). The owner reference photos were unavailable in this task, so exact badge heights/sizes, optional lettering and lamp-pattern agreement remain pending. This preview is not a completed owner-photo match.
 
-Cream is the main studio for the stock base and future workshop. Its pale neutral grey background, satin white paint and near-black trim use a separate material variant. Stronger reads of the unchanged baked AO/curvature bring out recesses and panel seams; rear-facing indirect fill lifts the tailgate and painted bumper into the white range. Glass, tyres, wheel assemblies, chrome, existing contact shadow, geometry, cameras and build data retain their settings. Clay and Slate remain pixel-identical to the preceding release.
+Cream, Slate and Clay use the same satin painted-metal base finish, soft reflection highlights, neutral dark trim, blue-grey tinted glass and satin exterior metal. Each studio retains its background and toggle; Clay retains its existing wheel/tyre and plinth presentation. No tyre geometry, mud, wear, decals, numbers, props or workshop UI is added.
 
-[Previous contact-band and silhouette refinement](docs/cream-edges/README.md) and [earlier lighting refinement](docs/cream-refinement/README.md) remain as history.
+Toyota emblems are separate default-visible body slots. Replacement rear-lamp variants preserve the original lamp positions, triangle topology and COLOR_0, with repaired lens/reflector normals only on the new copies. Original GLBs remain byte-identical and selectable. The existing body scale, pivots, controls and camera presets are preserved.
 
-## Clay studio
-
-The studio button cycles **Cream → Slate → Clay → Cream** and shows the current studio, e.g. "Studio: Cream ▸". Clay uses matte paint (roughness 0.85, no clearcoat), muted plum trim and gradient glass, pale cream headlamps revealing their existing plum housings and projectors, dusty red tail lamps and matte light-grey chrome. A stronger high front-left key, gentle warm sand fill and deeper contact shadow separate top surfaces from sides and lower faces. White paint displays as warm cream without changing its authored build colour. Its background follows the selected paint hue; white uses a darker warm stone background. All four swatches and the custom picker work. Explicit build-state zone colours remain valid.
-
-Clay retains the original geometry, pivots, wheel assemblies, normals and baked COLOR_0 data. It uses a softer AO/curvature material variant, with no additional per-frame pass or real-time effect. Slate retains its original materials and lighting; Cream has the separate paint-lighting refinement described above. [Latest pixel-calibrated screenshots and verification](docs/clay-brightness/README.md).
+[Earlier Cream detail](docs/cream-detail/README.md), [contact refinement](docs/cream-edges/README.md) and [Clay calibration](docs/clay-brightness/README.md) remain historical evidence.
 
 ## Foundation data
 
-The vehicle contains **24 named parts and 10 unsorted pieces**, each with material-zone metadata and a review thumbnail. Integrated flare surfaces cannot be detached by loose-piece separation; a standalone frame/axle assembly could not be identified confidently. `arch_flares` and `chassis` therefore remain empty manifest slots. Other pivots are part-bbox centres, **not verified door hinges or mounting points**; wheel pivots use the authored hub coordinates.
+The original vehicle contains **24 named parts and 10 unsorted pieces**, now supplemented by two emblem slots and two rear-lamp variants, each with material-zone metadata and a review thumbnail. Integrated flare surfaces cannot be detached by loose-piece separation; a standalone frame/axle assembly could not be identified confidently. `arch_flares` and `chassis` therefore remain empty manifest slots. Other pivots are part-bbox centres, **not verified door hinges or mounting points**; wheel pivots use the authored hub coordinates.
 
 Use the browser console or a URL hash to exercise the data foundation:
 
@@ -42,7 +38,7 @@ Open [the 50 mm lift override](https://ffaz.github.io/landcruiser-3d/#lift_mm=50
 
 [Foundation report](docs/foundation/README.md) records measured dimensions, byte counts, emulated WebKit timing and validation. [Part table and thumbnails](docs/foundation/parts-review.md) list every part and triangle count. [Overhang/source investigation](docs/foundation/overhang-notes.md) explains the inherited 1.370 m rear overhang: the original 5,170 mm (GXR GT) anchor fit stretched the body about 15% behind the rear axle. It was undone with the owner's approval: rear overhang 1.200 m, model body 5,000 mm, front overhang/wheelbase/wheels unchanged. [Correction record, baselines and photo overlay](docs/rear-overhang/README.md).
 
-The retained vehicle is adapted from [Land cruise 2016 by ZIRODESIGN](https://sketchfab.com/3d-models/land-cruise-2016-6bd227c034894019907f7eaf4fe23ded), selected by the owner; model authorship remains with ZIRODESIGN. An extraction tool's licence does not license the model. The stored asset is an earlier artist adaptation, not OEM CAD. No reference logos or wording are added.
+The retained vehicle is adapted from [Land cruise 2016 by ZIRODESIGN](https://sketchfab.com/3d-models/land-cruise-2016-6bd227c034894019907f7eaf4fe23ded), selected by the owner; model authorship remains with ZIRODESIGN. An extraction tool's licence does not license the model. The stored asset is an earlier artist adaptation, not OEM CAD. Toyota emblems are now separate new parts at the owner’s request; no unconfirmed letter or grade badges are added.
 
 The owner's car is a GCC **GXR** (Toyota UAE May 2021 5.7L GXR sheet: 5,095 × 1,980 × 1,930 mm). The spec panel reads "Toyota GXR 5,095 mm · model body 5,000 mm". It shows the owner-confirmed **265/70R17** tyres as text only: the stored wheel geometry is still Ø 793 mm until the tyre-swap work.
 
