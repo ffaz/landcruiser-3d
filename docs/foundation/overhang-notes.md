@@ -1,5 +1,14 @@
 # Stored scale and the extra rear overhang
 
+> **Corrected 28 October 2026.** The owner's car is a GCC GXR. Measurements showed the 1.370 m rear overhang came from stretching the body about 15% along x behind the rear axle:
+>
+> - The rear arch opening was 0.503 m ahead of the hub and 0.567 m behind it; the front arch is symmetric.
+> - The tail lamp sat 14% further back than in the real side photo.
+>
+> With owner approval, that stretch was undone once to a **1.200 m** rear overhang. The model body is now **5,000 mm**; Toyota's GXR figure (5,095 mm) is shown as text. Front overhang, wheelbase, wheels and height are unchanged. See the [correction record](../rear-overhang/README.md).
+>
+> The section below is the original foundation-session analysis, kept as history.
+
 No vertex was corrected to match a catalogue number in this foundation session.
 
 | Quantity | Stored model / arithmetic |

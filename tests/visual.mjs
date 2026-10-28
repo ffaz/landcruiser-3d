@@ -427,8 +427,12 @@ try {
   if(await page.evaluate(()=>!!window.lcBuild)){
     const b=checks.model.bounds;
     const actual=[b.max.x-b.min.x,b.max.y-b.min.y,b.max.z-b.min.z];
-    checks.trueScaleBounds=Math.abs(actual[0]-5.170)<.0001&&Math.abs(actual[1]-1.930)<.0001&&Math.abs(actual[2]-2.297)<.001;
-    checks.trueScaleBoundsMetres={length:actual[0],height:actual[1],widthIncludingMirrors:actual[2]};
+    // Geometry lock after the approved 2026-10-28 rear un-stretch: front overhang 0.950 m
+    // and rear 1.200 m about the 2.850 m wheelbase (body 5.000 m). Older sources were 5.170 m.
+    const lengths=options.mode==='before'?[5.000,5.170]:[5.000];
+    checks.trueScaleBounds=lengths.some(l=>Math.abs(actual[0]-l)<.0001)&&Math.abs(actual[1]-1.930)<.0001&&Math.abs(actual[2]-2.297)<.001;
+    checks.overhangLock=options.mode==='before'||(Math.abs(b.min.x+2.585)<.0001&&Math.abs(b.max.x-2.415)<.0001);
+    checks.trueScaleBoundsMetres={length:actual[0],height:actual[1],widthIncludingMirrors:actual[2],minX:b.min.x,maxX:b.max.x};
   }
   if(options.mode !== 'before'){
     const noJs=await browser.newPage({viewport:{width:1000,height:800},javaScriptEnabled:false});

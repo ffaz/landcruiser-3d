@@ -18,5 +18,14 @@
     "front_axle=-L/2+.950; rear_axle=front_axle+WB",
     "radius=.3965; src_radius=.4078672"
   ],
-  "interpretation": "Rear overhang is an arithmetic consequence of previously chosen anchors, not a sourced Toyota individual-overhang figure."
+  "interpretation": "Rear overhang is an arithmetic consequence of previously chosen anchors, not a sourced Toyota individual-overhang figure.",
+  "laterCorrection": {
+    "date": "2026-10-28",
+    "approvedBy": "owner",
+    "tool": "tools/foundation/unstretch_rear.mjs",
+    "rule": "non-wheel world x > 1.215: x' = 1.215 + (x - 1.215) * 1.200/1.370; NORMAL by inverse-transpose",
+    "rearOverhang": 1.2,
+    "modelBodyLength": 5.0,
+    "record": "docs/rear-overhang/README.md"
+  }
 }

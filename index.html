@@ -9,6 +9,7 @@
 <!--
   Parts-based LC200 foundation. Three.js 0.166.1 and Meshopt decoder stay pinned.
   Stored source geometry is never refitted or reshaped at runtime. Car scale = 1.
+  Rear overhang un-stretched offline once to 1.200 m (approved 2026-10-28; body 5.000 m).
   Quantization decoding transforms are retained exactly as stored in the GLBs.
   model/manifest.json defines slots, pivots, zones and source preservation evidence.
   build.json defines the default assembly; #lift_mm=50 demonstrates a rigid body lift.
@@ -115,7 +116,7 @@
 <main id="viewer" aria-label="Interactive rotatable model of a 2021 Toyota Land Cruiser 200"></main>
 <noscript>
  <style>#loader{display:none}.nojs{position:absolute;inset:25% 8%;display:grid;place-content:center;text-align:center;font:14px/1.8 system-ui;color:#283440}.nojs strong{font-size:22px}</style>
- <div class="nojs"><strong>Land Cruiser 200 · GXR</strong><span>Stored model: 5.170 m long · satin gunmetal wheels · tyres Ø0.793 m.</span><span>Enable JavaScript and WebGL to rotate the collectible studio model.</span></div>
+ <div class="nojs"><strong>Land Cruiser 200 · GXR</strong><span>Toyota GXR 5,095 mm · model body 5,000 mm · satin gunmetal wheels · 265/70R17.</span><span>Enable JavaScript and WebGL to rotate the collectible studio model.</span></div>
 </noscript>
 <header class="topbar">
   <div class="brand"><div class="emblem" aria-hidden="true"></div><div><div class="eyebrow">THE STUDIO SERIES · 2021</div><h1>LAND CRUISER <span style="font-weight:320;opacity:.8">/ 200</span></h1></div></div>
@@ -130,7 +131,7 @@
   <section class="specs" aria-label="Vehicle specifications">
     <div class="micro">STORED MODEL · SCALE 1.0</div>
     <div class="specname">2021 · Land Cruiser 200</div>
-    <div class="specdetail">5,170 mm L · 2,297 mm W incl. mirrors · 1,930 mm H<br>2,850 mm wheelbase · uniform scale 1.0<br>Stored tyres Ø793 mm · White</div>
+    <div class="specdetail">Toyota GXR 5,095 mm · model body 5,000 mm<br>2,297 mm W incl. mirrors · 1,930 mm H · 2,850 mm wheelbase<br>265/70R17 · White</div>
   </section>
   <div class="dock">
     <div class="finishbar" aria-label="Paint finish controls"><label for="customPaint">PAINT</label><div class="swatches">
@@ -186,7 +187,9 @@ import { VerticalBlurShader } from 'three/addons/shaders/VerticalBlurShader.js';
 //    THREE UNITS = METRES. x = length (negative is front); y = up;
 //    z = vehicle width (positive is the default camera-facing side).
 // ────────────────────────────────────────────────────────────────────────────
-const DIM=Object.freeze({length:5.170,width:2.297,height:1.930,wheelbase:2.850,
+// length is the model body (rear overhang 1.200 m); Toyota's GXR figure is 5.095 m.
+// Tyre fields describe the stored wheel geometry, not the 265/70R17 label.
+const DIM=Object.freeze({length:5.000,width:2.297,height:1.930,wheelbase:2.850,
  trackF:1.650,trackR:1.645,tireWidth:.285,rimDiameter:.508,aspectRatio:.50});
 const TIRE_RADIUS=.3965,FRONT_X=-1.635,REAR_X=1.215;
 const DEFAULT_WHITE = '#f4f4ef';

@@ -21,6 +21,16 @@ python tools/foundation/audit_scale.py --source /tmp/lc200-foundation/source --o
 
 The dependency directory passed to `compress_meshopt.mjs` contains npm dependencies in `node_modules/` and the npm-packed Three.js0.166.1 in `package/`. See the existing visual harness for local npm-pack setup. The Meshopt writer uses encoding format0 and NONE filters; it intentionally does **not** call the glTF-Transform `meshopt()` convenience transform, because that transform also requantizes geometry. The `EXTMeshoptCompression` writer alone provides lossless compression of the existing codes. Output is decoded with both the installed decoder and the **pinned Three.js0.166.1 decoder**, comparing decoded bytes. POSITION/NORMAL/COLOR_0 values, triangle topology (allowing cyclic index rotation) and node TRS values must match exactly.
 
+## Rear overhang correction (28 October 2026)
+
+This is the one approved geometry edit after delivery. It un-stretches the body behind the rear axle to a 1.200 m rear overhang, then re-encodes only the changed files with the same lossless writer. Wheel parts and every vertex at or ahead of x = 1.215 keep their original codes; COLOR_0 is not touched. [Record](../../docs/rear-overhang/README.md).
+
+```sh
+node tools/foundation/unstretch_rear.mjs model /tmp/lc200-rear/raw docs/foundation/rear-unstretch.json /tmp/lc200-deps 1.200
+node tools/foundation/compress_meshopt.mjs /tmp/lc200-rear/raw /tmp/lc200-rear/model /tmp/lc200-rear/compression.json /tmp/lc200-deps
+# copy back only the 14 GLBs the report lists with reencodedVertices > 0, plus manifest.json
+```
+
 ## Coordinates, pivots and classification
 
 Metres: front negative X, up positive Y, left positive Z. Each GLB has one root whose name equals its part ID. A root translation sets the pivot; its `stored_frame` child counter-translates by the same amount before the original nodes. This cancels to identity at the default pose while preserving authored node transforms. Wheels use the specified hub pivots: front X−1.635/rear X+1.215, Y0.3965, left/right Z±0.825(front)/±0.8225(rear). Other pivots use group-bbox centres (body shell uses origin); those centres are **not verified hinge or mounting locations**.

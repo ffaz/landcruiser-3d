@@ -1,0 +1,1012 @@
+{
+  "rule": "x' = H + (x - H) * k for non-wheel vertices with world x > H; NORMAL by inverse-transpose of diag(k,1,1)",
+  "hingeX": 1.215,
+  "oldRearOverhang": 1.37,
+  "newRearOverhang": 1.2,
+  "k": 0.875912408759124,
+  "parts": [
+    {
+      "id": "body_shell",
+      "url": "base.glb",
+      "behindHingeVertices": 15240,
+      "reencodedVertices": 15240,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0.03928510609174651,
+      "maxNormalErrorDeg": 0.001381505222300644,
+      "boundsMetres": {
+        "min": [
+          -2.2074643214905043,
+          0.23604862045034092,
+          -0.9942916458380009
+        ],
+        "max": [
+          2.2205544720949044,
+          1.894747528530482,
+          0.9942818706762577
+        ]
+      },
+      "manifestBoundsResidualMm": 142.4535502134452,
+      "oldBounds": {
+        "min": [
+          -2.2074643214905043,
+          0.23604862045034092,
+          -0.9942916458380009
+        ],
+        "max": [
+          2.3630080223083496,
+          1.894747528530482,
+          0.9942818706762577
+        ]
+      }
+    },
+    {
+      "id": "bonnet",
+      "url": "parts/bonnet.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          -2.5102869117867903,
+          1.0873220175100857,
+          -0.8377830983990916
+        ],
+        "max": [
+          -1.2353849587603623,
+          1.2914288412082306,
+          0.837793350397993
+        ]
+      },
+      "manifestBoundsResidualMm": 0
+    },
+    {
+      "id": "bumper_front",
+      "url": "parts/bumper_front.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          -2.58500075340271,
+          0.3104752687520822,
+          -0.9814196434332998
+        ],
+        "max": [
+          -1.9559236688144144,
+          0.9341830001144016,
+          0.9814298954322012
+        ]
+      },
+      "manifestBoundsResidualMm": 0
+    },
+    {
+      "id": "bumper_rear",
+      "url": "parts/bumper_rear.glb",
+      "behindHingeVertices": 16532,
+      "reencodedVertices": 16532,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0.03928510609174651,
+      "maxNormalErrorDeg": 0.0014545875186927095,
+      "boundsMetres": {
+        "min": [
+          1.5039538320444892,
+          0.33850514983171864,
+          -0.9845759868621826
+        ],
+        "max": [
+          2.4150004510809904,
+          1.0128186334372584,
+          0.9845764636993408
+        ]
+      },
+      "manifestBoundsResidualMm": 170.00006390314047,
+      "oldBounds": {
+        "min": [
+          1.5448889582507919,
+          0.33850514983171864,
+          -0.9845759868621826
+        ],
+        "max": [
+          2.585000514984131,
+          1.0128186334372584,
+          0.9845764636993408
+        ]
+      },
+      "oldPivot": [
+        2.0649447366174614,
+        0.6756618916344885,
+        2.384185791015625e-7
+      ]
+    },
+    {
+      "id": "door_FL",
+      "url": "parts/door_FL.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          -1.1242181090129562,
+          0.4556417605512895,
+          0.6538525410456956
+        ],
+        "max": [
+          0.06395229712416503,
+          1.7779445824604334,
+          0.9771882143081605
+        ]
+      },
+      "manifestBoundsResidualMm": 0
+    },
+    {
+      "id": "door_FR",
+      "url": "parts/door_FR.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          -1.1242181090129562,
+          0.4556417605512895,
+          -0.97718833351745
+        ],
+        "max": [
+          0.06395229712416503,
+          1.7779445824604334,
+          -0.6538573094172776
+        ]
+      },
+      "manifestBoundsResidualMm": 0
+    },
+    {
+      "id": "door_RL",
+      "url": "parts/door_RL.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          -0.019775291956365647,
+          0.4800276474994063,
+          0.6498085987172442
+        ],
+        "max": [
+          1.040967635204406,
+          1.7995543992780956,
+          0.9871627919808601
+        ]
+      },
+      "manifestBoundsResidualMm": 0
+    },
+    {
+      "id": "door_RR",
+      "url": "parts/door_RR.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          -0.019775291956365647,
+          0.4800276474994063,
+          -0.9871525399819587
+        ],
+        "max": [
+          1.040967635204406,
+          1.7995543992780956,
+          -0.6497817737893852
+        ]
+      },
+      "manifestBoundsResidualMm": 0
+    },
+    {
+      "id": "grille",
+      "url": "parts/grille.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          -2.565486431121826,
+          0.749620370982724,
+          -0.6096870577638774
+        ],
+        "max": [
+          -2.355806017770036,
+          1.1188483723282185,
+          0.6094517020653204
+        ]
+      },
+      "manifestBoundsResidualMm": 0
+    },
+    {
+      "id": "lamp_front_L",
+      "url": "parts/lamp_front_L.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          -2.530856681946203,
+          0.5766276149657603,
+          0.3708652094341698
+        ],
+        "max": [
+          -1.9604014926613473,
+          1.1073051226030108,
+          0.9581845590952358
+        ]
+      },
+      "manifestBoundsResidualMm": 0
+    },
+    {
+      "id": "lamp_front_R",
+      "url": "parts/lamp_front_R.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          -2.530856681946203,
+          0.5766276149657603,
+          -0.9581839630487881
+        ],
+        "max": [
+          -1.9604014926613473,
+          1.1073051226030108,
+          -0.3708665803409996
+        ]
+      },
+      "manifestBoundsResidualMm": 0
+    },
+    {
+      "id": "lamp_rear_L",
+      "url": "parts/lamp_rear_L.glb",
+      "behindHingeVertices": 66782,
+      "reencodedVertices": 66782,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0.03886927146812269,
+      "maxNormalErrorDeg": 0.001457191286219081,
+      "boundsMetres": {
+        "min": [
+          2.039112731038501,
+          0.640797887088982,
+          0.4406589110344298
+        ],
+        "max": [
+          2.344009940462977,
+          1.2856795288296998,
+          0.9258020373522483
+        ]
+      },
+      "manifestBoundsResidualMm": 159.9430748989219,
+      "oldBounds": {
+        "min": [
+          2.1558620346022885,
+          0.640797887088982,
+          0.4406589110344298
+        ],
+        "max": [
+          2.503953015361899,
+          1.2856795288296998,
+          0.9258020373522483
+        ]
+      },
+      "oldPivot": [
+        2.3299075249820937,
+        0.963238707959341,
+        0.683230474193339
+      ]
+    },
+    {
+      "id": "lamp_rear_R",
+      "url": "parts/lamp_rear_R.glb",
+      "behindHingeVertices": 67235,
+      "reencodedVertices": 67235,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0.03886927146812269,
+      "maxNormalErrorDeg": 0.0014474371886867567,
+      "boundsMetres": {
+        "min": [
+          2.039112731038501,
+          0.640797887088982,
+          -0.9258083554445945
+        ],
+        "max": [
+          2.344009940462977,
+          1.2857575237602754,
+          -0.447195263289407
+        ]
+      },
+      "manifestBoundsResidualMm": 159.9430748989219,
+      "oldBounds": {
+        "min": [
+          2.1558620346022885,
+          0.640797887088982,
+          -0.9258083554445945
+        ],
+        "max": [
+          2.503953015361899,
+          1.2857575237602754,
+          -0.447195263289407
+        ]
+      },
+      "oldPivot": [
+        2.3299075249820937,
+        0.9632777054246286,
+        -0.6865018093670008
+      ]
+    },
+    {
+      "id": "mirror_L",
+      "url": "parts/mirror_L.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          -0.9852538453571076,
+          1.251104958013901,
+          0.8882636726548319
+        ],
+        "max": [
+          -0.7863199694983876,
+          1.459537192054506,
+          1.1483169322968199
+        ]
+      },
+      "manifestBoundsResidualMm": 0
+    },
+    {
+      "id": "mirror_R",
+      "url": "parts/mirror_R.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          -0.9852538453571076,
+          1.251104958013901,
+          -1.148316336250372
+        ],
+        "max": [
+          -0.7863199694983876,
+          1.459537192054506,
+          -0.8882558048417215
+        ]
+      },
+      "manifestBoundsResidualMm": 0
+    },
+    {
+      "id": "roof_rails",
+      "url": "parts/roof_rails.glb",
+      "behindHingeVertices": 4463,
+      "reencodedVertices": 4463,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0.03928510609174651,
+      "maxNormalErrorDeg": 0.0013367309069462663,
+      "boundsMetres": {
+        "min": [
+          -0.12907531402820263,
+          1.8145909891536152,
+          -0.6261407275964908
+        ],
+        "max": [
+          1.7773056885099758,
+          1.9300327291584547,
+          0.6261406083872012
+        ]
+      },
+      "manifestBoundsResidualMm": 79.65997253891332,
+      "oldBounds": {
+        "min": [
+          -0.12907531402820263,
+          1.8145909891536152,
+          -0.6261407275964908
+        ],
+        "max": [
+          1.8569656610488892,
+          1.9300327291584547,
+          0.6261406083872012
+        ]
+      },
+      "oldPivot": [
+        0.8639451735103433,
+        1.872311859156035,
+        -5.960464477539063e-8
+      ]
+    },
+    {
+      "id": "side_step_L",
+      "url": "parts/side_step_L.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          -1.1853595464111055,
+          0.31236005665849076,
+          0.8571554229487017
+        ],
+        "max": [
+          0.726443653322501,
+          0.5442675019761599,
+          1.0543868939760939
+        ]
+      },
+      "manifestBoundsResidualMm": 0
+    },
+    {
+      "id": "side_step_R",
+      "url": "parts/side_step_R.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          -1.1853595464111055,
+          0.31236005665849076,
+          -1.0543766419771925
+        ],
+        "max": [
+          0.726443653322501,
+          0.5442675019761599,
+          -0.8571601913202838
+        ]
+      },
+      "manifestBoundsResidualMm": 0
+    },
+    {
+      "id": "spoiler",
+      "url": "parts/spoiler.glb",
+      "behindHingeVertices": 20710,
+      "reencodedVertices": 20710,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0.03928510609174651,
+      "maxNormalErrorDeg": 0.0014574708874436385,
+      "boundsMetres": {
+        "min": [
+          1.8817577526395477,
+          1.7522594843250892,
+          -0.6383097116375339
+        ],
+        "max": [
+          2.281828061532663,
+          1.8866291554861228,
+          0.6383199636364353
+        ]
+      },
+      "manifestBoundsResidualMm": 151.1339753837939,
+      "oldBounds": {
+        "min": [
+          1.9762151009301503,
+          1.7522594843250892,
+          -0.6383097116375339
+        ],
+        "max": [
+          2.432962036916457,
+          1.8866291554861228,
+          0.6383199636364353
+        ]
+      },
+      "oldPivot": [
+        2.2045885689233033,
+        1.8194443199056058,
+        0.000005125999450683594
+      ]
+    },
+    {
+      "id": "tailgate",
+      "url": "parts/tailgate.glb",
+      "behindHingeVertices": 38172,
+      "reencodedVertices": 38172,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0.039104482712382094,
+      "maxNormalErrorDeg": 0.0014689983805940348,
+      "boundsMetres": {
+        "min": [
+          1.9340386801084364,
+          0.6835062085620819,
+          -0.7397741272658538
+        ],
+        "max": [
+          2.32241291061226,
+          1.824073335680355,
+          0.7397843792647552
+        ]
+      },
+      "manifestBoundsResidualMm": 156.88349567007043,
+      "oldBounds": {
+        "min": [
+          2.0359024931237983,
+          0.6835062085620819,
+          -0.7397741272658538
+        ],
+        "max": [
+          2.4792964062823306,
+          1.824073335680355,
+          0.7397843792647552
+        ]
+      },
+      "oldPivot": [
+        2.2575994497030645,
+        1.2537897721212183,
+        0.000005125999450683594
+      ]
+    },
+    {
+      "id": "unsorted_01",
+      "url": "parts/unsorted_01.glb",
+      "behindHingeVertices": 251,
+      "reencodedVertices": 251,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0.036530257266687016,
+      "maxNormalErrorDeg": 0.0011119466812963916,
+      "boundsMetres": {
+        "min": [
+          0.009094097654525603,
+          1.2563880487967698,
+          0.8035751626140616
+        ],
+        "max": [
+          1.619216674277825,
+          1.3498059492880552,
+          0.8538180137006577
+        ]
+      },
+      "manifestBoundsResidualMm": 57.26402885602533,
+      "oldBounds": {
+        "min": [
+          0.009094097654525603,
+          1.2563880487967698,
+          0.8035751626140616
+        ],
+        "max": [
+          1.6764807031338502,
+          1.3498059492880552,
+          0.8538180137006577
+        ]
+      },
+      "oldPivot": [
+        0.8427874003941879,
+        1.3030969990424124,
+        0.8286965881573596
+      ]
+    },
+    {
+      "id": "unsorted_02",
+      "url": "parts/unsorted_02.glb",
+      "behindHingeVertices": 253,
+      "reencodedVertices": 253,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0.036530257266687016,
+      "maxNormalErrorDeg": 0.001198972421493006,
+      "boundsMetres": {
+        "min": [
+          0.009094097654525603,
+          1.2563880487967698,
+          -0.8538243317930039
+        ],
+        "max": [
+          1.619216674277825,
+          1.3498059492880552,
+          -0.8035814807064078
+        ]
+      },
+      "manifestBoundsResidualMm": 57.26402885602533,
+      "oldBounds": {
+        "min": [
+          0.009094097654525603,
+          1.2563880487967698,
+          -0.8538243317930039
+        ],
+        "max": [
+          1.6764807031338502,
+          1.3498059492880552,
+          -0.8035814807064078
+        ]
+      },
+      "oldPivot": [
+        0.8427874003941879,
+        1.3030969990424124,
+        -0.8287029062497058
+      ]
+    },
+    {
+      "id": "unsorted_03",
+      "url": "parts/unsorted_03.glb",
+      "behindHingeVertices": 149,
+      "reencodedVertices": 149,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0.038556353045171576,
+      "maxNormalErrorDeg": 0.0012028134512391724,
+      "boundsMetres": {
+        "min": [
+          -2.4454522329657813,
+          0.3170604860097389,
+          -0.9881184609173077
+        ],
+        "max": [
+          2.361359810693408,
+          0.9311925693630179,
+          0.9881170900104779
+        ]
+      },
+      "manifestBoundsResidualMm": 162.40097318156631,
+      "oldBounds": {
+        "min": [
+          -2.4454522329657813,
+          0.3170604860097389,
+          -0.9881184609173077
+        ],
+        "max": [
+          2.5237607838749745,
+          0.9311925693630179,
+          0.9881170900104779
+        ]
+      },
+      "oldPivot": [
+        0.0391542754545966,
+        0.6241265276863783,
+        -6.854534149169922e-7
+      ]
+    },
+    {
+      "id": "unsorted_04",
+      "url": "parts/unsorted_04.glb",
+      "behindHingeVertices": 904,
+      "reencodedVertices": 904,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0.03886927146812269,
+      "maxNormalErrorDeg": 0.0012811515796759096,
+      "boundsMetres": {
+        "min": [
+          1.596349096018666,
+          0.3371051831677009,
+          0.3697732804061095
+        ],
+        "max": [
+          2.353844970667134,
+          0.5232790824519626,
+          0.5527493875367664
+        ]
+      },
+      "manifestBoundsResidualMm": 161.33637084451058,
+      "oldBounds": {
+        "min": [
+          1.650373551287977,
+          0.3371051831677009,
+          0.3697732804061095
+        ],
+        "max": [
+          2.5151813415116444,
+          0.5232790824519626,
+          0.5527493875367664
+        ]
+      },
+      "oldPivot": [
+        2.0827774463998106,
+        0.43019213280983176,
+        0.461261333971438
+      ]
+    },
+    {
+      "id": "unsorted_05",
+      "url": "parts/unsorted_05.glb",
+      "behindHingeVertices": 168,
+      "reencodedVertices": 168,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0.037965127491546014,
+      "maxNormalErrorDeg": 0.0012172611703683887,
+      "boundsMetres": {
+        "min": [
+          0.5872558595991063,
+          0.35047539007532036,
+          -0.9712330157109881
+        ],
+        "max": [
+          2.3044572682264013,
+          1.0981093484860707,
+          0.7402653796364966
+        ]
+      },
+      "manifestBoundsResidualMm": 154.3397796654067,
+      "oldBounds": {
+        "min": [
+          0.5872558595991063,
+          0.35047539007532036,
+          -0.9712330157109881
+        ],
+        "max": [
+          2.458797047891808,
+          1.0981093484860707,
+          0.7402653796364966
+        ]
+      },
+      "oldPivot": [
+        1.5230264537454572,
+        0.7242923692806955,
+        -0.11548381803724572
+      ]
+    },
+    {
+      "id": "unsorted_06",
+      "url": "parts/unsorted_06.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          -2.571075439453125,
+          0.8610771448338738,
+          -0.01243468157251961
+        ],
+        "max": [
+          -2.5636298035223404,
+          0.886330899691896,
+          0.012435277618967363
+        ]
+      },
+      "manifestBoundsResidualMm": 0
+    },
+    {
+      "id": "unsorted_07",
+      "url": "parts/unsorted_07.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          -2.5062102838842732,
+          0.5508112929451945,
+          -0.6099990374861803
+        ],
+        "max": [
+          -2.1743418542845525,
+          1.1027034216990428,
+          0.6099976665793505
+        ]
+      },
+      "manifestBoundsResidualMm": 0
+    },
+    {
+      "id": "unsorted_08",
+      "url": "parts/unsorted_08.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          -2.51174792395515,
+          1.0758731655809926,
+          -0.8098220496211944
+        ],
+        "max": [
+          -2.157806929002498,
+          1.114168676493675,
+          0.8096646888532131
+        ]
+      },
+      "manifestBoundsResidualMm": 0
+    },
+    {
+      "id": "unsorted_09",
+      "url": "parts/unsorted_09.glb",
+      "behindHingeVertices": 1230,
+      "reencodedVertices": 1230,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0.013878664616440162,
+      "maxNormalErrorDeg": 0.0013786329615471458,
+      "boundsMetres": {
+        "min": [
+          1.729929832372636,
+          1.8687134161257282,
+          0.5308479924650469
+        ],
+        "max": [
+          1.7601604924935805,
+          1.8967084957514495,
+          0.5697346901342082
+        ]
+      },
+      "manifestBoundsResidualMm": 77.23106976992389,
+      "oldBounds": {
+        "min": [
+          1.8028782252920927,
+          1.8687134161257282,
+          0.5308479924650469
+        ],
+        "max": [
+          1.8373915622635044,
+          1.8967084957514495,
+          0.5697346901342082
+        ]
+      },
+      "oldPivot": [
+        1.8201348937777986,
+        1.8827109559385888,
+        0.5502913412996275
+      ]
+    },
+    {
+      "id": "unsorted_10",
+      "url": "parts/unsorted_10.glb",
+      "behindHingeVertices": 3370,
+      "reencodedVertices": 3370,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0.013878664616440162,
+      "maxNormalErrorDeg": 0.0013998992998735433,
+      "boundsMetres": {
+        "min": [
+          1.729929832372636,
+          1.8312195084876972,
+          -0.5697346901342082
+        ],
+        "max": [
+          2.2797911370422135,
+          1.8967084957514495,
+          0.36351819812503866
+        ]
+      },
+      "manifestBoundsResidualMm": 150.84541108098026,
+      "oldBounds": {
+        "min": [
+          1.8028782252920927,
+          1.8312195084876972,
+          -0.5697346901342082
+        ],
+        "max": [
+          2.4306365481231937,
+          1.8967084957514495,
+          0.36351819812503866
+        ]
+      },
+      "oldPivot": [
+        2.1167573867076435,
+        1.8639640021195734,
+        -0.10310824600458476
+      ]
+    },
+    {
+      "id": "wheel_FL",
+      "url": "parts/wheel_FL.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          -2.031500816345215,
+          -0.000019176829728240197,
+          0.68250633036064
+        ],
+        "max": [
+          -1.2385168889274887,
+          0.7930203400676628,
+          0.9671800557238489
+        ]
+      },
+      "manifestBoundsResidualMm": 0
+    },
+    {
+      "id": "wheel_FR",
+      "url": "parts/wheel_FR.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          -2.031500816345215,
+          -0.000020717637172318337,
+          -0.9671811856190511
+        ],
+        "max": [
+          -1.2385147611360787,
+          0.7930209272007904,
+          -0.6825066963988627
+        ]
+      },
+      "manifestBoundsResidualMm": 0
+    },
+    {
+      "id": "wheel_RL",
+      "url": "parts/wheel_RL.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          0.8185162165870956,
+          -0.000019176829728240197,
+          0.6787821572395277
+        ],
+        "max": [
+          1.6115001440048218,
+          0.7930203400676628,
+          0.9650120660169235
+        ]
+      },
+      "manifestBoundsResidualMm": 0
+    },
+    {
+      "id": "wheel_RR",
+      "url": "parts/wheel_RR.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          0.8185238639574288,
+          -0.000020717637172318337,
+          -0.9650131900948201
+        ],
+        "max": [
+          1.611509919166565,
+          0.7930209272007904,
+          -0.6803387008746318
+        ]
+      },
+      "manifestBoundsResidualMm": 0
+    },
+    {
+      "id": "display_base",
+      "url": "display-base.glb",
+      "behindHingeVertices": 0,
+      "reencodedVertices": 0,
+      "refitNodes": [],
+      "maxPositionErrorMm": 0,
+      "maxNormalErrorDeg": 0,
+      "boundsMetres": {
+        "min": [
+          -3.0299999713897705,
+          -0.2199999988079071,
+          -1.5800000429153442
+        ],
+        "max": [
+          3.0299999713897705,
+          -0.0020000000949949026,
+          1.5800000429153442
+        ]
+      },
+      "manifestBoundsResidualMm": null
+    }
+  ]
+}

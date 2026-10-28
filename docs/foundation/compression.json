@@ -11,13 +11,14 @@
     {
       "id": "body_shell",
       "url": "base.glb",
-      "uncompressedBytes": 1844888,
-      "compressedBytes": 956224,
+      "uncompressedBytes": 1842128,
+      "compressedBytes": 956900,
       "attributesByteExact": true,
       "triangleTopologyExact": true,
       "nodeTransformsExact": true,
       "pinnedThree166Decoder": true,
-      "compressedViews": 25
+      "compressedViews": 25,
+      "rearUnstretch20261028": true
     },
     {
       "id": "bonnet",
@@ -44,13 +45,14 @@
     {
       "id": "bumper_rear",
       "url": "parts/bumper_rear.glb",
-      "uncompressedBytes": 438856,
-      "compressedBytes": 226196,
+      "uncompressedBytes": 437216,
+      "compressedBytes": 226624,
       "attributesByteExact": true,
       "triangleTopologyExact": true,
       "nodeTransformsExact": true,
       "pinnedThree166Decoder": true,
-      "compressedViews": 16
+      "compressedViews": 16,
+      "rearUnstretch20261028": true
     },
     {
       "id": "door_FL",
@@ -132,24 +134,26 @@
     {
       "id": "lamp_rear_L",
       "url": "parts/lamp_rear_L.glb",
-      "uncompressedBytes": 1734812,
-      "compressedBytes": 742192,
+      "uncompressedBytes": 1731776,
+      "compressedBytes": 744296,
       "attributesByteExact": true,
       "triangleTopologyExact": true,
       "nodeTransformsExact": true,
       "pinnedThree166Decoder": true,
-      "compressedViews": 28
+      "compressedViews": 28,
+      "rearUnstretch20261028": true
     },
     {
       "id": "lamp_rear_R",
       "url": "parts/lamp_rear_R.glb",
-      "uncompressedBytes": 1746396,
-      "compressedBytes": 749440,
+      "uncompressedBytes": 1743364,
+      "compressedBytes": 751696,
       "attributesByteExact": true,
       "triangleTopologyExact": true,
       "nodeTransformsExact": true,
       "pinnedThree166Decoder": true,
-      "compressedViews": 28
+      "compressedViews": 28,
+      "rearUnstretch20261028": true
     },
     {
       "id": "mirror_L",
@@ -176,13 +180,14 @@
     {
       "id": "roof_rails",
       "url": "parts/roof_rails.glb",
-      "uncompressedBytes": 213928,
-      "compressedBytes": 103704,
+      "uncompressedBytes": 212972,
+      "compressedBytes": 103868,
       "attributesByteExact": true,
       "triangleTopologyExact": true,
       "nodeTransformsExact": true,
       "pinnedThree166Decoder": true,
-      "compressedViews": 10
+      "compressedViews": 10,
+      "rearUnstretch20261028": true
     },
     {
       "id": "side_step_L",
@@ -209,79 +214,86 @@
     {
       "id": "spoiler",
       "url": "parts/spoiler.glb",
-      "uncompressedBytes": 522260,
-      "compressedBytes": 232608,
+      "uncompressedBytes": 520620,
+      "compressedBytes": 232728,
       "attributesByteExact": true,
       "triangleTopologyExact": true,
       "nodeTransformsExact": true,
       "pinnedThree166Decoder": true,
-      "compressedViews": 16
+      "compressedViews": 16,
+      "rearUnstretch20261028": true
     },
     {
       "id": "tailgate",
       "url": "parts/tailgate.glb",
-      "uncompressedBytes": 965732,
-      "compressedBytes": 431076,
+      "uncompressedBytes": 963388,
+      "compressedBytes": 432816,
       "attributesByteExact": true,
       "triangleTopologyExact": true,
       "nodeTransformsExact": true,
       "pinnedThree166Decoder": true,
-      "compressedViews": 22
+      "compressedViews": 22,
+      "rearUnstretch20261028": true
     },
     {
       "id": "unsorted_01",
       "url": "parts/unsorted_01.glb",
-      "uncompressedBytes": 30000,
-      "compressedBytes": 15900,
+      "uncompressedBytes": 29724,
+      "compressedBytes": 15924,
       "attributesByteExact": true,
       "triangleTopologyExact": true,
       "nodeTransformsExact": true,
       "pinnedThree166Decoder": true,
-      "compressedViews": 4
+      "compressedViews": 4,
+      "rearUnstretch20261028": true
     },
     {
       "id": "unsorted_02",
       "url": "parts/unsorted_02.glb",
-      "uncompressedBytes": 30104,
-      "compressedBytes": 16040,
+      "uncompressedBytes": 29824,
+      "compressedBytes": 16068,
       "attributesByteExact": true,
       "triangleTopologyExact": true,
       "nodeTransformsExact": true,
       "pinnedThree166Decoder": true,
-      "compressedViews": 4
+      "compressedViews": 4,
+      "rearUnstretch20261028": true
     },
     {
       "id": "unsorted_03",
       "url": "parts/unsorted_03.glb",
-      "uncompressedBytes": 16156,
-      "compressedBytes": 10504,
+      "uncompressedBytes": 15880,
+      "compressedBytes": 10508,
       "attributesByteExact": true,
       "triangleTopologyExact": true,
       "nodeTransformsExact": true,
       "pinnedThree166Decoder": true,
-      "compressedViews": 4
+      "compressedViews": 4,
+      "rearUnstretch20261028": true
     },
     {
       "id": "unsorted_04",
       "url": "parts/unsorted_04.glb",
-      "uncompressedBytes": 23740,
-      "compressedBytes": 15332,
+      "uncompressedBytes": 23460,
+      "compressedBytes": 15420,
       "attributesByteExact": true,
       "triangleTopologyExact": true,
       "nodeTransformsExact": true,
       "pinnedThree166Decoder": true,
-      "compressedViews": 4
+      "compressedViews": 4,
+      "rearUnstretch20261028": true
     },
     {
       "id": "unsorted_05",
       "url": "parts/unsorted_05.glb",
-      "uncompressedBytes": 36880,
-      "compressedBytes": 16624,
+      "uncompressedBytes": 36596,
+      "compressedBytes": 16632,
       "attributesByteExact": true,
       "triangleTopologyExact": true,
       "nodeTransformsExact": true,
       "pinnedThree166Decoder": true,
-      "compressedViews": 4
+      "compressedViews": 4,
+      "rearUnstretch20261028": true
     },
     {
       "id": "unsorted_06",
@@ -319,24 +331,26 @@
     {
       "id": "unsorted_09",
       "url": "parts/unsorted_09.glb",
-      "uncompressedBytes": 33824,
-      "compressedBytes": 15964,
+      "uncompressedBytes": 33540,
+      "compressedBytes": 16008,
       "attributesByteExact": true,
       "triangleTopologyExact": true,
       "nodeTransformsExact": true,
       "pinnedThree166Decoder": true,
-      "compressedViews": 4
+      "compressedViews": 4,
+      "rearUnstretch20261028": true
     },
     {
       "id": "unsorted_10",
       "url": "parts/unsorted_10.glb",
-      "uncompressedBytes": 90080,
-      "compressedBytes": 39720,
+      "uncompressedBytes": 89792,
+      "compressedBytes": 39844,
       "attributesByteExact": true,
       "triangleTopologyExact": true,
       "nodeTransformsExact": true,
       "pinnedThree166Decoder": true,
-      "compressedViews": 4
+      "compressedViews": 4,
+      "rearUnstretch20261028": true
     },
     {
       "id": "wheel_FL",
@@ -394,6 +408,7 @@
       "compressedViews": 7
     }
   ],
-  "totalUncompressedBytes": 21126180,
-  "totalCompressedBytes": 9884184
+  "totalUncompressedBytes": 21108804,
+  "totalCompressedBytes": 9891992,
+  "rearUnstretch20261028": "14 models re-encoded after the approved rear un-stretch (tools/foundation/unstretch_rear.mjs); other files are byte-identical to the foundation delivery."
 }

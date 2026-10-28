@@ -31,7 +31,9 @@ The pre-session camera presets come from `1169290`: Side 0° elevation at y=0.40
 
 Wheel assemblies retain rim, tyre and brake zones, with pivots at the authored hubs. Other pivot locations are group-bbox centres, not verified hinges. [`manifest.json`](../../model/manifest.json) declares IDs, slots, pivots, zones and rigid groups; [`build.json`](../../build.json) defaults to no lift and no hidden parts. The console API and URL hash are described in the [project README](../../README.md).
 
-The rear overhang is inherited from earlier preparation: 5.170 − 0.950 − 2.850 = **1.370 m**. Toyota UAE's 2021 sheet distinguishes 5,095 mm EXR and 5,170 mm GXR GT with grade-specific bumper equipment. It does not locate the full 75 mm difference at the rear; **1.295 m is conditional arithmetic, not a verified Toyota overhang**. [Sources and investigation](overhang-notes.md). Geometry is unchanged.
+The rear overhang is inherited from earlier preparation: 5.170 − 0.950 − 2.850 = **1.370 m**. Toyota UAE's 2021 sheet distinguishes 5,095 mm EXR and 5,170 mm GXR GT with grade-specific bumper equipment. It does not locate the full 75 mm difference at the rear; **1.295 m is conditional arithmetic, not a verified Toyota overhang**. [Sources and investigation](overhang-notes.md). This session left the geometry unchanged.
+
+**Superseded 28 October 2026:** the rear stretch was undone. The rear overhang is now 1.200 m and the body 5.000 m; see the [rear overhang correction](../rear-overhang/README.md). The tables, [scale audit](scale-audit.json) and captures on this page describe the 5.170 m delivery.
 
 ## Delivery and browser validation
 
