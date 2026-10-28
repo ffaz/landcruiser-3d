@@ -121,3 +121,5 @@ root scale and all model/build hashes must stay intact. Each explicit final
 render must use one screen render, no target render, and unchanged draw/triangle
 counts and shadow-map settings. Temporary render suppression speeds capture;
 it is not an iPad performance measurement.
+
+Cream follow-up checks also verify unchanged original gain uniforms, reuse of the existing floor/contact texture, and Base clipping/restoration without buffer changes.

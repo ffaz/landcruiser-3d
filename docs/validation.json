@@ -1,8 +1,6 @@
 {
-  "session": "Cream-only satin showroom refinement",
-  "testedAt": "2026-10-28T15:24:19.276Z",
-  "sourceSha256": "8a66d4b52c5d75b75713ba22f1cf5664c6957b6f01c9452c519240f51a00084d",
-  "baselineSourceSha256": "a11ab741b5f39304c48c2e0de168ecd200bc6cf2f94366587a3c6ad985469071",
+  "session": "Cream low-view contact band and outline follow-up",
+  "sourceSha256": "db753a45b4966e17837a745a034083dcf133f3a1ab6928e4d21ba4682fac55d3",
   "passed": true,
   "consoleErrors": 0,
   "checks": {
@@ -16,6 +14,10 @@
     "creamBackgroundUnchanged": true,
     "bakedPanelSettingsUnchanged": true,
     "creamGeometryUnchanged": true,
+    "creamOriginalGainsPreserved": true,
+    "creamUsesExistingFloor": true,
+    "creamBaseClipping": true,
+    "creamBaseRestores": true,
     "noExtraDrawsOrTriangles": true,
     "noAdditionalShadowMaps": true,
     "allFivePresetCamerasUnchanged": true,
@@ -35,125 +37,36 @@
     "geometryAndScaleIntactAfterEdits": true,
     "modelAndBuildFilesUnchanged": true
   },
-  "geometryVerification": "Byte snapshots and attribute identity checks for POSITION/NORMAL/COLOR_0, all vehicle local/world transforms and root scale 1.0; 50 mm rigid body lift preserves every wheel and source buffer then resets; frozen SHA-256 checks cover all model/build files.",
-  "modelAndBuildFilesUnchanged": true,
-  "baselineAssetFiles": 38,
-  "claySlateFullScreenshotComparisons": {
+  "studioComparisons": {
     "count": 12,
-    "differingPixels": 0,
-    "evidence": "docs/cream-refinement/comparisons.json"
+    "differingPixels": 0
   },
-  "creamInitialAndReturnIdentical": true,
-  "paint": {
-    "authored": "#f4f4ef",
-    "roughness": 0.38,
-    "clearcoat": 0.55,
-    "clearcoatRoughness": 0.2,
-    "unchanged": true
+  "renderer": {
+    "drawCalls": 167,
+    "triangles": 841958,
+    "shadowEnabled": false,
+    "shadowAutoUpdate": false,
+    "keyShadowMapSize": [
+      2048,
+      2048
+    ]
   },
-  "sampleEvidence": "docs/cream-refinement/pixels.json",
-  "lightDirection": {
-    "bonnetBrighterThanDoorPercent": 12.642502629165332,
-    "roofBrighterThanDoorPercent": 10.339391154423062,
-    "topAverageBrighterThanDoorPercent": 11.490946891794195,
-    "doorDarkerThanTopAveragePercent": 10.30661879923449
-  },
-  "contactShadow": {
-    "samples": [
-      "groundFrontLeft",
-      "groundRearLeft"
-    ],
-    "frontDarkerPercent": 24.77725478059908,
-    "rearDarkerPercent": 17.249257156366028,
-    "combinedDarkerPercent": 19.431769998972538,
-    "method": "1 - sum(after displayed sRGB brightness)/sum(before displayed sRGB brightness)"
-  },
-  "changedLookValues": [
-    {
-      "name": "Cream paint direct key gain",
-      "old": 1,
-      "new": 9
-    },
-    {
-      "name": "Cream paint indirect diffuse gain",
-      "old": 1,
-      "new": 2.5
-    },
-    {
-      "name": "Cream paint shader key direction (world)",
-      "old": [
-        -1.5,
-        8,
-        2
-      ],
-      "new": [
-        -3.8,
-        10,
-        0.1
-      ],
-      "oldNormalized": [
-        -0.17896499588156806,
-        0.9544799780350297,
-        0.23861999450875743
-      ],
-      "newNormalized": [
-        -0.3552022418153508,
-        0.9347427416193442,
-        0.009347427416193443
-      ],
-      "note": "Paint-only shader direction; shared light position remains unchanged."
-    },
-    {
-      "name": "Cream paint key tint (sRGB)",
-      "old": "#ffffff",
-      "new": "#fff0d6"
-    },
-    {
-      "name": "Cream contact near-depth exponent",
-      "old": 24,
-      "new": 16.5
-    },
-    {
-      "name": "Cream near-contact low-depth blend band",
-      "old": "No low-depth mask (all caster depths share exponent24)",
-      "new": [
-        0.88,
-        0.94
-      ],
-      "note": "Low casters only: blends original exponent24 toward16.5 within proximity band; broad contact term and blur kernel unchanged."
-    }
-  ],
-  "performance": {
-    "conditions": "1366x1024 CSS pixels, DPR1, native product renderer, cream Quarter auto-rotate, four warmup frames then24 measured rAF intervals; no frame suppression",
-    "limitation": "Emulated WebKit, not a physical iPad. CPU and software GPU timing depends on host workload; not a hardware performance claim.",
-    "after": {
-      "frameIntervals": {
-        "samples": 24,
-        "meanMs": 488.125,
-        "p50ms": 489,
-        "p95ms": 499,
-        "minMs": 453,
-        "maxMs": 569
-      },
-      "drawCalls": 167,
-      "triangles": 841958
-    },
-    "beforeFrameTime": "Not remeasured in this refinement; no before/after timing claim."
-  },
-  "sizes": {
-    "indexBeforeBytes": 64685,
-    "indexAfterBytes": 67388,
-    "modelGlbBytes": 9884184
-  },
+  "baselineAssetFiles": 38,
+  "geometryVerification": "Runtime byte snapshots and identity checks of POSITION/NORMAL/COLOR_0, all car transforms and root scale 1; original model/build hashes preserved. Existing floor geometry and transform are unchanged; only material and visibility switch in Cream.",
+  "pixels": "docs/cream-edges/pixels.json",
+  "evidence": "docs/cream-edges/README.md",
   "retainedEvidence": {
-    "foundation": "docs/foundation/README.md",
-    "priorClayCalibration": "docs/clay-brightness/README.md",
-    "initialTouchControls": "docs/clay/core-controls.json"
+    "priorCream": "docs/cream-refinement/README.md",
+    "foundation": "docs/foundation/README.md"
   },
   "limitations": [
-    "Physical iPad Safari performance was not measured.",
-    "The level Side camera hides horizontal bonnet/roof tops; edge patches are identified separately.",
-    "Far-side tyre contacts are occluded; contact-density samples use both visible left tyre contacts."
+    "Physical iPad performance unmeasured.",
+    "Boundary 7x7 patches can include adjacent background; interior patches are separately identified."
   ],
-  "evidence": "docs/cream-refinement/README.md"
+  "webkit": {
+    "passed": true,
+    "errors": [],
+    "evidence": "docs/cream-edges/webkit.json",
+    "emulated": true
+  }
 }

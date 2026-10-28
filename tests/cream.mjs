@@ -53,6 +53,7 @@ car.traverse(o=>{if(o.isMesh)for(const name of ['position','normal','color']){
 const __creamMatrices=[];car.traverse(o=>__creamMatrices.push([o,o.matrix.toArray(),o.matrixWorld.toArray()]));
 const __creamPoses=[];car.traverse(o=>{if(o.isMesh){const m=Array.isArray(o.material)?o.material[0]:o.material;__creamPoses.push({o,position:o.getWorldPosition(new THREE.Vector3()),wheel:m.userData.partId?.startsWith('wheel_')});}});
 window.__creamRegression={
+ groundState(){return{floorVisible:floor.visible,oldContactVisible:contactPlane.visible,sameTexture:floor.material.map===contactMap.texture,clipCount:floor.material.clippingPlanes?.length??0,buffers:this.buffersIntact()}},
  resume(){if(window.__creamRegressionPaused){window.__creamRegressionPaused=false;animate();}},
  pause(){window.__creamRegressionPaused=true;cancelAnimationFrame(window.__creamRegressionRaf);},
  isTweening:()=>!!tween,
@@ -174,6 +175,13 @@ try{
  checks.creamBackgroundUnchanged=cream.background===baseCream.background&&cream.theme===baseCream.theme;
  checks.bakedPanelSettingsUnchanged=equal(cream.baked,baseCream.baked);
  checks.creamGeometryUnchanged=cream.geometryIntact;
+ checks.creamOriginalGainsPreserved=baseCream.cream?['uCreamKeyGain','uCreamFillGain','uCreamKeyDirection','uCreamKeyTint','uCreamContactPower','uCreamContactBand'].every(k=>equal(cream.cream[k],baseCream.cream[k])):true;
+ checks.creamUsesExistingFloor=await page.evaluate(()=>{const g=__creamRegression.groundState();return g.floorVisible&&!g.oldContactVisible&&g.sameTexture});
+ await page.evaluate(()=>document.querySelector('#baseToggle').click());await draw();
+ checks.creamBaseClipping=await page.evaluate(()=>{const g=__creamRegression.groundState();return g.floorVisible&&!g.oldContactVisible&&g.clipCount===4&&g.buffers});
+ await page.evaluate(()=>document.querySelector('#baseToggle').click());await draw();
+ checks.creamBaseRestores=await page.evaluate(()=>{const g=__creamRegression.groundState();return g.floorVisible&&!g.oldContactVisible&&g.clipCount===0});
+
  checks.noExtraDrawsOrTriangles=equal(cream.renderer,baseCream.renderer);
  checks.noAdditionalShadowMaps=cream.renderer.shadowEnabled===false&&equal(cream.contactMapSize,[1024,1024])&&equal(cream.contactBlurSize,[1024,1024]);
  let allCameras=true;

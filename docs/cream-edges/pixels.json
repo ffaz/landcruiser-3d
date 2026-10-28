@@ -1,0 +1,639 @@
+{
+  "sourceSha256": "db753a45b4966e17837a745a034083dcf133f3a1ab6928e4d21ba4682fac55d3",
+  "samples": {
+    "front": {
+      "before": {
+        "frontBonnet": {
+          "pixel": [
+            720,
+            375
+          ],
+          "hex": "#f3f1ed"
+        },
+        "frontBonnetEdge": {
+          "pixel": [
+            366,
+            377
+          ],
+          "hex": "#f1efea"
+        },
+        "frontBonnetBackground": {
+          "pixel": [
+            340,
+            360
+          ],
+          "hex": "#eee8e0"
+        },
+        "frontBumper": {
+          "pixel": [
+            445,
+            551
+          ],
+          "hex": "#e0dcd5"
+        },
+        "background": {
+          "pixel": [
+            720,
+            100
+          ],
+          "hex": "#eee8e0"
+        }
+      },
+      "after": {
+        "frontBonnet": {
+          "pixel": [
+            720,
+            375
+          ],
+          "hex": "#f3f1ed"
+        },
+        "frontBonnetEdge": {
+          "pixel": [
+            366,
+            377
+          ],
+          "hex": "#f1efea"
+        },
+        "frontBonnetBackground": {
+          "pixel": [
+            340,
+            360
+          ],
+          "hex": "#eee8e0"
+        },
+        "frontBumper": {
+          "pixel": [
+            445,
+            551
+          ],
+          "hex": "#e0dcd5"
+        },
+        "background": {
+          "pixel": [
+            720,
+            100
+          ],
+          "hex": "#eee8e0"
+        }
+      }
+    },
+    "side": {
+      "before": {
+        "bonnet": {
+          "pixel": [
+            341,
+            422
+          ],
+          "hex": "#f4f2ef"
+        },
+        "roof": {
+          "pixel": [
+            859,
+            288
+          ],
+          "hex": "#f1efec"
+        },
+        "frontDoor": {
+          "pixel": [
+            634,
+            468
+          ],
+          "hex": "#dad8d4"
+        },
+        "lowerDoor": {
+          "pixel": [
+            635,
+            551
+          ],
+          "hex": "#e0deda"
+        },
+        "background": {
+          "pixel": [
+            720,
+            140
+          ],
+          "hex": "#eee8e0"
+        },
+        "tyreRubber": {
+          "pixel": [
+            330,
+            539
+          ],
+          "hex": "#262727"
+        },
+        "wheelFace": {
+          "pixel": [
+            353,
+            599
+          ],
+          "hex": "#3b3f42"
+        },
+        "sideGlass": {
+          "pixel": [
+            624,
+            357
+          ],
+          "hex": "#67696b"
+        },
+        "groundFrontLeft": {
+          "pixel": [
+            330,
+            718
+          ],
+          "hex": "#ece6dd"
+        },
+        "groundRearLeft": {
+          "pixel": [
+            1005,
+            718
+          ],
+          "hex": "#ede7df"
+        },
+        "rearQuarter": {
+          "pixel": [
+            1170,
+            440
+          ],
+          "hex": "#e2e0dd"
+        },
+        "rearQuarterBackground": {
+          "pixel": [
+            1325,
+            440
+          ],
+          "hex": "#e9e3db"
+        },
+        "sill": {
+          "pixel": [
+            700,
+            633
+          ],
+          "hex": "#bebebc"
+        },
+        "frontWing": {
+          "pixel": [
+            267,
+            472
+          ],
+          "hex": "#e9e7e3"
+        },
+        "frontWingBackground": {
+          "pixel": [
+            267,
+            411
+          ],
+          "hex": "#ede7df"
+        },
+        "spoilerTip": {
+          "pixel": [
+            1234,
+            291
+          ],
+          "hex": "#eeece8"
+        },
+        "spoilerBackground": {
+          "pixel": [
+            1234,
+            275
+          ],
+          "hex": "#eae4dc"
+        },
+        "bonnetBackground": {
+          "pixel": [
+            341,
+            405
+          ],
+          "hex": "#ede8e0"
+        },
+        "roofBackground": {
+          "pixel": [
+            859,
+            250
+          ],
+          "hex": "#eee9e1"
+        }
+      },
+      "after": {
+        "bonnet": {
+          "pixel": [
+            341,
+            422
+          ],
+          "hex": "#f4f2ef"
+        },
+        "roof": {
+          "pixel": [
+            859,
+            288
+          ],
+          "hex": "#f1efec"
+        },
+        "frontDoor": {
+          "pixel": [
+            634,
+            468
+          ],
+          "hex": "#dad8d4"
+        },
+        "lowerDoor": {
+          "pixel": [
+            635,
+            551
+          ],
+          "hex": "#e0deda"
+        },
+        "background": {
+          "pixel": [
+            720,
+            140
+          ],
+          "hex": "#eee8e0"
+        },
+        "tyreRubber": {
+          "pixel": [
+            330,
+            539
+          ],
+          "hex": "#262727"
+        },
+        "wheelFace": {
+          "pixel": [
+            353,
+            599
+          ],
+          "hex": "#3b3f42"
+        },
+        "sideGlass": {
+          "pixel": [
+            624,
+            357
+          ],
+          "hex": "#67696b"
+        },
+        "groundFrontLeft": {
+          "pixel": [
+            330,
+            718
+          ],
+          "hex": "#dcd8d0"
+        },
+        "groundRearLeft": {
+          "pixel": [
+            1005,
+            718
+          ],
+          "hex": "#ddd8d1"
+        },
+        "rearQuarter": {
+          "pixel": [
+            1170,
+            440
+          ],
+          "hex": "#e2e0dd"
+        },
+        "rearQuarterBackground": {
+          "pixel": [
+            1325,
+            440
+          ],
+          "hex": "#e9e3db"
+        },
+        "sill": {
+          "pixel": [
+            700,
+            633
+          ],
+          "hex": "#bebebc"
+        },
+        "frontWing": {
+          "pixel": [
+            267,
+            472
+          ],
+          "hex": "#e9e7e3"
+        },
+        "frontWingBackground": {
+          "pixel": [
+            267,
+            411
+          ],
+          "hex": "#ede7df"
+        },
+        "spoilerTip": {
+          "pixel": [
+            1234,
+            291
+          ],
+          "hex": "#edebe7"
+        },
+        "spoilerBackground": {
+          "pixel": [
+            1234,
+            275
+          ],
+          "hex": "#eae4dc"
+        },
+        "bonnetBackground": {
+          "pixel": [
+            341,
+            405
+          ],
+          "hex": "#ede8e0"
+        },
+        "roofBackground": {
+          "pixel": [
+            859,
+            250
+          ],
+          "hex": "#eee9e1"
+        }
+      }
+    },
+    "quarter": {
+      "before": {
+        "bonnet": {
+          "pixel": [
+            472,
+            420
+          ],
+          "hex": "#f3f1ee"
+        },
+        "roof": {
+          "pixel": [
+            861,
+            206
+          ],
+          "hex": "#efece7"
+        },
+        "frontDoor": {
+          "pixel": [
+            871,
+            467
+          ],
+          "hex": "#d8d6d2"
+        },
+        "lowerDoor": {
+          "pixel": [
+            867,
+            559
+          ],
+          "hex": "#dfddd8"
+        },
+        "background": {
+          "pixel": [
+            720,
+            140
+          ],
+          "hex": "#eee8e0"
+        },
+        "tyreRubber": {
+          "pixel": [
+            608,
+            599
+          ],
+          "hex": "#252526"
+        },
+        "wheelFace": {
+          "pixel": [
+            632,
+            664
+          ],
+          "hex": "#35393c"
+        },
+        "sideGlass": {
+          "pixel": [
+            824,
+            332
+          ],
+          "hex": "#293134"
+        },
+        "groundFrontLeft": {
+          "pixel": [
+            570,
+            806
+          ],
+          "hex": "#1f1e1d"
+        },
+        "groundRearLeft": {
+          "pixel": [
+            1090,
+            673
+          ],
+          "hex": "#53514e"
+        }
+      },
+      "after": {
+        "bonnet": {
+          "pixel": [
+            472,
+            420
+          ],
+          "hex": "#f3f1ee"
+        },
+        "roof": {
+          "pixel": [
+            861,
+            206
+          ],
+          "hex": "#efece7"
+        },
+        "frontDoor": {
+          "pixel": [
+            871,
+            467
+          ],
+          "hex": "#d8d6d2"
+        },
+        "lowerDoor": {
+          "pixel": [
+            867,
+            559
+          ],
+          "hex": "#dfddd8"
+        },
+        "background": {
+          "pixel": [
+            720,
+            140
+          ],
+          "hex": "#eee8e0"
+        },
+        "tyreRubber": {
+          "pixel": [
+            608,
+            599
+          ],
+          "hex": "#252526"
+        },
+        "wheelFace": {
+          "pixel": [
+            632,
+            664
+          ],
+          "hex": "#35393c"
+        },
+        "sideGlass": {
+          "pixel": [
+            824,
+            332
+          ],
+          "hex": "#293134"
+        },
+        "groundFrontLeft": {
+          "pixel": [
+            570,
+            806
+          ],
+          "hex": "#1e1d1c"
+        },
+        "groundRearLeft": {
+          "pixel": [
+            1090,
+            673
+          ],
+          "hex": "#4e4c49"
+        }
+      }
+    },
+    "rear": {
+      "before": {
+        "tailgate": {
+          "pixel": [
+            720,
+            418
+          ],
+          "hex": "#a9a8a6"
+        },
+        "tailgateLower": {
+          "pixel": [
+            720,
+            565
+          ],
+          "hex": "#a09f9d"
+        },
+        "rearBumper": {
+          "pixel": [
+            720,
+            694
+          ],
+          "hex": "#a09f9d"
+        },
+        "background": {
+          "pixel": [
+            720,
+            100
+          ],
+          "hex": "#eee8e0"
+        },
+        "tailgateOuter": {
+          "pixel": [
+            1000,
+            581
+          ],
+          "hex": "#9e9e9b"
+        }
+      },
+      "after": {
+        "tailgate": {
+          "pixel": [
+            720,
+            418
+          ],
+          "hex": "#a9a8a6"
+        },
+        "tailgateLower": {
+          "pixel": [
+            720,
+            565
+          ],
+          "hex": "#a09f9d"
+        },
+        "rearBumper": {
+          "pixel": [
+            720,
+            694
+          ],
+          "hex": "#a09f9d"
+        },
+        "background": {
+          "pixel": [
+            720,
+            100
+          ],
+          "hex": "#eee8e0"
+        },
+        "tailgateOuter": {
+          "pixel": [
+            1000,
+            581
+          ],
+          "hex": "#9e9e9b"
+        }
+      }
+    }
+  },
+  "edgePatches": {
+    "bonnetBoundary": {
+      "pixel": [
+        329,
+        429
+      ],
+      "note": "7x7 patch centred on curved silhouette; includes adjacent background where applicable",
+      "before": "#f3f0ed",
+      "after": "#f0eeea"
+    },
+    "roofBoundary": {
+      "pixel": [
+        710,
+        287
+      ],
+      "note": "Boundary-centred mixed 7x7 patch, including adjacent background",
+      "before": "#e6e5e2",
+      "after": "#e1dfdd"
+    },
+    "spoilerBoundary": {
+      "pixel": [
+        1244,
+        283
+      ],
+      "note": "7x7 patch centred on curved silhouette; includes adjacent background where applicable",
+      "before": "#ece8e2",
+      "after": "#e7e4dc"
+    },
+    "wingBoundary": {
+      "pixel": [
+        272,
+        435
+      ],
+      "note": "Boundary-centred mixed 7x7 patch",
+      "before": "#f3f1ed",
+      "after": "#f2efec"
+    }
+  },
+  "shadowWidth": {
+    "before": {
+      "threshold": "2% displayed brightness reduction versus shadow-hidden reference at x700",
+      "pixels": 15,
+      "firstY": 698,
+      "lastY": 712
+    },
+    "after": {
+      "threshold": "2% displayed brightness reduction versus shadow-hidden reference at x700",
+      "pixels": 36,
+      "firstY": 691,
+      "lastY": 726
+    }
+  },
+  "imageHashes": {
+    "before/rear.png": "9be26685eaba432fd620dce55a88e076729116cbb054091f3a02fd7fcbbc2235",
+    "before/quarter.png": "5b476356ce242065b8e308751b2123d4c2ff132883bb3eca56f98b4709ba006d",
+    "before/side.png": "71ab8fa6ba39fdf70b7cb2a18293c579a2b547c8f4302d7c9d5d43a17f11db3b",
+    "before/side-shadow-hidden.png": "1e5f08cf67b66d63bd4c19294e5ce28ad690ab36ec6bc61389b5e620f48793a0",
+    "before/front.png": "518ffbffc5fa5e255a2cc9ac4c7e2f1922b90504efcd7541adb6f24f451402d8",
+    "after/rear.png": "0dc4a77f40c614a9ff82696ba3203bc7e279d34810747101d15e91ac832d5ca2",
+    "after/quarter.png": "0bb6fa367dd70f0cb44d7984038673c953407054f370a41a4e62729eae8176ca",
+    "after/side.png": "be19024d25bd2724c1a1457366ce57204c134eb38388c50537a39741bf0b56bb",
+    "after/side-shadow-hidden.png": "e63f364801a85698415bcf65e3f482f838bfbe61c92f8ce3ca3fdc6ca0816cf4",
+    "after/front.png": "93a94f1ad265680a58b5b7cda13b51f428a0b237b2fe862ac561c3c5c645a04f"
+  }
+}

@@ -10,6 +10,8 @@ The satin collectible materials and baked crevice/edge shading remain. No screen
 
 ## Cream studio
 
+[Latest contact-band and silhouette refinement, before/after screenshots and gain explanation](docs/cream-edges/README.md).
+
 Cream is the main studio for the stock base and future workshop. Its satin paint uses soft overhead direction, clean warm white highlights and gentle fill, while the existing charcoal glass, near-black tyres, dark grey wheels, trim and pale background retain their materials. The existing contact bake adds density close to the tyres. Geometry, cameras, build data and baked shading strengths are unchanged. [Full-size before/after PNGs, sampled pixels and every changed value](docs/cream-refinement/README.md).
 
 ## Clay studio

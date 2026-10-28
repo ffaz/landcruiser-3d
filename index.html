@@ -285,7 +285,8 @@ const bakedUniforms={
 // Cream changes painted surfaces only; the other studios retain their originals.
 const CREAM_LOOK=Object.freeze({keyGain:9.0,fillGain:2.5,keyDirection:[-3.8,10,.1],keyTint:'#fff0d6',nearContactPower:16.5,nearContactBand:[.88,.94]});
 const creamBakedUniforms={uCreamKeyGain:{value:CREAM_LOOK.keyGain},uCreamFillGain:{value:CREAM_LOOK.fillGain},
- uCreamKeyDirection:{value:new THREE.Vector3(...CREAM_LOOK.keyDirection).normalize()},uCreamKeyTint:{value:new THREE.Color(CREAM_LOOK.keyTint)},uCreamContactPower:{value:CREAM_LOOK.nearContactPower},uCreamContactBand:{value:new THREE.Vector2(...CREAM_LOOK.nearContactBand)}};
+ uCreamKeyDirection:{value:new THREE.Vector3(...CREAM_LOOK.keyDirection).normalize()},uCreamKeyTint:{value:new THREE.Color(CREAM_LOOK.keyTint)},uCreamContactPower:{value:CREAM_LOOK.nearContactPower},uCreamContactBand:{value:new THREE.Vector2(...CREAM_LOOK.nearContactBand)},
+ uCreamGrazingFloor:{value:.20},uCreamGrazingRange:{value:new THREE.Vector2(.03,.30)}};
 // Clay has its own material programs/uniforms; the original studio math is unchanged.
 const CLAY_LOOK=Object.freeze({ao:.65,ridge:.52,valley:.72});
 const clayBakedUniforms={uBakedAO:{value:CLAY_LOOK.ao},uBakedRidge:{value:CLAY_LOOK.ridge},
@@ -349,16 +350,17 @@ function useCreamPaintShading(material){
  const bakedCompile=material.onBeforeCompile;
  material.onBeforeCompile=shader=>{
   bakedCompile(shader);Object.assign(shader.uniforms,creamBakedUniforms);
+  if(material.userData.partId==='spoiler'){shader.uniforms.uCreamGrazingFloor={value:.02};shader.uniforms.uCreamGrazingRange={value:new THREE.Vector2(.03,.85)};}
   shader.fragmentShader=shader.fragmentShader.replace('#include <common>',
-   '#include <common>\nuniform float uCreamKeyGain; uniform float uCreamFillGain; uniform vec3 uCreamKeyDirection; uniform vec3 uCreamKeyTint;');
+   '#include <common>\nuniform float uCreamKeyGain; uniform float uCreamFillGain; uniform vec3 uCreamKeyDirection; uniform vec3 uCreamKeyTint; uniform float uCreamGrazingFloor; uniform vec2 uCreamGrazingRange;');
   const creamLights=THREE.ShaderChunk.lights_fragment_begin.replace('getDirectionalLightInfo( directionalLight, directLight );',
    'getDirectionalLightInfo( directionalLight, directLight );\nif(UNROLLED_LOOP_INDEX==0)directLight.direction=normalize(mat3(viewMatrix)*uCreamKeyDirection);');
   shader.fragmentShader=shader.fragmentShader.replace('#include <lights_fragment_begin>',creamLights);
   // Weight the existing key/fill before the unchanged baked cavity and ridge math.
   shader.fragmentShader=shader.fragmentShader.replace('#include <aomap_fragment>',
-   'reflectedLight.directDiffuse*=uCreamKeyGain*uCreamKeyTint;\nreflectedLight.indirectDiffuse*=uCreamFillGain;\n#include <aomap_fragment>');
+   'float creamFacing=abs(dot(geometryNormal,geometryViewDir));\nfloat creamLowView=1.0-smoothstep(0.04,0.14,abs(cameraPosition.y)/max(length(cameraPosition),0.001));\nfloat creamEdgeGain=mix(1.0,mix(uCreamGrazingFloor,1.0,smoothstep(uCreamGrazingRange.x,uCreamGrazingRange.y,creamFacing)),creamLowView);\nreflectedLight.directDiffuse*=uCreamKeyGain*uCreamKeyTint*creamEdgeGain;\nreflectedLight.indirectDiffuse*=uCreamFillGain;\n#include <aomap_fragment>');
  };
- material.customProgramCacheKey=()=> 'lc200-cream-paint-lighting-v2';
+ material.customProgramCacheKey=()=> 'lc200-cream-paint-lighting-v3';
  return material;
 }
 function bindBakedAttribute(root){
@@ -379,13 +381,46 @@ function mesh(geo,mat,parent=car){const m=new THREE.Mesh(geo,mat);m.castShadow=t
 // Seamless, colourless floor receives directional light shadows over the CSS studio.
 const floor=mesh(new THREE.PlaneGeometry(200,200),new THREE.MeshBasicMaterial({transparent:true,opacity:0,depthWrite:false}),scene);
 floor.rotation.x=-Math.PI/2;floor.position.y=0;floor.castShadow=false;floor.receiveShadow=false;floor.visible=false;floor.renderOrder=1;
-// Contact shadow comes from the actual underside, not a painted ellipse.
+const originalFloorMaterial=floor.material;
+// Baked underside contacts stay aligned; Cream adds a soft band for low views.
 const contactMap=new THREE.WebGLRenderTarget(1024,1024);
 const contactBlur=new THREE.WebGLRenderTarget(1024,1024);
 const contactMaterial=new THREE.MeshBasicMaterial({map:contactMap.texture,transparent:true,depthWrite:false,side:THREE.DoubleSide,toneMapped:false});
 const contactPlane=mesh(new THREE.PlaneGeometry(6.8,3.8),contactMaterial,scene);
 contactPlane.rotation.x=-Math.PI/2;contactPlane.scale.y=-1;contactPlane.position.y=.001;
 contactPlane.castShadow=false;contactPlane.receiveShadow=false;contactPlane.renderOrder=2;
+// The existing large floor gives the low Side camera room for a soft contact band.
+// Reuse the baked tyre contacts plus a smooth analytic band in the same ground render.
+const creamGroundUniforms={uCreamGroundSpread:{value:new THREE.Vector2(1.12,3.2)},uCreamGroundOpacity:{value:.20},
+ uCreamGroundTint:{value:new THREE.Color('#222426')},uCreamGroundAngle:{value:new THREE.Vector2(.04,.12)}};
+const creamGroundMaterial=new THREE.MeshBasicMaterial({map:contactMap.texture,transparent:true,depthWrite:false,side:THREE.DoubleSide,toneMapped:false});
+creamGroundMaterial.onBeforeCompile=shader=>{
+ Object.assign(shader.uniforms,creamGroundUniforms);
+ shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec2 vCreamGroundXZ;');
+ shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvCreamGroundXZ=(modelMatrix*vec4(transformed,1.0)).xz;');
+ shader.fragmentShader=shader.fragmentShader.replace('#include <common>',
+  '#include <common>\nvarying vec2 vCreamGroundXZ; uniform vec2 uCreamGroundSpread; uniform float uCreamGroundOpacity; uniform vec3 uCreamGroundTint; uniform vec2 uCreamGroundAngle;');
+ shader.fragmentShader=shader.fragmentShader.replace('#include <map_fragment>',`
+  float floorAngle=abs(cameraPosition.y)/max(length(cameraPosition),0.001);
+  float lowView=1.0-smoothstep(uCreamGroundAngle.x,uCreamGroundAngle.y,floorAngle);
+  vec2 spread=mix(vec2(1.0),uCreamGroundSpread,lowView);
+  vec2 tightUV=vCreamGroundXZ/vec2(6.8,3.8)+0.5;
+  vec2 broadUV=(tightUV-0.5)/spread+0.5;
+  if(any(lessThan(broadUV,vec2(0.0)))||any(greaterThan(broadUV,vec2(1.0))))discard;
+  vec4 tight=texture2D(map,clamp(tightUV,0.0,1.0));
+  tight*=step(0.0,tightUV.x)*step(tightUV.x,1.0)*step(0.0,tightUV.y)*step(tightUV.y,1.0);
+  vec2 q=vCreamGroundXZ/vec2(3.0,2.5);
+  float feather=(1.0-smoothstep(0.8,1.0,abs(broadUV.x-0.5)*2.0))*(1.0-smoothstep(0.8,1.0,abs(broadUV.y-0.5)*2.0));
+  float band=exp(-2.0*(q.x*q.x*q.x*q.x+q.y*q.y))*uCreamGroundOpacity*lowView*feather;
+  float added=band*(1.0-tight.a),combined=tight.a+added;
+  diffuseColor*=vec4((tight.rgb*tight.a+uCreamGroundTint*added)/max(combined,0.000001),combined);
+ `);
+};
+creamGroundMaterial.customProgramCacheKey=()=> 'lc200-cream-ground-band-v1';
+function showContactShadow(){
+ const cream=studioMode==='cream';floor.material=cream?creamGroundMaterial:originalFloorMaterial;
+ floor.visible=cream;contactPlane.visible=!cream;
+}
 const contactCamera=new THREE.OrthographicCamera(-3.4,3.4,1.9,-1.9,.001,1.8);
 contactCamera.position.set(0,-.001,0);contactCamera.up.set(0,0,1);contactCamera.lookAt(0,1,0);
 const contactTint={value:new THREE.Color(0x000000)},contactNearTint={value:1},contactNearStrength={value:1};
@@ -414,7 +449,7 @@ function bakeContactShadow(){
   blurQuad.material=blurV;blurV.uniforms.tDiffuse.value=contactBlur.texture;blurV.uniforms.v.value=width/1024;
   renderer.setRenderTarget(contactMap);renderer.clear();renderer.render(blurScene,blurCamera);
  }
- floor.visible=false;contactPlane.visible=true;renderer.toneMapping=oldTone;renderer.shadowMap.enabled=oldShadows;
+ showContactShadow();renderer.toneMapping=oldTone;renderer.shadowMap.enabled=oldShadows;
  renderer.setClearColor(oldClear,oldAlpha);renderer.setRenderTarget(oldTarget);renderer.shadowMap.needsUpdate=true;
 }
 
@@ -807,6 +842,7 @@ document.getElementById('baseToggle').addEventListener('click',()=>{
  const button=document.getElementById('baseToggle');button.setAttribute('aria-pressed',String(plinth.visible));
  button.textContent=plinth.visible?'Base on':'Base';button.title=plinth.visible?'Hide the collectible display base':'Show the collectible display base';
  contactMaterial.clippingPlanes=plinth.visible?baseShadowClip:null;contactMaterial.needsUpdate=true;
+ creamGroundMaterial.clippingPlanes=contactMaterial.clippingPlanes;creamGroundMaterial.needsUpdate=true;
  // Fit the whole display on toggle, including when the user was zoomed in.
  tween=null;setAuto(false);const id=activePreset||'quarter';activePreset=id;activeView(id);placeView(id);requestRender();
 });
