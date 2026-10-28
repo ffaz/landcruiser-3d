@@ -1,0 +1,236 @@
+{
+  "capturedAt": "2026-10-28T13:42:48.443Z",
+  "url": "https://ffaz.github.io/landcruiser-3d/?verify=d355a48-2026-10-28T13-42-16-369Z",
+  "sourceBytes": 64685,
+  "sourceSha256": "a11ab741b5f39304c48c2e0de168ecd200bc6cf2f94366587a3c6ad985469071",
+  "viewport": {
+    "width": 1440,
+    "height": 1000,
+    "deviceScaleFactor": 1
+  },
+  "sourceUnmodified": true,
+  "CDNImportsUnmodified": true,
+  "state": {
+    "studio": "clay",
+    "build": {
+      "slots": {
+        "body_shell": "body_shell",
+        "bonnet": "bonnet",
+        "bumper_front": "bumper_front",
+        "bumper_rear": "bumper_rear",
+        "door_FL": "door_FL",
+        "door_FR": "door_FR",
+        "door_RL": "door_RL",
+        "door_RR": "door_RR",
+        "grille": "grille",
+        "lamp_front_L": "lamp_front_L",
+        "lamp_front_R": "lamp_front_R",
+        "lamp_rear_L": "lamp_rear_L",
+        "lamp_rear_R": "lamp_rear_R",
+        "mirror_L": "mirror_L",
+        "mirror_R": "mirror_R",
+        "roof_rails": "roof_rails",
+        "side_step_L": "side_step_L",
+        "side_step_R": "side_step_R",
+        "spoiler": "spoiler",
+        "tailgate": "tailgate",
+        "unsorted_01": "unsorted_01",
+        "unsorted_02": "unsorted_02",
+        "unsorted_03": "unsorted_03",
+        "unsorted_04": "unsorted_04",
+        "unsorted_05": "unsorted_05",
+        "unsorted_06": "unsorted_06",
+        "unsorted_07": "unsorted_07",
+        "unsorted_08": "unsorted_08",
+        "unsorted_09": "unsorted_09",
+        "unsorted_10": "unsorted_10",
+        "wheel_FL": "wheel_FL",
+        "wheel_FR": "wheel_FR",
+        "wheel_RL": "wheel_RL",
+        "wheel_RR": "wheel_RR",
+        "arch_flares": null,
+        "chassis": null
+      },
+      "paint": {
+        "paint": "#f4f4ef"
+      },
+      "lift_mm": 0,
+      "hidden": []
+    },
+    "nextStudioButton": "Clay studio. Switch to Cream studio",
+    "activeView": "front"
+  },
+  "screenshots": [
+    {
+      "view": "quarter",
+      "file": "live-white-quarter-2026-10-28T13-42-16-369Z.png",
+      "sha256": "96c38df45d2a8422152ab262f58361ef052d8cdfcb48d35639fdfd0d323e11bb"
+    },
+    {
+      "view": "side",
+      "file": "live-white-side-2026-10-28T13-42-16-369Z.png",
+      "sha256": "75ce3986bd9a55bc7473848a21dec4e36ff3a08444bc362bc1b0869ca973d3f3"
+    },
+    {
+      "view": "front",
+      "file": "live-white-front-2026-10-28T13-42-16-369Z.png",
+      "sha256": "c1694fa44d90860f097b2352ba93c94648cc103d9d1f1f5c6289df5a122c6ca7"
+    }
+  ],
+  "assets": [
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/camera-reference.json",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/manifest.json",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/build.json",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/door_FL.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/bumper_rear.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/bonnet.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/bumper_front.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/door_FR.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/base.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/lamp_rear_L.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/door_RL.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/mirror_L.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/roof_rails.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/mirror_R.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/unsorted_06.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/door_RR.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/tailgate.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/lamp_front_R.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/grille.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/unsorted_03.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/side_step_R.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/unsorted_02.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/unsorted_05.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/unsorted_07.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/unsorted_09.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/wheel_RR.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/unsorted_01.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/unsorted_04.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/unsorted_10.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/unsorted_08.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/wheel_RL.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/side_step_L.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/wheel_FL.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/lamp_front_L.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/lamp_rear_R.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/spoiler.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/parts/wheel_FR.glb",
+      "status": 200
+    },
+    {
+      "url": "https://ffaz.github.io/landcruiser-3d/model/display-base.glb",
+      "status": 200
+    }
+  ],
+  "errors": [],
+  "mainCommitAtCapture": "d355a489b37fa4f844170ebdcc91210cab8f9ded"
+}
