@@ -262,10 +262,12 @@ try {
       label: document.querySelector('#bgLabel').textContent,
       pressed: document.querySelector('#bgToggle').getAttribute('aria-pressed')}));
     const threeStudios=await page.evaluate(()=>document.body.dataset.studio!==undefined);
-    const expectedLabel=threeStudios?({cream:'Slate studio',slate:'Clay studio',clay:'Cream studio'})[alternate.studio]:alternate.studio==='cream'?'Slate studio':'Cream studio';
+    // The label names the current studio; older sources named the next one.
+    const expectedLabel='Studio: '+({cream:'Cream',slate:'Slate',clay:'Clay'})[alternate.studio]+' ▸';
+    const legacyLabel=threeStudios?({cream:'Slate studio',slate:'Clay studio',clay:'Cream studio'})[alternate.studio]:alternate.studio==='cream'?'Slate studio':'Cream studio';
     checks.background = alternate.studio !== initialStudio &&
       (alternate.pressed===null || alternate.pressed===String(alternate.studio==='cream')) &&
-      (alternate.label===expectedLabel || (options.mode==='before'&&alternate.studio==='cream'&&alternate.label==='Blue studio'));
+      (alternate.label===expectedLabel || (options.mode==='before'&&(alternate.label===legacyLabel||(alternate.studio==='cream'&&alternate.label==='Blue studio'))));
     await setStudio(initialStudio);
     checks.backgroundRestores=(await currentStudio())===initialStudio;
     const hasCleanView = !!await page.locator('#cleanToggle').count();

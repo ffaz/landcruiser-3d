@@ -123,7 +123,7 @@
     <span class="chip">GCC · GXR · 5 DOOR</span>
     <button type="button" class="utility" id="baseToggle" aria-pressed="false" title="Show the collectible display base">Base</button>
     <button type="button" class="utility" id="cleanToggle" aria-pressed="false" title="Hide all controls. Tap the canvas or press H to show them again.">Clean view</button>
-    <button type="button" class="utility" id="bgToggle" title="Switch to Slate studio"><span class="dot" aria-hidden="true"></span><span id="bgLabel">Slate studio</span></button>
+    <button type="button" class="utility" id="bgToggle" title="Switch to Slate studio"><span class="dot" aria-hidden="true"></span><span id="bgLabel">Studio: Cream ▸</span></button>
   </div>
 </header>
 <div class="bottom">
@@ -876,7 +876,7 @@ function setStudio(mode){
  studioMode=mode;const clay=mode==='clay';
  document.body.classList.toggle('cream',mode==='cream');document.body.classList.toggle('clay',clay);document.body.dataset.studio=mode;
  const next=studioModes[(studioModes.indexOf(mode)+1)%studioModes.length];
- document.getElementById('bgLabel').textContent=studioLabels[next]+' studio';
+ document.getElementById('bgLabel').textContent='Studio: '+studioLabels[mode]+' ▸';
  bgToggle.title='Switch to '+studioLabels[next]+' studio';
  bgToggle.setAttribute('aria-label',studioLabels[mode]+' studio. '+bgToggle.title);bgToggle.removeAttribute('aria-pressed');
  if(clay){
