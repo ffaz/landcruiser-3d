@@ -8,11 +8,15 @@ Front, Side, Rear, 3/4, Top, Auto, Reset, the existing **four paint swatches plu
 
 The satin collectible materials and baked crevice/edge shading remain. No screen-space AO or live cavity pass is added. The blurred contact map updates when build state changes; rendering stops when controls are idle.
 
+## Cream studio
+
+Cream is the main studio for the stock base and future workshop. Its satin paint uses soft overhead direction, clean warm white highlights and gentle fill, while the existing charcoal glass, near-black tyres, dark grey wheels, trim and pale background retain their materials. The existing contact bake adds density close to the tyres. Geometry, cameras, build data and baked shading strengths are unchanged. [Full-size before/after PNGs, sampled pixels and every changed value](docs/cream-refinement/README.md).
+
 ## Clay studio
 
 The studio button cycles **Cream → Slate → Clay → Cream**, naming the mode you will switch to. Clay uses matte paint (roughness 0.85, no clearcoat), muted plum trim and gradient glass, pale cream headlamps revealing their existing plum housings and projectors, dusty red tail lamps and matte light-grey chrome. A stronger high front-left key, gentle warm sand fill and deeper contact shadow separate top surfaces from sides and lower faces. White paint displays as warm cream without changing its authored build colour. Its background follows the selected paint hue; white uses a darker warm stone background. All four swatches and the custom picker work. Explicit build-state zone colours remain valid.
 
-Clay retains the original geometry, pivots, wheel assemblies, normals and baked COLOR_0 data. It uses a softer AO/curvature material variant, with no additional per-frame pass or real-time effect. Cream and Slate use their original materials and lighting. [Latest pixel-calibrated screenshots and verification](docs/clay-brightness/README.md).
+Clay retains the original geometry, pivots, wheel assemblies, normals and baked COLOR_0 data. It uses a softer AO/curvature material variant, with no additional per-frame pass or real-time effect. Slate retains its original materials and lighting; Cream has the separate paint-lighting refinement described above. [Latest pixel-calibrated screenshots and verification](docs/clay-brightness/README.md).
 
 ## Foundation data
 

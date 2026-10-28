@@ -1,0 +1,1143 @@
+{
+  "testedAt": "2026-10-28T15:23:48.510Z",
+  "sourceSha256": "8a66d4b52c5d75b75713ba22f1cf5664c6957b6f01c9452c519240f51a00084d",
+  "baselineSourceSha256": "a11ab741b5f39304c48c2e0de168ecd200bc6cf2f94366587a3c6ad985469071",
+  "passed": true,
+  "checks": {
+    "noAdditionalFramePasses": true,
+    "defaultStudioAndWhite": true,
+    "creamInitialAndReturnMatch": true,
+    "defaultBuildPreserved": true,
+    "creamLightingUnchanged": true,
+    "creamNonPaintMaterialsUnchanged": true,
+    "paintPhysicalPropertiesUnchanged": true,
+    "creamBackgroundUnchanged": true,
+    "bakedPanelSettingsUnchanged": true,
+    "creamGeometryUnchanged": true,
+    "noExtraDrawsOrTriangles": true,
+    "noAdditionalShadowMaps": true,
+    "allFivePresetCamerasUnchanged": true,
+    "slateWhiteImagesUnchanged": true,
+    "slateAppearanceUnchanged": true,
+    "slateOrangeImageUnchanged": true,
+    "clayWhiteImagesUnchanged": true,
+    "clayAppearanceUnchanged": true,
+    "clayOrangeImageUnchanged": true,
+    "allSwatchesAndCustomWork": true,
+    "perPartPaintAndTrimOverride": true,
+    "perPartOverridesSurviveModes": true,
+    "rigidLiftKeepsWheelsAndBuffers": true,
+    "liftRestores": true,
+    "hiddenAndEmptySlotsWork": true,
+    "defaultBuildRestores": true,
+    "geometryAndScaleIntactAfterEdits": true,
+    "modelAndBuildFilesUnchanged": true
+  },
+  "errors": [],
+  "assetFiles": 38,
+  "geometryVerification": "Byte snapshots and attribute identity checks for POSITION/NORMAL/COLOR_0, all vehicle local/world transforms and root scale 1.0; 50 mm rigid body lift preserves every wheel and source buffer then resets; frozen SHA-256 checks cover all model/build files.",
+  "imageComparisonEvidence": "comparisons.json",
+  "imageComparisons": 13,
+  "differingPixels": 0,
+  "materialPropertiesSha256": {
+    "cream": {
+      "rows": 152,
+      "before": "165954026644e245b6c1303f3334bfc598b4a922d8beadab4e28c4456051f529",
+      "after": "165954026644e245b6c1303f3334bfc598b4a922d8beadab4e28c4456051f529"
+    },
+    "slate": {
+      "rows": 152,
+      "before": "165954026644e245b6c1303f3334bfc598b4a922d8beadab4e28c4456051f529",
+      "after": "165954026644e245b6c1303f3334bfc598b4a922d8beadab4e28c4456051f529"
+    },
+    "clay": {
+      "rows": 152,
+      "before": "56246baed93bd1b38c4758f09dd0504ad3ef7512dcd33e14df08ec4e4865621a",
+      "after": "56246baed93bd1b38c4758f09dd0504ad3ef7512dcd33e14df08ec4e4865621a"
+    }
+  },
+  "states": {
+    "creamInitial": {
+      "studio": "cream",
+      "build": {
+        "slots": {
+          "body_shell": "body_shell",
+          "bonnet": "bonnet",
+          "bumper_front": "bumper_front",
+          "bumper_rear": "bumper_rear",
+          "door_FL": "door_FL",
+          "door_FR": "door_FR",
+          "door_RL": "door_RL",
+          "door_RR": "door_RR",
+          "grille": "grille",
+          "lamp_front_L": "lamp_front_L",
+          "lamp_front_R": "lamp_front_R",
+          "lamp_rear_L": "lamp_rear_L",
+          "lamp_rear_R": "lamp_rear_R",
+          "mirror_L": "mirror_L",
+          "mirror_R": "mirror_R",
+          "roof_rails": "roof_rails",
+          "side_step_L": "side_step_L",
+          "side_step_R": "side_step_R",
+          "spoiler": "spoiler",
+          "tailgate": "tailgate",
+          "unsorted_01": "unsorted_01",
+          "unsorted_02": "unsorted_02",
+          "unsorted_03": "unsorted_03",
+          "unsorted_04": "unsorted_04",
+          "unsorted_05": "unsorted_05",
+          "unsorted_06": "unsorted_06",
+          "unsorted_07": "unsorted_07",
+          "unsorted_08": "unsorted_08",
+          "unsorted_09": "unsorted_09",
+          "unsorted_10": "unsorted_10",
+          "wheel_FL": "wheel_FL",
+          "wheel_FR": "wheel_FR",
+          "wheel_RL": "wheel_RL",
+          "wheel_RR": "wheel_RR",
+          "arch_flares": null,
+          "chassis": null
+        },
+        "paint": {
+          "paint": "#f4f4ef"
+        },
+        "lift_mm": 0,
+        "hidden": []
+      },
+      "contact": {
+        "opacity": 1,
+        "tint": "000000",
+        "nearTint": 1,
+        "nearStrength": 1
+      },
+      "exposure": 1.2,
+      "toneMapping": 6,
+      "key": {
+        "intensity": 1.65,
+        "color": "fffbf5",
+        "position": [
+          -1.5,
+          8,
+          2
+        ]
+      },
+      "fill": {
+        "intensity": 0.6,
+        "color": "f7f5f0",
+        "ground": "52565c"
+      },
+      "baked": {
+        "uBakedAO": 0.9,
+        "uBakedRidge": 0.7,
+        "uBakedValley": 0.9
+      },
+      "clay": {
+        "uBakedAO": 0.65,
+        "uBakedRidge": 0.52,
+        "uBakedValley": 0.72,
+        "uClayOcclusionTint": "a58e72",
+        "uClayLowerKey": 0.09,
+        "uClayHeightStart": 0.65,
+        "uClayHeightEnd": 1.14,
+        "uClayBodyLift": 0
+      },
+      "cream": {
+        "uCreamKeyGain": 9,
+        "uCreamFillGain": 2.5,
+        "uCreamKeyDirection": {
+          "x": -0.35520224181535076,
+          "y": 0.9347427416193442,
+          "z": 0.009347427416193443
+        },
+        "uCreamKeyTint": "fff0d6",
+        "uCreamContactPower": 16.5,
+        "uCreamContactBand": {
+          "x": 0.88,
+          "y": 0.94
+        }
+      },
+      "background": "radial-gradient(at 50% 42%, rgb(239, 234, 227) 0%, rgb(237, 231, 223) 50%, rgb(228, 222, 213) 100%)",
+      "theme": "#EFEAE3",
+      "camera": {
+        "position": [
+          0.02,
+          0.4000000000000008,
+          12.924356919649727
+        ],
+        "target": [
+          0.02,
+          0.4,
+          0
+        ],
+        "fov": 20
+      },
+      "environmentIntensity": 0.65,
+      "renderer": {
+        "drawCalls": 167,
+        "triangles": 841958,
+        "shadowEnabled": false,
+        "shadowAutoUpdate": false,
+        "keyShadowMapSize": [
+          2048,
+          2048
+        ]
+      },
+      "contactMapSize": [
+        1024,
+        1024
+      ],
+      "contactBlurSize": [
+        1024,
+        1024
+      ],
+      "geometryIntact": true
+    },
+    "creamReturned": {
+      "studio": "cream",
+      "build": {
+        "slots": {
+          "body_shell": "body_shell",
+          "bonnet": "bonnet",
+          "bumper_front": "bumper_front",
+          "bumper_rear": "bumper_rear",
+          "door_FL": "door_FL",
+          "door_FR": "door_FR",
+          "door_RL": "door_RL",
+          "door_RR": "door_RR",
+          "grille": "grille",
+          "lamp_front_L": "lamp_front_L",
+          "lamp_front_R": "lamp_front_R",
+          "lamp_rear_L": "lamp_rear_L",
+          "lamp_rear_R": "lamp_rear_R",
+          "mirror_L": "mirror_L",
+          "mirror_R": "mirror_R",
+          "roof_rails": "roof_rails",
+          "side_step_L": "side_step_L",
+          "side_step_R": "side_step_R",
+          "spoiler": "spoiler",
+          "tailgate": "tailgate",
+          "unsorted_01": "unsorted_01",
+          "unsorted_02": "unsorted_02",
+          "unsorted_03": "unsorted_03",
+          "unsorted_04": "unsorted_04",
+          "unsorted_05": "unsorted_05",
+          "unsorted_06": "unsorted_06",
+          "unsorted_07": "unsorted_07",
+          "unsorted_08": "unsorted_08",
+          "unsorted_09": "unsorted_09",
+          "unsorted_10": "unsorted_10",
+          "wheel_FL": "wheel_FL",
+          "wheel_FR": "wheel_FR",
+          "wheel_RL": "wheel_RL",
+          "wheel_RR": "wheel_RR",
+          "arch_flares": null,
+          "chassis": null
+        },
+        "paint": {
+          "paint": "#f4f4ef"
+        },
+        "lift_mm": 0,
+        "hidden": []
+      },
+      "contact": {
+        "opacity": 1,
+        "tint": "000000",
+        "nearTint": 1,
+        "nearStrength": 1
+      },
+      "exposure": 1.2,
+      "toneMapping": 6,
+      "key": {
+        "intensity": 1.65,
+        "color": "fffbf5",
+        "position": [
+          -1.5,
+          8,
+          2
+        ]
+      },
+      "fill": {
+        "intensity": 0.6,
+        "color": "f7f5f0",
+        "ground": "52565c"
+      },
+      "baked": {
+        "uBakedAO": 0.9,
+        "uBakedRidge": 0.7,
+        "uBakedValley": 0.9
+      },
+      "clay": {
+        "uBakedAO": 0.65,
+        "uBakedRidge": 0.52,
+        "uBakedValley": 0.72,
+        "uClayOcclusionTint": "a58e72",
+        "uClayLowerKey": 0.09,
+        "uClayHeightStart": 0.65,
+        "uClayHeightEnd": 1.14,
+        "uClayBodyLift": 0
+      },
+      "cream": {
+        "uCreamKeyGain": 9,
+        "uCreamFillGain": 2.5,
+        "uCreamKeyDirection": {
+          "x": -0.35520224181535076,
+          "y": 0.9347427416193442,
+          "z": 0.009347427416193443
+        },
+        "uCreamKeyTint": "fff0d6",
+        "uCreamContactPower": 16.5,
+        "uCreamContactBand": {
+          "x": 0.88,
+          "y": 0.94
+        }
+      },
+      "background": "radial-gradient(at 50% 42%, rgb(239, 234, 227) 0%, rgb(237, 231, 223) 50%, rgb(228, 222, 213) 100%)",
+      "theme": "#EFEAE3",
+      "camera": {
+        "position": [
+          0.02,
+          0.4000000000000008,
+          12.924356919649727
+        ],
+        "target": [
+          0.02,
+          0.4,
+          0
+        ],
+        "fov": 20
+      },
+      "environmentIntensity": 0.65,
+      "renderer": {
+        "drawCalls": 167,
+        "triangles": 841958,
+        "shadowEnabled": false,
+        "shadowAutoUpdate": false,
+        "keyShadowMapSize": [
+          2048,
+          2048
+        ]
+      },
+      "contactMapSize": [
+        1024,
+        1024
+      ],
+      "contactBlurSize": [
+        1024,
+        1024
+      ],
+      "geometryIntact": true
+    },
+    "cream-quarter": {
+      "studio": "cream",
+      "build": {
+        "slots": {
+          "body_shell": "body_shell",
+          "bonnet": "bonnet",
+          "bumper_front": "bumper_front",
+          "bumper_rear": "bumper_rear",
+          "door_FL": "door_FL",
+          "door_FR": "door_FR",
+          "door_RL": "door_RL",
+          "door_RR": "door_RR",
+          "grille": "grille",
+          "lamp_front_L": "lamp_front_L",
+          "lamp_front_R": "lamp_front_R",
+          "lamp_rear_L": "lamp_rear_L",
+          "lamp_rear_R": "lamp_rear_R",
+          "mirror_L": "mirror_L",
+          "mirror_R": "mirror_R",
+          "roof_rails": "roof_rails",
+          "side_step_L": "side_step_L",
+          "side_step_R": "side_step_R",
+          "spoiler": "spoiler",
+          "tailgate": "tailgate",
+          "unsorted_01": "unsorted_01",
+          "unsorted_02": "unsorted_02",
+          "unsorted_03": "unsorted_03",
+          "unsorted_04": "unsorted_04",
+          "unsorted_05": "unsorted_05",
+          "unsorted_06": "unsorted_06",
+          "unsorted_07": "unsorted_07",
+          "unsorted_08": "unsorted_08",
+          "unsorted_09": "unsorted_09",
+          "unsorted_10": "unsorted_10",
+          "wheel_FL": "wheel_FL",
+          "wheel_FR": "wheel_FR",
+          "wheel_RL": "wheel_RL",
+          "wheel_RR": "wheel_RR",
+          "arch_flares": null,
+          "chassis": null
+        },
+        "paint": {
+          "paint": "#f4f4ef"
+        },
+        "lift_mm": 0,
+        "hidden": []
+      },
+      "contact": {
+        "opacity": 1,
+        "tint": "000000",
+        "nearTint": 1,
+        "nearStrength": 1
+      },
+      "exposure": 1.2,
+      "toneMapping": 6,
+      "key": {
+        "intensity": 1.65,
+        "color": "fffbf5",
+        "position": [
+          -1.5,
+          8,
+          2
+        ]
+      },
+      "fill": {
+        "intensity": 0.6,
+        "color": "f7f5f0",
+        "ground": "52565c"
+      },
+      "baked": {
+        "uBakedAO": 0.9,
+        "uBakedRidge": 0.7,
+        "uBakedValley": 0.9
+      },
+      "clay": {
+        "uBakedAO": 0.65,
+        "uBakedRidge": 0.52,
+        "uBakedValley": 0.72,
+        "uClayOcclusionTint": "a58e72",
+        "uClayLowerKey": 0.09,
+        "uClayHeightStart": 0.65,
+        "uClayHeightEnd": 1.14,
+        "uClayBodyLift": 0
+      },
+      "cream": {
+        "uCreamKeyGain": 9,
+        "uCreamFillGain": 2.5,
+        "uCreamKeyDirection": {
+          "x": -0.35520224181535076,
+          "y": 0.9347427416193442,
+          "z": 0.009347427416193443
+        },
+        "uCreamKeyTint": "fff0d6",
+        "uCreamContactPower": 16.5,
+        "uCreamContactBand": {
+          "x": 0.88,
+          "y": 0.94
+        }
+      },
+      "background": "radial-gradient(at 50% 42%, rgb(239, 234, 227) 0%, rgb(237, 231, 223) 50%, rgb(228, 222, 213) 100%)",
+      "theme": "#EFEAE3",
+      "camera": {
+        "position": [
+          -7.7297237531437,
+          2.8387209098530186,
+          8.219403980606952
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "fov": 20
+      },
+      "environmentIntensity": 0.65,
+      "renderer": {
+        "drawCalls": 167,
+        "triangles": 841958,
+        "shadowEnabled": false,
+        "shadowAutoUpdate": false,
+        "keyShadowMapSize": [
+          2048,
+          2048
+        ]
+      },
+      "contactMapSize": [
+        1024,
+        1024
+      ],
+      "contactBlurSize": [
+        1024,
+        1024
+      ],
+      "geometryIntact": true
+    },
+    "slate-quarter": {
+      "studio": "slate",
+      "build": {
+        "slots": {
+          "body_shell": "body_shell",
+          "bonnet": "bonnet",
+          "bumper_front": "bumper_front",
+          "bumper_rear": "bumper_rear",
+          "door_FL": "door_FL",
+          "door_FR": "door_FR",
+          "door_RL": "door_RL",
+          "door_RR": "door_RR",
+          "grille": "grille",
+          "lamp_front_L": "lamp_front_L",
+          "lamp_front_R": "lamp_front_R",
+          "lamp_rear_L": "lamp_rear_L",
+          "lamp_rear_R": "lamp_rear_R",
+          "mirror_L": "mirror_L",
+          "mirror_R": "mirror_R",
+          "roof_rails": "roof_rails",
+          "side_step_L": "side_step_L",
+          "side_step_R": "side_step_R",
+          "spoiler": "spoiler",
+          "tailgate": "tailgate",
+          "unsorted_01": "unsorted_01",
+          "unsorted_02": "unsorted_02",
+          "unsorted_03": "unsorted_03",
+          "unsorted_04": "unsorted_04",
+          "unsorted_05": "unsorted_05",
+          "unsorted_06": "unsorted_06",
+          "unsorted_07": "unsorted_07",
+          "unsorted_08": "unsorted_08",
+          "unsorted_09": "unsorted_09",
+          "unsorted_10": "unsorted_10",
+          "wheel_FL": "wheel_FL",
+          "wheel_FR": "wheel_FR",
+          "wheel_RL": "wheel_RL",
+          "wheel_RR": "wheel_RR",
+          "arch_flares": null,
+          "chassis": null
+        },
+        "paint": {
+          "paint": "#f4f4ef"
+        },
+        "lift_mm": 0,
+        "hidden": []
+      },
+      "contact": {
+        "opacity": 1,
+        "tint": "000000",
+        "nearTint": 1,
+        "nearStrength": 1
+      },
+      "exposure": 1.2,
+      "toneMapping": 6,
+      "key": {
+        "intensity": 1.65,
+        "color": "fffbf5",
+        "position": [
+          -1.5,
+          8,
+          2
+        ]
+      },
+      "fill": {
+        "intensity": 0.6,
+        "color": "f7f5f0",
+        "ground": "52565c"
+      },
+      "baked": {
+        "uBakedAO": 0.9,
+        "uBakedRidge": 0.7,
+        "uBakedValley": 0.9
+      },
+      "clay": {
+        "uBakedAO": 0.65,
+        "uBakedRidge": 0.52,
+        "uBakedValley": 0.72,
+        "uClayOcclusionTint": "a58e72",
+        "uClayLowerKey": 0.09,
+        "uClayHeightStart": 0.65,
+        "uClayHeightEnd": 1.14,
+        "uClayBodyLift": 0
+      },
+      "cream": {
+        "uCreamKeyGain": 9,
+        "uCreamFillGain": 2.5,
+        "uCreamKeyDirection": {
+          "x": -0.35520224181535076,
+          "y": 0.9347427416193442,
+          "z": 0.009347427416193443
+        },
+        "uCreamKeyTint": "fff0d6",
+        "uCreamContactPower": 0,
+        "uCreamContactBand": {
+          "x": 0.88,
+          "y": 0.94
+        }
+      },
+      "background": "linear-gradient(rgb(74, 106, 130) 0%, rgb(64, 91, 112) 52%, rgb(58, 79, 96) 100%)",
+      "theme": "#4a6a82",
+      "camera": {
+        "position": [
+          -7.7297237531437,
+          2.8387209098530186,
+          8.219403980606952
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "fov": 20
+      },
+      "environmentIntensity": 0.65,
+      "renderer": {
+        "drawCalls": 167,
+        "triangles": 841958,
+        "shadowEnabled": false,
+        "shadowAutoUpdate": false,
+        "keyShadowMapSize": [
+          2048,
+          2048
+        ]
+      },
+      "contactMapSize": [
+        1024,
+        1024
+      ],
+      "contactBlurSize": [
+        1024,
+        1024
+      ],
+      "geometryIntact": true
+    },
+    "clay-quarter": {
+      "studio": "clay",
+      "build": {
+        "slots": {
+          "body_shell": "body_shell",
+          "bonnet": "bonnet",
+          "bumper_front": "bumper_front",
+          "bumper_rear": "bumper_rear",
+          "door_FL": "door_FL",
+          "door_FR": "door_FR",
+          "door_RL": "door_RL",
+          "door_RR": "door_RR",
+          "grille": "grille",
+          "lamp_front_L": "lamp_front_L",
+          "lamp_front_R": "lamp_front_R",
+          "lamp_rear_L": "lamp_rear_L",
+          "lamp_rear_R": "lamp_rear_R",
+          "mirror_L": "mirror_L",
+          "mirror_R": "mirror_R",
+          "roof_rails": "roof_rails",
+          "side_step_L": "side_step_L",
+          "side_step_R": "side_step_R",
+          "spoiler": "spoiler",
+          "tailgate": "tailgate",
+          "unsorted_01": "unsorted_01",
+          "unsorted_02": "unsorted_02",
+          "unsorted_03": "unsorted_03",
+          "unsorted_04": "unsorted_04",
+          "unsorted_05": "unsorted_05",
+          "unsorted_06": "unsorted_06",
+          "unsorted_07": "unsorted_07",
+          "unsorted_08": "unsorted_08",
+          "unsorted_09": "unsorted_09",
+          "unsorted_10": "unsorted_10",
+          "wheel_FL": "wheel_FL",
+          "wheel_FR": "wheel_FR",
+          "wheel_RL": "wheel_RL",
+          "wheel_RR": "wheel_RR",
+          "arch_flares": null,
+          "chassis": null
+        },
+        "paint": {
+          "paint": "#f4f4ef"
+        },
+        "lift_mm": 0,
+        "hidden": []
+      },
+      "contact": {
+        "opacity": 0.94,
+        "tint": "604450",
+        "nearTint": 0.2,
+        "nearStrength": 1.3
+      },
+      "exposure": 2.4,
+      "toneMapping": 6,
+      "key": {
+        "intensity": 5.8,
+        "color": "ffe0b0",
+        "position": [
+          -3.8,
+          10,
+          1.2
+        ]
+      },
+      "fill": {
+        "intensity": 0.45,
+        "color": "fff0df",
+        "ground": "c2a688"
+      },
+      "baked": {
+        "uBakedAO": 0.9,
+        "uBakedRidge": 0.7,
+        "uBakedValley": 0.9
+      },
+      "clay": {
+        "uBakedAO": 0.65,
+        "uBakedRidge": 0.52,
+        "uBakedValley": 0.72,
+        "uClayOcclusionTint": "a58e72",
+        "uClayLowerKey": 0.09,
+        "uClayHeightStart": 0.65,
+        "uClayHeightEnd": 1.14,
+        "uClayBodyLift": 0
+      },
+      "cream": {
+        "uCreamKeyGain": 9,
+        "uCreamFillGain": 2.5,
+        "uCreamKeyDirection": {
+          "x": -0.35520224181535076,
+          "y": 0.9347427416193442,
+          "z": 0.009347427416193443
+        },
+        "uCreamKeyTint": "fff0d6",
+        "uCreamContactPower": 0,
+        "uCreamContactBand": {
+          "x": 0.88,
+          "y": 0.94
+        }
+      },
+      "background": "radial-gradient(at 50% 42%, rgb(217, 203, 184) 0%, rgb(217, 203, 184) 53%, rgb(205, 189, 167) 100%)",
+      "theme": "#d9cbb8",
+      "camera": {
+        "position": [
+          -7.7297237531437,
+          2.8387209098530186,
+          8.219403980606952
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "fov": 20
+      },
+      "environmentIntensity": 0.1,
+      "renderer": {
+        "drawCalls": 154,
+        "triangles": 741525,
+        "shadowEnabled": false,
+        "shadowAutoUpdate": false,
+        "keyShadowMapSize": [
+          2048,
+          2048
+        ]
+      },
+      "contactMapSize": [
+        1024,
+        1024
+      ],
+      "contactBlurSize": [
+        1024,
+        1024
+      ],
+      "geometryIntact": true
+    },
+    "creamFinal": {
+      "studio": "cream",
+      "build": {
+        "slots": {
+          "body_shell": "body_shell",
+          "bonnet": "bonnet",
+          "bumper_front": "bumper_front",
+          "bumper_rear": "bumper_rear",
+          "door_FL": "door_FL",
+          "door_FR": "door_FR",
+          "door_RL": "door_RL",
+          "door_RR": "door_RR",
+          "grille": "grille",
+          "lamp_front_L": "lamp_front_L",
+          "lamp_front_R": "lamp_front_R",
+          "lamp_rear_L": "lamp_rear_L",
+          "lamp_rear_R": "lamp_rear_R",
+          "mirror_L": "mirror_L",
+          "mirror_R": "mirror_R",
+          "roof_rails": "roof_rails",
+          "side_step_L": "side_step_L",
+          "side_step_R": "side_step_R",
+          "spoiler": "spoiler",
+          "tailgate": "tailgate",
+          "unsorted_01": "unsorted_01",
+          "unsorted_02": "unsorted_02",
+          "unsorted_03": "unsorted_03",
+          "unsorted_04": "unsorted_04",
+          "unsorted_05": "unsorted_05",
+          "unsorted_06": "unsorted_06",
+          "unsorted_07": "unsorted_07",
+          "unsorted_08": "unsorted_08",
+          "unsorted_09": "unsorted_09",
+          "unsorted_10": "unsorted_10",
+          "wheel_FL": "wheel_FL",
+          "wheel_FR": "wheel_FR",
+          "wheel_RL": "wheel_RL",
+          "wheel_RR": "wheel_RR",
+          "arch_flares": null,
+          "chassis": null
+        },
+        "paint": {
+          "paint": "#f4f4ef"
+        },
+        "lift_mm": 0,
+        "hidden": []
+      },
+      "contact": {
+        "opacity": 1,
+        "tint": "000000",
+        "nearTint": 1,
+        "nearStrength": 1
+      },
+      "exposure": 1.2,
+      "toneMapping": 6,
+      "key": {
+        "intensity": 1.65,
+        "color": "fffbf5",
+        "position": [
+          -1.5,
+          8,
+          2
+        ]
+      },
+      "fill": {
+        "intensity": 0.6,
+        "color": "f7f5f0",
+        "ground": "52565c"
+      },
+      "baked": {
+        "uBakedAO": 0.9,
+        "uBakedRidge": 0.7,
+        "uBakedValley": 0.9
+      },
+      "clay": {
+        "uBakedAO": 0.65,
+        "uBakedRidge": 0.52,
+        "uBakedValley": 0.72,
+        "uClayOcclusionTint": "a58e72",
+        "uClayLowerKey": 0.09,
+        "uClayHeightStart": 0.65,
+        "uClayHeightEnd": 1.14,
+        "uClayBodyLift": 0
+      },
+      "cream": {
+        "uCreamKeyGain": 9,
+        "uCreamFillGain": 2.5,
+        "uCreamKeyDirection": {
+          "x": -0.35520224181535076,
+          "y": 0.9347427416193442,
+          "z": 0.009347427416193443
+        },
+        "uCreamKeyTint": "fff0d6",
+        "uCreamContactPower": 16.5,
+        "uCreamContactBand": {
+          "x": 0.88,
+          "y": 0.94
+        }
+      },
+      "background": "radial-gradient(at 50% 42%, rgb(239, 234, 227) 0%, rgb(237, 231, 223) 50%, rgb(228, 222, 213) 100%)",
+      "theme": "#EFEAE3",
+      "camera": {
+        "position": [
+          -7.729723753143698,
+          2.8387209098530186,
+          8.219403980606954
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "fov": 20
+      },
+      "environmentIntensity": 0.65,
+      "renderer": {
+        "drawCalls": 167,
+        "triangles": 841958,
+        "shadowEnabled": false,
+        "shadowAutoUpdate": false,
+        "keyShadowMapSize": [
+          2048,
+          2048
+        ]
+      },
+      "contactMapSize": [
+        1024,
+        1024
+      ],
+      "contactBlurSize": [
+        1024,
+        1024
+      ],
+      "geometryIntact": true
+    }
+  },
+  "swatches": [
+    {
+      "color": "#f4f4ef",
+      "build": "#f4f4ef",
+      "paint": [
+        "f4f4ef"
+      ],
+      "geometry": true,
+      "background": "radial-gradient(at 50% 42%, rgb(239, 234, 227) 0%, rgb(237, 231, 223) 50%, rgb(228, 222, 213) 100%)"
+    },
+    {
+      "color": "#a9b0b8",
+      "build": "#a9b0b8",
+      "paint": [
+        "a9b0b8"
+      ],
+      "geometry": true,
+      "background": "radial-gradient(at 50% 42%, rgb(239, 234, 227) 0%, rgb(237, 231, 223) 50%, rgb(228, 222, 213) 100%)"
+    },
+    {
+      "color": "#575c60",
+      "build": "#575c60",
+      "paint": [
+        "575c60"
+      ],
+      "geometry": true,
+      "background": "radial-gradient(at 50% 42%, rgb(239, 234, 227) 0%, rgb(237, 231, 223) 50%, rgb(228, 222, 213) 100%)"
+    },
+    {
+      "color": "#15191d",
+      "build": "#15191d",
+      "paint": [
+        "15191d"
+      ],
+      "geometry": true,
+      "background": "radial-gradient(at 50% 42%, rgb(239, 234, 227) 0%, rgb(237, 231, 223) 50%, rgb(228, 222, 213) 100%)"
+    },
+    {
+      "color": "#cf855f",
+      "build": "#cf855f",
+      "paint": [
+        "cf855f"
+      ],
+      "geometry": true,
+      "background": "radial-gradient(at 50% 42%, rgb(239, 234, 227) 0%, rgb(237, 231, 223) 50%, rgb(228, 222, 213) 100%)"
+    },
+    {
+      "color": "#dde9f1",
+      "build": "#dde9f1",
+      "paint": [
+        "dde9f1"
+      ],
+      "geometry": true,
+      "background": "radial-gradient(at 50% 42%, rgb(239, 234, 227) 0%, rgb(237, 231, 223) 50%, rgb(228, 222, 213) 100%)"
+    },
+    {
+      "color": "#ffffff",
+      "build": "#ffffff",
+      "paint": [
+        "ffffff"
+      ],
+      "geometry": true,
+      "background": "radial-gradient(at 50% 42%, rgb(239, 234, 227) 0%, rgb(237, 231, 223) 50%, rgb(228, 222, 213) 100%)"
+    },
+    {
+      "color": "#f4f4ef",
+      "build": "#f4f4ef",
+      "paint": [
+        "f4f4ef"
+      ],
+      "geometry": true,
+      "background": "radial-gradient(at 50% 42%, rgb(239, 234, 227) 0%, rgb(237, 231, 223) 50%, rgb(228, 222, 213) 100%)"
+    }
+  ],
+  "lift": {
+    "bodyY": 0.05,
+    "bodyError": 4.163336342344337e-17,
+    "wheelMovement": 0,
+    "buffersIntact": true
+  },
+  "modelAndBuildAssets": [
+    {
+      "path": "build.json",
+      "bytes": 1195,
+      "sha256": "6d39f5f18710507b49baaf29e1daac31049874d041cbebb0167dad8f9ba2ed69"
+    },
+    {
+      "path": "model/base.glb",
+      "bytes": 956224,
+      "sha256": "645e6b42f81a25a28680110b014bcd3539fad46580f945c26552f0cfd3f84c1c"
+    },
+    {
+      "path": "model/camera-reference.json",
+      "bytes": 36909,
+      "sha256": "02cf92bb363de60e93a45fe24a158a78fc762997290c924cbffc659a86a042c1"
+    },
+    {
+      "path": "model/display-base.glb",
+      "bytes": 13848,
+      "sha256": "a005849acbb6bc74d4be8089019518fb1516e343c610f02366caa5c15977a798"
+    },
+    {
+      "path": "model/manifest.json",
+      "bytes": 67636,
+      "sha256": "45b97d6731796838c40c0e31e6d64e58b0e9faf9573013c2f250bc023bbe9c31"
+    },
+    {
+      "path": "model/parts/bonnet.glb",
+      "bytes": 67584,
+      "sha256": "5ba6b66701bf29a97835e276b482bab1d99dde0fdccbff4bcf3cc7d61ab9fdb0"
+    },
+    {
+      "path": "model/parts/bumper_front.glb",
+      "bytes": 321568,
+      "sha256": "3499b4fc6b63e4c9fbeb39da19ac2b93b0a31a20387f89e64d05275b76366f43"
+    },
+    {
+      "path": "model/parts/bumper_rear.glb",
+      "bytes": 226196,
+      "sha256": "1fc973c60a52b11bfdc68c9218047a8b8f7b69183d60c0b3fa6240e2fb5b0ec7"
+    },
+    {
+      "path": "model/parts/door_FL.glb",
+      "bytes": 171704,
+      "sha256": "c02fd81291983bc3ff94e99b6878b7a42401f06b454d47b3bfd3fc84e318095b"
+    },
+    {
+      "path": "model/parts/door_FR.glb",
+      "bytes": 168372,
+      "sha256": "dd405b7b30ceb224919865e97a4811ce4959042352d1fbfbea72259ac25efbfe"
+    },
+    {
+      "path": "model/parts/door_RL.glb",
+      "bytes": 193360,
+      "sha256": "51f6df45bcddb933678e6ac841dec73a15ef03065d86c9a1f186fd6a87d87445"
+    },
+    {
+      "path": "model/parts/door_RR.glb",
+      "bytes": 194388,
+      "sha256": "db246b44362a522121bcfae6a3f61afb2328840a023a6121adbcfa56d65eba9e"
+    },
+    {
+      "path": "model/parts/grille.glb",
+      "bytes": 387008,
+      "sha256": "01bc6a06f89ff1b51aa6726f5d7a434dabc8365ada998d633d8b9729b6248866"
+    },
+    {
+      "path": "model/parts/lamp_front_L.glb",
+      "bytes": 1013968,
+      "sha256": "87457fd7efe6ae03faa4ef2a9f262edc04d9c277e89b55e6ba33991c2473fba8"
+    },
+    {
+      "path": "model/parts/lamp_front_R.glb",
+      "bytes": 996016,
+      "sha256": "32d86bcd59cd402d921bd0f0154cf90ed1dede5b39151ee4b0619e35612acd66"
+    },
+    {
+      "path": "model/parts/lamp_rear_L.glb",
+      "bytes": 742192,
+      "sha256": "0c7619b24bbb8424a2573db232033df615bf3cad44ae9cc518e8cefd3783e2d0"
+    },
+    {
+      "path": "model/parts/lamp_rear_R.glb",
+      "bytes": 749440,
+      "sha256": "e6a990cb25b03ef2c5d5a97b8959580a7c1d98ccc7af560d1c33e37a1534173c"
+    },
+    {
+      "path": "model/parts/mirror_L.glb",
+      "bytes": 100320,
+      "sha256": "6a13b02bc934fe7d8118bbab81882ac453e940e308e79633547e7291e0c56a4a"
+    },
+    {
+      "path": "model/parts/mirror_R.glb",
+      "bytes": 101060,
+      "sha256": "1724ce5f9211f6555bc16eb97ffd4c3e25e34e9de2f96adeca5503a916fb053e"
+    },
+    {
+      "path": "model/parts/roof_rails.glb",
+      "bytes": 103704,
+      "sha256": "ffcfeadeb43f9fda507e7080cd9fdeaf46c38aab97cd4e4561d1e6c24857d4b8"
+    },
+    {
+      "path": "model/parts/side_step_L.glb",
+      "bytes": 192180,
+      "sha256": "bffa4e60e19829e8577c4f2f74ce48fdc3a6f65439151b1ae8967b5c35d6e59a"
+    },
+    {
+      "path": "model/parts/side_step_R.glb",
+      "bytes": 180484,
+      "sha256": "7e459c5d54a86d6cdea1864edfa8ed6238fe9f4d77c966ae1f5c8570a27f341e"
+    },
+    {
+      "path": "model/parts/spoiler.glb",
+      "bytes": 232608,
+      "sha256": "f4a165f5862030ee69516076bbce27ef45ea21c9ad6839bdcb327f8376c714e1"
+    },
+    {
+      "path": "model/parts/tailgate.glb",
+      "bytes": 431076,
+      "sha256": "375ff4aec9593fce113e0c943f378ade22684196a5b4bd355445b2a2d17a3dfe"
+    },
+    {
+      "path": "model/parts/unsorted_01.glb",
+      "bytes": 15900,
+      "sha256": "82dd5cb662c53dc8bfe76dc7428bf8e5d0edb039e5bc6d86cbd7e47d2b5bd689"
+    },
+    {
+      "path": "model/parts/unsorted_02.glb",
+      "bytes": 16040,
+      "sha256": "df3329aed22f08ce0724f92dbe2d65b583528104dd95031d615f005b3e5e1348"
+    },
+    {
+      "path": "model/parts/unsorted_03.glb",
+      "bytes": 10504,
+      "sha256": "4af808fa715708c1f3c691d0ed9069ec8119a3118ca96859cb869c48efd3f8d1"
+    },
+    {
+      "path": "model/parts/unsorted_04.glb",
+      "bytes": 15332,
+      "sha256": "84e32b32a96d9c00e4ef0439dd6b045b431acf633167cfb0eb4d25b982ff4ef7"
+    },
+    {
+      "path": "model/parts/unsorted_05.glb",
+      "bytes": 16624,
+      "sha256": "01a86b41d12192fc5a02f596d5ca8b57be9f98f292db4032cc611ceb09684902"
+    },
+    {
+      "path": "model/parts/unsorted_06.glb",
+      "bytes": 8728,
+      "sha256": "090f240ad85896afdcd2670e9eb34aba887e9f065d70b5173e8b9583965d0aa7"
+    },
+    {
+      "path": "model/parts/unsorted_07.glb",
+      "bytes": 3752,
+      "sha256": "b45468ef7b33e798aec5e2ae93beba5b4491c42fc74ae719ecf368fe79b186b6"
+    },
+    {
+      "path": "model/parts/unsorted_08.glb",
+      "bytes": 9660,
+      "sha256": "494bd90ab37b6e3edbde2c61b1b31f659ab5c4a70572ccf5d39c45fed21e5fbe"
+    },
+    {
+      "path": "model/parts/unsorted_09.glb",
+      "bytes": 15964,
+      "sha256": "494e7bc4bf406a476f6bc95161d56f1a3e32c81cc11fcd789bd60ac687f13c0a"
+    },
+    {
+      "path": "model/parts/unsorted_10.glb",
+      "bytes": 39720,
+      "sha256": "b68bd56b2f5ba10d09bb7a694ac716e0c7908be88fc2f7c40dcf14ef6d3d1bf0"
+    },
+    {
+      "path": "model/parts/wheel_FL.glb",
+      "bytes": 590088,
+      "sha256": "f34286896012460f6b8da3a6ed95742a55fd016d206283ceb56da1446fed7d8e"
+    },
+    {
+      "path": "model/parts/wheel_FR.glb",
+      "bytes": 531204,
+      "sha256": "a4e5badcfb3cf990ca3e9c99e8bb434ef18235261f9d3c6c9373d41be99c5382"
+    },
+    {
+      "path": "model/parts/wheel_RL.glb",
+      "bytes": 541520,
+      "sha256": "a2c5735bb2ef5fb48415d499258c3d56523add26b0cd3bd76c1f1a8b4b40f9a5"
+    },
+    {
+      "path": "model/parts/wheel_RR.glb",
+      "bytes": 525848,
+      "sha256": "44ee9b4fa9e8adb4ad0e223a7f6c343b1e807fb0a55a92fe37ebeb8930d9bd96"
+    }
+  ]
+}

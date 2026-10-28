@@ -1,186 +1,159 @@
 {
-  "session": "Clay white-paint brightness calibration",
-  "testedAt": "2026-10-28T12:42:44.118Z",
-  "sourceSha256": "a11ab741b5f39304c48c2e0de168ecd200bc6cf2f94366587a3c6ad985469071",
-  "baselineSourceSha256": "4ae6f94f2c85af96f488be7ce217b76517cb3f07b020403329b19fb1a6bb316c",
+  "session": "Cream-only satin showroom refinement",
+  "testedAt": "2026-10-28T15:24:19.276Z",
+  "sourceSha256": "8a66d4b52c5d75b75713ba22f1cf5664c6957b6f01c9452c519240f51a00084d",
+  "baselineSourceSha256": "a11ab741b5f39304c48c2e0de168ecd200bc6cf2f94366587a3c6ad985469071",
   "passed": true,
   "consoleErrors": 0,
   "checks": {
-    "modeIsClay": true,
+    "noAdditionalFramePasses": true,
+    "defaultStudioAndWhite": true,
+    "creamInitialAndReturnMatch": true,
     "defaultBuildPreserved": true,
-    "geometryUnchanged": true,
-    "paintIsMatte": true,
-    "darkPartsMatte": true,
-    "chromeIsMatte": true,
-    "glassLowReflection": true,
-    "lampsMatte": true,
-    "clayCreaseSettingsUnchanged": true,
-    "tailLampsMutedRed": true,
-    "noExtraDraws": true,
-    "paintSwatches": true,
-    "backgroundFollowsHue": true,
-    "pastelBluePreserved": true,
-    "whitePaintIsWarmCream": true,
-    "clayLiftAnchored": true,
-    "clayLiftRestores": true,
-    "perPartPaintInClay": true,
-    "nonPaintOverrideInClay": true,
-    "perPartPaintSurvivesSwitch": true,
-    "nonPaintOverrideSurvivesSwitch": true,
-    "creamRestores": true,
-    "slateRestores": true,
-    "geometryUnchangedAfterCycle": true,
-    "creamUnchangedFromBaseline": true,
-    "slateUnchangedFromBaseline": true,
-    "presetCamerasUnchanged": true,
-    "assetsUnchangedDuringTest": true
+    "creamLightingUnchanged": true,
+    "creamNonPaintMaterialsUnchanged": true,
+    "paintPhysicalPropertiesUnchanged": true,
+    "creamBackgroundUnchanged": true,
+    "bakedPanelSettingsUnchanged": true,
+    "creamGeometryUnchanged": true,
+    "noExtraDrawsOrTriangles": true,
+    "noAdditionalShadowMaps": true,
+    "allFivePresetCamerasUnchanged": true,
+    "slateWhiteImagesUnchanged": true,
+    "slateAppearanceUnchanged": true,
+    "slateOrangeImageUnchanged": true,
+    "clayWhiteImagesUnchanged": true,
+    "clayAppearanceUnchanged": true,
+    "clayOrangeImageUnchanged": true,
+    "allSwatchesAndCustomWork": true,
+    "perPartPaintAndTrimOverride": true,
+    "perPartOverridesSurviveModes": true,
+    "rigidLiftKeepsWheelsAndBuffers": true,
+    "liftRestores": true,
+    "hiddenAndEmptySlotsWork": true,
+    "defaultBuildRestores": true,
+    "geometryAndScaleIntactAfterEdits": true,
+    "modelAndBuildFilesUnchanged": true
   },
-  "geometryVerification": "Runtime POSITION/NORMAL/COLOR_0 byte clones and attribute identity checks; node local/world transform comparisons; root scale 1; all frozen model/build asset hashes unchanged. 50 mm body lift keeps wheels/buffers fixed and anchors then restores the Clay height-lighting uniform.",
+  "geometryVerification": "Byte snapshots and attribute identity checks for POSITION/NORMAL/COLOR_0, all vehicle local/world transforms and root scale 1.0; 50 mm rigid body lift preserves every wheel and source buffer then resets; frozen SHA-256 checks cover all model/build files.",
   "modelAndBuildFilesUnchanged": true,
   "baselineAssetFiles": 38,
-  "creamSlateFullScreenshotComparisons": {
-    "count": 6,
+  "claySlateFullScreenshotComparisons": {
+    "count": 12,
     "differingPixels": 0,
-    "evidence": "docs/clay-brightness/comparisons.json"
+    "evidence": "docs/cream-refinement/comparisons.json"
   },
+  "creamInitialAndReturnIdentical": true,
   "paint": {
     "authored": "#f4f4ef",
-    "unchangedClayMaterialAlbedo": "#efe6da"
+    "roughness": 0.38,
+    "clearcoat": 0.55,
+    "clearcoatRoughness": 0.2,
+    "unchanged": true
   },
-  "sampledPixels": {
-    "bonnet": {
-      "pixel": [
-        472,
-        420
-      ],
-      "before": "#b9afa6",
-      "after": "#f0e7db"
+  "sampleEvidence": "docs/cream-refinement/pixels.json",
+  "lightDirection": {
+    "bonnetBrighterThanDoorPercent": 12.642502629165332,
+    "roofBrighterThanDoorPercent": 10.339391154423062,
+    "topAverageBrighterThanDoorPercent": 11.490946891794195,
+    "doorDarkerThanTopAveragePercent": 10.30661879923449
+  },
+  "contactShadow": {
+    "samples": [
+      "groundFrontLeft",
+      "groundRearLeft"
+    ],
+    "frontDarkerPercent": 24.77725478059908,
+    "rearDarkerPercent": 17.249257156366028,
+    "combinedDarkerPercent": 19.431769998972538,
+    "method": "1 - sum(after displayed sRGB brightness)/sum(before displayed sRGB brightness)"
+  },
+  "changedLookValues": [
+    {
+      "name": "Cream paint direct key gain",
+      "old": 1,
+      "new": 9
     },
-    "roof": {
-      "pixel": [
-        861,
-        206
-      ],
-      "before": "#b8aea5",
-      "after": "#efe7da"
+    {
+      "name": "Cream paint indirect diffuse gain",
+      "old": 1,
+      "new": 2.5
     },
-    "frontDoor": {
-      "pixel": [
-        871,
-        467
+    {
+      "name": "Cream paint shader key direction (world)",
+      "old": [
+        -1.5,
+        8,
+        2
       ],
-      "before": "#a59a91",
-      "after": "#c8b9a6"
+      "new": [
+        -3.8,
+        10,
+        0.1
+      ],
+      "oldNormalized": [
+        -0.17896499588156806,
+        0.9544799780350297,
+        0.23861999450875743
+      ],
+      "newNormalized": [
+        -0.3552022418153508,
+        0.9347427416193442,
+        0.009347427416193443
+      ],
+      "note": "Paint-only shader direction; shared light position remains unchanged."
     },
-    "lowerDoor": {
-      "pixel": [
-        867,
-        559
-      ],
-      "before": "#a89d94",
-      "after": "#a19282"
+    {
+      "name": "Cream paint key tint (sRGB)",
+      "old": "#ffffff",
+      "new": "#fff0d6"
     },
-    "sill": {
-      "pixel": [
-        876,
-        615
-      ],
-      "before": "#968a82",
-      "after": "#a2917f"
+    {
+      "name": "Cream contact near-depth exponent",
+      "old": 24,
+      "new": 16.5
     },
-    "background": {
-      "pixel": [
-        720,
-        140
+    {
+      "name": "Cream near-contact low-depth blend band",
+      "old": "No low-depth mask (all caster depths share exponent24)",
+      "new": [
+        0.88,
+        0.94
       ],
-      "before": "#f7f5f3",
-      "after": "#d9cbb8"
-    },
-    "frontTyreShadow": {
-      "pixel": [
-        570,
-        806
-      ],
-      "before": "#826b73",
-      "after": "#503c42"
-    },
-    "rearTyreShadow": {
-      "pixel": [
-        1090,
-        673
-      ],
-      "before": "#a49499",
-      "after": "#84706e"
+      "note": "Low casters only: blends original exponent24 toward16.5 within proximity band; broad contact term and blur kernel unchanged."
     }
-  },
-  "sampleMethod": "Per-channel median RGB of the 49 pixels in a 7x7 square centred on each listed coordinate in lossless PNGs. Coordinates refer to the original 1440x1000 images, origin top left.",
-  "brightnessMetric": "0.2126*R/255+0.7152*G/255+0.0722*B/255 (Rec.709 weights applied to displayed sRGB); all quoted visual percent differences use this display-brightness metric.",
-  "tyreContactDarkerPercent": 31.57748930855695,
-  "clayUniforms": {
-    "uBakedAO": 0.65,
-    "uBakedRidge": 0.52,
-    "uBakedValley": 0.72,
-    "uClayOcclusionTint": "a58e72",
-    "uClayLowerKey": 0.09,
-    "uClayHeightStart": 0.65,
-    "uClayHeightEnd": 1.14,
-    "uClayBodyLift": 0
-  },
+  ],
   "performance": {
-    "conditions": "1366x1024 CSS pixels, DPR1, native product renderer, clay Quarter auto-rotate, four warmup frames then24 measured rAF intervals; no frame suppression",
+    "conditions": "1366x1024 CSS pixels, DPR1, native product renderer, cream Quarter auto-rotate, four warmup frames then24 measured rAF intervals; no frame suppression",
     "limitation": "Emulated WebKit, not a physical iPad. CPU and software GPU timing depends on host workload; not a hardware performance claim.",
-    "before": {
-      "frameIntervals": {
-        "samples": 24,
-        "meanMs": 408.9583333333333,
-        "p50ms": 399,
-        "p95ms": 471,
-        "minMs": 379,
-        "maxMs": 476
-      },
-      "renderCpu": {
-        "samples": 25,
-        "meanMs": 96.36,
-        "p50ms": 95,
-        "p95ms": 121,
-        "minMs": 52,
-        "maxMs": 128
-      },
-      "drawCalls": 154
-    },
     "after": {
       "frameIntervals": {
         "samples": 24,
-        "meanMs": 379.125,
-        "p50ms": 386,
-        "p95ms": 397,
-        "minMs": 341,
-        "maxMs": 428
+        "meanMs": 488.125,
+        "p50ms": 489,
+        "p95ms": 499,
+        "minMs": 453,
+        "maxMs": 569
       },
-      "renderCpu": {
-        "samples": 25,
-        "meanMs": 87.8,
-        "p50ms": 90,
-        "p95ms": 107,
-        "minMs": 40,
-        "maxMs": 108
-      },
-      "drawCalls": 154
-    }
+      "drawCalls": 167,
+      "triangles": 841958
+    },
+    "beforeFrameTime": "Not remeasured in this refinement; no before/after timing claim."
   },
   "sizes": {
-    "indexBeforeBytes": 60135,
-    "indexAfterBytes": 64685,
+    "indexBeforeBytes": 64685,
+    "indexAfterBytes": 67388,
     "modelGlbBytes": 9884184
   },
   "retainedEvidence": {
     "foundation": "docs/foundation/README.md",
-    "initialClayControls": "docs/clay/core-controls.json",
-    "priorClayTuning": "docs/clay-tune/README.md"
+    "priorClayCalibration": "docs/clay-brightness/README.md",
+    "initialTouchControls": "docs/clay/core-controls.json"
   },
   "limitations": [
-    "Physical iPad Safari smoothness was not measured.",
-    "No new native touch stress run: camera/control code is unchanged; earlier gesture evidence is retained."
+    "Physical iPad Safari performance was not measured.",
+    "The level Side camera hides horizontal bonnet/roof tops; edge patches are identified separately.",
+    "Far-side tyre contacts are occluded; contact-density samples use both visible left tyre contacts."
   ],
-  "evidence": "docs/clay-brightness/README.md"
+  "evidence": "docs/cream-refinement/README.md"
 }

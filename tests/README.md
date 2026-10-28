@@ -86,3 +86,38 @@ before measuring the actual renderer; compare with `--studio cream` on the same
 idle host. This remains software-rendered emulation, not physical iPad timing.
 
 The Clay tuning regression checks that authored white `#f4f4ef` stays unchanged in build state while its Clay material displays warm cream `#efe6da`. It also tests custom pure white and pastel blue (`#dde9f1`), so light coloured finishes are not mistaken for white. Clay keeps ridge **0.52** and valley **0.72** unchanged during the white-paint calibration. The regression also verifies a 50 mm body lift anchors the Clay height-lighting uniform at 0.05 m while wheel positions and POSITION/NORMAL/COLOR_0 buffers remain unchanged, then restores the default state. Pale headlamp lenses and vertically graded plum glass may use colour-stable MeshBasicMaterial in Clay; the original materials must restore exactly in Cream/Slate. Muted red tail-lamp materials are recorded and checked.
+
+## Cream showroom regression
+
+`cream.mjs` checks Cream refinements against frozen before fixtures while requiring
+Slate and Clay to remain pixel-identical. Use the same Playwright/local Three.js
+dependency directory as the other harnesses, with `sharp` installed there for
+lossless PNG comparison. Production CDN imports remain unchanged.
+
+```sh
+# Before editing, freeze source and assets, then record the fixture images/state.
+mkdir -p /tmp/cream-source-before
+git archive HEAD | tar -x -C /tmp/cream-source-before
+node tests/cream.mjs --mode before --source /tmp/cream-source-before/index.html --asset-root /tmp/cream-source-before --output /tmp/cream-before
+
+# After editing, compare the live source to the frozen fixtures.
+node tests/cream.mjs --mode after --baseline /tmp/cream-before --output /tmp/cream-after
+```
+
+Pass `--deps`, `--three-dir` or `--chromium` when using non-default dependency paths.
+Before fixtures include all five white presets in each studio, plus orange 3/4
+in Slate and Clay. The after run compares all **12 Slate/Clay PNGs pixel by
+pixel**, captures Cream presets, and checks all five cameras against the baseline.
+It also compares Cream's first-load Side render with the same view after a
+studio cycle, which catches initial paint/contact settings that only apply after
+clicking the studio button.
+
+Checks preserve Cream's non-paint material properties, paint satin properties,
+global lights/exposure, neutral background and baked AO/ridge/valley settings.
+They exercise the actual four swatch buttons, custom white/orange/pastel paint,
+per-part paint/trim overrides, hidden/empty slots, mode restoration and a rigid
+50 mm lift with fixed wheels. POSITION/NORMAL/COLOR_0 buffers, node matrices,
+root scale and all model/build hashes must stay intact. Each explicit final
+render must use one screen render, no target render, and unchanged draw/triangle
+counts and shadow-map settings. Temporary render suppression speeds capture;
+it is not an iPad performance measurement.

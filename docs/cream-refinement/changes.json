@@ -1,0 +1,69 @@
+{
+  "sourceSha256": "8a66d4b52c5d75b75713ba22f1cf5664c6957b6f01c9452c519240f51a00084d",
+  "scope": "Cream studio only; paint material lighting and existing contact-map near-depth profile",
+  "changedLookValues": [
+    {
+      "name": "Cream paint direct key gain",
+      "old": 1,
+      "new": 9
+    },
+    {
+      "name": "Cream paint indirect diffuse gain",
+      "old": 1,
+      "new": 2.5
+    },
+    {
+      "name": "Cream paint shader key direction (world)",
+      "old": [
+        -1.5,
+        8,
+        2
+      ],
+      "new": [
+        -3.8,
+        10,
+        0.1
+      ],
+      "oldNormalized": [
+        -0.17896499588156806,
+        0.9544799780350297,
+        0.23861999450875743
+      ],
+      "newNormalized": [
+        -0.3552022418153508,
+        0.9347427416193442,
+        0.009347427416193443
+      ],
+      "note": "Paint-only shader direction; shared light position remains unchanged."
+    },
+    {
+      "name": "Cream paint key tint (sRGB)",
+      "old": "#ffffff",
+      "new": "#fff0d6"
+    },
+    {
+      "name": "Cream contact near-depth exponent",
+      "old": 24,
+      "new": 16.5
+    },
+    {
+      "name": "Cream near-contact low-depth blend band",
+      "old": "No low-depth mask (all caster depths share exponent24)",
+      "new": [
+        0.88,
+        0.94
+      ],
+      "note": "Low casters only: blends original exponent24 toward16.5 within proximity band; broad contact term and blur kernel unchanged."
+    }
+  ],
+  "unchanged": [
+    "shared light/exposure/environment settings",
+    "material paint albedo/roughness/clearcoat",
+    "glass, tyre, rim, grille and trim materials",
+    "background",
+    "baked panel-line/ridge/valley settings",
+    "contact broad term, map dimensions, blur kernel and passes",
+    "model POSITION/NORMAL/COLOR_0, scale, camera presets and build data",
+    "Clay and Slate appearance"
+  ]
+}

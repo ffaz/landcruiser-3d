@@ -1,0 +1,111 @@
+{
+  "sourceSha256": "8a66d4b52c5d75b75713ba22f1cf5664c6957b6f01c9452c519240f51a00084d",
+  "baselineSourceSha256": "a11ab741b5f39304c48c2e0de168ecd200bc6cf2f94366587a3c6ad985469071",
+  "passed": true,
+  "studioComparisons": [
+    {
+      "label": "slate white front",
+      "width": 1440,
+      "height": 1000,
+      "differingPixels": 0,
+      "beforeSha256": "c8f20811a245cfdb1db152a3d58b658f36718efebe3ad888dd9aafedd29a4d7a",
+      "afterSha256": "c8f20811a245cfdb1db152a3d58b658f36718efebe3ad888dd9aafedd29a4d7a"
+    },
+    {
+      "label": "slate white side",
+      "width": 1440,
+      "height": 1000,
+      "differingPixels": 0,
+      "beforeSha256": "e5120c6f7465b9bce5fcedebc208d8785c83c79c9dc3453fb2e09a098fb18ad4",
+      "afterSha256": "e5120c6f7465b9bce5fcedebc208d8785c83c79c9dc3453fb2e09a098fb18ad4"
+    },
+    {
+      "label": "slate white rear",
+      "width": 1440,
+      "height": 1000,
+      "differingPixels": 0,
+      "beforeSha256": "9d66fb0b05190ef0c9185842ab4bacb737fa0aa31583dee469a600ea8ebb45a4",
+      "afterSha256": "9d66fb0b05190ef0c9185842ab4bacb737fa0aa31583dee469a600ea8ebb45a4"
+    },
+    {
+      "label": "slate white quarter",
+      "width": 1440,
+      "height": 1000,
+      "differingPixels": 0,
+      "beforeSha256": "eba202df4cd55568a12b3dde80922a11779f721e8ea4f241d71d1e9cbcd31784",
+      "afterSha256": "eba202df4cd55568a12b3dde80922a11779f721e8ea4f241d71d1e9cbcd31784"
+    },
+    {
+      "label": "slate white top",
+      "width": 1440,
+      "height": 1000,
+      "differingPixels": 0,
+      "beforeSha256": "19b045c488a93b12078ab2db97e49f21b0470604bfb75976c2dddfca2c1b76b0",
+      "afterSha256": "19b045c488a93b12078ab2db97e49f21b0470604bfb75976c2dddfca2c1b76b0"
+    },
+    {
+      "label": "slate orange quarter",
+      "width": 1440,
+      "height": 1000,
+      "differingPixels": 0,
+      "beforeSha256": "9783ac8bb38f3b1594f18ef13dd3cb838274b2d53b8b4e6d9ddec38d8cbd4adf",
+      "afterSha256": "9783ac8bb38f3b1594f18ef13dd3cb838274b2d53b8b4e6d9ddec38d8cbd4adf"
+    },
+    {
+      "label": "clay white front",
+      "width": 1440,
+      "height": 1000,
+      "differingPixels": 0,
+      "beforeSha256": "c1694fa44d90860f097b2352ba93c94648cc103d9d1f1f5c6289df5a122c6ca7",
+      "afterSha256": "c1694fa44d90860f097b2352ba93c94648cc103d9d1f1f5c6289df5a122c6ca7"
+    },
+    {
+      "label": "clay white side",
+      "width": 1440,
+      "height": 1000,
+      "differingPixels": 0,
+      "beforeSha256": "75ce3986bd9a55bc7473848a21dec4e36ff3a08444bc362bc1b0869ca973d3f3",
+      "afterSha256": "75ce3986bd9a55bc7473848a21dec4e36ff3a08444bc362bc1b0869ca973d3f3"
+    },
+    {
+      "label": "clay white rear",
+      "width": 1440,
+      "height": 1000,
+      "differingPixels": 0,
+      "beforeSha256": "754288df851befb0f5165512c0a6638e003d69ecacfa27dde981a6cbacd2c7d8",
+      "afterSha256": "754288df851befb0f5165512c0a6638e003d69ecacfa27dde981a6cbacd2c7d8"
+    },
+    {
+      "label": "clay white quarter",
+      "width": 1440,
+      "height": 1000,
+      "differingPixels": 0,
+      "beforeSha256": "96c38df45d2a8422152ab262f58361ef052d8cdfcb48d35639fdfd0d323e11bb",
+      "afterSha256": "96c38df45d2a8422152ab262f58361ef052d8cdfcb48d35639fdfd0d323e11bb"
+    },
+    {
+      "label": "clay white top",
+      "width": 1440,
+      "height": 1000,
+      "differingPixels": 0,
+      "beforeSha256": "a81feb2ac84b02e0d1c9ba3482f31db3c504ede2f815d5e42ebbe3adbcf7cbb9",
+      "afterSha256": "a81feb2ac84b02e0d1c9ba3482f31db3c504ede2f815d5e42ebbe3adbcf7cbb9"
+    },
+    {
+      "label": "clay orange quarter",
+      "width": 1440,
+      "height": 1000,
+      "differingPixels": 0,
+      "beforeSha256": "946970f2e7c0a468fbc98db0f8f4ae0a4dc865a188427096076d535d790c92a6",
+      "afterSha256": "946970f2e7c0a468fbc98db0f8f4ae0a4dc865a188427096076d535d790c92a6"
+    }
+  ],
+  "startupComparison": {
+    "label": "Cream first load vs mode-cycle return",
+    "width": 1440,
+    "height": 1000,
+    "differingPixels": 0,
+    "beforeSha256": "71ab8fa6ba39fdf70b7cb2a18293c579a2b547c8f4302d7c9d5d43a17f11db3b",
+    "afterSha256": "71ab8fa6ba39fdf70b7cb2a18293c579a2b547c8f4302d7c9d5d43a17f11db3b"
+  }
+}

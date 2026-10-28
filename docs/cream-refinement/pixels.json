@@ -1,0 +1,1266 @@
+{
+  "session": "Cream-only satin showroom refinement",
+  "sourceSha256": "8a66d4b52c5d75b75713ba22f1cf5664c6957b6f01c9452c519240f51a00084d",
+  "baselineSourceSha256": "a11ab741b5f39304c48c2e0de168ecd200bc6cf2f94366587a3c6ad985469071",
+  "viewport": {
+    "width": 1440,
+    "height": 1000,
+    "deviceScaleFactor": 1
+  },
+  "studio": "cream",
+  "authoredPaint": "#f4f4ef",
+  "method": {
+    "sampling": "Per-channel median RGB of 49 pixels in a 7x7 square. Coordinates refer to original1440x1000 PNGs with top-left origin. All median values recomputed from delivered lossless PNGs.",
+    "displayBrightness": "0.2126*R/255 + 0.7152*G/255 + 0.0722*B/255 (Rec.709 weights applied to displayed sRGB). All quoted visual brightness percentages use this metric.",
+    "relativeLuminance": "Convert sRGB channels to linear light with IEC61966-2-1, then apply Rec.709 weights; recorded separately from displayed sRGB brightness.",
+    "validation": "Baseline raycasts confirm all49pixels in each painted/rubber/rim/glass patch hit the intended material zone, and all49 ground/background pixels are clear of vehicle geometry. Cameras and geometry remain unchanged; baseline ray validation is retained alongside before/after measurements.",
+    "sideVisibility": "Side bonnet and roof samples are visible outer edges, not the occluded horizontal top surfaces. Far-side tyre contacts are occluded in both views. Side ground patches are outside its narrow visible contact stripe."
+  },
+  "captures": {
+    "before": {
+      "front": {
+        "path": "before/front.png",
+        "bytes": 734293,
+        "sha256": "e975f46bc88b5e31417a87e16a3f247d115cf6550fdf26e58b2a1208bc0fea17",
+        "width": 1440,
+        "height": 1000,
+        "sourceSha256": "a11ab741b5f39304c48c2e0de168ecd200bc6cf2f94366587a3c6ad985469071"
+      },
+      "side": {
+        "path": "before/side.png",
+        "bytes": 610589,
+        "sha256": "1bfdfbca927965943aa26a7c9c50563d6a2dcd3b02637b3c3bd6aeeff40a5964",
+        "width": 1440,
+        "height": 1000,
+        "sourceSha256": "a11ab741b5f39304c48c2e0de168ecd200bc6cf2f94366587a3c6ad985469071"
+      },
+      "quarter": {
+        "path": "before/quarter.png",
+        "bytes": 785028,
+        "sha256": "54f07ba526b6906058455c94a21d97aff894955a341ce7e91da49b97c5a91bc1",
+        "width": 1440,
+        "height": 1000,
+        "sourceSha256": "a11ab741b5f39304c48c2e0de168ecd200bc6cf2f94366587a3c6ad985469071"
+      },
+      "rear": {
+        "path": "before/rear.png",
+        "bytes": 633141,
+        "sha256": "818d6c4e148374f2103c9c12cc9d2c9068704210d610f2204433522898296b25",
+        "width": 1440,
+        "height": 1000,
+        "sourceSha256": "a11ab741b5f39304c48c2e0de168ecd200bc6cf2f94366587a3c6ad985469071"
+      }
+    },
+    "after": {
+      "front": {
+        "path": "after/front.png",
+        "bytes": 718827,
+        "sha256": "518ffbffc5fa5e255a2cc9ac4c7e2f1922b90504efcd7541adb6f24f451402d8",
+        "width": 1440,
+        "height": 1000,
+        "sourceSha256": "8a66d4b52c5d75b75713ba22f1cf5664c6957b6f01c9452c519240f51a00084d"
+      },
+      "side": {
+        "path": "after/side.png",
+        "bytes": 600158,
+        "sha256": "71ab8fa6ba39fdf70b7cb2a18293c579a2b547c8f4302d7c9d5d43a17f11db3b",
+        "width": 1440,
+        "height": 1000,
+        "sourceSha256": "8a66d4b52c5d75b75713ba22f1cf5664c6957b6f01c9452c519240f51a00084d"
+      },
+      "quarter": {
+        "path": "after/quarter.png",
+        "bytes": 768077,
+        "sha256": "5b476356ce242065b8e308751b2123d4c2ff132883bb3eca56f98b4709ba006d",
+        "width": 1440,
+        "height": 1000,
+        "sourceSha256": "8a66d4b52c5d75b75713ba22f1cf5664c6957b6f01c9452c519240f51a00084d"
+      },
+      "rear": {
+        "path": "after/rear.png",
+        "bytes": 624749,
+        "sha256": "9be26685eaba432fd620dce55a88e076729116cbb054091f3a02fd7fcbbc2235",
+        "width": 1440,
+        "height": 1000,
+        "sourceSha256": "8a66d4b52c5d75b75713ba22f1cf5664c6957b6f01c9452c519240f51a00084d"
+      }
+    }
+  },
+  "samples": {
+    "quarter": {
+      "bonnet": {
+        "pixel": [
+          472,
+          420
+        ],
+        "patchSize": 7,
+        "baselineRaycast": {
+          "front": {
+            "part": "bonnet",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -1.683807317101496,
+              1.2730420179182822,
+              0.28783312668146355
+            ]
+          },
+          "patchCounts": {
+            "bonnet:paint": 49
+          }
+        },
+        "before": {
+          "rgb": [
+            206,
+            206,
+            204
+          ],
+          "hex": "#cececc",
+          "displayBrightness": 0.8072768627450979,
+          "relativeLuminance": 0.6162405824783077
+        },
+        "after": {
+          "rgb": [
+            243,
+            241,
+            238
+          ],
+          "hex": "#f3f1ee",
+          "displayBrightness": 0.9459160784313725,
+          "relativeLuminance": 0.8813832690881159
+        }
+      },
+      "roof": {
+        "pixel": [
+          861,
+          206
+        ],
+        "patchSize": 7,
+        "baselineRaycast": {
+          "front": {
+            "part": "body_shell",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              0.6406903074669942,
+              1.8786682272467712,
+              -0.08490400363664984
+            ]
+          },
+          "patchCounts": {
+            "body_shell:paint": 49
+          }
+        },
+        "before": {
+          "rgb": [
+            191,
+            190,
+            187
+          ],
+          "hex": "#bfbebb",
+          "displayBrightness": 0.7450823529411764,
+          "relativeLuminance": 0.5149113353839286
+        },
+        "after": {
+          "rgb": [
+            239,
+            236,
+            231
+          ],
+          "hex": "#efece7",
+          "displayBrightness": 0.9265756862745097,
+          "relativeLuminance": 0.8411114944619597
+        }
+      },
+      "frontDoor": {
+        "pixel": [
+          871,
+          467
+        ],
+        "patchSize": 7,
+        "baselineRaycast": {
+          "front": {
+            "part": "door_FL",
+            "zone": "paint",
+            "node": "Front_Doors_9",
+            "point": [
+              -0.34517217400827716,
+              1.0281082034688946,
+              0.9528098751794043
+            ]
+          },
+          "patchCounts": {
+            "door_FL:paint": 49
+          }
+        },
+        "before": {
+          "rgb": [
+            182,
+            181,
+            179
+          ],
+          "hex": "#b6b5b3",
+          "displayBrightness": 0.7100713725490195,
+          "relativeLuminance": 0.46247503872719664
+        },
+        "after": {
+          "rgb": [
+            216,
+            214,
+            210
+          ],
+          "hex": "#d8d6d2",
+          "displayBrightness": 0.8397505882352941,
+          "relativeLuminance": 0.6734520763181617
+        }
+      },
+      "lowerDoor": {
+        "pixel": [
+          867,
+          559
+        ],
+        "patchSize": 7,
+        "baselineRaycast": {
+          "front": {
+            "part": "door_FL",
+            "zone": "paint",
+            "node": "Front_Doors_9",
+            "point": [
+              -0.34592530736443705,
+              0.6775789823369798,
+              0.9355872432337334
+            ]
+          },
+          "patchCounts": {
+            "door_FL:paint": 49
+          }
+        },
+        "before": {
+          "rgb": [
+            185,
+            184,
+            182
+          ],
+          "hex": "#b9b8b6",
+          "displayBrightness": 0.7218360784313725,
+          "relativeLuminance": 0.47972666228892974
+        },
+        "after": {
+          "rgb": [
+            223,
+            221,
+            216
+          ],
+          "hex": "#dfddd8",
+          "displayBrightness": 0.8669184313725489,
+          "relativeLuminance": 0.7235874606679046
+        }
+      },
+      "background": {
+        "pixel": [
+          720,
+          140
+        ],
+        "patchSize": 7,
+        "baselineRaycast": {
+          "front": null,
+          "patchCounts": {
+            "ground/background": 49
+          }
+        },
+        "before": {
+          "rgb": [
+            238,
+            232,
+            224
+          ],
+          "hex": "#eee8e0",
+          "displayBrightness": 0.9125411764705883,
+          "relativeLuminance": 0.8127218671010767
+        },
+        "after": {
+          "rgb": [
+            238,
+            232,
+            224
+          ],
+          "hex": "#eee8e0",
+          "displayBrightness": 0.9125411764705883,
+          "relativeLuminance": 0.8127218671010767
+        }
+      },
+      "tyreRubber": {
+        "pixel": [
+          608,
+          599
+        ],
+        "patchSize": 7,
+        "baselineRaycast": {
+          "front": {
+            "part": "wheel_FL",
+            "zone": "tyre",
+            "node": "tire_17",
+            "point": [
+              -1.631901895846904,
+              0.7264754072172767,
+              0.964122495730951
+            ]
+          },
+          "patchCounts": {
+            "wheel_FL:tyre": 49
+          }
+        },
+        "before": {
+          "rgb": [
+            37,
+            37,
+            38
+          ],
+          "hex": "#252526",
+          "displayBrightness": 0.1453811764705882,
+          "relativeLuminance": 0.01856391069620144
+        },
+        "after": {
+          "rgb": [
+            37,
+            37,
+            38
+          ],
+          "hex": "#252526",
+          "displayBrightness": 0.1453811764705882,
+          "relativeLuminance": 0.01856391069620144
+        }
+      },
+      "wheelFace": {
+        "pixel": [
+          632,
+          664
+        ],
+        "patchSize": 7,
+        "baselineRaycast": {
+          "front": {
+            "part": "wheel_FL",
+            "zone": "rim",
+            "node": "rim_15",
+            "point": [
+              -1.5191031703483513,
+              0.47787267874656925,
+              0.9553996078763969
+            ]
+          },
+          "patchCounts": {
+            "wheel_FL:rim": 49
+          }
+        },
+        "before": {
+          "rgb": [
+            53,
+            57,
+            60
+          ],
+          "hex": "#35393c",
+          "displayBrightness": 0.22104392156862745,
+          "relativeLuminance": 0.040093832326856496
+        },
+        "after": {
+          "rgb": [
+            53,
+            57,
+            60
+          ],
+          "hex": "#35393c",
+          "displayBrightness": 0.22104392156862745,
+          "relativeLuminance": 0.040093832326856496
+        }
+      },
+      "sideGlass": {
+        "pixel": [
+          824,
+          332
+        ],
+        "patchSize": 7,
+        "baselineRaycast": {
+          "front": {
+            "part": "door_FL",
+            "zone": "glass",
+            "node": "windowglass_39",
+            "point": [
+              -0.3997014662454147,
+              1.5188173086243022,
+              0.7573953797368013
+            ]
+          },
+          "patchCounts": {
+            "door_FL:glass": 49
+          }
+        },
+        "before": {
+          "rgb": [
+            41,
+            49,
+            52
+          ],
+          "hex": "#293134",
+          "displayBrightness": 0.18633647058823527,
+          "relativeLuminance": 0.029159756916498056
+        },
+        "after": {
+          "rgb": [
+            41,
+            49,
+            52
+          ],
+          "hex": "#293134",
+          "displayBrightness": 0.18633647058823527,
+          "relativeLuminance": 0.029159756916498056
+        }
+      },
+      "groundFrontLeft": {
+        "pixel": [
+          570,
+          806
+        ],
+        "patchSize": 7,
+        "baselineRaycast": {
+          "front": null,
+          "patchCounts": {
+            "ground/background": 49
+          }
+        },
+        "before": {
+          "rgb": [
+            41,
+            40,
+            38
+          ],
+          "hex": "#292826",
+          "displayBrightness": 0.15713019607843137,
+          "relativeLuminance": 0.021289410589082656
+        },
+        "after": {
+          "rgb": [
+            31,
+            30,
+            29
+          ],
+          "hex": "#1f1e1d",
+          "displayBrightness": 0.11819764705882353,
+          "relativeLuminance": 0.01308561204634525
+        },
+        "visibilityNote": "7x7 patch is clear of vehicle geometry on ground adjacent to visible tyre. Opposite-side contacts are occluded in this preset."
+      },
+      "groundRearLeft": {
+        "pixel": [
+          1090,
+          673
+        ],
+        "patchSize": 7,
+        "baselineRaycast": {
+          "front": null,
+          "patchCounts": {
+            "ground/background": 49
+          }
+        },
+        "before": {
+          "rgb": [
+            100,
+            98,
+            94
+          ],
+          "hex": "#64625e",
+          "displayBrightness": 0.38484862745098036,
+          "relativeLuminance": 0.12252842204905448
+        },
+        "after": {
+          "rgb": [
+            83,
+            81,
+            78
+          ],
+          "hex": "#53514e",
+          "displayBrightness": 0.3184650980392157,
+          "relativeLuminance": 0.08273917491116445
+        },
+        "visibilityNote": "7x7 patch is clear of vehicle geometry on ground adjacent to visible tyre. Opposite-side contacts are occluded in this preset."
+      }
+    },
+    "side": {
+      "bonnet": {
+        "pixel": [
+          341,
+          422
+        ],
+        "patchSize": 7,
+        "baselineRaycast": {
+          "front": {
+            "part": "bonnet",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -1.6298480380285636,
+              1.245723463119474,
+              0.6319527174735322
+            ]
+          },
+          "patchCounts": {
+            "bonnet:paint": 49
+          }
+        },
+        "before": {
+          "rgb": [
+            209,
+            209,
+            206
+          ],
+          "hex": "#d1d1ce",
+          "displayBrightness": 0.818758431372549,
+          "relativeLuminance": 0.6361246934983622
+        },
+        "after": {
+          "rgb": [
+            244,
+            242,
+            239
+          ],
+          "hex": "#f4f2ef",
+          "displayBrightness": 0.9498376470588235,
+          "relativeLuminance": 0.8896935303961269
+        },
+        "visibilityNote": "Visible outer roof/bonnet edge; horizontal upper surface is occluded in this level Side preset."
+      },
+      "roof": {
+        "pixel": [
+          859,
+          288
+        ],
+        "patchSize": 7,
+        "baselineRaycast": {
+          "front": {
+            "part": "body_shell",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              0.6147774442311652,
+              1.8244858424216377,
+              0.6502450369693756
+            ]
+          },
+          "patchCounts": {
+            "body_shell:paint": 49
+          }
+        },
+        "before": {
+          "rgb": [
+            213,
+            212,
+            210
+          ],
+          "hex": "#d5d4d2",
+          "displayBrightness": 0.8316399999999999,
+          "relativeLuminance": 0.6588624419713486
+        },
+        "after": {
+          "rgb": [
+            241,
+            239,
+            236
+          ],
+          "hex": "#f1efec",
+          "displayBrightness": 0.9380729411764706,
+          "relativeLuminance": 0.8648990492884084
+        },
+        "visibilityNote": "Visible outer roof/bonnet edge; horizontal upper surface is occluded in this level Side preset."
+      },
+      "frontDoor": {
+        "pixel": [
+          634,
+          468
+        ],
+        "patchSize": 7,
+        "baselineRaycast": {
+          "front": {
+            "part": "door_FL",
+            "zone": "paint",
+            "node": "Front_Doors_9",
+            "point": [
+              -0.34979629600488926,
+              1.029451813333789,
+              0.9526786196963152
+            ]
+          },
+          "patchCounts": {
+            "door_FL:paint": 49
+          }
+        },
+        "before": {
+          "rgb": [
+            187,
+            186,
+            184
+          ],
+          "hex": "#bbbab8",
+          "displayBrightness": 0.7296792156862745,
+          "relativeLuminance": 0.49143298378099276
+        },
+        "after": {
+          "rgb": [
+            218,
+            216,
+            212
+          ],
+          "hex": "#dad8d4",
+          "displayBrightness": 0.847593725490196,
+          "relativeLuminance": 0.6877062594862625
+        }
+      },
+      "lowerDoor": {
+        "pixel": [
+          635,
+          551
+        ],
+        "patchSize": 7,
+        "baselineRaycast": {
+          "front": {
+            "part": "door_FL",
+            "zone": "paint",
+            "node": "Front_Doors_9",
+            "point": [
+              -0.34611289401394096,
+              0.679448448523613,
+              0.9350454299616061
+            ]
+          },
+          "patchCounts": {
+            "door_FL:paint": 49
+          }
+        },
+        "before": {
+          "rgb": [
+            192,
+            191,
+            189
+          ],
+          "hex": "#c0bfbd",
+          "displayBrightness": 0.7492870588235294,
+          "relativeLuminance": 0.5214219410465363
+        },
+        "after": {
+          "rgb": [
+            224,
+            222,
+            218
+          ],
+          "hex": "#e0deda",
+          "displayBrightness": 0.8711231372549019,
+          "relativeLuminance": 0.731518012858468
+        }
+      },
+      "background": {
+        "pixel": [
+          720,
+          140
+        ],
+        "patchSize": 7,
+        "baselineRaycast": {
+          "front": null,
+          "patchCounts": {
+            "ground/background": 49
+          }
+        },
+        "before": {
+          "rgb": [
+            238,
+            232,
+            224
+          ],
+          "hex": "#eee8e0",
+          "displayBrightness": 0.9125411764705883,
+          "relativeLuminance": 0.8127218671010767
+        },
+        "after": {
+          "rgb": [
+            238,
+            232,
+            224
+          ],
+          "hex": "#eee8e0",
+          "displayBrightness": 0.9125411764705883,
+          "relativeLuminance": 0.8127218671010767
+        }
+      },
+      "tyreRubber": {
+        "pixel": [
+          330,
+          539
+        ],
+        "patchSize": 7,
+        "baselineRaycast": {
+          "front": {
+            "part": "wheel_FL",
+            "zone": "tyre",
+            "node": "tire_17",
+            "point": [
+              -1.631726416364802,
+              0.7293975881507335,
+              0.9636510679859198
+            ]
+          },
+          "patchCounts": {
+            "wheel_FL:tyre": 49
+          }
+        },
+        "before": {
+          "rgb": [
+            38,
+            39,
+            39
+          ],
+          "hex": "#262727",
+          "displayBrightness": 0.15210745098039216,
+          "relativeLuminance": 0.020095904490252635
+        },
+        "after": {
+          "rgb": [
+            38,
+            39,
+            39
+          ],
+          "hex": "#262727",
+          "displayBrightness": 0.15210745098039216,
+          "relativeLuminance": 0.020095904490252635
+        }
+      },
+      "wheelFace": {
+        "pixel": [
+          353,
+          599
+        ],
+        "patchSize": 7,
+        "baselineRaycast": {
+          "front": {
+            "part": "wheel_FL",
+            "zone": "rim",
+            "node": "rim_15",
+            "point": [
+              -1.5359360882977628,
+              0.4763782271542419,
+              0.9542388388540569
+            ]
+          },
+          "patchCounts": {
+            "wheel_FL:rim": 49
+          }
+        },
+        "before": {
+          "rgb": [
+            59,
+            63,
+            66
+          ],
+          "hex": "#3b3f42",
+          "displayBrightness": 0.2445733333333333,
+          "relativeLuminance": 0.04878167917102469
+        },
+        "after": {
+          "rgb": [
+            59,
+            63,
+            66
+          ],
+          "hex": "#3b3f42",
+          "displayBrightness": 0.2445733333333333,
+          "relativeLuminance": 0.04878167917102469
+        }
+      },
+      "sideGlass": {
+        "pixel": [
+          624,
+          357
+        ],
+        "patchSize": 7,
+        "baselineRaycast": {
+          "front": {
+            "part": "door_FL",
+            "zone": "glass",
+            "node": "windowglass_39",
+            "point": [
+              -0.3987013303999708,
+              1.5158985525057418,
+              0.7583947007823574
+            ]
+          },
+          "patchCounts": {
+            "door_FL:glass": 49
+          }
+        },
+        "before": {
+          "rgb": [
+            103,
+            105,
+            107
+          ],
+          "hex": "#67696b",
+          "displayBrightness": 0.41066352941176465,
+          "relativeLuminance": 0.14048252034934536
+        },
+        "after": {
+          "rgb": [
+            103,
+            105,
+            107
+          ],
+          "hex": "#67696b",
+          "displayBrightness": 0.41066352941176465,
+          "relativeLuminance": 0.14048252034934536
+        }
+      },
+      "groundFrontLeft": {
+        "pixel": [
+          330,
+          718
+        ],
+        "patchSize": 7,
+        "baselineRaycast": {
+          "front": null,
+          "patchCounts": {
+            "ground/background": 49
+          }
+        },
+        "before": {
+          "rgb": [
+            236,
+            230,
+            221
+          ],
+          "hex": "#ece6dd",
+          "displayBrightness": 0.9044149019607842,
+          "relativeLuminance": 0.7964695371301447
+        },
+        "after": {
+          "rgb": [
+            236,
+            230,
+            221
+          ],
+          "hex": "#ece6dd",
+          "displayBrightness": 0.9044149019607842,
+          "relativeLuminance": 0.7964695371301447
+        },
+        "visibilityNote": "7x7 patch is clear of vehicle geometry on ground adjacent to visible tyre. Opposite-side contacts are occluded in this preset."
+      },
+      "groundRearLeft": {
+        "pixel": [
+          1005,
+          718
+        ],
+        "patchSize": 7,
+        "baselineRaycast": {
+          "front": null,
+          "patchCounts": {
+            "ground/background": 49
+          }
+        },
+        "before": {
+          "rgb": [
+            237,
+            231,
+            223
+          ],
+          "hex": "#ede7df",
+          "displayBrightness": 0.9086196078431372,
+          "relativeLuminance": 0.8048406587602922
+        },
+        "after": {
+          "rgb": [
+            237,
+            231,
+            223
+          ],
+          "hex": "#ede7df",
+          "displayBrightness": 0.9086196078431372,
+          "relativeLuminance": 0.8048406587602922
+        },
+        "visibilityNote": "7x7 patch is clear of vehicle geometry on ground adjacent to visible tyre. Opposite-side contacts are occluded in this preset."
+      }
+    }
+  },
+  "lightDirectionRatios": {
+    "quarter": {
+      "before": {
+        "bonnetBrighterThanDoorPercent": 13.689537975193877,
+        "roofBrighterThanDoorPercent": 4.930628348876276,
+        "topAverageBrighterThanDoorPercent": 9.310083162035077,
+        "doorDarkerThanTopAveragePercent": 8.517131167336434
+      },
+      "after": {
+        "bonnetBrighterThanDoorPercent": 12.642502629165332,
+        "roofBrighterThanDoorPercent": 10.339391154423062,
+        "topAverageBrighterThanDoorPercent": 11.490946891794195,
+        "doorDarkerThanTopAveragePercent": 10.30661879923449
+      }
+    },
+    "side": {
+      "before": {
+        "bonnetBrighterThanDoorPercent": 12.2079968527669,
+        "roofBrighterThanDoorPercent": 13.973371054269347,
+        "topAverageBrighterThanDoorPercent": 13.090683953518113,
+        "doorDarkerThanTopAveragePercent": 11.575386668364807
+      },
+      "after": {
+        "bonnetBrighterThanDoorPercent": 12.06284549941612,
+        "roofBrighterThanDoorPercent": 10.674833114644278,
+        "topAverageBrighterThanDoorPercent": 11.36883930703021,
+        "doorDarkerThanTopAveragePercent": 10.208276729622467
+      }
+    }
+  },
+  "contactShadow": {
+    "quarter": {
+      "samples": [
+        "groundFrontLeft",
+        "groundRearLeft"
+      ],
+      "frontDarkerPercent": 24.77725478059908,
+      "rearDarkerPercent": 17.249257156366028,
+      "combinedDarkerPercent": 19.431769998972538,
+      "method": "1 - sum(after displayed sRGB brightness)/sum(before displayed sRGB brightness)"
+    },
+    "side": {
+      "samples": [
+        "groundFrontLeft",
+        "groundRearLeft"
+      ],
+      "frontDarkerPercent": 0.0,
+      "rearDarkerPercent": 0.0,
+      "combinedDarkerPercent": 0.0,
+      "method": "1 - sum(after displayed sRGB brightness)/sum(before displayed sRGB brightness)",
+      "limitation": "Samples are clear ground adjacent to tyres, outside the very thin level-profile contact stripe; they do not quantify contact-density change."
+    }
+  },
+  "farShadowControls": {
+    "method": "Same7x7median coordinates before/after; actual RGB deltas recorded without asserting that every control is shadowed or geometry-free.",
+    "samples": [
+      {
+        "pixel": [
+          220,
+          784
+        ],
+        "patchSize": 7,
+        "before": {
+          "rgb": [
+            188,
+            183,
+            176
+          ],
+          "hex": "#bcb7b0",
+          "displayBrightness": 0.719833725490196,
+          "relativeLuminance": 0.4769292795545974
+        },
+        "after": {
+          "rgb": [
+            188,
+            183,
+            176
+          ],
+          "hex": "#bcb7b0",
+          "displayBrightness": 0.719833725490196,
+          "relativeLuminance": 0.4769292795545974
+        },
+        "rgbDelta": [
+          0,
+          0,
+          0
+        ],
+        "maxAbsoluteChannelDelta": 0
+      },
+      {
+        "pixel": [
+          300,
+          800
+        ],
+        "patchSize": 7,
+        "before": {
+          "rgb": [
+            191,
+            186,
+            179
+          ],
+          "hex": "#bfbab3",
+          "displayBrightness": 0.731598431372549,
+          "relativeLuminance": 0.4944885041953375
+        },
+        "after": {
+          "rgb": [
+            191,
+            186,
+            179
+          ],
+          "hex": "#bfbab3",
+          "displayBrightness": 0.731598431372549,
+          "relativeLuminance": 0.4944885041953375
+        },
+        "rgbDelta": [
+          0,
+          0,
+          0
+        ],
+        "maxAbsoluteChannelDelta": 0
+      },
+      {
+        "pixel": [
+          400,
+          824
+        ],
+        "patchSize": 7,
+        "before": {
+          "rgb": [
+            192,
+            188,
+            181
+          ],
+          "hex": "#c0bcb5",
+          "displayBrightness": 0.7386078431372549,
+          "relativeLuminance": 0.5050910298849971
+        },
+        "after": {
+          "rgb": [
+            192,
+            188,
+            181
+          ],
+          "hex": "#c0bcb5",
+          "displayBrightness": 0.7386078431372549,
+          "relativeLuminance": 0.5050910298849971
+        },
+        "rgbDelta": [
+          0,
+          0,
+          0
+        ],
+        "maxAbsoluteChannelDelta": 0
+      },
+      {
+        "pixel": [
+          800,
+          747
+        ],
+        "patchSize": 7,
+        "before": {
+          "rgb": [
+            189,
+            184,
+            177
+          ],
+          "hex": "#bdb8b1",
+          "displayBrightness": 0.723755294117647,
+          "relativeLuminance": 0.48274121171878454
+        },
+        "after": {
+          "rgb": [
+            189,
+            184,
+            177
+          ],
+          "hex": "#bdb8b1",
+          "displayBrightness": 0.723755294117647,
+          "relativeLuminance": 0.48274121171878454
+        },
+        "rgbDelta": [
+          0,
+          0,
+          0
+        ],
+        "maxAbsoluteChannelDelta": 0
+      },
+      {
+        "pixel": [
+          1000,
+          738
+        ],
+        "patchSize": 7,
+        "before": {
+          "rgb": [
+            237,
+            231,
+            223
+          ],
+          "hex": "#ede7df",
+          "displayBrightness": 0.9086196078431372,
+          "relativeLuminance": 0.8048406587602922
+        },
+        "after": {
+          "rgb": [
+            237,
+            231,
+            223
+          ],
+          "hex": "#ede7df",
+          "displayBrightness": 0.9086196078431372,
+          "relativeLuminance": 0.8048406587602922
+        },
+        "rgbDelta": [
+          0,
+          0,
+          0
+        ],
+        "maxAbsoluteChannelDelta": 0
+      },
+      {
+        "pixel": [
+          1160,
+          700
+        ],
+        "patchSize": 7,
+        "before": {
+          "rgb": [
+            235,
+            229,
+            221
+          ],
+          "hex": "#ebe5dd",
+          "displayBrightness": 0.9007764705882353,
+          "relativeLuminance": 0.7892124846099913
+        },
+        "after": {
+          "rgb": [
+            235,
+            229,
+            221
+          ],
+          "hex": "#ebe5dd",
+          "displayBrightness": 0.9007764705882353,
+          "relativeLuminance": 0.7892124846099913
+        },
+        "rgbDelta": [
+          0,
+          0,
+          0
+        ],
+        "maxAbsoluteChannelDelta": 0
+      },
+      {
+        "pixel": [
+          1280,
+          680
+        ],
+        "patchSize": 7,
+        "before": {
+          "rgb": [
+            232,
+            226,
+            217
+          ],
+          "hex": "#e8e2d9",
+          "displayBrightness": 0.8887286274509804,
+          "relativeLuminance": 0.7655827168895337
+        },
+        "after": {
+          "rgb": [
+            232,
+            226,
+            217
+          ],
+          "hex": "#e8e2d9",
+          "displayBrightness": 0.8887286274509804,
+          "relativeLuminance": 0.7655827168895337
+        },
+        "rgbDelta": [
+          0,
+          0,
+          0
+        ],
+        "maxAbsoluteChannelDelta": 0
+      },
+      {
+        "pixel": [
+          1300,
+          740
+        ],
+        "patchSize": 7,
+        "before": {
+          "rgb": [
+            231,
+            224,
+            216
+          ],
+          "hex": "#e7e0d8",
+          "displayBrightness": 0.8820023529411765,
+          "relativeLuminance": 0.752581012322978
+        },
+        "after": {
+          "rgb": [
+            231,
+            224,
+            216
+          ],
+          "hex": "#e7e0d8",
+          "displayBrightness": 0.8820023529411765,
+          "relativeLuminance": 0.752581012322978
+        },
+        "rgbDelta": [
+          0,
+          0,
+          0
+        ],
+        "maxAbsoluteChannelDelta": 0
+      }
+    ],
+    "maximumAbsoluteChannelDelta": 0,
+    "unchangedSamples": 8
+  },
+  "changedLookValues": [
+    {
+      "name": "Cream paint direct key gain",
+      "old": 1,
+      "new": 9
+    },
+    {
+      "name": "Cream paint indirect diffuse gain",
+      "old": 1,
+      "new": 2.5
+    },
+    {
+      "name": "Cream paint shader key direction (world)",
+      "old": [
+        -1.5,
+        8,
+        2
+      ],
+      "new": [
+        -3.8,
+        10,
+        0.1
+      ],
+      "oldNormalized": [
+        -0.17896499588156806,
+        0.9544799780350297,
+        0.23861999450875743
+      ],
+      "newNormalized": [
+        -0.3552022418153508,
+        0.9347427416193442,
+        0.009347427416193443
+      ],
+      "note": "Paint-only shader direction; shared light position remains unchanged."
+    },
+    {
+      "name": "Cream paint key tint (sRGB)",
+      "old": "#ffffff",
+      "new": "#fff0d6"
+    },
+    {
+      "name": "Cream contact near-depth exponent",
+      "old": 24,
+      "new": 16.5
+    },
+    {
+      "name": "Cream near-contact low-depth blend band",
+      "old": "No low-depth mask (all caster depths share exponent24)",
+      "new": [
+        0.88,
+        0.94
+      ],
+      "note": "Low casters only: blends original exponent24 toward16.5 within proximity band; broad contact term and blur kernel unchanged."
+    }
+  ]
+}

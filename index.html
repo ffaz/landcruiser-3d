@@ -282,6 +282,10 @@ const BAKED_LOOK=Object.freeze({ao:.90,ridge:.70,valley:.90});
 const bakedUniforms={
  uBakedAO:{value:BAKED_LOOK.ao},uBakedRidge:{value:BAKED_LOOK.ridge},uBakedValley:{value:BAKED_LOOK.valley}
 };
+// Cream changes painted surfaces only; the other studios retain their originals.
+const CREAM_LOOK=Object.freeze({keyGain:9.0,fillGain:2.5,keyDirection:[-3.8,10,.1],keyTint:'#fff0d6',nearContactPower:16.5,nearContactBand:[.88,.94]});
+const creamBakedUniforms={uCreamKeyGain:{value:CREAM_LOOK.keyGain},uCreamFillGain:{value:CREAM_LOOK.fillGain},
+ uCreamKeyDirection:{value:new THREE.Vector3(...CREAM_LOOK.keyDirection).normalize()},uCreamKeyTint:{value:new THREE.Color(CREAM_LOOK.keyTint)},uCreamContactPower:{value:CREAM_LOOK.nearContactPower},uCreamContactBand:{value:new THREE.Vector2(...CREAM_LOOK.nearContactBand)}};
 // Clay has its own material programs/uniforms; the original studio math is unchanged.
 const CLAY_LOOK=Object.freeze({ao:.65,ridge:.52,valley:.72});
 const clayBakedUniforms={uBakedAO:{value:CLAY_LOOK.ao},uBakedRidge:{value:CLAY_LOOK.ridge},
@@ -340,6 +344,23 @@ function useBakedShading(material,clay=false){
  material.customProgramCacheKey=()=> heightPaint?'lc200-clay-paint-height-v2':clayPaint?'lc200-clay-paint-v2':clay?'lc200-baked-ao-curvature-clay-v1':'lc200-baked-ao-curvature-v1';
  return material;
 }
+function useCreamPaintShading(material){
+ useBakedShading(material);
+ const bakedCompile=material.onBeforeCompile;
+ material.onBeforeCompile=shader=>{
+  bakedCompile(shader);Object.assign(shader.uniforms,creamBakedUniforms);
+  shader.fragmentShader=shader.fragmentShader.replace('#include <common>',
+   '#include <common>\nuniform float uCreamKeyGain; uniform float uCreamFillGain; uniform vec3 uCreamKeyDirection; uniform vec3 uCreamKeyTint;');
+  const creamLights=THREE.ShaderChunk.lights_fragment_begin.replace('getDirectionalLightInfo( directionalLight, directLight );',
+   'getDirectionalLightInfo( directionalLight, directLight );\nif(UNROLLED_LOOP_INDEX==0)directLight.direction=normalize(mat3(viewMatrix)*uCreamKeyDirection);');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <lights_fragment_begin>',creamLights);
+  // Weight the existing key/fill before the unchanged baked cavity and ridge math.
+  shader.fragmentShader=shader.fragmentShader.replace('#include <aomap_fragment>',
+   'reflectedLight.directDiffuse*=uCreamKeyGain*uCreamKeyTint;\nreflectedLight.indirectDiffuse*=uCreamFillGain;\n#include <aomap_fragment>');
+ };
+ material.customProgramCacheKey=()=> 'lc200-cream-paint-lighting-v2';
+ return material;
+}
 function bindBakedAttribute(root){
  let bakedVertices=0;
  root.traverse(part=>{
@@ -370,10 +391,10 @@ contactCamera.position.set(0,-.001,0);contactCamera.up.set(0,0,1);contactCamera.
 const contactTint={value:new THREE.Color(0x000000)},contactNearTint={value:1},contactNearStrength={value:1};
 const contactDepth=new THREE.MeshDepthMaterial({depthPacking:THREE.BasicDepthPacking,blending:THREE.NoBlending,side:THREE.DoubleSide});
 contactDepth.onBeforeCompile=shader=>{
- shader.uniforms.uContactTint=contactTint;shader.uniforms.uContactNearTint=contactNearTint;shader.uniforms.uContactNearStrength=contactNearStrength;
- shader.fragmentShader='uniform vec3 uContactTint; uniform float uContactNearTint; uniform float uContactNearStrength;\n'+shader.fragmentShader;
+ shader.uniforms.uContactTint=contactTint;shader.uniforms.uContactNearTint=contactNearTint;shader.uniforms.uContactNearStrength=contactNearStrength;shader.uniforms.uCreamContactPower=creamBakedUniforms.uCreamContactPower;shader.uniforms.uCreamContactBand=creamBakedUniforms.uCreamContactBand;
+ shader.fragmentShader='uniform vec3 uContactTint; uniform float uContactNearTint; uniform float uContactNearStrength; uniform float uCreamContactPower; uniform vec2 uCreamContactBand;\n'+shader.fragmentShader;
  shader.fragmentShader=shader.fragmentShader.replace('gl_FragColor = vec4( vec3( 1.0 - fragCoordZ ), opacity );',
- 'float proximity=max(0.0,1.0-fragCoordZ),nearContact=pow(proximity,24.0); vec3 contactColour=uContactTint*mix(1.0,uContactNearTint,nearContact); gl_FragColor=vec4(contactColour,.34*pow(proximity,2.5)+.66*nearContact*uContactNearStrength);');
+ 'float proximity=max(0.0,1.0-fragCoordZ),nearContact=pow(proximity,24.0); if(uCreamContactPower>0.0)nearContact=mix(nearContact,pow(proximity,uCreamContactPower),smoothstep(uCreamContactBand.x,uCreamContactBand.y,proximity)); vec3 contactColour=uContactTint*mix(1.0,uContactNearTint,nearContact); gl_FragColor=vec4(contactColour,.34*pow(proximity,2.5)+.66*nearContact*uContactNearStrength);');
 };
 const blurScene=new THREE.Scene();
 const blurCamera=new THREE.OrthographicCamera(-1,1,1,-1,0,2);blurCamera.position.z=1;
@@ -412,7 +433,7 @@ const parts=new Map();
 const zoneTemplates={paint,chrome,black:blackPlastic,tyre:tireMat,rim:rimMat,brake:softChrome,
  glass:windowGlass,mirror:chrome,lamp_red:tailRed,lamp_clear:lampLens,lamp_orange:orange,interior:interiorMat};
 // Retain every original studio material; Clay variants are created once, on demand.
-const clayMaterials=new Map(),clayLensMaterials=new WeakMap(),clayGlassMaterials=new WeakMap(),originalMaterials=new WeakMap();
+const clayMaterials=new Map(),clayLensMaterials=new WeakMap(),clayGlassMaterials=new WeakMap(),creamMaterials=new WeakMap(),originalMaterials=new WeakMap();
 const CLAY_COLORS=Object.freeze({black:'#4a3f4a',tyre:'#4a3f4a',glass:'#403240',
  chrome:'#c8bcc0',rim:'#b8a8af',brake:'#95858f',mirror:'#746572',interior:'#7c6977',
  lamp_red:'#a16f73',lamp_clear:'#eadbc2',lamp_orange:'#eadbc2',base_top:'#d7c1b5',base_edge:'#806d7d'});
@@ -465,6 +486,14 @@ function useClayGlassGradient(material,node){
 function studioMaterial(current,zone,hex,authored=false,node=null){
  const original=originalMaterials.get(current)||current;
  if(hex!==undefined)original.color.set(hex);
+ if(studioMode==='cream'&&zone==='paint'){
+  let material=creamMaterials.get(original);
+  if(!material){
+   material=useCreamPaintShading(original.clone());material.userData={...original.userData,studio:'cream'};
+   creamMaterials.set(original,material);originalMaterials.set(material,original);
+  }
+  material.color.copy(original.color);return material;
+ }
  if(studioMode!=='clay')return original;
  const frontLens=zone==='lamp_clear'&&original.userData.partId?.startsWith('lamp_front_')&&node;
  const glassGradient=zone==='glass'&&node;
@@ -820,7 +849,7 @@ function setStudio(mode){
  plinth.traverse(part=>{if(part.isMesh){const current=originalMaterials.get(part.material)||part.material;
   part.material=studioMaterial(current,current===baseTopMaterial?'base_top':'base_edge');
  }});
- contactTint.value.set(clay?'#604450':0x000000);contactNearTint.value=clay?.20:1;contactNearStrength.value=clay?1.30:1;contactMaterial.opacity=clay?.94:1;
+ contactTint.value.set(clay?'#604450':0x000000);contactNearTint.value=clay?.20:1;contactNearStrength.value=clay?1.30:1;creamBakedUniforms.uCreamContactPower.value=mode==='cream'?CREAM_LOOK.nearContactPower:0;contactMaterial.opacity=clay?.94:1;
  const displayedBase=plinth.visible;plinth.visible=false;bakeContactShadow();plinth.visible=displayedBase;
  requestRender();
 }

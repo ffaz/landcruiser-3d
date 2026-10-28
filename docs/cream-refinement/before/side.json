@@ -1,0 +1,358 @@
+{
+  "name": "before-cream-side",
+  "view": "side",
+  "source": "/workspace/lc-cream/before.html",
+  "sourceSha256": "a11ab741b5f39304c48c2e0de168ecd200bc6cf2f94366587a3c6ad985469071",
+  "samples": {
+    "bonnet": {
+      "pixel": [
+        341,
+        422
+      ],
+      "front": {
+        "part": "bonnet",
+        "zone": "paint",
+        "node": "carpaint_6",
+        "point": [
+          -1.6298480380285636,
+          1.245723463119474,
+          0.6319527174735322
+        ]
+      },
+      "patchValidation": {
+        "bonnet:paint": 49
+      },
+      "rgb": [
+        209,
+        209,
+        206
+      ],
+      "hex": "#d1d1ce",
+      "displayLuma": 0.818758431372549,
+      "relativeLuminance": 0.6361246934983622,
+      "visibilityNote": "Visible outer roof/bonnet edge; horizontal upper surface is occluded in this level Side preset."
+    },
+    "roof": {
+      "pixel": [
+        859,
+        288
+      ],
+      "front": {
+        "part": "body_shell",
+        "zone": "paint",
+        "node": "carpaint_6",
+        "point": [
+          0.6147774442311652,
+          1.8244858424216377,
+          0.6502450369693756
+        ]
+      },
+      "patchValidation": {
+        "body_shell:paint": 49
+      },
+      "rgb": [
+        213,
+        212,
+        210
+      ],
+      "hex": "#d5d4d2",
+      "displayLuma": 0.8316399999999999,
+      "relativeLuminance": 0.6588624419713486,
+      "visibilityNote": "Visible outer roof/bonnet edge; horizontal upper surface is occluded in this level Side preset."
+    },
+    "frontDoor": {
+      "pixel": [
+        634,
+        468
+      ],
+      "front": {
+        "part": "door_FL",
+        "zone": "paint",
+        "node": "Front_Doors_9",
+        "point": [
+          -0.34979629600488926,
+          1.029451813333789,
+          0.9526786196963152
+        ]
+      },
+      "patchValidation": {
+        "door_FL:paint": 49
+      },
+      "rgb": [
+        187,
+        186,
+        184
+      ],
+      "hex": "#bbbab8",
+      "displayLuma": 0.7296792156862745,
+      "relativeLuminance": 0.49143298378099276
+    },
+    "lowerDoor": {
+      "pixel": [
+        635,
+        551
+      ],
+      "front": {
+        "part": "door_FL",
+        "zone": "paint",
+        "node": "Front_Doors_9",
+        "point": [
+          -0.34611289401394096,
+          0.679448448523613,
+          0.9350454299616061
+        ]
+      },
+      "patchValidation": {
+        "door_FL:paint": 49
+      },
+      "rgb": [
+        192,
+        191,
+        189
+      ],
+      "hex": "#c0bfbd",
+      "displayLuma": 0.7492870588235294,
+      "relativeLuminance": 0.5214219410465363
+    },
+    "background": {
+      "pixel": [
+        720,
+        140
+      ],
+      "front": null,
+      "patchValidation": {
+        "ground/background": 49
+      },
+      "rgb": [
+        238,
+        232,
+        224
+      ],
+      "hex": "#eee8e0",
+      "displayLuma": 0.9125411764705883,
+      "relativeLuminance": 0.8127218671010767
+    },
+    "tyreRubber": {
+      "pixel": [
+        330,
+        539
+      ],
+      "front": {
+        "part": "wheel_FL",
+        "zone": "tyre",
+        "node": "tire_17",
+        "point": [
+          -1.631726416364802,
+          0.7293975881507335,
+          0.9636510679859198
+        ]
+      },
+      "patchValidation": {
+        "wheel_FL:tyre": 49
+      },
+      "rgb": [
+        38,
+        39,
+        39
+      ],
+      "hex": "#262727",
+      "displayLuma": 0.15210745098039216,
+      "relativeLuminance": 0.020095904490252635
+    },
+    "wheelFace": {
+      "pixel": [
+        353,
+        599
+      ],
+      "front": {
+        "part": "wheel_FL",
+        "zone": "rim",
+        "node": "rim_15",
+        "point": [
+          -1.5359360882977628,
+          0.4763782271542419,
+          0.9542388388540569
+        ]
+      },
+      "patchValidation": {
+        "wheel_FL:rim": 49
+      },
+      "rgb": [
+        59,
+        63,
+        66
+      ],
+      "hex": "#3b3f42",
+      "displayLuma": 0.2445733333333333,
+      "relativeLuminance": 0.04878167917102469
+    },
+    "sideGlass": {
+      "pixel": [
+        624,
+        357
+      ],
+      "front": {
+        "part": "door_FL",
+        "zone": "glass",
+        "node": "windowglass_39",
+        "point": [
+          -0.3987013303999708,
+          1.5158985525057418,
+          0.7583947007823574
+        ]
+      },
+      "patchValidation": {
+        "door_FL:glass": 49
+      },
+      "rgb": [
+        103,
+        105,
+        107
+      ],
+      "hex": "#67696b",
+      "displayLuma": 0.41066352941176465,
+      "relativeLuminance": 0.14048252034934536
+    },
+    "groundFrontLeft": {
+      "pixel": [
+        330,
+        718
+      ],
+      "front": null,
+      "patchValidation": {
+        "ground/background": 49
+      },
+      "rgb": [
+        236,
+        230,
+        221
+      ],
+      "hex": "#ece6dd",
+      "displayLuma": 0.9044149019607842,
+      "relativeLuminance": 0.7964695371301447,
+      "visibilityNote": "7x7 patch is clear of vehicle geometry on ground adjacent to visible tyre. Opposite-side contacts are occluded in this preset."
+    },
+    "groundRearLeft": {
+      "pixel": [
+        1005,
+        718
+      ],
+      "front": null,
+      "patchValidation": {
+        "ground/background": 49
+      },
+      "rgb": [
+        237,
+        231,
+        223
+      ],
+      "hex": "#ede7df",
+      "displayLuma": 0.9086196078431372,
+      "relativeLuminance": 0.8048406587602922,
+      "visibilityNote": "7x7 patch is clear of vehicle geometry on ground adjacent to visible tyre. Opposite-side contacts are occluded in this preset."
+    }
+  },
+  "info": {
+    "studio": "cream",
+    "build": {
+      "slots": {
+        "body_shell": "body_shell",
+        "bonnet": "bonnet",
+        "bumper_front": "bumper_front",
+        "bumper_rear": "bumper_rear",
+        "door_FL": "door_FL",
+        "door_FR": "door_FR",
+        "door_RL": "door_RL",
+        "door_RR": "door_RR",
+        "grille": "grille",
+        "lamp_front_L": "lamp_front_L",
+        "lamp_front_R": "lamp_front_R",
+        "lamp_rear_L": "lamp_rear_L",
+        "lamp_rear_R": "lamp_rear_R",
+        "mirror_L": "mirror_L",
+        "mirror_R": "mirror_R",
+        "roof_rails": "roof_rails",
+        "side_step_L": "side_step_L",
+        "side_step_R": "side_step_R",
+        "spoiler": "spoiler",
+        "tailgate": "tailgate",
+        "unsorted_01": "unsorted_01",
+        "unsorted_02": "unsorted_02",
+        "unsorted_03": "unsorted_03",
+        "unsorted_04": "unsorted_04",
+        "unsorted_05": "unsorted_05",
+        "unsorted_06": "unsorted_06",
+        "unsorted_07": "unsorted_07",
+        "unsorted_08": "unsorted_08",
+        "unsorted_09": "unsorted_09",
+        "unsorted_10": "unsorted_10",
+        "wheel_FL": "wheel_FL",
+        "wheel_FR": "wheel_FR",
+        "wheel_RL": "wheel_RL",
+        "wheel_RR": "wheel_RR",
+        "arch_flares": null,
+        "chassis": null
+      },
+      "paint": {
+        "paint": "#f4f4ef"
+      },
+      "lift_mm": 0,
+      "hidden": []
+    },
+    "contact": {
+      "opacity": 1,
+      "tint": "000000",
+      "nearTint": 1,
+      "nearStrength": 1
+    },
+    "exposure": 1.2,
+    "toneMapping": 6,
+    "key": {
+      "intensity": 1.65,
+      "color": "fffbf5",
+      "position": [
+        -1.5,
+        8,
+        2
+      ]
+    },
+    "fill": {
+      "intensity": 0.6,
+      "color": "f7f5f0",
+      "ground": "52565c"
+    },
+    "baked": {
+      "uBakedAO": 0.9,
+      "uBakedRidge": 0.7,
+      "uBakedValley": 0.9
+    },
+    "clay": {
+      "uBakedAO": 0.65,
+      "uBakedRidge": 0.52,
+      "uBakedValley": 0.72,
+      "uClayOcclusionTint": "a58e72",
+      "uClayLowerKey": 0.09,
+      "uClayHeightStart": 0.65,
+      "uClayHeightEnd": 1.14,
+      "uClayBodyLift": 0
+    },
+    "background": "radial-gradient(at 50% 42%, rgb(239, 234, 227) 0%, rgb(237, 231, 223) 50%, rgb(228, 222, 213) 100%)",
+    "camera": {
+      "position": [
+        0.02,
+        0.4000000000000008,
+        12.924356919649727
+      ],
+      "target": [
+        0.02,
+        0.4,
+        0
+      ],
+      "fov": 20
+    },
+    "drawCalls": 167,
+    "triangles": 841958
+  },
+  "errors": [],
+  "sampleMethod": "7x7 per-channel median of lossless PNG pixels; raycast49/49 patch validation; RGB-weighted display brightness recorded separately from linear luminance."
+}
