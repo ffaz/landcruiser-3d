@@ -112,8 +112,10 @@ It also compares Cream's first-load Side render with the same view after a
 studio cycle, which catches initial paint/contact settings that only apply after
 clicking the studio button.
 
-Checks preserve Cream's non-paint material properties, paint satin properties,
-global lights/exposure, neutral background and baked AO/ridge/valley settings.
+Checks preserve Cream's glass, lamp, chrome, wheel and tyre properties, paint satin properties,
+global lights/exposure and original studio AO/ridge/valley settings. They verify Cream's
+separate stronger detail uniforms, neutral grey background, near-black trim variant and
+unchanged contact-shadow settings. Wheel-assembly black zones retain their original materials.
 They exercise the actual four swatch buttons, custom white/orange/pastel paint,
 per-part paint/trim overrides, hidden/empty slots, mode restoration and a rigid
 50 mm lift with fixed wheels. POSITION/NORMAL/COLOR_0 buffers, node matrices,
@@ -123,3 +125,5 @@ counts and shadow-map settings. Temporary render suppression speeds capture;
 it is not an iPad performance measurement.
 
 Cream follow-up checks also verify unchanged original gain uniforms, reuse of the existing floor/contact texture, and Base clipping/restoration without buffer changes.
+
+Cream detail evidence is in [`docs/cream-detail`](../docs/cream-detail/README.md), including the same-coordinate 7×7 sample ledger and every changed artistic value.

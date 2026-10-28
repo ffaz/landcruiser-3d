@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
 <link rel="icon" href="data:," />
-<meta name="theme-color" content="#EFEAE3" />
+<meta name="theme-color" content="#EBEBE9" />
 <title>2021 Land Cruiser 200 | Collectible Studio</title>
 <!--
   Parts-based LC200 foundation. Three.js 0.166.1 and Meshopt decoder stay pinned.
@@ -23,7 +23,7 @@
   body {font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink);
     background:linear-gradient(180deg,var(--bg1) 0%,#405b70 52%,var(--bg2) 100%); transition:background .35s ease; }
   body.cream { color:#283440;--ink:#283440;--muted:#62707c;--panel:rgba(255,252,245,.79);--line:rgba(62,76,86,.14);--accent:#385c73;
-    color-scheme:light;background:radial-gradient(ellipse at 50% 42%,#EFEAE3 0%,#EDE7DF 50%,#E4DED5 100%); }
+    color-scheme:light;background:radial-gradient(ellipse at 50% 42%,#ECECEA 0%,#EBEBE9 50%,#E1E1DF 100%); }
   body.clay {color:#4a3f4a;--ink:#4a3f4a;--muted:#806e7b;--panel:rgba(255,245,236,.57);--line:rgba(91,66,84,.16);--accent:#73556a;
     color-scheme:light;background:radial-gradient(ellipse at 50% 42%,var(--clay-centre,#f1e1d7) 0%,var(--clay-mid,#ecdbd1) 53%,var(--clay-edge,#dfcabe) 100%);}
   body.clay .viewbtn.active{background:rgba(111,78,101,.13)}
@@ -277,32 +277,34 @@ const orange=physical('#d66b18',.13,0,.8);orange.emissive.set('#8c3505');orange.
 const interiorMat=new THREE.MeshStandardMaterial({color:'#776753',roughness:.88,metalness:0});
 
 // COLOR_0 contains linear data, not paint colour: R=Cycles AO; G=signed curvature.
-// These three strengths are the only artistic controls for the baked look.
+// Original studio strengths remain independent of Cream and Clay variants.
 const BAKED_LOOK=Object.freeze({ao:.90,ridge:.70,valley:.90});
 const bakedUniforms={
  uBakedAO:{value:BAKED_LOOK.ao},uBakedRidge:{value:BAKED_LOOK.ridge},uBakedValley:{value:BAKED_LOOK.valley}
 };
-// Cream changes painted surfaces only; the other studios retain their originals.
+// Cream variants keep original studio materials and data untouched.
 const CREAM_LOOK=Object.freeze({keyGain:9.0,fillGain:2.5,keyDirection:[-3.8,10,.1],keyTint:'#fff0d6',nearContactPower:16.5,nearContactBand:[.88,.94]});
+const CREAM_DETAIL=Object.freeze({ao:1.12,ridge:1.0,valley:1.35,aoExponent:2.5,rearFill:3.8,trimColor:'#050607',trimRoughness:.72,trimEnv:.20,trimSpecular:.25});
+const creamDetailUniforms={uCreamTrimSpecular:{value:CREAM_DETAIL.trimSpecular},uCreamAOExponent:{value:CREAM_DETAIL.aoExponent},uBakedAO:{value:CREAM_DETAIL.ao},uBakedRidge:{value:CREAM_DETAIL.ridge},uBakedValley:{value:CREAM_DETAIL.valley}};
 const creamBakedUniforms={uCreamKeyGain:{value:CREAM_LOOK.keyGain},uCreamFillGain:{value:CREAM_LOOK.fillGain},
  uCreamKeyDirection:{value:new THREE.Vector3(...CREAM_LOOK.keyDirection).normalize()},uCreamKeyTint:{value:new THREE.Color(CREAM_LOOK.keyTint)},uCreamContactPower:{value:CREAM_LOOK.nearContactPower},uCreamContactBand:{value:new THREE.Vector2(...CREAM_LOOK.nearContactBand)},
- uCreamGrazingFloor:{value:.20},uCreamGrazingRange:{value:new THREE.Vector2(.03,.30)}};
+ uCreamRearFill:{value:CREAM_DETAIL.rearFill},uCreamGrazingFloor:{value:.20},uCreamGrazingRange:{value:new THREE.Vector2(.03,.30)}};
 // Clay has its own material programs/uniforms; the original studio math is unchanged.
 const CLAY_LOOK=Object.freeze({ao:.65,ridge:.52,valley:.72});
 const clayBakedUniforms={uBakedAO:{value:CLAY_LOOK.ao},uBakedRidge:{value:CLAY_LOOK.ridge},
  uBakedValley:{value:CLAY_LOOK.valley},uClayOcclusionTint:{value:new THREE.Color('#a58e72')},
  uClayLowerKey:{value:.09},uClayHeightStart:{value:.65},uClayHeightEnd:{value:1.14},uClayBodyLift:{value:0}};
-function useBakedShading(material,clay=false){
+function useBakedShading(material,clay=false,cream=false){
  const clayPaint=clay&&material.userData.zone==='paint';
  const heightPaint=clayPaint&&!material.userData.partId?.startsWith('side_step_');
  material.onBeforeCompile=shader=>{
-  Object.assign(shader.uniforms,clay?clayBakedUniforms:bakedUniforms);
+  Object.assign(shader.uniforms,clay?clayBakedUniforms:cream?creamDetailUniforms:bakedUniforms);
   shader.vertexShader=shader.vertexShader.replace('#include <common>',
    '#include <common>\nattribute vec3 bakedShading; varying vec2 vBakedShading;');
   shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>',
    '#include <begin_vertex>\nvBakedShading=bakedShading.rg;');
   shader.fragmentShader=shader.fragmentShader.replace('#include <common>',
-   '#include <common>\nvarying vec2 vBakedShading; uniform float uBakedAO; uniform float uBakedRidge; uniform float uBakedValley;'+(clay?' uniform vec3 uClayOcclusionTint;':''));
+   '#include <common>\nvarying vec2 vBakedShading; uniform float uBakedAO; uniform float uBakedRidge; uniform float uBakedValley;'+(clay?' uniform vec3 uClayOcclusionTint;':'')+(cream?' uniform float uCreamAOExponent; uniform float uCreamTrimSpecular;':''));
   if(heightPaint){
    shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying float vClayPaintHeight; uniform float uClayBodyLift;');
    shader.vertexShader=shader.vertexShader.replace('#include <worldpos_vertex>',`#include <worldpos_vertex>
@@ -315,10 +317,10 @@ function useBakedShading(material,clay=false){
     '#include <common>\nvarying float vClayPaintHeight; uniform float uClayLowerKey; uniform float uClayHeightStart; uniform float uClayHeightEnd;');
   }
   shader.fragmentShader=shader.fragmentShader.replace('#include <aomap_fragment>',`#include <aomap_fragment>
-   float bakedAO=clamp(vBakedShading.r,0.0,1.0);
+   float bakedAO=${cream?'pow(clamp(vBakedShading.r,0.0,1.0),mix(1.0,uCreamAOExponent,smoothstep(0.02,0.10,abs(vBakedShading.g-0.5)*2.0)))':'clamp(vBakedShading.r,0.0,1.0)'};
    float bakedRidge=max(0.0,(vBakedShading.g-0.5-1.0/255.0)*2.0);
    float bakedValley=max(0.0,(0.5-vBakedShading.g-1.0/255.0)*2.0);
-   float bakedCavity=clamp(1.0-(1.0-bakedAO)*uBakedAO-bakedValley*uBakedValley*0.35,${clay?'0.42':'0.18'},1.0);
+   float bakedCavity=clamp(1.0-(1.0-bakedAO)*uBakedAO-bakedValley*uBakedValley*0.35,${clay?'0.42':cream?'0.10':'0.18'},1.0);
    ${clay?`vec3 clayCavity=mix(vec3(1.0),uClayOcclusionTint,1.0-bakedCavity);
    ${clayPaint?`// Broad flat-panel AO belongs to indirect light; retain direct cavity shading at creases.
    float keyCavity=clamp(1.0-(1.0-bakedAO)*uBakedAO*smoothstep(0.04,0.25,max(bakedRidge,bakedValley))-bakedValley*uBakedValley*0.35,0.42,1.0);
@@ -332,35 +334,36 @@ function useBakedShading(material,clay=false){
    #ifdef USE_CLEARCOAT
     clearcoatSpecularIndirect*=mix(vec3(1.0),clayCavity,0.72);
    #endif`:`
-   reflectedLight.directDiffuse*=mix(1.0,bakedCavity,0.65);
+   reflectedLight.directDiffuse*=mix(1.0,bakedCavity,${cream?'0.90':'0.65'});
    reflectedLight.indirectDiffuse*=bakedCavity;
-   reflectedLight.indirectSpecular*=mix(1.0,bakedCavity,0.72);
-   reflectedLight.directSpecular*=mix(1.0,bakedCavity,0.25);
+   reflectedLight.indirectSpecular*=mix(1.0,bakedCavity,${cream?'0.85':'0.72'});
+   reflectedLight.directSpecular*=mix(1.0,bakedCavity,${cream?'0.50':'0.25'});
    #ifdef USE_CLEARCOAT
-    clearcoatSpecularIndirect*=mix(1.0,bakedCavity,0.72);
+    clearcoatSpecularIndirect*=mix(1.0,bakedCavity,${cream?'0.85':'0.72'});
    #endif`}
    reflectedLight.indirectDiffuse+=diffuseColor.rgb*bakedRidge*uBakedRidge*0.13;
+   ${cream&&material.userData.zone==='black'?'reflectedLight.directSpecular*=uCreamTrimSpecular; reflectedLight.indirectSpecular*=uCreamTrimSpecular;':''}
   `);
  };
- material.customProgramCacheKey=()=> heightPaint?'lc200-clay-paint-height-v2':clayPaint?'lc200-clay-paint-v2':clay?'lc200-baked-ao-curvature-clay-v1':'lc200-baked-ao-curvature-v1';
+ material.customProgramCacheKey=()=> heightPaint?'lc200-clay-paint-height-v2':clayPaint?'lc200-clay-paint-v2':clay?'lc200-baked-ao-curvature-clay-v1':cream?'lc200-cream-baked-detail-v1':'lc200-baked-ao-curvature-v1';
  return material;
 }
 function useCreamPaintShading(material){
- useBakedShading(material);
+ useBakedShading(material,false,true);
  const bakedCompile=material.onBeforeCompile;
  material.onBeforeCompile=shader=>{
   bakedCompile(shader);Object.assign(shader.uniforms,creamBakedUniforms);
   if(material.userData.partId==='spoiler'){shader.uniforms.uCreamGrazingFloor={value:.02};shader.uniforms.uCreamGrazingRange={value:new THREE.Vector2(.03,.85)};}
   shader.fragmentShader=shader.fragmentShader.replace('#include <common>',
-   '#include <common>\nuniform float uCreamKeyGain; uniform float uCreamFillGain; uniform vec3 uCreamKeyDirection; uniform vec3 uCreamKeyTint; uniform float uCreamGrazingFloor; uniform vec2 uCreamGrazingRange;');
+   '#include <common>\nuniform float uCreamKeyGain; uniform float uCreamFillGain; uniform float uCreamRearFill; uniform vec3 uCreamKeyDirection; uniform vec3 uCreamKeyTint; uniform float uCreamGrazingFloor; uniform vec2 uCreamGrazingRange;');
   const creamLights=THREE.ShaderChunk.lights_fragment_begin.replace('getDirectionalLightInfo( directionalLight, directLight );',
    'getDirectionalLightInfo( directionalLight, directLight );\nif(UNROLLED_LOOP_INDEX==0)directLight.direction=normalize(mat3(viewMatrix)*uCreamKeyDirection);');
   shader.fragmentShader=shader.fragmentShader.replace('#include <lights_fragment_begin>',creamLights);
-  // Weight the existing key/fill before the unchanged baked cavity and ridge math.
+  // Preserve the key/satin response; rear-facing indirect fill is still cavity shaded.
   shader.fragmentShader=shader.fragmentShader.replace('#include <aomap_fragment>',
-   'float creamFacing=abs(dot(geometryNormal,geometryViewDir));\nfloat creamLowView=1.0-smoothstep(0.04,0.14,abs(cameraPosition.y)/max(length(cameraPosition),0.001));\nfloat creamEdgeGain=mix(1.0,mix(uCreamGrazingFloor,1.0,smoothstep(uCreamGrazingRange.x,uCreamGrazingRange.y,creamFacing)),creamLowView);\nreflectedLight.directDiffuse*=uCreamKeyGain*uCreamKeyTint*creamEdgeGain;\nreflectedLight.indirectDiffuse*=uCreamFillGain;\n#include <aomap_fragment>');
+   'float creamFacing=abs(dot(geometryNormal,geometryViewDir));\nfloat creamLowView=1.0-smoothstep(0.04,0.14,abs(cameraPosition.y)/max(length(cameraPosition),0.001));\nfloat creamEdgeGain=mix(1.0,mix(uCreamGrazingFloor,1.0,smoothstep(uCreamGrazingRange.x,uCreamGrazingRange.y,creamFacing)),creamLowView);\nreflectedLight.directDiffuse*=uCreamKeyGain*uCreamKeyTint*creamEdgeGain;\nvec3 creamWorldNormal=inverseTransformDirection(geometryNormal,viewMatrix);\nfloat creamRearWeight=smoothstep(0.15,0.80,creamWorldNormal.x);\nreflectedLight.indirectDiffuse*=uCreamFillGain*mix(1.0,uCreamRearFill,creamRearWeight);\n#include <aomap_fragment>');
  };
- material.customProgramCacheKey=()=> 'lc200-cream-paint-lighting-v3';
+ material.customProgramCacheKey=()=> 'lc200-cream-paint-lighting-v4';
  return material;
 }
 function bindBakedAttribute(root){
@@ -521,13 +524,18 @@ function useClayGlassGradient(material,node){
 function studioMaterial(current,zone,hex,authored=false,node=null){
  const original=originalMaterials.get(current)||current;
  if(hex!==undefined)original.color.set(hex);
- if(studioMode==='cream'&&zone==='paint'){
+ const creamTrim=zone==='black'&&!original.userData.partId?.startsWith('wheel_');
+ if(studioMode==='cream'&&(zone==='paint'||creamTrim)){
   let material=creamMaterials.get(original);
   if(!material){
-   material=useCreamPaintShading(original.clone());material.userData={...original.userData,studio:'cream'};
+   material=original.clone();material.userData={...original.userData,studio:'cream'};
+   if(creamTrim){material.roughness=CREAM_DETAIL.trimRoughness;material.envMapIntensity=CREAM_DETAIL.trimEnv;useBakedShading(material,false,true);}
+   else useCreamPaintShading(material);
    creamMaterials.set(original,material);originalMaterials.set(material,original);
   }
-  material.color.copy(original.color);return material;
+  material.color.copy(original.color);
+  if(creamTrim&&!authored)material.color.set(CREAM_DETAIL.trimColor);
+  return material;
  }
  if(studioMode!=='clay')return original;
  const frontLens=zone==='lamp_clear'&&original.userData.partId?.startsWith('lamp_front_')&&node;
@@ -879,7 +887,7 @@ function setStudio(mode){
   renderer.toneMappingExposure=originalLighting.exposure;scene.environmentIntensity=originalLighting.environment;
   key.color.copy(originalLighting.keyColor);key.intensity=originalLighting.keyIntensity;key.position.copy(originalLighting.keyPosition);
   fill.color.copy(originalLighting.fillColor);fill.groundColor.copy(originalLighting.groundColor);fill.intensity=originalLighting.fillIntensity;
-  document.querySelector('meta[name="theme-color"]').content=mode==='cream'?'#EFEAE3':'#4a6a82';
+  document.querySelector('meta[name="theme-color"]').content=mode==='cream'?'#EBEBE9':'#4a6a82';
  }
  applyZonePaint();
  plinth.traverse(part=>{if(part.isMesh){const current=originalMaterials.get(part.material)||part.material;

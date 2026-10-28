@@ -1,6 +1,6 @@
 {
-  "session": "Cream low-view contact band and outline follow-up",
-  "sourceSha256": "db753a45b4966e17837a745a034083dcf133f3a1ab6928e4d21ba4682fac55d3",
+  "session": "Cream baked-detail, neutral background, near-black trim and rear white fill",
+  "sourceSha256": "8c519e561fdb0890140f273da327146141fdf8970a2a0c4c9452f760ca8116da",
   "passed": true,
   "consoleErrors": 0,
   "checks": {
@@ -9,9 +9,12 @@
     "creamInitialAndReturnMatch": true,
     "defaultBuildPreserved": true,
     "creamLightingUnchanged": true,
-    "creamNonPaintMaterialsUnchanged": true,
+    "creamGlassLampsChromeWheelsTyresUnchanged": true,
+    "creamNearBlackTrim": true,
+    "creamDetailUsesSeparateUniforms": true,
+    "creamContactSettingsUnchanged": true,
     "paintPhysicalPropertiesUnchanged": true,
-    "creamBackgroundUnchanged": true,
+    "creamNeutralBackground": true,
     "bakedPanelSettingsUnchanged": true,
     "creamGeometryUnchanged": true,
     "creamOriginalGainsPreserved": true,
@@ -52,21 +55,22 @@
     ]
   },
   "baselineAssetFiles": 38,
-  "geometryVerification": "Runtime byte snapshots and identity checks of POSITION/NORMAL/COLOR_0, all car transforms and root scale 1; original model/build hashes preserved. Existing floor geometry and transform are unchanged; only material and visibility switch in Cream.",
-  "pixels": "docs/cream-edges/pixels.json",
-  "evidence": "docs/cream-edges/README.md",
+  "pixels": "docs/cream-detail/pixels.json",
+  "evidence": "docs/cream-detail/README.md",
+  "gallery": "docs/cream-detail/index.html",
+  "changedValues": "docs/cream-detail/changed-values.json",
+  "webkit": {
+    "passed": true,
+    "errors": [],
+    "evidence": "docs/cream-detail/webkit.json",
+    "emulated": true
+  },
   "retainedEvidence": {
-    "priorCream": "docs/cream-refinement/README.md",
+    "priorCream": "docs/cream-edges/README.md",
     "foundation": "docs/foundation/README.md"
   },
   "limitations": [
     "Physical iPad performance unmeasured.",
-    "Boundary 7x7 patches can include adjacent background; interior patches are separately identified."
-  ],
-  "webkit": {
-    "passed": true,
-    "errors": [],
-    "evidence": "docs/cream-edges/webkit.json",
-    "emulated": true
-  }
+    "Mixed 7x7 patch medians can miss a narrow one-pixel gap; material counts are included."
+  ]
 }

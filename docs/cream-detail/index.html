@@ -1,0 +1,99 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cream detail — before and after</title><style>body{font:15px system-ui;margin:24px;background:#ebebe9;color:#252629}h1{font-size:24px}a{color:#28557a}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}figure{margin:0}img{width:100%;height:auto;display:block}figcaption{padding:8px}table{border-collapse:collapse;font-size:13px}td,th{border:1px solid #c9c9c7;padding:7px;text-align:left}section{margin:32px 0}code{font-size:12px}@media(max-width:700px){.grid{grid-template-columns:1fr}body{margin:12px}table{font-size:11px}}</style><h1>Cream detail — before / after</h1><p>Baseline 6a0294b. Full-size 1440 × 1000 captures. Tap any image to open its PNG.</p><p><a href="../../">Open viewer</a> · <a href="pixels.json">Full 7×7 sample ledger</a> · <a href="checks.json">Regression checks</a> · <a href="changed-values.json">Every changed value</a></p>
+<section><h2>Front</h2><div class="grid">
+<figure><a href="before/front.png"><img src="before/front.png" alt="Front before" loading="lazy"></a><figcaption>Before</figcaption></figure>
+<figure><a href="after/front.png"><img src="after/front.png" alt="Front after" loading="lazy"></a><figcaption>After</figcaption></figure>
+</div></section>
+<section><h2>Side</h2><div class="grid">
+<figure><a href="before/side.png"><img src="before/side.png" alt="Side before" loading="lazy"></a><figcaption>Before</figcaption></figure>
+<figure><a href="after/side.png"><img src="after/side.png" alt="Side after" loading="lazy"></a><figcaption>After</figcaption></figure>
+</div></section>
+<section><h2>3/4</h2><div class="grid">
+<figure><a href="before/quarter.png"><img src="before/quarter.png" alt="3/4 before" loading="lazy"></a><figcaption>Before</figcaption></figure>
+<figure><a href="after/quarter.png"><img src="after/quarter.png" alt="3/4 after" loading="lazy"></a><figcaption>After</figcaption></figure>
+</div></section>
+<section><h2>Rear</h2><div class="grid">
+<figure><a href="before/rear.png"><img src="before/rear.png" alt="Rear before" loading="lazy"></a><figcaption>Before</figcaption></figure>
+<figure><a href="after/rear.png"><img src="after/rear.png" alt="Rear after" loading="lazy"></a><figcaption>After</figcaption></figure>
+</div></section>
+<h2>Every changed value</h2><table><tr><th>Value<th>Before<th>After
+<tr><td>Background centre / 0%<td>#EFEAE3<td>#ECECEA
+<tr><td>Background middle / 50%<td>#EDE7DF<td>#EBEBE9
+<tr><td>Background edge / 100%<td>#E4DED5<td>#E1E1DF
+<tr><td>Cream theme colour (initial + switch)<td>#EFEAE3<td>#EBEBE9
+<tr><td>Baked AO strength<td>0.90<td>1.12
+<tr><td>Convex ridge strength<td>0.70<td>1.00
+<tr><td>Concave valley strength<td>0.90<td>1.35
+<tr><td>AO exponent<td>1.0<td>1.0–2.5, curvature-weighted
+<tr><td>AO exponent curvature gate<td>none<td>smoothstep(0.02, 0.10, abs(G−0.5)×2)
+<tr><td>Cavity minimum<td>0.18<td>0.10
+<tr><td>Direct diffuse cavity weight<td>0.65<td>0.90
+<tr><td>Indirect specular cavity weight<td>0.72<td>0.85
+<tr><td>Indirect clearcoat cavity weight<td>0.72<td>0.85
+<tr><td>Direct specular cavity weight<td>0.25<td>0.50
+<tr><td>Rear-facing indirect fill multiplier<td>1.0<td>1.0–3.8
+<tr><td>Rear fill normal gate<td>none<td>smoothstep(0.15, 0.80, worldNormal.x)
+<tr><td>Default black trim colour<td>#0d1115<td>#050607
+<tr><td>Black trim roughness<td>0.56<td>0.72
+<tr><td>Black trim environment intensity<td>1.00<td>0.20
+<tr><td>Black trim final specular multiplier, direct + indirect<td>1.00<td>0.25
+<tr><td>Cream paint shader cache key<td>lc200-cream-paint-lighting-v3<td>lc200-cream-paint-lighting-v4
+<tr><td>Cream trim shader cache key<td>lc200-baked-ao-curvature-v1<td>lc200-cream-baked-detail-v1
+</table><h2>7×7 medians</h2><p>Identical pixel coordinates before/after. Mixed patches include more than one material and can dilute a narrow gap.</p><table><tr><th>View/sample<th>Pixel<th>Before<th>After
+<tr><td>front / frontBonnet<td>[720, 375]<td>#f3f1ed<td>#f3f1ed
+<tr><td>front / frontBonnetEdge<td>[366, 377]<td>#f1efea<td>#f1efea
+<tr><td>front / frontBonnetBackground<td>[340, 360]<td>#eee8e0<td>#ebebe9
+<tr><td>front / frontBumper<td>[445, 551]<td>#e0dcd5<td>#e0dcd5
+<tr><td>front / background<td>[720, 100]<td>#eee8e0<td>#ebebe9
+<tr><td>front / grilleRecess<td>[650, 507]<td>#020202<td>#000000
+<tr><td>front / bonnetGap<td>[720, 399]<td>#262728<td>#020202
+<tr><td>front / lampRecess<td>[447, 487]<td>#1b1e20<td>#1b1e20
+<tr><td>front / lowerTrim<td>[600, 624]<td>#0b0b0c<td>#010101
+<tr><td>side / bonnet<td>[341, 422]<td>#f4f2ef<td>#f4f2ee
+<tr><td>side / roof<td>[859, 288]<td>#f1efec<td>#f1efec
+<tr><td>side / frontDoor<td>[634, 468]<td>#dad8d4<td>#dad8d4
+<tr><td>side / lowerDoor<td>[635, 551]<td>#e0deda<td>#dbd8d4
+<tr><td>side / background<td>[720, 140]<td>#eee8e0<td>#ebebe9
+<tr><td>side / tyreRubber<td>[330, 539]<td>#262727<td>#262727
+<tr><td>side / wheelFace<td>[353, 599]<td>#3b3f42<td>#3b3f42
+<tr><td>side / sideGlass<td>[624, 357]<td>#67696b<td>#67696b
+<tr><td>side / groundFrontLeft<td>[330, 718]<td>#dcd8d0<td>#dbdbda
+<tr><td>side / groundRearLeft<td>[1005, 718]<td>#ddd8d1<td>#dcdcda
+<tr><td>side / rearQuarter<td>[1170, 440]<td>#e2e0dd<td>#e2e0dd
+<tr><td>side / rearQuarterBackground<td>[1325, 440]<td>#e9e3db<td>#e7e7e5
+<tr><td>side / sill<td>[700, 633]<td>#bebebc<td>#bdbdbb
+<tr><td>side / frontWing<td>[267, 472]<td>#e9e7e3<td>#e9e7e3
+<tr><td>side / frontWingBackground<td>[267, 411]<td>#ede7df<td>#ebebe9
+<tr><td>side / spoilerTip<td>[1234, 291]<td>#edebe7<td>#edebe7
+<tr><td>side / spoilerBackground<td>[1234, 275]<td>#eae4dc<td>#e8e8e6
+<tr><td>side / bonnetBackground<td>[341, 405]<td>#ede8e0<td>#ebebe9
+<tr><td>side / roofBackground<td>[859, 250]<td>#eee9e1<td>#ececea
+<tr><td>side / pillar<td>[734, 350]<td>#4a4a4a<td>#101111
+<tr><td>side / handleRecess<td>[670, 446]<td>#d9d8d4<td>#d5d3cf
+<tr><td>side / doorGap<td>[715, 468]<td>#d8d6d3<td>#d8d6d2
+<tr><td>side / archLip<td>[405, 500]<td>#c4c3c2<td>#c4c3c2
+<tr><td>side / lowerTrim<td>[700, 624]<td>#000000<td>#000000
+<tr><td>quarter / bonnet<td>[472, 420]<td>#f3f1ee<td>#f3f1ee
+<tr><td>quarter / roof<td>[861, 206]<td>#efece7<td>#eeebe7
+<tr><td>quarter / frontDoor<td>[871, 467]<td>#d8d6d2<td>#d8d6d2
+<tr><td>quarter / lowerDoor<td>[867, 559]<td>#dfddd8<td>#dad8d3
+<tr><td>quarter / background<td>[720, 140]<td>#eee8e0<td>#ebebe9
+<tr><td>quarter / tyreRubber<td>[608, 599]<td>#252526<td>#252526
+<tr><td>quarter / wheelFace<td>[632, 664]<td>#35393c<td>#35393c
+<tr><td>quarter / sideGlass<td>[824, 332]<td>#293134<td>#293134
+<tr><td>quarter / groundFrontLeft<td>[570, 806]<td>#1e1d1c<td>#1d1d1d
+<tr><td>quarter / groundRearLeft<td>[1090, 673]<td>#4e4c49<td>#4d4d4d
+<tr><td>quarter / pillar<td>[920, 330]<td>#1c1e20<td>#060607
+<tr><td>quarter / handleRecess<td>[898, 438]<td>#6d6d6c<td>#515251
+<tr><td>quarter / doorGap<td>[933, 490]<td>#c5c4c3<td>#c4c3c2
+<tr><td>quarter / archLip<td>[665, 541]<td>#c2c2c0<td>#c2c2c0
+<tr><td>quarter / lampRecess<td>[516, 534]<td>#eae8e4<td>#eae8e4
+<tr><td>rear / tailgate<td>[720, 418]<td>#a9a8a6<td>#dadad8
+<tr><td>rear / tailgateLower<td>[720, 565]<td>#a09f9d<td>#d4d4d2
+<tr><td>rear / rearBumper<td>[720, 694]<td>#a09f9d<td>#d4d4d2
+<tr><td>rear / background<td>[720, 100]<td>#eee8e0<td>#ebebe9
+<tr><td>rear / tailgateOuter<td>[1000, 581]<td>#9e9e9b<td>#d2d2d0
+<tr><td>rear / plateRecess<td>[579, 567]<td>#17191b<td>#17191b
+<tr><td>rear / lampRecess<td>[518, 488]<td>#3b3d3e<td>#3b3d3e
+<tr><td>rear / lowerTrim<td>[700, 714]<td>#161616<td>#010101
+<tr><td>rear / rearPanelEdge<td>[403, 600]<td>#adadab<td>#acaba9
+</table><p>35 checks pass; zero errors. Clay and Slate: 12 comparisons with zero differing pixels. Geometry, normals, baked attributes, cameras and build data preserved. No extra passes/maps.</p></html>

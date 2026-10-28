@@ -10,9 +10,11 @@ The satin collectible materials and baked crevice/edge shading remain. No screen
 
 ## Cream studio
 
-[Latest contact-band and silhouette refinement, before/after screenshots and gain explanation](docs/cream-edges/README.md).
+[Latest Cream detail refinement: full-size before/after screenshots, 7×7 samples and every changed value](docs/cream-detail/README.md). [Open the comparison gallery](https://ffaz.github.io/landcruiser-3d/docs/cream-detail/).
 
-Cream is the main studio for the stock base and future workshop. Its satin paint uses soft overhead direction, clean warm white highlights and gentle fill, while the existing charcoal glass, near-black tyres, dark grey wheels, trim and pale background retain their materials. The existing contact bake adds density close to the tyres. Geometry, cameras, build data and baked shading strengths are unchanged. [Full-size before/after PNGs, sampled pixels and every changed value](docs/cream-refinement/README.md).
+Cream is the main studio for the stock base and future workshop. Its pale neutral grey background, satin white paint and near-black trim use a separate material variant. Stronger reads of the unchanged baked AO/curvature bring out recesses and panel seams; rear-facing indirect fill lifts the tailgate and painted bumper into the white range. Glass, tyres, wheel assemblies, chrome, existing contact shadow, geometry, cameras and build data retain their settings. Clay and Slate remain pixel-identical to the preceding release.
+
+[Previous contact-band and silhouette refinement](docs/cream-edges/README.md) and [earlier lighting refinement](docs/cream-refinement/README.md) remain as history.
 
 ## Clay studio
 

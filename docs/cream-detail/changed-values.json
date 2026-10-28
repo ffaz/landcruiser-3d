@@ -1,0 +1,112 @@
+[
+  {
+    "value": "Background centre / 0%",
+    "before": "#EFEAE3",
+    "after": "#ECECEA"
+  },
+  {
+    "value": "Background middle / 50%",
+    "before": "#EDE7DF",
+    "after": "#EBEBE9"
+  },
+  {
+    "value": "Background edge / 100%",
+    "before": "#E4DED5",
+    "after": "#E1E1DF"
+  },
+  {
+    "value": "Cream theme colour (initial + switch)",
+    "before": "#EFEAE3",
+    "after": "#EBEBE9"
+  },
+  {
+    "value": "Baked AO strength",
+    "before": "0.90",
+    "after": "1.12"
+  },
+  {
+    "value": "Convex ridge strength",
+    "before": "0.70",
+    "after": "1.00"
+  },
+  {
+    "value": "Concave valley strength",
+    "before": "0.90",
+    "after": "1.35"
+  },
+  {
+    "value": "AO exponent",
+    "before": "1.0",
+    "after": "1.0\u20132.5, curvature-weighted"
+  },
+  {
+    "value": "AO exponent curvature gate",
+    "before": "none",
+    "after": "smoothstep(0.02, 0.10, abs(G\u22120.5)\u00d72)"
+  },
+  {
+    "value": "Cavity minimum",
+    "before": "0.18",
+    "after": "0.10"
+  },
+  {
+    "value": "Direct diffuse cavity weight",
+    "before": "0.65",
+    "after": "0.90"
+  },
+  {
+    "value": "Indirect specular cavity weight",
+    "before": "0.72",
+    "after": "0.85"
+  },
+  {
+    "value": "Indirect clearcoat cavity weight",
+    "before": "0.72",
+    "after": "0.85"
+  },
+  {
+    "value": "Direct specular cavity weight",
+    "before": "0.25",
+    "after": "0.50"
+  },
+  {
+    "value": "Rear-facing indirect fill multiplier",
+    "before": "1.0",
+    "after": "1.0\u20133.8"
+  },
+  {
+    "value": "Rear fill normal gate",
+    "before": "none",
+    "after": "smoothstep(0.15, 0.80, worldNormal.x)"
+  },
+  {
+    "value": "Default black trim colour",
+    "before": "#0d1115",
+    "after": "#050607"
+  },
+  {
+    "value": "Black trim roughness",
+    "before": "0.56",
+    "after": "0.72"
+  },
+  {
+    "value": "Black trim environment intensity",
+    "before": "1.00",
+    "after": "0.20"
+  },
+  {
+    "value": "Black trim final specular multiplier, direct + indirect",
+    "before": "1.00",
+    "after": "0.25"
+  },
+  {
+    "value": "Cream paint shader cache key",
+    "before": "lc200-cream-paint-lighting-v3",
+    "after": "lc200-cream-paint-lighting-v4"
+  },
+  {
+    "value": "Cream trim shader cache key",
+    "before": "lc200-baked-ao-curvature-v1",
+    "after": "lc200-cream-baked-detail-v1"
+  }
+]

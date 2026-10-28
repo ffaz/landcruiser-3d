@@ -1,0 +1,2672 @@
+{
+  "sourceSha256": "8c519e561fdb0890140f273da327146141fdf8970a2a0c4c9452f760ca8116da",
+  "baselineCommit": "6a0294b1f2e11bc97cebb0bffbeea482b2311710",
+  "baselineSourceSha256": "db753a45b4966e17837a745a034083dcf133f3a1ab6928e4d21ba4682fac55d3",
+  "method": "Per-channel median of the same 7x7 display-sRGB PNG patch at integer x/y. 1440x1000 viewport, DPR1, Chromium SwiftShader. Geometry-ray validation recorded per patch; mixed patches are explicitly labelled and a 7x7 median can miss a 1px seam.",
+  "samples": {
+    "front": {
+      "before": {
+        "frontBonnet": {
+          "pixel": [
+            720,
+            375
+          ],
+          "front": {
+            "part": "bonnet",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -2.3969041355280467,
+              1.1572470085680806,
+              0.0001741247036129859
+            ]
+          },
+          "patchValidation": {
+            "bonnet:paint": 49
+          },
+          "rgb": [
+            243,
+            241,
+            237
+          ],
+          "hex": "#f3f1ed"
+        },
+        "frontBonnetEdge": {
+          "pixel": [
+            366,
+            377
+          ],
+          "front": {
+            "part": "bonnet",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -2.1083620382893633,
+              1.151954410927191,
+              -0.8005339622375897
+            ]
+          },
+          "patchValidation": {
+            "bonnet:paint": 49
+          },
+          "rgb": [
+            241,
+            239,
+            234
+          ],
+          "hex": "#f1efea"
+        },
+        "frontBonnetBackground": {
+          "pixel": [
+            340,
+            360
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "rgb": [
+            238,
+            232,
+            224
+          ],
+          "hex": "#eee8e0"
+        },
+        "frontBumper": {
+          "pixel": [
+            445,
+            551
+          ],
+          "front": {
+            "part": "bumper_front",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -2.4958734774687334,
+              0.7829787226760141,
+              -0.5851790307880852
+            ]
+          },
+          "patchValidation": {
+            "bumper_front:paint": 49
+          },
+          "rgb": [
+            224,
+            220,
+            213
+          ],
+          "hex": "#e0dcd5"
+        },
+        "background": {
+          "pixel": [
+            720,
+            100
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "rgb": [
+            238,
+            232,
+            224
+          ],
+          "hex": "#eee8e0"
+        },
+        "grilleRecess": {
+          "pixel": [
+            650,
+            507
+          ],
+          "front": {
+            "part": "grille",
+            "zone": "black",
+            "node": "black_12",
+            "point": [
+              -2.521609197494607,
+              0.87798832387343,
+              -0.14813383341458658
+            ]
+          },
+          "patchValidation": {
+            "unsorted_07:black": 21,
+            "grille:black": 28
+          },
+          "rgb": [
+            2,
+            2,
+            2
+          ],
+          "hex": "#020202"
+        },
+        "bonnetGap": {
+          "pixel": [
+            720,
+            399
+          ],
+          "front": {
+            "part": "unsorted_08",
+            "zone": "black",
+            "node": "black_12",
+            "point": [
+              -2.510837428029689,
+              1.1066734442114523,
+              0.0001709228915708515
+            ]
+          },
+          "patchValidation": {
+            "unsorted_08:black": 32,
+            "grille:black": 3,
+            "grille:chrome": 14
+          },
+          "rgb": [
+            38,
+            39,
+            40
+          ],
+          "hex": "#262728"
+        },
+        "lampRecess": {
+          "pixel": [
+            447,
+            487
+          ],
+          "front": {
+            "part": "lamp_front_R",
+            "zone": "chrome",
+            "node": "chrome_3",
+            "point": [
+              -2.446980373793698,
+              0.9172442887179697,
+              -0.5853032738292128
+            ]
+          },
+          "patchValidation": {
+            "lamp_front_R:chrome": 49
+          },
+          "rgb": [
+            27,
+            30,
+            32
+          ],
+          "hex": "#1b1e20"
+        },
+        "lowerTrim": {
+          "pixel": [
+            600,
+            624
+          ],
+          "front": {
+            "part": "bumper_front",
+            "zone": "black",
+            "node": "black_12",
+            "point": [
+              -2.4943866664855547,
+              0.6271565826180399,
+              -0.2554816914979851
+            ]
+          },
+          "patchValidation": {
+            "unsorted_07:black": 21,
+            "bumper_front:black": 28
+          },
+          "rgb": [
+            11,
+            11,
+            12
+          ],
+          "hex": "#0b0b0c"
+        }
+      },
+      "after": {
+        "frontBonnet": {
+          "pixel": [
+            720,
+            375
+          ],
+          "front": {
+            "part": "bonnet",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -2.3969041355280467,
+              1.1572470085680806,
+              0.0001741247036129859
+            ]
+          },
+          "patchValidation": {
+            "bonnet:paint": 49
+          },
+          "rgb": [
+            243,
+            241,
+            237
+          ],
+          "hex": "#f3f1ed"
+        },
+        "frontBonnetEdge": {
+          "pixel": [
+            366,
+            377
+          ],
+          "front": {
+            "part": "bonnet",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -2.1083620382893633,
+              1.151954410927191,
+              -0.8005339622375897
+            ]
+          },
+          "patchValidation": {
+            "bonnet:paint": 49
+          },
+          "rgb": [
+            241,
+            239,
+            234
+          ],
+          "hex": "#f1efea"
+        },
+        "frontBonnetBackground": {
+          "pixel": [
+            340,
+            360
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "rgb": [
+            235,
+            235,
+            233
+          ],
+          "hex": "#ebebe9"
+        },
+        "frontBumper": {
+          "pixel": [
+            445,
+            551
+          ],
+          "front": {
+            "part": "bumper_front",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -2.4958734774687334,
+              0.7829787226760141,
+              -0.5851790307880852
+            ]
+          },
+          "patchValidation": {
+            "bumper_front:paint": 49
+          },
+          "rgb": [
+            224,
+            220,
+            213
+          ],
+          "hex": "#e0dcd5"
+        },
+        "background": {
+          "pixel": [
+            720,
+            100
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "rgb": [
+            235,
+            235,
+            233
+          ],
+          "hex": "#ebebe9"
+        },
+        "grilleRecess": {
+          "pixel": [
+            650,
+            507
+          ],
+          "front": {
+            "part": "grille",
+            "zone": "black",
+            "node": "black_12",
+            "point": [
+              -2.521609197494607,
+              0.87798832387343,
+              -0.14813383341458658
+            ]
+          },
+          "patchValidation": {
+            "unsorted_07:black": 21,
+            "grille:black": 28
+          },
+          "rgb": [
+            0,
+            0,
+            0
+          ],
+          "hex": "#000000"
+        },
+        "bonnetGap": {
+          "pixel": [
+            720,
+            399
+          ],
+          "front": {
+            "part": "unsorted_08",
+            "zone": "black",
+            "node": "black_12",
+            "point": [
+              -2.510837428029689,
+              1.1066734442114523,
+              0.0001709228915708515
+            ]
+          },
+          "patchValidation": {
+            "unsorted_08:black": 32,
+            "grille:black": 3,
+            "grille:chrome": 14
+          },
+          "rgb": [
+            2,
+            2,
+            2
+          ],
+          "hex": "#020202"
+        },
+        "lampRecess": {
+          "pixel": [
+            447,
+            487
+          ],
+          "front": {
+            "part": "lamp_front_R",
+            "zone": "chrome",
+            "node": "chrome_3",
+            "point": [
+              -2.446980373793698,
+              0.9172442887179697,
+              -0.5853032738292128
+            ]
+          },
+          "patchValidation": {
+            "lamp_front_R:chrome": 49
+          },
+          "rgb": [
+            27,
+            30,
+            32
+          ],
+          "hex": "#1b1e20"
+        },
+        "lowerTrim": {
+          "pixel": [
+            600,
+            624
+          ],
+          "front": {
+            "part": "bumper_front",
+            "zone": "black",
+            "node": "black_12",
+            "point": [
+              -2.4943866664855547,
+              0.6271565826180399,
+              -0.2554816914979851
+            ]
+          },
+          "patchValidation": {
+            "unsorted_07:black": 21,
+            "bumper_front:black": 28
+          },
+          "rgb": [
+            1,
+            1,
+            1
+          ],
+          "hex": "#010101"
+        }
+      }
+    },
+    "side": {
+      "before": {
+        "bonnet": {
+          "pixel": [
+            341,
+            422
+          ],
+          "front": {
+            "part": "bonnet",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -1.6298480380285636,
+              1.245723463119474,
+              0.6319527174735322
+            ]
+          },
+          "patchValidation": {
+            "bonnet:paint": 49
+          },
+          "visibilityNote": "Visible outer roof/bonnet edge; horizontal upper surface is occluded in this level Side preset.",
+          "rgb": [
+            244,
+            242,
+            239
+          ],
+          "hex": "#f4f2ef"
+        },
+        "roof": {
+          "pixel": [
+            859,
+            288
+          ],
+          "front": {
+            "part": "body_shell",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              0.6147774442311652,
+              1.8244858424216377,
+              0.6502450369693756
+            ]
+          },
+          "patchValidation": {
+            "body_shell:paint": 49
+          },
+          "visibilityNote": "Visible outer roof/bonnet edge; horizontal upper surface is occluded in this level Side preset.",
+          "rgb": [
+            241,
+            239,
+            236
+          ],
+          "hex": "#f1efec"
+        },
+        "frontDoor": {
+          "pixel": [
+            634,
+            468
+          ],
+          "front": {
+            "part": "door_FL",
+            "zone": "paint",
+            "node": "Front_Doors_9",
+            "point": [
+              -0.34979629600488926,
+              1.029451813333789,
+              0.9526786196963152
+            ]
+          },
+          "patchValidation": {
+            "door_FL:paint": 49
+          },
+          "rgb": [
+            218,
+            216,
+            212
+          ],
+          "hex": "#dad8d4"
+        },
+        "lowerDoor": {
+          "pixel": [
+            635,
+            551
+          ],
+          "front": {
+            "part": "door_FL",
+            "zone": "paint",
+            "node": "Front_Doors_9",
+            "point": [
+              -0.34611289401394096,
+              0.679448448523613,
+              0.9350454299616061
+            ]
+          },
+          "patchValidation": {
+            "door_FL:paint": 49
+          },
+          "rgb": [
+            224,
+            222,
+            218
+          ],
+          "hex": "#e0deda"
+        },
+        "background": {
+          "pixel": [
+            720,
+            140
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "rgb": [
+            238,
+            232,
+            224
+          ],
+          "hex": "#eee8e0"
+        },
+        "tyreRubber": {
+          "pixel": [
+            330,
+            539
+          ],
+          "front": {
+            "part": "wheel_FL",
+            "zone": "tyre",
+            "node": "tire_17",
+            "point": [
+              -1.631726416364802,
+              0.7293975881507335,
+              0.9636510679859198
+            ]
+          },
+          "patchValidation": {
+            "wheel_FL:tyre": 49
+          },
+          "rgb": [
+            38,
+            39,
+            39
+          ],
+          "hex": "#262727"
+        },
+        "wheelFace": {
+          "pixel": [
+            353,
+            599
+          ],
+          "front": {
+            "part": "wheel_FL",
+            "zone": "rim",
+            "node": "rim_15",
+            "point": [
+              -1.5359360882977628,
+              0.4763782271542419,
+              0.9542388388540569
+            ]
+          },
+          "patchValidation": {
+            "wheel_FL:rim": 49
+          },
+          "rgb": [
+            59,
+            63,
+            66
+          ],
+          "hex": "#3b3f42"
+        },
+        "sideGlass": {
+          "pixel": [
+            624,
+            357
+          ],
+          "front": {
+            "part": "door_FL",
+            "zone": "glass",
+            "node": "windowglass_39",
+            "point": [
+              -0.3987013303999708,
+              1.5158985525057418,
+              0.7583947007823574
+            ]
+          },
+          "patchValidation": {
+            "door_FL:glass": 49
+          },
+          "rgb": [
+            103,
+            105,
+            107
+          ],
+          "hex": "#67696b"
+        },
+        "groundFrontLeft": {
+          "pixel": [
+            330,
+            718
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "visibilityNote": "7x7 patch is clear of vehicle geometry on ground adjacent to visible tyre. Opposite-side contacts are occluded in this preset.",
+          "rgb": [
+            220,
+            216,
+            208
+          ],
+          "hex": "#dcd8d0"
+        },
+        "groundRearLeft": {
+          "pixel": [
+            1005,
+            718
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "visibilityNote": "7x7 patch is clear of vehicle geometry on ground adjacent to visible tyre. Opposite-side contacts are occluded in this preset.",
+          "rgb": [
+            221,
+            216,
+            209
+          ],
+          "hex": "#ddd8d1"
+        },
+        "rearQuarter": {
+          "pixel": [
+            1170,
+            440
+          ],
+          "front": {
+            "part": "body_shell",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              1.9166308578584184,
+              1.1490502406754068,
+              0.9304801701965019
+            ]
+          },
+          "patchValidation": {
+            "body_shell:paint": 49
+          },
+          "rgb": [
+            226,
+            224,
+            221
+          ],
+          "hex": "#e2e0dd"
+        },
+        "rearQuarterBackground": {
+          "pixel": [
+            1325,
+            440
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "rgb": [
+            233,
+            227,
+            219
+          ],
+          "hex": "#e9e3db"
+        },
+        "sill": {
+          "pixel": [
+            700,
+            633
+          ],
+          "front": {
+            "part": "side_step_L",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -0.0706306584582323,
+              0.33323017758578133,
+              1.02135282604781
+            ]
+          },
+          "patchValidation": {
+            "side_step_L:paint": 49
+          },
+          "rgb": [
+            190,
+            190,
+            188
+          ],
+          "hex": "#bebebc"
+        },
+        "frontWing": {
+          "pixel": [
+            267,
+            472
+          ],
+          "front": {
+            "part": "body_shell",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -1.8985309292187118,
+              1.0123448129534505,
+              0.9569696248810625
+            ]
+          },
+          "patchValidation": {
+            "body_shell:paint": 49
+          },
+          "rgb": [
+            233,
+            231,
+            227
+          ],
+          "hex": "#e9e7e3"
+        },
+        "frontWingBackground": {
+          "pixel": [
+            267,
+            411
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "rgb": [
+            237,
+            231,
+            223
+          ],
+          "hex": "#ede7df"
+        },
+        "spoilerTip": {
+          "pixel": [
+            1234,
+            291
+          ],
+          "front": {
+            "part": "spoiler",
+            "zone": "paint",
+            "node": "carpaint_7",
+            "point": [
+              2.249517879328305,
+              1.8188491209625197,
+              0.5863412233483349
+            ]
+          },
+          "patchValidation": {
+            "spoiler:paint": 49
+          },
+          "rgb": [
+            237,
+            235,
+            231
+          ],
+          "hex": "#edebe7"
+        },
+        "spoilerBackground": {
+          "pixel": [
+            1234,
+            275
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "rgb": [
+            234,
+            228,
+            220
+          ],
+          "hex": "#eae4dc"
+        },
+        "bonnetBackground": {
+          "pixel": [
+            341,
+            405
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "rgb": [
+            237,
+            232,
+            224
+          ],
+          "hex": "#ede8e0"
+        },
+        "roofBackground": {
+          "pixel": [
+            859,
+            250
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "rgb": [
+            238,
+            233,
+            225
+          ],
+          "hex": "#eee9e1"
+        },
+        "pillar": {
+          "pixel": [
+            734,
+            350
+          ],
+          "front": {
+            "part": "door_RL",
+            "zone": "black",
+            "node": "black_10",
+            "point": [
+              0.07322123291667254,
+              1.5455295075907416,
+              0.7626590768682038
+            ]
+          },
+          "patchValidation": {
+            "door_RL:black": 49
+          },
+          "rgb": [
+            74,
+            74,
+            74
+          ],
+          "hex": "#4a4a4a"
+        },
+        "handleRecess": {
+          "pixel": [
+            670,
+            446
+          ],
+          "front": {
+            "part": "door_FL",
+            "zone": "paint",
+            "node": "Front_Doors_9",
+            "point": [
+              -0.1980730818841731,
+              1.1232073763517487,
+              0.9381825251910855
+            ]
+          },
+          "patchValidation": {
+            "door_FL:paint": 49
+          },
+          "rgb": [
+            217,
+            216,
+            212
+          ],
+          "hex": "#d9d8d4"
+        },
+        "doorGap": {
+          "pixel": [
+            715,
+            468
+          ],
+          "front": {
+            "part": "door_RL",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -0.007831830697892311,
+              1.029591537115897,
+              0.9500211832813034
+            ]
+          },
+          "patchValidation": {
+            "body_shell:interior": 7,
+            "door_RL:paint": 42
+          },
+          "rgb": [
+            216,
+            214,
+            211
+          ],
+          "hex": "#d8d6d3"
+        },
+        "archLip": {
+          "pixel": [
+            405,
+            500
+          ],
+          "front": {
+            "part": "body_shell",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -1.3122788033669455,
+              0.8927532654732776,
+              0.9914022838535678
+            ]
+          },
+          "patchValidation": {
+            "body_shell:paint": 49
+          },
+          "rgb": [
+            196,
+            195,
+            194
+          ],
+          "hex": "#c4c3c2"
+        },
+        "lowerTrim": {
+          "pixel": [
+            700,
+            624
+          ],
+          "front": {
+            "part": "side_step_L",
+            "zone": "black",
+            "node": "black_10",
+            "point": [
+              -0.07165277312743128,
+              0.37068199618304964,
+              0.88711309637385
+            ]
+          },
+          "patchValidation": {
+            "side_step_L:black": 49
+          },
+          "rgb": [
+            0,
+            0,
+            0
+          ],
+          "hex": "#000000"
+        }
+      },
+      "after": {
+        "bonnet": {
+          "pixel": [
+            341,
+            422
+          ],
+          "front": {
+            "part": "bonnet",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -1.6298480380285636,
+              1.245723463119474,
+              0.6319527174735322
+            ]
+          },
+          "patchValidation": {
+            "bonnet:paint": 49
+          },
+          "visibilityNote": "Visible outer roof/bonnet edge; horizontal upper surface is occluded in this level Side preset.",
+          "rgb": [
+            244,
+            242,
+            238
+          ],
+          "hex": "#f4f2ee"
+        },
+        "roof": {
+          "pixel": [
+            859,
+            288
+          ],
+          "front": {
+            "part": "body_shell",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              0.6147774442311652,
+              1.8244858424216377,
+              0.6502450369693756
+            ]
+          },
+          "patchValidation": {
+            "body_shell:paint": 49
+          },
+          "visibilityNote": "Visible outer roof/bonnet edge; horizontal upper surface is occluded in this level Side preset.",
+          "rgb": [
+            241,
+            239,
+            236
+          ],
+          "hex": "#f1efec"
+        },
+        "frontDoor": {
+          "pixel": [
+            634,
+            468
+          ],
+          "front": {
+            "part": "door_FL",
+            "zone": "paint",
+            "node": "Front_Doors_9",
+            "point": [
+              -0.34979629600488926,
+              1.029451813333789,
+              0.9526786196963152
+            ]
+          },
+          "patchValidation": {
+            "door_FL:paint": 49
+          },
+          "rgb": [
+            218,
+            216,
+            212
+          ],
+          "hex": "#dad8d4"
+        },
+        "lowerDoor": {
+          "pixel": [
+            635,
+            551
+          ],
+          "front": {
+            "part": "door_FL",
+            "zone": "paint",
+            "node": "Front_Doors_9",
+            "point": [
+              -0.34611289401394096,
+              0.679448448523613,
+              0.9350454299616061
+            ]
+          },
+          "patchValidation": {
+            "door_FL:paint": 49
+          },
+          "rgb": [
+            219,
+            216,
+            212
+          ],
+          "hex": "#dbd8d4"
+        },
+        "background": {
+          "pixel": [
+            720,
+            140
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "rgb": [
+            235,
+            235,
+            233
+          ],
+          "hex": "#ebebe9"
+        },
+        "tyreRubber": {
+          "pixel": [
+            330,
+            539
+          ],
+          "front": {
+            "part": "wheel_FL",
+            "zone": "tyre",
+            "node": "tire_17",
+            "point": [
+              -1.631726416364802,
+              0.7293975881507335,
+              0.9636510679859198
+            ]
+          },
+          "patchValidation": {
+            "wheel_FL:tyre": 49
+          },
+          "rgb": [
+            38,
+            39,
+            39
+          ],
+          "hex": "#262727"
+        },
+        "wheelFace": {
+          "pixel": [
+            353,
+            599
+          ],
+          "front": {
+            "part": "wheel_FL",
+            "zone": "rim",
+            "node": "rim_15",
+            "point": [
+              -1.5359360882977628,
+              0.4763782271542419,
+              0.9542388388540569
+            ]
+          },
+          "patchValidation": {
+            "wheel_FL:rim": 49
+          },
+          "rgb": [
+            59,
+            63,
+            66
+          ],
+          "hex": "#3b3f42"
+        },
+        "sideGlass": {
+          "pixel": [
+            624,
+            357
+          ],
+          "front": {
+            "part": "door_FL",
+            "zone": "glass",
+            "node": "windowglass_39",
+            "point": [
+              -0.3987013303999708,
+              1.5158985525057418,
+              0.7583947007823574
+            ]
+          },
+          "patchValidation": {
+            "door_FL:glass": 49
+          },
+          "rgb": [
+            103,
+            105,
+            107
+          ],
+          "hex": "#67696b"
+        },
+        "groundFrontLeft": {
+          "pixel": [
+            330,
+            718
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "visibilityNote": "7x7 patch is clear of vehicle geometry on ground adjacent to visible tyre. Opposite-side contacts are occluded in this preset.",
+          "rgb": [
+            219,
+            219,
+            218
+          ],
+          "hex": "#dbdbda"
+        },
+        "groundRearLeft": {
+          "pixel": [
+            1005,
+            718
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "visibilityNote": "7x7 patch is clear of vehicle geometry on ground adjacent to visible tyre. Opposite-side contacts are occluded in this preset.",
+          "rgb": [
+            220,
+            220,
+            218
+          ],
+          "hex": "#dcdcda"
+        },
+        "rearQuarter": {
+          "pixel": [
+            1170,
+            440
+          ],
+          "front": {
+            "part": "body_shell",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              1.9166308578584184,
+              1.1490502406754068,
+              0.9304801701965019
+            ]
+          },
+          "patchValidation": {
+            "body_shell:paint": 49
+          },
+          "rgb": [
+            226,
+            224,
+            221
+          ],
+          "hex": "#e2e0dd"
+        },
+        "rearQuarterBackground": {
+          "pixel": [
+            1325,
+            440
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "rgb": [
+            231,
+            231,
+            229
+          ],
+          "hex": "#e7e7e5"
+        },
+        "sill": {
+          "pixel": [
+            700,
+            633
+          ],
+          "front": {
+            "part": "side_step_L",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -0.0706306584582323,
+              0.33323017758578133,
+              1.02135282604781
+            ]
+          },
+          "patchValidation": {
+            "side_step_L:paint": 49
+          },
+          "rgb": [
+            189,
+            189,
+            187
+          ],
+          "hex": "#bdbdbb"
+        },
+        "frontWing": {
+          "pixel": [
+            267,
+            472
+          ],
+          "front": {
+            "part": "body_shell",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -1.8985309292187118,
+              1.0123448129534505,
+              0.9569696248810625
+            ]
+          },
+          "patchValidation": {
+            "body_shell:paint": 49
+          },
+          "rgb": [
+            233,
+            231,
+            227
+          ],
+          "hex": "#e9e7e3"
+        },
+        "frontWingBackground": {
+          "pixel": [
+            267,
+            411
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "rgb": [
+            235,
+            235,
+            233
+          ],
+          "hex": "#ebebe9"
+        },
+        "spoilerTip": {
+          "pixel": [
+            1234,
+            291
+          ],
+          "front": {
+            "part": "spoiler",
+            "zone": "paint",
+            "node": "carpaint_7",
+            "point": [
+              2.249517879328305,
+              1.8188491209625197,
+              0.5863412233483349
+            ]
+          },
+          "patchValidation": {
+            "spoiler:paint": 49
+          },
+          "rgb": [
+            237,
+            235,
+            231
+          ],
+          "hex": "#edebe7"
+        },
+        "spoilerBackground": {
+          "pixel": [
+            1234,
+            275
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "rgb": [
+            232,
+            232,
+            230
+          ],
+          "hex": "#e8e8e6"
+        },
+        "bonnetBackground": {
+          "pixel": [
+            341,
+            405
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "rgb": [
+            235,
+            235,
+            233
+          ],
+          "hex": "#ebebe9"
+        },
+        "roofBackground": {
+          "pixel": [
+            859,
+            250
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "rgb": [
+            236,
+            236,
+            234
+          ],
+          "hex": "#ececea"
+        },
+        "pillar": {
+          "pixel": [
+            734,
+            350
+          ],
+          "front": {
+            "part": "door_RL",
+            "zone": "black",
+            "node": "black_10",
+            "point": [
+              0.07322123291667254,
+              1.5455295075907416,
+              0.7626590768682038
+            ]
+          },
+          "patchValidation": {
+            "door_RL:black": 49
+          },
+          "rgb": [
+            16,
+            17,
+            17
+          ],
+          "hex": "#101111"
+        },
+        "handleRecess": {
+          "pixel": [
+            670,
+            446
+          ],
+          "front": {
+            "part": "door_FL",
+            "zone": "paint",
+            "node": "Front_Doors_9",
+            "point": [
+              -0.1980730818841731,
+              1.1232073763517487,
+              0.9381825251910855
+            ]
+          },
+          "patchValidation": {
+            "door_FL:paint": 49
+          },
+          "rgb": [
+            213,
+            211,
+            207
+          ],
+          "hex": "#d5d3cf"
+        },
+        "doorGap": {
+          "pixel": [
+            715,
+            468
+          ],
+          "front": {
+            "part": "door_RL",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -0.007831830697892311,
+              1.029591537115897,
+              0.9500211832813034
+            ]
+          },
+          "patchValidation": {
+            "body_shell:interior": 7,
+            "door_RL:paint": 42
+          },
+          "rgb": [
+            216,
+            214,
+            210
+          ],
+          "hex": "#d8d6d2"
+        },
+        "archLip": {
+          "pixel": [
+            405,
+            500
+          ],
+          "front": {
+            "part": "body_shell",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -1.3122788033669455,
+              0.8927532654732776,
+              0.9914022838535678
+            ]
+          },
+          "patchValidation": {
+            "body_shell:paint": 49
+          },
+          "rgb": [
+            196,
+            195,
+            194
+          ],
+          "hex": "#c4c3c2"
+        },
+        "lowerTrim": {
+          "pixel": [
+            700,
+            624
+          ],
+          "front": {
+            "part": "side_step_L",
+            "zone": "black",
+            "node": "black_10",
+            "point": [
+              -0.07165277312743128,
+              0.37068199618304964,
+              0.88711309637385
+            ]
+          },
+          "patchValidation": {
+            "side_step_L:black": 49
+          },
+          "rgb": [
+            0,
+            0,
+            0
+          ],
+          "hex": "#000000"
+        }
+      }
+    },
+    "quarter": {
+      "before": {
+        "bonnet": {
+          "pixel": [
+            472,
+            420
+          ],
+          "front": {
+            "part": "bonnet",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -1.683807317101496,
+              1.2730420179182822,
+              0.28783312668146355
+            ]
+          },
+          "patchValidation": {
+            "bonnet:paint": 49
+          },
+          "rgb": [
+            243,
+            241,
+            238
+          ],
+          "hex": "#f3f1ee"
+        },
+        "roof": {
+          "pixel": [
+            861,
+            206
+          ],
+          "front": {
+            "part": "body_shell",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              0.6406903074669942,
+              1.8786682272467712,
+              -0.08490400363664984
+            ]
+          },
+          "patchValidation": {
+            "body_shell:paint": 49
+          },
+          "rgb": [
+            239,
+            236,
+            231
+          ],
+          "hex": "#efece7"
+        },
+        "frontDoor": {
+          "pixel": [
+            871,
+            467
+          ],
+          "front": {
+            "part": "door_FL",
+            "zone": "paint",
+            "node": "Front_Doors_9",
+            "point": [
+              -0.34517217400827716,
+              1.0281082034688946,
+              0.9528098751794043
+            ]
+          },
+          "patchValidation": {
+            "door_FL:paint": 49
+          },
+          "rgb": [
+            216,
+            214,
+            210
+          ],
+          "hex": "#d8d6d2"
+        },
+        "lowerDoor": {
+          "pixel": [
+            867,
+            559
+          ],
+          "front": {
+            "part": "door_FL",
+            "zone": "paint",
+            "node": "Front_Doors_9",
+            "point": [
+              -0.34592530736443705,
+              0.6775789823369798,
+              0.9355872432337334
+            ]
+          },
+          "patchValidation": {
+            "door_FL:paint": 49
+          },
+          "rgb": [
+            223,
+            221,
+            216
+          ],
+          "hex": "#dfddd8"
+        },
+        "background": {
+          "pixel": [
+            720,
+            140
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "rgb": [
+            238,
+            232,
+            224
+          ],
+          "hex": "#eee8e0"
+        },
+        "tyreRubber": {
+          "pixel": [
+            608,
+            599
+          ],
+          "front": {
+            "part": "wheel_FL",
+            "zone": "tyre",
+            "node": "tire_17",
+            "point": [
+              -1.631901895846904,
+              0.7264754072172767,
+              0.964122495730951
+            ]
+          },
+          "patchValidation": {
+            "wheel_FL:tyre": 49
+          },
+          "rgb": [
+            37,
+            37,
+            38
+          ],
+          "hex": "#252526"
+        },
+        "wheelFace": {
+          "pixel": [
+            632,
+            664
+          ],
+          "front": {
+            "part": "wheel_FL",
+            "zone": "rim",
+            "node": "rim_15",
+            "point": [
+              -1.5191031703483513,
+              0.47787267874656925,
+              0.9553996078763969
+            ]
+          },
+          "patchValidation": {
+            "wheel_FL:rim": 49
+          },
+          "rgb": [
+            53,
+            57,
+            60
+          ],
+          "hex": "#35393c"
+        },
+        "sideGlass": {
+          "pixel": [
+            824,
+            332
+          ],
+          "front": {
+            "part": "door_FL",
+            "zone": "glass",
+            "node": "windowglass_39",
+            "point": [
+              -0.3997014662454147,
+              1.5188173086243022,
+              0.7573953797368013
+            ]
+          },
+          "patchValidation": {
+            "door_FL:glass": 49
+          },
+          "rgb": [
+            41,
+            49,
+            52
+          ],
+          "hex": "#293134"
+        },
+        "groundFrontLeft": {
+          "pixel": [
+            570,
+            806
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "visibilityNote": "7x7 patch is clear of vehicle geometry on ground adjacent to visible tyre. Opposite-side contacts are occluded in this preset.",
+          "rgb": [
+            30,
+            29,
+            28
+          ],
+          "hex": "#1e1d1c"
+        },
+        "groundRearLeft": {
+          "pixel": [
+            1090,
+            673
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "visibilityNote": "7x7 patch is clear of vehicle geometry on ground adjacent to visible tyre. Opposite-side contacts are occluded in this preset.",
+          "rgb": [
+            78,
+            76,
+            73
+          ],
+          "hex": "#4e4c49"
+        },
+        "pillar": {
+          "pixel": [
+            920,
+            330
+          ],
+          "front": {
+            "part": "door_RL",
+            "zone": "black",
+            "node": "black_10",
+            "point": [
+              0.08979096829142057,
+              1.4865080563467041,
+              0.783148145017105
+            ]
+          },
+          "patchValidation": {
+            "door_RL:black": 49
+          },
+          "rgb": [
+            28,
+            30,
+            32
+          ],
+          "hex": "#1c1e20"
+        },
+        "handleRecess": {
+          "pixel": [
+            898,
+            438
+          ],
+          "front": {
+            "part": "door_FL",
+            "zone": "paint",
+            "node": "Front_Doors_9",
+            "point": [
+              -0.18145158779899445,
+              1.1161490019575209,
+              0.9325453731218457
+            ]
+          },
+          "patchValidation": {
+            "door_FL:paint": 49
+          },
+          "rgb": [
+            109,
+            109,
+            108
+          ],
+          "hex": "#6d6d6c"
+        },
+        "doorGap": {
+          "pixel": [
+            933,
+            490
+          ],
+          "front": {
+            "part": "door_RL",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -0.008576536993592659,
+              0.8990515885493804,
+              0.9521514662860867
+            ]
+          },
+          "patchValidation": {
+            "door_FL:paint": 7,
+            "door_RL:paint": 42
+          },
+          "rgb": [
+            197,
+            196,
+            195
+          ],
+          "hex": "#c5c4c3"
+        },
+        "archLip": {
+          "pixel": [
+            665,
+            541
+          ],
+          "front": {
+            "part": "body_shell",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -1.394544043912653,
+              0.8992952735271483,
+              0.9901114065758729
+            ]
+          },
+          "patchValidation": {
+            "body_shell:paint": 49
+          },
+          "rgb": [
+            194,
+            194,
+            192
+          ],
+          "hex": "#c2c2c0"
+        },
+        "lampRecess": {
+          "pixel": [
+            516,
+            534
+          ],
+          "front": {
+            "part": "body_shell",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -2.0113569488793055,
+              1.001873982453185,
+              0.9459310216450285
+            ]
+          },
+          "patchValidation": {
+            "lamp_front_L:lamp_clear": 19,
+            "body_shell:paint": 30
+          },
+          "rgb": [
+            234,
+            232,
+            228
+          ],
+          "hex": "#eae8e4"
+        }
+      },
+      "after": {
+        "bonnet": {
+          "pixel": [
+            472,
+            420
+          ],
+          "front": {
+            "part": "bonnet",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -1.683807317101496,
+              1.2730420179182822,
+              0.28783312668146355
+            ]
+          },
+          "patchValidation": {
+            "bonnet:paint": 49
+          },
+          "rgb": [
+            243,
+            241,
+            238
+          ],
+          "hex": "#f3f1ee"
+        },
+        "roof": {
+          "pixel": [
+            861,
+            206
+          ],
+          "front": {
+            "part": "body_shell",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              0.6406903074669942,
+              1.8786682272467712,
+              -0.08490400363664984
+            ]
+          },
+          "patchValidation": {
+            "body_shell:paint": 49
+          },
+          "rgb": [
+            238,
+            235,
+            231
+          ],
+          "hex": "#eeebe7"
+        },
+        "frontDoor": {
+          "pixel": [
+            871,
+            467
+          ],
+          "front": {
+            "part": "door_FL",
+            "zone": "paint",
+            "node": "Front_Doors_9",
+            "point": [
+              -0.34517217400827716,
+              1.0281082034688946,
+              0.9528098751794043
+            ]
+          },
+          "patchValidation": {
+            "door_FL:paint": 49
+          },
+          "rgb": [
+            216,
+            214,
+            210
+          ],
+          "hex": "#d8d6d2"
+        },
+        "lowerDoor": {
+          "pixel": [
+            867,
+            559
+          ],
+          "front": {
+            "part": "door_FL",
+            "zone": "paint",
+            "node": "Front_Doors_9",
+            "point": [
+              -0.34592530736443705,
+              0.6775789823369798,
+              0.9355872432337334
+            ]
+          },
+          "patchValidation": {
+            "door_FL:paint": 49
+          },
+          "rgb": [
+            218,
+            216,
+            211
+          ],
+          "hex": "#dad8d3"
+        },
+        "background": {
+          "pixel": [
+            720,
+            140
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "rgb": [
+            235,
+            235,
+            233
+          ],
+          "hex": "#ebebe9"
+        },
+        "tyreRubber": {
+          "pixel": [
+            608,
+            599
+          ],
+          "front": {
+            "part": "wheel_FL",
+            "zone": "tyre",
+            "node": "tire_17",
+            "point": [
+              -1.631901895846904,
+              0.7264754072172767,
+              0.964122495730951
+            ]
+          },
+          "patchValidation": {
+            "wheel_FL:tyre": 49
+          },
+          "rgb": [
+            37,
+            37,
+            38
+          ],
+          "hex": "#252526"
+        },
+        "wheelFace": {
+          "pixel": [
+            632,
+            664
+          ],
+          "front": {
+            "part": "wheel_FL",
+            "zone": "rim",
+            "node": "rim_15",
+            "point": [
+              -1.5191031703483513,
+              0.47787267874656925,
+              0.9553996078763969
+            ]
+          },
+          "patchValidation": {
+            "wheel_FL:rim": 49
+          },
+          "rgb": [
+            53,
+            57,
+            60
+          ],
+          "hex": "#35393c"
+        },
+        "sideGlass": {
+          "pixel": [
+            824,
+            332
+          ],
+          "front": {
+            "part": "door_FL",
+            "zone": "glass",
+            "node": "windowglass_39",
+            "point": [
+              -0.3997014662454147,
+              1.5188173086243022,
+              0.7573953797368013
+            ]
+          },
+          "patchValidation": {
+            "door_FL:glass": 49
+          },
+          "rgb": [
+            41,
+            49,
+            52
+          ],
+          "hex": "#293134"
+        },
+        "groundFrontLeft": {
+          "pixel": [
+            570,
+            806
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "visibilityNote": "7x7 patch is clear of vehicle geometry on ground adjacent to visible tyre. Opposite-side contacts are occluded in this preset.",
+          "rgb": [
+            29,
+            29,
+            29
+          ],
+          "hex": "#1d1d1d"
+        },
+        "groundRearLeft": {
+          "pixel": [
+            1090,
+            673
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "visibilityNote": "7x7 patch is clear of vehicle geometry on ground adjacent to visible tyre. Opposite-side contacts are occluded in this preset.",
+          "rgb": [
+            77,
+            77,
+            77
+          ],
+          "hex": "#4d4d4d"
+        },
+        "pillar": {
+          "pixel": [
+            920,
+            330
+          ],
+          "front": {
+            "part": "door_RL",
+            "zone": "black",
+            "node": "black_10",
+            "point": [
+              0.08979096829142057,
+              1.4865080563467041,
+              0.783148145017105
+            ]
+          },
+          "patchValidation": {
+            "door_RL:black": 49
+          },
+          "rgb": [
+            6,
+            6,
+            7
+          ],
+          "hex": "#060607"
+        },
+        "handleRecess": {
+          "pixel": [
+            898,
+            438
+          ],
+          "front": {
+            "part": "door_FL",
+            "zone": "paint",
+            "node": "Front_Doors_9",
+            "point": [
+              -0.18145158779899445,
+              1.1161490019575209,
+              0.9325453731218457
+            ]
+          },
+          "patchValidation": {
+            "door_FL:paint": 49
+          },
+          "rgb": [
+            81,
+            82,
+            81
+          ],
+          "hex": "#515251"
+        },
+        "doorGap": {
+          "pixel": [
+            933,
+            490
+          ],
+          "front": {
+            "part": "door_RL",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -0.008576536993592659,
+              0.8990515885493804,
+              0.9521514662860867
+            ]
+          },
+          "patchValidation": {
+            "door_FL:paint": 7,
+            "door_RL:paint": 42
+          },
+          "rgb": [
+            196,
+            195,
+            194
+          ],
+          "hex": "#c4c3c2"
+        },
+        "archLip": {
+          "pixel": [
+            665,
+            541
+          ],
+          "front": {
+            "part": "body_shell",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -1.394544043912653,
+              0.8992952735271483,
+              0.9901114065758729
+            ]
+          },
+          "patchValidation": {
+            "body_shell:paint": 49
+          },
+          "rgb": [
+            194,
+            194,
+            192
+          ],
+          "hex": "#c2c2c0"
+        },
+        "lampRecess": {
+          "pixel": [
+            516,
+            534
+          ],
+          "front": {
+            "part": "body_shell",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              -2.0113569488793055,
+              1.001873982453185,
+              0.9459310216450285
+            ]
+          },
+          "patchValidation": {
+            "lamp_front_L:lamp_clear": 19,
+            "body_shell:paint": 30
+          },
+          "rgb": [
+            234,
+            232,
+            228
+          ],
+          "hex": "#eae8e4"
+        }
+      }
+    },
+    "rear": {
+      "before": {
+        "tailgate": {
+          "pixel": [
+            720,
+            418
+          ],
+          "front": {
+            "part": "tailgate",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              2.474923737646889,
+              1.196479254526057,
+              0.0012124745268840553
+            ]
+          },
+          "patchValidation": {
+            "tailgate:paint": 49
+          },
+          "rgb": [
+            169,
+            168,
+            166
+          ],
+          "hex": "#a9a8a6"
+        },
+        "tailgateLower": {
+          "pixel": [
+            720,
+            565
+          ],
+          "front": {
+            "part": "tailgate",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              2.441085958237063,
+              0.8547814094047629,
+              0.0012203141483534891
+            ]
+          },
+          "patchValidation": {
+            "tailgate:paint": 49
+          },
+          "rgb": [
+            160,
+            159,
+            157
+          ],
+          "hex": "#a09f9d"
+        },
+        "rearBumper": {
+          "pixel": [
+            720,
+            694
+          ],
+          "front": {
+            "part": "bumper_rear",
+            "zone": "paint",
+            "node": "Rear_Bumper_8",
+            "point": [
+              2.5630179784140705,
+              0.5658215663606028,
+              0.0011990951133661843
+            ]
+          },
+          "patchValidation": {
+            "bumper_rear:paint": 49
+          },
+          "rgb": [
+            160,
+            159,
+            157
+          ],
+          "hex": "#a09f9d"
+        },
+        "background": {
+          "pixel": [
+            720,
+            100
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "rgb": [
+            238,
+            232,
+            224
+          ],
+          "hex": "#eee8e0"
+        },
+        "tailgateOuter": {
+          "pixel": [
+            1000,
+            581
+          ],
+          "front": {
+            "part": "tailgate",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              2.4388300121834248,
+              0.8174040920683786,
+              -0.6502888492646559
+            ]
+          },
+          "patchValidation": {
+            "tailgate:paint": 49
+          },
+          "rgb": [
+            158,
+            158,
+            155
+          ],
+          "hex": "#9e9e9b"
+        },
+        "plateRecess": {
+          "pixel": [
+            579,
+            567
+          ],
+          "front": {
+            "part": "tailgate",
+            "zone": "chrome",
+            "node": "chrome_4",
+            "point": [
+              2.4627889182851246,
+              0.8512294345056591,
+              0.32806501238307506
+            ]
+          },
+          "patchValidation": {
+            "tailgate:chrome": 43,
+            "tailgate:paint": 6
+          },
+          "rgb": [
+            23,
+            25,
+            27
+          ],
+          "hex": "#17191b"
+        },
+        "lampRecess": {
+          "pixel": [
+            518,
+            488
+          ],
+          "front": {
+            "part": "tailgate",
+            "zone": "chrome",
+            "node": "Garnish",
+            "point": [
+              2.41003981216456,
+              1.0331937431842457,
+              0.47290906354707013
+            ]
+          },
+          "patchValidation": {
+            "tailgate:chrome": 42,
+            "lamp_rear_L:chrome": 2,
+            "tailgate:paint": 5
+          },
+          "rgb": [
+            59,
+            61,
+            62
+          ],
+          "hex": "#3b3d3e"
+        },
+        "lowerTrim": {
+          "pixel": [
+            700,
+            714
+          ],
+          "front": {
+            "part": "bumper_rear",
+            "zone": "black",
+            "node": "black_12",
+            "point": [
+              2.4693834090548945,
+              0.5103810263865457,
+              0.04759177459867289
+            ]
+          },
+          "patchValidation": {
+            "bumper_rear:black": 49
+          },
+          "rgb": [
+            22,
+            22,
+            22
+          ],
+          "hex": "#161616"
+        },
+        "rearPanelEdge": {
+          "pixel": [
+            403,
+            600
+          ],
+          "front": {
+            "part": "bumper_rear",
+            "zone": "paint",
+            "node": "Rear_Bumper_8",
+            "point": [
+              2.4646230596358616,
+              0.7747519683730418,
+              0.7360550725393405
+            ]
+          },
+          "patchValidation": {
+            "bumper_rear:paint": 49
+          },
+          "rgb": [
+            173,
+            173,
+            171
+          ],
+          "hex": "#adadab"
+        }
+      },
+      "after": {
+        "tailgate": {
+          "pixel": [
+            720,
+            418
+          ],
+          "front": {
+            "part": "tailgate",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              2.474923737646889,
+              1.196479254526057,
+              0.0012124745268840553
+            ]
+          },
+          "patchValidation": {
+            "tailgate:paint": 49
+          },
+          "rgb": [
+            218,
+            218,
+            216
+          ],
+          "hex": "#dadad8"
+        },
+        "tailgateLower": {
+          "pixel": [
+            720,
+            565
+          ],
+          "front": {
+            "part": "tailgate",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              2.441085958237063,
+              0.8547814094047629,
+              0.0012203141483534891
+            ]
+          },
+          "patchValidation": {
+            "tailgate:paint": 49
+          },
+          "rgb": [
+            212,
+            212,
+            210
+          ],
+          "hex": "#d4d4d2"
+        },
+        "rearBumper": {
+          "pixel": [
+            720,
+            694
+          ],
+          "front": {
+            "part": "bumper_rear",
+            "zone": "paint",
+            "node": "Rear_Bumper_8",
+            "point": [
+              2.5630179784140705,
+              0.5658215663606028,
+              0.0011990951133661843
+            ]
+          },
+          "patchValidation": {
+            "bumper_rear:paint": 49
+          },
+          "rgb": [
+            212,
+            212,
+            210
+          ],
+          "hex": "#d4d4d2"
+        },
+        "background": {
+          "pixel": [
+            720,
+            100
+          ],
+          "front": null,
+          "patchValidation": {
+            "ground/background": 49
+          },
+          "rgb": [
+            235,
+            235,
+            233
+          ],
+          "hex": "#ebebe9"
+        },
+        "tailgateOuter": {
+          "pixel": [
+            1000,
+            581
+          ],
+          "front": {
+            "part": "tailgate",
+            "zone": "paint",
+            "node": "carpaint_6",
+            "point": [
+              2.4388300121834248,
+              0.8174040920683786,
+              -0.6502888492646559
+            ]
+          },
+          "patchValidation": {
+            "tailgate:paint": 49
+          },
+          "rgb": [
+            210,
+            210,
+            208
+          ],
+          "hex": "#d2d2d0"
+        },
+        "plateRecess": {
+          "pixel": [
+            579,
+            567
+          ],
+          "front": {
+            "part": "tailgate",
+            "zone": "chrome",
+            "node": "chrome_4",
+            "point": [
+              2.4627889182851246,
+              0.8512294345056591,
+              0.32806501238307506
+            ]
+          },
+          "patchValidation": {
+            "tailgate:chrome": 43,
+            "tailgate:paint": 6
+          },
+          "rgb": [
+            23,
+            25,
+            27
+          ],
+          "hex": "#17191b"
+        },
+        "lampRecess": {
+          "pixel": [
+            518,
+            488
+          ],
+          "front": {
+            "part": "tailgate",
+            "zone": "chrome",
+            "node": "Garnish",
+            "point": [
+              2.41003981216456,
+              1.0331937431842457,
+              0.47290906354707013
+            ]
+          },
+          "patchValidation": {
+            "tailgate:chrome": 42,
+            "lamp_rear_L:chrome": 2,
+            "tailgate:paint": 5
+          },
+          "rgb": [
+            59,
+            61,
+            62
+          ],
+          "hex": "#3b3d3e"
+        },
+        "lowerTrim": {
+          "pixel": [
+            700,
+            714
+          ],
+          "front": {
+            "part": "bumper_rear",
+            "zone": "black",
+            "node": "black_12",
+            "point": [
+              2.4693834090548945,
+              0.5103810263865457,
+              0.04759177459867289
+            ]
+          },
+          "patchValidation": {
+            "bumper_rear:black": 49
+          },
+          "rgb": [
+            1,
+            1,
+            1
+          ],
+          "hex": "#010101"
+        },
+        "rearPanelEdge": {
+          "pixel": [
+            403,
+            600
+          ],
+          "front": {
+            "part": "bumper_rear",
+            "zone": "paint",
+            "node": "Rear_Bumper_8",
+            "point": [
+              2.4646230596358616,
+              0.7747519683730418,
+              0.7360550725393405
+            ]
+          },
+          "patchValidation": {
+            "bumper_rear:paint": 49
+          },
+          "rgb": [
+            172,
+            171,
+            169
+          ],
+          "hex": "#acaba9"
+        }
+      }
+    }
+  },
+  "images": {
+    "before/rear.png": "0dc4a77f40c614a9ff82696ba3203bc7e279d34810747101d15e91ac832d5ca2",
+    "before/quarter.png": "0bb6fa367dd70f0cb44d7984038673c953407054f370a41a4e62729eae8176ca",
+    "before/side.png": "be19024d25bd2724c1a1457366ce57204c134eb38388c50537a39741bf0b56bb",
+    "before/front.png": "93a94f1ad265680a58b5b7cda13b51f428a0b237b2fe862ac561c3c5c645a04f",
+    "after/rear.png": "d8ab55bfefeb1c8f8815fa3761d6a7313b5d7148be1d77d37a6ef439b53ddc99",
+    "after/quarter.png": "561c903955bb34bc3d06ae761c9f5221d374af8c68a1f1019727f4915f91277c",
+    "after/side.png": "3bdcd2346725fd87d6f60a4dc10f201f832b8bdb12bd961657211d3306b1d8b3",
+    "after/front.png": "5c021a61cdbb27b6270432a30d2c611f0ae2f6c0f3bce09e3d1ecfa6b25ed6d4"
+  }
+}

@@ -73,6 +73,7 @@ window.__creamRegression={
    fill:{intensity:fill.intensity,color:fill.color.getHexString(),ground:fill.groundColor.getHexString()},
    baked:uniforms(bakedUniforms),clay:uniforms(clayBakedUniforms),
    cream:typeof creamBakedUniforms==='undefined'?null:uniforms(creamBakedUniforms),
+   creamDetail:typeof creamDetailUniforms==='undefined'?null:uniforms(creamDetailUniforms),
    background:getComputedStyle(document.body).backgroundImage,theme:document.querySelector('meta[name="theme-color"]').content,
    camera:{position:camera.position.toArray(),target:controls.target.toArray(),fov:camera.fov},
    environmentIntensity:scene.environmentIntensity,
@@ -170,9 +171,14 @@ try{
  const cream=states['cream-quarter'],baseCream=baselineLooks.cream;
  checks.defaultBuildPreserved=equal(cream.build,baseCream.build);
  checks.creamLightingUnchanged=equal({exposure:cream.exposure,toneMapping:cream.toneMapping,key:cream.key,fill:cream.fill,environment:cream.environmentIntensity},{exposure:baseCream.exposure,toneMapping:baseCream.toneMapping,key:baseCream.key,fill:baseCream.fill,environment:baseCream.environmentIntensity});
- checks.creamNonPaintMaterialsUnchanged=equal(sortedMaterials(cream.materials.filter(m=>m.zone!=='paint')),sortedMaterials(baseCream.materials.filter(m=>m.zone!=='paint')));
+ const protectedMaterial=m=>m.zone!=='paint'&&(m.zone!=='black'||m.part?.startsWith('wheel_'));
+ checks.creamGlassLampsChromeWheelsTyresUnchanged=equal(sortedMaterials(cream.materials.filter(protectedMaterial)),sortedMaterials(baseCream.materials.filter(protectedMaterial)));
+ const trim=cream.materials.filter(m=>m.zone==='black'&&!m.part?.startsWith('wheel_'));
+ checks.creamNearBlackTrim=trim.length>0&&trim.every(m=>m.color==='050607'&&m.roughness===.72&&m.envMapIntensity===.20&&m.metalness===0);
+ checks.creamDetailUsesSeparateUniforms=cream.creamDetail?.uCreamTrimSpecular===.25&&cream.creamDetail?.uBakedAO===1.12&&cream.creamDetail?.uBakedRidge===1&&cream.creamDetail?.uBakedValley===1.35&&cream.creamDetail?.uCreamAOExponent===2.5&&cream.cream?.uCreamRearFill===3.8;
+ checks.creamContactSettingsUnchanged=equal(cream.contact,baseCream.contact);
  checks.paintPhysicalPropertiesUnchanged=equal(sortedMaterials(cream.materials.filter(m=>m.zone==='paint')),sortedMaterials(baseCream.materials.filter(m=>m.zone==='paint')));
- checks.creamBackgroundUnchanged=cream.background===baseCream.background&&cream.theme===baseCream.theme;
+ checks.creamNeutralBackground=cream.theme==='#EBEBE9'&&cream.background==='radial-gradient(at 50% 42%, rgb(236, 236, 234) 0%, rgb(235, 235, 233) 50%, rgb(225, 225, 223) 100%)';
  checks.bakedPanelSettingsUnchanged=equal(cream.baked,baseCream.baked);
  checks.creamGeometryUnchanged=cream.geometryIntact;
  checks.creamOriginalGainsPreserved=baseCream.cream?['uCreamKeyGain','uCreamFillGain','uCreamKeyDirection','uCreamKeyTint','uCreamContactPower','uCreamContactBand'].every(k=>equal(cream.cream[k],baseCream.cream[k])):true;
@@ -217,7 +223,7 @@ try{
   const s=await state();swatchObservations.push({color,build:s.build.paint.paint,paint:[...new Set(s.materials.filter(m=>m.zone==='paint').map(m=>m.color))],geometry:s.geometryIntact,background:s.background});
  }
  states.swatches=swatchObservations;
- checks.allSwatchesAndCustomWork=swatchObservations.every(s=>s.build===s.color&&equal(s.paint,[s.color.slice(1)])&&s.geometry&&s.background===baseCream.background);
+ checks.allSwatchesAndCustomWork=swatchObservations.every(s=>s.build===s.color&&equal(s.paint,[s.color.slice(1)])&&s.geometry&&s.background===cream.background);
  await page.evaluate(()=>lcBuild.setState({paint:{'door_FL:paint':'#c27755','door_FL:black':'#705050'}}));await draw();
  states.creamPerPart=await state();
  const partMatches=(s,zone,color)=>s.materials.some(m=>m.part==='door_FL'&&m.zone===zone)&&s.materials.filter(m=>m.part==='door_FL'&&m.zone===zone).every(m=>m.color===color);
