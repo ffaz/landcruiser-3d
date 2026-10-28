@@ -1,7 +1,8 @@
 {
-  "session": "Clay-only lighting, shading and colour tuning",
-  "testedAt": "2026-10-27T22:19:19.283Z",
-  "sourceSha256": "4ae6f94f2c85af96f488be7ce217b76517cb3f07b020403329b19fb1a6bb316c",
+  "session": "Clay white-paint brightness calibration",
+  "testedAt": "2026-10-28T12:42:44.118Z",
+  "sourceSha256": "a11ab741b5f39304c48c2e0de168ecd200bc6cf2f94366587a3c6ad985469071",
+  "baselineSourceSha256": "4ae6f94f2c85af96f488be7ce217b76517cb3f07b020403329b19fb1a6bb316c",
   "passed": true,
   "consoleErrors": 0,
   "checks": {
@@ -13,13 +14,15 @@
     "chromeIsMatte": true,
     "glassLowReflection": true,
     "lampsMatte": true,
-    "clayCurvatureRaised": true,
+    "clayCreaseSettingsUnchanged": true,
     "tailLampsMutedRed": true,
     "noExtraDraws": true,
     "paintSwatches": true,
     "backgroundFollowsHue": true,
     "pastelBluePreserved": true,
     "whitePaintIsWarmCream": true,
+    "clayLiftAnchored": true,
+    "clayLiftRestores": true,
     "perPartPaintInClay": true,
     "nonPaintOverrideInClay": true,
     "perPartPaintSurvivesSwitch": true,
@@ -32,25 +35,96 @@
     "presetCamerasUnchanged": true,
     "assetsUnchangedDuringTest": true
   },
-  "geometryVerification": "Runtime POSITION/NORMAL/COLOR buffer byte clones and attribute identity checks, all model local/world transform comparisons, root scale1; source model/build SHA256 matches frozen pre-change files.",
+  "geometryVerification": "Runtime POSITION/NORMAL/COLOR_0 byte clones and attribute identity checks; node local/world transform comparisons; root scale 1; all frozen model/build asset hashes unchanged. 50 mm body lift keeps wheels/buffers fixed and anchors then restores the Clay height-lighting uniform.",
   "modelAndBuildFilesUnchanged": true,
   "baselineAssetFiles": 38,
   "creamSlateFullScreenshotComparisons": {
     "count": 6,
     "differingPixels": 0,
-    "evidence": "docs/clay-tune/comparisons.json"
+    "evidence": "docs/clay-brightness/comparisons.json"
   },
-  "whitePaint": {
+  "paint": {
     "authored": "#f4f4ef",
-    "visible": [
-      "efe6da"
-    ]
+    "unchangedClayMaterialAlbedo": "#efe6da"
   },
+  "sampledPixels": {
+    "bonnet": {
+      "pixel": [
+        472,
+        420
+      ],
+      "before": "#b9afa6",
+      "after": "#f0e7db"
+    },
+    "roof": {
+      "pixel": [
+        861,
+        206
+      ],
+      "before": "#b8aea5",
+      "after": "#efe7da"
+    },
+    "frontDoor": {
+      "pixel": [
+        871,
+        467
+      ],
+      "before": "#a59a91",
+      "after": "#c8b9a6"
+    },
+    "lowerDoor": {
+      "pixel": [
+        867,
+        559
+      ],
+      "before": "#a89d94",
+      "after": "#a19282"
+    },
+    "sill": {
+      "pixel": [
+        876,
+        615
+      ],
+      "before": "#968a82",
+      "after": "#a2917f"
+    },
+    "background": {
+      "pixel": [
+        720,
+        140
+      ],
+      "before": "#f7f5f3",
+      "after": "#d9cbb8"
+    },
+    "frontTyreShadow": {
+      "pixel": [
+        570,
+        806
+      ],
+      "before": "#826b73",
+      "after": "#503c42"
+    },
+    "rearTyreShadow": {
+      "pixel": [
+        1090,
+        673
+      ],
+      "before": "#a49499",
+      "after": "#84706e"
+    }
+  },
+  "sampleMethod": "Per-channel median RGB of the 49 pixels in a 7x7 square centred on each listed coordinate in lossless PNGs. Coordinates refer to the original 1440x1000 images, origin top left.",
+  "brightnessMetric": "0.2126*R/255+0.7152*G/255+0.0722*B/255 (Rec.709 weights applied to displayed sRGB); all quoted visual percent differences use this display-brightness metric.",
+  "tyreContactDarkerPercent": 31.57748930855695,
   "clayUniforms": {
     "uBakedAO": 0.65,
     "uBakedRidge": 0.52,
     "uBakedValley": 0.72,
-    "uClayOcclusionTint": "9d8799"
+    "uClayOcclusionTint": "a58e72",
+    "uClayLowerKey": 0.09,
+    "uClayHeightStart": 0.65,
+    "uClayHeightEnd": 1.14,
+    "uClayBodyLift": 0
   },
   "performance": {
     "conditions": "1366x1024 CSS pixels, DPR1, native product renderer, clay Quarter auto-rotate, four warmup frames then24 measured rAF intervals; no frame suppression",
@@ -58,29 +132,55 @@
     "before": {
       "frameIntervals": {
         "samples": 24,
-        "meanMs": 397.2083333333333,
-        "p50ms": 397,
-        "p95ms": 407,
-        "minMs": 368,
-        "maxMs": 437
+        "meanMs": 408.9583333333333,
+        "p50ms": 399,
+        "p95ms": 471,
+        "minMs": 379,
+        "maxMs": 476
+      },
+      "renderCpu": {
+        "samples": 25,
+        "meanMs": 96.36,
+        "p50ms": 95,
+        "p95ms": 121,
+        "minMs": 52,
+        "maxMs": 128
       },
       "drawCalls": 154
     },
     "after": {
       "frameIntervals": {
         "samples": 24,
-        "meanMs": 399.4166666666667,
-        "p50ms": 399,
-        "p95ms": 424,
-        "minMs": 364,
-        "maxMs": 431
+        "meanMs": 379.125,
+        "p50ms": 386,
+        "p95ms": 397,
+        "minMs": 341,
+        "maxMs": 428
+      },
+      "renderCpu": {
+        "samples": 25,
+        "meanMs": 87.8,
+        "p50ms": 90,
+        "p95ms": 107,
+        "minMs": 40,
+        "maxMs": 108
       },
       "drawCalls": 154
     }
   },
+  "sizes": {
+    "indexBeforeBytes": 60135,
+    "indexAfterBytes": 64685,
+    "modelGlbBytes": 9884184
+  },
   "retainedEvidence": {
     "foundation": "docs/foundation/README.md",
-    "initialClayControls": "docs/clay/core-controls.json"
+    "initialClayControls": "docs/clay/core-controls.json",
+    "priorClayTuning": "docs/clay-tune/README.md"
   },
-  "evidence": "docs/clay-tune/README.md"
+  "limitations": [
+    "Physical iPad Safari smoothness was not measured.",
+    "No new native touch stress run: camera/control code is unchanged; earlier gesture evidence is retained."
+  ],
+  "evidence": "docs/clay-brightness/README.md"
 }

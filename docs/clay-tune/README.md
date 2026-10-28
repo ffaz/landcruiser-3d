@@ -1,5 +1,7 @@
 # Clay lighting and form tuning
 
+This records commit `b9772f5`. See [the later pixel-based white-paint calibration](../clay-brightness/README.md) for the current Clay lighting.
+
 Clay alone now has a stronger high front-left key and less fill, making the roof/bonnet brighter than side, rear-facing and lower surfaces. The existing contact map is darker warm plum (#604450, opacity 0.94), retaining its soft fade from the tyres and underside. Cream and Slate keep their original materials, lighting, exposure, backgrounds and contact-shadow settings.
 
 Clay's matte paint remains at roughness 0.85 with no clearcoat. White/near-white neutral paint displays as warm cream **#efe6da**, while the authored paint value and build file remain unchanged. Other selected hues are retained. The background derives from this display colour, with a lighter, slightly desaturated gradient of the same hue; neutral greys use a warm fallback.

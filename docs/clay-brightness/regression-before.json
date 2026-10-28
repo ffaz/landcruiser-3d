@@ -1,0 +1,457 @@
+{
+  "sourceSha256": "4ae6f94f2c85af96f488be7ce217b76517cb3f07b020403329b19fb1a6bb316c",
+  "assetSetSha256": "255b2491716244de8545ba4a4986de7f886a80bc5afbf35f9ab8ae24d4d146f4",
+  "mode": "before",
+  "passed": true,
+  "checks": {
+    "assetsUnchangedDuringTest": true
+  },
+  "errors": [],
+  "snapshots": [
+    "cream-front.png",
+    "cream-side.png",
+    "cream-quarter.png",
+    "slate-front.png",
+    "slate-side.png",
+    "slate-quarter.png"
+  ],
+  "reportFormat": "Compact test report; raw per-mesh state snapshots retained in test output outside production repository.",
+  "states": {
+    "cream-quarter": {
+      "lights": [
+        {
+          "type": "HemisphereLight",
+          "color": "f7f5f0",
+          "ground": "52565c",
+          "intensity": 0.6,
+          "position": [
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "type": "DirectionalLight",
+          "color": "fffbf5",
+          "intensity": 1.65,
+          "position": [
+            -1.5,
+            8,
+            2
+          ]
+        }
+      ],
+      "environmentIntensity": 0.65,
+      "exposure": 1.2,
+      "toneMapping": 6,
+      "background": "radial-gradient(at 50% 42%, rgb(239, 234, 227) 0%, rgb(237, 231, 223) 50%, rgb(228, 222, 213) 100%)",
+      "theme": "#EFEAE3",
+      "build": {
+        "slots": {
+          "body_shell": "body_shell",
+          "bonnet": "bonnet",
+          "bumper_front": "bumper_front",
+          "bumper_rear": "bumper_rear",
+          "door_FL": "door_FL",
+          "door_FR": "door_FR",
+          "door_RL": "door_RL",
+          "door_RR": "door_RR",
+          "grille": "grille",
+          "lamp_front_L": "lamp_front_L",
+          "lamp_front_R": "lamp_front_R",
+          "lamp_rear_L": "lamp_rear_L",
+          "lamp_rear_R": "lamp_rear_R",
+          "mirror_L": "mirror_L",
+          "mirror_R": "mirror_R",
+          "roof_rails": "roof_rails",
+          "side_step_L": "side_step_L",
+          "side_step_R": "side_step_R",
+          "spoiler": "spoiler",
+          "tailgate": "tailgate",
+          "unsorted_01": "unsorted_01",
+          "unsorted_02": "unsorted_02",
+          "unsorted_03": "unsorted_03",
+          "unsorted_04": "unsorted_04",
+          "unsorted_05": "unsorted_05",
+          "unsorted_06": "unsorted_06",
+          "unsorted_07": "unsorted_07",
+          "unsorted_08": "unsorted_08",
+          "unsorted_09": "unsorted_09",
+          "unsorted_10": "unsorted_10",
+          "wheel_FL": "wheel_FL",
+          "wheel_FR": "wheel_FR",
+          "wheel_RL": "wheel_RL",
+          "wheel_RR": "wheel_RR",
+          "arch_flares": null,
+          "chassis": null
+        },
+        "paint": {
+          "paint": "#f4f4ef"
+        },
+        "lift_mm": 0,
+        "hidden": []
+      },
+      "camera": {
+        "position": [
+          -7.729723753143698,
+          2.8387209098530186,
+          8.219403980606954
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 11.451917407298048,
+        "fov": 20
+      },
+      "geometryIntact": true,
+      "drawCalls": 167,
+      "triangles": 841958,
+      "programs": 12,
+      "bakedUniforms": {
+        "uBakedAO": 0.9,
+        "uBakedRidge": 0.7,
+        "uBakedValley": 0.9
+      },
+      "clayUniforms": {
+        "uBakedAO": 0.65,
+        "uBakedRidge": 0.52,
+        "uBakedValley": 0.72,
+        "uClayOcclusionTint": "9d8799"
+      },
+      "contact": {
+        "opacity": 1,
+        "tint": "000000"
+      },
+      "materialZones": {
+        "black": {
+          "meshes": 38,
+          "types": [
+            "MeshStandardMaterial"
+          ],
+          "colours": [
+            "0d1115"
+          ]
+        },
+        "brake": {
+          "meshes": 4,
+          "types": [
+            "MeshPhysicalMaterial"
+          ],
+          "colours": [
+            "a4adb3"
+          ]
+        },
+        "chrome": {
+          "meshes": 39,
+          "types": [
+            "MeshPhysicalMaterial"
+          ],
+          "colours": [
+            "e1e4e5"
+          ]
+        },
+        "glass": {
+          "meshes": 7,
+          "types": [
+            "MeshPhysicalMaterial"
+          ],
+          "colours": [
+            "20282c"
+          ]
+        },
+        "interior": {
+          "meshes": 1,
+          "types": [
+            "MeshStandardMaterial"
+          ],
+          "colours": [
+            "776753"
+          ]
+        },
+        "lamp_clear": {
+          "meshes": 13,
+          "types": [
+            "MeshPhysicalMaterial"
+          ],
+          "colours": [
+            "dce8f2"
+          ]
+        },
+        "lamp_orange": {
+          "meshes": 4,
+          "types": [
+            "MeshPhysicalMaterial"
+          ],
+          "colours": [
+            "d66b18"
+          ]
+        },
+        "lamp_red": {
+          "meshes": 7,
+          "types": [
+            "MeshPhysicalMaterial"
+          ],
+          "colours": [
+            "ab0616"
+          ]
+        },
+        "mirror": {
+          "meshes": 3,
+          "types": [
+            "MeshPhysicalMaterial"
+          ],
+          "colours": [
+            "e1e4e5"
+          ]
+        },
+        "paint": {
+          "meshes": 20,
+          "types": [
+            "MeshPhysicalMaterial"
+          ],
+          "colours": [
+            "f4f4ef"
+          ]
+        },
+        "rim": {
+          "meshes": 12,
+          "types": [
+            "MeshPhysicalMaterial"
+          ],
+          "colours": [
+            "858c92"
+          ]
+        },
+        "tyre": {
+          "meshes": 4,
+          "types": [
+            "MeshStandardMaterial"
+          ],
+          "colours": [
+            "202123"
+          ]
+        }
+      }
+    },
+    "slate-quarter": {
+      "lights": [
+        {
+          "type": "HemisphereLight",
+          "color": "f7f5f0",
+          "ground": "52565c",
+          "intensity": 0.6,
+          "position": [
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "type": "DirectionalLight",
+          "color": "fffbf5",
+          "intensity": 1.65,
+          "position": [
+            -1.5,
+            8,
+            2
+          ]
+        }
+      ],
+      "environmentIntensity": 0.65,
+      "exposure": 1.2,
+      "toneMapping": 6,
+      "background": "linear-gradient(rgb(74, 106, 130) 0%, rgb(64, 91, 112) 52%, rgb(58, 79, 96) 100%)",
+      "theme": "#4a6a82",
+      "build": {
+        "slots": {
+          "body_shell": "body_shell",
+          "bonnet": "bonnet",
+          "bumper_front": "bumper_front",
+          "bumper_rear": "bumper_rear",
+          "door_FL": "door_FL",
+          "door_FR": "door_FR",
+          "door_RL": "door_RL",
+          "door_RR": "door_RR",
+          "grille": "grille",
+          "lamp_front_L": "lamp_front_L",
+          "lamp_front_R": "lamp_front_R",
+          "lamp_rear_L": "lamp_rear_L",
+          "lamp_rear_R": "lamp_rear_R",
+          "mirror_L": "mirror_L",
+          "mirror_R": "mirror_R",
+          "roof_rails": "roof_rails",
+          "side_step_L": "side_step_L",
+          "side_step_R": "side_step_R",
+          "spoiler": "spoiler",
+          "tailgate": "tailgate",
+          "unsorted_01": "unsorted_01",
+          "unsorted_02": "unsorted_02",
+          "unsorted_03": "unsorted_03",
+          "unsorted_04": "unsorted_04",
+          "unsorted_05": "unsorted_05",
+          "unsorted_06": "unsorted_06",
+          "unsorted_07": "unsorted_07",
+          "unsorted_08": "unsorted_08",
+          "unsorted_09": "unsorted_09",
+          "unsorted_10": "unsorted_10",
+          "wheel_FL": "wheel_FL",
+          "wheel_FR": "wheel_FR",
+          "wheel_RL": "wheel_RL",
+          "wheel_RR": "wheel_RR",
+          "arch_flares": null,
+          "chassis": null
+        },
+        "paint": {
+          "paint": "#f4f4ef"
+        },
+        "lift_mm": 0,
+        "hidden": []
+      },
+      "camera": {
+        "position": [
+          -7.729723753143698,
+          2.8387209098530186,
+          8.219403980606954
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 11.451917407298048,
+        "fov": 20
+      },
+      "geometryIntact": true,
+      "drawCalls": 167,
+      "triangles": 841958,
+      "programs": 12,
+      "bakedUniforms": {
+        "uBakedAO": 0.9,
+        "uBakedRidge": 0.7,
+        "uBakedValley": 0.9
+      },
+      "clayUniforms": {
+        "uBakedAO": 0.65,
+        "uBakedRidge": 0.52,
+        "uBakedValley": 0.72,
+        "uClayOcclusionTint": "9d8799"
+      },
+      "contact": {
+        "opacity": 1,
+        "tint": "000000"
+      },
+      "materialZones": {
+        "black": {
+          "meshes": 38,
+          "types": [
+            "MeshStandardMaterial"
+          ],
+          "colours": [
+            "0d1115"
+          ]
+        },
+        "brake": {
+          "meshes": 4,
+          "types": [
+            "MeshPhysicalMaterial"
+          ],
+          "colours": [
+            "a4adb3"
+          ]
+        },
+        "chrome": {
+          "meshes": 39,
+          "types": [
+            "MeshPhysicalMaterial"
+          ],
+          "colours": [
+            "e1e4e5"
+          ]
+        },
+        "glass": {
+          "meshes": 7,
+          "types": [
+            "MeshPhysicalMaterial"
+          ],
+          "colours": [
+            "20282c"
+          ]
+        },
+        "interior": {
+          "meshes": 1,
+          "types": [
+            "MeshStandardMaterial"
+          ],
+          "colours": [
+            "776753"
+          ]
+        },
+        "lamp_clear": {
+          "meshes": 13,
+          "types": [
+            "MeshPhysicalMaterial"
+          ],
+          "colours": [
+            "dce8f2"
+          ]
+        },
+        "lamp_orange": {
+          "meshes": 4,
+          "types": [
+            "MeshPhysicalMaterial"
+          ],
+          "colours": [
+            "d66b18"
+          ]
+        },
+        "lamp_red": {
+          "meshes": 7,
+          "types": [
+            "MeshPhysicalMaterial"
+          ],
+          "colours": [
+            "ab0616"
+          ]
+        },
+        "mirror": {
+          "meshes": 3,
+          "types": [
+            "MeshPhysicalMaterial"
+          ],
+          "colours": [
+            "e1e4e5"
+          ]
+        },
+        "paint": {
+          "meshes": 20,
+          "types": [
+            "MeshPhysicalMaterial"
+          ],
+          "colours": [
+            "f4f4ef"
+          ]
+        },
+        "rim": {
+          "meshes": 12,
+          "types": [
+            "MeshPhysicalMaterial"
+          ],
+          "colours": [
+            "858c92"
+          ]
+        },
+        "tyre": {
+          "meshes": 4,
+          "types": [
+            "MeshStandardMaterial"
+          ],
+          "colours": [
+            "202123"
+          ]
+        }
+      }
+    }
+  }
+}

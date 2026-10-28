@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "comparisons": [
+    {
+      "studio": "cream",
+      "view": "front",
+      "width": 1440,
+      "height": 1000,
+      "differingPixels": 0,
+      "beforeSha256": "e975f46bc88b5e31417a87e16a3f247d115cf6550fdf26e58b2a1208bc0fea17",
+      "afterSha256": "e975f46bc88b5e31417a87e16a3f247d115cf6550fdf26e58b2a1208bc0fea17"
+    },
+    {
+      "studio": "cream",
+      "view": "side",
+      "width": 1440,
+      "height": 1000,
+      "differingPixels": 0,
+      "beforeSha256": "1bfdfbca927965943aa26a7c9c50563d6a2dcd3b02637b3c3bd6aeeff40a5964",
+      "afterSha256": "1bfdfbca927965943aa26a7c9c50563d6a2dcd3b02637b3c3bd6aeeff40a5964"
+    },
+    {
+      "studio": "cream",
+      "view": "quarter",
+      "width": 1440,
+      "height": 1000,
+      "differingPixels": 0,
+      "beforeSha256": "54f07ba526b6906058455c94a21d97aff894955a341ce7e91da49b97c5a91bc1",
+      "afterSha256": "54f07ba526b6906058455c94a21d97aff894955a341ce7e91da49b97c5a91bc1"
+    },
+    {
+      "studio": "slate",
+      "view": "front",
+      "width": 1440,
+      "height": 1000,
+      "differingPixels": 0,
+      "beforeSha256": "c8f20811a245cfdb1db152a3d58b658f36718efebe3ad888dd9aafedd29a4d7a",
+      "afterSha256": "c8f20811a245cfdb1db152a3d58b658f36718efebe3ad888dd9aafedd29a4d7a"
+    },
+    {
+      "studio": "slate",
+      "view": "side",
+      "width": 1440,
+      "height": 1000,
+      "differingPixels": 0,
+      "beforeSha256": "e5120c6f7465b9bce5fcedebc208d8785c83c79c9dc3453fb2e09a098fb18ad4",
+      "afterSha256": "e5120c6f7465b9bce5fcedebc208d8785c83c79c9dc3453fb2e09a098fb18ad4"
+    },
+    {
+      "studio": "slate",
+      "view": "quarter",
+      "width": 1440,
+      "height": 1000,
+      "differingPixels": 0,
+      "beforeSha256": "eba202df4cd55568a12b3dde80922a11779f721e8ea4f241d71d1e9cbcd31784",
+      "afterSha256": "eba202df4cd55568a12b3dde80922a11779f721e8ea4f241d71d1e9cbcd31784"
+    }
+  ],
+  "modelAndBuildFilesUnchanged": true,
+  "baselineAssetFiles": 38,
+  "currentSourceSha256": "a11ab741b5f39304c48c2e0de168ecd200bc6cf2f94366587a3c6ad985469071"
+}

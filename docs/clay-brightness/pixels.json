@@ -1,0 +1,443 @@
+{
+  "sourceSha256": "a11ab741b5f39304c48c2e0de168ecd200bc6cf2f94366587a3c6ad985469071",
+  "baselineSourceSha256": "4ae6f94f2c85af96f488be7ce217b76517cb3f07b020403329b19fb1a6bb316c",
+  "viewport": {
+    "width": 1440,
+    "height": 1000,
+    "deviceScaleFactor": 1
+  },
+  "studio": "Clay",
+  "authoredPaint": "#f4f4ef",
+  "unchangedClayMaterialAlbedo": "#efe6da",
+  "camera": {
+    "position": [
+      -7.729723753143698,
+      2.8387209098530186,
+      8.219403980606954
+    ],
+    "target": [
+      0.020000000000000004,
+      0.9600000000000001,
+      0
+    ]
+  },
+  "method": {
+    "sampling": "Per-channel median RGB of the 49 pixels in a 7x7 square centred on each listed coordinate in lossless PNGs. Coordinates refer to the original 1440x1000 images, origin top left.",
+    "surfaceVerification": "Raycasting confirmed all 49 samples on the intended paint part for bonnet, roof and door patches. The sill patch contains47 side_step_L paint pixels and2 adjacent door_FL paint pixels. Tyre-shadow centre rays hit unoccluded ground immediately below the visible tread edge.",
+    "displayLuma": "0.2126*R/255+0.7152*G/255+0.0722*B/255 (Rec.709 weights applied to displayed sRGB); all quoted visual percent differences use this display-brightness metric.",
+    "relativeLuminance": "sRGB channels are converted to linear light by the IEC61966-2-1 transfer function before Rec.709 weighting. This differs from displayLuma.",
+    "shadingPreserved": {
+      "uBakedAO": 0.65,
+      "uBakedRidge": 0.52,
+      "uBakedValley": 0.72
+    }
+  },
+  "samples": {
+    "bonnet": {
+      "pixel": [
+        472,
+        420
+      ],
+      "patchSize": 7,
+      "part": "bonnet",
+      "node": "carpaint_6",
+      "point": [
+        -1.68,
+        1.2735789082082924,
+        0.2800000000000001
+      ],
+      "normal": [
+        -0.0739695426122214,
+        0.99665782072428,
+        0.03466547496959706
+      ],
+      "geometricNormal": [
+        -0.07201373104384073,
+        0.9968468501810878,
+        0.03332236223903245
+      ],
+      "baked": [
+        1,
+        0.5044527279298321,
+        1
+      ],
+      "before": {
+        "rgb": [
+          185,
+          175,
+          166
+        ],
+        "hex": "#b9afa6",
+        "displayLuma": 0.6920635294117646,
+        "relativeLuminance": 0.43727405845961526
+      },
+      "after": {
+        "rgb": [
+          240,
+          231,
+          219
+        ],
+        "hex": "#f0e7db",
+        "displayLuma": 0.9099882352941177,
+        "relativeLuminance": 0.8079156590777493
+      },
+      "displayBrightnessChangePercent": 31.48911864602708
+    },
+    "roof": {
+      "pixel": [
+        861,
+        206
+      ],
+      "patchSize": 7,
+      "part": "body_shell",
+      "node": "carpaint_6",
+      "point": [
+        0.6500000000000001,
+        1.8786946742206867,
+        -0.10000000000000002
+      ],
+      "normal": [
+        -0.017421370085236337,
+        0.9997938884285629,
+        -0.010424803367336168
+      ],
+      "geometricNormal": [
+        -0.016748822613824772,
+        0.9998229370708249,
+        -0.008577380026539246
+      ],
+      "baked": [
+        0.6493803372281551,
+        0.5032721226270986,
+        1
+      ],
+      "before": {
+        "rgb": [
+          184,
+          174,
+          165
+        ],
+        "hex": "#b8aea5",
+        "displayLuma": 0.6881419607843137,
+        "relativeLuminance": 0.4317906337812177
+      },
+      "after": {
+        "rgb": [
+          239,
+          231,
+          218
+        ],
+        "hex": "#efe7da",
+        "displayLuma": 0.9088713725490196,
+        "relativeLuminance": 0.805645058405808
+      },
+      "displayBrightnessChangePercent": 32.076144799123774
+    },
+    "frontDoor": {
+      "pixel": [
+        871,
+        467
+      ],
+      "patchSize": 7,
+      "part": "door_FL",
+      "node": "Front_Doors_9",
+      "point": [
+        -0.34999999999999987,
+        1.03,
+        0.9526307780294182
+      ],
+      "normal": [
+        -0.008681706932349511,
+        0.09480969511711203,
+        0.9954575579483744
+      ],
+      "geometricNormal": [
+        -0.003380400039400022,
+        0.08569490162384281,
+        0.9963156913003295
+      ],
+      "baked": [
+        1,
+        0.522778445586843,
+        1
+      ],
+      "before": {
+        "rgb": [
+          165,
+          154,
+          145
+        ],
+        "hex": "#a59a91",
+        "displayLuma": 0.6105443137254901,
+        "relativeLuminance": 0.3315486895644945,
+        "displayRatioToTopAverage": 0.8847150921545073
+      },
+      "after": {
+        "rgb": [
+          200,
+          185,
+          166
+        ],
+        "hex": "#c8b9a6",
+        "displayLuma": 0.7326164705882353,
+        "relativeLuminance": 0.4973045767888739,
+        "displayRatioToTopAverage": 0.805577810875679
+      },
+      "displayBrightnessChangePercent": 19.993988006844443
+    },
+    "lowerDoor": {
+      "pixel": [
+        867,
+        559
+      ],
+      "patchSize": 7,
+      "part": "door_FL",
+      "node": "Front_Doors_9",
+      "point": [
+        -0.34999999999999987,
+        0.68,
+        0.9349265717430796
+      ],
+      "normal": [
+        0.010838166342645433,
+        0.1852216552825751,
+        0.9826369993872164
+      ],
+      "geometricNormal": [
+        0.010272062487744284,
+        0.27930317548776873,
+        0.9601480203045238
+      ],
+      "baked": [
+        0.9372549019607843,
+        0.39263066671518987,
+        1
+      ],
+      "before": {
+        "rgb": [
+          168,
+          157,
+          148
+        ],
+        "hex": "#a89d94",
+        "displayLuma": 0.6223090196078431,
+        "relativeLuminance": 0.34576890940379584,
+        "displayRatioToTopAverage": 0.9017628520220349
+      },
+      "after": {
+        "rgb": [
+          161,
+          146,
+          130
+        ],
+        "hex": "#a19282",
+        "displayLuma": 0.5805247058823529,
+        "relativeLuminance": 0.29746541630599255,
+        "displayRatioToTopAverage": 0.638339213624913
+      },
+      "displayBrightnessChangePercent": -6.714399503934743
+    },
+    "sill": {
+      "pixel": [
+        876,
+        615
+      ],
+      "patchSize": 7,
+      "part": "side_step_L",
+      "node": "carpaint_6",
+      "point": [
+        -0.3,
+        0.45999999999999996,
+        0.9386824567762375
+      ],
+      "normal": [
+        0.0016469786973268361,
+        -0.02519527152100196,
+        0.9996811920578248
+      ],
+      "geometricNormal": [
+        0.003860700558169318,
+        -0.06721936859996785,
+        0.997730750992582
+      ],
+      "baked": [
+        0.7983767504025205,
+        0.5615937965827311,
+        1
+      ],
+      "before": {
+        "rgb": [
+          150,
+          138,
+          130
+        ],
+        "hex": "#968a82",
+        "displayLuma": 0.5489160784313725,
+        "relativeLuminance": 0.2627269393549387,
+        "displayRatioToTopAverage": 0.795412106864451
+      },
+      "after": {
+        "rgb": [
+          162,
+          145,
+          127
+        ],
+        "hex": "#a2917f",
+        "displayLuma": 0.5777043137254901,
+        "relativeLuminance": 0.29464486122279926,
+        "displayRatioToTopAverage": 0.6352379383591354
+      },
+      "displayBrightnessChangePercent": 5.244560402818821
+    },
+    "background": {
+      "pixel": [
+        720,
+        140
+      ],
+      "patchSize": 7,
+      "before": {
+        "rgb": [
+          247,
+          245,
+          243
+        ],
+        "hex": "#f7f5f3",
+        "displayLuma": 0.9618854901960784,
+        "relativeLuminance": 0.9155003715668906
+      },
+      "after": {
+        "rgb": [
+          217,
+          203,
+          184
+        ],
+        "hex": "#d9cbb8",
+        "displayLuma": 0.8023709803921567,
+        "relativeLuminance": 0.6092427727083203
+      },
+      "displayBrightnessChangePercent": -16.58352386326204
+    },
+    "frontTyreShadow": {
+      "pixel": [
+        570,
+        806
+      ],
+      "patchSize": 7,
+      "point": [
+        -1.7434292998885965,
+        0.001,
+        0.8803296181247644
+      ],
+      "before": {
+        "rgb": [
+          130,
+          107,
+          115
+        ],
+        "hex": "#826b73",
+        "displayLuma": 0.4410486274509804,
+        "relativeLuminance": 0.1649902121975432
+      },
+      "after": {
+        "rgb": [
+          80,
+          60,
+          66
+        ],
+        "hex": "#503c42",
+        "displayLuma": 0.2536674509803922,
+        "relativeLuminance": 0.05330538313463545
+      },
+      "displayBrightnessChangePercent": -42.485377985087226
+    },
+    "rearTyreShadow": {
+      "pixel": [
+        1090,
+        673
+      ],
+      "patchSize": 7,
+      "point": [
+        1.0074448787701602,
+        0.001,
+        0.8866499266030177
+      ],
+      "before": {
+        "rgb": [
+          164,
+          148,
+          153
+        ],
+        "hex": "#a49499",
+        "displayLuma": 0.5951474509803922,
+        "relativeLuminance": 0.313722299524395
+      },
+      "after": {
+        "rgb": [
+          132,
+          112,
+          110
+        ],
+        "hex": "#84706e",
+        "displayLuma": 0.45532392156862744,
+        "relativeLuminance": 0.17619663445307393
+      },
+      "displayBrightnessChangePercent": -23.493930652216033
+    }
+  },
+  "patchValidation": {
+    "bonnet": {
+      "valid": 49,
+      "total": 49,
+      "counts": {
+        "bonnet:paint": 49
+      }
+    },
+    "roof": {
+      "valid": 49,
+      "total": 49,
+      "counts": {
+        "body_shell:paint": 49
+      }
+    },
+    "frontDoor": {
+      "valid": 49,
+      "total": 49,
+      "counts": {
+        "door_FL:paint": 49
+      }
+    },
+    "lowerDoor": {
+      "valid": 49,
+      "total": 49,
+      "counts": {
+        "door_FL:paint": 49
+      }
+    },
+    "sill": {
+      "valid": 47,
+      "total": 49,
+      "counts": {
+        "door_FL:paint": 2,
+        "side_step_L:paint": 47
+      }
+    }
+  },
+  "images": {
+    "before": {
+      "path": "before-quarter.png",
+      "sha256": "8c7f8587a8af0fb1b299244c4905c39fc7f2f9f9caab8358c723b67c0e1b3527",
+      "width": 1440,
+      "height": 1000
+    },
+    "after": {
+      "path": "quarter.png",
+      "sha256": "96c38df45d2a8422152ab262f58361ef052d8cdfcb48d35639fdfd0d323e11bb",
+      "width": 1440,
+      "height": 1000
+    }
+  },
+  "tyreContactCombined": {
+    "calculation": "1 - mean(after displayLuma of front/rear ground-contact samples) / mean(before displayLuma of same samples)",
+    "darkerPercent": 31.57748930855695
+  }
+}
