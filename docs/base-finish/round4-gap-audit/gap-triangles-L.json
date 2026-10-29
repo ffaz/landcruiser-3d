@@ -1,0 +1,2696 @@
+{
+  "side": "L",
+  "camera": {
+    "position": [
+      3.3,
+      1.09,
+      1.15
+    ],
+    "target": [
+      2.293,
+      0.961,
+      0.62
+    ],
+    "fov": 20
+  },
+  "primary": [
+    {
+      "pixel": [
+        720,
+        343
+      ],
+      "part": "body_shell",
+      "zone": "interior",
+      "node": "Original_seats_and_cabin",
+      "faceIndex": 8831,
+      "indices": [
+        9656,
+        9654,
+        9658
+      ],
+      "point": [
+        0.8380557709968302,
+        0.9291540593772258,
+        -0.1463146122477561
+      ],
+      "materialColor": "776753",
+      "opacity": 1,
+      "metalness": 0,
+      "roughness": 0.88
+    },
+    {
+      "pixel": [
+        500,
+        350
+      ],
+      "part": "body_shell",
+      "zone": "interior",
+      "node": "Original_seats_and_cabin",
+      "faceIndex": 8880,
+      "indices": [
+        9710,
+        9707,
+        9709
+      ],
+      "point": [
+        0.8362542551721588,
+        0.9287468499830037,
+        0.08739522107569409
+      ],
+      "materialColor": "776753",
+      "opacity": 1,
+      "metalness": 0,
+      "roughness": 0.88
+    },
+    {
+      "pixel": [
+        720,
+        325
+      ],
+      "part": "body_shell",
+      "zone": "interior",
+      "node": "Original_seats_and_cabin",
+      "faceIndex": 8831,
+      "indices": [
+        9656,
+        9654,
+        9658
+      ],
+      "point": [
+        0.8439364150232644,
+        0.947150552689105,
+        -0.14321781664325206
+      ],
+      "materialColor": "776753",
+      "opacity": 1,
+      "metalness": 0,
+      "roughness": 0.88
+    },
+    {
+      "pixel": [
+        600,
+        337
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 60,
+      "indices": [
+        84,
+        83,
+        86
+      ],
+      "point": [
+        2.283157441757015,
+        1.0273929084582218,
+        0.6683498106493219
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        480,
+        340
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 59,
+      "indices": [
+        82,
+        83,
+        84
+      ],
+      "point": [
+        2.27655307581099,
+        1.0271588077823512,
+        0.7170342878970529
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        430,
+        360
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 42,
+      "indices": [
+        62,
+        61,
+        28
+      ],
+      "point": [
+        2.2724492182396743,
+        1.0196864758415514,
+        0.7364177064853612
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        850,
+        320
+      ],
+      "part": "tailgate",
+      "zone": "chrome",
+      "node": "Garnish",
+      "faceIndex": 1312,
+      "indices": [
+        684,
+        685,
+        686
+      ],
+      "point": [
+        2.242876066646621,
+        1.0291521978404288,
+        0.5299999713897705
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.45,
+      "roughness": 0.45
+    },
+    {
+      "pixel": [
+        610,
+        362
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 15,
+      "indices": [
+        17,
+        23,
+        25
+      ],
+      "point": [
+        2.280132232173918,
+        1.0171273243549683,
+        0.6625615163962846
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        700,
+        360
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 260,
+      "indices": [
+        442,
+        441,
+        443
+      ],
+      "point": [
+        2.2334015500287605,
+        1.0133671180476924,
+        0.5979727888545433
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        820,
+        335
+      ],
+      "part": "unsorted_05",
+      "zone": "lamp_clear",
+      "node": "clearglass_27",
+      "faceIndex": 1696,
+      "indices": [
+        263,
+        1012,
+        1013
+      ],
+      "point": [
+        2.237988479197601,
+        1.0227537374604476,
+        0.5420754462563891
+      ],
+      "materialColor": "dce8f2",
+      "opacity": 0.16,
+      "metalness": 0,
+      "roughness": 0.055
+    }
+  ],
+  "allDoubleSided": [
+    {
+      "pixel": [
+        720,
+        343
+      ],
+      "hit": {
+        "part": "body_shell",
+        "zone": "interior",
+        "node": "Original_seats_and_cabin",
+        "point": [
+          0.8380557709968302,
+          0.9291540593772258,
+          -0.1463146122477561
+        ]
+      }
+    },
+    {
+      "pixel": [
+        500,
+        350
+      ],
+      "hit": {
+        "part": "body_shell",
+        "zone": "interior",
+        "node": "Original_seats_and_cabin",
+        "point": [
+          0.8362542551721588,
+          0.9287468499830037,
+          0.08739522107569409
+        ]
+      }
+    },
+    {
+      "pixel": [
+        720,
+        325
+      ],
+      "hit": {
+        "part": "body_shell",
+        "zone": "interior",
+        "node": "Original_seats_and_cabin",
+        "point": [
+          0.8439364150232644,
+          0.947150552689105,
+          -0.14321781664325206
+        ]
+      }
+    }
+  ],
+  "roi": [
+    420,
+    312,
+    870,
+    372
+  ],
+  "step": [
+    12,
+    6
+  ],
+  "uniqueVisibleTriangles": [
+    {
+      "pixel": [
+        720,
+        343
+      ],
+      "part": "body_shell",
+      "zone": "interior",
+      "node": "Original_seats_and_cabin",
+      "faceIndex": 8831,
+      "indices": [
+        9656,
+        9654,
+        9658
+      ],
+      "point": [
+        0.8380557709968302,
+        0.9291540593772258,
+        -0.1463146122477561
+      ],
+      "materialColor": "776753",
+      "opacity": 1,
+      "metalness": 0,
+      "roughness": 0.88
+    },
+    {
+      "pixel": [
+        500,
+        350
+      ],
+      "part": "body_shell",
+      "zone": "interior",
+      "node": "Original_seats_and_cabin",
+      "faceIndex": 8880,
+      "indices": [
+        9710,
+        9707,
+        9709
+      ],
+      "point": [
+        0.8362542551721588,
+        0.9287468499830037,
+        0.08739522107569409
+      ],
+      "materialColor": "776753",
+      "opacity": 1,
+      "metalness": 0,
+      "roughness": 0.88
+    },
+    {
+      "pixel": [
+        600,
+        337
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 60,
+      "indices": [
+        84,
+        83,
+        86
+      ],
+      "point": [
+        2.283157441757015,
+        1.0273929084582218,
+        0.6683498106493219
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        480,
+        340
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 59,
+      "indices": [
+        82,
+        83,
+        84
+      ],
+      "point": [
+        2.27655307581099,
+        1.0271588077823512,
+        0.7170342878970529
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        430,
+        360
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 42,
+      "indices": [
+        62,
+        61,
+        28
+      ],
+      "point": [
+        2.2724492182396743,
+        1.0196864758415514,
+        0.7364177064853612
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        850,
+        320
+      ],
+      "part": "tailgate",
+      "zone": "chrome",
+      "node": "Garnish",
+      "faceIndex": 1312,
+      "indices": [
+        684,
+        685,
+        686
+      ],
+      "point": [
+        2.242876066646621,
+        1.0291521978404288,
+        0.5299999713897705
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.45,
+      "roughness": 0.45
+    },
+    {
+      "pixel": [
+        610,
+        362
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 15,
+      "indices": [
+        17,
+        23,
+        25
+      ],
+      "point": [
+        2.280132232173918,
+        1.0171273243549683,
+        0.6625615163962846
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        700,
+        360
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 260,
+      "indices": [
+        442,
+        441,
+        443
+      ],
+      "point": [
+        2.2334015500287605,
+        1.0133671180476924,
+        0.5979727888545433
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        820,
+        335
+      ],
+      "part": "unsorted_05",
+      "zone": "lamp_clear",
+      "node": "clearglass_27",
+      "faceIndex": 1696,
+      "indices": [
+        263,
+        1012,
+        1013
+      ],
+      "point": [
+        2.237988479197601,
+        1.0227537374604476,
+        0.5420754462563891
+      ],
+      "materialColor": "dce8f2",
+      "opacity": 0.16,
+      "metalness": 0,
+      "roughness": 0.055
+    },
+    {
+      "pixel": [
+        420,
+        312
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 90,
+      "indices": [
+        120,
+        125,
+        126
+      ],
+      "point": [
+        2.2656136591245413,
+        1.0380769146089468,
+        0.7376187874044603
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        432,
+        312
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 96,
+      "indices": [
+        137,
+        136,
+        120
+      ],
+      "point": [
+        2.2666712346088063,
+        1.0380204376185214,
+        0.7330231416271022
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        456,
+        312
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 97,
+      "indices": [
+        137,
+        120,
+        138
+      ],
+      "point": [
+        2.2683101273743502,
+        1.0378827059623972,
+        0.7236020959009897
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        492,
+        312
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 98,
+      "indices": [
+        139,
+        138,
+        124
+      ],
+      "point": [
+        2.2707682908514384,
+        1.0376738942950317,
+        0.709369466936669
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        564,
+        312
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 89,
+      "indices": [
+        122,
+        123,
+        124
+      ],
+      "point": [
+        2.2757145629680244,
+        1.0372496850205257,
+        0.6805457230803061
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        600,
+        312
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 105,
+      "indices": [
+        124,
+        123,
+        101
+      ],
+      "point": [
+        2.278144104820045,
+        1.0370311655386795,
+        0.6659229249912888
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        612,
+        312
+      ],
+      "part": "body_shell",
+      "zone": "interior",
+      "node": "Original_seats_and_cabin",
+      "faceIndex": 8879,
+      "indices": [
+        9708,
+        9707,
+        9710
+      ],
+      "point": [
+        0.8475204460643195,
+        0.9625961667529087,
+        -0.02449604544982087
+      ],
+      "materialColor": "776753",
+      "opacity": 1,
+      "metalness": 0,
+      "roughness": 0.88
+    },
+    {
+      "pixel": [
+        732,
+        312
+      ],
+      "part": "body_shell",
+      "zone": "interior",
+      "node": "Original_seats_and_cabin",
+      "faceIndex": 8832,
+      "indices": [
+        9658,
+        9654,
+        9653
+      ],
+      "point": [
+        0.8479837542128124,
+        0.9597796092548456,
+        -0.15435502497725073
+      ],
+      "materialColor": "776753",
+      "opacity": 1,
+      "metalness": 0,
+      "roughness": 0.88
+    },
+    {
+      "pixel": [
+        852,
+        312
+      ],
+      "part": "tailgate",
+      "zone": "chrome",
+      "node": "Garnish",
+      "faceIndex": 1319,
+      "indices": [
+        686,
+        688,
+        684
+      ],
+      "point": [
+        2.2445418833827047,
+        1.0326687726884674,
+        0.5299999713897706
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.45,
+      "roughness": 0.45
+    },
+    {
+      "pixel": [
+        420,
+        318
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 85,
+      "indices": [
+        117,
+        119,
+        121
+      ],
+      "point": [
+        2.269077071751918,
+        1.0359205900961839,
+        0.7390292416202111
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        432,
+        318
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 87,
+      "indices": [
+        121,
+        105,
+        122
+      ],
+      "point": [
+        2.270384447978796,
+        1.035875059560882,
+        0.73455010855295
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        444,
+        318
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 88,
+      "indices": [
+        122,
+        105,
+        123
+      ],
+      "point": [
+        2.2712048173536314,
+        1.0358036809964029,
+        0.7298636447955108
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        468,
+        318
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 72,
+      "indices": [
+        104,
+        103,
+        105
+      ],
+      "point": [
+        2.272857888402246,
+        1.0356606656818312,
+        0.7204559723881525
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        492,
+        318
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 71,
+      "indices": [
+        99,
+        103,
+        104
+      ],
+      "point": [
+        2.2744524111717466,
+        1.0355133182026384,
+        0.7109697090948
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        564,
+        318
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 70,
+      "indices": [
+        99,
+        102,
+        103
+      ],
+      "point": [
+        2.2790793356385013,
+        1.0350551961614176,
+        0.6821039448139995
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        864,
+        318
+      ],
+      "part": "tailgate",
+      "zone": "chrome",
+      "node": "Garnish",
+      "faceIndex": 1261,
+      "indices": [
+        631,
+        648,
+        649
+      ],
+      "point": [
+        2.254361419991496,
+        1.0305078217327672,
+        0.5298050154352386
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.45,
+      "roughness": 0.45
+    },
+    {
+      "pixel": [
+        420,
+        324
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 81,
+      "indices": [
+        112,
+        113,
+        114
+      ],
+      "point": [
+        2.270313480849847,
+        1.0336570155948572,
+        0.7395517933226323
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        432,
+        324
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 78,
+      "indices": [
+        89,
+        97,
+        107
+      ],
+      "point": [
+        2.272817839272791,
+        1.0336752739820887,
+        0.7355605095170179
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        468,
+        324
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 68,
+      "indices": [
+        97,
+        89,
+        98
+      ],
+      "point": [
+        2.2749245727398537,
+        1.0334321711933545,
+        0.7213454690638735
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        492,
+        324
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 69,
+      "indices": [
+        97,
+        98,
+        100
+      ],
+      "point": [
+        2.276347651454583,
+        1.0332694021726996,
+        0.7118040285852995
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        864,
+        324
+      ],
+      "part": "body_shell",
+      "zone": "interior",
+      "node": "Original_seats_and_cabin",
+      "faceIndex": 7725,
+      "indices": [
+        8248,
+        8250,
+        8251
+      ],
+      "point": [
+        0.8410428606450324,
+        0.9440626024446118,
+        -0.3085105769736858
+      ],
+      "materialColor": "776753",
+      "opacity": 1,
+      "metalness": 0,
+      "roughness": 0.88
+    },
+    {
+      "pixel": [
+        420,
+        330
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 67,
+      "indices": [
+        95,
+        93,
+        96
+      ],
+      "point": [
+        2.2705693175377437,
+        1.031342109159802,
+        0.7396834448217815
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        432,
+        330
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 64,
+      "indices": [
+        81,
+        90,
+        91
+      ],
+      "point": [
+        2.273526886639528,
+        1.0313870042115434,
+        0.7358751111910977
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        444,
+        330
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 62,
+      "indices": [
+        88,
+        87,
+        90
+      ],
+      "point": [
+        2.274260627499774,
+        1.0313048368957753,
+        0.7311664083083456
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        492,
+        330
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 61,
+      "indices": [
+        85,
+        87,
+        88
+      ],
+      "point": [
+        2.276986442541944,
+        1.0309605867424383,
+        0.7121004521201327
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        420,
+        336
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 66,
+      "indices": [
+        95,
+        94,
+        93
+      ],
+      "point": [
+        2.2705976739893403,
+        1.0290138321259703,
+        0.7397244311115346
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        444,
+        336
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 63,
+      "indices": [
+        88,
+        90,
+        81
+      ],
+      "point": [
+        2.274412857047608,
+        1.0289823979843784,
+        0.7312560021726481
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        864,
+        336
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 193,
+      "indices": [
+        326,
+        327,
+        328
+      ],
+      "point": [
+        2.2451037921413968,
+        1.022211918322002,
+        0.5242623057444213
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        420,
+        342
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 54,
+      "indices": [
+        78,
+        77,
+        79
+      ],
+      "point": [
+        2.270577578983664,
+        1.0266816510814094,
+        0.7397461198984607
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        432,
+        342
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 57,
+      "indices": [
+        82,
+        79,
+        71
+      ],
+      "point": [
+        2.2737285126340194,
+        1.0267419729159533,
+        0.7360135250772413
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        444,
+        342
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 58,
+      "indices": [
+        82,
+        71,
+        83
+      ],
+      "point": [
+        2.2744644808969094,
+        1.0266533796698551,
+        0.7313045260361392
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        816,
+        348
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 195,
+      "indices": [
+        328,
+        329,
+        330
+      ],
+      "point": [
+        2.2440270433698117,
+        1.0176145328467452,
+        0.5474808676928724
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        828,
+        348
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 194,
+      "indices": [
+        328,
+        327,
+        329
+      ],
+      "point": [
+        2.2512183332064177,
+        1.017944011665684,
+        0.5456922683900628
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        852,
+        348
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 162,
+      "indices": [
+        261,
+        262,
+        263
+      ],
+      "point": [
+        2.2654062879492294,
+        1.0185940522951153,
+        0.54216347640172
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        420,
+        354
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 53,
+      "indices": [
+        75,
+        76,
+        77
+      ],
+      "point": [
+        2.270337280034719,
+        1.0220006410061082,
+        0.7397098037024069
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        432,
+        354
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 50,
+      "indices": [
+        63,
+        70,
+        72
+      ],
+      "point": [
+        2.2734413087719822,
+        1.0220622045647736,
+        0.7359548069020861
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        444,
+        354
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 49,
+      "indices": [
+        63,
+        68,
+        70
+      ],
+      "point": [
+        2.274142416577502,
+        1.0219646663765372,
+        0.7312279834360931
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        468,
+        354
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 48,
+      "indices": [
+        69,
+        68,
+        63
+      ],
+      "point": [
+        2.2754404201337204,
+        1.021761403142491,
+        0.7216874040565961
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        492,
+        354
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 47,
+      "indices": [
+        67,
+        68,
+        69
+      ],
+      "point": [
+        2.276743567763471,
+        1.0215567454741437,
+        0.7120885190526447
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        780,
+        354
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 274,
+      "indices": [
+        468,
+        467,
+        469
+      ],
+      "point": [
+        2.2380711509091893,
+        1.015127744754771,
+        0.5618112008785558
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        840,
+        354
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 161,
+      "indices": [
+        261,
+        260,
+        262
+      ],
+      "point": [
+        2.2726479044397743,
+        1.0167400009625698,
+        0.5522283264926828
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        864,
+        354
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 1462,
+      "indices": [
+        1577,
+        1578,
+        1579
+      ],
+      "point": [
+        2.2858646066924706,
+        1.017351256912262,
+        0.5483907413534704
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        420,
+        360
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 39,
+      "indices": [
+        58,
+        59,
+        60
+      ],
+      "point": [
+        2.2699912801760522,
+        1.0196423101052245,
+        0.7396016879761952
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        444,
+        360
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 43,
+      "indices": [
+        62,
+        28,
+        64
+      ],
+      "point": [
+        2.2732977023178194,
+        1.019570722062327,
+        0.7309106717712792
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        468,
+        360
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 44,
+      "indices": [
+        64,
+        28,
+        65
+      ],
+      "point": [
+        2.2745001923966095,
+        1.019353584862776,
+        0.7213196484746928
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        492,
+        360
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 45,
+      "indices": [
+        64,
+        65,
+        66
+      ],
+      "point": [
+        2.2756729124551933,
+        1.019132530443344,
+        0.7116533805257337
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        528,
+        360
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 46,
+      "indices": [
+        66,
+        65,
+        24
+      ],
+      "point": [
+        2.2773782478049385,
+        1.018793637775336,
+        0.6970100897605336
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        588,
+        360
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 16,
+      "indices": [
+        25,
+        23,
+        26
+      ],
+      "point": [
+        2.2802008986366333,
+        1.0182176065546051,
+        0.6722645964060265
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        732,
+        360
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 261,
+      "indices": [
+        442,
+        443,
+        444
+      ],
+      "point": [
+        2.240556092815781,
+        1.0134276287785717,
+        0.5864152392565809
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        780,
+        360
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 275,
+      "indices": [
+        468,
+        469,
+        470
+      ],
+      "point": [
+        2.2580107233200786,
+        1.0140100391095088,
+        0.5728485441255209
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        792,
+        360
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 179,
+      "indices": [
+        297,
+        296,
+        298
+      ],
+      "point": [
+        2.263843482307252,
+        1.0142646670560886,
+        0.5703340931530448
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        804,
+        360
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 180,
+      "indices": [
+        297,
+        298,
+        299
+      ],
+      "point": [
+        2.269637282898375,
+        1.0145175942815507,
+        0.5678364368016077
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        828,
+        360
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 1464,
+      "indices": [
+        1581,
+        1582,
+        1583
+      ],
+      "point": [
+        2.2801867165693475,
+        1.0149505009374316,
+        0.5623590749208496
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        840,
+        360
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 4154,
+      "indices": [
+        5054,
+        5055,
+        5056
+      ],
+      "point": [
+        2.28621793926552,
+        1.0152242341871107,
+        0.5601104033889387
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        852,
+        360
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 1424,
+      "indices": [
+        1510,
+        1509,
+        1511
+      ],
+      "point": [
+        2.289648718040928,
+        1.015306973557835,
+        0.5563759607936629
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        864,
+        360
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 187,
+      "indices": [
+        130,
+        131,
+        132
+      ],
+      "point": [
+        2.291319908562469,
+        1.0152597115557294,
+        0.5516104139710818
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        420,
+        366
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 21,
+      "indices": [
+        32,
+        33,
+        34
+      ],
+      "point": [
+        2.269164859928983,
+        1.0172474477837805,
+        0.7393022001163511
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        432,
+        366
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 18,
+      "indices": [
+        25,
+        27,
+        31
+      ],
+      "point": [
+        2.2705404690793607,
+        1.0171907514965848,
+        0.7348421519977674
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        468,
+        366
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 17,
+      "indices": [
+        25,
+        26,
+        27
+      ],
+      "point": [
+        2.27213416985919,
+        1.0168389113612837,
+        0.7203559740060343
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        564,
+        366
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 30,
+      "indices": [
+        46,
+        17,
+        48
+      ],
+      "point": [
+        2.2761395298456084,
+        1.015860600449494,
+        0.6808857813659996
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        600,
+        366
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 29,
+      "indices": [
+        40,
+        17,
+        46
+      ],
+      "point": [
+        2.2774552361127434,
+        1.0154713526281873,
+        0.6657095614169154
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        612,
+        366
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 12,
+      "indices": [
+        18,
+        16,
+        20
+      ],
+      "point": [
+        2.277903760865673,
+        1.0153411960651075,
+        0.660618641115814
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        720,
+        366
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 13,
+      "indices": [
+        15,
+        19,
+        21
+      ],
+      "point": [
+        2.281864694035582,
+        1.014138019064003,
+        0.6139097932445006
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        732,
+        366
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 14,
+      "indices": [
+        15,
+        21,
+        22
+      ],
+      "point": [
+        2.281820373243227,
+        1.013965169572381,
+        0.6083649269269278
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        744,
+        366
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 152,
+      "indices": [
+        244,
+        243,
+        245
+      ],
+      "point": [
+        2.27649513491658,
+        1.0133962981759266,
+        0.5999568187557479
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        756,
+        366
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 153,
+      "indices": [
+        244,
+        245,
+        246
+      ],
+      "point": [
+        2.2796103991679884,
+        1.0134580159601108,
+        0.5960477392039573
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        768,
+        366
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 1410,
+      "indices": [
+        1486,
+        1485,
+        1487
+      ],
+      "point": [
+        2.2810756881194822,
+        1.0133959642076638,
+        0.5912428915452487
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        780,
+        366
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 5854,
+      "indices": [
+        7986,
+        7987,
+        7988
+      ],
+      "point": [
+        2.2829146597608596,
+        1.0133617898969773,
+        0.5866359131047
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        804,
+        366
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 1445,
+      "indices": [
+        1548,
+        1549,
+        1550
+      ],
+      "point": [
+        2.2860269317058264,
+        1.0132501599005637,
+        0.5770872156624626
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        816,
+        366
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 185,
+      "indices": [
+        127,
+        125,
+        130
+      ],
+      "point": [
+        2.2876220032884964,
+        1.0131969185541727,
+        0.5723227037096732
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        840,
+        366
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 186,
+      "indices": [
+        130,
+        125,
+        131
+      ],
+      "point": [
+        2.2898412835657718,
+        1.0130157177465857,
+        0.5622050235400117
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        852,
+        366
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 199,
+      "indices": [
+        131,
+        137,
+        138
+      ],
+      "point": [
+        2.291135383071202,
+        1.0129385858228044,
+        0.5572343297973689
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        420,
+        372
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 34,
+      "indices": [
+        29,
+        51,
+        52
+      ],
+      "point": [
+        2.2659169079553894,
+        1.0146713795078695,
+        0.7380380745567625
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        432,
+        372
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 31,
+      "indices": [
+        45,
+        49,
+        30
+      ],
+      "point": [
+        2.266900914736163,
+        1.0145837362251282,
+        0.7334031976329405
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        480,
+        372
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 32,
+      "indices": [
+        30,
+        49,
+        47
+      ],
+      "point": [
+        2.2686964527264557,
+        1.0140718301775271,
+        0.7138403476918653
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        492,
+        372
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 26,
+      "indices": [
+        41,
+        39,
+        42
+      ],
+      "point": [
+        2.268867630387308,
+        1.0139219950021092,
+        0.7087876078154085
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        528,
+        372
+      ],
+      "part": "lamp_rear_L_finish3",
+      "zone": "chrome",
+      "node": "chrome_4",
+      "faceIndex": 25,
+      "indices": [
+        38,
+        39,
+        41
+      ],
+      "point": [
+        2.268681909345999,
+        1.0134166923663237,
+        0.6931974966031507
+      ],
+      "materialColor": "e1e4e5",
+      "opacity": 1,
+      "metalness": 0.95,
+      "roughness": 0.22
+    },
+    {
+      "pixel": [
+        540,
+        372
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 1475,
+      "indices": [
+        1603,
+        1602,
+        1604
+      ],
+      "point": [
+        2.2672931499010396,
+        1.0131480624510096,
+        0.6873605026058655
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        552,
+        372
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 4094,
+      "indices": [
+        4948,
+        4949,
+        4950
+      ],
+      "point": [
+        2.269502512864497,
+        1.0131466145879036,
+        0.6831170309371726
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        564,
+        372
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 4095,
+      "indices": [
+        4950,
+        4949,
+        4951
+      ],
+      "point": [
+        2.271005435603194,
+        1.0130923607037783,
+        0.6785496943530133
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        588,
+        372
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 155,
+      "indices": [
+        113,
+        112,
+        114
+      ],
+      "point": [
+        2.273650596493469,
+        1.0129560691324724,
+        0.66922370535767
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        612,
+        372
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 1408,
+      "indices": [
+        1482,
+        1481,
+        1483
+      ],
+      "point": [
+        2.2753639794276532,
+        1.0127483348527526,
+        0.6594139804573298
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        660,
+        372
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 182,
+      "indices": [
+        113,
+        115,
+        126
+      ],
+      "point": [
+        2.2786867978060323,
+        1.0123194614731,
+        0.6395690906902369
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        708,
+        372
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 183,
+      "indices": [
+        126,
+        115,
+        124
+      ],
+      "point": [
+        2.2817425555719755,
+        1.0118624593685135,
+        0.6193441167927267
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        744,
+        372
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 178,
+      "indices": [
+        124,
+        125,
+        126
+      ],
+      "point": [
+        2.284071040617392,
+        1.0115171651041504,
+        0.6040254944218652
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        792,
+        372
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 177,
+      "indices": [
+        124,
+        123,
+        125
+      ],
+      "point": [
+        2.28722843130613,
+        1.0110535986986395,
+        0.5834003054037283
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        804,
+        372
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 188,
+      "indices": [
+        131,
+        125,
+        133
+      ],
+      "point": [
+        2.28802492710412,
+        1.010936952644641,
+        0.5782066227101751
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        828,
+        372
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 198,
+      "indices": [
+        133,
+        137,
+        131
+      ],
+      "point": [
+        2.2902106332368874,
+        1.010748585643218,
+        0.5681105475420793
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        852,
+        372
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 223,
+      "indices": [
+        150,
+        138,
+        137
+      ],
+      "point": [
+        2.2925102821054657,
+        1.0105674793190715,
+        0.5580270653584862
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    },
+    {
+      "pixel": [
+        864,
+        372
+      ],
+      "part": "tailgate",
+      "zone": "paint",
+      "node": "carpaint_6",
+      "faceIndex": 225,
+      "indices": [
+        149,
+        137,
+        136
+      ],
+      "point": [
+        2.2939638691985302,
+        1.010500307732282,
+        0.5531458955207369
+      ],
+      "materialColor": "f4f4ef",
+      "opacity": 1,
+      "metalness": 0.04,
+      "roughness": 0.42
+    }
+  ]
+}

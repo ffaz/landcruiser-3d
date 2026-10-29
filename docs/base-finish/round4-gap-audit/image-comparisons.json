@@ -1,0 +1,27 @@
+{
+  "gap-L": {
+    "differentPixels": 0,
+    "maxChannelDifference": 0,
+    "dimensions": [
+      1440,
+      1000
+    ]
+  },
+  "gap-R": {
+    "differentPixels": 484,
+    "maxChannelDifference": 78,
+    "dimensions": [
+      1440,
+      1000
+    ]
+  },
+  "clay-quarter": {
+    "differentPixels": 0,
+    "maxChannelDifference": 0,
+    "dimensions": [
+      1440,
+      1000
+    ]
+  },
+  "note": "No production byte changed. Left gap and Clay compare exactly. The recorded right-gap differences were not investigated further because the geometry stop applies; no cause is established."
+}
