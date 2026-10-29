@@ -1,0 +1,392 @@
+{
+  "sourceSha256": "45cae7b0f6cd85db51f401a24fc19dd7e1ba9b17d1af624a9583ffe3f766b3e0",
+  "triangles": 979826,
+  "textureCount": 0,
+  "imageCount": 0,
+  "geometry": "original source topology, mapped once into documented stored frame for camera comparison; no finish shaders or baked AO applied",
+  "materials": [
+    {
+      "name": "mesh_0",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.537255,
+          0.537255,
+          0.537255,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.10819080591483707
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_1",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.537255,
+          0.537255,
+          0.537255,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.10819080591483707
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_2",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.537255,
+          0.537255,
+          0.537255,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.10819080591483707
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_3",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.537255,
+          0.537255,
+          0.537255,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.10819080591483707
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_4",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.537255,
+          0.537255,
+          0.537255,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.10819080591483707
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "chrome",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.537255,
+          0.537255,
+          0.537255,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.10819080591483707
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_6",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.16460807970228097,
+          0.16460807970228097,
+          0.16460807970228097,
+          1
+        ],
+        "metallicFactor": 0.6201923663005449,
+        "roughnessFactor": 0.3702868427789494
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_7",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.16460807970228097,
+          0.16460807970228097,
+          0.16460807970228097,
+          1
+        ],
+        "metallicFactor": 0.6201923663005449,
+        "roughnessFactor": 0.3702868427789494
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "carpaint",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.16460807970228097,
+          0.16460807970228097,
+          0.16460807970228097,
+          1
+        ],
+        "metallicFactor": 0.6201923663005449,
+        "roughnessFactor": 0.3702868427789494
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_10",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.6750496763418707
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_11",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.6750496763418707
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_12",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.6750496763418707
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "black",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.6750496763418707
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_15",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.2181323844034572,
+          0.2181323844034572,
+          0.2181323844034572,
+          1
+        ],
+        "metallicFactor": 0.9980982799185673,
+        "roughnessFactor": 0.1630481159561629
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_16",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.494118,
+          0.494118,
+          0.494118,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.792947
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_17",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.0230227951302245,
+          0.0230227951302245,
+          0.0230227951302245,
+          1
+        ],
+        "metallicFactor": 0.49828723287537635,
+        "roughnessFactor": 0.7542880130682302
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_18",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.0230227951302245,
+          0.0230227951302245,
+          0.0230227951302245,
+          1
+        ],
+        "metallicFactor": 0.49828723287537635,
+        "roughnessFactor": 0.7542880130682302
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_19",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.05729783433459911,
+          0.056294902072887426,
+          0.056294902072887426,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.8
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_20",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.156863,
+          0.156863,
+          0.156863,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_21",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.737255,
+          0.294118,
+          0,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_22",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.827451,
+          0.827451,
+          0.827451,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.5958113396155111
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_23",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.466667,
+          0.537255,
+          0.52549,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.753771
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_24",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.1032069248211042,
+          0.1032069248211042,
+          0.1032069248211042,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.858579
+      },
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_25",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.3921895658718546,
+          0.019327384891001057,
+          0.019327384891001057,
+          0.4921919762041179
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0
+      },
+      "alphaMode": "BLEND",
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_26",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.13888042325462324,
+          0.13888042325462324,
+          0.13888042325462324,
+          0.20571491265497188
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.2118101693262303
+      },
+      "alphaMode": "BLEND",
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_27",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.13888042325462324,
+          0.13888042325462324,
+          0.13888042325462324,
+          0.20571491265497188
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.2118101693262303
+      },
+      "alphaMode": "BLEND",
+      "doubleSided": true
+    },
+    {
+      "name": "mesh_28",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.01931367703092073,
+          0.01931367703092073,
+          0.01931367703092073,
+          0.4373346661627921
+        ],
+        "metallicFactor": 0.6689544196706123,
+        "roughnessFactor": 0
+      },
+      "alphaMode": "BLEND",
+      "doubleSided": true
+    }
+  ],
+  "sourceMaterialPolicy": "Every original source material factor is exported unchanged. Same Three.js 0.166.1 Cream studio illumination/camera as the finish comparison; not a claim of replicating Sketchfab renderer lighting."
+}

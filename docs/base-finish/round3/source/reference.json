@@ -1,0 +1,15 @@
+{
+  "url": "https://sketchfab.com/3d-models/land-cruise-2016-6bd227c034894019907f7eaf4fe23ded",
+  "author": "ZIRODESIGN",
+  "originalGLBSha256": "45cae7b0f6cd85db51f401a24fc19dd7e1ba9b17d1af624a9583ffe3f766b3e0",
+  "triangles": 979826,
+  "textures": 0,
+  "images": 0,
+  "nativeScreenshot": "source/tail-lamp-native.png",
+  "nativeScreenshotSha256": "0aa0f8001b1d57f91fbb053e6758d5f27ac8ec0b093612c71eac0c34b6787a47",
+  "materials": "source/native-materials.json",
+  "glbMaterials": "source/original-glb-materials.json",
+  "method": "Native Sketchfab Viewer API 1.12.1, original materials, environment and lighting; no finish overrides. Extracted GLB PBR factors independently agree with native material API. The source ships no texture images.",
+  "captureNote": "Native source screenshot was captured successfully. The about:blank parent reported one localStorage access warning; this is separate from the app, whose console is error-free.",
+  "comparisonLimit": "Native renderer has its original lighting/postprocessing and a different close camera; its pixels are not aligned to the app. Round-2/3 app lamp cameras are identical. The technical extra image tail-lamp-cream-lighting.png shows the original GLB PBR in the app Cream lighting without finish shaders."
+}

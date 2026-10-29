@@ -1,8 +1,8 @@
 {
-  "status": "round2_automated_passed_owner_reference_pending",
-  "sourceSha256": "b6764ecefbf6361448b469cdcaad662707662c1ddffe107f682bad26851f10be",
+  "status": "round3_verified_against_original_zirodesign_source",
+  "sourceSha256": "be6695c3cd18b927b427cfe1c174bc0dc8c7899365fa615777c4b510dda782ff",
   "automatedPassed": true,
-  "ownerReferenceVerified": false,
+  "sourceReference": "docs/base-finish/round3/source/reference.json",
   "consoleErrors": 0,
   "overhangLock": true,
   "bounds": {
@@ -13,15 +13,34 @@
     "maxX": 2.4149891549617504
   },
   "originalGLBCount": 35,
-  "originalGeometryGLBsByteIdentical": true,
-  "clayCoreDifferingPixels": 0,
-  "evidence": "docs/base-finish/round2/README.md",
-  "pixels": "docs/base-finish/round2/pixels.json",
-  "changedValues": "docs/base-finish/round2/changed-values.json",
+  "preexistingGLBCount": 44,
+  "allPreexistingGLBsByteIdentical": true,
+  "clayRegression": {
+    "white": {
+      "differentPixels": 0,
+      "maxChannelDifference": 0,
+      "excludedSlots": [
+        "lettering_rear",
+        "badge_grade"
+      ],
+      "method": "Whole screenshot comparison; only the intentionally replaced grade/name assembly is hidden. All original emblems, glass, paint and original Clay lamps remain visible."
+    },
+    "orange": {
+      "differentPixels": 0,
+      "maxChannelDifference": 0,
+      "excludedSlots": [
+        "lettering_rear",
+        "badge_grade"
+      ],
+      "method": "Whole screenshot comparison; only the intentionally replaced grade/name assembly is hidden. All original emblems, glass, paint and original Clay lamps remain visible."
+    }
+  },
+  "evidence": "docs/base-finish/round3/README.md",
+  "pixels": "docs/base-finish/round3/pixels.json",
+  "changedValues": "docs/base-finish/round3/changed-values.json",
   "limitations": [
-    "Owner photographs were not attached/accessibly received; side-by-side owner-photo comparisons and exact lamp agreement cannot be verified.",
-    "Recovered source contains VXR / V8 grade lettering, while owner reports GXR. Source lettering is preserved exactly, not relabelled.",
-    "Source emblems/letters are open-backed relief shells. No literal closed back face exists to measure; mounting audit reports sampled exposed-shell clearances instead.",
-    "The latest bonnet total-spread cap takes precedence over round-one p95-minus-median target 4\u20136 L*: main total spread is below 2, so both targets cannot hold for the same pixel set."
+    "Native Sketchfab lamp reference uses original lighting and renderer; its pixels are not camera/colour-pipeline aligned to app screenshots. App round-2/3 comparison cameras match.",
+    "WebKit timing is software-rendered iPad emulation, not physical iPad performance.",
+    "Source badge shells are open-backed; original mounting was preserved. The new G alone has a measured 0.100\u20130.958 mm sampled back clearance."
   ]
 }

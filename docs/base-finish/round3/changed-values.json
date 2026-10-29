@@ -1,0 +1,252 @@
+{
+  "baseline": "1cdbaa4",
+  "sourceSha256": "be6695c3cd18b927b427cfe1c174bc0dc8c7899365fa615777c4b510dda782ff",
+  "changes": [
+    {
+      "name": "emblem/lettering chrome color",
+      "old": "#e1e4e5",
+      "new": "#eef0f2",
+      "file": "index.html",
+      "line": 760
+    },
+    {
+      "name": "emblem/lettering chrome roughness",
+      "old": 0.52,
+      "new": 0.22,
+      "file": "index.html",
+      "line": 760
+    },
+    {
+      "name": "emblem/lettering chrome metalness",
+      "old": 0.45,
+      "new": 0.85,
+      "file": "index.html",
+      "line": 760
+    },
+    {
+      "name": "emblem/lettering chrome clearcoat",
+      "old": 0.08,
+      "new": 0.2,
+      "file": "index.html",
+      "line": 760
+    },
+    {
+      "name": "emblem/lettering chrome clearcoatRoughness",
+      "old": 0.3,
+      "new": 0.12,
+      "file": "index.html",
+      "line": 760
+    },
+    {
+      "name": "front emblem envMapIntensity",
+      "old": 0.85,
+      "new": 8.0,
+      "file": "index.html",
+      "line": 762
+    },
+    {
+      "name": "rear emblem and lettering envMapIntensity",
+      "old": 0.85,
+      "new": 3.0,
+      "file": "index.html",
+      "line": 762
+    },
+    {
+      "name": "upper rear lens opacity",
+      "old": 0.94,
+      "new": 0.9,
+      "file": "index.html",
+      "line": 744
+    },
+    {
+      "name": "upper rear lens blending",
+      "old": "normal alpha",
+      "new": "RGB = source * sourceAlpha + destination * sourceRGB; alpha = sourceAlpha + destinationAlpha * (1-sourceAlpha)",
+      "file": "index.html",
+      "line": 745
+    },
+    {
+      "name": "upper lens spatial absorption",
+      "old": null,
+      "new": {
+        "mouldedFaceRGBMultiplier": 0.6,
+        "guideWindowRGBMultiplier": 1.0,
+        "hullTransitionMetres": [
+          -0.008,
+          0.008
+        ],
+        "wrapTransitionAbsZMetres": [
+          0.865,
+          0.895
+        ]
+      },
+      "file": "index.html",
+      "line": 728
+    },
+    {
+      "name": "reverse clear mask",
+      "old": "old z-only colour/alpha transition on red clearglass_27",
+      "new": "Canonical y smoothsteps [1.026,1.038] and [1.100,1.108]; source RGB=1, alpha=0 gives identity destination colour in clear band.",
+      "file": "index.html",
+      "line": 730
+    },
+    {
+      "name": "clearglass_27 zone in finish3",
+      "old": "lamp_red",
+      "new": "lamp_clear, same existing geometry and clear finish",
+      "file": "index.html",
+      "line": 776
+    },
+    {
+      "name": "lens guide-window metadata",
+      "old": null,
+      "new": "Six convex-hull planes derived offline from 22 existing 256-triangle LED caps; 0.25mm centre rounding; 20mm margin",
+      "file": "index.html",
+      "line": 719
+    },
+    {
+      "name": "material-zone split",
+      "old": null,
+      "new": "New redglass_lower alias for unchanged bumper reflector finish",
+      "file": "index.html",
+      "line": 708
+    },
+    {
+      "name": "Clay clone blend reset",
+      "old": "implicit normal blend",
+      "new": "explicit normal blend/factors, restoring original Clay output",
+      "file": "index.html",
+      "line": 674
+    },
+    {
+      "name": "Clay selected-lamp fallback",
+      "old": "_finish suffix",
+      "new": "_finish and _finish3 suffix, both select original Clay lamp",
+      "file": "index.html",
+      "line": 848
+    },
+    {
+      "name": "legacy lettering bundle visibility",
+      "old": null,
+      "new": "Selecting whole lettering_rear hides separate badge_grade slot",
+      "file": "index.html",
+      "line": 846
+    },
+    {
+      "name": "default rear lamps",
+      "old": [
+        "lamp_rear_L_finish",
+        "lamp_rear_R_finish"
+      ],
+      "new": [
+        "lamp_rear_L_finish3",
+        "lamp_rear_R_finish3"
+      ],
+      "file": "build.json",
+      "line": 14
+    },
+    {
+      "name": "default rear lettering",
+      "old": "lettering_rear",
+      "new": "lettering_rear_base",
+      "file": "build.json",
+      "line": 41
+    },
+    {
+      "name": "default grade slot",
+      "old": null,
+      "new": "badge_grade_GXR",
+      "file": "build.json",
+      "line": 46
+    }
+  ],
+  "newFiles": [
+    "docs/base-finish/round3/README.md",
+    "docs/base-finish/round3/after/clay-quarter.json",
+    "docs/base-finish/round3/after/clay-quarter.png",
+    "docs/base-finish/round3/after/cream-front.json",
+    "docs/base-finish/round3/after/cream-front.png",
+    "docs/base-finish/round3/after/cream-quarter.json",
+    "docs/base-finish/round3/after/cream-quarter.png",
+    "docs/base-finish/round3/after/cream-rear.json",
+    "docs/base-finish/round3/after/cream-rear.png",
+    "docs/base-finish/round3/after/cream-side.json",
+    "docs/base-finish/round3/after/cream-side.png",
+    "docs/base-finish/round3/after/emblem-front.json",
+    "docs/base-finish/round3/after/emblem-front.png",
+    "docs/base-finish/round3/after/emblem-rear.json",
+    "docs/base-finish/round3/after/emblem-rear.png",
+    "docs/base-finish/round3/after/grade-GXR.json",
+    "docs/base-finish/round3/after/grade-GXR.png",
+    "docs/base-finish/round3/after/grade-VXR.json",
+    "docs/base-finish/round3/after/grade-VXR.png",
+    "docs/base-finish/round3/after/slate-quarter.json",
+    "docs/base-finish/round3/after/slate-quarter.png",
+    "docs/base-finish/round3/after/tail-lamp.json",
+    "docs/base-finish/round3/after/tail-lamp.png",
+    "docs/base-finish/round3/asset-audit.json",
+    "docs/base-finish/round3/before/cream-front.json",
+    "docs/base-finish/round3/before/cream-front.png",
+    "docs/base-finish/round3/before/cream-quarter.json",
+    "docs/base-finish/round3/before/cream-quarter.png",
+    "docs/base-finish/round3/before/cream-rear.json",
+    "docs/base-finish/round3/before/cream-rear.png",
+    "docs/base-finish/round3/before/emblem-front.json",
+    "docs/base-finish/round3/before/emblem-front.png",
+    "docs/base-finish/round3/before/emblem-rear.json",
+    "docs/base-finish/round3/before/emblem-rear.png",
+    "docs/base-finish/round3/before/tail-lamp.json",
+    "docs/base-finish/round3/before/tail-lamp.png",
+    "docs/base-finish/round3/changed-values.json",
+    "docs/base-finish/round3/clay-regression.json",
+    "docs/base-finish/round3/g-mount.json",
+    "docs/base-finish/round3/grade-comparison.png",
+    "docs/base-finish/round3/gxr-generation.json",
+    "docs/base-finish/round3/lamp-zone-audit.json",
+    "docs/base-finish/round3/lens-windows.json",
+    "docs/base-finish/round3/masks/after-cream-front.png",
+    "docs/base-finish/round3/masks/after-cream-quarter.png",
+    "docs/base-finish/round3/masks/after-cream-rear.png",
+    "docs/base-finish/round3/masks/after-emblem-front.png",
+    "docs/base-finish/round3/masks/before-cream-front.png",
+    "docs/base-finish/round3/masks/before-cream-quarter.png",
+    "docs/base-finish/round3/masks/before-cream-rear.png",
+    "docs/base-finish/round3/masks/before-emblem-front.png",
+    "docs/base-finish/round3/pixels.json",
+    "docs/base-finish/round3/source/native-materials.json",
+    "docs/base-finish/round3/source/original-glb-materials.json",
+    "docs/base-finish/round3/source/reference.json",
+    "docs/base-finish/round3/source/tail-lamp-cream-lighting.png",
+    "docs/base-finish/round3/source/tail-lamp-native.png",
+    "docs/base-finish/round3/state-checks.json",
+    "docs/base-finish/round3/tail-lamp-comparison.png",
+    "docs/base-finish/round3/validation/clay-current-orange.png",
+    "docs/base-finish/round3/validation/clay-current-white.png",
+    "docs/base-finish/round3/validation/clay-round2-orange.png",
+    "docs/base-finish/round3/validation/clay-round2-white.png",
+    "docs/base-finish/round3/validation/visual.json",
+    "docs/base-finish/round3/validation/webkit.json",
+    "docs/base-finish/round3/validation/webkit.png",
+    "model/parts/badge_grade_GXR.glb",
+    "model/parts/badge_grade_VXR.glb",
+    "model/parts/lamp_rear_L_finish3.glb",
+    "model/parts/lamp_rear_R_finish3.glb",
+    "model/parts/lettering_rear_base.glb",
+    "tools/base-finish/create-gxr-badge.mjs",
+    "tools/base-finish/derive-lens-windows.mjs",
+    "tools/base-finish/fit-gxr-mount.mjs",
+    "tools/base-finish/source-material-reference.mjs",
+    "tools/base-finish/split-lamp-material-zones.mjs",
+    "tools/base-finish/verify-finish-round3.mjs",
+    "tools/base-finish/verify-round3-pixels.py"
+  ],
+  "unchanged": [
+    "all 44 existing GLB file bytes",
+    "all original part pivots, root scale 1.0, geometry NORMAL and COLOR_0",
+    "camera presets/controls",
+    "paint, bonnet AO/curvature, lighting, background",
+    "tyres, wheels, grille/trim finish",
+    "Clay rendered finish except intentional new GXR grade silhouette"
+  ],
+  "note": "New G geometry and additive part declarations are recorded in gxr-generation.json, g-mount.json and model/manifest.json. Lamp variants change material grouping/extras only."
+}

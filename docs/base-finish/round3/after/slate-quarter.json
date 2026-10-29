@@ -1,0 +1,441 @@
+{
+  "name": "final-slate-quarter",
+  "view": "quarter",
+  "source": "/workspace/landcruiser-3d/index.html",
+  "sourceSha256": "be6695c3cd18b927b427cfe1c174bc0dc8c7899365fa615777c4b510dda782ff",
+  "samples": {
+    "bonnet": {
+      "pixel": [
+        492,
+        419
+      ],
+      "point": [
+        -1.6500000000000001,
+        1.2750750456427686,
+        0.3
+      ],
+      "baked": [
+        1,
+        0.5026543282656237
+      ],
+      "front": {
+        "part": "bonnet",
+        "zone": "paint",
+        "node": "carpaint_6",
+        "point": [
+          -1.6547727693900802,
+          1.2745073346872162,
+          0.3064853904691734
+        ]
+      },
+      "patchValidation": {
+        "bonnet:paint": 49
+      },
+      "rgb": [
+        243,
+        241,
+        238
+      ],
+      "hex": "#f3f1ee",
+      "displayLuma": 0.9459160784313725,
+      "relativeLuminance": 0.8813832690881158
+    },
+    "roof": {
+      "pixel": [
+        862,
+        210
+      ],
+      "point": [
+        0.5,
+        1.8760186369554397,
+        -8.470329472543003e-22
+      ],
+      "baked": [
+        1,
+        0.5026766263794314
+      ],
+      "front": {
+        "part": "body_shell",
+        "zone": "paint",
+        "node": "carpaint_6",
+        "point": [
+          0.48607210324829764,
+          1.8756048087350177,
+          0.015328926831353184
+        ]
+      },
+      "patchValidation": {
+        "body_shell:paint": 49
+      },
+      "rgb": [
+        248,
+        248,
+        247
+      ],
+      "hex": "#f8f8f7",
+      "displayLuma": 0.9722658823529412,
+      "relativeLuminance": 0.9380666228379341
+    },
+    "frontDoor": {
+      "pixel": [
+        862,
+        505
+      ],
+      "point": [
+        -0.44999999999999996,
+        0.9,
+        0.9571288507702599
+      ],
+      "baked": [
+        1,
+        0.5178218485833682
+      ],
+      "front": {
+        "part": "door_FL",
+        "zone": "paint",
+        "node": "Front_Doors_9",
+        "point": [
+          -0.44936979717100645,
+          0.8977149240946063,
+          0.9570315259057925
+        ]
+      },
+      "patchValidation": {
+        "door_FL:paint": 49
+      },
+      "rgb": [
+        195,
+        194,
+        192
+      ],
+      "hex": "#c3c2c0",
+      "displayLuma": 0.7610517647058823,
+      "relativeLuminance": 0.5399144631047204
+    },
+    "lowerDoor": {
+      "pixel": [
+        859,
+        549
+      ],
+      "point": [
+        -0.44999999999999996,
+        0.73,
+        0.9403486018334689
+      ],
+      "baked": [
+        0.9410840797893074,
+        0.4932019038196973
+      ],
+      "front": {
+        "part": "door_FL",
+        "zone": "paint",
+        "node": "Front_Doors_9",
+        "point": [
+          -0.4470242735012733,
+          0.7293445889664234,
+          0.9401666690940913
+        ]
+      },
+      "patchValidation": {
+        "door_FL:paint": 49
+      },
+      "rgb": [
+        183,
+        183,
+        181
+      ],
+      "hex": "#b7b7b5",
+      "displayLuma": 0.7170807843137255,
+      "relativeLuminance": 0.47270448150117145
+    },
+    "sideGlass": {
+      "pixel": [
+        835,
+        332
+      ],
+      "point": [
+        -0.40000000000000013,
+        1.5199999999999998,
+        0.7569906755372914
+      ],
+      "baked": [
+        1.0000000000000002,
+        0.5019607843137256
+      ],
+      "front": {
+        "part": "door_FL",
+        "zone": "glass",
+        "node": "windowglass_39",
+        "point": [
+          -0.39627383893229384,
+          1.5173977263341172,
+          0.7578876044055909
+        ]
+      },
+      "patchValidation": {
+        "door_FL:glass": 49
+      },
+      "rgb": [
+        74,
+        82,
+        86
+      ],
+      "hex": "#4a5256",
+      "displayLuma": 0.3160313725490196,
+      "relativeLuminance": 0.08162318252282555
+    },
+    "handleRecess": {
+      "pixel": [
+        906,
+        438
+      ],
+      "point": [
+        -0.1999999999999999,
+        1.12,
+        0.9381336384704814
+      ],
+      "baked": [
+        0.7712375248886976,
+        0.7495496111755588
+      ],
+      "front": {
+        "part": "door_FL",
+        "zone": "paint",
+        "node": "Front_Doors_9",
+        "point": [
+          -0.1971080915438207,
+          1.117142625959492,
+          0.9359870925512496
+        ]
+      },
+      "patchValidation": {
+        "door_FL:paint": 49
+      },
+      "rgb": [
+        60,
+        61,
+        60
+      ],
+      "hex": "#3c3d3c",
+      "displayLuma": 0.23809882352941175,
+      "relativeLuminance": 0.04624390075717704
+    },
+    "tailgate": {
+      "pixel": [
+        1143,
+        337
+      ],
+      "point": [
+        2.3191072365298178,
+        1.19,
+        -8.470329472543003e-22
+      ],
+      "baked": [
+        1,
+        0.5155858520294127
+      ],
+      "front": {
+        "part": "body_shell",
+        "zone": "glass",
+        "node": "windowglass_39",
+        "point": [
+          1.3185112871905134,
+          1.3539621252551386,
+          0.8221179025869081
+        ]
+      },
+      "patchValidation": {
+        "body_shell:glass": 49
+      },
+      "rgb": [
+        53,
+        64,
+        71
+      ],
+      "hex": "#354047",
+      "displayLuma": 0.24379137254901959,
+      "relativeLuminance": 0.04878607944610375
+    },
+    "rearBumper": {
+      "pixel": [
+        1151,
+        469
+      ],
+      "point": [
+        2.395788719091932,
+        0.5699999999999998,
+        -5.293955920339377e-23
+      ],
+      "baked": [
+        0.9422134604314942,
+        0.5077407941593266
+      ],
+      "front": {
+        "part": "unsorted_03",
+        "zone": "black",
+        "node": "black_12",
+        "point": [
+          1.632512858922321,
+          0.7390418232165532,
+          0.6246931830768856
+        ]
+      },
+      "patchValidation": {
+        "unsorted_03:black": 49
+      },
+      "rgb": [
+        0,
+        0,
+        0
+      ],
+      "hex": "#000000",
+      "displayLuma": 0,
+      "relativeLuminance": 0
+    },
+    "background": {
+      "pixel": [
+        200,
+        160
+      ],
+      "rgb": [
+        70,
+        100,
+        124
+      ],
+      "hex": "#46647c",
+      "displayLuma": 0.37394039215686276,
+      "relativeLuminance": 0.1187167017011724
+    }
+  },
+  "info": {
+    "studio": "slate",
+    "build": {
+      "slots": {
+        "body_shell": "body_shell",
+        "bonnet": "bonnet",
+        "bumper_front": "bumper_front",
+        "bumper_rear": "bumper_rear",
+        "door_FL": "door_FL",
+        "door_FR": "door_FR",
+        "door_RL": "door_RL",
+        "door_RR": "door_RR",
+        "grille": "grille",
+        "lamp_front_L": "lamp_front_L",
+        "lamp_front_R": "lamp_front_R",
+        "lamp_rear_L": "lamp_rear_L_finish3",
+        "lamp_rear_R": "lamp_rear_R_finish3",
+        "mirror_L": "mirror_L",
+        "mirror_R": "mirror_R",
+        "roof_rails": "roof_rails",
+        "side_step_L": "side_step_L",
+        "side_step_R": "side_step_R",
+        "spoiler": "spoiler",
+        "tailgate": "tailgate",
+        "unsorted_01": "unsorted_01",
+        "unsorted_02": "unsorted_02",
+        "unsorted_03": "unsorted_03",
+        "unsorted_04": "unsorted_04",
+        "unsorted_05": "unsorted_05",
+        "unsorted_06": "unsorted_06",
+        "unsorted_07": "unsorted_07",
+        "unsorted_08": "unsorted_08",
+        "unsorted_09": "unsorted_09",
+        "unsorted_10": "unsorted_10",
+        "wheel_FL": "wheel_FL",
+        "wheel_FR": "wheel_FR",
+        "wheel_RL": "wheel_RL",
+        "wheel_RR": "wheel_RR",
+        "arch_flares": null,
+        "chassis": null,
+        "emblem_front": "emblem_front",
+        "emblem_rear": "emblem_rear",
+        "lettering_rear": "lettering_rear_base",
+        "wheel_emblem_FL": "wheel_emblem_FL",
+        "wheel_emblem_FR": "wheel_emblem_FR",
+        "wheel_emblem_RL": "wheel_emblem_RL",
+        "wheel_emblem_RR": "wheel_emblem_RR",
+        "badge_grade": "badge_grade_GXR"
+      },
+      "paint": {
+        "paint": "#f4f4ef"
+      },
+      "lift_mm": 0,
+      "hidden": []
+    },
+    "contact": {
+      "opacity": 1,
+      "tint": "000000",
+      "nearTint": 1,
+      "nearStrength": 1
+    },
+    "exposure": 1.2,
+    "toneMapping": 6,
+    "key": {
+      "intensity": 1.65,
+      "color": "fffbf5",
+      "position": [
+        -1.5,
+        8,
+        2
+      ]
+    },
+    "fill": {
+      "intensity": 0.6,
+      "color": "f7f5f0",
+      "ground": "52565c"
+    },
+    "baked": {
+      "uBakedAO": 0.9,
+      "uBakedRidge": 0.7,
+      "uBakedValley": 0.9
+    },
+    "cream": {
+      "uCreamKeyGain": 2.2,
+      "uCreamFillGain": 3.4,
+      "uCreamKeyDirection": {
+        "x": -0.35520224181535076,
+        "y": 0.9347427416193442,
+        "z": 0.009347427416193443
+      },
+      "uCreamKeyTint": "fff0d6",
+      "uCreamContactPower": 0,
+      "uCreamContactBand": {
+        "x": 0.88,
+        "y": 0.94
+      },
+      "uCreamRearFill": 0.5,
+      "uCreamGrazingFloor": 0.2,
+      "uCreamGrazingRange": {
+        "x": 0.03,
+        "y": 0.3
+      }
+    },
+    "clay": {
+      "uBakedAO": 0.65,
+      "uBakedRidge": 0.52,
+      "uBakedValley": 0.72,
+      "uClayOcclusionTint": "a58e72",
+      "uClayLowerKey": 0.09,
+      "uClayHeightStart": 0.65,
+      "uClayHeightEnd": 1.14,
+      "uClayBodyLift": 0
+    },
+    "background": "linear-gradient(rgb(74, 106, 130) 0%, rgb(64, 91, 112) 52%, rgb(58, 79, 96) 100%)",
+    "camera": {
+      "position": [
+        -7.729723753143698,
+        2.8387209098530186,
+        8.219403980606954
+      ],
+      "target": [
+        0.020000000000000004,
+        0.9600000000000001,
+        0
+      ],
+      "fov": 20
+    },
+    "drawCalls": 192,
+    "triangles": 865204
+  },
+  "errors": []
+}

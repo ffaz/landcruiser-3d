@@ -10,7 +10,7 @@ The satin collectible materials and baked crevice/edge shading remain. No screen
 
 ## Clean base finish preview
 
-[Round 2 before/after renders, pixel measurements, changed values and recovered source badges](docs/base-finish/round2/README.md). Clay is restored to main; badges come from the original 979,826-triangle source. Owner reference photographs are still unavailable. Exact lamp matching, GXR grade agreement and literal back-face gap certification remain pending.
+[Round 3: source/round-2/round-3 lamps, GXR/VXR comparison, chrome measurements and asset audit](docs/base-finish/round3/README.md). The reference is the original 979,826-triangle ZIRODESIGN model with its native materials (zero textures). The new GXR grade is the default; source X/R/punctuation, LAND CRUISER and V8 remain unchanged. VXR remains an optional part. Clay and clean bonnet shading are preserved; no owner photographs are needed.
 
 Cream and Slate use the satin painted-metal base finish, soft reflection highlights, neutral dark trim, blue-grey tinted glass and satin exterior metal. Clay retains its separate warm matte paint, unlit plum glass, pink-grey trim, lighting, wheel/tyre and plinth presentation. No tyre geometry, mud, wear, decals, numbers, props or workshop UI is added.
 
@@ -20,7 +20,7 @@ Toyota emblems are separate default-visible body slots. Replacement rear-lamp va
 
 ## Foundation data
 
-The original vehicle contains **24 named parts and 10 unsorted pieces**, now supplemented by seven source badge/lettering slots and two rear-lamp variants, each with material-zone metadata and a review thumbnail. Integrated flare surfaces cannot be detached by loose-piece separation; a standalone frame/axle assembly could not be identified confidently. `arch_flares` and `chassis` therefore remain empty manifest slots. Other pivots are part-bbox centres, **not verified door hinges or mounting points**; wheel pivots use the authored hub coordinates.
+The original vehicle contains **24 named parts and 10 unsorted pieces**, now supplemented by the source badge/lettering slots, a separate GXR/VXR grade slot and selectable rear-lamp finish variants, each with material-zone metadata and a review thumbnail. Integrated flare surfaces cannot be detached by loose-piece separation; a standalone frame/axle assembly could not be identified confidently. `arch_flares` and `chassis` therefore remain empty manifest slots. Other pivots are part-bbox centres, **not verified door hinges or mounting points**; wheel pivots use the authored hub coordinates.
 
 Use the browser console or a URL hash to exercise the data foundation:
 
@@ -38,7 +38,7 @@ Open [the 50 mm lift override](https://ffaz.github.io/landcruiser-3d/#lift_mm=50
 
 [Foundation report](docs/foundation/README.md) records measured dimensions, byte counts, emulated WebKit timing and validation. [Part table and thumbnails](docs/foundation/parts-review.md) list every part and triangle count. [Overhang/source investigation](docs/foundation/overhang-notes.md) explains the inherited 1.370 m rear overhang: the original 5,170 mm (GXR GT) anchor fit stretched the body about 15% behind the rear axle. It was undone with the owner's approval: rear overhang 1.200 m, model body 5,000 mm, front overhang/wheelbase/wheels unchanged. [Correction record, baselines and photo overlay](docs/rear-overhang/README.md).
 
-The retained vehicle is adapted from [Land cruise 2016 by ZIRODESIGN](https://sketchfab.com/3d-models/land-cruise-2016-6bd227c034894019907f7eaf4fe23ded), selected by the owner; model authorship remains with ZIRODESIGN. An extraction tool's licence does not license the model. The stored asset is an earlier artist adaptation, not OEM CAD. Toyota emblems are now separate new parts at the owner’s request; no unconfirmed letter or grade badges are added.
+The retained vehicle is adapted from [Land cruise 2016 by ZIRODESIGN](https://sketchfab.com/3d-models/land-cruise-2016-6bd227c034894019907f7eaf4fe23ded), selected by the owner; model authorship remains with ZIRODESIGN. An extraction tool's licence does not license the model. The stored asset is an earlier artist adaptation, not OEM CAD. Toyota emblems and original lettering are separate recovered parts at the owner’s request; only the G in the default GXR grade is newly modelled. The original VXR alternative remains selectable.
 
 The owner's car is a GCC **GXR** (Toyota UAE May 2021 5.7L GXR sheet: 5,095 × 1,980 × 1,930 mm). The spec panel reads "Toyota GXR 5,095 mm · model body 5,000 mm". It shows the owner-confirmed **265/70R17** tyres as text only: the stored wheel geometry is still Ø 793 mm until the tyre-swap work.
 

@@ -11,8 +11,8 @@
     "grille": "grille",
     "lamp_front_L": "lamp_front_L",
     "lamp_front_R": "lamp_front_R",
-    "lamp_rear_L": "lamp_rear_L_finish",
-    "lamp_rear_R": "lamp_rear_R_finish",
+    "lamp_rear_L": "lamp_rear_L_finish3",
+    "lamp_rear_R": "lamp_rear_R_finish3",
     "mirror_L": "mirror_L",
     "mirror_R": "mirror_R",
     "roof_rails": "roof_rails",
@@ -38,11 +38,12 @@
     "chassis": null,
     "emblem_front": "emblem_front",
     "emblem_rear": "emblem_rear",
-    "lettering_rear": "lettering_rear",
+    "lettering_rear": "lettering_rear_base",
     "wheel_emblem_FL": "wheel_emblem_FL",
     "wheel_emblem_FR": "wheel_emblem_FR",
     "wheel_emblem_RL": "wheel_emblem_RL",
-    "wheel_emblem_RR": "wheel_emblem_RR"
+    "wheel_emblem_RR": "wheel_emblem_RR",
+    "badge_grade": "badge_grade_GXR"
   },
   "paint": {
     "paint": "#f4f4ef"

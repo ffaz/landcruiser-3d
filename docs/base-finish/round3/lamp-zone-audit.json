@@ -1,0 +1,45 @@
+{
+  "method": "Accessor bytes preserved; original triangle index triples partitioned by separated physical lamp/bumper height. New material name only for lower reflectors.",
+  "parts": [
+    {
+      "id": "lamp_rear_L_finish3",
+      "sourceId": "lamp_rear_L_finish",
+      "triangles": 64045,
+      "splits": [
+        {
+          "node": "redglass_25",
+          "sourceTriangles": 35168,
+          "upperTriangles": 34176,
+          "lowerTriangles": 992,
+          "attributeHashes": {
+            "POSITION": "afd81a42e4b8483d420d6ece811e72d40b399d225767cabae59b79207702c7fa",
+            "COLOR_0": "0206bb69783401e1af4893b2fe69a36c32cba2820b5482910ce682c7743c6179",
+            "NORMAL": "df2f90a9595fca08817495e4d6cd8dadf00352b6b2ba469f83aedf36bcd44906"
+          }
+        }
+      ],
+      "attributesByteIdentical": true,
+      "triangleUnionUnchanged": true
+    },
+    {
+      "id": "lamp_rear_R_finish3",
+      "sourceId": "lamp_rear_R_finish",
+      "triangles": 64460,
+      "splits": [
+        {
+          "node": "redglass_25",
+          "sourceTriangles": 35168,
+          "upperTriangles": 34176,
+          "lowerTriangles": 992,
+          "attributeHashes": {
+            "POSITION": "82aff6a59b452dfc81b03f9846cae2d7ca5aaab8cc438f744b01bfa2352cc49f",
+            "COLOR_0": "8eda7706fe481d0c1467a6c51ba224933304867dac496e05030ee2b2ad3e328d",
+            "NORMAL": "d5150b313fe56f7552aecc1f70522359bf2f326f6723be95bd93ea5649f1d685"
+          }
+        }
+      ],
+      "attributesByteIdentical": true,
+      "triangleUnionUnchanged": true
+    }
+  ]
+}

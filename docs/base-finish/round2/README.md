@@ -1,6 +1,6 @@
 # LC200 base finish — round 2
 
-Branch `base-finish-reference-review`, based on `8c62010`. **Implementation tested; owner-photo comparisons remain pending because no owner image attachment was accessible.** Main/Pages are not changed by this review branch.
+Branch `base-finish-reference-review`, based on `8c62010`. **Historical round-2 report. Superseded by [round 3](../round3/README.md), which uses the original ZIRODESIGN source as the owner-selected reference and adds GXR. The former owner-photo request is obsolete.** Main/Pages are not changed by this review branch.
 
 ## Full-size screenshots
 

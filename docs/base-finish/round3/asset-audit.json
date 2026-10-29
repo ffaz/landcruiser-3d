@@ -1,0 +1,1142 @@
+{
+  "baseline": "1cdbaa4",
+  "existingGLBs": 44,
+  "allExistingGLBsByteIdentical": true,
+  "original": [
+    {
+      "file": "model/base.glb",
+      "sha256": "d995514aa4c7db48e3a146f68796b4131a486b4dccb7311443cb0e1f6d2f2ce0",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/display-base.glb",
+      "sha256": "a005849acbb6bc74d4be8089019518fb1516e343c610f02366caa5c15977a798",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/bonnet.glb",
+      "sha256": "5ba6b66701bf29a97835e276b482bab1d99dde0fdccbff4bcf3cc7d61ab9fdb0",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/bumper_front.glb",
+      "sha256": "3499b4fc6b63e4c9fbeb39da19ac2b93b0a31a20387f89e64d05275b76366f43",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/bumper_rear.glb",
+      "sha256": "5c450bda24ea16200ce699e304c421edf666825dbd7e0daf9524524bbca57cef",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/door_FL.glb",
+      "sha256": "c02fd81291983bc3ff94e99b6878b7a42401f06b454d47b3bfd3fc84e318095b",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/door_FR.glb",
+      "sha256": "dd405b7b30ceb224919865e97a4811ce4959042352d1fbfbea72259ac25efbfe",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/door_RL.glb",
+      "sha256": "51f6df45bcddb933678e6ac841dec73a15ef03065d86c9a1f186fd6a87d87445",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/door_RR.glb",
+      "sha256": "db246b44362a522121bcfae6a3f61afb2328840a023a6121adbcfa56d65eba9e",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/emblem_front.glb",
+      "sha256": "469e2d1e95479620c88841cce7c5285a9c8292207c681214356f6d6c5f620044",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/emblem_rear.glb",
+      "sha256": "1e88b997faeb87ff179644f0816a937960fd137866ef7b8c3572d97dc6f65817",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/grille.glb",
+      "sha256": "01bc6a06f89ff1b51aa6726f5d7a434dabc8365ada998d633d8b9729b6248866",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/lamp_front_L.glb",
+      "sha256": "87457fd7efe6ae03faa4ef2a9f262edc04d9c277e89b55e6ba33991c2473fba8",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/lamp_front_R.glb",
+      "sha256": "32d86bcd59cd402d921bd0f0154cf90ed1dede5b39151ee4b0619e35612acd66",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/lamp_rear_L.glb",
+      "sha256": "03af882a0fb9d8ba69f30ada74d5df4efab94d901fbe97b1b81595495346681e",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/lamp_rear_L_finish.glb",
+      "sha256": "d50acc1efd040bc83a220e327a986847303eb1adb7d0bdaa856108a385f8fc0b",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/lamp_rear_R.glb",
+      "sha256": "b52513357bdb1b3207932a3b0e2e80ea20556e03a88c3ab4e2a4691bba959efc",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/lamp_rear_R_finish.glb",
+      "sha256": "d73b4f9a46511f1876bb344e03b799d8044400d9d4b477a1cd65a6179aeacabf",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/lettering_rear.glb",
+      "sha256": "7aae0bf5d25afb68f574c0b89ffb27393de59cb8fa4a6d0f8706297d5eb08e8b",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/mirror_L.glb",
+      "sha256": "6a13b02bc934fe7d8118bbab81882ac453e940e308e79633547e7291e0c56a4a",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/mirror_R.glb",
+      "sha256": "1724ce5f9211f6555bc16eb97ffd4c3e25e34e9de2f96adeca5503a916fb053e",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/roof_rails.glb",
+      "sha256": "215053544a616ffabf3eeb46ebbe633477c4995bad77f1accd1b4966af45629b",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/side_step_L.glb",
+      "sha256": "bffa4e60e19829e8577c4f2f74ce48fdc3a6f65439151b1ae8967b5c35d6e59a",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/side_step_R.glb",
+      "sha256": "7e459c5d54a86d6cdea1864edfa8ed6238fe9f4d77c966ae1f5c8570a27f341e",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/spoiler.glb",
+      "sha256": "48bf436c1baf6829810d4b2dd32368fd75e1351a1ebb0c0340e7f6e56e8f08ca",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/tailgate.glb",
+      "sha256": "65dd95db47db55f181edc72fa24df5ffe9536c7f5f08877bcad1b1cff1bf3093",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/unsorted_01.glb",
+      "sha256": "526e253559ae70a4f828695cd6c3c4ea2d35e4447d7dff09ba7bd64c36cc3ef8",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/unsorted_02.glb",
+      "sha256": "b6e4b50d9fa2e3ff222d9fba040883c8764381057e3074ae48b253877b3fb5dc",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/unsorted_03.glb",
+      "sha256": "2e3290ee0936604b06d95d50d9ef04ddd01173b55366ebfb45a2f2de5fc83ab0",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/unsorted_04.glb",
+      "sha256": "7f6f24003be4777502fb1f2e33ee30a650dde7c2f3d50d94cadc99846aa33edd",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/unsorted_05.glb",
+      "sha256": "97bdbf6538e8ffec325cfbf44fa5ac8059ac0022db3bdf18da9c35c3fea4f0ba",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/unsorted_06.glb",
+      "sha256": "090f240ad85896afdcd2670e9eb34aba887e9f065d70b5173e8b9583965d0aa7",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/unsorted_07.glb",
+      "sha256": "b45468ef7b33e798aec5e2ae93beba5b4491c42fc74ae719ecf368fe79b186b6",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/unsorted_08.glb",
+      "sha256": "494bd90ab37b6e3edbde2c61b1b31f659ab5c4a70572ccf5d39c45fed21e5fbe",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/unsorted_09.glb",
+      "sha256": "b75a1ddb1f8183f59ddaaf6cc09e1a8d61e5790475f5255703a8b4e91b24a779",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/unsorted_10.glb",
+      "sha256": "9b077c5603ec4fd84effc8e08c78216d1c4e2cc318c244a5b528b9bcca7b80e2",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/wheel_FL.glb",
+      "sha256": "f34286896012460f6b8da3a6ed95742a55fd016d206283ceb56da1446fed7d8e",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/wheel_FR.glb",
+      "sha256": "a4e5badcfb3cf990ca3e9c99e8bb434ef18235261f9d3c6c9373d41be99c5382",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/wheel_RL.glb",
+      "sha256": "a2c5735bb2ef5fb48415d499258c3d56523add26b0cd3bd76c1f1a8b4b40f9a5",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/wheel_RR.glb",
+      "sha256": "44ee9b4fa9e8adb4ad0e223a7f6c343b1e807fb0a55a92fe37ebeb8930d9bd96",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/wheel_emblem_FL.glb",
+      "sha256": "2f2184dea8a54d03507b3e36547a069cccc62812daf994b92a18cf6d6edd2b20",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/wheel_emblem_FR.glb",
+      "sha256": "f03f9fb5187f261764d6165fd69488318791e7686322f1f92116c6ffb5fac7d5",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/wheel_emblem_RL.glb",
+      "sha256": "d5c83fdf638da58e14315f70e5ee5ea9e23738b400bb127d0b5ac945bbb76f59",
+      "byteIdentical": true
+    },
+    {
+      "file": "model/parts/wheel_emblem_RR.glb",
+      "sha256": "51147c884257439e786411951352644881a42edb9c37b69525beda0b29b9daf8",
+      "byteIdentical": true
+    }
+  ],
+  "grade": [
+    {
+      "id": "lettering_rear_base",
+      "preserved": [
+        {
+          "node": "source_4_50",
+          "fields": {
+            "POSITION": {
+              "sha256": "18ca02605d87bbcccd67dca916e20b291277b5301a6aaa247303bc0155f67b2d",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "fb4e94e48faf54de43d2d451b0ee71fadc7e2ab33e81de7f66cb592c35f21583",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "c90f98967127bbe3f396fd58465507d6624bc8802ebe9933f727fc1b7ff6f897",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_52",
+          "fields": {
+            "POSITION": {
+              "sha256": "a8719d2c6a5d8b710000ae1242aa2725960c815d6923eef88a8d3b5905bc85da",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "671909c3401ce28d4a290aebf6203fe63cbc35df5f9e434e98140631df9d475b",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "b53f74d3e82de19de76afec7493bec53f1081966cc905f3b55ca14747ad91949",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_58",
+          "fields": {
+            "POSITION": {
+              "sha256": "62eb975cb744ba0898c751b947e31e4602ac55fdba8912cdd4598cf25d454293",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "219bc43d45e8d8def34ad19537a0b2bd526c7be4bf1d892376da62fc38aac584",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "d8dfce5b78eef5a89bca4ef9f3a6045474a6f51cf98153965fc87286064331f7",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_59",
+          "fields": {
+            "POSITION": {
+              "sha256": "d0bfd665ff5b0c45b3911e477a2f18c7d96f228518346838e239e5b7baf292dc",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "2bafa9e6a6ad035d2a49bc5299fc64d305ffc9cc06622ab3555315d805a41b43",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "89f9ad9ed978920c550aea8b80c82db13181fabd9b23fd9c129eeff720cb2e2e",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_60",
+          "fields": {
+            "POSITION": {
+              "sha256": "3c5e82cdf99840e945092b08a383bfd1fc87530faf1c79388c57531f5f71eacc",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "3ff624678d002170e6c6219d49af3511e87443de23c9ba935a03933a57cb235e",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "c5b6dad606771549383c576ea3a783bd1a03bf1ed3aa5b665dcc851f32c12fb3",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_61",
+          "fields": {
+            "POSITION": {
+              "sha256": "5e2b2736334e91626dfd2e979c3c4aa958332c5095a4abd91da2d423fa7250cf",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "0370127ff53cd1c96264e2302a83c2f4449d0a45487369167ddf9321901fa7df",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "5184d9fba44ee0d27a988f8b585fe8ed1747f4c512e37dbe1046f7964c039f08",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_62",
+          "fields": {
+            "POSITION": {
+              "sha256": "c8a1c898c2f407b9c5746dc83a3bb4460cadb212eec9c9b211f9a0bea65b24af",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "9e8c8cf58bd6855d76cf7f016a51dc160783fa1fe73f38bc07662775af74a98b",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "75e2920010e49f9308e19b13f8b3e4b8afde66e44e3bc59404c442a86ec10c54",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_64",
+          "fields": {
+            "POSITION": {
+              "sha256": "06322e0abc39eaa2f1911fa86c1b04eb7d8e81b7251dac61a0ecaaaa6050847e",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "ddb79263737ee982b7fc6ebff7ce4d7e051576cf998c32c3f901714e3fcedb7c",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "7e7588524d0756ab57090639da26a58a261fd5a8d1448950ba8eb19a2953732f",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_66",
+          "fields": {
+            "POSITION": {
+              "sha256": "527a2f45893a4624c62a60f50cb62839e9577f24948cdb1e023c1c3ae7c39a6b",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "d04ac4ba11e041711afda8c3d19fe2c8eb69c25842a21b01418d84d56e433673",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "ba6624042f5872f9ce79bdcd0efc01ed60be9fe814915315a64a84ae010329a1",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_68",
+          "fields": {
+            "POSITION": {
+              "sha256": "d4de12446349b56a74afc40e40c107dc9a53115bd3e99ebf811afaaf23d6f1c3",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "3fbf3faa32fa19bdfe362f962bf85cd4bdefb35634f26b03bcdafafe708842ea",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "ab5c4e1e02a3f841e323a561478bc2545ab84a8636cb8850dc0c084587bb97b3",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_69",
+          "fields": {
+            "POSITION": {
+              "sha256": "c2a97aaeced285be64e7e487d8f2759e0e3649762f26933df14d1378873284ba",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "a134052b26b57f16c2d4a4dacc8d83013143162ced39afac3611be1ac620d6a7",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "edfb6ff2ce2d9067ab797ff5503d225337621c833bcf705762e25074a097613a",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_70",
+          "fields": {
+            "POSITION": {
+              "sha256": "0077d3e1339235704083c319f0ca5c2c1e3531b3982c6c063b0aba0e63cdde5a",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "2a94d72b35648e3e2b45b41339ca3411a75e5f1bd79b51811c47318152dc2523",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "f0af0ac206b1d5d3ce51d45e229bea321d56a963885fa365103565d4a791198e",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_71",
+          "fields": {
+            "POSITION": {
+              "sha256": "8f3d30d221e223ccf8f2fabc69f6ed933e3e265ea0777430f48cefbde381d045",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "22634ff1d76a8b87c817aa98e520b0e7cd865c9b7dcbf721dfb65ca7c37d8177",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "9ab1671af456e5116f1b8fbcfdd596c56b836435e9bc97ce4e521f41078430e2",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        }
+      ],
+      "newGeometry": []
+    },
+    {
+      "id": "badge_grade_VXR",
+      "preserved": [
+        {
+          "node": "source_4_74",
+          "fields": {
+            "POSITION": {
+              "sha256": "867837b4e3fab834fce7fbc552c15e8fd0407ef1a5d2aa6729fa1c778e34f566",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "af2a8bb6049050a75483fa2a9509d6935fc7d25ac9eedcd62631f99f8128f140",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "db5b99e1698e3f2c7042d3e49b634644942413a603ae0621ab25fe509f8a61ec",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_77",
+          "fields": {
+            "POSITION": {
+              "sha256": "f5af008282ee9ac4805ee135efc99d9403fef4b8652a44b2edc4d58edc56ee3a",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "fbf8dbe1d62e0972f4260bc1927229fd84f187ddc1b0459b5e27cef77bfb194c",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "79420a0b66364fbf44a9dc51a1b5760c7791b336020a3282043a5997af3316e8",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_78",
+          "fields": {
+            "POSITION": {
+              "sha256": "9cf6507b4464e7d12781c3223a8835bcf37ec9a318ac118ab3f5df59ed62a31a",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "cef904f43451c309609bb97e6503a3d01ce0c1c24995f1e1e1a5aa15bfa481ae",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "9e7e66100ed090c79df81a92e259fd5964de896914b94501d5c7da4fd4d96664",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_79",
+          "fields": {
+            "POSITION": {
+              "sha256": "7f3c7eddc378b0da25b461c17bad5d168b99d98ea6efccaec46769f7697b806a",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "076c63236b399f2f4d5220fce964493e0b1c547d16024a249f1dede6eb6f2019",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "62d33f91f945a4de13ebbcdcef19300acea3041e923d6944aeefa194ca32ba06",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_81",
+          "fields": {
+            "POSITION": {
+              "sha256": "8cd0a45454115cb1594fe2fd2589d77f94da14daca650fb70c293abb2fd821ed",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "098723236cf7f647ff3c9fb972c89cdf2eff85b49ebaffe5b4a9a2caa99e9663",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "26aa144c0251dafe04a391bb02290234903748bd8c0ded193c8b7e4b7077cc1b",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_84",
+          "fields": {
+            "POSITION": {
+              "sha256": "898f8d8ffef29aa6625c25d41c7cadd3cd61bcd9b4b9161408a0027f664427c9",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "84d9c39359b51da1bca2b5d3c55ebbef6e7a87e25094770bc1c40be3ffe66db2",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "7850cd8dbe59d72f1ec4f7cf70ae2597066faccf9203392436c7105a08ba4bfe",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        }
+      ],
+      "newGeometry": []
+    },
+    {
+      "id": "badge_grade_GXR",
+      "preserved": [
+        {
+          "node": "source_4_74",
+          "fields": {
+            "POSITION": {
+              "sha256": "867837b4e3fab834fce7fbc552c15e8fd0407ef1a5d2aa6729fa1c778e34f566",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "af2a8bb6049050a75483fa2a9509d6935fc7d25ac9eedcd62631f99f8128f140",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "db5b99e1698e3f2c7042d3e49b634644942413a603ae0621ab25fe509f8a61ec",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_77",
+          "fields": {
+            "POSITION": {
+              "sha256": "f5af008282ee9ac4805ee135efc99d9403fef4b8652a44b2edc4d58edc56ee3a",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "fbf8dbe1d62e0972f4260bc1927229fd84f187ddc1b0459b5e27cef77bfb194c",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "79420a0b66364fbf44a9dc51a1b5760c7791b336020a3282043a5997af3316e8",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_78",
+          "fields": {
+            "POSITION": {
+              "sha256": "9cf6507b4464e7d12781c3223a8835bcf37ec9a318ac118ab3f5df59ed62a31a",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "cef904f43451c309609bb97e6503a3d01ce0c1c24995f1e1e1a5aa15bfa481ae",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "9e7e66100ed090c79df81a92e259fd5964de896914b94501d5c7da4fd4d96664",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_79",
+          "fields": {
+            "POSITION": {
+              "sha256": "7f3c7eddc378b0da25b461c17bad5d168b99d98ea6efccaec46769f7697b806a",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "076c63236b399f2f4d5220fce964493e0b1c547d16024a249f1dede6eb6f2019",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "62d33f91f945a4de13ebbcdcef19300acea3041e923d6944aeefa194ca32ba06",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        },
+        {
+          "node": "source_4_81",
+          "fields": {
+            "POSITION": {
+              "sha256": "8cd0a45454115cb1594fe2fd2589d77f94da14daca650fb70c293abb2fd821ed",
+              "byteIdentical": true
+            },
+            "NORMAL": {
+              "sha256": "098723236cf7f647ff3c9fb972c89cdf2eff85b49ebaffe5b4a9a2caa99e9663",
+              "byteIdentical": true
+            },
+            "COLOR_0": {
+              "sha256": "26aa144c0251dafe04a391bb02290234903748bd8c0ded193c8b7e4b7077cc1b",
+              "byteIdentical": true
+            }
+          },
+          "maxMatrixDelta": 0,
+          "triangleTopologyUnchanged": true
+        }
+      ],
+      "newGeometry": [
+        "grade_G_new"
+      ]
+    }
+  ],
+  "lamps": [
+    {
+      "side": "L",
+      "nodes": [
+        {
+          "node": "chrome_1",
+          "sourcePrimitives": 1,
+          "newPrimitives": 1,
+          "triangleUnionUnchanged": true,
+          "maxMatrixDelta": 0,
+          "fields": [
+            {
+              "POSITION": {
+                "byteIdentical": true,
+                "sha256": "b568b9dc9ca5d89a95ae2b4f6db51a2bbdfbde0ecf471a6ee9b0743ff842d606"
+              },
+              "NORMAL": {
+                "byteIdentical": true,
+                "sha256": "51faf92d1f855bedaca80eebbefffc3bc23b1532886497dd3ed9a416bd7fb08a"
+              },
+              "COLOR_0": {
+                "byteIdentical": true,
+                "sha256": "85b58713926d8dcd3b05953658a21bd6efbae2ec848bedbe6ff6cb036d5daa60"
+              }
+            }
+          ]
+        },
+        {
+          "node": "chrome_2",
+          "sourcePrimitives": 1,
+          "newPrimitives": 1,
+          "triangleUnionUnchanged": true,
+          "maxMatrixDelta": 0,
+          "fields": [
+            {
+              "POSITION": {
+                "byteIdentical": true,
+                "sha256": "2139b7c9d745dd1862e455be61bf0f6585d1d5c7cde6e0cf9215740303371584"
+              },
+              "NORMAL": {
+                "byteIdentical": true,
+                "sha256": "db4ab80f171ef3ef6f0a25a42a328451f3791e4728db44c395ef76db10a157c4"
+              },
+              "COLOR_0": {
+                "byteIdentical": true,
+                "sha256": "6464562e75c5b114edc654b5edf2460edbcb069634ea77a9ddc7a58cb6067866"
+              }
+            }
+          ]
+        },
+        {
+          "node": "chrome_4",
+          "sourcePrimitives": 1,
+          "newPrimitives": 1,
+          "triangleUnionUnchanged": true,
+          "maxMatrixDelta": 0,
+          "fields": [
+            {
+              "POSITION": {
+                "byteIdentical": true,
+                "sha256": "cae2b7ffed3a997a868e8df634883754dcec78c60aaea40518509db191d79df6"
+              },
+              "NORMAL": {
+                "byteIdentical": true,
+                "sha256": "9104e239d525131c55f03bdb6b31b047858b236db2bdc26bfcb854f285f87c6a"
+              },
+              "COLOR_0": {
+                "byteIdentical": true,
+                "sha256": "2b721419a0532ff856d2917a4965494cbbc05faf912b97f48895e2834ad06312"
+              }
+            }
+          ]
+        },
+        {
+          "node": "black_11",
+          "sourcePrimitives": 1,
+          "newPrimitives": 1,
+          "triangleUnionUnchanged": true,
+          "maxMatrixDelta": 0,
+          "fields": [
+            {
+              "POSITION": {
+                "byteIdentical": true,
+                "sha256": "f1cc70e60a736fd3c067e7ef0e19369d25db47b04c1ac5156dac74e5d032cd1e"
+              },
+              "NORMAL": {
+                "byteIdentical": true,
+                "sha256": "285d89116635cc434b7253d8d785b832c304b5f17b8caf0a678b018220a9fa0a"
+              },
+              "COLOR_0": {
+                "byteIdentical": true,
+                "sha256": "5964c732f0c5ca1bb9012485b2f155a2bef3218b09857db92838fbc8533dfc9b"
+              }
+            }
+          ]
+        },
+        {
+          "node": "black_12",
+          "sourcePrimitives": 1,
+          "newPrimitives": 1,
+          "triangleUnionUnchanged": true,
+          "maxMatrixDelta": 0,
+          "fields": [
+            {
+              "POSITION": {
+                "byteIdentical": true,
+                "sha256": "77287b2feb81f8ba3adf972e39f343ba0de1b3b08d5f6a851105b9c898489845"
+              },
+              "NORMAL": {
+                "byteIdentical": true,
+                "sha256": "0f66a00a10f987f9b350a610e08a4932d63c66c962626cec0fbda2e632f02a21"
+              },
+              "COLOR_0": {
+                "byteIdentical": true,
+                "sha256": "9180914a5da1efe6bcb9d4d43fd3f099c21f83b52f124b306d86c7c714b4a302"
+              }
+            }
+          ]
+        },
+        {
+          "node": "orangeglass_21",
+          "sourcePrimitives": 1,
+          "newPrimitives": 1,
+          "triangleUnionUnchanged": true,
+          "maxMatrixDelta": 0,
+          "fields": [
+            {
+              "POSITION": {
+                "byteIdentical": true,
+                "sha256": "5aa01bb342e6246a7c0811f156df5e1233a800bec7260eafd4a48b45f27d605d"
+              },
+              "NORMAL": {
+                "byteIdentical": true,
+                "sha256": "dd7795d116dcf24b36b4659f1d253dd12c0fedd593ba6c4f3a656a0809258a00"
+              },
+              "COLOR_0": {
+                "byteIdentical": true,
+                "sha256": "7a0babaa01c94d163199568dc5db55ce9bcfae0e86192bef88f1e187cd67fcbb"
+              }
+            }
+          ]
+        },
+        {
+          "node": "redglass_25",
+          "sourcePrimitives": 1,
+          "newPrimitives": 2,
+          "triangleUnionUnchanged": true,
+          "maxMatrixDelta": 0,
+          "fields": [
+            {
+              "POSITION": {
+                "byteIdentical": true,
+                "sha256": "afd81a42e4b8483d420d6ece811e72d40b399d225767cabae59b79207702c7fa"
+              },
+              "NORMAL": {
+                "byteIdentical": true,
+                "sha256": "df2f90a9595fca08817495e4d6cd8dadf00352b6b2ba469f83aedf36bcd44906"
+              },
+              "COLOR_0": {
+                "byteIdentical": true,
+                "sha256": "0206bb69783401e1af4893b2fe69a36c32cba2820b5482910ce682c7743c6179"
+              }
+            },
+            {
+              "POSITION": {
+                "byteIdentical": true,
+                "sha256": "afd81a42e4b8483d420d6ece811e72d40b399d225767cabae59b79207702c7fa"
+              },
+              "NORMAL": {
+                "byteIdentical": true,
+                "sha256": "df2f90a9595fca08817495e4d6cd8dadf00352b6b2ba469f83aedf36bcd44906"
+              },
+              "COLOR_0": {
+                "byteIdentical": true,
+                "sha256": "0206bb69783401e1af4893b2fe69a36c32cba2820b5482910ce682c7743c6179"
+              }
+            }
+          ]
+        },
+        {
+          "node": "clearglass_27",
+          "sourcePrimitives": 2,
+          "newPrimitives": 2,
+          "triangleUnionUnchanged": true,
+          "maxMatrixDelta": 0,
+          "fields": [
+            {
+              "POSITION": {
+                "byteIdentical": true,
+                "sha256": "a00b890bdebdeb3d1139c1194bc0e49e54dd75a4929d37e12c501df3fde24294"
+              },
+              "NORMAL": {
+                "byteIdentical": true,
+                "sha256": "5b9ed2fafdf5e9136cd6bcc3399b3ec9c8e4c036d3e99892d13b20ed40bdd4e9"
+              },
+              "COLOR_0": {
+                "byteIdentical": true,
+                "sha256": "9a6d6b6ed7c51d4b7c9a3715d45e2e78a2e3003dbf989c879d61f5d1c3c0a988"
+              }
+            },
+            {
+              "POSITION": {
+                "byteIdentical": true,
+                "sha256": "694821cd0d6367d326c96abf65c3aa08700d59909a0e387a83b8908a5c555a76"
+              },
+              "NORMAL": {
+                "byteIdentical": true,
+                "sha256": "b99bf11d0991fd9947cdd66cb1349e2a8ef0ca2d9e5b1a73c21698e8eb1f33fe"
+              },
+              "COLOR_0": {
+                "byteIdentical": true,
+                "sha256": "b394160062bd25f535c4c77971bbde65eb894c60fb3ff7e3b54ee12539931e0c"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "side": "R",
+      "nodes": [
+        {
+          "node": "chrome_1",
+          "sourcePrimitives": 1,
+          "newPrimitives": 1,
+          "triangleUnionUnchanged": true,
+          "maxMatrixDelta": 0,
+          "fields": [
+            {
+              "POSITION": {
+                "byteIdentical": true,
+                "sha256": "812b14546b541b18e7e09c3fd9a66b1790663114b648d7d6f95837a9c58dc75b"
+              },
+              "NORMAL": {
+                "byteIdentical": true,
+                "sha256": "330aaa606603a9f3beca11074ff5dc21b0dbe21b7d15b33ba01dcd7475dc54e0"
+              },
+              "COLOR_0": {
+                "byteIdentical": true,
+                "sha256": "65a591f78865f57620a937c74d436b27b1542aeba12a00ff858a54f4ebbb9f53"
+              }
+            }
+          ]
+        },
+        {
+          "node": "chrome_2",
+          "sourcePrimitives": 1,
+          "newPrimitives": 1,
+          "triangleUnionUnchanged": true,
+          "maxMatrixDelta": 0,
+          "fields": [
+            {
+              "POSITION": {
+                "byteIdentical": true,
+                "sha256": "4727f2b5fe5354827a1c2be4b6af5ad1444769eee0e619ef1b00cd86913fd765"
+              },
+              "NORMAL": {
+                "byteIdentical": true,
+                "sha256": "f2492a1db97b478293d6c344b18c5e4bb056af7c52dbf361870f0ca66187714c"
+              },
+              "COLOR_0": {
+                "byteIdentical": true,
+                "sha256": "650d55362c7b644555dd45b9c35627b7a3e879c7eae108a457b2880ffffe8fc7"
+              }
+            }
+          ]
+        },
+        {
+          "node": "chrome_4",
+          "sourcePrimitives": 1,
+          "newPrimitives": 1,
+          "triangleUnionUnchanged": true,
+          "maxMatrixDelta": 0,
+          "fields": [
+            {
+              "POSITION": {
+                "byteIdentical": true,
+                "sha256": "fe16e56d7608aa1df724b9d50265dcc0b79b30b6f311997e9eab40a05bbf4414"
+              },
+              "NORMAL": {
+                "byteIdentical": true,
+                "sha256": "c81a63447976c91a71a754c4df11c04835ae7130669975c2693047e4db4e1e76"
+              },
+              "COLOR_0": {
+                "byteIdentical": true,
+                "sha256": "db9c4c83c26f6c7e5d370926738aed9b12ece4231ee75b094d21b74f61851385"
+              }
+            }
+          ]
+        },
+        {
+          "node": "black_11",
+          "sourcePrimitives": 1,
+          "newPrimitives": 1,
+          "triangleUnionUnchanged": true,
+          "maxMatrixDelta": 0,
+          "fields": [
+            {
+              "POSITION": {
+                "byteIdentical": true,
+                "sha256": "a133463676b934c3dea12114b82c2168f3258a2afaa67731adce622d65004324"
+              },
+              "NORMAL": {
+                "byteIdentical": true,
+                "sha256": "3b7d91da19ca536e8174517b475908558ced410b9fdb4016b1ff3392e5ab3270"
+              },
+              "COLOR_0": {
+                "byteIdentical": true,
+                "sha256": "77402449230334a0d9b83d1cbc69581d9cee6f8a6c7d233347ecfb6554bfddde"
+              }
+            }
+          ]
+        },
+        {
+          "node": "black_12",
+          "sourcePrimitives": 1,
+          "newPrimitives": 1,
+          "triangleUnionUnchanged": true,
+          "maxMatrixDelta": 0,
+          "fields": [
+            {
+              "POSITION": {
+                "byteIdentical": true,
+                "sha256": "f312d58451bf58961ee9d00c3e591b9ada332bdc9bbfe24ff32e48ad7a8ba1d5"
+              },
+              "NORMAL": {
+                "byteIdentical": true,
+                "sha256": "301d4588af9929f058ee2b4e6c4a7a0ac302c45a8dea0dbf0807243a790d1692"
+              },
+              "COLOR_0": {
+                "byteIdentical": true,
+                "sha256": "5a9784773829bf5811657e8aa8f1f7d5c3e5eaee08236952dc064fc67d0ff027"
+              }
+            }
+          ]
+        },
+        {
+          "node": "orangeglass_21",
+          "sourcePrimitives": 1,
+          "newPrimitives": 1,
+          "triangleUnionUnchanged": true,
+          "maxMatrixDelta": 0,
+          "fields": [
+            {
+              "POSITION": {
+                "byteIdentical": true,
+                "sha256": "e70e2f9091149ac28f266d03a25f9070e350cd26ee5d853cf9ce4afd311ced16"
+              },
+              "NORMAL": {
+                "byteIdentical": true,
+                "sha256": "9a6da4b63056816e35b039f30b0f5acb58e8c8a153be6209a42d8cab6918840f"
+              },
+              "COLOR_0": {
+                "byteIdentical": true,
+                "sha256": "7a0babaa01c94d163199568dc5db55ce9bcfae0e86192bef88f1e187cd67fcbb"
+              }
+            }
+          ]
+        },
+        {
+          "node": "redglass_25",
+          "sourcePrimitives": 1,
+          "newPrimitives": 2,
+          "triangleUnionUnchanged": true,
+          "maxMatrixDelta": 0,
+          "fields": [
+            {
+              "POSITION": {
+                "byteIdentical": true,
+                "sha256": "82aff6a59b452dfc81b03f9846cae2d7ca5aaab8cc438f744b01bfa2352cc49f"
+              },
+              "NORMAL": {
+                "byteIdentical": true,
+                "sha256": "d5150b313fe56f7552aecc1f70522359bf2f326f6723be95bd93ea5649f1d685"
+              },
+              "COLOR_0": {
+                "byteIdentical": true,
+                "sha256": "8eda7706fe481d0c1467a6c51ba224933304867dac496e05030ee2b2ad3e328d"
+              }
+            },
+            {
+              "POSITION": {
+                "byteIdentical": true,
+                "sha256": "82aff6a59b452dfc81b03f9846cae2d7ca5aaab8cc438f744b01bfa2352cc49f"
+              },
+              "NORMAL": {
+                "byteIdentical": true,
+                "sha256": "d5150b313fe56f7552aecc1f70522359bf2f326f6723be95bd93ea5649f1d685"
+              },
+              "COLOR_0": {
+                "byteIdentical": true,
+                "sha256": "8eda7706fe481d0c1467a6c51ba224933304867dac496e05030ee2b2ad3e328d"
+              }
+            }
+          ]
+        },
+        {
+          "node": "clearglass_27",
+          "sourcePrimitives": 2,
+          "newPrimitives": 2,
+          "triangleUnionUnchanged": true,
+          "maxMatrixDelta": 0,
+          "fields": [
+            {
+              "POSITION": {
+                "byteIdentical": true,
+                "sha256": "aec8f50ff2a7997eb9d715e2b083c3b6cf3cfa618e6e383cd2078cb83035e371"
+              },
+              "NORMAL": {
+                "byteIdentical": true,
+                "sha256": "23d81802740ed13137d8e45b8166c487c79b432dfdc25a1456be102578fefbfb"
+              },
+              "COLOR_0": {
+                "byteIdentical": true,
+                "sha256": "ae909d7beac1e243153e16a32cbdc83eaad489ad6692b80371f2422ab5bc0341"
+              }
+            },
+            {
+              "POSITION": {
+                "byteIdentical": true,
+                "sha256": "225c0d8ca8684dfdca99f6dd84adf15a0d7babbf1480d7c148859035ad8f6d6d"
+              },
+              "NORMAL": {
+                "byteIdentical": true,
+                "sha256": "987d3b4c5f40d7436f781c47780dced58b0b70c77dd063f1b293a73f0a41e465"
+              },
+              "COLOR_0": {
+                "byteIdentical": true,
+                "sha256": "c2aeb225236bebea5a1bcdf9913a186fc7ce80f77ae23e9edd4c6e4602f9b1f0"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

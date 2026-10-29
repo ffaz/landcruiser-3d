@@ -1,0 +1,15 @@
+{
+  "badge_grade_GXR": {
+    "GXR": true,
+    "VXR": false
+  },
+  "badge_grade_VXR": {
+    "GXR": false,
+    "VXR": true
+  },
+  "legacyBundle": {
+    "aggregate": true,
+    "separateGrade": false
+  },
+  "hiddenLamp": true
+}

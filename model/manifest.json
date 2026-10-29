@@ -3903,7 +3903,10 @@
             "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
           }
         ]
-      }
+      },
+      "bundlesSlots": [
+        "badge_grade"
+      ]
     },
     {
       "id": "wheel_emblem_FL",
@@ -4124,6 +4127,213 @@
           }
         ]
       }
+    },
+    {
+      "id": "lettering_rear_base",
+      "slot": "lettering_rear",
+      "url": "parts/lettering_rear_base.glb",
+      "rootNode": "lettering_rear_base",
+      "pivot": [
+        2.2914939464429107,
+        1.0208527147769928,
+        -0.19230663776397705
+      ],
+      "pivotBasis": "source glyph group centre; unchanged source glyph transforms",
+      "zones": [
+        "chrome"
+      ],
+      "triangles": 5456,
+      "bounds": {
+        "min": [
+          2.2714568574485705,
+          0.9532310366630554,
+          -0.703314483165741
+        ],
+        "max": [
+          2.3115310354372514,
+          1.0884743928909302,
+          0.31870120763778687
+        ]
+      },
+      "rigidClass": "body",
+      "sourceRecovery": {
+        "from": "lettering_rear",
+        "preservedNodes": [
+          "source_4_50",
+          "source_4_52",
+          "source_4_58",
+          "source_4_59",
+          "source_4_60",
+          "source_4_61",
+          "source_4_62",
+          "source_4_64",
+          "source_4_66",
+          "source_4_68",
+          "source_4_69",
+          "source_4_70",
+          "source_4_71"
+        ],
+        "newGeometry": []
+      }
+    },
+    {
+      "id": "badge_grade_VXR",
+      "slot": "badge_grade",
+      "url": "parts/badge_grade_VXR.glb",
+      "rootNode": "badge_grade_VXR",
+      "pivot": [
+        2.2930785371295284,
+        0.9611354470252991,
+        0.6172285377979279
+      ],
+      "pivotBasis": "source glyph group centre; unchanged source glyph transforms",
+      "zones": [
+        "chrome"
+      ],
+      "triangles": 3844,
+      "bounds": {
+        "min": [
+          2.280828455362913,
+          0.9463567137718201,
+          0.540575385093689
+        ],
+        "max": [
+          2.305328618896144,
+          0.9759141802787781,
+          0.6938816905021667
+        ]
+      },
+      "rigidClass": "body",
+      "sourceRecovery": {
+        "from": "lettering_rear",
+        "preservedNodes": [
+          "source_4_74",
+          "source_4_77",
+          "source_4_78",
+          "source_4_79",
+          "source_4_81",
+          "source_4_84"
+        ],
+        "newGeometry": []
+      }
+    },
+    {
+      "id": "badge_grade_GXR",
+      "slot": "badge_grade",
+      "url": "parts/badge_grade_GXR.glb",
+      "rootNode": "badge_grade_GXR",
+      "pivot": [
+        2.293339258140394,
+        0.9611354470252991,
+        0.6172285377979279
+      ],
+      "pivotBasis": "source glyph group centre; unchanged source glyph transforms",
+      "zones": [
+        "chrome"
+      ],
+      "triangles": 3404,
+      "bounds": {
+        "min": [
+          2.2818696568612076,
+          0.9463567137718201,
+          0.540575385093689
+        ],
+        "max": [
+          2.305328618896144,
+          0.9759141802787781,
+          0.6938816905021667
+        ]
+      },
+      "rigidClass": "body",
+      "sourceRecovery": {
+        "from": "lettering_rear",
+        "preservedNodes": [
+          "source_4_74",
+          "source_4_77",
+          "source_4_78",
+          "source_4_79",
+          "source_4_81"
+        ],
+        "newGeometry": [
+          "grade_G_new"
+        ]
+      }
+    },
+    {
+      "id": "lamp_rear_L_finish3",
+      "slot": "lamp_rear_L",
+      "url": "parts/lamp_rear_L_finish3.glb",
+      "pivot": [
+        2.1915613357507393,
+        0.963238707959341,
+        0.683230474193339
+      ],
+      "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
+      "zones": [
+        "black",
+        "chrome",
+        "lamp_clear",
+        "lamp_orange",
+        "lamp_red"
+      ],
+      "triangles": 64045,
+      "bounds": {
+        "min": [
+          2.039112731038501,
+          0.640797887088982,
+          0.4406589110344298
+        ],
+        "max": [
+          2.344009940462977,
+          1.2856795288296998,
+          0.9258020373522483
+        ]
+      },
+      "rigidClass": "body",
+      "classification": "Base-finish variant: identical opening/positions/COLOR_0; repaired lens/reflector normals on this new copy only",
+      "thumbnail": "../docs/foundation/parts/lamp_rear_L.png",
+      "rootNode": "lamp_rear_L_finish3",
+      "derivedFrom": "lamp_rear_L",
+      "variantOf": "lamp_rear_L_finish",
+      "purpose": "separate material zones only; identical stored attributes and triangle union"
+    },
+    {
+      "id": "lamp_rear_R_finish3",
+      "slot": "lamp_rear_R",
+      "url": "parts/lamp_rear_R_finish3.glb",
+      "pivot": [
+        2.1915613357507393,
+        0.9632777054246286,
+        -0.6865018093670008
+      ],
+      "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
+      "zones": [
+        "black",
+        "chrome",
+        "lamp_clear",
+        "lamp_orange",
+        "lamp_red"
+      ],
+      "triangles": 64460,
+      "bounds": {
+        "min": [
+          2.039112731038501,
+          0.640797887088982,
+          -0.9258083554445945
+        ],
+        "max": [
+          2.344009940462977,
+          1.2857575237602754,
+          -0.447195263289407
+        ]
+      },
+      "rigidClass": "body",
+      "classification": "Base-finish variant: identical opening/positions/COLOR_0; repaired lens/reflector normals on this new copy only",
+      "thumbnail": "../docs/foundation/parts/lamp_rear_R.png",
+      "rootNode": "lamp_rear_R_finish3",
+      "derivedFrom": "lamp_rear_R",
+      "variantOf": "lamp_rear_R_finish",
+      "purpose": "separate material zones only; identical stored attributes and triangle union"
     }
   ],
   "displayBase": {
@@ -4230,7 +4440,7 @@
       "rigidClass": "body"
     },
     "lamp_rear_L": {
-      "default": "lamp_rear_L_finish",
+      "default": "lamp_rear_L_finish3",
       "pivot": [
         2.1915613357507393,
         0.963238707959341,
@@ -4239,7 +4449,7 @@
       "rigidClass": "body"
     },
     "lamp_rear_R": {
-      "default": "lamp_rear_R_finish",
+      "default": "lamp_rear_R_finish3",
       "pivot": [
         2.1915613357507393,
         0.9632777054246286,
@@ -4465,7 +4675,7 @@
       "rigidClass": "body"
     },
     "lettering_rear": {
-      "default": "lettering_rear",
+      "default": "lettering_rear_base",
       "pivot": [
         2.2914939464429107,
         1.0174155533313751,
@@ -4512,6 +4722,15 @@
       ],
       "rigidClass": "wheel",
       "wheelSlot": "wheel_RR"
+    },
+    "badge_grade": {
+      "default": "badge_grade_GXR",
+      "pivot": [
+        2.293339258140394,
+        0.9611354470252991,
+        0.6172285377979279
+      ],
+      "rigidClass": "body"
     }
   },
   "missingTargets": {

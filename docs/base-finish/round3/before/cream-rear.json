@@ -1,0 +1,137 @@
+{
+  "name": "before-chrome-rear",
+  "view": "rear",
+  "source": "/workspace/lc-base-round3/round2/index.html",
+  "sourceSha256": "b6764ecefbf6361448b469cdcaad662707662c1ddffe107f682bad26851f10be",
+  "samples": {},
+  "info": {
+    "studio": "cream",
+    "build": {
+      "slots": {
+        "body_shell": "body_shell",
+        "bonnet": "bonnet",
+        "bumper_front": "bumper_front",
+        "bumper_rear": "bumper_rear",
+        "door_FL": "door_FL",
+        "door_FR": "door_FR",
+        "door_RL": "door_RL",
+        "door_RR": "door_RR",
+        "grille": "grille",
+        "lamp_front_L": "lamp_front_L",
+        "lamp_front_R": "lamp_front_R",
+        "lamp_rear_L": "lamp_rear_L_finish",
+        "lamp_rear_R": "lamp_rear_R_finish",
+        "mirror_L": "mirror_L",
+        "mirror_R": "mirror_R",
+        "roof_rails": "roof_rails",
+        "side_step_L": "side_step_L",
+        "side_step_R": "side_step_R",
+        "spoiler": "spoiler",
+        "tailgate": "tailgate",
+        "unsorted_01": "unsorted_01",
+        "unsorted_02": "unsorted_02",
+        "unsorted_03": "unsorted_03",
+        "unsorted_04": "unsorted_04",
+        "unsorted_05": "unsorted_05",
+        "unsorted_06": "unsorted_06",
+        "unsorted_07": "unsorted_07",
+        "unsorted_08": "unsorted_08",
+        "unsorted_09": "unsorted_09",
+        "unsorted_10": "unsorted_10",
+        "wheel_FL": "wheel_FL",
+        "wheel_FR": "wheel_FR",
+        "wheel_RL": "wheel_RL",
+        "wheel_RR": "wheel_RR",
+        "arch_flares": null,
+        "chassis": null,
+        "emblem_front": "emblem_front",
+        "emblem_rear": "emblem_rear",
+        "lettering_rear": "lettering_rear",
+        "wheel_emblem_FL": "wheel_emblem_FL",
+        "wheel_emblem_FR": "wheel_emblem_FR",
+        "wheel_emblem_RL": "wheel_emblem_RL",
+        "wheel_emblem_RR": "wheel_emblem_RR"
+      },
+      "paint": {
+        "paint": "#f4f4ef"
+      },
+      "lift_mm": 0,
+      "hidden": []
+    },
+    "contact": {
+      "opacity": 1,
+      "tint": "000000",
+      "nearTint": 1,
+      "nearStrength": 1
+    },
+    "exposure": 1.2,
+    "toneMapping": 6,
+    "key": {
+      "intensity": 1.65,
+      "color": "fffbf5",
+      "position": [
+        -1.5,
+        8,
+        2
+      ]
+    },
+    "fill": {
+      "intensity": 0.6,
+      "color": "f7f5f0",
+      "ground": "52565c"
+    },
+    "baked": {
+      "uBakedAO": 0.9,
+      "uBakedRidge": 0.7,
+      "uBakedValley": 0.9
+    },
+    "cream": {
+      "uCreamKeyGain": 2.2,
+      "uCreamFillGain": 3.4,
+      "uCreamKeyDirection": {
+        "x": -0.35520224181535076,
+        "y": 0.9347427416193442,
+        "z": 0.009347427416193443
+      },
+      "uCreamKeyTint": "fff0d6",
+      "uCreamContactPower": 16.5,
+      "uCreamContactBand": {
+        "x": 0.88,
+        "y": 0.94
+      },
+      "uCreamRearFill": 0.5,
+      "uCreamGrazingFloor": 0.2,
+      "uCreamGrazingRange": {
+        "x": 0.03,
+        "y": 0.3
+      }
+    },
+    "clay": {
+      "uBakedAO": 0.65,
+      "uBakedRidge": 0.52,
+      "uBakedValley": 0.72,
+      "uClayOcclusionTint": "a58e72",
+      "uClayLowerKey": 0.09,
+      "uClayHeightStart": 0.65,
+      "uClayHeightEnd": 1.14,
+      "uClayBodyLift": 0
+    },
+    "background": "radial-gradient(at 50% 42%, rgb(236, 236, 234) 0%, rgb(235, 235, 233) 50%, rgb(225, 225, 223) 100%)",
+    "camera": {
+      "position": [
+        9.029723136161056,
+        1.1852430784040264,
+        -1.4488739842576212e-15
+      ],
+      "target": [
+        0.020000000000000004,
+        0.9600000000000001,
+        0
+      ],
+      "fov": 20
+    },
+    "drawCalls": 190,
+    "triangles": 865644
+  },
+  "errors": []
+}

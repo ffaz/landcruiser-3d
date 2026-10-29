@@ -1,0 +1,1186 @@
+{
+  "baselineCommit": "1cdbaa44f7d044ed3221f8ae87593a3b93decae2",
+  "sourceSha256": "be6695c3cd18b927b427cfe1c174bc0dc8c7899365fa615777c4b510dda782ff",
+  "viewport": [
+    1440,
+    1000
+  ],
+  "method": "sRGB 7x7 component-median RGB, converted to CIELAB D65. Coordinates are zero-based pixel centres. Patch aggregates are component medians of patch Lab; highlights use whole semantic mesh masks.",
+  "views": {
+    "before": {
+      "cream-rear": {
+        "image": "before/cream-rear.png",
+        "samples": {
+          "redLens1": {
+            "pixel": [
+              470,
+              440
+            ],
+            "rgb": [
+              147,
+              23,
+              22
+            ],
+            "hex": "#931716",
+            "Lab": [
+              31.52254551896071,
+              49.331751634985096,
+              34.76299992644081
+            ],
+            "C": 60.3497131994973,
+            "h": 35.17151069775068
+          },
+          "redLens2": {
+            "pixel": [
+              960,
+              440
+            ],
+            "rgb": [
+              170,
+              42,
+              37
+            ],
+            "hex": "#aa2a25",
+            "Lab": [
+              38.44291030502899,
+              51.083274399049664,
+              34.75509676814966
+            ],
+            "C": 61.785254508596545,
+            "h": 34.22986580115282
+          },
+          "redLens3": {
+            "pixel": [
+              1005,
+              420
+            ],
+            "rgb": [
+              166,
+              43,
+              38
+            ],
+            "hex": "#a62b26",
+            "Lab": [
+              37.80166145412136,
+              49.486213773255045,
+              33.26045093310987
+            ],
+            "C": 59.62501949589708,
+            "h": 33.90565912832969
+          },
+          "redLens4": {
+            "pixel": [
+              400,
+              415
+            ],
+            "rgb": [
+              143,
+              22,
+              21
+            ],
+            "hex": "#8f1615",
+            "Lab": [
+              30.567466114393426,
+              48.366996596770576,
+              34.120999091567384
+            ],
+            "C": 59.191291072241015,
+            "h": 35.20145240937906
+          }
+        },
+        "medianOfPatchLab": [
+          34.662103486541035,
+          49.40898270412007,
+          34.43804792985853
+        ]
+      },
+      "cream-quarter": {
+        "image": "before/cream-quarter.png",
+        "samples": {
+          "redLens1": {
+            "pixel": [
+              1272,
+              350
+            ],
+            "rgb": [
+              155,
+              38,
+              35
+            ],
+            "hex": "#9b2623",
+            "Lab": [
+              34.959970612902914,
+              47.60685366270601,
+              31.307133684210488
+            ],
+            "C": 56.97849712991149,
+            "h": 33.32964802355063
+          },
+          "redLens2": {
+            "pixel": [
+              1273,
+              365
+            ],
+            "rgb": [
+              139,
+              23,
+              22
+            ],
+            "hex": "#8b1716",
+            "Lab": [
+              29.816334124179328,
+              46.914557037442904,
+              32.54708251691342
+            ],
+            "C": 57.098933811256536,
+            "h": 34.75106873072813
+          },
+          "redLens3": {
+            "pixel": [
+              1273,
+              380
+            ],
+            "rgb": [
+              155,
+              51,
+              47
+            ],
+            "hex": "#9b332f",
+            "Lab": [
+              37.01054136050497,
+              42.99895184654015,
+              26.444506209126438
+            ],
+            "C": 50.47991450612417,
+            "h": 31.59166151966174
+          }
+        },
+        "medianOfPatchLab": [
+          34.959970612902914,
+          46.914557037442904,
+          31.307133684210488
+        ]
+      }
+    },
+    "after": {
+      "cream-rear": {
+        "image": "after/cream-rear.png",
+        "samples": {
+          "redLens1": {
+            "pixel": [
+              470,
+              440
+            ],
+            "rgb": [
+              118,
+              13,
+              12
+            ],
+            "hex": "#760d0c",
+            "Lab": [
+              24.216786241087824,
+              42.83625029487867,
+              31.059607711556144
+            ],
+            "C": 52.911658172100886,
+            "h": 35.94502796833207
+          },
+          "redLens2": {
+            "pixel": [
+              960,
+              440
+            ],
+            "rgb": [
+              147,
+              26,
+              22
+            ],
+            "hex": "#931a16",
+            "Lab": [
+              31.811047797968705,
+              48.514955371322635,
+              35.030434995946855
+            ],
+            "C": 59.84005573766359,
+            "h": 35.83133158395417
+          },
+          "redLens3": {
+            "pixel": [
+              1005,
+              420
+            ],
+            "rgb": [
+              206,
+              46,
+              41
+            ],
+            "hex": "#ce2e29",
+            "Lab": [
+              45.96146033129054,
+              60.93411922962344,
+              42.483634015711566
+            ],
+            "C": 74.28207082109982,
+            "h": 34.8844402193887
+          },
+          "redLens4": {
+            "pixel": [
+              400,
+              415
+            ],
+            "rgb": [
+              187,
+              22,
+              21
+            ],
+            "hex": "#bb1615",
+            "Lab": [
+              39.909180448188906,
+              60.89204571771653,
+              45.74019721981296
+            ],
+            "C": 76.15777618468034,
+            "h": 36.91272805627034
+          }
+        },
+        "medianOfPatchLab": [
+          35.8601141230788,
+          54.703500544519585,
+          38.75703450582921
+        ]
+      },
+      "cream-quarter": {
+        "image": "after/cream-quarter.png",
+        "samples": {
+          "redLens1": {
+            "pixel": [
+              1272,
+              350
+            ],
+            "rgb": [
+              136,
+              30,
+              27
+            ],
+            "hex": "#881e1b",
+            "Lab": [
+              30.018970720755192,
+              43.94376881765697,
+              29.628820334261903
+            ],
+            "C": 52.99926237505247,
+            "h": 33.98958025309963
+          },
+          "redLens2": {
+            "pixel": [
+              1273,
+              365
+            ],
+            "rgb": [
+              157,
+              23,
+              22
+            ],
+            "hex": "#9d1716",
+            "Lab": [
+              33.64998400345154,
+              52.27962770185801,
+              37.48420915072049
+            ],
+            "C": 64.32904016305417,
+            "h": 35.64031769455386
+          },
+          "redLens3": {
+            "pixel": [
+              1273,
+              380
+            ],
+            "rgb": [
+              211,
+              90,
+              91
+            ],
+            "hex": "#d35a5b",
+            "Lab": [
+              53.94259681277022,
+              47.8424422617087,
+              23.595925725379598
+            ],
+            "C": 53.34479348917344,
+            "h": 26.25254711257703
+          }
+        },
+        "medianOfPatchLab": [
+          33.64998400345154,
+          47.8424422617087,
+          29.628820334261903
+        ]
+      }
+    }
+  },
+  "lamps": {
+    "before": {
+      "image": "before/tail-lamp.png",
+      "pairs": [
+        {
+          "name": "dot-L1",
+          "feature": {
+            "pixel": [
+              574,
+              351
+            ],
+            "rgb": [
+              137,
+              21,
+              20
+            ],
+            "hex": "#891514",
+            "Lab": [
+              29.17654215068945,
+              46.79267419200883,
+              32.920031593726776
+            ],
+            "C": 57.212610831629235,
+            "h": 35.127521078230025
+          },
+          "surroundingLens": {
+            "pixel": [
+              550,
+              351
+            ],
+            "rgb": [
+              138,
+              22,
+              21
+            ],
+            "hex": "#8a1615",
+            "Lab": [
+              29.495646499077743,
+              46.855767203473675,
+              32.73358584735048
+            ],
+            "C": 57.15724418349771,
+            "h": 34.93827052122995
+          },
+          "contrastL": -0.3191043483882936
+        },
+        {
+          "name": "dot-L2",
+          "feature": {
+            "pixel": [
+              628,
+              350
+            ],
+            "rgb": [
+              138,
+              21,
+              20
+            ],
+            "hex": "#8a1514",
+            "Lab": [
+              29.39204657642486,
+              47.09546094505307,
+              33.198274533390745
+            ],
+            "C": 57.62037724296327,
+            "h": 35.18056513877588
+          },
+          "surroundingLens": {
+            "pixel": [
+              605,
+              350
+            ],
+            "rgb": [
+              138,
+              21,
+              21
+            ],
+            "hex": "#8a1515",
+            "Lab": [
+              29.401223492248654,
+              47.12348856635862,
+              32.64414576518732
+            ],
+            "C": 57.32594026618777,
+            "h": 34.71174661854217
+          },
+          "contrastL": -0.009176915823793763
+        },
+        {
+          "name": "bar-L",
+          "feature": {
+            "pixel": [
+              594,
+              375
+            ],
+            "rgb": [
+              137,
+              20,
+              19
+            ],
+            "hex": "#891413",
+            "Lab": [
+              29.075605395089966,
+              47.02670067871453,
+              33.38392695369748
+            ],
+            "C": 57.67145876059681,
+            "h": 35.37067675647822
+          },
+          "surroundingLens": {
+            "pixel": [
+              594,
+              385
+            ],
+            "rgb": [
+              143,
+              27,
+              26
+            ],
+            "hex": "#8f1b1a",
+            "Lab": [
+              31.113983945385222,
+              47.109352797772814,
+              31.80533805932194
+            ],
+            "C": 56.84074814860179,
+            "h": 34.024801456240596
+          },
+          "contrastL": -2.0383785502952563
+        },
+        {
+          "name": "dot-R1",
+          "feature": {
+            "pixel": [
+              813,
+              343
+            ],
+            "rgb": [
+              140,
+              23,
+              22
+            ],
+            "hex": "#8c1716",
+            "Lab": [
+              30.029767681469323,
+              47.219807699939885,
+              32.82595710524559
+            ],
+            "C": 57.50872715592587,
+            "h": 34.8060014928614
+          },
+          "surroundingLens": {
+            "pixel": [
+              790,
+              343
+            ],
+            "rgb": [
+              141,
+              23,
+              22
+            ],
+            "hex": "#8d1716",
+            "Lab": [
+              30.243162095035373,
+              47.52414622329207,
+              33.10429517347361
+            ],
+            "C": 57.91751749846772,
+            "h": 34.8602371140825
+          },
+          "contrastL": -0.21339441356604993
+        },
+        {
+          "name": "dot-R2",
+          "feature": {
+            "pixel": [
+              865,
+              339
+            ],
+            "rgb": [
+              140,
+              23,
+              21
+            ],
+            "hex": "#8c1715",
+            "Lab": [
+              30.020475573002074,
+              47.191117944642755,
+              33.38022695315676
+            ],
+            "C": 57.803470175322836,
+            "h": 35.27334684366562
+          },
+          "surroundingLens": {
+            "pixel": [
+              843,
+              339
+            ],
+            "rgb": [
+              140,
+              23,
+              21
+            ],
+            "hex": "#8c1715",
+            "Lab": [
+              30.020475573002074,
+              47.191117944642755,
+              33.38022695315676
+            ],
+            "C": 57.803470175322836,
+            "h": 35.27334684366562
+          },
+          "contrastL": 0.0
+        },
+        {
+          "name": "bar-R",
+          "feature": {
+            "pixel": [
+              800,
+              367
+            ],
+            "rgb": [
+              140,
+              23,
+              21
+            ],
+            "hex": "#8c1715",
+            "Lab": [
+              30.020475573002074,
+              47.191117944642755,
+              33.38022695315676
+            ],
+            "C": 57.803470175322836,
+            "h": 35.27334684366562
+          },
+          "surroundingLens": {
+            "pixel": [
+              800,
+              377
+            ],
+            "rgb": [
+              149,
+              32,
+              31
+            ],
+            "hex": "#95201f",
+            "Lab": [
+              32.970354747067944,
+              47.58768205332525,
+              31.179391273021505
+            ],
+            "C": 56.892371398672985,
+            "h": 33.2327680641348
+          },
+          "contrastL": -2.9498791740658703
+        }
+      ],
+      "minimumContrastL": -2.9498791740658703,
+      "minimumSurroundingRedA": 46.855767203473675,
+      "reverseStrip": [
+        {
+          "pixel": [
+            420,
+            593
+          ],
+          "rgb": [
+            137,
+            21,
+            21
+          ],
+          "hex": "#891515",
+          "Lab": [
+            29.1858068011952,
+            46.82101442666104,
+            32.363730676717
+          ],
+          "C": 56.917646255416024,
+          "h": 34.65309397250411
+        },
+        {
+          "pixel": [
+            500,
+            635
+          ],
+          "rgb": [
+            134,
+            18,
+            19
+          ],
+          "hex": "#861213",
+          "Lab": [
+            28.246608109828195,
+            46.628577286737304,
+            32.382678855858174
+          ],
+          "C": 56.77025726264483,
+          "h": 34.77925919570921
+        },
+        {
+          "pixel": [
+            590,
+            615
+          ],
+          "rgb": [
+            104,
+            83,
+            82
+          ],
+          "hex": "#685352",
+          "Lab": [
+            37.370140181558845,
+            8.530531877443792,
+            3.8852479379591687
+          ],
+          "C": 9.373639936092099,
+          "h": 24.486988000523393
+        }
+      ],
+      "reverseStripNote": "[590,615] is the original amber bulb, deliberately retained. It is not red bleed. The other samples test the formerly red/sawtooth clear band.",
+      "quarterBoundary": {
+        "pixel": [
+          1273,
+          390
+        ],
+        "rgb": [
+          136,
+          23,
+          23
+        ],
+        "hex": "#881717",
+        "Lab": [
+          29.18585489068448,
+          46.024350188960064,
+          31.137378280814655
+        ],
+        "C": 55.56777066356519,
+        "h": 34.079978629311654
+      }
+    },
+    "after": {
+      "image": "after/tail-lamp.png",
+      "pairs": [
+        {
+          "name": "dot-L1",
+          "feature": {
+            "pixel": [
+              574,
+              351
+            ],
+            "rgb": [
+              239,
+              21,
+              20
+            ],
+            "hex": "#ef1514",
+            "Lab": [
+              50.62138884917337,
+              74.58837579751604,
+              58.6096312561913
+            ],
+            "C": 94.86050115879735,
+            "h": 38.15935375416154
+          },
+          "surroundingLens": {
+            "pixel": [
+              550,
+              351
+            ],
+            "rgb": [
+              131,
+              19,
+              19
+            ],
+            "hex": "#831313",
+            "Lab": [
+              27.68134043500396,
+              45.47060964899191,
+              31.619757700014954
+            ],
+            "C": 55.383981608933205,
+            "h": 34.81432309196526
+          },
+          "contrastL": 22.94004841416941
+        },
+        {
+          "name": "dot-L2",
+          "feature": {
+            "pixel": [
+              628,
+              350
+            ],
+            "rgb": [
+              240,
+              21,
+              20
+            ],
+            "hex": "#f01514",
+            "Lab": [
+              50.82544333781381,
+              74.83965119298958,
+              58.8388746859261
+            ],
+            "C": 95.19971935354884,
+            "h": 38.174401382264804
+          },
+          "surroundingLens": {
+            "pixel": [
+              605,
+              350
+            ],
+            "rgb": [
+              132,
+              20,
+              19
+            ],
+            "hex": "#841413",
+            "Lab": [
+              27.992249286314276,
+              45.50991788004971,
+              31.988930218598238
+            ],
+            "C": 55.62772943397219,
+            "h": 35.10339114425733
+          },
+          "contrastL": 22.833194051499532
+        },
+        {
+          "name": "bar-L",
+          "feature": {
+            "pixel": [
+              594,
+              375
+            ],
+            "rgb": [
+              195,
+              29,
+              28
+            ],
+            "hex": "#c31d1c",
+            "Lab": [
+              42.10585031297416,
+              61.831654448482595,
+              44.855469556263195
+            ],
+            "C": 76.38826245536295,
+            "h": 35.95882361707424
+          },
+          "surroundingLens": {
+            "pixel": [
+              594,
+              385
+            ],
+            "rgb": [
+              130,
+              19,
+              18
+            ],
+            "hex": "#821312",
+            "Lab": [
+              27.454273073448235,
+              45.138008149623296,
+              31.89589462876426
+            ],
+            "C": 55.270135461066964,
+            "h": 35.246194148823335
+          },
+          "contrastL": 14.651577239525928
+        },
+        {
+          "name": "dot-R1",
+          "feature": {
+            "pixel": [
+              813,
+              343
+            ],
+            "rgb": [
+              245,
+              26,
+              24
+            ],
+            "hex": "#f51a18",
+            "Lab": [
+              52.089304610550556,
+              75.48469525521601,
+              58.66941621739448
+            ],
+            "C": 95.60355441646874,
+            "h": 37.85563425932775
+          },
+          "surroundingLens": {
+            "pixel": [
+              790,
+              343
+            ],
+            "rgb": [
+              135,
+              22,
+              21
+            ],
+            "hex": "#871615",
+            "Lab": [
+              28.8519658914595,
+              45.93818396047353,
+              31.894448968682447
+            ],
+            "C": 55.92470492190546,
+            "h": 34.771883871898204
+          },
+          "contrastL": 23.237338719091056
+        },
+        {
+          "name": "dot-R2",
+          "feature": {
+            "pixel": [
+              865,
+              339
+            ],
+            "rgb": [
+              245,
+              25,
+              23
+            ],
+            "hex": "#f51917",
+            "Lab": [
+              52.03583255943897,
+              75.61219251204903,
+              59.01390037799366
+            ],
+            "C": 95.9158177481844,
+            "h": 37.971371239002806
+          },
+          "surroundingLens": {
+            "pixel": [
+              843,
+              339
+            ],
+            "rgb": [
+              135,
+              22,
+              20
+            ],
+            "hex": "#871614",
+            "Lab": [
+              28.842562767520945,
+              45.90910854261709,
+              32.453243828995284
+            ],
+            "C": 56.22151974290644,
+            "h": 35.25656951048005
+          },
+          "contrastL": 23.193269791918027
+        },
+        {
+          "name": "bar-R",
+          "feature": {
+            "pixel": [
+              800,
+              367
+            ],
+            "rgb": [
+              235,
+              38,
+              36
+            ],
+            "hex": "#eb2624",
+            "Lab": [
+              50.89909878034213,
+              70.96717439379225,
+              51.66859224204986
+            ],
+            "C": 87.78373007405266,
+            "h": 36.05698704163571
+          },
+          "surroundingLens": {
+            "pixel": [
+              800,
+              377
+            ],
+            "rgb": [
+              134,
+              21,
+              20
+            ],
+            "hex": "#861514",
+            "Lab": [
+              28.52968902171876,
+              45.87886648971834,
+              32.08183381068816
+            ],
+            "C": 55.98316221006111,
+            "h": 34.964039158588136
+          },
+          "contrastL": 22.36940975862337
+        }
+      ],
+      "minimumContrastL": 14.651577239525928,
+      "minimumSurroundingRedA": 45.138008149623296,
+      "reverseStrip": [
+        {
+          "pixel": [
+            420,
+            593
+          ],
+          "rgb": [
+            103,
+            105,
+            105
+          ],
+          "hex": "#676969",
+          "Lab": [
+            44.24239025600491,
+            -0.7721454303830644,
+            -0.270543826823455
+          ],
+          "C": 0.8181702316105905,
+          "h": 199.30940794179742
+        },
+        {
+          "pixel": [
+            500,
+            635
+          ],
+          "rgb": [
+            143,
+            144,
+            144
+          ],
+          "hex": "#8f9090",
+          "Lab": [
+            59.707388434523295,
+            -0.36552971793679667,
+            -0.1285146768237544
+          ],
+          "C": 0.38746354261280913,
+          "h": 199.37089695038057
+        },
+        {
+          "pixel": [
+            590,
+            615
+          ],
+          "rgb": [
+            154,
+            112,
+            89
+          ],
+          "hex": "#9a7059",
+          "Lab": [
+            50.898258650886376,
+            13.554473204395123,
+            19.320966762153436
+          ],
+          "C": 23.601345310657678,
+          "h": 54.94872034745932
+        }
+      ],
+      "reverseStripNote": "[590,615] is the original amber bulb, deliberately retained. It is not red bleed. The other samples test the formerly red/sawtooth clear band.",
+      "quarterBoundary": {
+        "pixel": [
+          1273,
+          390
+        ],
+        "rgb": [
+          104,
+          105,
+          105
+        ],
+        "hex": "#686969",
+        "Lab": [
+          44.327590023264754,
+          -0.3866949469576997,
+          -0.13586458346523944
+        ],
+        "C": 0.40986847529762666,
+        "h": 199.35883476279568
+      }
+    }
+  },
+  "chrome": {
+    "before-chrome-front": {
+      "emblem": {
+        "pixels": 1438,
+        "medianL": 66.99493212527422,
+        "p95L": 77.31412890720681,
+        "p99L": 79.13090735013284
+      },
+      "comparisonMetal": {
+        "pixels": 32058,
+        "medianL": 67.71730646872028,
+        "p95L": 78.76825025640146,
+        "p99L": 82.73880425972263
+      }
+    },
+    "before-chrome-quarter": {
+      "emblem": {
+        "pixels": 696,
+        "medianL": 64.49422690888008,
+        "p95L": 78.85926009565623,
+        "p99L": 80.2608856408005
+      },
+      "comparisonMetal": {
+        "pixels": 8540,
+        "medianL": 68.38575153780629,
+        "p95L": 84.83767116616285,
+        "p99L": 85.90798246642002
+      }
+    },
+    "before-chrome-rear": {
+      "emblem": {
+        "pixels": 1141,
+        "medianL": 74.73084677637475,
+        "p95L": 82.68845941899531,
+        "p99L": 85.9234754622189
+      },
+      "comparisonMetal": {
+        "pixels": 12058,
+        "medianL": 69.08024533216438,
+        "p95L": 77.990937314328,
+        "p99L": 81.65994719976337
+      }
+    },
+    "before-chrome-close": {
+      "emblem": {
+        "pixels": 58918,
+        "medianL": 64.25152247200826,
+        "p95L": 79.8812195057208,
+        "p99L": 89.17728373493613
+      },
+      "comparisonMetal": {
+        "pixels": 519823,
+        "medianL": 66.9679599829089,
+        "p95L": 80.8884780212755,
+        "p99L": 84.91345465171494
+      }
+    },
+    "after-chrome-front": {
+      "emblem": {
+        "pixels": 1438,
+        "medianL": 84.14848944654783,
+        "p95L": 95.4935622471685,
+        "p99L": 96.8849319949304
+      },
+      "comparisonMetal": {
+        "pixels": 32058,
+        "medianL": 67.71730646872028,
+        "p95L": 78.76825025640146,
+        "p99L": 82.73880425972263
+      }
+    },
+    "after-chrome-quarter": {
+      "emblem": {
+        "pixels": 696,
+        "medianL": 76.02590988366903,
+        "p95L": 94.88388469551589,
+        "p99L": 96.21495432799979
+      },
+      "comparisonMetal": {
+        "pixels": 8540,
+        "medianL": 68.38575153780629,
+        "p95L": 84.83767116616285,
+        "p99L": 85.90798246642002
+      }
+    },
+    "after-chrome-rear": {
+      "emblem": {
+        "pixels": 1141,
+        "medianL": 76.56025805561315,
+        "p95L": 91.2183462344555,
+        "p99L": 96.40847775049129
+      },
+      "comparisonMetal": {
+        "pixels": 12058,
+        "medianL": 69.08024533216438,
+        "p95L": 77.990937314328,
+        "p99L": 81.65994719976337
+      }
+    },
+    "after-chrome-close": {
+      "emblem": {
+        "pixels": 58918,
+        "medianL": 71.04392871046838,
+        "p95L": 96.81122028817094,
+        "p99L": 100.00000386666655
+      },
+      "comparisonMetal": {
+        "pixels": 519823,
+        "medianL": 66.9679599829089,
+        "p95L": 80.8884780212755,
+        "p99L": 84.91345465171494
+      }
+    }
+  },
+  "clay": {
+    "white": {
+      "differentPixels": 0,
+      "maxChannelDifference": 0,
+      "excludedSlots": [
+        "lettering_rear",
+        "badge_grade"
+      ],
+      "method": "Whole screenshot comparison; only the intentionally replaced grade/name assembly is hidden. All original emblems, glass, paint and original Clay lamps remain visible."
+    },
+    "orange": {
+      "differentPixels": 0,
+      "maxChannelDifference": 0,
+      "excludedSlots": [
+        "lettering_rear",
+        "badge_grade"
+      ],
+      "method": "Whole screenshot comparison; only the intentionally replaced grade/name assembly is hidden. All original emblems, glass, paint and original Clay lamps remain visible."
+    }
+  },
+  "sourceReference": "source/reference.json",
+  "chromeMethod": {
+    "maskColors": {
+      "emblem": "#ff0000",
+      "comparisonChrome": "#00ff00"
+    },
+    "maskRule": "R>250,G<5,B<5 for emblem; G>250,R<5,B<5 for bars/garnish. Standard Basic test-only material, toneMapping off; no masks used by production.",
+    "files": "masks/{before,after}-{cream-front,cream-quarter,cream-rear,emblem-front}.png",
+    "beforeAfterCamerasIdentical": true,
+    "comparisonMetal": "grille chrome in Front/Quarter/close; tailgate garnish chrome in Rear"
+  },
+  "checks": {
+    "guideContrastAtLeast12": true,
+    "surroundingRedAAtLeast45": true,
+    "rearAggregateAAtLeast45": true,
+    "quarterAggregateAAtLeast45": true
+  },
+  "imageHashes": {
+    "grade-comparison.png": "6db22f9139744387e91d5890d1380b7344415a7aeb60f3feac6a0a677a58da47",
+    "tail-lamp-comparison.png": "171f2a2b83ed5ae7be29f5e8641cf4c0562c584cd2a0b9f082cdc631d09b44f4",
+    "masks/after-cream-rear.png": "26ad2edcce95052666ae3e96faffeec54181004d4575aade0dad80e5a61d3d46",
+    "masks/before-cream-quarter.png": "8e1425fa5b575481d4808682d3263d2528df61d5422c948bf04da611fc4808b2",
+    "masks/before-cream-front.png": "511c37d6d082247cfa86c354bc991dfb6052513d3d2858a8634d65acc902f4ad",
+    "masks/before-cream-rear.png": "26ad2edcce95052666ae3e96faffeec54181004d4575aade0dad80e5a61d3d46",
+    "masks/after-cream-front.png": "511c37d6d082247cfa86c354bc991dfb6052513d3d2858a8634d65acc902f4ad",
+    "masks/before-emblem-front.png": "e0666d4ce6a8ae7cd83fd2953147010710c46a3e9acef87268f7746ef7b87db2",
+    "masks/after-emblem-front.png": "e0666d4ce6a8ae7cd83fd2953147010710c46a3e9acef87268f7746ef7b87db2",
+    "masks/after-cream-quarter.png": "8e1425fa5b575481d4808682d3263d2528df61d5422c948bf04da611fc4808b2",
+    "validation/clay-current-white.png": "276df2f914043ce89ff949e4d0a983f652c66ab4b6f501b53dd6eaa9ef200875",
+    "validation/webkit.png": "aec2b66428fcfefbe3b97c97d142e5538dbd05758aa02b1ee458890a3c3ebef5",
+    "validation/clay-round2-orange.png": "d93f0bab5a084883d08541ee8d230a07c042f1e8c2d85c71e1522078aada9aab",
+    "validation/clay-current-orange.png": "d93f0bab5a084883d08541ee8d230a07c042f1e8c2d85c71e1522078aada9aab",
+    "validation/clay-round2-white.png": "276df2f914043ce89ff949e4d0a983f652c66ab4b6f501b53dd6eaa9ef200875",
+    "after/emblem-rear.png": "519fa00e98552b569e9a2647d0342b8dd83842db582c1a3630cfab07b2d524b0",
+    "after/cream-front.png": "a070f8096ebd459c01acf6dfa0fb76afd91dd024b417e6f0c79780e27571d764",
+    "after/tail-lamp.png": "0472947d87dd779d916624afe355e48813e714a5382db68e95389cc22200c5a8",
+    "after/clay-quarter.png": "276df2f914043ce89ff949e4d0a983f652c66ab4b6f501b53dd6eaa9ef200875",
+    "after/grade-GXR.png": "5d824e9bd2c161f6760d396f82b611f420b84565d5281484c5e4ef066e256ef1",
+    "after/slate-quarter.png": "1b98d72298321efc711ef3fea0c73f5587254493694f05fa41910c1c59443b59",
+    "after/grade-VXR.png": "9abd601199757ad05af32b4b7a8ab0fc5d2f52847f70c819c711bca73683b455",
+    "after/cream-quarter.png": "d4460529fb59697c2244dfffde38cbb1fd3e8bd70650828179d4565637c12a9b",
+    "after/emblem-front.png": "e8272e2afa166b23f38893a60c25c6016c06b69fd6891114a03f12983255db15",
+    "after/cream-rear.png": "ad43e3d5a6123f85697090407edf0058be9e3c8b0bed131df508597c1ee7237a",
+    "after/cream-side.png": "1e9e813dc41857b0aa59392af295e849c2f32bf0d6ebb9e1f52e55e34bec9a2b",
+    "before/emblem-rear.png": "26389d2cb4e1b154f8eeb9e761d77e2f76e987354eb57070c09a0c78f82d4fd5",
+    "before/cream-front.png": "9066d611febcf571997af98797756c95dd72e26fc9e91f0b65ac199241197b3e",
+    "before/tail-lamp.png": "1f3b0b6d29b8c08be82cef1e9d8d1580a112ca28419b1c33311b3c07ddf2588f",
+    "before/cream-quarter.png": "8c2ea4e331160002ffa5140db590d4e64c87ec8570fc8d90ae89dc347812f1aa",
+    "before/emblem-front.png": "79dc79b63fec3f2184470802fc4955c7be308534965305514ed56f68c1d21baa",
+    "before/cream-rear.png": "a4a84139b2005af5aa546e702be9b8af42ab8790515a96a82ea23bf192cc97c7",
+    "source/tail-lamp-native.png": "0aa0f8001b1d57f91fbb053e6758d5f27ac8ec0b093612c71eac0c34b6787a47",
+    "source/tail-lamp-cream-lighting.png": "def28dc2825b3a46093cf34df5da5bdd8d5170498cf434013743651d1f7281c5"
+  }
+}

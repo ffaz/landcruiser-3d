@@ -1,0 +1,20 @@
+{
+  "white": {
+    "differentPixels": 0,
+    "maxChannelDifference": 0,
+    "excludedSlots": [
+      "lettering_rear",
+      "badge_grade"
+    ],
+    "method": "Whole screenshot comparison; only the intentionally replaced grade/name assembly is hidden. All original emblems, glass, paint and original Clay lamps remain visible."
+  },
+  "orange": {
+    "differentPixels": 0,
+    "maxChannelDifference": 0,
+    "excludedSlots": [
+      "lettering_rear",
+      "badge_grade"
+    ],
+    "method": "Whole screenshot comparison; only the intentionally replaced grade/name assembly is hidden. All original emblems, glass, paint and original Clay lamps remain visible."
+  }
+}

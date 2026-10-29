@@ -671,7 +671,7 @@ function studioMaterial(current,zone,hex,authored=false,node=null){
   material.emissive?.set(0x000000);material.emissiveIntensity=0;
   if(zone==='glass'){material.opacity=.94;material.envMapIntensity=.015;}
   if(zone.startsWith('lamp_')){material.transparent=false;material.opacity=1;material.depthWrite=true;}
-  if(original.userData.partId?.startsWith('lamp_rear_')&&zone!=='black'){material.side=THREE.DoubleSide;material.forceSinglePass=false;material.flatShading=zone==='lamp_red'||zone==='lamp_clear'||zone==='lamp_orange';}
+  if(original.userData.partId?.startsWith('lamp_rear_')&&zone!=='black'){material.blending=THREE.NormalBlending;material.blendSrc=THREE.SrcAlphaFactor;material.blendDst=THREE.OneMinusSrcAlphaFactor;material.blendSrcAlpha=null;material.blendDstAlpha=null;material.side=THREE.DoubleSide;material.forceSinglePass=false;material.flatShading=zone==='lamp_red'||zone==='lamp_clear'||zone==='lamp_orange';}
   if(frontLens){material.transparent=true;material.opacity=.65;material.depthWrite=false;material.side=THREE.FrontSide;material.forceSinglePass=true;}
   if(!['glass','lamp_clear','mirror'].includes(zone))useBakedShading(material,true);
   if(frontLens)useClayLampCentre(material,node);
@@ -705,29 +705,33 @@ function updateClayBackground(){
   if(name==='centre')document.querySelector('meta[name="theme-color"]').content='#'+bg.getHexString();
  }
 }
-const aliases={carpaint:'paint',tire:'tyre',rim_second:'rim',brakedisk:'brake',windowglass:'glass',darkglass:'glass',redglass:'lamp_red',clearglass:'lamp_clear',orangeglass:'lamp_orange',garnish:'chrome'};
+const aliases={carpaint:'paint',tire:'tyre',rim_second:'rim',brakedisk:'brake',windowglass:'glass',darkglass:'glass',redglass:'lamp_red',redglass_lower:'lamp_red',clearglass:'lamp_clear',orangeglass:'lamp_orange',garnish:'chrome'};
 function zoneFor(material){const name=material.name.replace(/\.\d+$/,'').toLowerCase();return material.userData.zone||aliases[name]||name;}
 // Source lens normals are retained byte-for-byte. Standard flat lens shading
 // derives its lighting normal from the stored surface, without editing attributes.
 lampLens.flatShading=true;tailRed.flatShading=true;orange.flatShading=true;
 // Lens/reflector finish variants read the stored lamp zones; no mesh edits or transmission.
-// The old face-wise red/clear assignment cuts the lower lens at z≈0.80.
-// Blend the existing lens tint/alpha across that boundary; no surface is moved.
-function useRearReverseTransition(material,node){
- node.updateWorldMatrix(true,false);const m=node.matrixWorld.elements;
- const rowY=new THREE.Vector4(m[1],m[5],m[9],m[13]),rowZ=new THREE.Vector4(m[2],m[6],m[10],m[14]);
+// Existing source LED-window geometry is seen through a coloured filter.
+// The broad moulded lens face uses stronger absorption; the reverse strip is clear.
+function useRearRedFilter(material,node){
+ node.updateWorldMatrix(true,false);const m=node.matrixWorld.elements,rowY=new THREE.Vector4(m[1],m[5],m[9],m[13]),rowZ=new THREE.Vector4(m[2],m[6],m[10],m[14]);
+ let owner=node;while(owner&&!owner.userData.lensWindowPlanes)owner=owner.parent;
+ const planes=(owner?.userData.lensWindowPlanes||[]).map(p=>new THREE.Vector3(...p));if(!planes.length)throw Error('Source LED-window metadata missing');
  material.onBeforeCompile=shader=>{
-  shader.uniforms.uRearLensY={value:rowY};shader.uniforms.uRearLensZ={value:rowZ};
-  shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\n varying vec2 vRearLensYZ; uniform vec4 uRearLensY; uniform vec4 uRearLensZ;');
-  shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\n vRearLensYZ=vec2(dot(vec4(position,1.0),uRearLensY),dot(vec4(position,1.0),uRearLensZ));');
-  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\n varying vec2 vRearLensYZ;');
-  shader.fragmentShader=shader.fragmentShader.replace('#include <color_fragment>',`#include <color_fragment>
-   float reverseRed=smoothstep(0.805,0.850,abs(vRearLensYZ.y));
-   diffuseColor.rgb=mix(vec3(0.887923,0.913099,0.904661),diffuseColor.rgb,reverseRed);
-   diffuseColor.a=mix(0.35,diffuseColor.a,reverseRed);`);
-  shader.fragmentShader=shader.fragmentShader.replace('#include <emissivemap_fragment>','#include <emissivemap_fragment>\n totalEmissiveRadiance*=reverseRed;');
+  shader.uniforms.uRearLensY={value:rowY};shader.uniforms.uRearLensZ={value:rowZ};shader.uniforms.uLensWindowPlanes={value:planes};
+  shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\n varying float vRearLensY; varying float vRearLensZ; uniform vec4 uRearLensY; uniform vec4 uRearLensZ;');
+  shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\n vRearLensY=dot(vec4(position,1.0),uRearLensY);vRearLensZ=dot(vec4(position,1.0),uRearLensZ);');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\n varying float vRearLensY; varying float vRearLensZ; uniform vec3 uLensWindowPlanes['+planes.length+'];');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <colorspace_fragment>',`#include <colorspace_fragment>
+   float windowDistance=1.0;
+   for(int i=0;i<${planes.length};i++)windowDistance=min(windowDistance,dot(uLensWindowPlanes[i],vec3(abs(vRearLensZ),vRearLensY,1.0)));
+   float guideWindow=max(smoothstep(-0.008,0.008,windowDistance),smoothstep(0.865,0.895,abs(vRearLensZ)));
+   gl_FragColor.rgb*=mix(0.60,1.0,guideWindow);
+   float reverseMask=smoothstep(1.026,1.038,vRearLensY)*(1.0-smoothstep(1.100,1.108,vRearLensY));
+   gl_FragColor.rgb=mix(gl_FragColor.rgb,vec3(1.0),reverseMask);
+   gl_FragColor.a*=1.0-reverseMask;`);
  };
- material.customProgramCacheKey=()=> 'lc200-rear-reverse-transition-v1';
+ material.customProgramCacheKey=()=> 'lc200-rear-red-filter-v5-'+planes.length;
 }
 function finishPartMaterial(material,entry,zone,sourceName,node){
  const rear=entry.id.startsWith('lamp_rear_');
@@ -736,6 +740,11 @@ function finishPartMaterial(material,entry,zone,sourceName,node){
   material.clearcoat=1;material.clearcoatRoughness=.10;material.envMapIntensity=.35;
   material.emissive.set('#970006');material.emissiveIntensity=.32;
   material.transparent=true;material.opacity=.94;material.depthWrite=false;
+  if(entry.id.endsWith('_finish3')&&!sourceName.startsWith('redglass_lower')){
+   material.opacity=.90;material.blending=THREE.CustomBlending;material.blendEquation=THREE.AddEquation;
+   material.blendSrc=THREE.SrcAlphaFactor;material.blendDst=THREE.SrcColorFactor;
+   material.blendSrcAlpha=THREE.OneFactor;material.blendDstAlpha=THREE.OneMinusSrcAlphaFactor;
+  }
   material.side=THREE.FrontSide;material.forceSinglePass=true;material.flatShading=false;
  }
  if(rear&&zone==='lamp_clear'){
@@ -747,6 +756,10 @@ function finishPartMaterial(material,entry,zone,sourceName,node){
  if(rear&&zone==='chrome'){
   material.color.set('#e1e4e5');material.roughness=.22;material.metalness=.95;
   material.envMapIntensity=1.10;material.clearcoat=.15;
+ }
+ if(/^(emblem_(front|rear)$|lettering_rear|badge_grade_)/.test(entry.id)&&zone==='chrome'){
+  material.color.set('#eef0f2');material.roughness=.22;material.metalness=.85;
+  material.envMapIntensity=entry.id==='emblem_front'?8.0:3.0;material.clearcoat=.20;material.clearcoatRoughness=.12;
  }
  if(entry.id==='tailgate'&&sourceName.toLowerCase()==='garnish'){
   material.roughness=.45;material.metalness=.45;material.envMapIntensity=.85;
@@ -760,12 +773,12 @@ await Promise.all(partEntries.map(async entry=>{
  root.traverse(part=>{
   if(!part.isMesh)return;
   const convert=source=>{
-   const zone=zoneFor(source),key=zone+':'+source.name+(entry.id.endsWith('_finish')&&zone==='lamp_red'?':'+part.name:'');
+   const sourceZone=zoneFor(source),zone=entry.id.endsWith('_finish3')&&part.name.startsWith('clearglass_27')&&sourceZone==='lamp_red'?'lamp_clear':sourceZone,key=zone+':'+source.name+(entry.id.endsWith('_finish3')&&zone==='lamp_red'?':'+part.name:'');
    if(!materialCache.has(key)){
     const template=zoneTemplates[zone]||source;
     const material=template.clone();material.vertexColors=false;
     finishPartMaterial(material,entry,zone,source.name,part);
-    if(entry.id.endsWith('_finish')&&zone==='lamp_red'&&part.name.startsWith('clearglass_27'))useRearReverseTransition(material,part);
+    if(entry.id.endsWith('_finish3')&&zone==='lamp_red'&&!source.name.startsWith('redglass_lower'))useRearRedFilter(material,part);
     if(!['glass','lamp_clear','mirror'].includes(zone)&&!(entry.id.startsWith('lamp_rear_')&&zone==='lamp_red'))useBakedShading(material);
     if(entry.rigidClass==='wheel'&&!entry.wheelSlot&&zone==='black'){material.color.set('#0d1115');material.roughness=.56;material.envMapIntensity=1;}
     if(entry.rigidClass==='wheel'&&!entry.wheelSlot&&zone==='chrome'){material.color.set('#e1e4e5');material.roughness=.24;material.metalness=1;material.clearcoat=.15;material.clearcoatRoughness=.23;material.envMapIntensity=.95;}
@@ -830,9 +843,10 @@ function applyZonePaint(){
  updateClayBackground();
 }
 function applyStudioPartVisibility(){
+ const bundledSlots=new Set();for(const entry of partEntries){if(buildState.slots[entry.slot]===entry.id&&!buildState.hidden.includes(entry.id)&&!buildState.hidden.includes(entry.slot))for(const slot of entry.bundlesSlots||[])bundledSlots.add(slot);}
  for(const [id,root]of parts){const entry=entryById.get(id),selectedPart=buildState.slots[entry.slot];let selected=selectedPart;
-  if(studioMode==='clay'&&/^lamp_rear_[LR]_finish$/.test(selected||''))selected=selected.replace('_finish','');
-  root.visible=selected===id&&!buildState.hidden.includes(id)&&!buildState.hidden.includes(selectedPart)&&!buildState.hidden.includes(entry.slot);
+  if(studioMode==='clay'&&/^lamp_rear_[LR]_finish(?:3)?$/.test(selected||''))selected=selected.replace(/_finish(?:3)?$/,'');
+  root.visible=selected===id&&!bundledSlots.has(entry.slot)&&!buildState.hidden.includes(id)&&!buildState.hidden.includes(selectedPart)&&!buildState.hidden.includes(entry.slot);
  }
 }
 function applyBuild(){

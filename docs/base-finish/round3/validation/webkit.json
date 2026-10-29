@@ -1,0 +1,331 @@
+{
+  "source": "/workspace/landcruiser-3d/index.html",
+  "sourceSha256": "be6695c3cd18b927b427cfe1c174bc0dc8c7899365fa615777c4b510dda782ff",
+  "testedAt": "2026-10-29T10:43:51.392Z",
+  "engine": "Playwright WebKit on Linux WPE with software GL; iPad touch emulation",
+  "studio": "cream",
+  "conditions": "1366x1024 CSS pixels, DPR1, native product renderer, cream Quarter auto-rotate, four warmup frames then12 measured rAF intervals; no frame suppression",
+  "limitation": "Emulated WebKit, not a physical iPad. CPU and software GPU timing depends on host workload; not a hardware performance claim.",
+  "passed": true,
+  "errors": [],
+  "assets": [
+    {
+      "path": "build.json",
+      "bytes": 1532,
+      "sha256": "02ee8e05bd671eade4cab1b98e640329af0a86b5e241407e99658c809455c22c"
+    },
+    {
+      "path": "model/base.glb",
+      "bytes": 956900,
+      "sha256": "d995514aa4c7db48e3a146f68796b4131a486b4dccb7311443cb0e1f6d2f2ce0"
+    },
+    {
+      "path": "model/camera-reference.json",
+      "bytes": 36909,
+      "sha256": "02cf92bb363de60e93a45fe24a158a78fc762997290c924cbffc659a86a042c1"
+    },
+    {
+      "path": "model/display-base.glb",
+      "bytes": 13848,
+      "sha256": "a005849acbb6bc74d4be8089019518fb1516e343c610f02366caa5c15977a798"
+    },
+    {
+      "path": "model/manifest.json",
+      "bytes": 101982,
+      "sha256": "ba218121c0c75bfcb3074d79faa26bd61dfd7031894f35476be2e81deb765de3"
+    },
+    {
+      "path": "model/parts/badge_grade_GXR.glb",
+      "bytes": 52832,
+      "sha256": "01b13484da29a6576b05ac033b1c15efa23402cac84b0fae4dd24817d7e06c18"
+    },
+    {
+      "path": "model/parts/badge_grade_VXR.glb",
+      "bytes": 47372,
+      "sha256": "4bc7e77ac8bd256ae113ce8fa485f9c23716a073aff5515b97d39038a8d388f8"
+    },
+    {
+      "path": "model/parts/bonnet.glb",
+      "bytes": 67584,
+      "sha256": "5ba6b66701bf29a97835e276b482bab1d99dde0fdccbff4bcf3cc7d61ab9fdb0"
+    },
+    {
+      "path": "model/parts/bumper_front.glb",
+      "bytes": 321568,
+      "sha256": "3499b4fc6b63e4c9fbeb39da19ac2b93b0a31a20387f89e64d05275b76366f43"
+    },
+    {
+      "path": "model/parts/bumper_rear.glb",
+      "bytes": 226624,
+      "sha256": "5c450bda24ea16200ce699e304c421edf666825dbd7e0daf9524524bbca57cef"
+    },
+    {
+      "path": "model/parts/door_FL.glb",
+      "bytes": 171704,
+      "sha256": "c02fd81291983bc3ff94e99b6878b7a42401f06b454d47b3bfd3fc84e318095b"
+    },
+    {
+      "path": "model/parts/door_FR.glb",
+      "bytes": 168372,
+      "sha256": "dd405b7b30ceb224919865e97a4811ce4959042352d1fbfbea72259ac25efbfe"
+    },
+    {
+      "path": "model/parts/door_RL.glb",
+      "bytes": 193360,
+      "sha256": "51f6df45bcddb933678e6ac841dec73a15ef03065d86c9a1f186fd6a87d87445"
+    },
+    {
+      "path": "model/parts/door_RR.glb",
+      "bytes": 194388,
+      "sha256": "db246b44362a522121bcfae6a3f61afb2328840a023a6121adbcfa56d65eba9e"
+    },
+    {
+      "path": "model/parts/emblem_front.glb",
+      "bytes": 70076,
+      "sha256": "469e2d1e95479620c88841cce7c5285a9c8292207c681214356f6d6c5f620044"
+    },
+    {
+      "path": "model/parts/emblem_rear.glb",
+      "bytes": 239932,
+      "sha256": "1e88b997faeb87ff179644f0816a937960fd137866ef7b8c3572d97dc6f65817"
+    },
+    {
+      "path": "model/parts/grille.glb",
+      "bytes": 387008,
+      "sha256": "01bc6a06f89ff1b51aa6726f5d7a434dabc8365ada998d633d8b9729b6248866"
+    },
+    {
+      "path": "model/parts/lamp_front_L.glb",
+      "bytes": 1013968,
+      "sha256": "87457fd7efe6ae03faa4ef2a9f262edc04d9c277e89b55e6ba33991c2473fba8"
+    },
+    {
+      "path": "model/parts/lamp_front_R.glb",
+      "bytes": 996016,
+      "sha256": "32d86bcd59cd402d921bd0f0154cf90ed1dede5b39151ee4b0619e35612acd66"
+    },
+    {
+      "path": "model/parts/lamp_rear_L.glb",
+      "bytes": 744296,
+      "sha256": "03af882a0fb9d8ba69f30ada74d5df4efab94d901fbe97b1b81595495346681e"
+    },
+    {
+      "path": "model/parts/lamp_rear_L_finish.glb",
+      "bytes": 1368768,
+      "sha256": "d50acc1efd040bc83a220e327a986847303eb1adb7d0bdaa856108a385f8fc0b"
+    },
+    {
+      "path": "model/parts/lamp_rear_L_finish3.glb",
+      "bytes": 1685012,
+      "sha256": "c5359ac044ad98be8ba1bd461eb61ef3543cd34b33291e39f20c15bc07cf6644"
+    },
+    {
+      "path": "model/parts/lamp_rear_R.glb",
+      "bytes": 751696,
+      "sha256": "b52513357bdb1b3207932a3b0e2e80ea20556e03a88c3ab4e2a4691bba959efc"
+    },
+    {
+      "path": "model/parts/lamp_rear_R_finish.glb",
+      "bytes": 1384148,
+      "sha256": "d73b4f9a46511f1876bb344e03b799d8044400d9d4b477a1cd65a6179aeacabf"
+    },
+    {
+      "path": "model/parts/lamp_rear_R_finish3.glb",
+      "bytes": 1698556,
+      "sha256": "82dcefafb4f6f0331282339f850d27b77de065d818a9d50ddcec5a4b88aff7ee"
+    },
+    {
+      "path": "model/parts/lettering_rear.glb",
+      "bytes": 145664,
+      "sha256": "7aae0bf5d25afb68f574c0b89ffb27393de59cb8fa4a6d0f8706297d5eb08e8b"
+    },
+    {
+      "path": "model/parts/lettering_rear_base.glb",
+      "bytes": 99660,
+      "sha256": "3d6ae7272a391740ae35f632564952be99c8f6d703db5c92dbe82f979d8efbd5"
+    },
+    {
+      "path": "model/parts/mirror_L.glb",
+      "bytes": 100320,
+      "sha256": "6a13b02bc934fe7d8118bbab81882ac453e940e308e79633547e7291e0c56a4a"
+    },
+    {
+      "path": "model/parts/mirror_R.glb",
+      "bytes": 101060,
+      "sha256": "1724ce5f9211f6555bc16eb97ffd4c3e25e34e9de2f96adeca5503a916fb053e"
+    },
+    {
+      "path": "model/parts/roof_rails.glb",
+      "bytes": 103868,
+      "sha256": "215053544a616ffabf3eeb46ebbe633477c4995bad77f1accd1b4966af45629b"
+    },
+    {
+      "path": "model/parts/side_step_L.glb",
+      "bytes": 192180,
+      "sha256": "bffa4e60e19829e8577c4f2f74ce48fdc3a6f65439151b1ae8967b5c35d6e59a"
+    },
+    {
+      "path": "model/parts/side_step_R.glb",
+      "bytes": 180484,
+      "sha256": "7e459c5d54a86d6cdea1864edfa8ed6238fe9f4d77c966ae1f5c8570a27f341e"
+    },
+    {
+      "path": "model/parts/spoiler.glb",
+      "bytes": 232728,
+      "sha256": "48bf436c1baf6829810d4b2dd32368fd75e1351a1ebb0c0340e7f6e56e8f08ca"
+    },
+    {
+      "path": "model/parts/tailgate.glb",
+      "bytes": 432816,
+      "sha256": "65dd95db47db55f181edc72fa24df5ffe9536c7f5f08877bcad1b1cff1bf3093"
+    },
+    {
+      "path": "model/parts/unsorted_01.glb",
+      "bytes": 15924,
+      "sha256": "526e253559ae70a4f828695cd6c3c4ea2d35e4447d7dff09ba7bd64c36cc3ef8"
+    },
+    {
+      "path": "model/parts/unsorted_02.glb",
+      "bytes": 16068,
+      "sha256": "b6e4b50d9fa2e3ff222d9fba040883c8764381057e3074ae48b253877b3fb5dc"
+    },
+    {
+      "path": "model/parts/unsorted_03.glb",
+      "bytes": 10508,
+      "sha256": "2e3290ee0936604b06d95d50d9ef04ddd01173b55366ebfb45a2f2de5fc83ab0"
+    },
+    {
+      "path": "model/parts/unsorted_04.glb",
+      "bytes": 15420,
+      "sha256": "7f6f24003be4777502fb1f2e33ee30a650dde7c2f3d50d94cadc99846aa33edd"
+    },
+    {
+      "path": "model/parts/unsorted_05.glb",
+      "bytes": 16632,
+      "sha256": "97bdbf6538e8ffec325cfbf44fa5ac8059ac0022db3bdf18da9c35c3fea4f0ba"
+    },
+    {
+      "path": "model/parts/unsorted_06.glb",
+      "bytes": 8728,
+      "sha256": "090f240ad85896afdcd2670e9eb34aba887e9f065d70b5173e8b9583965d0aa7"
+    },
+    {
+      "path": "model/parts/unsorted_07.glb",
+      "bytes": 3752,
+      "sha256": "b45468ef7b33e798aec5e2ae93beba5b4491c42fc74ae719ecf368fe79b186b6"
+    },
+    {
+      "path": "model/parts/unsorted_08.glb",
+      "bytes": 9660,
+      "sha256": "494bd90ab37b6e3edbde2c61b1b31f659ab5c4a70572ccf5d39c45fed21e5fbe"
+    },
+    {
+      "path": "model/parts/unsorted_09.glb",
+      "bytes": 16008,
+      "sha256": "b75a1ddb1f8183f59ddaaf6cc09e1a8d61e5790475f5255703a8b4e91b24a779"
+    },
+    {
+      "path": "model/parts/unsorted_10.glb",
+      "bytes": 39844,
+      "sha256": "9b077c5603ec4fd84effc8e08c78216d1c4e2cc318c244a5b528b9bcca7b80e2"
+    },
+    {
+      "path": "model/parts/wheel_FL.glb",
+      "bytes": 590088,
+      "sha256": "f34286896012460f6b8da3a6ed95742a55fd016d206283ceb56da1446fed7d8e"
+    },
+    {
+      "path": "model/parts/wheel_FR.glb",
+      "bytes": 531204,
+      "sha256": "a4e5badcfb3cf990ca3e9c99e8bb434ef18235261f9d3c6c9373d41be99c5382"
+    },
+    {
+      "path": "model/parts/wheel_RL.glb",
+      "bytes": 541520,
+      "sha256": "a2c5735bb2ef5fb48415d499258c3d56523add26b0cd3bd76c1f1a8b4b40f9a5"
+    },
+    {
+      "path": "model/parts/wheel_RR.glb",
+      "bytes": 525848,
+      "sha256": "44ee9b4fa9e8adb4ad0e223a7f6c343b1e807fb0a55a92fe37ebeb8930d9bd96"
+    },
+    {
+      "path": "model/parts/wheel_emblem_FL.glb",
+      "bytes": 18564,
+      "sha256": "2f2184dea8a54d03507b3e36547a069cccc62812daf994b92a18cf6d6edd2b20"
+    },
+    {
+      "path": "model/parts/wheel_emblem_FR.glb",
+      "bytes": 18564,
+      "sha256": "f03f9fb5187f261764d6165fd69488318791e7686322f1f92116c6ffb5fac7d5"
+    },
+    {
+      "path": "model/parts/wheel_emblem_RL.glb",
+      "bytes": 18572,
+      "sha256": "d5c83fdf638da58e14315f70e5ee5ea9e23738b400bb127d0b5ac945bbb76f59"
+    },
+    {
+      "path": "model/parts/wheel_emblem_RR.glb",
+      "bytes": 18556,
+      "sha256": "51147c884257439e786411951352644881a42edb9c37b69525beda0b29b9daf8"
+    }
+  ],
+  "raf": {
+    "samples": 12,
+    "meanMs": 493.6666666666667,
+    "p50ms": 494,
+    "p95ms": 523,
+    "minMs": 467,
+    "maxMs": 523
+  },
+  "renderCpu": {
+    "samples": 13,
+    "meanMs": 100.61538461538461,
+    "p50ms": 100,
+    "p95ms": 128,
+    "minMs": 63,
+    "maxMs": 128
+  },
+  "intervalsMs": [
+    490,
+    494,
+    482,
+    467,
+    489,
+    495,
+    488,
+    506,
+    505,
+    494,
+    491,
+    523
+  ],
+  "renderCpuMs": [
+    104,
+    100,
+    100,
+    107,
+    128,
+    102,
+    94,
+    104,
+    92,
+    98,
+    63,
+    117,
+    99
+  ],
+  "actualRenderCalls": 13,
+  "rotated": true,
+  "viewport": [
+    1366,
+    1024
+  ],
+  "devicePixelRatio": 1,
+  "rendererPixelRatio": 1,
+  "drawCalls": 192,
+  "triangles": 865204,
+  "antialias": true,
+  "samples": 4,
+  "userAgent": "Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1"
+}
