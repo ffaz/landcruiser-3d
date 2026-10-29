@@ -1,4 +1,5 @@
 [
+  ".gitignore",
   "docs/base-finish/README.md",
   "docs/base-finish/after/clay-quarter.png",
   "docs/base-finish/after/cream-front.png",
@@ -45,7 +46,6 @@
   "model/parts/emblem_rear.glb",
   "model/parts/lamp_rear_L_finish.glb",
   "model/parts/lamp_rear_R_finish.glb",
-  "tools/base-finish/__pycache__/measure_pixels.cpython-312.pyc",
   "tools/base-finish/create-emblems.mjs",
   "tools/base-finish/measure_pixels.py",
   "tools/base-finish/repair-lamp-normals.mjs"
