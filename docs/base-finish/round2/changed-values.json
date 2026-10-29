@@ -1,0 +1,357 @@
+[
+  {
+    "name": "Clay paint roughness",
+    "old": 0.42,
+    "new": 0.85,
+    "file": "index.html",
+    "line": 668
+  },
+  {
+    "name": "Clay paint clearcoat",
+    "old": 0.35,
+    "new": 0,
+    "file": "index.html",
+    "line": 669
+  },
+  {
+    "name": "Clay paint coat roughness",
+    "old": 0.3,
+    "new": 1,
+    "file": "index.html",
+    "line": 669
+  },
+  {
+    "name": "Clay paint specular",
+    "old": 1,
+    "new": 0.1,
+    "file": "index.html",
+    "line": 669
+  },
+  {
+    "name": "Clay paint environment intensity",
+    "old": 0.7,
+    "new": 0.035,
+    "file": "index.html",
+    "line": 670
+  },
+  {
+    "name": "Clay white display colour",
+    "old": "#f4f4ef",
+    "new": "#efe6da",
+    "file": "index.html",
+    "line": 601
+  },
+  {
+    "name": "Clay glass program",
+    "old": "physical blue-grey",
+    "new": "main unlit plum with original height gradient",
+    "file": "index.html",
+    "line": 661
+  },
+  {
+    "name": "Clay exterior trim/chrome",
+    "old": "common satin metal/neutral black",
+    "new": "main matte plum/pink-grey",
+    "file": "index.html",
+    "line": 594
+  },
+  {
+    "name": "Clay baked paint AO/ridge/valley",
+    "old": [
+      1.2,
+      1.0,
+      1.65
+    ],
+    "new": [
+      0.65,
+      0.52,
+      0.72
+    ],
+    "file": "index.html",
+    "line": 367
+  },
+  {
+    "name": "Clay added seam/occluded-ridge attenuation",
+    "old": "shared metal seam terms",
+    "new": "none; complete main shader restored",
+    "file": "index.html",
+    "line": 367
+  },
+  {
+    "name": "Clay height shading",
+    "old": "not applied",
+    "new": "main lower key .09; height .65\u20131.14",
+    "file": "index.html",
+    "line": 308
+  },
+  {
+    "name": "Clay exposure",
+    "old": 1.2,
+    "new": 2.4,
+    "file": "index.html",
+    "line": 1068
+  },
+  {
+    "name": "Clay scene environment intensity",
+    "old": 0.65,
+    "new": 0.1,
+    "file": "index.html",
+    "line": 1068
+  },
+  {
+    "name": "Clay key colour",
+    "old": "#fffbf5",
+    "new": "#ffe0b0",
+    "file": "index.html",
+    "line": 1069
+  },
+  {
+    "name": "Clay key intensity",
+    "old": 1.65,
+    "new": 5.8,
+    "file": "index.html",
+    "line": 1069
+  },
+  {
+    "name": "Clay key position",
+    "old": [
+      -1.5,
+      8,
+      2
+    ],
+    "new": [
+      -3.8,
+      10,
+      1.2
+    ],
+    "file": "index.html",
+    "line": 1069
+  },
+  {
+    "name": "Clay hemisphere sky",
+    "old": "#f7f5f0",
+    "new": "#fff0df",
+    "file": "index.html",
+    "line": 1070
+  },
+  {
+    "name": "Clay hemisphere ground",
+    "old": "#52565c",
+    "new": "#c2a688",
+    "file": "index.html",
+    "line": 1070
+  },
+  {
+    "name": "Clay fill intensity",
+    "old": 0.6,
+    "new": 0.45,
+    "file": "index.html",
+    "line": 1070
+  },
+  {
+    "name": "Clay PMREM emitter profile",
+    "old": "painted-metal softboxes",
+    "new": "exact main six softboxes",
+    "file": "index.html",
+    "line": 220
+  },
+  {
+    "name": "Clay lamp display",
+    "old": "finish variants with smooth lens normals",
+    "new": "original main GLBs / main lens face settings",
+    "file": "index.html",
+    "line": 832
+  },
+  {
+    "name": "Rear red lens colour",
+    "old": "#9e0818",
+    "new": "#97000e",
+    "file": "index.html",
+    "line": 735
+  },
+  {
+    "name": "Rear red lens opacity",
+    "old": 0.55,
+    "new": 0.94,
+    "file": "index.html",
+    "line": 738
+  },
+  {
+    "name": "Rear red lens env intensity",
+    "old": 1.1,
+    "new": 0.35,
+    "file": "index.html",
+    "line": 736
+  },
+  {
+    "name": "Rear red lens coat roughness",
+    "old": 0.06,
+    "new": 0.1,
+    "file": "index.html",
+    "line": 736
+  },
+  {
+    "name": "Rear red lens emissive colour",
+    "old": "#430007",
+    "new": "#970006",
+    "file": "index.html",
+    "line": 737
+  },
+  {
+    "name": "Rear red lens emissive intensity",
+    "old": 0.035,
+    "new": 0.32,
+    "file": "index.html",
+    "line": 737
+  },
+  {
+    "name": "Reverse red/clear boundary",
+    "old": "per-triangle hard edge",
+    "new": "continuous material colour/alpha blend",
+    "file": "index.html",
+    "line": 716
+  },
+  {
+    "name": "Reverse tint transition metres",
+    "old": null,
+    "new": [
+      0.805,
+      0.85
+    ],
+    "file": "index.html",
+    "line": 725
+  },
+  {
+    "name": "Reverse clear linear tint",
+    "old": null,
+    "new": [
+      0.887923,
+      0.913099,
+      0.904661
+    ],
+    "file": "index.html",
+    "line": 726
+  },
+  {
+    "name": "Reverse clear alpha",
+    "old": null,
+    "new": 0.35,
+    "file": "index.html",
+    "line": 727
+  },
+  {
+    "name": "Reverse emission attenuation",
+    "old": null,
+    "new": "\u00d7 reverseRed",
+    "file": "index.html",
+    "line": 728
+  },
+  {
+    "name": "Bonnet/fender broad AO",
+    "old": "full baked cavity on every vertex",
+    "new": "crease-gated only on bonnet and body shell",
+    "file": "index.html",
+    "line": 394
+  },
+  {
+    "name": "Flat-panel crease gate",
+    "old": null,
+    "new": [
+      0.18,
+      0.4
+    ],
+    "file": "index.html",
+    "line": 394
+  },
+  {
+    "name": "Bonnet direct diffuse key gain",
+    "old": 2.2,
+    "new": 6.0,
+    "file": "index.html",
+    "line": 435
+  },
+  {
+    "name": "Bonnet indirect specular scale",
+    "old": 1,
+    "new": 0.2,
+    "file": "index.html",
+    "line": 439
+  },
+  {
+    "name": "Bonnet indirect clearcoat scale",
+    "old": 1,
+    "new": 0.2,
+    "file": "index.html",
+    "line": 439
+  },
+  {
+    "name": "Paint shader cache",
+    "old": "v9",
+    "new": "v10 + clean-panel suffix",
+    "file": "index.html",
+    "line": 447
+  },
+  {
+    "name": "Wheel emblem material exception",
+    "old": "wheel material override inherited by prefix",
+    "new": "stock wheels only; new badges use BASE_FINISH",
+    "file": "index.html",
+    "line": 771
+  },
+  {
+    "name": "Wheel emblem parent",
+    "old": null,
+    "new": "source wheel root, rigid attachment",
+    "file": "index.html",
+    "line": 785
+  },
+  {
+    "name": "Front/rear emblem geometry",
+    "old": "procedural rings",
+    "new": "original source shells, preserved triangles/normals",
+    "file": "model/manifest.json",
+    "line": 3396
+  },
+  {
+    "name": "Default slot lettering_rear",
+    "old": null,
+    "new": "lettering_rear",
+    "file": "build.json",
+    "line": 41
+  },
+  {
+    "name": "Default slot wheel_emblem_FL",
+    "old": null,
+    "new": "wheel_emblem_FL",
+    "file": "build.json",
+    "line": 42
+  },
+  {
+    "name": "Default slot wheel_emblem_FR",
+    "old": null,
+    "new": "wheel_emblem_FR",
+    "file": "build.json",
+    "line": 43
+  },
+  {
+    "name": "Default slot wheel_emblem_RL",
+    "old": null,
+    "new": "wheel_emblem_RL",
+    "file": "build.json",
+    "line": 44
+  },
+  {
+    "name": "Default slot wheel_emblem_RR",
+    "old": null,
+    "new": "wheel_emblem_RR",
+    "file": "build.json",
+    "line": 45
+  },
+  {
+    "name": "Hidden selected finish-lamp handling in Clay",
+    "old": "displayed original id checked; selected finish id ignored",
+    "new": "selected id, displayed id and slot all respected",
+    "file": "index.html",
+    "line": 835
+  }
+]

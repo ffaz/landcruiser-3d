@@ -10,9 +10,9 @@ The satin collectible materials and baked crevice/edge shading remain. No screen
 
 ## Clean base finish preview
 
-[Before/after renders, pixel measurements, all changed values and new parts](docs/base-finish/README.md). The owner reference photos were unavailable in this task, so exact badge heights/sizes, optional lettering and lamp-pattern agreement remain pending. This preview is not a completed owner-photo match.
+[Round 2 before/after renders, pixel measurements, changed values and recovered source badges](docs/base-finish/round2/README.md). Clay is restored to main; badges come from the original 979,826-triangle source. Owner reference photographs are still unavailable. Exact lamp matching, GXR grade agreement and literal back-face gap certification remain pending.
 
-Cream, Slate and Clay use the same satin painted-metal base finish, soft reflection highlights, neutral dark trim, blue-grey tinted glass and satin exterior metal. Each studio retains its background and toggle; Clay retains its existing wheel/tyre and plinth presentation. No tyre geometry, mud, wear, decals, numbers, props or workshop UI is added.
+Cream and Slate use the satin painted-metal base finish, soft reflection highlights, neutral dark trim, blue-grey tinted glass and satin exterior metal. Clay retains its separate warm matte paint, unlit plum glass, pink-grey trim, lighting, wheel/tyre and plinth presentation. No tyre geometry, mud, wear, decals, numbers, props or workshop UI is added.
 
 Toyota emblems are separate default-visible body slots. Replacement rear-lamp variants preserve the original lamp positions, triangle topology and COLOR_0, with repaired lens/reflector normals only on the new copies. Original GLBs remain byte-identical and selectable. The existing body scale, pivots, controls and camera presets are preserved.
 
@@ -20,7 +20,7 @@ Toyota emblems are separate default-visible body slots. Replacement rear-lamp va
 
 ## Foundation data
 
-The original vehicle contains **24 named parts and 10 unsorted pieces**, now supplemented by two emblem slots and two rear-lamp variants, each with material-zone metadata and a review thumbnail. Integrated flare surfaces cannot be detached by loose-piece separation; a standalone frame/axle assembly could not be identified confidently. `arch_flares` and `chassis` therefore remain empty manifest slots. Other pivots are part-bbox centres, **not verified door hinges or mounting points**; wheel pivots use the authored hub coordinates.
+The original vehicle contains **24 named parts and 10 unsorted pieces**, now supplemented by seven source badge/lettering slots and two rear-lamp variants, each with material-zone metadata and a review thumbnail. Integrated flare surfaces cannot be detached by loose-piece separation; a standalone frame/axle assembly could not be identified confidently. `arch_flares` and `chassis` therefore remain empty manifest slots. Other pivots are part-bbox centres, **not verified door hinges or mounting points**; wheel pivots use the authored hub coordinates.
 
 Use the browser console or a URL hash to exercise the data foundation:
 

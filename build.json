@@ -37,7 +37,12 @@
     "arch_flares": null,
     "chassis": null,
     "emblem_front": "emblem_front",
-    "emblem_rear": "emblem_rear"
+    "emblem_rear": "emblem_rear",
+    "lettering_rear": "lettering_rear",
+    "wheel_emblem_FL": "wheel_emblem_FL",
+    "wheel_emblem_FR": "wheel_emblem_FR",
+    "wheel_emblem_RL": "wheel_emblem_RL",
+    "wheel_emblem_RR": "wheel_emblem_RR"
   },
   "paint": {
     "paint": "#f4f4ef"

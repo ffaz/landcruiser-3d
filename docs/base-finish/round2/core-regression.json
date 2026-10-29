@@ -1,0 +1,11 @@
+{
+  "white": {
+    "differentPixels": 0,
+    "maxChannelDifference": 0
+  },
+  "hiddenSelectedLampRespected": true,
+  "orange": {
+    "differentPixels": 0,
+    "maxChannelDifference": 0
+  }
+}

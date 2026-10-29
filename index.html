@@ -215,6 +215,9 @@ renderer.outputColorSpace=THREE.SRGBColorSpace;
 holder.appendChild(renderer.domElement);
 const scene=new THREE.Scene();
 // Reflection studio is deliberately separate from the transparent visible scene.
+// Same single PMREM map and existing bake pipeline; switch its studio profile only
+// on a studio toggle. There is no additional per-frame pass or resident environment.
+function createStudioEnvironment(clay=false){
 const studio=new RoomEnvironment();
 studio.traverse(o=>{
   if(o.isLight)o.intensity*=.12;
@@ -237,14 +240,16 @@ function softbox(w,h,position,intensity){
 }
 softbox(7,2.3,[-2.5,6,4.5],5.0);
 softbox(6.5,1.1,[.4,7,-.5],4.0);
-softbox(1.4,.60,[3.7,1.9,-5],215.0);
+if(clay)softbox(6,.9,[.8,2.8,-5],2.8);else softbox(1.4,.60,[3.7,1.9,-5],215.0);
 softbox(2.2,3.2,[-6,3.2,-1.5],1.4);
-softbox(7.2,.65,[0,2.4,6],2.5);
-softbox(1.8,.60,[5,.9,-5],200.0);
+softbox(7.2,.65,[0,2.4,6],clay?6.5:2.5);
+if(clay)softbox(7,.55,[.5,2.4,-6],4.0);else softbox(1.8,.60,[5,.9,-5],200.0);
 const pmrem=new THREE.PMREMGenerator(renderer);
-const studioTarget=pmrem.fromScene(studio,.025,.1,80);
+const target=pmrem.fromScene(studio,.025,.1,80);
+studio.traverse(o=>{if(o.isMesh){o.material.map?.dispose();}});studio.dispose();pmrem.dispose();return target;
+}
+let studioTarget=createStudioEnvironment(false),environmentIsClay=false;
 scene.environment=studioTarget.texture;scene.environmentIntensity=.65;
-studio.dispose();pmrem.dispose();
 const fill=new THREE.HemisphereLight(0xf7f5f0,0x52565c,.60);scene.add(fill);
 const key=new THREE.DirectionalLight(0xfffbf5,1.65);
 key.position.set(-1.5,8,2);key.castShadow=false;
@@ -304,9 +309,65 @@ const CLAY_LOOK=Object.freeze({ao:.65,ridge:.52,valley:.72});
 const clayBakedUniforms={uBakedAO:{value:CLAY_LOOK.ao},uBakedRidge:{value:CLAY_LOOK.ridge},
  uBakedValley:{value:CLAY_LOOK.valley},uClayOcclusionTint:{value:new THREE.Color('#a58e72')},
  uClayLowerKey:{value:.09},uClayHeightStart:{value:.65},uClayHeightEnd:{value:1.14},uClayBodyLift:{value:0}};
-function useBakedShading(material,clay=false,cream=false){
+function useMainClayShading(material,clay=false,cream=false){
  const clayPaint=clay&&material.userData.zone==='paint';
  const heightPaint=clayPaint&&!material.userData.partId?.startsWith('side_step_');
+ material.onBeforeCompile=shader=>{
+  Object.assign(shader.uniforms,clay?clayBakedUniforms:cream?creamDetailUniforms:bakedUniforms);
+  shader.vertexShader=shader.vertexShader.replace('#include <common>',
+   '#include <common>\nattribute vec3 bakedShading; varying vec2 vBakedShading;');
+  shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>',
+   '#include <begin_vertex>\nvBakedShading=bakedShading.rg;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <common>',
+   '#include <common>\nvarying vec2 vBakedShading; uniform float uBakedAO; uniform float uBakedRidge; uniform float uBakedValley;'+(clay?' uniform vec3 uClayOcclusionTint;':'')+(cream?' uniform float uCreamAOExponent; uniform float uCreamTrimSpecular;':''));
+  if(heightPaint){
+   shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying float vClayPaintHeight; uniform float uClayBodyLift;');
+   shader.vertexShader=shader.vertexShader.replace('#include <worldpos_vertex>',`#include <worldpos_vertex>
+    #ifdef USE_ENVMAP
+     vClayPaintHeight=worldPosition.y-uClayBodyLift;
+    #else
+     vClayPaintHeight=(modelMatrix*vec4(transformed,1.0)).y-uClayBodyLift;
+    #endif`);
+   shader.fragmentShader=shader.fragmentShader.replace('#include <common>',
+    '#include <common>\nvarying float vClayPaintHeight; uniform float uClayLowerKey; uniform float uClayHeightStart; uniform float uClayHeightEnd;');
+  }
+  shader.fragmentShader=shader.fragmentShader.replace('#include <aomap_fragment>',`#include <aomap_fragment>
+   float bakedAO=${cream?'pow(clamp(vBakedShading.r,0.0,1.0),mix(1.0,uCreamAOExponent,smoothstep(0.02,0.10,abs(vBakedShading.g-0.5)*2.0)))':'clamp(vBakedShading.r,0.0,1.0)'};
+   float bakedRidge=max(0.0,(vBakedShading.g-0.5-1.0/255.0)*2.0);
+   float bakedValley=max(0.0,(0.5-vBakedShading.g-1.0/255.0)*2.0);
+   float bakedCavity=clamp(1.0-(1.0-bakedAO)*uBakedAO-bakedValley*uBakedValley*0.35,${clay?'0.42':cream?'0.10':'0.18'},1.0);
+   ${clay?`vec3 clayCavity=mix(vec3(1.0),uClayOcclusionTint,1.0-bakedCavity);
+   ${clayPaint?`// Broad flat-panel AO belongs to indirect light; retain direct cavity shading at creases.
+   float keyCavity=clamp(1.0-(1.0-bakedAO)*uBakedAO*smoothstep(0.04,0.25,max(bakedRidge,bakedValley))-bakedValley*uBakedValley*0.35,0.42,1.0);
+   vec3 keyCavityTint=mix(vec3(1.0),uClayOcclusionTint,1.0-keyCavity);
+   reflectedLight.directDiffuse*=mix(vec3(1.0),keyCavityTint,0.65);`:
+   'reflectedLight.directDiffuse*=mix(vec3(1.0),clayCavity,0.65);'}
+   ${heightPaint?'reflectedLight.directDiffuse*=mix(uClayLowerKey,1.0,smoothstep(uClayHeightStart,uClayHeightEnd,vClayPaintHeight));':''}
+   reflectedLight.indirectDiffuse*=clayCavity;
+   reflectedLight.indirectSpecular*=mix(vec3(1.0),clayCavity,0.72);
+   reflectedLight.directSpecular*=mix(vec3(1.0),clayCavity,0.25);
+   #ifdef USE_CLEARCOAT
+    clearcoatSpecularIndirect*=mix(vec3(1.0),clayCavity,0.72);
+   #endif`:`
+   reflectedLight.directDiffuse*=mix(1.0,bakedCavity,${cream?'0.90':'0.65'});
+   reflectedLight.indirectDiffuse*=bakedCavity;
+   reflectedLight.indirectSpecular*=mix(1.0,bakedCavity,${cream?'0.85':'0.72'});
+   reflectedLight.directSpecular*=mix(1.0,bakedCavity,${cream?'0.50':'0.25'});
+   #ifdef USE_CLEARCOAT
+    clearcoatSpecularIndirect*=mix(1.0,bakedCavity,${cream?'0.85':'0.72'});
+   #endif`}
+   reflectedLight.indirectDiffuse+=diffuseColor.rgb*bakedRidge*uBakedRidge*0.13;
+   ${cream&&material.userData.zone==='black'?'reflectedLight.directSpecular*=uCreamTrimSpecular; reflectedLight.indirectSpecular*=uCreamTrimSpecular;':''}
+  `);
+ };
+ material.customProgramCacheKey=()=> heightPaint?'lc200-clay-paint-height-v2':clayPaint?'lc200-clay-paint-v2':clay?'lc200-baked-ao-curvature-clay-v1':cream?'lc200-cream-baked-detail-v1':'lc200-baked-ao-curvature-v1';
+ return material;
+}
+function useBakedShading(material,clay=false,cream=false){
+ if(clay)return useMainClayShading(material,true,false);
+ const clayPaint=clay&&material.userData.zone==='paint';
+ const heightPaint=clayPaint&&!material.userData.partId?.startsWith('side_step_');
+ const cleanPanel=material.userData.zone==='paint'&&['bonnet','body_shell'].includes(material.userData.partId);
  material.onBeforeCompile=shader=>{
   Object.assign(shader.uniforms,clay?clayBakedUniforms:cream?creamDetailUniforms:bakedUniforms,finishSeamUniforms);
   shader.vertexShader=shader.vertexShader.replace('#include <common>',
@@ -330,6 +391,7 @@ function useBakedShading(material,clay=false,cream=false){
    float bakedAO=${cream?'pow(clamp(vBakedShading.r,0.0,1.0),mix(1.0,uCreamAOExponent,smoothstep(0.02,0.10,abs(vBakedShading.g-0.5)*2.0)))':'clamp(vBakedShading.r,0.0,1.0)'};
    float bakedRidge=max(0.0,(vBakedShading.g-0.5-1.0/255.0)*2.0);
    float bakedValley=max(0.0,(0.5-vBakedShading.g-1.0/255.0)*2.0);
+   ${cleanPanel?'float panelCrease=smoothstep(0.18,0.40,max(bakedRidge,bakedValley)); bakedAO=mix(1.0,bakedAO,panelCrease); bakedValley*=panelCrease;':''}
    float bakedCavity=clamp(1.0-(1.0-bakedAO)*uBakedAO-bakedValley*uBakedValley*0.35,${clay?'0.42':cream?'0.06':'0.18'},1.0);
    ${material.userData.zone==='paint'?`// Enhance only concave, already-occluded baked regions; broad panels stay clean.
    float bakedSeam=smoothstep(uFinishSeamValley.x,uFinishSeamValley.y,bakedValley)*smoothstep(uFinishSeamOcclusion.x,uFinishSeamOcclusion.y,1.0-bakedAO);
@@ -362,7 +424,7 @@ function useBakedShading(material,clay=false,cream=false){
    ${material.userData.zone==='black'&&!material.userData.partId?.startsWith('wheel_')?'reflectedLight.directSpecular*=uFinishBlackSpecular; reflectedLight.indirectSpecular*=uFinishBlackSpecular;':''}
   `);
  };
- material.customProgramCacheKey=()=> (heightPaint?'lc200-clay-paint-height-v2':clayPaint?'lc200-clay-paint-v2':clay?'lc200-baked-ao-curvature-clay-v1':cream?'lc200-cream-baked-detail-v4':'lc200-baked-ao-curvature-v4')+(material.userData.zone==='paint'?'-paint':material.userData.zone==='black'&&!material.userData.partId?.startsWith('wheel_')?'-neutral-trim':material.userData.zone==='chrome'&&!material.userData.partId?.startsWith('wheel_')?'-metal-trim':'');
+ material.customProgramCacheKey=()=> (heightPaint?'lc200-clay-paint-height-v2':clayPaint?'lc200-clay-paint-v2':clay?'lc200-baked-ao-curvature-clay-v1':cream?'lc200-cream-baked-detail-v4':'lc200-baked-ao-curvature-v4')+(material.userData.zone==='paint'?'-paint'+(cleanPanel?'-clean-panel':''):material.userData.zone==='black'&&!material.userData.partId?.startsWith('wheel_')?'-neutral-trim':material.userData.zone==='chrome'&&!material.userData.partId?.startsWith('wheel_')?'-metal-trim':'');
  return material;
 }
 function useCreamPaintShading(material){
@@ -370,9 +432,11 @@ function useCreamPaintShading(material){
  const bakedCompile=material.onBeforeCompile;
  material.onBeforeCompile=shader=>{
   bakedCompile(shader);Object.assign(shader.uniforms,creamBakedUniforms);
+  if(material.userData.partId==='bonnet')shader.uniforms.uCreamKeyGain={value:6.0};
   if(material.userData.partId==='spoiler'){shader.uniforms.uCreamGrazingFloor={value:.02};shader.uniforms.uCreamGrazingRange={value:new THREE.Vector2(.03,.85)};}
   shader.fragmentShader=shader.fragmentShader.replace('#include <common>',
    '#include <common>\nuniform float uCreamKeyGain; uniform float uCreamFillGain; uniform float uCreamRearFill; uniform vec3 uCreamKeyDirection; uniform vec3 uCreamKeyTint; uniform float uCreamGrazingFloor; uniform vec2 uCreamGrazingRange;');
+  if(material.userData.partId==='bonnet')shader.fragmentShader=shader.fragmentShader.replace('#include <aomap_fragment>','#include <aomap_fragment>\n reflectedLight.indirectSpecular*=0.20; clearcoatSpecularIndirect*=0.20;');
   const creamLights=THREE.ShaderChunk.lights_fragment_begin.replace('getDirectionalLightInfo( directionalLight, directLight );',
    'getDirectionalLightInfo( directionalLight, directLight );\nif(UNROLLED_LOOP_INDEX==0)directLight.direction=normalize(mat3(viewMatrix)*uCreamKeyDirection);');
   shader.fragmentShader=shader.fragmentShader.replace('#include <lights_fragment_begin>',creamLights);
@@ -380,7 +444,7 @@ function useCreamPaintShading(material){
   shader.fragmentShader=shader.fragmentShader.replace('#include <aomap_fragment>',
    'float creamFacing=abs(dot(geometryNormal,geometryViewDir));\nfloat creamLowView=1.0-smoothstep(0.04,0.14,abs(cameraPosition.y)/max(length(cameraPosition),0.001));\nfloat creamEdgeGain=mix(1.0,mix(uCreamGrazingFloor,1.0,smoothstep(uCreamGrazingRange.x,uCreamGrazingRange.y,creamFacing)),creamLowView);\nreflectedLight.directDiffuse*=uCreamKeyGain*uCreamKeyTint*creamEdgeGain;\nvec3 creamWorldNormal=inverseTransformDirection(geometryNormal,viewMatrix);\nfloat creamRearWeight=smoothstep(0.15,0.80,creamWorldNormal.x);\nreflectedLight.indirectDiffuse*=uCreamFillGain*mix(1.0,uCreamRearFill,creamRearWeight);\n#include <aomap_fragment>');
  };
- material.customProgramCacheKey=()=> 'lc200-base-paint-lighting-v9';
+ material.customProgramCacheKey=()=> 'lc200-base-paint-lighting-v10'+(['bonnet','body_shell'].includes(material.userData.partId)?'-clean-panel':'');
  return material;
 }
 function bindBakedAttribute(root){
@@ -534,7 +598,7 @@ function clayPaintColor(hex){
  const color=new THREE.Color(hex),rgb={};color.getRGB(rgb,THREE.SRGBColorSpace);
  const low=Math.min(rgb.r,rgb.g,rgb.b),high=Math.max(rgb.r,rgb.g,rgb.b);
  // A display-only white finish: the authored build colour remains unchanged.
- return low>.86&&high-low<.04?'#f4f4ef':'#'+color.getHexString();
+ return low>.86&&high-low<.04?'#efe6da':'#'+color.getHexString();
 }
 function useClayLampCentre(material,node){
  // Read the existing bounds/decoding frame once. Never add or edit an attribute.
@@ -580,12 +644,12 @@ function studioMaterial(current,zone,hex,authored=false,node=null){
  const original=originalMaterials.get(current)||current;
  if(hex!==undefined)original.color.set(hex);
  const creamTrim=zone==='black'&&!original.userData.partId?.startsWith('wheel_');
- if(zone==='paint'||(studioMode==='cream'&&creamTrim)){
+ if(studioMode!=='clay'&&(zone==='paint'||(studioMode==='cream'&&creamTrim))){
   let material=creamMaterials.get(original);
   if(!material){
    material=original.clone();material.userData={...original.userData,studio:'base'};
    if(creamTrim){material.roughness=CREAM_DETAIL.trimRoughness;material.envMapIntensity=CREAM_DETAIL.trimEnv;useBakedShading(material,false,true);}
-   else {useCreamPaintShading(material);if(original.userData.partId==='bonnet'&&node)useBonnetBoundary(material,node);}
+   else {useCreamPaintShading(material);if(original.userData.partId==='bonnet'&&node){useBonnetBoundary(material,node);}}
    creamMaterials.set(original,material);originalMaterials.set(material,original);
   }
   material.color.copy(original.color);
@@ -593,9 +657,6 @@ function studioMaterial(current,zone,hex,authored=false,node=null){
   return material;
  }
  if(studioMode!=='clay')return original;
- // Exterior metal, neutral trim, tinted glass and rear lenses share the base finish.
- if(zone==='glass'||(zone==='chrome'&&!original.userData.partId?.startsWith('wheel_'))||
-   (zone==='black'&&!original.userData.partId?.startsWith('wheel_'))||original.userData.partId?.startsWith('lamp_rear_'))return original;
  const frontLens=zone==='lamp_clear'&&original.userData.partId?.startsWith('lamp_front_')&&node;
  const glassGradient=zone==='glass'&&node;
  let material=frontLens?clayLensMaterials.get(node):glassGradient?clayGlassMaterials.get(node):clayMaterials.get(original);
@@ -604,12 +665,13 @@ function studioMaterial(current,zone,hex,authored=false,node=null){
   // Unlit Clay variants are cheaper than the original physical glass/lenses.
   material=glassGradient||frontLens?new THREE.MeshBasicMaterial({color:original.color,side:original.side,
    transparent:!!glassGradient,opacity:glassGradient?.94:1,depthWrite:true,toneMapped:false}):original.clone();
-  material.metalness=0;material.roughness=zone==='paint'?BASE_FINISH.paintRoughness:.90;
-  if('clearcoat' in material){material.clearcoat=zone==='paint'?BASE_FINISH.paintClearcoat:0;material.clearcoatRoughness=zone==='paint'?BASE_FINISH.paintCoatRoughness:1;material.specularIntensity=zone==='paint'?1:.10;}
-  material.envMapIntensity=zone==='paint'?BASE_FINISH.paintEnv:.02;
+  material.metalness=0;material.roughness=zone==='paint'?.85:.90;
+  if('clearcoat' in material){material.clearcoat=0;material.clearcoatRoughness=1;material.specularIntensity=.10;}
+  material.envMapIntensity=zone==='paint'?.035:.02;
   material.emissive?.set(0x000000);material.emissiveIntensity=0;
   if(zone==='glass'){material.opacity=.94;material.envMapIntensity=.015;}
   if(zone.startsWith('lamp_')){material.transparent=false;material.opacity=1;material.depthWrite=true;}
+  if(original.userData.partId?.startsWith('lamp_rear_')&&zone!=='black'){material.side=THREE.DoubleSide;material.forceSinglePass=false;material.flatShading=zone==='lamp_red'||zone==='lamp_clear'||zone==='lamp_orange';}
   if(frontLens){material.transparent=true;material.opacity=.65;material.depthWrite=false;material.side=THREE.FrontSide;material.forceSinglePass=true;}
   if(!['glass','lamp_clear','mirror'].includes(zone))useBakedShading(material,true);
   if(frontLens)useClayLampCentre(material,node);
@@ -625,7 +687,7 @@ function studioMaterial(current,zone,hex,authored=false,node=null){
 }
 function updateClayBackground(){
  if(studioMode!=='clay')return;
- if(clayPaintColor(buildState.paint.paint||DEFAULT_WHITE)==='#f4f4ef'){
+ if(clayPaintColor(buildState.paint.paint||DEFAULT_WHITE)==='#efe6da'){
   for(const [name,color] of [['centre','#d9cbb8'],['mid','#d9cbb8'],['edge','#cdbda7']])document.body.style.setProperty('--clay-'+name,color);
   document.querySelector('meta[name="theme-color"]').content='#d9cbb8';return;
  }
@@ -649,13 +711,31 @@ function zoneFor(material){const name=material.name.replace(/\.\d+$/,'').toLower
 // derives its lighting normal from the stored surface, without editing attributes.
 lampLens.flatShading=true;tailRed.flatShading=true;orange.flatShading=true;
 // Lens/reflector finish variants read the stored lamp zones; no mesh edits or transmission.
-function finishPartMaterial(material,entry,zone,sourceName){
+// The old face-wise red/clear assignment cuts the lower lens at z≈0.80.
+// Blend the existing lens tint/alpha across that boundary; no surface is moved.
+function useRearReverseTransition(material,node){
+ node.updateWorldMatrix(true,false);const m=node.matrixWorld.elements;
+ const rowY=new THREE.Vector4(m[1],m[5],m[9],m[13]),rowZ=new THREE.Vector4(m[2],m[6],m[10],m[14]);
+ material.onBeforeCompile=shader=>{
+  shader.uniforms.uRearLensY={value:rowY};shader.uniforms.uRearLensZ={value:rowZ};
+  shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\n varying vec2 vRearLensYZ; uniform vec4 uRearLensY; uniform vec4 uRearLensZ;');
+  shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\n vRearLensYZ=vec2(dot(vec4(position,1.0),uRearLensY),dot(vec4(position,1.0),uRearLensZ));');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\n varying vec2 vRearLensYZ;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <color_fragment>',`#include <color_fragment>
+   float reverseRed=smoothstep(0.805,0.850,abs(vRearLensYZ.y));
+   diffuseColor.rgb=mix(vec3(0.887923,0.913099,0.904661),diffuseColor.rgb,reverseRed);
+   diffuseColor.a=mix(0.35,diffuseColor.a,reverseRed);`);
+  shader.fragmentShader=shader.fragmentShader.replace('#include <emissivemap_fragment>','#include <emissivemap_fragment>\n totalEmissiveRadiance*=reverseRed;');
+ };
+ material.customProgramCacheKey=()=> 'lc200-rear-reverse-transition-v1';
+}
+function finishPartMaterial(material,entry,zone,sourceName,node){
  const rear=entry.id.startsWith('lamp_rear_');
  if(rear&&zone==='lamp_red'){
-  material.color.set('#9e0818');material.roughness=.12;material.metalness=0;
-  material.clearcoat=1;material.clearcoatRoughness=.06;material.envMapIntensity=1.10;
-  material.emissive.set('#430007');material.emissiveIntensity=.035;
-  material.transparent=true;material.opacity=.55;material.depthWrite=false;
+  material.color.set('#97000e');material.roughness=.12;material.metalness=0;
+  material.clearcoat=1;material.clearcoatRoughness=.10;material.envMapIntensity=.35;
+  material.emissive.set('#970006');material.emissiveIntensity=.32;
+  material.transparent=true;material.opacity=.94;material.depthWrite=false;
   material.side=THREE.FrontSide;material.forceSinglePass=true;material.flatShading=false;
  }
  if(rear&&zone==='lamp_clear'){
@@ -680,14 +760,15 @@ await Promise.all(partEntries.map(async entry=>{
  root.traverse(part=>{
   if(!part.isMesh)return;
   const convert=source=>{
-   const zone=zoneFor(source),key=zone+':'+source.name;
+   const zone=zoneFor(source),key=zone+':'+source.name+(entry.id.endsWith('_finish')&&zone==='lamp_red'?':'+part.name:'');
    if(!materialCache.has(key)){
     const template=zoneTemplates[zone]||source;
     const material=template.clone();material.vertexColors=false;
-    finishPartMaterial(material,entry,zone,source.name);
+    finishPartMaterial(material,entry,zone,source.name,part);
+    if(entry.id.endsWith('_finish')&&zone==='lamp_red'&&part.name.startsWith('clearglass_27'))useRearReverseTransition(material,part);
     if(!['glass','lamp_clear','mirror'].includes(zone)&&!(entry.id.startsWith('lamp_rear_')&&zone==='lamp_red'))useBakedShading(material);
-    if(entry.id.startsWith('wheel_')&&zone==='black'){material.color.set('#0d1115');material.roughness=.56;material.envMapIntensity=1;}
-    if(entry.id.startsWith('wheel_')&&zone==='chrome'){material.color.set('#e1e4e5');material.roughness=.24;material.metalness=1;material.clearcoat=.15;material.clearcoatRoughness=.23;material.envMapIntensity=.95;}
+    if(entry.rigidClass==='wheel'&&!entry.wheelSlot&&zone==='black'){material.color.set('#0d1115');material.roughness=.56;material.envMapIntensity=1;}
+    if(entry.rigidClass==='wheel'&&!entry.wheelSlot&&zone==='chrome'){material.color.set('#e1e4e5');material.roughness=.24;material.metalness=1;material.clearcoat=.15;material.clearcoatRoughness=.23;material.envMapIntensity=.95;}
     material.userData={...material.userData,zone,sourceMaterial:source.name,defaultColor:material.color.getHexString(),partId:entry.id};
     materialCache.set(key,material);
    }
@@ -700,6 +781,8 @@ await Promise.all(partEntries.map(async entry=>{
  root.name=entry.id;root.userData={...root.userData,partId:entry.id,slot:entry.slot,zones:entry.zones,rigidClass:entry.rigidClass};
  (entry.rigidClass==='wheel'?wheelGroup:bodyGroup).add(root);parts.set(entry.id,root);
 }));
+car.updateMatrixWorld(true);
+for(const entry of partEntries){if(entry.wheelSlot&&parts.has(entry.wheelSlot))parts.get(entry.wheelSlot).attach(parts.get(entry.id));}
 car.updateMatrixWorld(true);
 const baseAsset=await loader.loadAsync(new URL(manifest.displayBase.url,modelManifestURL).href);
 const plinth=baseAsset.scene;
@@ -746,10 +829,16 @@ function applyZonePaint(){
  document.querySelectorAll('[data-paint]').forEach(button=>button.classList.toggle('active',button.dataset.paint==='#'+paint.color.getHexString()));
  updateClayBackground();
 }
+function applyStudioPartVisibility(){
+ for(const [id,root]of parts){const entry=entryById.get(id),selectedPart=buildState.slots[entry.slot];let selected=selectedPart;
+  if(studioMode==='clay'&&/^lamp_rear_[LR]_finish$/.test(selected||''))selected=selected.replace('_finish','');
+  root.visible=selected===id&&!buildState.hidden.includes(id)&&!buildState.hidden.includes(selectedPart)&&!buildState.hidden.includes(entry.slot);
+ }
+}
 function applyBuild(){
  // A lift changes one group translation. All mesh buffers and wheel poses stay fixed.
  bodyGroup.position.y=buildState.lift_mm/1000;clayBakedUniforms.uClayBodyLift.value=bodyGroup.position.y;
- for(const [id,root] of parts){const entry=entryById.get(id);root.visible=buildState.slots[entry.slot]===id&&!buildState.hidden.includes(id)&&!buildState.hidden.includes(entry.slot);}
+ applyStudioPartVisibility();
  applyZonePaint();car.updateMatrixWorld(true);rebuildFramingPoints();refreshCameraSafety();
  const displayedBase=plinth.visible;plinth.visible=false;bakeContactShadow();plinth.visible=displayedBase;
  enforceCameraSafety();updateClipping();centreProjection();requestRender();
@@ -957,25 +1046,35 @@ const studioModes=['cream','slate','clay'],studioLabels={cream:'Cream',slate:'Sl
 const originalLighting={exposure:renderer.toneMappingExposure,environment:scene.environmentIntensity,
  keyColor:key.color.clone(),keyIntensity:key.intensity,keyPosition:key.position.clone(),
  fillColor:fill.color.clone(),groundColor:fill.groundColor.clone(),fillIntensity:fill.intensity};
+function updateStudioEnvironment(clay){
+ if(clay===environmentIsClay)return;
+ studioTarget.dispose();studioTarget=createStudioEnvironment(clay);environmentIsClay=clay;
+ scene.environment=studioTarget.texture;
+ const update=m=>{if(m?.envMap)m.envMap=scene.environment;};
+ [paint,chrome,softChrome,metalDark,windowGlass,blackPlastic,tireMat,rimMat,lampLens,tailRed,orange,interiorMat,baseTopMaterial,baseEdgeMaterial].forEach(update);
+ for(const root of parts.values())root.traverse(o=>{if(o.isMesh)for(const m of(Array.isArray(o.material)?o.material:[o.material])){
+  update(m);const original=originalMaterials.get(m)||m;update(original);update(creamMaterials.get(original));update(clayMaterials.get(original));
+ }});
+ for(const m of clayMaterials.values())update(m);
+}
 function setStudio(mode){
- studioMode=mode;const clay=mode==='clay';
+ studioMode=mode;const clay=mode==='clay';updateStudioEnvironment(clay);
  document.body.classList.toggle('cream',mode==='cream');document.body.classList.toggle('clay',clay);document.body.dataset.studio=mode;
  const next=studioModes[(studioModes.indexOf(mode)+1)%studioModes.length];
  document.getElementById('bgLabel').textContent='Studio: '+studioLabels[mode]+' ▸';
  bgToggle.title='Switch to '+studioLabels[next]+' studio';
  bgToggle.setAttribute('aria-label',studioLabels[mode]+' studio. '+bgToggle.title);bgToggle.removeAttribute('aria-pressed');
  if(clay){
-  // Common neutral illumination keeps the base finish consistent in every studio.
-  renderer.toneMappingExposure=originalLighting.exposure;scene.environmentIntensity=originalLighting.environment;
-  key.color.copy(originalLighting.keyColor);key.intensity=originalLighting.keyIntensity;key.position.copy(originalLighting.keyPosition);
-  fill.color.copy(originalLighting.fillColor);fill.groundColor.copy(originalLighting.groundColor);fill.intensity=originalLighting.fillIntensity;
+  renderer.toneMappingExposure=2.40;scene.environmentIntensity=.10;
+  key.color.set('#ffe0b0');key.intensity=5.80;key.position.set(-3.8,10,1.2);
+  fill.color.set('#fff0df');fill.groundColor.set('#c2a688');fill.intensity=.45;
  }else{
   renderer.toneMappingExposure=originalLighting.exposure;scene.environmentIntensity=originalLighting.environment;
   key.color.copy(originalLighting.keyColor);key.intensity=originalLighting.keyIntensity;key.position.copy(originalLighting.keyPosition);
   fill.color.copy(originalLighting.fillColor);fill.groundColor.copy(originalLighting.groundColor);fill.intensity=originalLighting.fillIntensity;
   document.querySelector('meta[name="theme-color"]').content=mode==='cream'?'#EBEBE9':'#4a6a82';
  }
- applyZonePaint();
+ applyStudioPartVisibility();applyZonePaint();
  plinth.traverse(part=>{if(part.isMesh){const current=originalMaterials.get(part.material)||part.material;
   part.material=studioMaterial(current,current===baseTopMaterial?'base_top':'base_edge');
  }});

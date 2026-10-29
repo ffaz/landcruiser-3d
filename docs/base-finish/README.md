@@ -1,4 +1,6 @@
-# LC200 clean base finish — reference review
+# LC200 clean base finish — round-one archive
+
+**Superseded by [round 2](round2/README.md).** Measurements and values below describe commit `8c62010`, not the current branch. The procedural emblem generator was removed in round 2.
 
 **Status: implementation preview; owner photo matching is pending.** The requested owner photos were not included in the accessible message/workspace. Emblem placement/size and lamp agreement are provisional. LAND CRUISER / grade lettering is not added without photo confirmation.
 

@@ -1,0 +1,212 @@
+{
+  "sourceSha256": "45cae7b0f6cd85db51f401a24fc19dd7e1ba9b17d1af624a9583ffe3f766b3e0",
+  "sourceTriangles": 979826,
+  "sourceFileName": "Land cruise 2016.glb",
+  "mapping": {
+    "axes": "source glTF [x,y,z] -> model [-z,y,x]",
+    "xSource": [
+      -2.54582715,
+      -1.60065,
+      1.24003,
+      2.39938188
+    ],
+    "xTarget": [
+      -2.585,
+      -1.635,
+      1.215,
+      2.585
+    ],
+    "height": ".3965 + (y-.4078672)*(1.930-.3965)/(1.91471124-.4078672)",
+    "rearHinge": 1.215,
+    "rearFactor": 0.875912408759124,
+    "normal": "inverse transpose of the same piecewise mapping; no recomputation"
+  },
+  "parts": [
+    {
+      "id": "emblem_rear",
+      "sourceMesh": 2,
+      "components": [
+        847
+      ],
+      "triangles": 19328,
+      "vertices": 11889,
+      "positionSha256": "20312bff85c5bd2c78ab920c9b23851592267ade9a8f2d1fdeede5e4fa81517b",
+      "normalSha256": "7013b701609514e24457660066defaabba52d7fd2601439c34937a78d86df556",
+      "sourceTriangleIdsSha256": "9999a4d16b32e6859d46a9517268399896f6c16ae42dc0ee66905942587e3ceb",
+      "mappedBounds": {
+        "min": [
+          2.2815377712249756,
+          1.1549562215805054,
+          -0.084751196205616
+        ],
+        "max": [
+          2.3203277587890625,
+          1.2670526504516602,
+          0.0847511738538742
+        ]
+      }
+    },
+    {
+      "id": "emblem_front",
+      "sourceMesh": 4,
+      "components": [
+        63
+      ],
+      "triangles": 5168,
+      "vertices": 3400,
+      "positionSha256": "e14177ed2006b51083e312cf450e0bfa2baf2faaa83d6bf47b05001201ca678d",
+      "normalSha256": "2e4b9225e308ba0240c0b27ac96bc9dbee330bac9fa15ea71adfd53f616eb2b4",
+      "sourceTriangleIdsSha256": "aa0ff4e08af35bc7de670ddac4315310b5e8b9876530bbc1a67587d05b58eea4",
+      "mappedBounds": {
+        "min": [
+          -2.580862045288086,
+          0.9203829169273376,
+          -0.08402010053396225
+        ],
+        "max": [
+          -2.5334136486053467,
+          1.031984806060791,
+          0.08402017503976822
+        ]
+      }
+    },
+    {
+      "id": "lettering_rear",
+      "sourceMesh": 4,
+      "components": [
+        50,
+        52,
+        58,
+        59,
+        60,
+        61,
+        62,
+        64,
+        66,
+        68,
+        69,
+        70,
+        71,
+        74,
+        77,
+        78,
+        79,
+        81,
+        84
+      ],
+      "triangles": 9300,
+      "vertices": 6678,
+      "positionSha256": "90437f5b71ef46983a2e939ff38b9a5b88959ac9d83234c695423e97e489414a",
+      "normalSha256": "def55b19b103ca63302015797a52f191fd69ea162c116cb880c269a101bbedd0",
+      "sourceTriangleIdsSha256": "d8c456760235bf90018764976714bf26f5e0193e4346e401decc6eab9a237dd0",
+      "mappedBounds": {
+        "min": [
+          2.2618441581726074,
+          0.9463567137718201,
+          -0.703314483165741
+        ],
+        "max": [
+          2.3375017642974854,
+          1.0884743928909302,
+          0.6938816905021667
+        ]
+      }
+    },
+    {
+      "id": "wheel_emblem_FL",
+      "sourceMesh": 4,
+      "components": [
+        123
+      ],
+      "triangles": 1208,
+      "vertices": 808,
+      "positionSha256": "a34e5aa0dec904a79846b0efbd520cf40f31c2ab6a38c8e3e6172d5f6db40845",
+      "normalSha256": "9c656967045948e85df4f1fac923f38ac8de6286f9410e949e54deb94824ec00",
+      "sourceTriangleIdsSha256": "61d2152459098d44a6bdbf3e563a8efc3830a0dcfaa6c38cff649304fddbea04",
+      "mappedBounds": {
+        "min": [
+          -1.6613423824310303,
+          0.37842124700546265,
+          0.9263046979904175
+        ],
+        "max": [
+          -1.6085244417190552,
+          0.4134312570095062,
+          0.9357947111129761
+        ]
+      }
+    },
+    {
+      "id": "wheel_emblem_FR",
+      "sourceMesh": 4,
+      "components": [
+        4
+      ],
+      "triangles": 1208,
+      "vertices": 808,
+      "positionSha256": "a03ddd74b12fede0261b2fbc28617e8737eb59bf3f71ef97a4693023f03a8b3a",
+      "normalSha256": "dcc9d3396bbbdf3c1af533402e8f96c0e1c6b76d3e0ef6a75a357ad82d515785",
+      "sourceTriangleIdsSha256": "da4fb822c65571217fb3ad48148d2b07602dfaf9cf058ca1eebbb30ca74e4ad7",
+      "mappedBounds": {
+        "min": [
+          -1.6631914377212524,
+          0.37842124700546265,
+          -0.9357898235321045
+        ],
+        "max": [
+          -1.610370397567749,
+          0.4134312570095062,
+          -0.9262998104095459
+        ]
+      }
+    },
+    {
+      "id": "wheel_emblem_RL",
+      "sourceMesh": 4,
+      "components": [
+        122
+      ],
+      "triangles": 1208,
+      "vertices": 808,
+      "positionSha256": "da5445e0b63999a8821e7c026a9fd8dc2a010630ef8ca0ddcdd37e814d8f2b6a",
+      "normalSha256": "5cc913cbb05fb4d501405e401888acade3b5abd1d2321ef73cc76985e3bd5e58",
+      "sourceTriangleIdsSha256": "ffc909c3390b3fdebb2e49cf8e14014e0438842a83afc8e48db53cf14fb7d232",
+      "mappedBounds": {
+        "min": [
+          1.1887054443359375,
+          0.37842124700546265,
+          0.9262996912002563
+        ],
+        "max": [
+          1.242314100265503,
+          0.4134312570095062,
+          0.9357897639274597
+        ]
+      }
+    },
+    {
+      "id": "wheel_emblem_RR",
+      "sourceMesh": 4,
+      "components": [
+        3
+      ],
+      "triangles": 1208,
+      "vertices": 808,
+      "positionSha256": "4a12993f5a863cebcfb8b6399b843ee8ccbad352e14ba11caf42cfe150a6f884",
+      "normalSha256": "67a1ea92f6c861d411828b8599843eee343ad7c0958eb54a982facbbc7d7b20f",
+      "sourceTriangleIdsSha256": "16e388ad1df76abd91eb87218c8959800f5da09a4a3c2fd62178bfb1adc5e490",
+      "mappedBounds": {
+        "min": [
+          1.1885350942611694,
+          0.37842124700546265,
+          -0.9357898235321045
+        ],
+        "max": [
+          1.242138385772705,
+          0.4134312570095062,
+          -0.9262998104095459
+        ]
+      }
+    }
+  ]
+}

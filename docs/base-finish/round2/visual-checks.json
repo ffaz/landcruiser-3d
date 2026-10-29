@@ -1,0 +1,325 @@
+{
+  "sourceSha256": "b6764ecefbf6361448b469cdcaad662707662c1ddffe107f682bad26851f10be",
+  "assetSha256": "f426197e6d20a3e786b33fe9fb478b775e060ef6077232917f7160b8c3c76bac",
+  "threeVersion": "0.166.1",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "errors": [],
+  "checks": {
+    "defaultCream": true,
+    "presetButtons": true,
+    "sideLevel": true,
+    "cameraMinHeight": true,
+    "frontRearElevation": true,
+    "legacyPresetDistances": true,
+    "heroFraming": true,
+    "presetObservations": [
+      {
+        "studio": "cream",
+        "view": "front",
+        "active": true,
+        "position": [
+          -8.523790815996549,
+          1.1735947703999137,
+          5.231563037697363e-16
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 8.546460333579578,
+        "zoom": 1,
+        "level": false,
+        "safePolar": true,
+        "minCameraY": 0.15,
+        "aboveMinimum": true,
+        "widthFraction": 0.5952480030476327
+      },
+      {
+        "studio": "cream",
+        "view": "side",
+        "active": true,
+        "position": [
+          0.02,
+          0.4000000000000008,
+          12.924356919649727
+        ],
+        "target": [
+          0.02,
+          0.4,
+          0
+        ],
+        "distance": 12.924356919649727,
+        "zoom": 1,
+        "level": true,
+        "safePolar": true,
+        "minCameraY": 0.15,
+        "aboveMinimum": true,
+        "widthFraction": 0.7826394539243858
+      },
+      {
+        "studio": "cream",
+        "view": "rear",
+        "active": true,
+        "position": [
+          9.029723136161056,
+          1.1852430784040264,
+          5.516864299951746e-16
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 9.012538234850643,
+        "zoom": 1,
+        "level": false,
+        "safePolar": true,
+        "minCameraY": 0.15,
+        "aboveMinimum": true,
+        "widthFraction": 0.5320193373153266
+      },
+      {
+        "studio": "cream",
+        "view": "quarter",
+        "active": true,
+        "position": [
+          -7.7297237531437,
+          2.8387209098530186,
+          8.219403980606952
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 11.451917407298048,
+        "zoom": 1,
+        "level": false,
+        "safePolar": true,
+        "minCameraY": 0.15,
+        "aboveMinimum": true,
+        "widthFraction": 0.7921517093836019
+      },
+      {
+        "studio": "cream",
+        "view": "top",
+        "active": true,
+        "position": [
+          0.020000000000000004,
+          13.324004507253717,
+          0.17310737293103276
+        ],
+        "target": [
+          0.020000000000000004,
+          0.9600000000000001,
+          0
+        ],
+        "distance": 12.365216278656563,
+        "zoom": 1,
+        "level": false,
+        "safePolar": true,
+        "minCameraY": 0.15,
+        "aboveMinimum": true,
+        "widthFraction": 0.8034356628868835
+      }
+    ],
+    "autoRotate": {
+      "enabled": true,
+      "moved": true
+    },
+    "orbitPose": {
+      "distance": 11.451917407298048,
+      "fittedDistance": 11.451917407298048,
+      "horizontal": 11.29676148488836,
+      "height": 1.8787209098530187
+    },
+    "paintColors": [
+      "#f4f4ef",
+      "#a9b0b8",
+      "#575c60",
+      "#15191d"
+    ],
+    "paintSwatches": true,
+    "customPaint": true,
+    "background": true,
+    "backgroundRestores": true,
+    "cleanViewHides": true,
+    "cleanViewRestores": true,
+    "reset": true,
+    "bakedCoverage": true,
+    "bakedData": {
+      "opaqueMeshes": 167,
+      "coveredOpaqueMeshes": 167,
+      "vertices": 698542,
+      "missing": [],
+      "strengths": {
+        "ao": 0.9,
+        "ridge": 0.7,
+        "valley": 0.9
+      }
+    },
+    "toyMaterials": true,
+    "materialObservations": {
+      "paint": {
+        "roughness": 0.42,
+        "clearcoat": 0.35,
+        "clearcoatRoughness": 0.3
+      },
+      "glass": "46545f",
+      "chromeRoughness": 0.52,
+      "glassTransmission": 0,
+      "glassOpacity": 0.8,
+      "rimColor": "858c92"
+    },
+    "baseToggle": true,
+    "baseFraming": true,
+    "baseObservations": [
+      {
+        "view": "front",
+        "widthFraction": 0.7966965223282361,
+        "bounds": {
+          "minX": -0.7966965223282361,
+          "maxX": 0.796696522328236,
+          "minY": -0.6903315465218438,
+          "maxY": 0.7334565465218437
+        },
+        "visible": true
+      },
+      {
+        "view": "side",
+        "widthFraction": 0.7972939007537668,
+        "bounds": {
+          "minX": -0.7972939007537668,
+          "maxX": 0.7972939007537668,
+          "minY": -0.36989571555114337,
+          "maxY": 0.41302071555114317
+        },
+        "visible": true
+      },
+      {
+        "view": "rear",
+        "widthFraction": 0.7614707779027504,
+        "bounds": {
+          "minX": -0.7614707779027504,
+          "maxX": 0.7614707779027504,
+          "minY": -0.6989514249725902,
+          "maxY": 0.7420764249725903
+        },
+        "visible": true
+      },
+      {
+        "view": "quarter",
+        "widthFraction": 0.797598196376477,
+        "bounds": {
+          "minX": -0.7975981963764769,
+          "maxX": 0.7975981963764771,
+          "minY": -0.5446985507338755,
+          "maxY": 0.5878235507338753
+        },
+        "visible": true
+      },
+      {
+        "view": "top",
+        "widthFraction": 0.7977611531518984,
+        "bounds": {
+          "minX": -0.7977611536201115,
+          "maxX": 0.7977611526836854,
+          "minY": -0.5766142248211961,
+          "maxY": 0.6197383940941382
+        },
+        "visible": true
+      }
+    ],
+    "baseRestores": true,
+    "clayBase": true,
+    "clayBaseObservation": {
+      "visible": true,
+      "bounds": {
+        "minX": -0.797598196376477,
+        "maxX": 0.7975981963764771,
+        "minY": -0.5446985507338755,
+        "maxY": 0.5878235507338754
+      },
+      "widthFraction": 0.7975981963764771,
+      "matte": true
+    },
+    "clayBaseRestores": true,
+    "buildState": true,
+    "buildStateObservations": {
+      "defaultLift": 0,
+      "rootScale": [
+        1,
+        1,
+        1
+      ],
+      "bodyMeshes": 161,
+      "wheelMeshes": 34,
+      "maxBodyDeltaError": 4.163336342344337e-17,
+      "maxWheelMovement": 0,
+      "positionArraysUnchanged": true,
+      "globalPaint": true,
+      "partPaint": true,
+      "partPaintIsolated": true,
+      "hidden": true,
+      "slotEmpty": true,
+      "slotRestored": true,
+      "restoredLift": 0
+    },
+    "hashLift": true,
+    "hashRestoresDefault": true,
+    "nativeAntialias": true,
+    "pixelRatioCap": true,
+    "longLens": true,
+    "renderer": {
+      "cameraType": "PerspectiveCamera",
+      "fov": 20,
+      "nativeAntialias": true,
+      "devicePixelRatio": 1,
+      "rendererPixelRatio": 1
+    },
+    "model": {
+      "dimensions": {
+        "length": 5,
+        "width": 2.297,
+        "height": 1.93,
+        "wheelbase": 2.85,
+        "trackF": 1.65,
+        "trackR": 1.645,
+        "tireWidth": 0.285,
+        "rimDiameter": 0.508,
+        "aspectRatio": 0.5
+      },
+      "bounds": {
+        "min": {
+          "x": -2.585035569710562,
+          "y": -2.0717637172318337e-05,
+          "z": -1.148316336250372
+        },
+        "max": {
+          "x": 2.4149891549617504,
+          "y": 1.9300327291584547,
+          "z": 1.1483169322968199
+        }
+      },
+      "triangles": 2,
+      "drawCalls": 1
+    },
+    "trueScaleBounds": true,
+    "overhangLock": true,
+    "trueScaleBoundsMetres": {
+      "length": 5.000024724672312,
+      "height": 1.930053446795627,
+      "widthIncludingMirrors": 2.296633268547192,
+      "minX": -2.585035569710562,
+      "maxX": 2.4149891549617504
+    },
+    "noJsFallback": true,
+    "assetsStable": true
+  },
+  "booleanChecksPassed": 31,
+  "passed": true
+}

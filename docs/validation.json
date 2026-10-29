@@ -1,24 +1,27 @@
 {
-  "status": "pending_owner_reference_photos",
+  "status": "round2_automated_passed_owner_reference_pending",
+  "sourceSha256": "b6764ecefbf6361448b469cdcaad662707662c1ddffe107f682bad26851f10be",
   "automatedPassed": true,
   "ownerReferenceVerified": false,
-  "sourceSha256": "c0ece8bdc3706c15b93ab71e6f5a326610ca59038d37d0498a1b1068caeb5c38",
   "consoleErrors": 0,
   "overhangLock": true,
   "bounds": {
-    "length": 4.99998990836446,
+    "length": 5.000024724672312,
     "height": 1.930053446795627,
     "widthIncludingMirrors": 2.296633268547192,
-    "minX": -2.58500075340271,
+    "minX": -2.585035569710562,
     "maxX": 2.4149891549617504
   },
-  "originalGeometryGLBsByteIdentical": true,
   "originalGLBCount": 35,
-  "evidence": "docs/base-finish/README.md",
-  "pixels": "docs/base-finish/pixels.json",
-  "changedValues": "docs/base-finish/changed-values.json",
+  "originalGeometryGLBsByteIdentical": true,
+  "clayCoreDifferingPixels": 0,
+  "evidence": "docs/base-finish/round2/README.md",
+  "pixels": "docs/base-finish/round2/pixels.json",
+  "changedValues": "docs/base-finish/round2/changed-values.json",
   "limitations": [
-    "Owner photos were unavailable; exact badge placement, optional grade/word badges and lamp-pattern match are pending.",
-    "WebKit is emulated software GL; physical iPad performance is unmeasured."
+    "Owner photographs were not attached/accessibly received; side-by-side owner-photo comparisons and exact lamp agreement cannot be verified.",
+    "Recovered source contains VXR / V8 grade lettering, while owner reports GXR. Source lettering is preserved exactly, not relabelled.",
+    "Source emblems/letters are open-backed relief shells. No literal closed back face exists to measure; mounting audit reports sampled exposed-shell clearances instead.",
+    "The latest bonnet total-spread cap takes precedence over round-one p95-minus-median target 4\u20136 L*: main total spread is below 2, so both targets cannot hold for the same pixel set."
   ]
 }

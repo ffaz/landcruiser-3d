@@ -1,0 +1,314 @@
+[
+  {
+    "status": "M",
+    "file": "README.md"
+  },
+  {
+    "status": "M",
+    "file": "build.json"
+  },
+  {
+    "status": "M",
+    "file": "docs/base-finish/README.md"
+  },
+  {
+    "status": "M",
+    "file": "docs/validation.json"
+  },
+  {
+    "status": "M",
+    "file": "index.html"
+  },
+  {
+    "status": "M",
+    "file": "model/manifest.json"
+  },
+  {
+    "status": "M",
+    "file": "model/parts/emblem_front.glb"
+  },
+  {
+    "status": "M",
+    "file": "model/parts/emblem_rear.glb"
+  },
+  {
+    "status": "D",
+    "file": "tools/base-finish/create-emblems.mjs"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/README.md"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/after/bonnet-crop.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/after/clay-orange-without-badges.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/after/clay-quarter.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/after/clay-without-badges.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/after/cream-front.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/after/cream-quarter.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/after/cream-rear.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/after/cream-side.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/after/emblem-front.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/after/emblem-rear.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/after/slate-quarter.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/after/tail-lamp.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/before/bonnet-crop.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/before/clay-quarter.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/before/cream-front.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/before/cream-quarter.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/before/cream-rear.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/before/cream-side.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/before/emblem-front.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/before/emblem-rear.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/before/slate-quarter.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/before/tail-lamp.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/changed-values.json"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/core-regression.json"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/files.json"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/main/bonnet-crop.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/main/clay-orange-without-badges.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/main/clay-quarter.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/main/cream-front.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/main/cream-quarter.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/main/cream-rear.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/main/cream-side.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/main/slate-quarter.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/masks/after/clay-quarter.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/masks/after/cream-front.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/masks/after/cream-quarter.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/masks/after/cream-rear.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/masks/after/cream-side.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/masks/after/slate-quarter.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/masks/before/clay-quarter.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/masks/before/cream-front.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/masks/before/cream-quarter.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/masks/before/cream-rear.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/masks/before/cream-side.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/masks/before/slate-quarter.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/masks/main/clay-quarter.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/masks/main/cream-front.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/masks/main/cream-quarter.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/masks/main/cream-rear.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/masks/main/cream-side.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/masks/main/slate-quarter.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/masks/quarter-lamp-zone.png"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/mounting-report.json"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/original-assets.json"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/pixels.json"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/source-attribute-audit.json"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/source-recovery.json"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/visual-checks.json"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/webkit-before.json"
+  },
+  {
+    "status": "??",
+    "file": "docs/base-finish/round2/webkit.json"
+  },
+  {
+    "status": "??",
+    "file": "model/parts/lettering_rear.glb"
+  },
+  {
+    "status": "??",
+    "file": "model/parts/wheel_emblem_FL.glb"
+  },
+  {
+    "status": "??",
+    "file": "model/parts/wheel_emblem_FR.glb"
+  },
+  {
+    "status": "??",
+    "file": "model/parts/wheel_emblem_RL.glb"
+  },
+  {
+    "status": "??",
+    "file": "model/parts/wheel_emblem_RR.glb"
+  },
+  {
+    "status": "??",
+    "file": "tools/base-finish/mount-source-badges.mjs"
+  },
+  {
+    "status": "??",
+    "file": "tools/base-finish/recover-source-badges.py"
+  },
+  {
+    "status": "??",
+    "file": "tools/base-finish/verify-source-badges.mjs"
+  }
+]

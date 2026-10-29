@@ -188,7 +188,7 @@
       "pivot": [
         -1.8728359352735762,
         1.189375429359158,
-        5.125999450683594e-06
+        0.000005125999450683594
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -221,7 +221,7 @@
       "pivot": [
         -2.270462211108562,
         0.6223291344332419,
-        5.125999450683594e-06
+        0.000005125999450683594
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -275,7 +275,7 @@
       "pivot": [
         1.9594771415627399,
         0.6756618916344885,
-        2.384185791015625e-07
+        2.384185791015625e-7
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2352,7 +2352,7 @@
       "pivot": [
         0.8241151872408866,
         1.872311859156035,
-        -5.960464477539063e-08
+        -5.960464477539063e-8
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2522,7 +2522,7 @@
       "pivot": [
         2.0817929070861054,
         1.8194443199056058,
-        5.125999450683594e-06
+        0.000005125999450683594
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2569,7 +2569,7 @@
       "pivot": [
         2.1282257953603483,
         1.2537897721212183,
-        5.125999450683594e-06
+        0.000005125999450683594
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2703,7 +2703,7 @@
       "pivot": [
         -0.04204621113618656,
         0.6241265276863783,
-        -6.854534149169922e-07
+        -6.854534149169922e-7
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2802,7 +2802,7 @@
       "pivot": [
         -2.567352621487733,
         0.8737040222628849,
-        2.980232238769531e-07
+        2.980232238769531e-7
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2835,7 +2835,7 @@
       "pivot": [
         -2.340276069084413,
         0.8267573573221186,
-        -6.854534149169922e-07
+        -6.854534149169922e-7
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2868,7 +2868,7 @@
       "pivot": [
         -2.3347774264788237,
         1.0950209210373338,
-        -7.868038399067023e-05
+        -0.00007868038399067023
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2981,7 +2981,7 @@
       "bounds": {
         "min": [
           -2.031500816345215,
-          -1.9176829728240197e-05,
+          -0.000019176829728240197,
           0.68250633036064
         ],
         "max": [
@@ -3080,7 +3080,7 @@
       "bounds": {
         "min": [
           -2.031500816345215,
-          -2.0717637172318337e-05,
+          -0.000020717637172318337,
           -0.9671811856190511
         ],
         "max": [
@@ -3182,7 +3182,7 @@
       "bounds": {
         "min": [
           0.8185162165870956,
-          -1.9176829728240197e-05,
+          -0.000019176829728240197,
           0.6787821572395277
         ],
         "max": [
@@ -3281,7 +3281,7 @@
       "bounds": {
         "min": [
           0.8185238639574288,
-          -2.0717637172318337e-05,
+          -0.000020717637172318337,
           -0.9650131900948201
         ],
         "max": [
@@ -3371,33 +3371,52 @@
       "url": "parts/emblem_front.glb",
       "rootNode": "emblem_front",
       "pivot": [
-        -2.5565,
-        0.94,
-        0
+        -2.561311371369192,
+        0.9761838614940643,
+        3.725290298461914e-8
       ],
-      "pivotBasis": "badge centre on measured mounting face",
+      "pivotBasis": "source badge centre; rigid surface mounting offset",
       "zones": [
         "chrome"
       ],
-      "triangles": 4608,
+      "triangles": 5168,
       "bounds": {
         "min": [
-          -2.56565,
-          0.8889999999999999,
-          -0.0775
+          -2.585035569710562,
+          0.9203829169273376,
+          -0.08402010053396225
         ],
         "max": [
-          -2.545302880592229,
-          0.991,
-          0.0775
+          -2.5375871730278226,
+          1.031984806060791,
+          0.08402017503976822
         ]
       },
       "rigidClass": "body",
-      "authored": {
-        "reliefMetres": 0.0025,
-        "widthMetres": 0.155,
-        "heightMetres": 0.102,
-        "geometry": "three bevelled elliptical bands; new geometry only"
+      "sourceRecovery": {
+        "sourceSha256": "45cae7b0f6cd85db51f401a24fc19dd7e1ba9b17d1af624a9583ffe3f766b3e0",
+        "mesh": 4,
+        "components": [
+          63
+        ],
+        "componentMounts": [
+          {
+            "node": "source_4_63",
+            "translationMetres": [
+              -0.004173524422475806,
+              0,
+              0
+            ],
+            "projectedVertices": 2024,
+            "unprojectedVertices": 1376,
+            "minSurfaceGapMm": 0.009999999999999593,
+            "p05SurfaceGapMm": 4.842680957123525,
+            "medianSurfaceGapMm": 22.07818243882269,
+            "maxSurfaceGapMm": 57.04548021352134,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          }
+        ]
       }
     },
     {
@@ -3406,33 +3425,52 @@
       "url": "parts/emblem_rear.glb",
       "rootNode": "emblem_rear",
       "pivot": [
-        2.32096,
-        1.177,
-        0
+        2.3273818894459932,
+        1.2110044360160828,
+        -1.1175870895385742e-8
       ],
-      "pivotBasis": "badge centre on measured mounting face",
+      "pivotBasis": "source badge centre; rigid surface mounting offset",
       "zones": [
         "chrome"
       ],
-      "triangles": 4608,
+      "triangles": 19328,
       "bounds": {
         "min": [
-          2.320193431457505,
-          1.1300000000000001,
-          -0.0715
+          2.3079868956639498,
+          1.1549562215805054,
+          -0.084751196205616
         ],
         "max": [
-          2.324526568542495,
-          1.224,
-          0.0715
+          2.3467768832280367,
+          1.2670526504516602,
+          0.0847511738538742
         ]
       },
       "rigidClass": "body",
-      "authored": {
-        "reliefMetres": 0.0025,
-        "widthMetres": 0.143,
-        "heightMetres": 0.094,
-        "geometry": "three bevelled elliptical bands; new geometry only"
+      "sourceRecovery": {
+        "sourceSha256": "45cae7b0f6cd85db51f401a24fc19dd7e1ba9b17d1af624a9583ffe3f766b3e0",
+        "mesh": 2,
+        "components": [
+          847
+        ],
+        "componentMounts": [
+          {
+            "node": "source_2_847",
+            "translationMetres": [
+              0.026449124438974115,
+              0,
+              0
+            ],
+            "projectedVertices": 11889,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.009999999999999593,
+            "p05SurfaceGapMm": 3.8641223564632075,
+            "medianSurfaceGapMm": 21.690359455003016,
+            "maxSurfaceGapMm": 28.539055154546954,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          }
+        ]
       }
     },
     {
@@ -3506,6 +3544,586 @@
       "thumbnail": "../docs/foundation/parts/lamp_rear_R.png",
       "rootNode": "lamp_rear_R",
       "derivedFrom": "lamp_rear_R"
+    },
+    {
+      "id": "lettering_rear",
+      "slot": "lettering_rear",
+      "url": "parts/lettering_rear.glb",
+      "rootNode": "lettering_rear",
+      "pivot": [
+        2.2914939464429107,
+        1.0174155533313751,
+        -0.004716396331787109
+      ],
+      "pivotBasis": "source badge centre; rigid surface mounting offset",
+      "zones": [
+        "chrome"
+      ],
+      "triangles": 9300,
+      "bounds": {
+        "min": [
+          2.2714568574485705,
+          0.9463567137718201,
+          -0.703314483165741
+        ],
+        "max": [
+          2.3115310354372514,
+          1.0884743928909302,
+          0.6938816905021667
+        ]
+      },
+      "rigidClass": "body",
+      "sourceRecovery": {
+        "sourceSha256": "45cae7b0f6cd85db51f401a24fc19dd7e1ba9b17d1af624a9583ffe3f766b3e0",
+        "mesh": 4,
+        "components": [
+          50,
+          52,
+          58,
+          59,
+          60,
+          61,
+          62,
+          64,
+          66,
+          68,
+          69,
+          70,
+          71,
+          74,
+          77,
+          78,
+          79,
+          81,
+          84
+        ],
+        "componentMounts": [
+          {
+            "node": "source_4_50",
+            "translationMetres": [
+              0.0187343836326898,
+              0,
+              0
+            ],
+            "projectedVertices": 493,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.009999999999999593,
+            "p05SurfaceGapMm": 0.28372126857638746,
+            "medianSurfaceGapMm": 18.749907202295567,
+            "maxSurfaceGapMm": 22.321646814096695,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          },
+          {
+            "node": "source_4_52",
+            "translationMetres": [
+              0.018805472387934886,
+              0,
+              0
+            ],
+            "projectedVertices": 214,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.009999999999999593,
+            "p05SurfaceGapMm": 0.11651821944218613,
+            "medianSurfaceGapMm": 18.617308626438888,
+            "maxSurfaceGapMm": 22.130000687742445,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          },
+          {
+            "node": "source_4_58",
+            "translationMetres": [
+              -0.0445598165931776,
+              0,
+              0
+            ],
+            "projectedVertices": 460,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.010000000000003062,
+            "p05SurfaceGapMm": 0.7213394599538334,
+            "medianSurfaceGapMm": 7.7835963355185545,
+            "maxSurfaceGapMm": 11.988257674757135,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          },
+          {
+            "node": "source_4_59",
+            "translationMetres": [
+              -0.04697262157100474,
+              0,
+              0
+            ],
+            "projectedVertices": 346,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.010000000000003062,
+            "p05SurfaceGapMm": 0.23772734607956786,
+            "medianSurfaceGapMm": 7.577813965390527,
+            "maxSurfaceGapMm": 10.686868166580092,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          },
+          {
+            "node": "source_4_60",
+            "translationMetres": [
+              -0.048142614629340726,
+              0,
+              0
+            ],
+            "projectedVertices": 330,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.010000000000003062,
+            "p05SurfaceGapMm": 0.2826800692145512,
+            "medianSurfaceGapMm": 7.586981750017978,
+            "maxSurfaceGapMm": 11.279068293866983,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          },
+          {
+            "node": "source_4_61",
+            "translationMetres": [
+              -0.04850386263574886,
+              0,
+              0
+            ],
+            "projectedVertices": 201,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.010000000000003062,
+            "p05SurfaceGapMm": 0.2981573941948576,
+            "medianSurfaceGapMm": 7.551862977844985,
+            "maxSurfaceGapMm": 10.673704916764608,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          },
+          {
+            "node": "source_4_62",
+            "translationMetres": [
+              -0.04838854670507559,
+              0,
+              0
+            ],
+            "projectedVertices": 293,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.010000000000003062,
+            "p05SurfaceGapMm": 0.4413349088622717,
+            "medianSurfaceGapMm": 7.656508301018432,
+            "maxSurfaceGapMm": 11.120915374092926,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          },
+          {
+            "node": "source_4_64",
+            "translationMetres": [
+              -0.04850870317091666,
+              0,
+              0
+            ],
+            "projectedVertices": 485,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.010000000000003062,
+            "p05SurfaceGapMm": 0.19551706020631138,
+            "medianSurfaceGapMm": 7.404671941338696,
+            "maxSurfaceGapMm": 10.746724000868673,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          },
+          {
+            "node": "source_4_66",
+            "translationMetres": [
+              -0.048911962220390466,
+              0,
+              0
+            ],
+            "projectedVertices": 315,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.010000000000003062,
+            "p05SurfaceGapMm": 0.14420055064639364,
+            "medianSurfaceGapMm": 7.434571731747601,
+            "maxSurfaceGapMm": 10.906750014646631,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          },
+          {
+            "node": "source_4_68",
+            "translationMetres": [
+              -0.04798900865121742,
+              0,
+              0
+            ],
+            "projectedVertices": 419,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.010000000000003062,
+            "p05SurfaceGapMm": 0.3650581270848094,
+            "medianSurfaceGapMm": 7.712119182335213,
+            "maxSurfaceGapMm": 11.110478488024205,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          },
+          {
+            "node": "source_4_69",
+            "translationMetres": [
+              -0.047126208326582715,
+              0,
+              0
+            ],
+            "projectedVertices": 336,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.010000000000003062,
+            "p05SurfaceGapMm": 0.31030889639221265,
+            "medianSurfaceGapMm": 7.560702012582903,
+            "maxSurfaceGapMm": 10.751014434590749,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          },
+          {
+            "node": "source_4_70",
+            "translationMetres": [
+              -0.046473516688729406,
+              0,
+              0
+            ],
+            "projectedVertices": 465,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.010000000000003062,
+            "p05SurfaceGapMm": 0.9676077823538785,
+            "medianSurfaceGapMm": 7.502337660303331,
+            "maxSurfaceGapMm": 11.035195888957565,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          },
+          {
+            "node": "source_4_71",
+            "translationMetres": [
+              -0.04543965890000085,
+              0,
+              0
+            ],
+            "projectedVertices": 250,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.010000000000003062,
+            "p05SurfaceGapMm": 0.4934851861730302,
+            "medianSurfaceGapMm": 7.8790767013309715,
+            "maxSurfaceGapMm": 11.428921074332736,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          },
+          {
+            "node": "source_4_74",
+            "translationMetres": [
+              0.0023625010372571487,
+              0,
+              0
+            ],
+            "projectedVertices": 708,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.010000000000000026,
+            "p05SurfaceGapMm": 0.6428182925594561,
+            "medianSurfaceGapMm": 5.550018778718014,
+            "maxSurfaceGapMm": 6.849284058167472,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          },
+          {
+            "node": "source_4_77",
+            "translationMetres": [
+              0.002186990922348576,
+              0,
+              0
+            ],
+            "projectedVertices": 49,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.010000000000000026,
+            "p05SurfaceGapMm": 0.18462354655028992,
+            "medianSurfaceGapMm": 3.269973816553963,
+            "maxSurfaceGapMm": 3.5346141338363126,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          },
+          {
+            "node": "source_4_78",
+            "translationMetres": [
+              0.002137897755229924,
+              0,
+              0
+            ],
+            "projectedVertices": 193,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.010000000000000026,
+            "p05SurfaceGapMm": 0.1401055783229366,
+            "medianSurfaceGapMm": 5.164431204189791,
+            "maxSurfaceGapMm": 5.477469727229002,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          },
+          {
+            "node": "source_4_79",
+            "translationMetres": [
+              0.0026713085058126984,
+              0,
+              0
+            ],
+            "projectedVertices": 649,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.010000000000000026,
+            "p05SurfaceGapMm": 0.17897511783842138,
+            "medianSurfaceGapMm": 5.2316275259722165,
+            "maxSurfaceGapMm": 5.848027146417346,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          },
+          {
+            "node": "source_4_81",
+            "translationMetres": [
+              0.0027107939494301248,
+              0,
+              0
+            ],
+            "projectedVertices": 45,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.010000000000000026,
+            "p05SurfaceGapMm": 0.04849788768928166,
+            "medianSurfaceGapMm": 3.209017486252398,
+            "maxSurfaceGapMm": 3.2746868363142014,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          },
+          {
+            "node": "source_4_84",
+            "translationMetres": [
+              0.0027389320474830348,
+              0,
+              0
+            ],
+            "projectedVertices": 427,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.010000000000000026,
+            "p05SurfaceGapMm": 0.09773361597969045,
+            "medianSurfaceGapMm": 5.2082474412426425,
+            "maxSurfaceGapMm": 5.369435823859115,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          }
+        ]
+      }
+    },
+    {
+      "id": "wheel_emblem_FL",
+      "slot": "wheel_emblem_FL",
+      "url": "parts/wheel_emblem_FL.glb",
+      "rootNode": "wheel_emblem_FL",
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "pivotBasis": "same hub pivot as wheel_FL",
+      "zones": [
+        "chrome"
+      ],
+      "triangles": 1208,
+      "bounds": {
+        "min": [
+          -1.6613423824310303,
+          0.37842124700546265,
+          0.9570100171661381
+        ],
+        "max": [
+          -1.6085244417190552,
+          0.4134312570095062,
+          0.9665000302886967
+        ]
+      },
+      "rigidClass": "wheel",
+      "wheelSlot": "wheel_FL",
+      "sourceRecovery": {
+        "sourceSha256": "45cae7b0f6cd85db51f401a24fc19dd7e1ba9b17d1af624a9583ffe3f766b3e0",
+        "mesh": 4,
+        "components": [
+          123
+        ],
+        "componentMounts": [
+          {
+            "node": "source_4_123",
+            "translationMetres": [
+              0,
+              0,
+              0.03070531917572066
+            ],
+            "projectedVertices": 808,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.009999999999999593,
+            "p05SurfaceGapMm": 0.3391368484497066,
+            "medianSurfaceGapMm": 6.92241025924727,
+            "maxSurfaceGapMm": 9.500013122559038,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          }
+        ]
+      }
+    },
+    {
+      "id": "wheel_emblem_FR",
+      "slot": "wheel_emblem_FR",
+      "url": "parts/wheel_emblem_FR.glb",
+      "rootNode": "wheel_emblem_FR",
+      "pivot": [
+        -1.635,
+        0.3965,
+        -0.825
+      ],
+      "pivotBasis": "same hub pivot as wheel_FR",
+      "zones": [
+        "chrome"
+      ],
+      "triangles": 1208,
+      "bounds": {
+        "min": [
+          -1.6631914377212524,
+          0.37842124700546265,
+          -0.9665000302886958
+        ],
+        "max": [
+          -1.610370397567749,
+          0.4134312570095062,
+          -0.9570100171661372
+        ]
+      },
+      "rigidClass": "wheel",
+      "wheelSlot": "wheel_FR",
+      "sourceRecovery": {
+        "sourceSha256": "45cae7b0f6cd85db51f401a24fc19dd7e1ba9b17d1af624a9583ffe3f766b3e0",
+        "mesh": 4,
+        "components": [
+          4
+        ],
+        "componentMounts": [
+          {
+            "node": "source_4_4",
+            "translationMetres": [
+              0,
+              0,
+              -0.030710206756591352
+            ],
+            "projectedVertices": 808,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.009999999999999593,
+            "p05SurfaceGapMm": 0.3391368484492625,
+            "medianSurfaceGapMm": 6.922350654602051,
+            "maxSurfaceGapMm": 9.500013122558594,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          }
+        ]
+      }
+    },
+    {
+      "id": "wheel_emblem_RL",
+      "slot": "wheel_emblem_RL",
+      "url": "parts/wheel_emblem_RL.glb",
+      "rootNode": "wheel_emblem_RL",
+      "pivot": [
+        1.215,
+        0.3965,
+        0.8225
+      ],
+      "pivotBasis": "same hub pivot as wheel_RL",
+      "zones": [
+        "chrome"
+      ],
+      "triangles": 1208,
+      "bounds": {
+        "min": [
+          1.1887054443359375,
+          0.37842124700546265,
+          0.9545100195503234
+        ],
+        "max": [
+          1.242314100265503,
+          0.4134312570095062,
+          0.9640000922775268
+        ]
+      },
+      "rigidClass": "wheel",
+      "wheelSlot": "wheel_RL",
+      "sourceRecovery": {
+        "sourceSha256": "45cae7b0f6cd85db51f401a24fc19dd7e1ba9b17d1af624a9583ffe3f766b3e0",
+        "mesh": 4,
+        "components": [
+          122
+        ],
+        "componentMounts": [
+          {
+            "node": "source_4_122",
+            "translationMetres": [
+              0,
+              0,
+              0.028210328350067138
+            ],
+            "projectedVertices": 808,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.009999999999999593,
+            "p05SurfaceGapMm": 0.339196453094482,
+            "medianSurfaceGapMm": 6.922410259246826,
+            "maxSurfaceGapMm": 9.500072727203369,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          }
+        ]
+      }
+    },
+    {
+      "id": "wheel_emblem_RR",
+      "slot": "wheel_emblem_RR",
+      "url": "parts/wheel_emblem_RR.glb",
+      "rootNode": "wheel_emblem_RR",
+      "pivot": [
+        1.215,
+        0.3965,
+        -0.8225
+      ],
+      "pivotBasis": "same hub pivot as wheel_RR",
+      "zones": [
+        "chrome"
+      ],
+      "triangles": 1208,
+      "bounds": {
+        "min": [
+          1.1885350942611694,
+          0.37842124700546265,
+          -0.964000032672882
+        ],
+        "max": [
+          1.242138385772705,
+          0.4134312570095062,
+          -0.9545100195503234
+        ]
+      },
+      "rigidClass": "wheel",
+      "wheelSlot": "wheel_RR",
+      "sourceRecovery": {
+        "sourceSha256": "45cae7b0f6cd85db51f401a24fc19dd7e1ba9b17d1af624a9583ffe3f766b3e0",
+        "mesh": 4,
+        "components": [
+          3
+        ],
+        "componentMounts": [
+          {
+            "node": "source_4_3",
+            "translationMetres": [
+              0,
+              0,
+              -0.028210209140777587
+            ],
+            "projectedVertices": 808,
+            "unprojectedVertices": 0,
+            "minSurfaceGapMm": 0.009999999999999593,
+            "p05SurfaceGapMm": 0.3391368484497066,
+            "medianSurfaceGapMm": 6.922350654602051,
+            "maxSurfaceGapMm": 9.500013122559038,
+            "backFaceGapMm": null,
+            "backFaceNote": "Source is an open-backed relief shell; no closed back face exists. Minimum exposed-shell to panel clearance is measured. Higher percentiles include the intentionally raised relief and grille openings."
+          }
+        ]
+      }
     }
   ],
   "displayBase": {
@@ -3526,7 +4144,7 @@
       "pivot": [
         -1.8728359352735762,
         1.189375429359158,
-        5.125999450683594e-06
+        0.000005125999450683594
       ],
       "rigidClass": "body"
     },
@@ -3535,7 +4153,7 @@
       "pivot": [
         -2.270462211108562,
         0.6223291344332419,
-        5.125999450683594e-06
+        0.000005125999450683594
       ],
       "rigidClass": "body"
     },
@@ -3544,7 +4162,7 @@
       "pivot": [
         1.9594771415627399,
         0.6756618916344885,
-        2.384185791015625e-07
+        2.384185791015625e-7
       ],
       "rigidClass": "body"
     },
@@ -3652,7 +4270,7 @@
       "pivot": [
         0.8241151872408866,
         1.872311859156035,
-        -5.960464477539063e-08
+        -5.960464477539063e-8
       ],
       "rigidClass": "body"
     },
@@ -3679,7 +4297,7 @@
       "pivot": [
         2.0817929070861054,
         1.8194443199056058,
-        5.125999450683594e-06
+        0.000005125999450683594
       ],
       "rigidClass": "body"
     },
@@ -3688,7 +4306,7 @@
       "pivot": [
         2.1282257953603483,
         1.2537897721212183,
-        5.125999450683594e-06
+        0.000005125999450683594
       ],
       "rigidClass": "body"
     },
@@ -3715,7 +4333,7 @@
       "pivot": [
         -0.04204621113618656,
         0.6241265276863783,
-        -6.854534149169922e-07
+        -6.854534149169922e-7
       ],
       "rigidClass": "body"
     },
@@ -3742,7 +4360,7 @@
       "pivot": [
         -2.567352621487733,
         0.8737040222628849,
-        2.980232238769531e-07
+        2.980232238769531e-7
       ],
       "rigidClass": "body"
     },
@@ -3751,7 +4369,7 @@
       "pivot": [
         -2.340276069084413,
         0.8267573573221186,
-        -6.854534149169922e-07
+        -6.854534149169922e-7
       ],
       "rigidClass": "body"
     },
@@ -3760,7 +4378,7 @@
       "pivot": [
         -2.3347774264788237,
         1.0950209210373338,
-        -7.868038399067023e-05
+        -0.00007868038399067023
       ],
       "rigidClass": "body"
     },
@@ -3831,20 +4449,69 @@
     "emblem_front": {
       "default": "emblem_front",
       "pivot": [
-        -2.5565,
-        0.94,
-        0
+        -2.561311371369192,
+        0.9761838614940643,
+        3.725290298461914e-8
       ],
       "rigidClass": "body"
     },
     "emblem_rear": {
       "default": "emblem_rear",
       "pivot": [
-        2.32096,
-        1.177,
-        0
+        2.3273818894459932,
+        1.2110044360160828,
+        -1.1175870895385742e-8
       ],
       "rigidClass": "body"
+    },
+    "lettering_rear": {
+      "default": "lettering_rear",
+      "pivot": [
+        2.2914939464429107,
+        1.0174155533313751,
+        -0.004716396331787109
+      ],
+      "rigidClass": "body"
+    },
+    "wheel_emblem_FL": {
+      "default": "wheel_emblem_FL",
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel",
+      "wheelSlot": "wheel_FL"
+    },
+    "wheel_emblem_FR": {
+      "default": "wheel_emblem_FR",
+      "pivot": [
+        -1.635,
+        0.3965,
+        -0.825
+      ],
+      "rigidClass": "wheel",
+      "wheelSlot": "wheel_FR"
+    },
+    "wheel_emblem_RL": {
+      "default": "wheel_emblem_RL",
+      "pivot": [
+        1.215,
+        0.3965,
+        0.8225
+      ],
+      "rigidClass": "wheel",
+      "wheelSlot": "wheel_RL"
+    },
+    "wheel_emblem_RR": {
+      "default": "wheel_emblem_RR",
+      "pivot": [
+        1.215,
+        0.3965,
+        -0.8225
+      ],
+      "rigidClass": "wheel",
+      "wheelSlot": "wheel_RR"
     }
   },
   "missingTargets": {
