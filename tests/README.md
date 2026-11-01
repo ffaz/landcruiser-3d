@@ -133,3 +133,7 @@ Cream detail evidence is in [`docs/cream-detail`](../docs/cream-detail/README.md
 The latest base-finish work changes all studios; older Cream/Clay pixel-identity harness expectations describe their historical releases. The current required suite is `node tests/visual.mjs`, with the new satin material values and the unchanged strict `overhangLock`/bounds checks. The optional static no-JS PNG uses a fresh Chromium process so its compositor does not share the software WebGL process.
 
 `docs/base-finish` records full-size captures, semantic test masks, CIELAB samples, original asset hashes, and every changed value with source lines. `python tools/base-finish/measure_pixels.py docs/base-finish` reproduces 7×7 pixel values. Owner-photo matching remains explicitly pending until those files arrive.
+
+## Workshop
+
+Panel, tyre/lift logic and fit check: `node tools/workshop/smoke.mjs <deps> <chrome> [shots]` (31 checks at desktop and phone sizes). Part checker self-test: `node tools/workshop/validate_selftest.mjs <deps> <tmp>`. Details in [docs/workshop/README.md](../docs/workshop/README.md).

@@ -1,0 +1,68 @@
+{
+ "version": 1,
+ "units": "metres; x front negative, y up, z left positive (same frame as model/manifest.json)",
+ "stockTyre_mm": 793,
+ "clearance_mm": {"ok": 25, "tight": 10},
+ "clearanceNote": "Static check at ride height, straight ahead. Real fitment also needs suspension travel and steering lock; tight results mean liner trimming is likely.",
+ "mounts": {
+  "front_bar":   {"pos": [-2.585, 0.62, 0], "parentSlot": "bumper_front", "replacesSlots": [], "envelope": {"min": [-2.90, 0.20, -1.02], "max": [-1.90, 1.20, 1.02]}, "basis": "bumper_front front face (x min), vertical centre, car centreline"},
+  "winch":       {"pos": [-2.60, 0.55, 0], "parentSlot": "bumper_front", "envelope": {"min": [-2.85, 0.35, -0.45], "max": [-2.40, 0.80, 0.45]}, "basis": "inside a front bar, centreline, below the grille"},
+  "snorkel_R":   {"pos": [-1.30, 1.10, -0.94], "parentSlot": "body_shell", "envelope": {"min": [-1.75, 0.80, -1.10], "max": [-0.90, 2.05, -0.60]}, "basis": "right front wing behind the headlamp, rising up the right A-pillar"},
+  "roof":        {"pos": [0.824, 1.930, 0], "parentSlot": "roof_rails", "envelope": {"min": [-0.45, 1.80, -0.72], "max": [2.05, 2.45, 0.72]}, "basis": "top of the stock roof rails, centre of their length and width"},
+  "light_bar":   {"pos": [-0.10, 1.96, 0], "parentSlot": "roof_rails", "envelope": {"min": [-0.45, 1.85, -0.70], "max": [0.10, 2.10, 0.70]}, "basis": "front edge of a roof rack, above the windscreen header"},
+  "slider_L":    {"pos": [-0.23, 0.43, 0.955], "parentSlot": "side_step_L", "replacesSlots": ["side_step_L"], "envelope": {"min": [-1.25, 0.25, 0.80], "max": [0.80, 0.60, 1.10]}, "basis": "stock left side step centre"},
+  "slider_R":    {"pos": [-0.23, 0.43, -0.955], "parentSlot": "side_step_R", "replacesSlots": ["side_step_R"], "envelope": {"min": [-1.25, 0.25, -1.10], "max": [0.80, 0.60, -0.80]}, "basis": "stock right side step centre"},
+  "rear_carrier":{"pos": [2.415, 0.68, 0], "parentSlot": "bumper_rear", "envelope": {"min": [2.25, 0.20, -1.02], "max": [2.85, 1.95, 1.02]}, "basis": "bumper_rear rear face (x max), vertical centre, centreline"},
+  "decal_door_L":{"pos": [-0.53, 1.00, 0.977], "parentSlot": "door_FL", "envelope": {"min": [-1.12, 0.46, 0.85], "max": [0.06, 1.30, 1.00]}, "basis": "front-left door outer face, panel centre"},
+  "decal_door_R":{"pos": [-0.53, 1.00, -0.977], "parentSlot": "door_FR", "envelope": {"min": [-1.12, 0.46, -1.00], "max": [0.06, 1.30, -0.85]}, "basis": "front-right door outer face, panel centre"},
+  "decal_bonnet":{"pos": [-1.87, 1.29, 0], "parentSlot": "bonnet", "envelope": {"min": [-2.51, 1.08, -0.84], "max": [-1.23, 1.32, 0.84]}, "basis": "bonnet top, centre"}
+ },
+ "categories": [
+  {"id": "stance", "label": "Stance", "options": [
+   {"id": "stock", "label": "Stock height", "detail": "Factory ride height", "patch": {"lift_mm": 0}},
+   {"id": "lift25", "label": "1\" lift", "detail": "25 mm", "patch": {"lift_mm": 25}},
+   {"id": "lift50", "label": "2\" lift", "detail": "50 mm", "patch": {"lift_mm": 50}},
+   {"id": "lift63", "label": "2.5\" lift", "detail": "63 mm", "patch": {"lift_mm": 63}},
+   {"id": "lift76", "label": "3\" lift", "detail": "76 mm", "patch": {"lift_mm": 76}}
+  ]},
+  {"id": "wheels", "label": "Wheels & tyres", "options": [
+   {"id": "stock", "label": "Stock GXR alloy", "detail": "265/70R17 label · stored 793 mm"},
+   {"id": "at285", "label": "285/70R17 AT", "detail": "830 mm", "tyre_mm": 830, "requires": ["wheel_FL_at285", "wheel_FR_at285", "wheel_RL_at285", "wheel_RR_at285"]},
+   {"id": "mt315", "label": "315/70R17 MT · black steel", "detail": "873 mm", "tyre_mm": 873, "requires": ["wheel_FL_mt315", "wheel_FR_mt315", "wheel_RL_mt315", "wheel_RR_mt315"]},
+   {"id": "mt35", "label": "35×12.50R17 MT · black steel", "detail": "889 mm", "tyre_mm": 889, "requires": ["wheel_FL_mt35", "wheel_FR_mt35", "wheel_RL_mt35", "wheel_RR_mt35"]}
+  ]},
+  {"id": "front", "label": "Front", "options": [
+   {"id": "stock", "label": "Stock bumper", "detail": "Factory GXR"},
+   {"id": "bullbar", "label": "Steel bull bar", "detail": "Mount: front_bar", "requires": ["bullbar"]},
+   {"id": "bullbar_winch", "label": "Bull bar + winch", "detail": "Mount: front_bar + winch", "requires": ["bullbar", "winch"]}
+  ]},
+  {"id": "snorkel", "label": "Snorkel", "options": [
+   {"id": "none", "label": "None", "detail": "Factory air intake"},
+   {"id": "snorkel", "label": "Snorkel · right A-pillar", "detail": "Mount: snorkel_R", "requires": ["snorkel_R"]}
+  ]},
+  {"id": "sides", "label": "Sides", "options": [
+   {"id": "stock", "label": "Stock side steps", "detail": "Factory"},
+   {"id": "sliders", "label": "Rock sliders", "detail": "Replace the side steps", "requires": ["slider_L", "slider_R"]}
+  ]},
+  {"id": "roof", "label": "Roof", "options": [
+   {"id": "stock", "label": "Stock roof rails", "detail": "Factory"},
+   {"id": "platform", "label": "Platform rack + load-out", "detail": "Light bar, recovery boards, cases, spare, jerrycans", "requires": ["roof_rack"]}
+  ]},
+  {"id": "rear", "label": "Rear", "options": [
+   {"id": "stock", "label": "Stock rear", "detail": "Factory"},
+   {"id": "carrier", "label": "Swing-out spare carrier", "detail": "Mount: rear_carrier", "requires": ["rear_carrier"]}
+  ]},
+  {"id": "lighting", "label": "Lighting", "options": [
+   {"id": "off", "label": "Lamps off", "detail": "Parked", "patch": {"lamps_on": false}},
+   {"id": "on", "label": "Tail lamps on", "detail": "Rear lamps lit", "patch": {"lamps_on": true}}
+  ]},
+  {"id": "weathering", "label": "Weathering", "options": [
+   {"id": "clean", "label": "Clean", "detail": "Showroom"},
+   {"id": "trail", "label": "Trail dust + mud", "detail": "Layer over the paint", "requires": ["weathering_shader"]}
+  ]},
+  {"id": "livery", "label": "Livery", "options": [
+   {"id": "none", "label": "None", "detail": "Plain paint"},
+   {"id": "num92", "label": "Race number 92", "detail": "Doors + bonnet", "requires": ["decal_92"]}
+  ]}
+ ]
+}
