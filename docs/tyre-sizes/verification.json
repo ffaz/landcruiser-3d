@@ -1,0 +1,131 @@
+{
+  "tread": "Approved A",
+  "sizes": [
+    "265/75R17",
+    "285/65R17"
+  ],
+  "originalGLBsUnchanged": 58,
+  "files": [
+    {
+      "id": "wheel_FL_at26575",
+      "pass": true,
+      "triangles": 14900,
+      "diameterMeasured_mm": 829.2897006218103,
+      "widthMeasured_mm": 264.99998569488525,
+      "AO": [
+        0.11999999731779099,
+        1
+      ],
+      "curvature": [
+        0.32908621430397034,
+        0.8083637952804565
+      ]
+    },
+    {
+      "id": "wheel_FR_at26575",
+      "pass": true,
+      "triangles": 14900,
+      "diameterMeasured_mm": 829.2897006218103,
+      "widthMeasured_mm": 264.99998569488525,
+      "AO": [
+        0.11999999731779099,
+        1
+      ],
+      "curvature": [
+        0.32908621430397034,
+        0.8083637952804565
+      ]
+    },
+    {
+      "id": "wheel_RL_at26575",
+      "pass": true,
+      "triangles": 14900,
+      "diameterMeasured_mm": 829.2897006218103,
+      "widthMeasured_mm": 264.99998569488525,
+      "AO": [
+        0.11999999731779099,
+        1
+      ],
+      "curvature": [
+        0.32908621430397034,
+        0.8083637952804565
+      ]
+    },
+    {
+      "id": "wheel_RR_at26575",
+      "pass": true,
+      "triangles": 14900,
+      "diameterMeasured_mm": 829.2897006218103,
+      "widthMeasured_mm": 264.99998569488525,
+      "AO": [
+        0.11999999731779099,
+        1
+      ],
+      "curvature": [
+        0.32908621430397034,
+        0.8083637952804565
+      ]
+    },
+    {
+      "id": "wheel_FL_at28565",
+      "pass": true,
+      "triangles": 14900,
+      "diameterMeasured_mm": 802.2904023926187,
+      "widthMeasured_mm": 284.9999964237213,
+      "AO": [
+        0.11999999731779099,
+        1
+      ],
+      "curvature": [
+        0.3183492124080658,
+        0.8068073391914368
+      ]
+    },
+    {
+      "id": "wheel_FR_at28565",
+      "pass": true,
+      "triangles": 14900,
+      "diameterMeasured_mm": 802.2904023926187,
+      "widthMeasured_mm": 284.9999964237213,
+      "AO": [
+        0.11999999731779099,
+        1
+      ],
+      "curvature": [
+        0.3183492124080658,
+        0.8068073391914368
+      ]
+    },
+    {
+      "id": "wheel_RL_at28565",
+      "pass": true,
+      "triangles": 14900,
+      "diameterMeasured_mm": 802.2904023926187,
+      "widthMeasured_mm": 284.9999964237213,
+      "AO": [
+        0.11999999731779099,
+        1
+      ],
+      "curvature": [
+        0.3183492124080658,
+        0.8068073391914368
+      ]
+    },
+    {
+      "id": "wheel_RR_at28565",
+      "pass": true,
+      "triangles": 14900,
+      "diameterMeasured_mm": 802.2904023926187,
+      "widthMeasured_mm": 284.9999964237213,
+      "AO": [
+        0.11999999731779099,
+        1
+      ],
+      "curvature": [
+        0.3183492124080658,
+        0.8068073391914368
+      ]
+    }
+  ],
+  "productionThree": "0.166.1"
+}

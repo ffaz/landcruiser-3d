@@ -316,6 +316,30 @@
           ]
         },
         {
+          "id": "at28565",
+          "label": "285/65R17 expedition AT",
+          "detail": "802.3 mm · approved A tread · dark steel",
+          "tyre_mm": 802.3,
+          "requires": [
+            "wheel_FL_at28565",
+            "wheel_FR_at28565",
+            "wheel_RL_at28565",
+            "wheel_RR_at28565"
+          ]
+        },
+        {
+          "id": "at26575",
+          "label": "265/75R17 expedition AT",
+          "detail": "829.3 mm · approved A tread · dark steel",
+          "tyre_mm": 829.3,
+          "requires": [
+            "wheel_FL_at26575",
+            "wheel_FR_at26575",
+            "wheel_RL_at26575",
+            "wheel_RR_at26575"
+          ]
+        },
+        {
           "id": "mt315",
           "label": "315/70R17 MT · black steel",
           "detail": "873 mm",

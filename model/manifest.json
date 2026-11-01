@@ -4762,6 +4762,502 @@
         "wheel_emblem_RR"
       ],
       "purpose": "Design A: clean all-round expedition 285/70R17, approx 33 inch; new wheel geometry and Cycles vertex AO"
+    },
+    {
+      "id": "wheel_FL_at26575",
+      "slot": "wheel_FL",
+      "url": "parts/wheel_FL_at26575.glb",
+      "rootNode": "wheel_FL_at26575",
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "tyre",
+        "rim",
+        "chrome",
+        "brake"
+      ],
+      "triangles": 14900,
+      "bounds": {
+        "min": [
+          -2.049477914571762,
+          -0.017912468671798687,
+          0.6925000071525573
+        ],
+        "max": [
+          -1.220522085428238,
+          0.8109124686717988,
+          0.9574999928474426
+        ]
+      },
+      "tyre_mm": 829.3,
+      "materialDefaults": {
+        "tyre": {
+          "color": "#242629",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "rim": {
+          "color": "#34383c",
+          "roughness": 0.46,
+          "metalness": 0.8,
+          "envMapIntensity": 0.85
+        },
+        "chrome": {
+          "color": "#a7adb1",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.8
+        },
+        "brake": {
+          "color": "#505358",
+          "roughness": 0.62,
+          "metalness": 0.65,
+          "envMapIntensity": 0.45
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_FL"
+      ],
+      "purpose": "Approved A tread style in 265/75R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+    },
+    {
+      "id": "wheel_FR_at26575",
+      "slot": "wheel_FR",
+      "url": "parts/wheel_FR_at26575.glb",
+      "rootNode": "wheel_FR_at26575",
+      "pivot": [
+        -1.635,
+        0.3965,
+        -0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "tyre",
+        "rim",
+        "chrome",
+        "brake"
+      ],
+      "triangles": 14900,
+      "bounds": {
+        "min": [
+          -2.049477914571762,
+          -0.017912468671798687,
+          -0.9574999928474426
+        ],
+        "max": [
+          -1.220522085428238,
+          0.8109124686717988,
+          -0.6925000071525573
+        ]
+      },
+      "tyre_mm": 829.3,
+      "materialDefaults": {
+        "tyre": {
+          "color": "#242629",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "rim": {
+          "color": "#34383c",
+          "roughness": 0.46,
+          "metalness": 0.8,
+          "envMapIntensity": 0.85
+        },
+        "chrome": {
+          "color": "#a7adb1",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.8
+        },
+        "brake": {
+          "color": "#505358",
+          "roughness": 0.62,
+          "metalness": 0.65,
+          "envMapIntensity": 0.45
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_FR"
+      ],
+      "purpose": "Approved A tread style in 265/75R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+    },
+    {
+      "id": "wheel_RL_at26575",
+      "slot": "wheel_RL",
+      "url": "parts/wheel_RL_at26575.glb",
+      "rootNode": "wheel_RL_at26575",
+      "pivot": [
+        1.215,
+        0.3965,
+        0.8225
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "tyre",
+        "rim",
+        "chrome",
+        "brake"
+      ],
+      "triangles": 14900,
+      "bounds": {
+        "min": [
+          0.800522085428238,
+          -0.017912468671798687,
+          0.6900000071525574
+        ],
+        "max": [
+          1.6294779145717622,
+          0.8109124686717988,
+          0.9549999928474426
+        ]
+      },
+      "tyre_mm": 829.3,
+      "materialDefaults": {
+        "tyre": {
+          "color": "#242629",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "rim": {
+          "color": "#34383c",
+          "roughness": 0.46,
+          "metalness": 0.8,
+          "envMapIntensity": 0.85
+        },
+        "chrome": {
+          "color": "#a7adb1",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.8
+        },
+        "brake": {
+          "color": "#505358",
+          "roughness": 0.62,
+          "metalness": 0.65,
+          "envMapIntensity": 0.45
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_RL"
+      ],
+      "purpose": "Approved A tread style in 265/75R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+    },
+    {
+      "id": "wheel_RR_at26575",
+      "slot": "wheel_RR",
+      "url": "parts/wheel_RR_at26575.glb",
+      "rootNode": "wheel_RR_at26575",
+      "pivot": [
+        1.215,
+        0.3965,
+        -0.8225
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "tyre",
+        "rim",
+        "chrome",
+        "brake"
+      ],
+      "triangles": 14900,
+      "bounds": {
+        "min": [
+          0.800522085428238,
+          -0.017912468671798687,
+          -0.9549999928474426
+        ],
+        "max": [
+          1.6294779145717622,
+          0.8109124686717988,
+          -0.6900000071525574
+        ]
+      },
+      "tyre_mm": 829.3,
+      "materialDefaults": {
+        "tyre": {
+          "color": "#242629",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "rim": {
+          "color": "#34383c",
+          "roughness": 0.46,
+          "metalness": 0.8,
+          "envMapIntensity": 0.85
+        },
+        "chrome": {
+          "color": "#a7adb1",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.8
+        },
+        "brake": {
+          "color": "#505358",
+          "roughness": 0.62,
+          "metalness": 0.65,
+          "envMapIntensity": 0.45
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_RR"
+      ],
+      "purpose": "Approved A tread style in 265/75R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+    },
+    {
+      "id": "wheel_FL_at28565",
+      "slot": "wheel_FL",
+      "url": "parts/wheel_FL_at28565.glb",
+      "rootNode": "wheel_FL_at28565",
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "tyre",
+        "rim",
+        "chrome",
+        "brake"
+      ],
+      "triangles": 14900,
+      "bounds": {
+        "min": [
+          -2.035987923145294,
+          -0.004422149419784527,
+          0.6825000017881393
+        ],
+        "max": [
+          -1.2340120768547058,
+          0.7974221494197846,
+          0.9674999982118606
+        ]
+      },
+      "tyre_mm": 802.3,
+      "materialDefaults": {
+        "tyre": {
+          "color": "#242629",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "rim": {
+          "color": "#34383c",
+          "roughness": 0.46,
+          "metalness": 0.8,
+          "envMapIntensity": 0.85
+        },
+        "chrome": {
+          "color": "#a7adb1",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.8
+        },
+        "brake": {
+          "color": "#505358",
+          "roughness": 0.62,
+          "metalness": 0.65,
+          "envMapIntensity": 0.45
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_FL"
+      ],
+      "purpose": "Approved A tread style in 285/65R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+    },
+    {
+      "id": "wheel_FR_at28565",
+      "slot": "wheel_FR",
+      "url": "parts/wheel_FR_at28565.glb",
+      "rootNode": "wheel_FR_at28565",
+      "pivot": [
+        -1.635,
+        0.3965,
+        -0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "tyre",
+        "rim",
+        "chrome",
+        "brake"
+      ],
+      "triangles": 14900,
+      "bounds": {
+        "min": [
+          -2.035987923145294,
+          -0.004422149419784527,
+          -0.9674999982118606
+        ],
+        "max": [
+          -1.2340120768547058,
+          0.7974221494197846,
+          -0.6825000017881393
+        ]
+      },
+      "tyre_mm": 802.3,
+      "materialDefaults": {
+        "tyre": {
+          "color": "#242629",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "rim": {
+          "color": "#34383c",
+          "roughness": 0.46,
+          "metalness": 0.8,
+          "envMapIntensity": 0.85
+        },
+        "chrome": {
+          "color": "#a7adb1",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.8
+        },
+        "brake": {
+          "color": "#505358",
+          "roughness": 0.62,
+          "metalness": 0.65,
+          "envMapIntensity": 0.45
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_FR"
+      ],
+      "purpose": "Approved A tread style in 285/65R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+    },
+    {
+      "id": "wheel_RL_at28565",
+      "slot": "wheel_RL",
+      "url": "parts/wheel_RL_at28565.glb",
+      "rootNode": "wheel_RL_at28565",
+      "pivot": [
+        1.215,
+        0.3965,
+        0.8225
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "tyre",
+        "rim",
+        "chrome",
+        "brake"
+      ],
+      "triangles": 14900,
+      "bounds": {
+        "min": [
+          0.8140120768547059,
+          -0.004422149419784527,
+          0.6800000017881394
+        ],
+        "max": [
+          1.6159879231452943,
+          0.7974221494197846,
+          0.9649999982118607
+        ]
+      },
+      "tyre_mm": 802.3,
+      "materialDefaults": {
+        "tyre": {
+          "color": "#242629",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "rim": {
+          "color": "#34383c",
+          "roughness": 0.46,
+          "metalness": 0.8,
+          "envMapIntensity": 0.85
+        },
+        "chrome": {
+          "color": "#a7adb1",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.8
+        },
+        "brake": {
+          "color": "#505358",
+          "roughness": 0.62,
+          "metalness": 0.65,
+          "envMapIntensity": 0.45
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_RL"
+      ],
+      "purpose": "Approved A tread style in 285/65R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+    },
+    {
+      "id": "wheel_RR_at28565",
+      "slot": "wheel_RR",
+      "url": "parts/wheel_RR_at28565.glb",
+      "rootNode": "wheel_RR_at28565",
+      "pivot": [
+        1.215,
+        0.3965,
+        -0.8225
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "tyre",
+        "rim",
+        "chrome",
+        "brake"
+      ],
+      "triangles": 14900,
+      "bounds": {
+        "min": [
+          0.8140120768547059,
+          -0.004422149419784527,
+          -0.9649999982118607
+        ],
+        "max": [
+          1.6159879231452943,
+          0.7974221494197846,
+          -0.6800000017881394
+        ]
+      },
+      "tyre_mm": 802.3,
+      "materialDefaults": {
+        "tyre": {
+          "color": "#242629",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "rim": {
+          "color": "#34383c",
+          "roughness": 0.46,
+          "metalness": 0.8,
+          "envMapIntensity": 0.85
+        },
+        "chrome": {
+          "color": "#a7adb1",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.8
+        },
+        "brake": {
+          "color": "#505358",
+          "roughness": 0.62,
+          "metalness": 0.65,
+          "envMapIntensity": 0.45
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_RR"
+      ],
+      "purpose": "Approved A tread style in 285/65R17; new geometry and Cycles AO; unchanged 17-inch wheel"
     }
   ],
   "displayBase": {
