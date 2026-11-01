@@ -270,7 +270,8 @@ const BASE_FINISH=Object.freeze({paintRoughness:.42,paintClearcoat:.35,paintCoat
  chromeColor:'#e1e4e5',chromeRoughness:.52,chromeMetalness:.45,chromeEnv:.85,
  glassColor:'#46545f',glassRoughness:.28,glassOpacity:.80,glassEnv:.40,
  blackColor:'#282a2c',blackRoughness:.65,blackEnv:.30,blackSpecular:.25,
- sharpGapStrength:.45,seamStrength:.70,seamValley:[.040,.180],seamOcclusion:[.120,.500]});
+ sharpGapStrength:.45,seamStrength:.70,seamValley:[.040,.180],seamOcclusion:[.120,.500],
+ bonnetCreaseDiffuse:.70,rearLensEnv:.006});
 const finishSeamUniforms={uFinishSharpGap:{value:BASE_FINISH.sharpGapStrength},uFinishSeam:{value:BASE_FINISH.seamStrength},uFinishSeamValley:{value:new THREE.Vector2(...BASE_FINISH.seamValley)},uFinishSeamOcclusion:{value:new THREE.Vector2(...BASE_FINISH.seamOcclusion)},uFinishBlackSpecular:{value:BASE_FINISH.blackSpecular}};
 const paint=physical(DEFAULT_WHITE,BASE_FINISH.paintRoughness,.04,BASE_FINISH.paintClearcoat);
 paint.clearcoatRoughness=BASE_FINISH.paintCoatRoughness;paint.envMapIntensity=BASE_FINISH.paintEnv;
@@ -359,6 +360,7 @@ function useMainClayShading(material,clay=false,cream=false){
     clearcoatSpecularIndirect*=mix(1.0,bakedCavity,${cream?'0.85':'0.72'});
    #endif`}
    reflectedLight.indirectDiffuse+=diffuseColor.rgb*bakedRidge*uBakedRidge*0.13;
+
    ${cream&&material.userData.zone==='black'?'reflectedLight.directSpecular*=uCreamTrimSpecular; reflectedLight.indirectSpecular*=uCreamTrimSpecular;':''}
   `);
  };
@@ -375,12 +377,13 @@ function useOriginalPanelShading(material,cream=false){
   shader.uniforms.uPanelBodyLift=clayBakedUniforms.uClayBodyLift;
   Object.assign(shader.uniforms,clay?clayBakedUniforms:cream?creamDetailUniforms:bakedUniforms);
   if(cream)Object.assign(shader.uniforms,{uBakedAO:{value:1.12},uBakedRidge:{value:1.0},uBakedValley:{value:1.35}});
+  if(retainFineCavity)shader.uniforms.uBonnetCreaseDiffuse={value:BASE_FINISH.bonnetCreaseDiffuse};
   shader.vertexShader=shader.vertexShader.replace('#include <common>',
    '#include <common>\nattribute vec3 bakedShading; varying vec2 vBakedShading; varying vec3 vPanelPosition; uniform float uPanelBodyLift;');
   shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>',
    '#include <begin_vertex>\nvBakedShading=bakedShading.rg; vPanelPosition=(modelMatrix*vec4(position,1.0)).xyz; vPanelPosition.y-=uPanelBodyLift;');
   shader.fragmentShader=shader.fragmentShader.replace('#include <common>',
-   '#include <common>\nvarying vec2 vBakedShading; varying vec3 vPanelPosition; uniform float uBakedAO; uniform float uBakedRidge; uniform float uBakedValley;'+(clay?' uniform vec3 uClayOcclusionTint;':'')+(cream?' uniform float uCreamAOExponent; uniform float uCreamTrimSpecular;':''));
+   '#include <common>\nvarying vec2 vBakedShading; varying vec3 vPanelPosition; uniform float uBakedAO; uniform float uBakedRidge; uniform float uBakedValley;'+(retainFineCavity?' uniform float uBonnetCreaseDiffuse;':'')+(clay?' uniform vec3 uClayOcclusionTint;':'')+(cream?' uniform float uCreamAOExponent; uniform float uCreamTrimSpecular;':''));
   if(heightPaint){
    shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying float vClayPaintHeight; uniform float uClayBodyLift;');
    shader.vertexShader=shader.vertexShader.replace('#include <worldpos_vertex>',`#include <worldpos_vertex>
@@ -424,6 +427,10 @@ function useOriginalPanelShading(material,cream=false){
     clearcoatSpecularIndirect*=mix(1.0,bakedCavity,${cream?'0.85':'0.72'});
    #endif`}
    reflectedLight.indirectDiffuse+=diffuseColor.rgb*bakedRidge*uBakedRidge*0.13;
+   ${retainFineCavity?`// Strong rear softboxes need directional occlusion at the stored bonnet fold.
+   vec3 bonnetWorldNormal=inverseTransformDirection(geometryNormal,viewMatrix);
+   float bonnetNegativeSide=smoothstep(.25,.85,-bonnetWorldNormal.z);
+   reflectedLight.indirectDiffuse*=mix(1.0,bakedCavity,uBonnetCreaseDiffuse*bonnetNegativeSide);`:''}
    ${cream&&material.userData.zone==='black'?'reflectedLight.directSpecular*=uCreamTrimSpecular; reflectedLight.indirectSpecular*=uCreamTrimSpecular;':''}
   `);
  };
@@ -816,7 +823,7 @@ function finishPartMaterial(material,entry,zone,sourceName,node){
  if(entry.id==='front_plate'&&zone==='paint'){material.roughness=.82;material.metalness=0;material.clearcoat=0;material.envMapIntensity=.10;material.specularIntensity=.10;}
  if(rear&&zone==='lamp_red'){
   material.color.set('#d0000c');material.roughness=.12;material.metalness=0;
-  material.clearcoat=1;material.clearcoatRoughness=.10;material.envMapIntensity=.35;
+  material.clearcoat=1;material.clearcoatRoughness=.10;material.envMapIntensity=BASE_FINISH.rearLensEnv;
   material.emissive.set('#970006');material.emissiveIntensity=.32;
   material.transparent=true;material.opacity=.94;material.depthWrite=false;
   if(/_finish(?:3|4b)$/.test(entry.id)&&!sourceName.startsWith('redglass_lower')){
