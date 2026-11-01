@@ -1,0 +1,362 @@
+[
+  {
+    "item": 1,
+    "shot": "bonnet-edge-pz",
+    "rectangle": [
+      240,
+      700,
+      1400,
+      1275
+    ],
+    "file": "crops/01-bonnet-edge-pz.png",
+    "resampled": false
+  },
+  {
+    "item": 1,
+    "shot": "bonnet-edge-nz",
+    "rectangle": [
+      350,
+      650,
+      1580,
+      1275
+    ],
+    "file": "crops/01-bonnet-edge-nz.png",
+    "resampled": false
+  },
+  {
+    "item": 1,
+    "shot": "black-bonnet-edge",
+    "rectangle": [
+      240,
+      700,
+      1400,
+      1275
+    ],
+    "file": "crops/01-black-bonnet-edge.png",
+    "resampled": false
+  },
+  {
+    "item": 1,
+    "shot": "phone-bonnet-edge-pz",
+    "rectangle": [
+      0,
+      0,
+      1170,
+      2532
+    ],
+    "file": "crops/01-phone-bonnet-edge-pz.png",
+    "resampled": false
+  },
+  {
+    "item": 2,
+    "shot": "roof-top",
+    "rectangle": [
+      0,
+      0,
+      1800,
+      1275
+    ],
+    "file": "crops/02-roof-top.png",
+    "resampled": false
+  },
+  {
+    "item": 2,
+    "shot": "roof-rear",
+    "rectangle": [
+      0,
+      180,
+      1800,
+      850
+    ],
+    "file": "crops/02-roof-rear.png",
+    "resampled": false
+  },
+  {
+    "item": 3,
+    "shot": "front-door-pz",
+    "rectangle": [
+      250,
+      450,
+      1650,
+      1275
+    ],
+    "file": "crops/03-front-door-pz.png",
+    "resampled": false
+  },
+  {
+    "item": 3,
+    "shot": "front-door-nz",
+    "rectangle": [
+      150,
+      450,
+      1550,
+      1275
+    ],
+    "file": "crops/03-front-door-nz.png",
+    "resampled": false
+  },
+  {
+    "item": 3,
+    "shot": "rear-door-pz",
+    "rectangle": [
+      150,
+      430,
+      1650,
+      1275
+    ],
+    "file": "crops/03-rear-door-pz.png",
+    "resampled": false
+  },
+  {
+    "item": 3,
+    "shot": "rear-door-nz",
+    "rectangle": [
+      150,
+      430,
+      1650,
+      1275
+    ],
+    "file": "crops/03-rear-door-nz.png",
+    "resampled": false
+  },
+  {
+    "item": 3,
+    "shot": "rear-quarter-pz",
+    "rectangle": [
+      0,
+      0,
+      1800,
+      1275
+    ],
+    "file": "crops/03-rear-quarter-pz.png",
+    "resampled": false
+  },
+  {
+    "item": 3,
+    "shot": "tailgate",
+    "rectangle": [
+      0,
+      0,
+      1800,
+      1275
+    ],
+    "file": "crops/03-tailgate.png",
+    "resampled": false
+  },
+  {
+    "item": 4,
+    "shot": "tail-lamp-pz",
+    "rectangle": [
+      400,
+      350,
+      1600,
+      1150
+    ],
+    "file": "crops/04-tail-lamp-pz.png",
+    "resampled": false
+  },
+  {
+    "item": 4,
+    "shot": "tail-lamp-nz",
+    "rectangle": [
+      200,
+      350,
+      1400,
+      1150
+    ],
+    "file": "crops/04-tail-lamp-nz.png",
+    "resampled": false
+  },
+  {
+    "item": 4,
+    "shot": "phone-tail-pz",
+    "rectangle": [
+      0,
+      0,
+      1170,
+      2532
+    ],
+    "file": "crops/04-phone-tail-pz.png",
+    "resampled": false
+  },
+  {
+    "item": 5,
+    "shot": "door-handles-pz",
+    "rectangle": [
+      570,
+      620,
+      1120,
+      880
+    ],
+    "file": "crops/05-door-handles-pz.png",
+    "resampled": false
+  },
+  {
+    "item": 6,
+    "shot": "front-plate",
+    "rectangle": [
+      450,
+      700,
+      1350,
+      1175
+    ],
+    "file": "crops/06-front-plate.png",
+    "resampled": false
+  },
+  {
+    "item": 6,
+    "shot": "black-front-corner",
+    "rectangle": [
+      0,
+      650,
+      1300,
+      1275
+    ],
+    "file": "crops/06-black-front-corner.png",
+    "resampled": false
+  },
+  {
+    "item": 7,
+    "shot": "roof-rear",
+    "rectangle": [
+      0,
+      0,
+      1800,
+      1275
+    ],
+    "file": "crops/07-roof-rear.png",
+    "resampled": false
+  },
+  {
+    "item": 7,
+    "shot": "black-orbit-210",
+    "rectangle": [
+      0,
+      0,
+      1800,
+      1275
+    ],
+    "file": "crops/07-black-orbit-210.png",
+    "resampled": false
+  },
+  {
+    "item": 7,
+    "shot": "clay-orbit-210",
+    "rectangle": [
+      0,
+      0,
+      1800,
+      1275
+    ],
+    "file": "crops/07-clay-orbit-210.png",
+    "resampled": false
+  },
+  {
+    "item": 8,
+    "shot": "front-door-pz",
+    "rectangle": [
+      1380,
+      420,
+      1600,
+      1275
+    ],
+    "file": "crops/08-front-door-pz.png",
+    "resampled": false
+  },
+  {
+    "item": 8,
+    "shot": "rear-door-pz",
+    "rectangle": [
+      430,
+      420,
+      650,
+      1275
+    ],
+    "file": "crops/08-rear-door-pz.png",
+    "resampled": false
+  },
+  {
+    "item": 9,
+    "shot": "windscreen-base",
+    "rectangle": [
+      0,
+      0,
+      1800,
+      1275
+    ],
+    "file": "crops/09-windscreen-base.png",
+    "resampled": false
+  },
+  {
+    "item": 10,
+    "shot": "front-arch-pz",
+    "rectangle": [
+      0,
+      0,
+      1800,
+      1275
+    ],
+    "file": "crops/10-front-arch-pz.png",
+    "resampled": false
+  },
+  {
+    "item": 10,
+    "shot": "front-arch-nz",
+    "rectangle": [
+      0,
+      0,
+      1800,
+      1275
+    ],
+    "file": "crops/10-front-arch-nz.png",
+    "resampled": false
+  },
+  {
+    "item": 11,
+    "shot": "rear-badges",
+    "rectangle": [
+      0,
+      0,
+      1800,
+      1275
+    ],
+    "file": "crops/11-rear-badges.png",
+    "resampled": false
+  },
+  {
+    "item": 11,
+    "shot": "rear-bumper",
+    "rectangle": [
+      0,
+      0,
+      1800,
+      1275
+    ],
+    "file": "crops/11-rear-bumper.png",
+    "resampled": false
+  },
+  {
+    "item": 12,
+    "shot": "fog-bumper-pz",
+    "rectangle": [
+      0,
+      0,
+      1800,
+      1275
+    ],
+    "file": "crops/12-fog-bumper-pz.png",
+    "resampled": false
+  },
+  {
+    "item": 12,
+    "shot": "fog-bumper-nz",
+    "rectangle": [
+      0,
+      0,
+      1800,
+      1275
+    ],
+    "file": "crops/12-fog-bumper-nz.png",
+    "resampled": false
+  }
+]

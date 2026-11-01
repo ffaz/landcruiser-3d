@@ -50,17 +50,20 @@ gates={
  'black-bonnet-edge':{'polyline':[(310,1235),(425,1150),(1210,880),(1255,850),(1300,750)],'radius':20},
  'phone-bonnet-edge-pz':{'polyline':[(0,1772),(1070,1390),(1130,1340),(1170,1210)],'radius':24},
  'front-door-pz':{'polyline':[(1508,440),(1495,650),(1500,1000),(1540,1270)],'radius':20},
- 'front-door-nz':{'polyline':[(292,440),(305,650),(300,1000),(260,1270)],'radius':20},
+ 'front-door-nz':{'polyline':[(344,440),(357,650),(352,1000),(312,1270)],'radius':20},
  'rear-door-pz':{'polyline':[(526,450),(487,565),(480,820),(500,1040),(550,1240)],'radius':20},
- 'rear-door-nz':{'polyline':[(1274,450),(1313,565),(1320,820),(1300,1040),(1250,1240)],'radius':20},
+ 'rear-door-nz':{'polyline':[(1326,450),(1365,565),(1372,820),(1352,1040),(1302,1240)],'radius':20},
  'door-handles-pz':{'rectangle':[(625,670),(1060,835)]},
 }
+auditCounts={s['shot']:s for s in json.loads((audit/'changes.json').read_text())}
 results={}
 for shot,roi in gates.items():
  a=audit/'orig'/(shot+'.png');b=audit/'candidate'/(shot+'.png');im=Image.open(b);mask=metrics.roi_mask(im.size,roi.get('polyline',roi.get('rectangle')),roi.get('radius',20),'rectangle' in roi)
  pairs={}
  for va,vb in [('orig','live'),('live','candidate'),('orig','candidate')]:
-  bs=metrics.roi_blocks(metrics.blocks(audit/va/(shot+'.png'),audit/vb/(shot+'.png')),mask)
+  full=metrics.blocks(audit/va/(shot+'.png'),audit/vb/(shot+'.png'))
+  if va=='orig' and vb=='candidate':assert len(full)==auditCounts[shot]['origToCandidate']['blocks'], 'Gate algorithm differs from audit: '+shot
+  bs=metrics.roi_blocks(full,mask)
   pairs[va+'To'+vb]={'markedBlocks':len(bs),'blocks':[{'x':x,'y':y,'meanAbsDetailDelta':round(m,3)} for x,y,m in bs]}
  metrics.annotate(a,b,out/'gates'/(shot+'.png'),roi.get('polyline',roi.get('rectangle')),roi.get('radius',20),'rectangle' in roi)
  results[shot]={'roi':roi,**pairs,'strictZeroGreen':pairs['origTocandidate']['markedBlocks']==0}
@@ -84,16 +87,20 @@ pixels={
  'bonnet':measure('bonnet-edge-pz',(800,850,807,857)),
 }
 face=pixels['plateFace']['values']['candidate']['meanL'];bumper=np.mean([pixels[n]['values']['candidate']['meanL'] for n in ['adjacentBumperLeft','adjacentBumperRight']]);pixels['whitePlateGate']={'faceMeanL':face,'bumperMeanL':round(float(bumper),3),'pass':bool(face<=bumper)}
-# All 22 visible pods per side, in the fixed tail-lamp audit close-ups.
-pods=[(194,127),(242,127),(288,127),(199,168),(246,168),(291,168),(200,211),(248,211),(292,211),(366,125),(410,125),(457,125),(503,125),(551,124),(368,166),(412,165),(460,165),(523,162),(370,208),(414,208),(461,205),(502,194)]
+# Actual measured centres in each image; the retained view offset prevents
+# mirroring x about the viewport centre. Each cap sample is a 7x7 median.
+podsPZ=[(194,127),(242,127),(288,127),(199,168),(246,168),(291,168),(200,211),(248,211),(292,211),(366,125),(410,125),(457,125),(503,125),(551,124),(368,166),(412,165),(460,165),(523,162),(370,208),(414,208),(461,205),(502,194)]
+podsNZ=[(586,128),(540,127),(493,127),(583,169),(537,169),(491,168),(582,214),(535,212),(490,212),(416,127),(371,126),(324,125),(280,124),(230,123),(413,168),(369,166),(322,165),(258,162),(413,211),(368,208),(321,207),(280,194)]
 pixels['LEDs']={}
-for side in ['pz','nz']:
+yy,xx=np.mgrid[-20:21,-20:21];annulus=(xx*xx+yy*yy>=14*14)&(xx*xx+yy*yy<=20*20)
+for side,centres,xOffset in [('pz',podsPZ,650),('nz',podsNZ,420)]:
  shot='tail-lamp-'+side;points=[]
- for i,(x,y) in enumerate(pods):
-  x+=650;y+=540
-  if side=='nz':x=1799-x
-  offset=18 if side=='pz' else -18
-  cap=measure(shot,(x-3,y-3,x+4,y+4));lens=measure(shot,(x+offset-3,y,x+offset+4,y+7));points.append({'pod':i+1,'centre':[x,y],'cap':cap,'adjacentLens':lens,'candidateDeltaL':round(cap['values']['candidate']['medianLab'][0]-lens['values']['candidate']['medianLab'][0],3)})
+ for i,(x,y) in enumerate(centres):
+  x+=xOffset;y+=540;cap=measure(shot,(x-3,y-3,x+4,y+4));lens={}
+  for v in versions:
+   a=pixelCache[(shot,v)];ring=a[y-20:y+21,x-20:x+21][annulus];rgb=np.median(ring,axis=0)
+   lens[v]={'medianRGB':rgb.tolist(),'medianLab':np.round(lab(rgb),3).tolist(),'pixels':int(len(ring))}
+  points.append({'pod':i+1,'half':'body' if i<9 else 'tailgate','centre':[x,y],'cap':cap,'surroundingLens':{'annulusRadii':[14,20],'values':lens},'candidateDeltaL':round(float(cap['values']['candidate']['medianLab'][0]-lens['candidate']['medianLab'][0]),3)})
  pixels['LEDs'][side]=points
 (out/'pixels.json').write_text(json.dumps(pixels,indent=2)+'\n')
 print('Exported',len(index),'native-resolution comparisons and',len(list((out/'sheets').glob('*.png'))),'audit sheets')

@@ -1,0 +1,367 @@
+[
+  {
+    "name": "Bonnet hem",
+    "old": "6 mm synthetic band; strength .98",
+    "new": "Removed; only original surface/crease shading remains",
+    "file": "index.html",
+    "line": 370
+  },
+  {
+    "name": "Artificial side-gap overlay",
+    "old": "world-space curves, pixel width .65\u20131.50; radiance \u00d7.16",
+    "new": "Removed",
+    "file": "index.html",
+    "line": 527
+  },
+  {
+    "name": "Paint seam multiplier",
+    "old": 0.7,
+    "new": 0,
+    "file": "index.html",
+    "line": 370
+  },
+  {
+    "name": "Paint sharp-gap multiplier",
+    "old": 0.45,
+    "new": 0,
+    "file": "index.html",
+    "line": 370
+  },
+  {
+    "name": "Paint (Cream/Slate) AO",
+    "old": 1.2,
+    "new": 1.12,
+    "file": "index.html",
+    "line": 379
+  },
+  {
+    "name": "Paint (Cream/Slate) valley",
+    "old": 1.65,
+    "new": 1.35,
+    "file": "index.html",
+    "line": 379
+  },
+  {
+    "name": "Paint (Cream/Slate) cavity floor",
+    "old": 0.06,
+    "new": 0.1,
+    "file": "index.html",
+    "line": 341
+  },
+  {
+    "name": "Paint (Cream/Slate) direct-diffuse cavity mix",
+    "old": 1,
+    "new": 0.9,
+    "file": "index.html",
+    "line": 355
+  },
+  {
+    "name": "Paint (Cream/Slate) indirect-specular cavity mix",
+    "old": 1,
+    "new": 0.85,
+    "file": "index.html",
+    "line": 357
+  },
+  {
+    "name": "Paint (Cream/Slate) direct-specular cavity mix",
+    "old": 1,
+    "new": 0.5,
+    "file": "index.html",
+    "line": 358
+  },
+  {
+    "name": "Paint ridge attenuation",
+    "old": "bakedCavity \u00d7 bakedAO\u00b3",
+    "new": "Original unattenuated .13 ridge contribution",
+    "file": "index.html",
+    "line": 362
+  },
+  {
+    "name": "Broad-panel AO cleanup",
+    "old": "Applied even in handle cups",
+    "new": "Keep broad-panel cleanup; protect front/rear handle cups; recover deep/high-frequency AO only on bonnet",
+    "file": "index.html",
+    "line": 403
+  },
+  {
+    "name": "Front handle cup protection",
+    "old": "None",
+    "new": {
+      "centre": [
+        -0.178,
+        1.066
+      ],
+      "radii": [
+        0.165,
+        0.055
+      ],
+      "fade": [
+        1,
+        1.4
+      ]
+    },
+    "file": "index.html",
+    "line": 406
+  },
+  {
+    "name": "Rear handle cup protection",
+    "old": "None",
+    "new": {
+      "centre": [
+        0.845,
+        1.111
+      ],
+      "radii": [
+        0.165,
+        0.055
+      ],
+      "fade": [
+        1,
+        1.4
+      ]
+    },
+    "file": "index.html",
+    "line": 406
+  },
+  {
+    "name": "Paint shader cache",
+    "old": "Shared key for different part programs",
+    "new": "Unique key per partId",
+    "file": "index.html",
+    "line": 523
+  },
+  {
+    "name": "Handle material cache",
+    "old": "Shared with neighbouring belt chrome",
+    "new": "Separate source chrome_3 zone, all four doors",
+    "file": "index.html",
+    "line": 876
+  },
+  {
+    "name": "Handle chrome roughness",
+    "old": 0.52,
+    "new": 0.24,
+    "file": "index.html",
+    "line": 820
+  },
+  {
+    "name": "Handle chrome metalness",
+    "old": 0.45,
+    "new": 1,
+    "file": "index.html",
+    "line": 820
+  },
+  {
+    "name": "Handle clearcoat",
+    "old": 0.08,
+    "new": 0.15,
+    "file": "index.html",
+    "line": 820
+  },
+  {
+    "name": "Handle coat roughness",
+    "old": 0.3,
+    "new": 0.23,
+    "file": "index.html",
+    "line": 820
+  },
+  {
+    "name": "Handle environment intensity",
+    "old": 0.85,
+    "new": 0.95,
+    "file": "index.html",
+    "line": 820
+  },
+  {
+    "name": "Handle baked response",
+    "old": "Strengthened base-finish response",
+    "new": "Original f553e19 baked response",
+    "file": "index.html",
+    "line": 441
+  },
+  {
+    "name": "Old front-plate radiance",
+    "old": "Unlit outgoingLight = 2.20/2.17/2.10",
+    "new": "Removed; physical illumination of a separate plate",
+    "file": "index.html",
+    "line": 823
+  },
+  {
+    "name": "Old plate component",
+    "old": "Visible, 79 triangles",
+    "new": "Invisible material only in new bumper variant",
+    "file": "index.html",
+    "line": 822
+  },
+  {
+    "name": "Plate face paint",
+    "old": "No separate part",
+    "new": "#bab9b3, roughness .82, metalness 0, clearcoat 0, env .10, specular .10",
+    "file": "index.html",
+    "line": 736
+  },
+  {
+    "name": "Plate frame",
+    "old": "Radiance mask",
+    "new": "3 mm dark rounded physical frame; corners 9 mm, backing depth 15 mm",
+    "file": "tools/close-up-fix/create-plate.mjs",
+    "line": 2
+  },
+  {
+    "name": "Rear roof edge",
+    "old": "Reflective underside lip and dark mounting stubs",
+    "new": "Body-colour finish; upward lighting normal in local finish region; specular \u00d7.08; roughness .62 (Clay .85)",
+    "file": "index.html",
+    "line": 543
+  },
+  {
+    "name": "Rear roof stub visibility",
+    "old": "Visible",
+    "new": "Material discard for body_shell black region, abs(z)>.49\u202651, x1.82\u20261.94,y>1.80\u20261.82; discard where finish mask > .01",
+    "file": "index.html",
+    "line": 553
+  },
+  {
+    "name": "LED pod colour",
+    "old": "#53020a",
+    "new": "#b55d66",
+    "file": "index.html",
+    "line": 837
+  },
+  {
+    "name": "LED pod roughness",
+    "old": 0.18,
+    "new": 0.15,
+    "file": "index.html",
+    "line": 837
+  },
+  {
+    "name": "LED pod metalness",
+    "old": 0.8,
+    "new": 0.55,
+    "file": "index.html",
+    "line": 837
+  },
+  {
+    "name": "LED pod environment intensity",
+    "old": 0.85,
+    "new": 1.7,
+    "file": "index.html",
+    "line": 837
+  },
+  {
+    "name": "LED pod clearcoat",
+    "old": 0.1,
+    "new": 0.8,
+    "file": "index.html",
+    "line": 837
+  },
+  {
+    "name": "Default bumper variant",
+    "old": "bumper_front",
+    "new": "bumper_front_plate_clean",
+    "file": "build.json",
+    "line": 5
+  },
+  {
+    "name": "Default plate slot",
+    "old": "Absent",
+    "new": "front_plate",
+    "file": "build.json",
+    "line": 49
+  },
+  {
+    "name": "Bonnet fine cavity retention",
+    "old": "Curvature-only AO cleanup",
+    "new": "Bonnet additionally retains deep raw R .12\u2192.22 and fwidth(R) .015\u2192.050; no drawn boundary or gap",
+    "file": "index.html",
+    "line": 375
+  },
+  {
+    "name": "Rear red lens / guides environment intensity",
+    "old": 0.35,
+    "new": 0.006,
+    "file": "index.html",
+    "line": 274
+  },
+  {
+    "name": "Bonnet crease indirect diffuse occlusion",
+    "old": 0,
+    "new": {
+      "strength": 0.7,
+      "negativeWorldNormalZRamp": [
+        0.25,
+        0.85
+      ],
+      "appliesTo": "existing baked cavities on bonnet only; Cream and Slate"
+    },
+    "file": "index.html",
+    "line": 432
+  },
+  {
+    "name": "Rear roof finish region",
+    "old": "No finish mask",
+    "new": {
+      "xTransitions": [
+        1.82,
+        1.84,
+        1.92,
+        1.94
+      ],
+      "yTransition": [
+        1.8,
+        1.82
+      ],
+      "absZTransition": [
+        0.67,
+        0.69
+      ]
+    },
+    "file": "index.html",
+    "line": 552
+  },
+  {
+    "name": "Rear roof lighting normal",
+    "old": "Stored shading normal",
+    "new": "Blend lighting normal toward world +Y only in roof finish region; NORMAL attribute unchanged",
+    "file": "index.html",
+    "line": 556
+  },
+  {
+    "name": "Rear roof shader cavity/ridge/valley",
+    "old": "Source baked shading",
+    "new": {
+      "AO": 1,
+      "ridge": 0,
+      "valley": 0,
+      "scope": "roof finish region only; COLOR_0 attribute unchanged"
+    },
+    "file": "index.html",
+    "line": 557
+  },
+  {
+    "name": "Plate frame colour",
+    "old": {
+      "linearRadiance": [
+        0.021,
+        0.023,
+        0.025
+      ]
+    },
+    "new": {
+      "colour": "#282a2c",
+      "roughness": 0.65,
+      "env": 0.3,
+      "source": "same black trim material as other gaskets"
+    },
+    "file": "index.html",
+    "line": 817
+  },
+  {
+    "name": "Paint direct-clearcoat cavity multiplier",
+    "old": "Multiplied by bakedCavity in the strengthened paint shader",
+    "new": "No extra multiplier (1.0), matching the original paint response; separate roof finish remains scoped",
+    "file": "index.html",
+    "line": 370
+  }
+]

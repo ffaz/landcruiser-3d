@@ -1,0 +1,32 @@
+{
+  "viewer": {
+    "passed": 31,
+    "total": 31,
+    "bothStudios": true,
+    "fullScreenshotMode": true,
+    "consoleErrors": 0,
+    "sourceSha256": "14b6ac1df84dd27d1abcaf3dcfcf6c9108064e88bad1756c118a7714fc095757",
+    "overhangLock": true
+  },
+  "workshop": {
+    "passed": 31,
+    "total": 31,
+    "consoleErrors": 0,
+    "devices": "desktop and phone emulation in Chromium"
+  },
+  "audit": {
+    "orig": {
+      "shots": 76,
+      "consoleErrors": 0
+    },
+    "live": {
+      "shots": 76,
+      "consoleErrors": 0
+    },
+    "candidate": {
+      "shots": 76,
+      "consoleErrors": 0
+    }
+  },
+  "physicalDevicesTested": false
+}

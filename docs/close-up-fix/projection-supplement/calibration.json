@@ -1,0 +1,72 @@
+{
+  "reason": "The prescribed capture retains a startup projection offset derived from UI framing. Phone ORIGINAL and current offsets differ despite identical fixed world camera poses.",
+  "observedStartupViewOffsets": {
+    "original": {
+      "enabled": true,
+      "fullWidth": 390,
+      "fullHeight": 844,
+      "offsetX": -6.661493435832256,
+      "offsetY": 6.446116818325436,
+      "width": 390,
+      "height": 844
+    },
+    "candidate": {
+      "enabled": true,
+      "fullWidth": 390,
+      "fullHeight": 844,
+      "offsetX": -6.661493435832256,
+      "offsetY": -13.053883181674564,
+      "width": 390,
+      "height": 844
+    }
+  },
+  "differenceCSSPixels": 19.5,
+  "differencePNGPixels": 58.5,
+  "supplementalMethod": "Original phone frames are unmodified; live and candidate are rerendered using ORIGINAL phone intrinsics. No pixel registration or image editing. Supplied tools/audit is unchanged.",
+  "commonViewOffset": {
+    "enabled": true,
+    "fullWidth": 390,
+    "fullHeight": 844,
+    "offsetX": -6.661493435832256,
+    "offsetY": 6.446116818325436,
+    "width": 390,
+    "height": 844
+  },
+  "bonnetROI": {
+    "polyline": [
+      [
+        0,
+        1772
+      ],
+      [
+        1070,
+        1390
+      ],
+      [
+        1130,
+        1340
+      ],
+      [
+        1170,
+        1210
+      ]
+    ],
+    "radius": 24,
+    "unmodifiedAuditMarkedBlocks": 160,
+    "commonProjectionMarkedBlocks": 6
+  },
+  "captures": {
+    "orig": {
+      "shots": 8,
+      "errors": []
+    },
+    "live": {
+      "shots": 8,
+      "errors": []
+    },
+    "candidate": {
+      "shots": 8,
+      "errors": []
+    }
+  }
+}

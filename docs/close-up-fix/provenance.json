@@ -1,0 +1,22 @@
+{
+  "original": "f553e19",
+  "live": "acd7c4e7fa9986ce7b87277c8478ae9c8e0aab03",
+  "auditRig": "187525908b4d1db48e3180d520132f593438c8eb",
+  "candidateRuntime": {
+    "index.html": "14b6ac1df84dd27d1abcaf3dcfcf6c9108064e88bad1756c118a7714fc095757",
+    "build.json": "91c93bad926834feca3d96d947bea92cd07d86dedf668457e487a0b127ac92dc",
+    "model/manifest.json": "4b2b99897d26b2be5cbec12356bcc67ec5439643bb3df368dd52be882db5808f"
+  },
+  "three": "0.166.1",
+  "browser": "Chromium, SwiftShader",
+  "physicalPhoneOrIPadTested": false,
+  "candidateCapturedFrom": "Content hashes identify the exact tested runtime; the final documentation commit does not alter these files",
+  "mainOrPagesModified": false,
+  "implementationCommit": "6316e96291b62a8ac873f3287cc014f324b54e8f",
+  "additions": {
+    "model/parts/front_plate.glb": "774ede6a1a413ec39279bc734617245edb538a02e4be8b2a082d5644a17e961b",
+    "model/parts/bumper_front_plate_clean.glb": "58a9cceb9e6d239a59e7380af2ef0a18eb6e2afa7be2fe138bd39ae4f21b0286"
+  },
+  "suppliedAuditScriptsUnmodified": true,
+  "supplementaryPhoneTool": "tools/close-up-fix/capture-common-projection.mjs"
+}

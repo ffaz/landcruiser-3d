@@ -1,0 +1,5577 @@
+{
+  "plateFace": {
+    "shot": "front-plate",
+    "rectangle": [
+      665,
+      845,
+      1180,
+      1000
+    ],
+    "values": {
+      "orig": {
+        "meanL": 76.706,
+        "medianRGB": [
+          209.0,
+          205.0,
+          198.0
+        ],
+        "medianHex": "#d1cdc6",
+        "medianLab": [
+          82.537,
+          0.141,
+          3.966
+        ],
+        "L05": 47.498,
+        "L95": 91.094,
+        "pixels": 79825
+      },
+      "live": {
+        "meanL": 71.766,
+        "medianRGB": [
+          189.0,
+          187.0,
+          183.0
+        ],
+        "medianHex": "#bdbbb7",
+        "medianLab": [
+          75.933,
+          -0.029,
+          2.268
+        ],
+        "L05": 43.863,
+        "L95": 83.944,
+        "pixels": 79825
+      },
+      "candidate": {
+        "meanL": 68.289,
+        "medianRGB": [
+          171.0,
+          166.0,
+          157.0
+        ],
+        "medianHex": "#aba69d",
+        "medianLab": [
+          68.289,
+          0.17,
+          5.292
+        ],
+        "L05": 68.289,
+        "L95": 68.289,
+        "pixels": 79825
+      }
+    }
+  },
+  "adjacentBumperLeft": {
+    "shot": "front-plate",
+    "rectangle": [
+      390,
+      780,
+      600,
+      840
+    ],
+    "values": {
+      "orig": {
+        "meanL": 71.086,
+        "medianRGB": [
+          186.0,
+          182.0,
+          176.0
+        ],
+        "medianHex": "#bab6b0",
+        "medianLab": [
+          74.209,
+          0.326,
+          3.548
+        ],
+        "L05": 51.829,
+        "L95": 76.746,
+        "pixels": 12600
+      },
+      "live": {
+        "meanL": 65.515,
+        "medianRGB": [
+          172.0,
+          171.0,
+          167.0
+        ],
+        "medianHex": "#acaba7",
+        "medianLab": [
+          69.956,
+          -0.388,
+          2.18
+        ],
+        "L05": 39.994,
+        "L95": 71.81,
+        "pixels": 12600
+      },
+      "candidate": {
+        "meanL": 71.052,
+        "medianRGB": [
+          175.0,
+          174.0,
+          170.0
+        ],
+        "medianHex": "#afaeaa",
+        "medianLab": [
+          71.069,
+          -0.387,
+          2.173
+        ],
+        "L05": 70.327,
+        "L95": 71.889,
+        "pixels": 12600
+      }
+    }
+  },
+  "adjacentBumperRight": {
+    "shot": "front-plate",
+    "rectangle": [
+      1240,
+      780,
+      1450,
+      840
+    ],
+    "values": {
+      "orig": {
+        "meanL": 68.827,
+        "medianRGB": [
+          183.0,
+          180.0,
+          173.0
+        ],
+        "medianHex": "#b7b4ad",
+        "medianLab": [
+          73.368,
+          -0.209,
+          3.939
+        ],
+        "L05": 43.388,
+        "L95": 76.851,
+        "pixels": 12600
+      },
+      "live": {
+        "meanL": 62.274,
+        "medianRGB": [
+          169.0,
+          168.0,
+          164.0
+        ],
+        "medianHex": "#a9a8a4",
+        "medianLab": [
+          68.839,
+          -0.389,
+          2.188
+        ],
+        "L05": 21.831,
+        "L95": 71.915,
+        "pixels": 12600
+      },
+      "candidate": {
+        "meanL": 71.296,
+        "medianRGB": [
+          176.0,
+          174.0,
+          171.0
+        ],
+        "medianHex": "#b0aeab",
+        "medianLab": [
+          71.175,
+          0.154,
+          1.786
+        ],
+        "L05": 70.353,
+        "L95": 72.259,
+        "pixels": 12600
+      }
+    }
+  },
+  "blackPaintPlate": {
+    "shot": "black-front-corner",
+    "rectangle": [
+      150,
+      910,
+      280,
+      970
+    ],
+    "values": {
+      "orig": {
+        "meanL": 14.854,
+        "medianRGB": [
+          35.0,
+          39.0,
+          39.0
+        ],
+        "medianHex": "#232727",
+        "medianLab": [
+          15.248,
+          -1.793,
+          -0.616
+        ],
+        "L05": 4.614,
+        "L95": 23.6,
+        "pixels": 7800
+      },
+      "live": {
+        "meanL": 7.745,
+        "medianRGB": [
+          18.0,
+          22.0,
+          25.0
+        ],
+        "medianHex": "#121619",
+        "medianLab": [
+          6.979,
+          -0.923,
+          -2.695
+        ],
+        "L05": 3.153,
+        "L95": 13.824,
+        "pixels": 7800
+      },
+      "candidate": {
+        "meanL": 67.199,
+        "medianRGB": [
+          169.0,
+          164.0,
+          155.0
+        ],
+        "medianHex": "#a9a49b",
+        "medianLab": [
+          67.541,
+          0.171,
+          5.305
+        ],
+        "L05": 67.191,
+        "L95": 67.915,
+        "pixels": 7800
+      }
+    }
+  },
+  "handleCup": {
+    "shot": "door-handles-pz",
+    "rectangle": [
+      787,
+      701,
+      794,
+      708
+    ],
+    "values": {
+      "orig": {
+        "meanL": 41.712,
+        "medianRGB": [
+          98.0,
+          98.0,
+          96.0
+        ],
+        "medianHex": "#626260",
+        "medianLab": [
+          41.495,
+          -0.413,
+          1.136
+        ],
+        "L05": 32.619,
+        "L95": 51.1,
+        "pixels": 49
+      },
+      "live": {
+        "meanL": 31.992,
+        "medianRGB": [
+          76.0,
+          76.0,
+          75.0
+        ],
+        "medianHex": "#4c4c4b",
+        "medianLab": [
+          32.288,
+          -0.217,
+          0.593
+        ],
+        "L05": 17.969,
+        "L95": 46.372,
+        "pixels": 49
+      },
+      "candidate": {
+        "meanL": 40.228,
+        "medianRGB": [
+          96.0,
+          96.0,
+          95.0
+        ],
+        "medianHex": "#60605f",
+        "medianLab": [
+          40.701,
+          -0.208,
+          0.57
+        ],
+        "L05": 31.551,
+        "L95": 48.252,
+        "pixels": 49
+      }
+    }
+  },
+  "bonnet": {
+    "shot": "bonnet-edge-pz",
+    "rectangle": [
+      800,
+      850,
+      807,
+      857
+    ],
+    "values": {
+      "orig": {
+        "meanL": 95.279,
+        "medianRGB": [
+          243.0,
+          241.0,
+          238.0
+        ],
+        "medianHex": "#f3f1ee",
+        "medianLab": [
+          95.219,
+          0.142,
+          1.68
+        ],
+        "L05": 95.219,
+        "L95": 95.732,
+        "pixels": 49
+      },
+      "live": {
+        "meanL": 95.145,
+        "medianRGB": [
+          242.0,
+          241.0,
+          238.0
+        ],
+        "medianHex": "#f2f1ee",
+        "medianLab": [
+          95.145,
+          -0.193,
+          1.562
+        ],
+        "L05": 95.145,
+        "L95": 95.145,
+        "pixels": 49
+      },
+      "candidate": {
+        "meanL": 95.145,
+        "medianRGB": [
+          242.0,
+          241.0,
+          238.0
+        ],
+        "medianHex": "#f2f1ee",
+        "medianLab": [
+          95.145,
+          -0.193,
+          1.562
+        ],
+        "L05": 95.145,
+        "L95": 95.145,
+        "pixels": 49
+      }
+    }
+  },
+  "whitePlateGate": {
+    "faceMeanL": 68.289,
+    "bumperMeanL": 71.174,
+    "pass": true
+  },
+  "LEDs": {
+    "pz": [
+      {
+        "pod": 1,
+        "half": "body",
+        "centre": [
+          844,
+          667
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            841,
+            664,
+            848,
+            671
+          ],
+          "values": {
+            "orig": {
+              "meanL": 30.712,
+              "medianRGB": [
+                142.0,
+                24.0,
+                26.0
+              ],
+              "medianHex": "#8e181a",
+              "medianLab": [
+                30.594,
+                47.676,
+                31.21
+              ],
+              "L05": 30.594,
+              "L95": 30.905,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 35.778,
+              "medianRGB": [
+                131.0,
+                69.0,
+                70.0
+              ],
+              "medianHex": "#834546",
+              "medianLab": [
+                36.976,
+                26.563,
+                11.338
+              ],
+              "L05": 1.822,
+              "L95": 81.206,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 70.507,
+              "medianRGB": [
+                219.0,
+                171.0,
+                173.0
+              ],
+              "medianHex": "#dbabad",
+              "medianLab": [
+                74.321,
+                17.833,
+                5.725
+              ],
+              "L05": 35.496,
+              "L95": 98.536,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                142.0,
+                25.0,
+                26.0
+              ],
+              "medianLab": [
+                30.694,
+                47.392,
+                31.312
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                133.0,
+                21.0,
+                19.0
+              ],
+              "medianLab": [
+                28.305,
+                45.544,
+                32.358
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                117.0,
+                6.0,
+                8.0
+              ],
+              "medianLab": [
+                23.442,
+                43.935,
+                31.887
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 50.879
+      },
+      {
+        "pod": 2,
+        "half": "body",
+        "centre": [
+          892,
+          667
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            889,
+            664,
+            896,
+            671
+          ],
+          "values": {
+            "orig": {
+              "meanL": 28.594,
+              "medianRGB": [
+                136.0,
+                19.0,
+                21.0
+              ],
+              "medianHex": "#881315",
+              "medianLab": [
+                28.788,
+                47.035,
+                31.908
+              ],
+              "L05": 27.65,
+              "L95": 28.788,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 23.434,
+              "medianRGB": [
+                72.0,
+                19.0,
+                21.0
+              ],
+              "medianHex": "#481315",
+              "medianLab": [
+                14.943,
+                25.358,
+                12.668
+              ],
+              "L05": 1.077,
+              "L95": 70.259,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 59.301,
+              "medianRGB": [
+                179.0,
+                130.0,
+                132.0
+              ],
+              "medianHex": "#b38284",
+              "medianLab": [
+                59.174,
+                19.176,
+                6.397
+              ],
+              "L05": 31.059,
+              "L95": 92.927,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                134.0,
+                17.0,
+                21.0
+              ],
+              "medianLab": [
+                28.181,
+                46.926,
+                31.173
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                134.0,
+                22.0,
+                19.0
+              ],
+              "medianLab": [
+                28.619,
+                45.573,
+                32.727
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                114.0,
+                2.0,
+                7.0
+              ],
+              "medianLab": [
+                22.434,
+                43.922,
+                31.035
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 36.74
+      },
+      {
+        "pod": 3,
+        "half": "body",
+        "centre": [
+          938,
+          667
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            935,
+            664,
+            942,
+            671
+          ],
+          "values": {
+            "orig": {
+              "meanL": 24.442,
+              "medianRGB": [
+                120.0,
+                8.0,
+                15.0
+              ],
+              "medianHex": "#78080f",
+              "medianLab": [
+                24.33,
+                44.551,
+                29.847
+              ],
+              "L05": 24.33,
+              "L95": 24.637,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 28.275,
+              "medianRGB": [
+                81.0,
+                34.0,
+                35.0
+              ],
+              "medianHex": "#512223",
+              "medianLab": [
+                20.105,
+                22.109,
+                9.95
+              ],
+              "L05": 0.919,
+              "L95": 75.866,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 62.668,
+              "medianRGB": [
+                197.0,
+                137.0,
+                140.0
+              ],
+              "medianHex": "#c5898c",
+              "medianLab": [
+                63.059,
+                23.344,
+                7.654
+              ],
+              "L05": 29.745,
+              "L95": 96.103,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                120.0,
+                9.0,
+                15.0
+              ],
+              "medianLab": [
+                24.399,
+                44.352,
+                29.915
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                154.0,
+                26.0,
+                22.0
+              ],
+              "medianLab": [
+                33.284,
+                50.633,
+                36.918
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                112.0,
+                0.0,
+                3.0
+              ],
+              "medianLab": [
+                21.772,
+                43.73,
+                31.819
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 41.287
+      },
+      {
+        "pod": 4,
+        "half": "body",
+        "centre": [
+          849,
+          708
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            846,
+            705,
+            853,
+            712
+          ],
+          "values": {
+            "orig": {
+              "meanL": 29.636,
+              "medianRGB": [
+                139.0,
+                23.0,
+                25.0
+              ],
+              "medianHex": "#8b1719",
+              "medianLab": [
+                29.847,
+                47.008,
+                30.835
+              ],
+              "L05": 29.114,
+              "L95": 29.847,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 22.167,
+              "medianRGB": [
+                61.0,
+                18.0,
+                18.0
+              ],
+              "medianHex": "#3d1212",
+              "medianLab": [
+                12.408,
+                21.123,
+                10.849
+              ],
+              "L05": 1.085,
+              "L95": 74.64,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 58.947,
+              "medianRGB": [
+                180.0,
+                126.0,
+                130.0
+              ],
+              "medianHex": "#b47e82",
+              "medianLab": [
+                58.263,
+                21.515,
+                6.256
+              ],
+              "L05": 29.34,
+              "L95": 95.285,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                137.0,
+                21.0,
+                23.0
+              ],
+              "medianLab": [
+                29.205,
+                46.881,
+                31.228
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                129.0,
+                18.0,
+                16.0
+              ],
+              "medianLab": [
+                27.126,
+                45.041,
+                32.627
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                112.0,
+                1.0,
+                6.0
+              ],
+              "medianLab": [
+                21.875,
+                43.566,
+                30.707
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 36.388
+      },
+      {
+        "pod": 5,
+        "half": "body",
+        "centre": [
+          896,
+          708
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            893,
+            705,
+            900,
+            712
+          ],
+          "values": {
+            "orig": {
+              "meanL": 25.743,
+              "medianRGB": [
+                125.0,
+                11.0,
+                16.0
+              ],
+              "medianHex": "#7d0b10",
+              "medianLab": [
+                25.678,
+                45.445,
+                30.988
+              ],
+              "L05": 25.678,
+              "L95": 26.207,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 20.694,
+              "medianRGB": [
+                57.0,
+                6.0,
+                7.0
+              ],
+              "medianHex": "#390607",
+              "medianLab": [
+                9.122,
+                24.769,
+                11.397
+              ],
+              "L05": 1.017,
+              "L95": 68.019,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 57.069,
+              "medianRGB": [
+                175.0,
+                117.0,
+                120.0
+              ],
+              "medianHex": "#af7578",
+              "medianLab": [
+                55.272,
+                23.218,
+                7.701
+              ],
+              "L05": 29.667,
+              "L95": 93.878,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                127.0,
+                11.0,
+                17.0
+              ],
+              "medianLab": [
+                26.138,
+                46.052,
+                31.008
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                130.0,
+                18.0,
+                16.0
+              ],
+              "medianLab": [
+                27.345,
+                45.345,
+                32.905
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                104.5,
+                0.0,
+                3.0
+              ],
+              "medianLab": [
+                19.966,
+                41.645,
+                29.32
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 35.306
+      },
+      {
+        "pod": 6,
+        "half": "body",
+        "centre": [
+          941,
+          708
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            938,
+            705,
+            945,
+            712
+          ],
+          "values": {
+            "orig": {
+              "meanL": 23.176,
+              "medianRGB": [
+                116.0,
+                5.0,
+                13.0
+              ],
+              "medianHex": "#74050d",
+              "medianLab": [
+                23.176,
+                43.969,
+                29.399
+              ],
+              "L05": 23.176,
+              "L95": 23.176,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 18.024,
+              "medianRGB": [
+                47.0,
+                4.0,
+                6.0
+              ],
+              "medianHex": "#2f0406",
+              "medianLab": [
+                6.364,
+                21.585,
+                7.504
+              ],
+              "L05": 0.791,
+              "L95": 63.357,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 54.513,
+              "medianRGB": [
+                163.0,
+                105.0,
+                108.0
+              ],
+              "medianHex": "#a3696c",
+              "medianLab": [
+                50.657,
+                23.646,
+                7.991
+              ],
+              "L05": 30.709,
+              "L95": 88.925,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                115.0,
+                4.0,
+                12.0
+              ],
+              "medianLab": [
+                22.86,
+                43.875,
+                29.468
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                134.0,
+                22.0,
+                19.0
+              ],
+              "medianLab": [
+                28.619,
+                45.573,
+                32.727
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                97.0,
+                0.0,
+                1.0
+              ],
+              "medianLab": [
+                18.118,
+                39.481,
+                27.52
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 32.539
+      },
+      {
+        "pod": 7,
+        "half": "body",
+        "centre": [
+          850,
+          751
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            847,
+            748,
+            854,
+            755
+          ],
+          "values": {
+            "orig": {
+              "meanL": 27.132,
+              "medianRGB": [
+                130.0,
+                15.0,
+                19.0
+              ],
+              "medianHex": "#820f13",
+              "medianLab": [
+                27.119,
+                46.147,
+                31.011
+              ],
+              "L05": 27.119,
+              "L95": 27.119,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 18.357,
+              "medianRGB": [
+                55.0,
+                7.0,
+                9.0
+              ],
+              "medianHex": "#370709",
+              "medianLab": [
+                8.859,
+                23.636,
+                10.142
+              ],
+              "L05": 1.162,
+              "L95": 55.882,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 57.838,
+              "medianRGB": [
+                183.0,
+                120.0,
+                124.0
+              ],
+              "medianHex": "#b7787c",
+              "medianLab": [
+                57.034,
+                25.191,
+                8.016
+              ],
+              "L05": 32.206,
+              "L95": 84.329,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                132.0,
+                16.0,
+                20.0
+              ],
+              "medianLab": [
+                27.65,
+                46.538,
+                31.092
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                123.0,
+                12.0,
+                12.0
+              ],
+              "medianLab": [
+                25.266,
+                44.557,
+                32.46
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                105.0,
+                0.0,
+                4.0
+              ],
+              "medianLab": [
+                20.096,
+                41.808,
+                29.092
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 36.938
+      },
+      {
+        "pod": 8,
+        "half": "body",
+        "centre": [
+          898,
+          751
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            895,
+            748,
+            902,
+            755
+          ],
+          "values": {
+            "orig": {
+              "meanL": 23.011,
+              "medianRGB": [
+                116.0,
+                3.0,
+                11.0
+              ],
+              "medianHex": "#74030b",
+              "medianLab": [
+                23.011,
+                44.349,
+                30.14
+              ],
+              "L05": 23.011,
+              "L95": 23.011,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 13.184,
+              "medianRGB": [
+                36.0,
+                1.0,
+                2.0
+              ],
+              "medianHex": "#240102",
+              "medianLab": [
+                3.625,
+                15.077,
+                4.885
+              ],
+              "L05": 0.706,
+              "L95": 67.025,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 50.237,
+              "medianRGB": [
+                143.0,
+                88.0,
+                91.0
+              ],
+              "medianHex": "#8f585b",
+              "medianLab": [
+                43.618,
+                23.107,
+                7.88
+              ],
+              "L05": 26.33,
+              "L95": 90.79,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                114.5,
+                3.0,
+                11.0
+              ],
+              "medianLab": [
+                22.659,
+                43.928,
+                29.666
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                123.0,
+                12.0,
+                12.0
+              ],
+              "medianLab": [
+                25.266,
+                44.557,
+                32.46
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                95.0,
+                0.0,
+                1.0
+              ],
+              "medianLab": [
+                17.626,
+                38.912,
+                26.813
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 25.992
+      },
+      {
+        "pod": 9,
+        "half": "body",
+        "centre": [
+          942,
+          751
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            939,
+            748,
+            946,
+            755
+          ],
+          "values": {
+            "orig": {
+              "meanL": 20.86,
+              "medianRGB": [
+                108.0,
+                0.0,
+                9.0
+              ],
+              "medianHex": "#6c0009",
+              "medianLab": [
+                20.862,
+                42.758,
+                28.109
+              ],
+              "L05": 20.854,
+              "L95": 20.862,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 17.314,
+              "medianRGB": [
+                50.0,
+                3.0,
+                4.0
+              ],
+              "medianHex": "#320304",
+              "medianLab": [
+                6.795,
+                23.431,
+                9.028
+              ],
+              "L05": 0.873,
+              "L95": 61.232,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 54.079,
+              "medianRGB": [
+                160.0,
+                110.0,
+                113.0
+              ],
+              "medianHex": "#a06e71",
+              "medianLab": [
+                51.632,
+                20.305,
+                6.374
+              ],
+              "L05": 29.682,
+              "L95": 90.118,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                108.0,
+                0.0,
+                9.0
+              ],
+              "medianLab": [
+                20.862,
+                42.758,
+                28.109
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                141.0,
+                19.0,
+                17.0
+              ],
+              "medianLab": [
+                29.839,
+                48.419,
+                35.469
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                94.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                17.369,
+                38.599,
+                26.852
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 34.263
+      },
+      {
+        "pod": 10,
+        "half": "tailgate",
+        "centre": [
+          1016,
+          665
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            1013,
+            662,
+            1020,
+            669
+          ],
+          "values": {
+            "orig": {
+              "meanL": 21.733,
+              "medianRGB": [
+                111.0,
+                2.0,
+                11.0
+              ],
+              "medianHex": "#6f020b",
+              "medianLab": [
+                21.756,
+                43.169,
+                28.463
+              ],
+              "L05": 21.511,
+              "L95": 21.756,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 24.534,
+              "medianRGB": [
+                71.0,
+                22.0,
+                23.0
+              ],
+              "medianHex": "#471617",
+              "medianLab": [
+                15.359,
+                23.552,
+                11.746
+              ],
+              "L05": 0.926,
+              "L95": 66.714,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 60.32,
+              "medianRGB": [
+                194.0,
+                137.0,
+                140.0
+              ],
+              "medianHex": "#c2898c",
+              "medianLab": [
+                62.723,
+                22.198,
+                7.13
+              ],
+              "L05": 30.254,
+              "L95": 91.351,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                111.0,
+                2.0,
+                11.0
+              ],
+              "medianLab": [
+                21.756,
+                43.169,
+                28.463
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                140.0,
+                26.0,
+                22.0
+              ],
+              "medianLab": [
+                30.337,
+                46.352,
+                33.12
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                92.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                16.874,
+                38.026,
+                26.134
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 45.849
+      },
+      {
+        "pod": 11,
+        "half": "tailgate",
+        "centre": [
+          1060,
+          665
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            1057,
+            662,
+            1064,
+            669
+          ],
+          "values": {
+            "orig": {
+              "meanL": 20.647,
+              "medianRGB": [
+                107.0,
+                0.0,
+                9.0
+              ],
+              "medianHex": "#6b0009",
+              "medianLab": [
+                20.622,
+                42.482,
+                27.775
+              ],
+              "L05": 20.622,
+              "L95": 20.821,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 27.573,
+              "medianRGB": [
+                84.0,
+                39.0,
+                40.0
+              ],
+              "medianHex": "#542728",
+              "medianLab": [
+                21.907,
+                20.974,
+                9.05
+              ],
+              "L05": 1.001,
+              "L95": 76.485,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 61.191,
+              "medianRGB": [
+                192.0,
+                135.0,
+                138.0
+              ],
+              "medianHex": "#c0878a",
+              "medianLab": [
+                61.973,
+                22.257,
+                7.164
+              ],
+              "L05": 26.781,
+              "L95": 95.718,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                108.0,
+                1.0,
+                9.0
+              ],
+              "medianLab": [
+                20.945,
+                42.518,
+                28.2
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                139.0,
+                26.0,
+                22.0
+              ],
+              "medianLab": [
+                30.127,
+                46.039,
+                32.845
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                88.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                15.878,
+                36.874,
+                24.677
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 46.095
+      },
+      {
+        "pod": 12,
+        "half": "tailgate",
+        "centre": [
+          1107,
+          665
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            1104,
+            662,
+            1111,
+            669
+          ],
+          "values": {
+            "orig": {
+              "meanL": 20.175,
+              "medianRGB": [
+                105.0,
+                0.0,
+                8.0
+              ],
+              "medianHex": "#690008",
+              "medianLab": [
+                20.131,
+                41.904,
+                27.502
+              ],
+              "L05": 20.131,
+              "L95": 20.517,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 33.202,
+              "medianRGB": [
+                106.0,
+                51.0,
+                53.0
+              ],
+              "medianHex": "#6a3335",
+              "medianLab": [
+                28.616,
+                24.701,
+                10.126
+              ],
+              "L05": 1.217,
+              "L95": 81.294,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 65.92,
+              "medianRGB": [
+                206.0,
+                151.0,
+                153.0
+              ],
+              "medianHex": "#ce9799",
+              "medianLab": [
+                67.693,
+                20.909,
+                7.094
+              ],
+              "L05": 28.208,
+              "L95": 98.497,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                105.0,
+                0.0,
+                8.0
+              ],
+              "medianLab": [
+                20.131,
+                41.904,
+                27.502
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                139.0,
+                25.0,
+                21.0
+              ],
+              "medianLab": [
+                30.011,
+                46.31,
+                33.295
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                84.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                14.874,
+                35.713,
+                23.194
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 52.819
+      },
+      {
+        "pod": 13,
+        "half": "tailgate",
+        "centre": [
+          1153,
+          665
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            1150,
+            662,
+            1157,
+            669
+          ],
+          "values": {
+            "orig": {
+              "meanL": 19.947,
+              "medianRGB": [
+                104.0,
+                0.0,
+                7.0
+              ],
+              "medianHex": "#680007",
+              "medianLab": [
+                19.881,
+                41.602,
+                27.561
+              ],
+              "L05": 19.881,
+              "L95": 20.131,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 23.944,
+              "medianRGB": [
+                69.0,
+                11.0,
+                11.0
+              ],
+              "medianHex": "#450b0b",
+              "medianLab": [
+                12.792,
+                27.217,
+                15.29
+              ],
+              "L05": 0.733,
+              "L95": 71.845,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 59.014,
+              "medianRGB": [
+                177.0,
+                120.0,
+                123.0
+              ],
+              "medianHex": "#b1787b",
+              "medianLab": [
+                56.299,
+                22.728,
+                7.453
+              ],
+              "L05": 29.701,
+              "L95": 94.156,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                104.0,
+                0.0,
+                7.0
+              ],
+              "medianLab": [
+                19.881,
+                41.602,
+                27.561
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                138.0,
+                25.0,
+                21.0
+              ],
+              "medianLab": [
+                29.799,
+                45.999,
+                33.02
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                82.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                14.369,
+                35.129,
+                22.441
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 41.93
+      },
+      {
+        "pod": 14,
+        "half": "tailgate",
+        "centre": [
+          1201,
+          664
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            1198,
+            661,
+            1205,
+            668
+          ],
+          "values": {
+            "orig": {
+              "meanL": 19.762,
+              "medianRGB": [
+                104.0,
+                0.0,
+                7.0
+              ],
+              "medianHex": "#680007",
+              "medianLab": [
+                19.881,
+                41.602,
+                27.561
+              ],
+              "L05": 19.638,
+              "L95": 19.881,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 33.471,
+              "medianRGB": [
+                106.0,
+                49.0,
+                50.0
+              ],
+              "medianHex": "#6a3132",
+              "medianLab": [
+                28.093,
+                25.528,
+                11.383
+              ],
+              "L05": 1.191,
+              "L95": 82.495,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 65.938,
+              "medianRGB": [
+                200.0,
+                151.0,
+                153.0
+              ],
+              "medianHex": "#c89799",
+              "medianLab": [
+                67.062,
+                18.644,
+                6.107
+              ],
+              "L05": 30.941,
+              "L95": 98.427,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                104.0,
+                0.0,
+                7.0
+              ],
+              "medianLab": [
+                19.881,
+                41.602,
+                27.561
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                138.0,
+                24.0,
+                21.0
+              ],
+              "medianLab": [
+                29.694,
+                46.293,
+                32.922
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                81.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                14.116,
+                34.836,
+                22.063
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 52.946
+      },
+      {
+        "pod": 15,
+        "half": "tailgate",
+        "centre": [
+          1018,
+          706
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            1015,
+            703,
+            1022,
+            710
+          ],
+          "values": {
+            "orig": {
+              "meanL": 20.355,
+              "medianRGB": [
+                107.0,
+                0.0,
+                8.0
+              ],
+              "medianHex": "#6b0008",
+              "medianLab": [
+                20.613,
+                42.459,
+                28.173
+              ],
+              "L05": 19.881,
+              "L95": 20.613,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 21.692,
+              "medianRGB": [
+                73.0,
+                15.0,
+                16.0
+              ],
+              "medianHex": "#490f10",
+              "medianLab": [
+                14.378,
+                27.292,
+                15.09
+              ],
+              "L05": 1.003,
+              "L95": 61.553,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 58.035,
+              "medianRGB": [
+                183.0,
+                130.0,
+                133.0
+              ],
+              "medianHex": "#b78285",
+              "medianLab": [
+                59.642,
+                20.867,
+                6.552
+              ],
+              "L05": 30.343,
+              "L95": 87.448,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                105.0,
+                0.0,
+                8.0
+              ],
+              "medianLab": [
+                20.131,
+                41.904,
+                27.502
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                138.0,
+                25.0,
+                21.0
+              ],
+              "medianLab": [
+                29.799,
+                45.999,
+                33.02
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                85.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                15.126,
+                36.004,
+                23.567
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 44.516
+      },
+      {
+        "pod": 16,
+        "half": "tailgate",
+        "centre": [
+          1062,
+          705
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            1059,
+            702,
+            1066,
+            709
+          ],
+          "values": {
+            "orig": {
+              "meanL": 19.84,
+              "medianRGB": [
+                104.0,
+                0.0,
+                7.0
+              ],
+              "medianHex": "#680007",
+              "medianLab": [
+                19.881,
+                41.602,
+                27.561
+              ],
+              "L05": 19.638,
+              "L95": 19.889,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 23.984,
+              "medianRGB": [
+                81.0,
+                20.0,
+                21.0
+              ],
+              "medianHex": "#511415",
+              "medianLab": [
+                17.01,
+                28.375,
+                15.666
+              ],
+              "L05": 0.954,
+              "L95": 67.139,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 58.855,
+              "medianRGB": [
+                196.0,
+                138.0,
+                141.0
+              ],
+              "medianHex": "#c48a8d",
+              "medianLab": [
+                63.209,
+                22.551,
+                7.286
+              ],
+              "L05": 27.802,
+              "L95": 89.078,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                104.0,
+                0.0,
+                7.0
+              ],
+              "medianLab": [
+                19.881,
+                41.602,
+                27.561
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                137.0,
+                24.0,
+                20.0
+              ],
+              "medianLab": [
+                29.473,
+                45.955,
+                33.196
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                81.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                14.116,
+                34.836,
+                22.063
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 49.093
+      },
+      {
+        "pod": 17,
+        "half": "tailgate",
+        "centre": [
+          1110,
+          705
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            1107,
+            702,
+            1114,
+            709
+          ],
+          "values": {
+            "orig": {
+              "meanL": 19.761,
+              "medianRGB": [
+                104.0,
+                0.0,
+                7.0
+              ],
+              "medianHex": "#680007",
+              "medianLab": [
+                19.881,
+                41.602,
+                27.561
+              ],
+              "L05": 19.629,
+              "L95": 19.881,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 22.692,
+              "medianRGB": [
+                67.0,
+                8.0,
+                13.0
+              ],
+              "medianHex": "#43080d",
+              "medianLab": [
+                11.934,
+                27.787,
+                13.138
+              ],
+              "L05": 0.844,
+              "L95": 68.853,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 58.513,
+              "medianRGB": [
+                181.0,
+                127.0,
+                129.0
+              ],
+              "medianHex": "#b57f81",
+              "medianLab": [
+                58.592,
+                21.201,
+                7.318
+              ],
+              "L05": 31.394,
+              "L95": 91.048,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                103.0,
+                0.0,
+                7.0
+              ],
+              "medianLab": [
+                19.638,
+                41.323,
+                27.22
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                138.0,
+                24.0,
+                20.0
+              ],
+              "medianLab": [
+                29.685,
+                46.265,
+                33.47
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                81.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                14.116,
+                34.836,
+                22.063
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 44.476
+      },
+      {
+        "pod": 18,
+        "half": "tailgate",
+        "centre": [
+          1173,
+          702
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            1170,
+            699,
+            1177,
+            706
+          ],
+          "values": {
+            "orig": {
+              "meanL": 19.638,
+              "medianRGB": [
+                103.0,
+                0.0,
+                7.0
+              ],
+              "medianHex": "#670007",
+              "medianLab": [
+                19.638,
+                41.323,
+                27.22
+              ],
+              "L05": 19.638,
+              "L95": 19.638,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 29.905,
+              "medianRGB": [
+                94.0,
+                36.0,
+                38.0
+              ],
+              "medianHex": "#5e2426",
+              "medianLab": [
+                22.937,
+                26.695,
+                12.1
+              ],
+              "L05": 0.922,
+              "L95": 77.076,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 63.661,
+              "medianRGB": [
+                199.0,
+                142.0,
+                144.0
+              ],
+              "medianHex": "#c78e90",
+              "medianLab": [
+                64.567,
+                21.913,
+                7.575
+              ],
+              "L05": 26.719,
+              "L95": 97.024,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                103.0,
+                0.0,
+                7.0
+              ],
+              "medianLab": [
+                19.638,
+                41.323,
+                27.22
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                195.0,
+                34.0,
+                29.0
+              ],
+              "medianLab": [
+                42.519,
+                60.699,
+                44.715
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                113.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                21.987,
+                43.941,
+                33.343
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 42.58
+      },
+      {
+        "pod": 19,
+        "half": "tailgate",
+        "centre": [
+          1020,
+          748
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            1017,
+            745,
+            1024,
+            752
+          ],
+          "values": {
+            "orig": {
+              "meanL": 19.638,
+              "medianRGB": [
+                103.0,
+                0.0,
+                7.0
+              ],
+              "medianHex": "#670007",
+              "medianLab": [
+                19.638,
+                41.323,
+                27.22
+              ],
+              "L05": 19.638,
+              "L95": 19.638,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 15.767,
+              "medianRGB": [
+                43.0,
+                2.0,
+                3.0
+              ],
+              "medianHex": "#2b0203",
+              "medianLab": [
+                5.092,
+                19.893,
+                6.771
+              ],
+              "L05": 0.668,
+              "L95": 55.141,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 52.317,
+              "medianRGB": [
+                148.0,
+                95.0,
+                98.0
+              ],
+              "medianHex": "#945f62",
+              "medianLab": [
+                46.128,
+                22.026,
+                7.282
+              ],
+              "L05": 26.803,
+              "L95": 83.673,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                103.0,
+                0.0,
+                7.0
+              ],
+              "medianLab": [
+                19.638,
+                41.323,
+                27.22
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                137.0,
+                23.0,
+                20.0
+              ],
+              "medianLab": [
+                29.371,
+                46.243,
+                33.101
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                81.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                14.116,
+                34.836,
+                22.063
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 32.012
+      },
+      {
+        "pod": 20,
+        "half": "tailgate",
+        "centre": [
+          1064,
+          748
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            1061,
+            745,
+            1068,
+            752
+          ],
+          "values": {
+            "orig": {
+              "meanL": 19.382,
+              "medianRGB": [
+                102.0,
+                0.0,
+                6.0
+              ],
+              "medianHex": "#660006",
+              "medianLab": [
+                19.387,
+                41.019,
+                27.276
+              ],
+              "L05": 19.387,
+              "L95": 19.387,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 18.87,
+              "medianRGB": [
+                56.0,
+                8.0,
+                10.0
+              ],
+              "medianHex": "#38080a",
+              "medianLab": [
+                9.293,
+                23.577,
+                10.389
+              ],
+              "L05": 0.773,
+              "L95": 61.822,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 55.353,
+              "medianRGB": [
+                171.0,
+                113.0,
+                116.0
+              ],
+              "medianHex": "#ab7174",
+              "medianLab": [
+                53.74,
+                23.357,
+                7.793
+              ],
+              "L05": 30.118,
+              "L95": 86.145,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                102.0,
+                0.0,
+                6.0
+              ],
+              "medianLab": [
+                19.387,
+                41.019,
+                27.276
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                137.0,
+                24.0,
+                20.0
+              ],
+              "medianLab": [
+                29.473,
+                45.955,
+                33.196
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                80.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                13.862,
+                34.542,
+                21.682
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 39.878
+      },
+      {
+        "pod": 21,
+        "half": "tailgate",
+        "centre": [
+          1111,
+          745
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            1108,
+            742,
+            1115,
+            749
+          ],
+          "values": {
+            "orig": {
+              "meanL": 19.352,
+              "medianRGB": [
+                102.0,
+                0.0,
+                6.0
+              ],
+              "medianHex": "#660006",
+              "medianLab": [
+                19.387,
+                41.019,
+                27.276
+              ],
+              "L05": 19.144,
+              "L95": 19.387,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 15.563,
+              "medianRGB": [
+                54.0,
+                3.0,
+                7.0
+              ],
+              "medianHex": "#360307",
+              "medianLab": [
+                7.813,
+                25.297,
+                9.408
+              ],
+              "L05": 0.873,
+              "L95": 52.723,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 53.84,
+              "medianRGB": [
+                175.0,
+                114.0,
+                118.0
+              ],
+              "medianHex": "#af7276",
+              "medianLab": [
+                54.51,
+                24.629,
+                7.784
+              ],
+              "L05": 30.517,
+              "L95": 83.345,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                101.0,
+                0.0,
+                6.0
+              ],
+              "medianLab": [
+                19.144,
+                40.739,
+                26.932
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                137.0,
+                24.0,
+                20.0
+              ],
+              "medianLab": [
+                29.473,
+                45.955,
+                33.196
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                80.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                13.862,
+                34.542,
+                21.682
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 40.648
+      },
+      {
+        "pod": 22,
+        "half": "tailgate",
+        "centre": [
+          1152,
+          734
+        ],
+        "cap": {
+          "shot": "tail-lamp-pz",
+          "rectangle": [
+            1149,
+            731,
+            1156,
+            738
+          ],
+          "values": {
+            "orig": {
+              "meanL": 19.144,
+              "medianRGB": [
+                101.0,
+                0.0,
+                6.0
+              ],
+              "medianHex": "#650006",
+              "medianLab": [
+                19.144,
+                40.739,
+                26.932
+              ],
+              "L05": 19.144,
+              "L95": 19.144,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 19.424,
+              "medianRGB": [
+                62.0,
+                9.0,
+                12.0
+              ],
+              "medianHex": "#3e090c",
+              "medianLab": [
+                10.895,
+                25.499,
+                11.99
+              ],
+              "L05": 0.668,
+              "L95": 62.761,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 54.749,
+              "medianRGB": [
+                173.0,
+                117.0,
+                120.0
+              ],
+              "medianHex": "#ad7578",
+              "medianLab": [
+                55.036,
+                22.437,
+                7.333
+              ],
+              "L05": 28.663,
+              "L95": 86.917,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                101.0,
+                0.0,
+                6.0
+              ],
+              "medianLab": [
+                19.144,
+                40.739,
+                26.932
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                190.0,
+                33.0,
+                28.0
+              ],
+              "medianLab": [
+                41.41,
+                59.499,
+                43.854
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                110.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                21.268,
+                43.109,
+                32.357
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 33.768
+      }
+    ],
+    "nz": [
+      {
+        "pod": 1,
+        "half": "body",
+        "centre": [
+          1006,
+          668
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            1003,
+            665,
+            1010,
+            672
+          ],
+          "values": {
+            "orig": {
+              "meanL": 42.109,
+              "medianRGB": [
+                142.0,
+                93.0,
+                92.0
+              ],
+              "medianHex": "#8e5d5c",
+              "medianLab": [
+                44.736,
+                19.933,
+                8.832
+              ],
+              "L05": 38.046,
+              "L95": 45.282,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 6.966,
+              "medianRGB": [
+                33.0,
+                0.0,
+                2.0
+              ],
+              "medianHex": "#210002",
+              "medianLab": [
+                2.961,
+                13.381,
+                3.86
+              ],
+              "L05": 0.873,
+              "L95": 23.499,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 48.037,
+              "medianRGB": [
+                150.0,
+                90.0,
+                94.0
+              ],
+              "medianHex": "#965a5e",
+              "medianLab": [
+                45.09,
+                25.164,
+                8.266
+              ],
+              "L05": 33.888,
+              "L95": 66.092,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                135.0,
+                72.5,
+                72.0
+              ],
+              "medianLab": [
+                38.41,
+                26.427,
+                12.156
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                202.0,
+                164.5,
+                153.0
+              ],
+              "medianLab": [
+                70.586,
+                12.021,
+                11.159
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                95.0,
+                5.0,
+                8.0
+              ],
+              "medianLab": [
+                18.187,
+                37.689,
+                24.633
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 26.903
+      },
+      {
+        "pod": 2,
+        "half": "body",
+        "centre": [
+          960,
+          667
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            957,
+            664,
+            964,
+            671
+          ],
+          "values": {
+            "orig": {
+              "meanL": 24.439,
+              "medianRGB": [
+                121.0,
+                7.0,
+                14.0
+              ],
+              "medianHex": "#79070e",
+              "medianLab": [
+                24.481,
+                45.012,
+                30.59
+              ],
+              "L05": 24.252,
+              "L95": 24.481,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 6.299,
+              "medianRGB": [
+                26.0,
+                0.0,
+                1.0
+              ],
+              "medianHex": "#1a0001",
+              "medianLab": [
+                2.004,
+                9.039,
+                2.757
+              ],
+              "L05": 0.843,
+              "L95": 23.651,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 46.073,
+              "medianRGB": [
+                146.0,
+                85.0,
+                89.0
+              ],
+              "medianHex": "#925559",
+              "medianLab": [
+                43.257,
+                25.776,
+                8.649
+              ],
+              "L05": 33.806,
+              "L95": 68.582,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                120.0,
+                7.0,
+                14.0
+              ],
+              "medianLab": [
+                24.252,
+                44.726,
+                30.288
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                199.0,
+                81.0,
+                68.0
+              ],
+              "medianLab": [
+                50.035,
+                46.234,
+                31.585
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                91.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                16.626,
+                37.739,
+                25.772
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 26.631
+      },
+      {
+        "pod": 3,
+        "half": "body",
+        "centre": [
+          913,
+          667
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            910,
+            664,
+            917,
+            671
+          ],
+          "values": {
+            "orig": {
+              "meanL": 22.02,
+              "medianRGB": [
+                112.0,
+                3.0,
+                12.0
+              ],
+              "medianHex": "#70030c",
+              "medianLab": [
+                22.08,
+                43.247,
+                28.435
+              ],
+              "L05": 22.08,
+              "L95": 22.157,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 7.368,
+              "medianRGB": [
+                38.0,
+                2.0,
+                3.0
+              ],
+              "medianHex": "#260203",
+              "medianLab": [
+                4.175,
+                16.315,
+                5.321
+              ],
+              "L05": 0.949,
+              "L95": 24.311,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 47.853,
+              "medianRGB": [
+                149.0,
+                93.0,
+                96.0
+              ],
+              "medianHex": "#955d60",
+              "medianLab": [
+                45.722,
+                23.309,
+                7.931
+              ],
+              "L05": 33.872,
+              "L95": 67.853,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                112.0,
+                4.0,
+                12.0
+              ],
+              "medianLab": [
+                22.157,
+                43.023,
+                28.517
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                238.0,
+                90.5,
+                74.5
+              ],
+              "medianLab": [
+                58.114,
+                55.91,
+                39.132
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                117.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                22.941,
+                45.044,
+                34.635
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 22.781
+      },
+      {
+        "pod": 4,
+        "half": "body",
+        "centre": [
+          1003,
+          709
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            1000,
+            706,
+            1007,
+            713
+          ],
+          "values": {
+            "orig": {
+              "meanL": 28.293,
+              "medianRGB": [
+                127.0,
+                39.0,
+                39.0
+              ],
+              "medianHex": "#7f2727",
+              "medianLab": [
+                29.691,
+                37.875,
+                21.331
+              ],
+              "L05": 24.711,
+              "L95": 30.097,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 6.807,
+              "medianRGB": [
+                28.0,
+                1.0,
+                2.0
+              ],
+              "medianHex": "#1c0102",
+              "medianLab": [
+                2.466,
+                9.882,
+                3.054
+              ],
+              "L05": 0.761,
+              "L95": 23.708,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 46.406,
+              "medianRGB": [
+                148.0,
+                85.0,
+                89.0
+              ],
+              "medianHex": "#945559",
+              "medianLab": [
+                43.53,
+                26.575,
+                9.072
+              ],
+              "L05": 33.503,
+              "L95": 63.932,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                124.0,
+                15.0,
+                19.0
+              ],
+              "medianLab": [
+                25.789,
+                44.36,
+                29.271
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                222.0,
+                218.5,
+                219.0
+              ],
+              "medianLab": [
+                87.508,
+                1.278,
+                0.176
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                112.0,
+                74.0,
+                73.0
+              ],
+              "medianLab": [
+                35.643,
+                16.04,
+                7.198
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 7.887
+      },
+      {
+        "pod": 5,
+        "half": "body",
+        "centre": [
+          957,
+          709
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            954,
+            706,
+            961,
+            713
+          ],
+          "values": {
+            "orig": {
+              "meanL": 23.08,
+              "medianRGB": [
+                115.0,
+                4.0,
+                12.0
+              ],
+              "medianHex": "#73040c",
+              "medianLab": [
+                22.86,
+                43.875,
+                29.468
+              ],
+              "L05": 22.86,
+              "L95": 23.632,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 5.138,
+              "medianRGB": [
+                28.0,
+                0.0,
+                1.0
+              ],
+              "medianHex": "#1c0001",
+              "medianLab": [
+                2.251,
+                10.144,
+                3.147
+              ],
+              "L05": 0.873,
+              "L95": 18.335,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 45.098,
+              "medianRGB": [
+                148.0,
+                89.0,
+                92.0
+              ],
+              "medianHex": "#94595c",
+              "medianLab": [
+                44.539,
+                24.677,
+                8.666
+              ],
+              "L05": 33.678,
+              "L95": 60.857,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                116.0,
+                4.0,
+                12.0
+              ],
+              "medianLab": [
+                23.093,
+                44.158,
+                29.782
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                197.0,
+                79.0,
+                66.0
+              ],
+              "medianLab": [
+                49.325,
+                46.33,
+                31.795
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                89.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                16.128,
+                37.163,
+                25.044
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 28.411
+      },
+      {
+        "pod": 6,
+        "half": "body",
+        "centre": [
+          911,
+          708
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            908,
+            705,
+            915,
+            712
+          ],
+          "values": {
+            "orig": {
+              "meanL": 21.511,
+              "medianRGB": [
+                110.0,
+                2.0,
+                10.0
+              ],
+              "medianHex": "#6e020a",
+              "medianLab": [
+                21.511,
+                42.865,
+                28.547
+              ],
+              "L05": 21.511,
+              "L95": 21.511,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 7.192,
+              "medianRGB": [
+                46.0,
+                0.0,
+                2.0
+              ],
+              "medianHex": "#2e0002",
+              "medianLab": [
+                5.288,
+                22.621,
+                7.537
+              ],
+              "L05": 0.918,
+              "L95": 21.99,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 49.253,
+              "medianRGB": [
+                159.0,
+                105.0,
+                108.0
+              ],
+              "medianHex": "#9f696c",
+              "medianLab": [
+                50.166,
+                22.061,
+                7.227
+              ],
+              "L05": 33.931,
+              "L95": 65.16,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                110.0,
+                2.0,
+                10.0
+              ],
+              "medianLab": [
+                21.511,
+                42.865,
+                28.547
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                188.0,
+                69.0,
+                57.0
+              ],
+              "medianLab": [
+                45.97,
+                47.189,
+                32.601
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                87.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                15.628,
+                36.585,
+                24.309
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 34.538
+      },
+      {
+        "pod": 7,
+        "half": "body",
+        "centre": [
+          1002,
+          754
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            999,
+            751,
+            1006,
+            758
+          ],
+          "values": {
+            "orig": {
+              "meanL": 23.837,
+              "medianRGB": [
+                119.0,
+                4.0,
+                12.0
+              ],
+              "medianHex": "#77040c",
+              "medianLab": [
+                23.792,
+                45.004,
+                30.715
+              ],
+              "L05": 23.792,
+              "L95": 24.103,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 5.28,
+              "medianRGB": [
+                33.0,
+                0.0,
+                1.0
+              ],
+              "medianHex": "#210001",
+              "medianLab": [
+                2.941,
+                13.242,
+                4.238
+              ],
+              "L05": 0.844,
+              "L95": 15.849,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 46.909,
+              "medianRGB": [
+                156.0,
+                93.0,
+                97.0
+              ],
+              "medianHex": "#9c5d61",
+              "medianLab": [
+                46.66,
+                26.232,
+                8.782
+              ],
+              "L05": 34.05,
+              "L95": 61.086,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                120.0,
+                5.0,
+                13.0
+              ],
+              "medianLab": [
+                24.103,
+                45.105,
+                30.634
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                210.0,
+                191.0,
+                190.0
+              ],
+              "medianLab": [
+                78.858,
+                6.527,
+                2.937
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                98.0,
+                35.0,
+                34.0
+              ],
+              "medianLab": [
+                23.388,
+                28.501,
+                15.526
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 23.272
+      },
+      {
+        "pod": 8,
+        "half": "body",
+        "centre": [
+          955,
+          752
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            952,
+            749,
+            959,
+            756
+          ],
+          "values": {
+            "orig": {
+              "meanL": 21.661,
+              "medianRGB": [
+                111.0,
+                1.0,
+                9.0
+              ],
+              "medianHex": "#6f0109",
+              "medianLab": [
+                21.661,
+                43.354,
+                29.185
+              ],
+              "L05": 21.661,
+              "L95": 21.661,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 6.834,
+              "medianRGB": [
+                27.0,
+                0.0,
+                1.0
+              ],
+              "medianHex": "#1b0001",
+              "medianLab": [
+                2.125,
+                9.582,
+                2.949
+              ],
+              "L05": 0.781,
+              "L95": 24.91,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 46.025,
+              "medianRGB": [
+                146.0,
+                86.0,
+                89.0
+              ],
+              "medianHex": "#925659",
+              "medianLab": [
+                43.491,
+                25.206,
+                8.978
+              ],
+              "L05": 33.525,
+              "L95": 64.916,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                112.0,
+                1.0,
+                9.5
+              ],
+              "medianLab": [
+                21.903,
+                43.643,
+                29.311
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                196.0,
+                80.0,
+                68.0
+              ],
+              "medianLab": [
+                49.367,
+                45.623,
+                30.657
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                87.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                15.628,
+                36.585,
+                24.309
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 27.863
+      },
+      {
+        "pod": 9,
+        "half": "body",
+        "centre": [
+          910,
+          752
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            907,
+            749,
+            914,
+            756
+          ],
+          "values": {
+            "orig": {
+              "meanL": 20.839,
+              "medianRGB": [
+                108.0,
+                0.0,
+                8.0
+              ],
+              "medianHex": "#6c0008",
+              "medianLab": [
+                20.854,
+                42.736,
+                28.507
+              ],
+              "L05": 20.709,
+              "L95": 20.854,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 7.506,
+              "medianRGB": [
+                36.0,
+                1.0,
+                3.0
+              ],
+              "medianHex": "#240103",
+              "medianLab": [
+                3.645,
+                15.216,
+                4.506
+              ],
+              "L05": 0.873,
+              "L95": 22.855,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 48.596,
+              "medianRGB": [
+                155.0,
+                97.0,
+                101.0
+              ],
+              "medianHex": "#9b6165",
+              "medianLab": [
+                47.571,
+                24.084,
+                7.648
+              ],
+              "L05": 33.159,
+              "L95": 69.442,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                107.5,
+                0.0,
+                8.0
+              ],
+              "medianLab": [
+                20.733,
+                42.597,
+                28.34
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                199.0,
+                70.0,
+                58.0
+              ],
+              "medianLab": [
+                48.047,
+                50.617,
+                34.937
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                93.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                17.122,
+                38.313,
+                26.494
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 30.449
+      },
+      {
+        "pod": 10,
+        "half": "tailgate",
+        "centre": [
+          836,
+          667
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            833,
+            664,
+            840,
+            671
+          ],
+          "values": {
+            "orig": {
+              "meanL": 20.916,
+              "medianRGB": [
+                108.0,
+                1.0,
+                9.0
+              ],
+              "medianHex": "#6c0109",
+              "medianLab": [
+                20.945,
+                42.518,
+                28.2
+              ],
+              "L05": 20.706,
+              "L95": 20.945,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 6.845,
+              "medianRGB": [
+                33.0,
+                1.0,
+                1.0
+              ],
+              "medianHex": "#210101",
+              "medianLab": [
+                3.138,
+                12.841,
+                4.525
+              ],
+              "L05": 0.969,
+              "L95": 21.11,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 48.032,
+              "medianRGB": [
+                155.0,
+                94.0,
+                97.0
+              ],
+              "medianHex": "#9b5e61",
+              "medianLab": [
+                46.762,
+                25.268,
+                8.908
+              ],
+              "L05": 34.234,
+              "L95": 64.101,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                108.0,
+                1.0,
+                10.0
+              ],
+              "medianLab": [
+                20.953,
+                42.541,
+                27.802
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                176.0,
+                58.0,
+                47.0
+              ],
+              "medianLab": [
+                41.945,
+                47.3,
+                33.17
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                85.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                15.126,
+                36.004,
+                23.567
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 31.636
+      },
+      {
+        "pod": 11,
+        "half": "tailgate",
+        "centre": [
+          791,
+          666
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            788,
+            663,
+            795,
+            670
+          ],
+          "values": {
+            "orig": {
+              "meanL": 20.386,
+              "medianRGB": [
+                106.0,
+                0.0,
+                9.0
+              ],
+              "medianHex": "#6a0009",
+              "medianLab": [
+                20.381,
+                42.205,
+                27.441
+              ],
+              "L05": 20.381,
+              "L95": 20.381,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 8.057,
+              "medianRGB": [
+                48.0,
+                2.0,
+                4.0
+              ],
+              "medianHex": "#300204",
+              "medianLab": [
+                6.149,
+                22.948,
+                8.031
+              ],
+              "L05": 1.028,
+              "L95": 22.35,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 49.723,
+              "medianRGB": [
+                160.0,
+                106.0,
+                109.0
+              ],
+              "medianHex": "#a06a6d",
+              "medianLab": [
+                50.555,
+                22.025,
+                7.203
+              ],
+              "L05": 33.978,
+              "L95": 66.844,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                107.0,
+                0.0,
+                9.0
+              ],
+              "medianLab": [
+                20.622,
+                42.482,
+                27.775
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                174.0,
+                56.0,
+                46.0
+              ],
+              "medianLab": [
+                41.259,
+                47.407,
+                32.874
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                85.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                15.126,
+                36.004,
+                23.567
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 35.429
+      },
+      {
+        "pod": 12,
+        "half": "tailgate",
+        "centre": [
+          744,
+          665
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            741,
+            662,
+            748,
+            669
+          ],
+          "values": {
+            "orig": {
+              "meanL": 20.372,
+              "medianRGB": [
+                106.0,
+                0.0,
+                8.0
+              ],
+              "medianHex": "#6a0008",
+              "medianLab": [
+                20.372,
+                42.182,
+                27.838
+              ],
+              "L05": 20.372,
+              "L95": 20.372,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 6.826,
+              "medianRGB": [
+                38.0,
+                1.0,
+                2.0
+              ],
+              "medianHex": "#260102",
+              "medianLab": [
+                3.959,
+                16.576,
+                5.413
+              ],
+              "L05": 0.995,
+              "L95": 18.736,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 47.881,
+              "medianRGB": [
+                155.0,
+                94.0,
+                98.0
+              ],
+              "medianHex": "#9b5e62",
+              "medianLab": [
+                46.787,
+                25.397,
+                8.34
+              ],
+              "L05": 33.19,
+              "L95": 66.803,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                106.0,
+                0.0,
+                8.0
+              ],
+              "medianLab": [
+                20.372,
+                42.182,
+                27.838
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                173.0,
+                55.0,
+                45.0
+              ],
+              "medianLab": [
+                40.911,
+                47.436,
+                33.01
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                84.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                14.874,
+                35.713,
+                23.194
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 31.913
+      },
+      {
+        "pod": 13,
+        "half": "tailgate",
+        "centre": [
+          700,
+          664
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            697,
+            661,
+            704,
+            668
+          ],
+          "values": {
+            "orig": {
+              "meanL": 20.234,
+              "medianRGB": [
+                105.0,
+                0.0,
+                8.0
+              ],
+              "medianHex": "#690008",
+              "medianLab": [
+                20.131,
+                41.904,
+                27.502
+              ],
+              "L05": 20.131,
+              "L95": 20.372,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 6.806,
+              "medianRGB": [
+                38.0,
+                1.0,
+                2.0
+              ],
+              "medianHex": "#260102",
+              "medianLab": [
+                3.959,
+                16.576,
+                5.413
+              ],
+              "L05": 1.015,
+              "L95": 20.866,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 49.085,
+              "medianRGB": [
+                160.0,
+                99.0,
+                103.0
+              ],
+              "medianHex": "#a06367",
+              "medianLab": [
+                48.733,
+                25.195,
+                8.186
+              ],
+              "L05": 33.297,
+              "L95": 64.658,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                105.0,
+                0.0,
+                8.0
+              ],
+              "medianLab": [
+                20.131,
+                41.904,
+                27.502
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                172.0,
+                54.0,
+                44.0
+              ],
+              "medianLab": [
+                40.563,
+                47.463,
+                33.148
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                84.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                14.874,
+                35.713,
+                23.194
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 33.859
+      },
+      {
+        "pod": 14,
+        "half": "tailgate",
+        "centre": [
+          650,
+          663
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            647,
+            660,
+            654,
+            667
+          ],
+          "values": {
+            "orig": {
+              "meanL": 20.128,
+              "medianRGB": [
+                105.0,
+                0.0,
+                8.0
+              ],
+              "medianHex": "#690008",
+              "medianLab": [
+                20.131,
+                41.904,
+                27.502
+              ],
+              "L05": 20.122,
+              "L95": 20.131,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 6.455,
+              "medianRGB": [
+                38.0,
+                1.0,
+                2.0
+              ],
+              "medianHex": "#260102",
+              "medianLab": [
+                3.959,
+                16.576,
+                5.413
+              ],
+              "L05": 0.995,
+              "L95": 16.876,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 48.641,
+              "medianRGB": [
+                156.0,
+                97.0,
+                100.0
+              ],
+              "medianHex": "#9c6164",
+              "medianLab": [
+                47.674,
+                24.35,
+                8.411
+              ],
+              "L05": 33.92,
+              "L95": 66.838,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                105.0,
+                0.0,
+                8.0
+              ],
+              "medianLab": [
+                20.131,
+                41.904,
+                27.502
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                188.0,
+                58.5,
+                48.0
+              ],
+              "medianLab": [
+                44.211,
+                51.202,
+                35.737
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                91.5,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                16.75,
+                37.883,
+                25.953
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 30.924
+      },
+      {
+        "pod": 15,
+        "half": "tailgate",
+        "centre": [
+          833,
+          708
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            830,
+            705,
+            837,
+            712
+          ],
+          "values": {
+            "orig": {
+              "meanL": 20.234,
+              "medianRGB": [
+                105.0,
+                0.0,
+                8.0
+              ],
+              "medianHex": "#690008",
+              "medianLab": [
+                20.131,
+                41.904,
+                27.502
+              ],
+              "L05": 20.131,
+              "L95": 20.372,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 8.851,
+              "medianRGB": [
+                53.0,
+                0.0,
+                3.0
+              ],
+              "medianHex": "#350003",
+              "medianLab": [
+                6.899,
+                26.291,
+                9.672
+              ],
+              "L05": 1.074,
+              "L95": 23.616,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 52.595,
+              "medianRGB": [
+                169.0,
+                112.0,
+                115.0
+              ],
+              "medianHex": "#a97073",
+              "medianLab": [
+                53.236,
+                23.0,
+                7.629
+              ],
+              "L05": 36.401,
+              "L95": 68.73,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                106.0,
+                0.0,
+                8.0
+              ],
+              "medianLab": [
+                20.372,
+                42.182,
+                27.838
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                174.0,
+                56.0,
+                46.0
+              ],
+              "medianLab": [
+                41.259,
+                47.407,
+                32.874
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                84.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                14.874,
+                35.713,
+                23.194
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 38.362
+      },
+      {
+        "pod": 16,
+        "half": "tailgate",
+        "centre": [
+          789,
+          706
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            786,
+            703,
+            793,
+            710
+          ],
+          "values": {
+            "orig": {
+              "meanL": 20.176,
+              "medianRGB": [
+                105.0,
+                0.0,
+                8.0
+              ],
+              "medianHex": "#690008",
+              "medianLab": [
+                20.131,
+                41.904,
+                27.502
+              ],
+              "L05": 19.977,
+              "L95": 20.372,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 7.649,
+              "medianRGB": [
+                45.0,
+                1.0,
+                4.0
+              ],
+              "medianHex": "#2d0104",
+              "medianLab": [
+                5.316,
+                21.732,
+                6.738
+              ],
+              "L05": 0.993,
+              "L95": 21.277,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 49.189,
+              "medianRGB": [
+                160.0,
+                104.0,
+                107.0
+              ],
+              "medianHex": "#a0686b",
+              "medianLab": [
+                50.022,
+                22.891,
+                7.632
+              ],
+              "L05": 32.301,
+              "L95": 64.336,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                105.0,
+                0.0,
+                8.0
+              ],
+              "medianLab": [
+                20.131,
+                41.904,
+                27.502
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                172.0,
+                54.0,
+                44.0
+              ],
+              "medianLab": [
+                40.563,
+                47.463,
+                33.148
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                84.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                14.874,
+                35.713,
+                23.194
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 35.148
+      },
+      {
+        "pod": 17,
+        "half": "tailgate",
+        "centre": [
+          742,
+          705
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            739,
+            702,
+            746,
+            709
+          ],
+          "values": {
+            "orig": {
+              "meanL": 20.019,
+              "medianRGB": [
+                105.0,
+                0.0,
+                7.0
+              ],
+              "medianHex": "#690007",
+              "medianLab": [
+                20.122,
+                41.88,
+                27.899
+              ],
+              "L05": 19.881,
+              "L95": 20.122,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 8.137,
+              "medianRGB": [
+                44.0,
+                2.0,
+                3.0
+              ],
+              "medianHex": "#2c0203",
+              "medianLab": [
+                5.29,
+                20.536,
+                7.083
+              ],
+              "L05": 0.957,
+              "L95": 24.21,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 49.51,
+              "medianRGB": [
+                157.0,
+                98.0,
+                101.0
+              ],
+              "medianHex": "#9d6265",
+              "medianLab": [
+                48.064,
+                24.311,
+                8.381
+              ],
+              "L05": 33.279,
+              "L95": 67.087,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                105.0,
+                0.0,
+                7.0
+              ],
+              "medianLab": [
+                20.122,
+                41.88,
+                27.899
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                172.0,
+                53.0,
+                44.0
+              ],
+              "medianLab": [
+                40.413,
+                47.872,
+                32.98
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                83.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                14.622,
+                35.421,
+                22.818
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 33.442
+      },
+      {
+        "pod": 18,
+        "half": "tailgate",
+        "centre": [
+          678,
+          702
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            675,
+            699,
+            682,
+            706
+          ],
+          "values": {
+            "orig": {
+              "meanL": 19.881,
+              "medianRGB": [
+                104.0,
+                0.0,
+                7.0
+              ],
+              "medianHex": "#680007",
+              "medianLab": [
+                19.881,
+                41.602,
+                27.561
+              ],
+              "L05": 19.881,
+              "L95": 19.881,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 7.446,
+              "medianRGB": [
+                37.0,
+                1.0,
+                2.0
+              ],
+              "medianHex": "#250102",
+              "medianLab": [
+                3.79,
+                15.816,
+                5.145
+              ],
+              "L05": 0.916,
+              "L95": 20.29,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 49.198,
+              "medianRGB": [
+                155.0,
+                94.0,
+                97.0
+              ],
+              "medianHex": "#9b5e61",
+              "medianLab": [
+                46.762,
+                25.268,
+                8.908
+              ],
+              "L05": 34.168,
+              "L95": 69.553,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                104.0,
+                0.0,
+                7.0
+              ],
+              "medianLab": [
+                19.881,
+                41.602,
+                27.561
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                255.0,
+                87.0,
+                71.0
+              ],
+              "medianLab": [
+                60.372,
+                62.778,
+                44.37
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                136.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                27.397,
+                50.198,
+                40.428
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 19.365
+      },
+      {
+        "pod": 19,
+        "half": "tailgate",
+        "centre": [
+          833,
+          751
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            830,
+            748,
+            837,
+            755
+          ],
+          "values": {
+            "orig": {
+              "meanL": 19.881,
+              "medianRGB": [
+                104.0,
+                0.0,
+                7.0
+              ],
+              "medianHex": "#680007",
+              "medianLab": [
+                19.881,
+                41.602,
+                27.561
+              ],
+              "L05": 19.881,
+              "L95": 19.881,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 6.972,
+              "medianRGB": [
+                40.0,
+                0.0,
+                1.0
+              ],
+              "medianHex": "#280001",
+              "medianLab": [
+                4.096,
+                18.396,
+                6.063
+              ],
+              "L05": 1.004,
+              "L95": 17.773,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 49.802,
+              "medianRGB": [
+                161.0,
+                103.0,
+                107.0
+              ],
+              "medianHex": "#a1676b",
+              "medianLab": [
+                49.907,
+                23.855,
+                7.485
+              ],
+              "L05": 35.1,
+              "L95": 64.724,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                104.0,
+                0.0,
+                7.0
+              ],
+              "medianLab": [
+                19.881,
+                41.602,
+                27.561
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                205.5,
+                67.0,
+                54.5
+              ],
+              "medianLab": [
+                48.685,
+                53.888,
+                37.939
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                97.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                18.109,
+                39.454,
+                27.916
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 31.798
+      },
+      {
+        "pod": 20,
+        "half": "tailgate",
+        "centre": [
+          788,
+          748
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            785,
+            745,
+            792,
+            752
+          ],
+          "values": {
+            "orig": {
+              "meanL": 19.856,
+              "medianRGB": [
+                104.0,
+                0.0,
+                7.0
+              ],
+              "medianHex": "#680007",
+              "medianLab": [
+                19.881,
+                41.602,
+                27.561
+              ],
+              "L05": 19.638,
+              "L95": 19.881,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 6.439,
+              "medianRGB": [
+                30.0,
+                0.0,
+                2.0
+              ],
+              "medianHex": "#1e0002",
+              "medianLab": [
+                2.534,
+                11.464,
+                3.184
+              ],
+              "L05": 0.949,
+              "L95": 17.798,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 47.808,
+              "medianRGB": [
+                153.0,
+                91.0,
+                95.0
+              ],
+              "medianHex": "#995b5f",
+              "medianLab": [
+                45.747,
+                25.919,
+                8.644
+              ],
+              "L05": 34.403,
+              "L95": 66.89,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                103.0,
+                0.0,
+                7.0
+              ],
+              "medianLab": [
+                19.638,
+                41.323,
+                27.22
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                171.0,
+                53.0,
+                43.0
+              ],
+              "medianLab": [
+                40.215,
+                47.489,
+                33.287
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                83.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                14.622,
+                35.421,
+                22.818
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 31.125
+      },
+      {
+        "pod": 21,
+        "half": "tailgate",
+        "centre": [
+          741,
+          747
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            738,
+            744,
+            745,
+            751
+          ],
+          "values": {
+            "orig": {
+              "meanL": 19.53,
+              "medianRGB": [
+                103.0,
+                0.0,
+                7.0
+              ],
+              "medianHex": "#670007",
+              "medianLab": [
+                19.638,
+                41.323,
+                27.22
+              ],
+              "L05": 19.387,
+              "L95": 19.638,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 5.948,
+              "medianRGB": [
+                35.0,
+                0.0,
+                2.0
+              ],
+              "medianHex": "#230002",
+              "medianLab": [
+                3.268,
+                14.758,
+                4.345
+              ],
+              "L05": 0.918,
+              "L95": 15.757,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 47.56,
+              "medianRGB": [
+                152.0,
+                91.0,
+                94.0
+              ],
+              "medianHex": "#985b5e",
+              "medianLab": [
+                45.589,
+                25.394,
+                9.009
+              ],
+              "L05": 33.464,
+              "L95": 64.989,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                103.0,
+                0.0,
+                6.0
+              ],
+              "medianLab": [
+                19.629,
+                41.299,
+                27.618
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                170.0,
+                52.0,
+                43.0
+              ],
+              "medianLab": [
+                39.881,
+                47.557,
+                32.862
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                82.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                14.369,
+                35.129,
+                22.441
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 31.22
+      },
+      {
+        "pod": 22,
+        "half": "tailgate",
+        "centre": [
+          700,
+          734
+        ],
+        "cap": {
+          "shot": "tail-lamp-nz",
+          "rectangle": [
+            697,
+            731,
+            704,
+            738
+          ],
+          "values": {
+            "orig": {
+              "meanL": 19.58,
+              "medianRGB": [
+                103.0,
+                0.0,
+                6.0
+              ],
+              "medianHex": "#670006",
+              "medianLab": [
+                19.629,
+                41.299,
+                27.618
+              ],
+              "L05": 19.387,
+              "L95": 19.629,
+              "pixels": 49
+            },
+            "live": {
+              "meanL": 6.901,
+              "medianRGB": [
+                29.0,
+                1.0,
+                2.0
+              ],
+              "medianHex": "#1d0102",
+              "medianLab": [
+                2.596,
+                10.463,
+                3.259
+              ],
+              "L05": 1.028,
+              "L95": 20.859,
+              "pixels": 49
+            },
+            "candidate": {
+              "meanL": 48.144,
+              "medianRGB": [
+                154.0,
+                91.0,
+                95.0
+              ],
+              "medianHex": "#9a5b5f",
+              "medianLab": [
+                45.88,
+                26.316,
+                8.851
+              ],
+              "L05": 34.519,
+              "L95": 65.85,
+              "pixels": 49
+            }
+          }
+        },
+        "surroundingLens": {
+          "annulusRadii": [
+            14,
+            20
+          ],
+          "values": {
+            "orig": {
+              "medianRGB": [
+                103.0,
+                0.0,
+                6.0
+              ],
+              "medianLab": [
+                19.629,
+                41.299,
+                27.618
+              ],
+              "pixels": 648
+            },
+            "live": {
+              "medianRGB": [
+                246.5,
+                75.0,
+                61.0
+              ],
+              "medianLab": [
+                57.133,
+                64.23,
+                45.73
+              ],
+              "pixels": 648
+            },
+            "candidate": {
+              "medianRGB": [
+                119.0,
+                0.0,
+                0.0
+              ],
+              "medianLab": [
+                23.416,
+                45.594,
+                35.271
+              ],
+              "pixels": 648
+            }
+          }
+        },
+        "candidateDeltaL": 22.464
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "reference": "f3828c4",
+  "candidate": "6316e96",
+  "method": "Same unmodified audit poses, raw RGBA comparison",
+  "views": {
+    "clay-orbit-30": {
+      "changedPixels": 1,
+      "maxChannelDelta": 21
+    },
+    "clay-orbit-210": {
+      "changedPixels": 6,
+      "maxChannelDelta": 21
+    }
+  }
+}

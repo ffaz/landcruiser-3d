@@ -1,0 +1,170 @@
+[
+ {
+  "shot": "phone-front-corner-pz",
+  "origToLive": {
+   "blocks": 1869,
+   "darker": 974,
+   "brighter": 895,
+   "peak": 66.6
+  },
+  "liveToCandidate": {
+   "blocks": 484,
+   "darker": 145,
+   "brighter": 339,
+   "peak": 57.7
+  },
+  "origToCandidate": {
+   "blocks": 1723,
+   "darker": 839,
+   "brighter": 884,
+   "peak": 37.2
+  }
+ },
+ {
+  "shot": "phone-front-corner-nz",
+  "origToLive": {
+   "blocks": 2291,
+   "darker": 1196,
+   "brighter": 1095,
+   "peak": 62.8
+  },
+  "liveToCandidate": {
+   "blocks": 459,
+   "darker": 141,
+   "brighter": 318,
+   "peak": 57
+  },
+  "origToCandidate": {
+   "blocks": 2156,
+   "darker": 1071,
+   "brighter": 1085,
+   "peak": 48.4
+  }
+ },
+ {
+  "shot": "phone-bonnet-edge-pz",
+  "origToLive": {
+   "blocks": 965,
+   "darker": 473,
+   "brighter": 492,
+   "peak": 47.2
+  },
+  "liveToCandidate": {
+   "blocks": 306,
+   "darker": 131,
+   "brighter": 175,
+   "peak": 44.6
+  },
+  "origToCandidate": {
+   "blocks": 692,
+   "darker": 316,
+   "brighter": 376,
+   "peak": 47.2
+  }
+ },
+ {
+  "shot": "phone-headlamp-pz",
+  "origToLive": {
+   "blocks": 2508,
+   "darker": 1319,
+   "brighter": 1189,
+   "peak": 56.6
+  },
+  "liveToCandidate": {
+   "blocks": 564,
+   "darker": 207,
+   "brighter": 357,
+   "peak": 53.5
+  },
+  "origToCandidate": {
+   "blocks": 2326,
+   "darker": 1149,
+   "brighter": 1177,
+   "peak": 43.3
+  }
+ },
+ {
+  "shot": "phone-tail-pz",
+  "origToLive": {
+   "blocks": 1964,
+   "darker": 1009,
+   "brighter": 955,
+   "peak": 69.7
+  },
+  "liveToCandidate": {
+   "blocks": 1137,
+   "darker": 539,
+   "brighter": 598,
+   "peak": 56.6
+  },
+  "origToCandidate": {
+   "blocks": 1901,
+   "darker": 965,
+   "brighter": 936,
+   "peak": 65.3
+  }
+ },
+ {
+  "shot": "phone-mirror-pz",
+  "origToLive": {
+   "blocks": 728,
+   "darker": 385,
+   "brighter": 343,
+   "peak": 34.1
+  },
+  "liveToCandidate": {
+   "blocks": 143,
+   "darker": 28,
+   "brighter": 115,
+   "peak": 26.9
+  },
+  "origToCandidate": {
+   "blocks": 698,
+   "darker": 340,
+   "brighter": 358,
+   "peak": 34
+  }
+ },
+ {
+  "shot": "phone-orbit-30",
+  "origToLive": {
+   "blocks": 812,
+   "darker": 408,
+   "brighter": 404,
+   "peak": 65.6
+  },
+  "liveToCandidate": {
+   "blocks": 302,
+   "darker": 88,
+   "brighter": 214,
+   "peak": 53.4
+  },
+  "origToCandidate": {
+   "blocks": 768,
+   "darker": 353,
+   "brighter": 415,
+   "peak": 65.6
+  }
+ },
+ {
+  "shot": "phone-orbit-210",
+  "origToLive": {
+   "blocks": 1000,
+   "darker": 521,
+   "brighter": 479,
+   "peak": 52.1
+  },
+  "liveToCandidate": {
+   "blocks": 498,
+   "darker": 207,
+   "brighter": 291,
+   "peak": 59.1
+  },
+  "origToCandidate": {
+   "blocks": 983,
+   "darker": 476,
+   "brighter": 507,
+   "peak": 67.2
+  }
+ }
+]

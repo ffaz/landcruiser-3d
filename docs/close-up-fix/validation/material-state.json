@@ -1,0 +1,794 @@
+{
+  "lampsOn": false,
+  "materials": [
+    {
+      "part": "lamp_rear_L_finish4b",
+      "node": "chrome_1",
+      "source": "chrome.001",
+      "zone": "chrome",
+      "color": "e1e4e5",
+      "emission": 1,
+      "emissiveColor": "000000",
+      "metalness": 0.95,
+      "opacity": 1,
+      "env": 1.1,
+      "roughness": 0.22,
+      "coat": 0.15
+    },
+    {
+      "part": "lamp_rear_L_finish4b",
+      "node": "black_11",
+      "source": "black.001",
+      "zone": "black",
+      "color": "282a2c",
+      "emission": 1,
+      "emissiveColor": "000000",
+      "metalness": 0,
+      "opacity": 1,
+      "env": 0.3,
+      "roughness": 0.65
+    },
+    {
+      "part": "lamp_rear_L_finish4b",
+      "node": "orangeglass_21",
+      "source": "orangeglass",
+      "zone": "lamp_orange",
+      "color": "d66b18",
+      "emission": 0,
+      "emissiveColor": "8c3505",
+      "metalness": 0,
+      "opacity": 1,
+      "env": 1,
+      "roughness": 0.13,
+      "coat": 0.8
+    },
+    {
+      "part": "lamp_rear_L_finish4b",
+      "node": "redglass_25_1",
+      "source": "redglass",
+      "zone": "lamp_red",
+      "color": "d0000c",
+      "emission": 0,
+      "emissiveColor": "970006",
+      "metalness": 0,
+      "opacity": 0.9,
+      "env": 0.006,
+      "roughness": 0.12,
+      "coat": 1
+    },
+    {
+      "part": "lamp_rear_L_finish4b",
+      "node": "redglass_25_2",
+      "source": "redglass_lower",
+      "zone": "lamp_red",
+      "color": "d0000c",
+      "emission": 0,
+      "emissiveColor": "970006",
+      "metalness": 0,
+      "opacity": 0.94,
+      "env": 0.006,
+      "roughness": 0.12,
+      "coat": 1
+    },
+    {
+      "part": "lamp_rear_L_finish4b",
+      "node": "redglass_25_3",
+      "source": "redglass_caps",
+      "zone": "lamp_red",
+      "color": "b55d66",
+      "emission": 0,
+      "emissiveColor": "970006",
+      "metalness": 0.55,
+      "opacity": 1,
+      "env": 1.7,
+      "roughness": 0.15,
+      "coat": 0.8
+    },
+    {
+      "part": "lamp_rear_L_finish4b",
+      "node": "clearglass_27_1",
+      "source": "clearglass",
+      "zone": "lamp_clear",
+      "color": "f2f5f4",
+      "emission": 0,
+      "emissiveColor": "bfc6c4",
+      "metalness": 0,
+      "opacity": 0.35,
+      "env": 1.1,
+      "roughness": 0.1,
+      "coat": 0.75
+    },
+    {
+      "part": "lamp_rear_L_finish4b",
+      "node": "clearglass_27_2",
+      "source": "redglass",
+      "zone": "lamp_clear",
+      "color": "f2f5f4",
+      "emission": 0,
+      "emissiveColor": "bfc6c4",
+      "metalness": 0,
+      "opacity": 0.35,
+      "env": 1.1,
+      "roughness": 0.1,
+      "coat": 0.75
+    },
+    {
+      "part": "lamp_rear_R_finish4b",
+      "node": "chrome_1",
+      "source": "chrome.001",
+      "zone": "chrome",
+      "color": "e1e4e5",
+      "emission": 1,
+      "emissiveColor": "000000",
+      "metalness": 0.95,
+      "opacity": 1,
+      "env": 1.1,
+      "roughness": 0.22,
+      "coat": 0.15
+    },
+    {
+      "part": "lamp_rear_R_finish4b",
+      "node": "black_11",
+      "source": "black.001",
+      "zone": "black",
+      "color": "282a2c",
+      "emission": 1,
+      "emissiveColor": "000000",
+      "metalness": 0,
+      "opacity": 1,
+      "env": 0.3,
+      "roughness": 0.65
+    },
+    {
+      "part": "lamp_rear_R_finish4b",
+      "node": "orangeglass_21",
+      "source": "orangeglass",
+      "zone": "lamp_orange",
+      "color": "d66b18",
+      "emission": 0,
+      "emissiveColor": "8c3505",
+      "metalness": 0,
+      "opacity": 1,
+      "env": 1,
+      "roughness": 0.13,
+      "coat": 0.8
+    },
+    {
+      "part": "lamp_rear_R_finish4b",
+      "node": "redglass_25_1",
+      "source": "redglass",
+      "zone": "lamp_red",
+      "color": "d0000c",
+      "emission": 0,
+      "emissiveColor": "970006",
+      "metalness": 0,
+      "opacity": 0.9,
+      "env": 0.006,
+      "roughness": 0.12,
+      "coat": 1
+    },
+    {
+      "part": "lamp_rear_R_finish4b",
+      "node": "redglass_25_2",
+      "source": "redglass_lower",
+      "zone": "lamp_red",
+      "color": "d0000c",
+      "emission": 0,
+      "emissiveColor": "970006",
+      "metalness": 0,
+      "opacity": 0.94,
+      "env": 0.006,
+      "roughness": 0.12,
+      "coat": 1
+    },
+    {
+      "part": "lamp_rear_R_finish4b",
+      "node": "redglass_25_3",
+      "source": "redglass_caps",
+      "zone": "lamp_red",
+      "color": "b55d66",
+      "emission": 0,
+      "emissiveColor": "970006",
+      "metalness": 0.55,
+      "opacity": 1,
+      "env": 1.7,
+      "roughness": 0.15,
+      "coat": 0.8
+    },
+    {
+      "part": "lamp_rear_R_finish4b",
+      "node": "clearglass_27_1",
+      "source": "clearglass",
+      "zone": "lamp_clear",
+      "color": "f2f5f4",
+      "emission": 0,
+      "emissiveColor": "bfc6c4",
+      "metalness": 0,
+      "opacity": 0.35,
+      "env": 1.1,
+      "roughness": 0.1,
+      "coat": 0.75
+    },
+    {
+      "part": "lamp_rear_R_finish4b",
+      "node": "clearglass_27_2",
+      "source": "redglass",
+      "zone": "lamp_clear",
+      "color": "f2f5f4",
+      "emission": 0,
+      "emissiveColor": "bfc6c4",
+      "metalness": 0,
+      "opacity": 0.35,
+      "env": 1.1,
+      "roughness": 0.1,
+      "coat": 0.75
+    }
+  ],
+  "rays": [
+    {
+      "pixel": [
+        980,
+        710
+      ],
+      "hits": [
+        {
+          "node": "redglass_25_1",
+          "part": "lamp_rear_R_finish4b",
+          "source": "redglass",
+          "zone": "lamp_red",
+          "point": [
+            2.219375031660109,
+            1.1934934840205205,
+            -0.8195265834434778
+          ]
+        },
+        {
+          "node": "black_12",
+          "part": "lamp_rear_R_finish4b",
+          "source": "black.001",
+          "zone": "black",
+          "point": [
+            2.199336215031128,
+            1.1921283732205696,
+            -0.8085136632903039
+          ]
+        },
+        {
+          "node": "black_11",
+          "part": "lamp_rear_R_finish4b",
+          "source": "black.001",
+          "zone": "black",
+          "point": [
+            2.1941319720750676,
+            1.191773842890939,
+            -0.8056535187421519
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            0.867987280458717,
+            1.101432458250279,
+            -0.07683175891807181
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            0.04552746239053285,
+            1.0454037614984766,
+            0.37517518706490716
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            -0.6529315750073597,
+            0.9978224101178816,
+            0.7590338625318465
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            -0.7431520004034953,
+            0.991676294837488,
+            0.8086171467880647
+          ]
+        },
+        {
+          "node": "Front_Doors_9",
+          "part": "door_FL",
+          "source": "paint",
+          "zone": "paint",
+          "point": [
+            -1.026541529066447,
+            0.9723708581276591,
+            0.9643621844913871
+          ]
+        }
+      ]
+    },
+    {
+      "pixel": [
+        1000,
+        730
+      ],
+      "hits": [
+        {
+          "node": "redglass_25_1",
+          "part": "lamp_rear_R_finish4b",
+          "source": "redglass",
+          "zone": "lamp_red",
+          "point": [
+            2.2131064536703615,
+            1.1798722874665957,
+            -0.8316714377428608
+          ]
+        },
+        {
+          "node": "chrome_2",
+          "part": "lamp_rear_R_finish4b",
+          "source": "chrome.001",
+          "zone": "chrome",
+          "point": [
+            2.207075026308657,
+            1.1794094705268097,
+            -0.8284180562410484
+          ]
+        },
+        {
+          "node": "black_12",
+          "part": "lamp_rear_R_finish4b",
+          "source": "black.001",
+          "zone": "black",
+          "point": [
+            2.1951517768796007,
+            1.1784945491521286,
+            -0.8219865970179321
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            0.8607820537128181,
+            1.0761027147183586,
+            -0.1022210235330614
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            0.04917646580269874,
+            1.0138247841418204,
+            0.3355630113439336
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            -0.7315100583415095,
+            0.9539194041432831,
+            0.7566691515739552
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            -0.7433082029568299,
+            0.9530140825902651,
+            0.7630331286469292
+          ]
+        },
+        {
+          "node": "carpaint_6",
+          "part": "body_shell",
+          "source": "paint",
+          "zone": "paint",
+          "point": [
+            -1.1313824339203047,
+            0.9232355049479889,
+            0.9723622722528151
+          ]
+        }
+      ]
+    },
+    {
+      "pixel": [
+        990,
+        690
+      ],
+      "hits": [
+        {
+          "node": "redglass_25_1",
+          "part": "lamp_rear_R_finish4b",
+          "source": "redglass",
+          "zone": "lamp_red",
+          "point": [
+            2.2128670804710646,
+            1.2069556610516305,
+            -0.8237100801778879
+          ]
+        },
+        {
+          "node": "chrome_2",
+          "part": "lamp_rear_R_finish4b",
+          "source": "chrome.001",
+          "zone": "chrome",
+          "point": [
+            2.207140207136746,
+            1.2066174915877776,
+            -0.8205917079565765
+          ]
+        },
+        {
+          "node": "black_12",
+          "part": "lamp_rear_R_finish4b",
+          "source": "black.001",
+          "zone": "black",
+          "point": [
+            2.1940795038278886,
+            1.2058462625457405,
+            -0.8134799504561857
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            0.8850542278699689,
+            1.1285488700772373,
+            -0.10069518654677956
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            0.04638046019202857,
+            1.0790255365221988,
+            0.35597581474758355
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            -0.7002925420866521,
+            1.0349348095035509,
+            0.7625509584225374
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            -0.740322421723838,
+            1.0325710619322763,
+            0.7843478548083875
+          ]
+        },
+        {
+          "node": "Front_Doors_9",
+          "part": "door_FL",
+          "source": "paint",
+          "zone": "paint",
+          "point": [
+            -1.062718643151276,
+            1.0135337005338856,
+            0.9598976465473426
+          ]
+        }
+      ]
+    },
+    {
+      "pixel": [
+        1005,
+        755
+      ],
+      "hits": [
+        {
+          "node": "redglass_25_1",
+          "part": "lamp_rear_R_finish4b",
+          "source": "redglass",
+          "zone": "lamp_red",
+          "point": [
+            2.2131062271721396,
+            1.1629231726059206,
+            -0.8355920685052093
+          ]
+        },
+        {
+          "node": "redglass_25_3",
+          "part": "lamp_rear_R_finish4b",
+          "source": "redglass_caps",
+          "zone": "lamp_red",
+          "point": [
+            2.2101857419958715,
+            1.1626667665031876,
+            -0.8340242174177614
+          ]
+        },
+        {
+          "node": "redglass_25_3",
+          "part": "lamp_rear_R_finish4b",
+          "source": "redglass_caps",
+          "zone": "lamp_red",
+          "point": [
+            2.206715547939426,
+            1.162362098312789,
+            -0.832161257259886
+          ]
+        },
+        {
+          "node": "black_11",
+          "part": "lamp_rear_R_finish4b",
+          "source": "black.001",
+          "zone": "black",
+          "point": [
+            2.204827178437174,
+            1.1621963075501693,
+            -0.8311474934504796
+          ]
+        },
+        {
+          "node": "black_12",
+          "part": "lamp_rear_R_finish4b",
+          "source": "black.001",
+          "zone": "black",
+          "point": [
+            2.1962128107827277,
+            1.1614400029280012,
+            -0.8265229037403691
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            0.862532524732599,
+            1.0443485801683163,
+            -0.11054183875054369
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            0.038510972981083746,
+            0.9720030136270399,
+            0.33183092057465724
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            -0.7491467777567538,
+            0.9028500332266682,
+            0.7546819150142428
+          ]
+        }
+      ]
+    },
+    {
+      "pixel": [
+        1018,
+        723
+      ],
+      "hits": [
+        {
+          "node": "redglass_25_1",
+          "part": "lamp_rear_R_finish4b",
+          "source": "redglass",
+          "zone": "lamp_red",
+          "point": [
+            2.20420937524133,
+            1.18445245709835,
+            -0.8408231032094855
+          ]
+        },
+        {
+          "node": "black_12",
+          "part": "lamp_rear_R_finish4b",
+          "source": "black.001",
+          "zone": "black",
+          "point": [
+            2.187591695142923,
+            1.1832340596750617,
+            -0.832009870741257
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            0.863544437785333,
+            1.0861557817732774,
+            -0.12979775636009228
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            0.04709875344117842,
+            1.026294518819074,
+            0.30320646391589734
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            -0.7394246247155616,
+            0.9686271397609192,
+            0.7203413065860165
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            -0.8115229761832436,
+            0.9633409358424818,
+            0.7585788661188664
+          ]
+        },
+        {
+          "node": "carpaint_6",
+          "part": "body_shell",
+          "source": "paint",
+          "zone": "paint",
+          "point": [
+            -1.2285279791418526,
+            0.9327664020872132,
+            0.979738619449336
+          ]
+        }
+      ]
+    },
+    {
+      "pixel": [
+        956,
+        709
+      ],
+      "hits": [
+        {
+          "node": "redglass_25_1",
+          "part": "lamp_rear_R_finish4b",
+          "source": "redglass",
+          "zone": "lamp_red",
+          "point": [
+            2.2279503494081254,
+            1.1942029824672633,
+            -0.8055756796969272
+          ]
+        },
+        {
+          "node": "redglass_25_3",
+          "part": "lamp_rear_R_finish4b",
+          "source": "redglass_caps",
+          "zone": "lamp_red",
+          "point": [
+            2.2185146263820315,
+            1.193560968919514,
+            -0.8002739448144767
+          ]
+        },
+        {
+          "node": "black_11",
+          "part": "lamp_rear_R_finish4b",
+          "source": "black.001",
+          "zone": "black",
+          "point": [
+            2.2160660190534545,
+            1.1933943638725324,
+            -0.7988981237087239
+          ]
+        },
+        {
+          "node": "black_11",
+          "part": "lamp_rear_R_finish4b",
+          "source": "black.001",
+          "zone": "black",
+          "point": [
+            2.2096987027697312,
+            1.1929611269806004,
+            -0.7953204622242084
+          ]
+        },
+        {
+          "node": "black_12",
+          "part": "lamp_rear_R_finish4b",
+          "source": "black.001",
+          "zone": "black",
+          "point": [
+            2.2056664318714616,
+            1.1926867682973574,
+            -0.7930548137712249
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            0.8680477346537576,
+            1.1016742064659286,
+            -0.041474920333751
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            0.04508846634076402,
+            1.0456794514225984,
+            0.4209286334357989
+          ]
+        },
+        {
+          "node": "Original_seats_and_cabin",
+          "part": "body_shell",
+          "source": "interior",
+          "zone": "interior",
+          "point": [
+            -0.555496729499537,
+            1.0048151921346917,
+            0.7583848595103002
+          ]
+        }
+      ]
+    }
+  ]
+}
