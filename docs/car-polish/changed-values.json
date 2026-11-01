@@ -1,0 +1,275 @@
+{
+  "baseline": "4dc22e5",
+  "branchParent": "acd7c4e",
+  "changes": [
+    {
+      "name": "paint clean-panel scope",
+      "old": [
+        "bonnet",
+        "body_shell"
+      ],
+      "new": "all paint zones",
+      "file": "index.html",
+      "line": 372
+    },
+    {
+      "name": "front plate finish",
+      "old": "baked AO + curvature",
+      "new": "flat finish mask, excludes cavity and specular smear",
+      "file": "index.html",
+      "line": 488
+    },
+    {
+      "name": "plate maskXMax_m",
+      "old": null,
+      "new": -2.5,
+      "file": "index.html",
+      "line": 497
+    },
+    {
+      "name": "plate maskAbsZMax_m",
+      "old": null,
+      "new": 0.174,
+      "file": "index.html",
+      "line": 497
+    },
+    {
+      "name": "plate maskYMin_m",
+      "old": null,
+      "new": 0.585,
+      "file": "index.html",
+      "line": 497
+    },
+    {
+      "name": "plate maskYMax_m",
+      "old": null,
+      "new": 0.748,
+      "file": "index.html",
+      "line": 497
+    },
+    {
+      "name": "plate faceYMin_m",
+      "old": null,
+      "new": 0.605,
+      "file": "index.html",
+      "line": 498
+    },
+    {
+      "name": "plate faceYMax_m",
+      "old": null,
+      "new": 0.748,
+      "file": "index.html",
+      "line": 498
+    },
+    {
+      "name": "plate frameWidth_m",
+      "old": null,
+      "new": 0.003,
+      "file": "index.html",
+      "line": 500
+    },
+    {
+      "name": "plate frameLinearRGB",
+      "old": null,
+      "new": [
+        0.021,
+        0.023,
+        0.025
+      ],
+      "file": "index.html",
+      "line": 501
+    },
+    {
+      "name": "plate faceLinearRGB",
+      "old": null,
+      "new": [
+        2.2,
+        2.17,
+        2.1
+      ],
+      "file": "index.html",
+      "line": 501
+    },
+    {
+      "name": "plate minimumAA_m",
+      "old": null,
+      "new": 0.0005,
+      "file": "index.html",
+      "line": 499
+    },
+    {
+      "name": "side seam frontGapX_m",
+      "old": null,
+      "new": -1.108,
+      "file": "index.html",
+      "line": 463
+    },
+    {
+      "name": "side seam frontGapCurve",
+      "old": null,
+      "new": 0.055,
+      "file": "index.html",
+      "line": 463
+    },
+    {
+      "name": "side seam frontGapYOrigin_m",
+      "old": null,
+      "new": 0.92,
+      "file": "index.html",
+      "line": 463
+    },
+    {
+      "name": "side seam frontGapYRange_m",
+      "old": null,
+      "new": 0.36,
+      "file": "index.html",
+      "line": 463
+    },
+    {
+      "name": "side seam middleGapX_m",
+      "old": null,
+      "new": -0.02,
+      "file": "index.html",
+      "line": 464
+    },
+    {
+      "name": "side seam middleGapCurve",
+      "old": null,
+      "new": 0.05,
+      "file": "index.html",
+      "line": 464
+    },
+    {
+      "name": "side seam middleGapYOrigin_m",
+      "old": null,
+      "new": 1.0,
+      "file": "index.html",
+      "line": 464
+    },
+    {
+      "name": "side seam middleGapYRange_m",
+      "old": null,
+      "new": 0.45,
+      "file": "index.html",
+      "line": 464
+    },
+    {
+      "name": "side seam filterInner_px",
+      "old": null,
+      "new": 0.65,
+      "file": "index.html",
+      "line": 467
+    },
+    {
+      "name": "side seam filterOuter_px",
+      "old": null,
+      "new": 1.5,
+      "file": "index.html",
+      "line": 467
+    },
+    {
+      "name": "side seam gapLinearGain",
+      "old": null,
+      "new": 0.16,
+      "file": "index.html",
+      "line": 468
+    },
+    {
+      "name": "side seam sideGateZ_m",
+      "old": null,
+      "new": [
+        0.9,
+        0.95
+      ],
+      "file": "index.html",
+      "line": 467
+    },
+    {
+      "name": "side seam lowerGateY_m",
+      "old": null,
+      "new": [
+        0.55,
+        0.59
+      ],
+      "file": "index.html",
+      "line": 467
+    },
+    {
+      "name": "side seam upperGateY_m",
+      "old": null,
+      "new": [
+        1.23,
+        1.27
+      ],
+      "file": "index.html",
+      "line": 467
+    },
+    {
+      "name": "side seam minimumPixelWidth_m",
+      "old": null,
+      "new": 0.001,
+      "file": "index.html",
+      "line": 466
+    },
+    {
+      "name": "rail caps zone (unsorted_09/10 redglass)",
+      "old": "lamp_red",
+      "new": "black",
+      "file": "index.html",
+      "line": 846
+    },
+    {
+      "name": "stray roof extension",
+      "old": "visible",
+      "new": "discard x>1.762 or abs(z)<0.50 in unsorted_10 only",
+      "file": "index.html",
+      "line": 483
+    },
+    {
+      "name": "rear emblem / lettering / grade envMapIntensity",
+      "old": 3.0,
+      "new": 8.0,
+      "file": "index.html",
+      "line": 824
+    },
+    {
+      "name": "new mask coordinates at lift",
+      "old": "not applicable",
+      "new": "subtract existing body-lift uniform; rigid body coordinates",
+      "file": "index.html",
+      "line": 457
+    },
+    {
+      "name": "default spoiler",
+      "old": "spoiler",
+      "new": null,
+      "file": "build.json",
+      "line": 21
+    },
+    {
+      "name": "baked shader cache version",
+      "old": "v4",
+      "new": "v5",
+      "file": "index.html",
+      "line": 429
+    },
+    {
+      "name": "paint shader cache version",
+      "old": "v10",
+      "new": "v11",
+      "file": "index.html",
+      "line": 449
+    }
+  ],
+  "preserved": [
+    "all 54 GLBs byte-identical",
+    "geometry, NORMAL, COLOR_0",
+    "three 0.166.1",
+    "accepted front grille/headlamp/tail-lamp/glass/wheel materials",
+    "body paint roughness and clearcoat",
+    "ground shadow pad",
+    "seals and unlit LEDs",
+    "Clay paint, lighting and glass settings",
+    "workshop implementation"
+  ]
+}

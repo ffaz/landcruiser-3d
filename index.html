@@ -369,7 +369,7 @@ function useBakedShading(material,clay=false,cream=false){
  if(clay)return useMainClayShading(material,true,false);
  const clayPaint=clay&&material.userData.zone==='paint';
  const heightPaint=clayPaint&&!material.userData.partId?.startsWith('side_step_');
- const cleanPanel=material.userData.zone==='paint'&&['bonnet','body_shell'].includes(material.userData.partId);
+ const cleanPanel=material.userData.zone==='paint';
  material.onBeforeCompile=shader=>{
   Object.assign(shader.uniforms,clay?clayBakedUniforms:cream?creamDetailUniforms:bakedUniforms,finishSeamUniforms);
   shader.vertexShader=shader.vertexShader.replace('#include <common>',
@@ -426,7 +426,7 @@ function useBakedShading(material,clay=false,cream=false){
    ${material.userData.zone==='black'&&!material.userData.partId?.startsWith('wheel_')?'reflectedLight.directSpecular*=uFinishBlackSpecular; reflectedLight.indirectSpecular*=uFinishBlackSpecular;':''}
   `);
  };
- material.customProgramCacheKey=()=> (heightPaint?'lc200-clay-paint-height-v2':clayPaint?'lc200-clay-paint-v2':clay?'lc200-baked-ao-curvature-clay-v1':cream?'lc200-cream-baked-detail-v4':'lc200-baked-ao-curvature-v4')+(material.userData.zone==='paint'?'-paint'+(cleanPanel?'-clean-panel':''):material.userData.zone==='black'&&!material.userData.partId?.startsWith('wheel_')?'-neutral-trim':material.userData.zone==='chrome'&&!material.userData.partId?.startsWith('wheel_')?'-metal-trim':'');
+ material.customProgramCacheKey=()=> (heightPaint?'lc200-clay-paint-height-v2':clayPaint?'lc200-clay-paint-v2':clay?'lc200-baked-ao-curvature-clay-v1':cream?'lc200-cream-baked-detail-v5':'lc200-baked-ao-curvature-v5')+(material.userData.zone==='paint'?'-paint'+(cleanPanel?'-clean-panel':''):material.userData.zone==='black'&&!material.userData.partId?.startsWith('wheel_')?'-neutral-trim':material.userData.zone==='chrome'&&!material.userData.partId?.startsWith('wheel_')?'-metal-trim':'');
  return material;
 }
 function useCreamPaintShading(material){
@@ -446,8 +446,62 @@ function useCreamPaintShading(material){
   shader.fragmentShader=shader.fragmentShader.replace('#include <aomap_fragment>',
    'float creamFacing=abs(dot(geometryNormal,geometryViewDir));\nfloat creamLowView=1.0-smoothstep(0.04,0.14,abs(cameraPosition.y)/max(length(cameraPosition),0.001));\nfloat creamEdgeGain=mix(1.0,mix(uCreamGrazingFloor,1.0,smoothstep(uCreamGrazingRange.x,uCreamGrazingRange.y,creamFacing)),creamLowView);\nreflectedLight.directDiffuse*=uCreamKeyGain*uCreamKeyTint*creamEdgeGain;\nvec3 creamWorldNormal=inverseTransformDirection(geometryNormal,viewMatrix);\nfloat creamRearWeight=smoothstep(0.15,0.80,creamWorldNormal.x);\nreflectedLight.indirectDiffuse*=uCreamFillGain*mix(1.0,uCreamRearFill,creamRearWeight);\n#include <aomap_fragment>');
  };
- material.customProgramCacheKey=()=> 'lc200-base-paint-lighting-v10'+(['bonnet','body_shell'].includes(material.userData.partId)?'-clean-panel':'');
+ material.customProgramCacheKey=()=> 'lc200-base-paint-lighting-v11'+(['bonnet','body_shell'].includes(material.userData.partId)?'-clean-panel':'');
  return material;
+}
+// Recessed side gaps are filtered in screen space, without moving mesh edges.
+function usePolishGaps(material){
+ const compile=material.onBeforeCompile;
+ material.onBeforeCompile=shader=>{
+  compile(shader);
+  shader.uniforms.uPolishLift=clayBakedUniforms.uClayBodyLift;
+  shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vGapBody; uniform float uPolishLift;');
+  shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvGapBody=(modelMatrix*vec4(position,1.0)).xyz; vGapBody.y-=uPolishLift;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vGapBody;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <opaque_fragment>',`
+   float h=vGapBody.y;
+   float frontGap=-1.108+0.055*pow((h-0.92)/0.36,2.0);
+   float middleGap=-0.020+0.05*pow((h-1.00)/0.45,2.0);
+   float d=min(abs(vGapBody.x-frontGap),abs(vGapBody.x-middleGap));
+   float pixelWidth=max(fwidth(vGapBody.x),0.001);
+   float gap=(1.0-smoothstep(0.65*pixelWidth,1.50*pixelWidth,d))*smoothstep(.90,.95,abs(vGapBody.z))*smoothstep(.55,.59,h)*(1.0-smoothstep(1.23,1.27,h));
+   outgoingLight*=mix(1.0,0.16,gap);
+   #include <opaque_fragment>`);
+ };
+ material.customProgramCacheKey=()=> 'lc200-polish-side-gap-v1-'+material.userData.partId;
+}
+const roofMaskMaterials=new WeakSet();
+function useRoofCapMask(material){
+ if(material.userData.partId!=='unsorted_10'||roofMaskMaterials.has(material))return;
+ roofMaskMaterials.add(material);const compile=material.onBeforeCompile;
+ material.onBeforeCompile=shader=>{
+  compile(shader);
+  shader.uniforms.uPolishLift=clayBakedUniforms.uClayBodyLift;
+  shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vRailBody; uniform float uPolishLift;');
+  shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvRailBody=(modelMatrix*vec4(position,1.0)).xyz; vRailBody.y-=uPolishLift;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vRailBody;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <clipping_planes_fragment>','#include <clipping_planes_fragment>\nif(vRailBody.x>1.762||abs(vRailBody.z)<0.50)discard;');
+ };
+ const cache=material.customProgramCacheKey.bind(material);material.customProgramCacheKey=()=>cache()+'-roof-cap-mask-v1';
+}
+// A finish mask on the existing bumper plate, in stored body coordinates.
+function usePlateFinish(material){
+ const compile=material.onBeforeCompile;
+ material.onBeforeCompile=shader=>{
+  compile(shader);
+  shader.uniforms.uPolishLift=clayBakedUniforms.uClayBodyLift;
+  shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vPlatePosition; uniform float uPolishLift;');
+  shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvPlatePosition=(modelMatrix*vec4(position,1.0)).xyz; vPlatePosition.y-=uPolishLift;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vPlatePosition;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <opaque_fragment>',`// Plate face excludes the baked cavity term, including the crossed lower bevel.
+   float plateMask=step(vPlatePosition.x,-2.50)*step(abs(vPlatePosition.z),0.174)*step(0.585,vPlatePosition.y)*step(vPlatePosition.y,0.748);
+   float edge=min(0.174-abs(vPlatePosition.z),min(vPlatePosition.y-0.605,0.748-vPlatePosition.y));
+   float aa=max(fwidth(edge),0.0005);
+   float face=smoothstep(0.003-aa,0.003+aa,edge);
+   outgoingLight=mix(outgoingLight,mix(vec3(0.021,0.023,0.025),vec3(2.20,2.17,2.10),face),plateMask);
+   #include <opaque_fragment>`);
+ };
+ material.customProgramCacheKey=()=> 'lc200-plate-clean-frame-v1';
 }
 function bindBakedAttribute(root){
  let bakedVertices=0;
@@ -651,14 +705,14 @@ function studioMaterial(current,zone,hex,authored=false,node=null){
   if(!material){
    material=original.clone();material.userData={...original.userData,studio:'base'};
    if(creamTrim){material.roughness=CREAM_DETAIL.trimRoughness;material.envMapIntensity=CREAM_DETAIL.trimEnv;useBakedShading(material,false,true);}
-   else {useCreamPaintShading(material);if(original.userData.partId==='bonnet'&&node){useBonnetBoundary(material,node);}}
+   else {useCreamPaintShading(material);if(original.userData.partId==='bonnet'&&node){useBonnetBoundary(material,node);}if(original.userData.partId==='bumper_front')usePlateFinish(material);else if(original.userData.partId!=='bonnet')usePolishGaps(material);}
    creamMaterials.set(original,material);originalMaterials.set(material,original);
   }
   material.color.copy(original.color);
   if(creamTrim&&!authored)material.color.set(CREAM_DETAIL.trimColor);
-  return material;
+  useRoofCapMask(material);return material;
  }
- if(studioMode!=='clay')return original;
+ if(studioMode!=='clay'){useRoofCapMask(original);return original;}
  const frontLens=zone==='lamp_clear'&&original.userData.partId?.startsWith('lamp_front_')&&node;
  const glassGradient=zone==='glass'&&node;
  let material=frontLens?clayLensMaterials.get(node):glassGradient?clayGlassMaterials.get(node):clayMaterials.get(original);
@@ -685,7 +739,7 @@ function studioMaterial(current,zone,hex,authored=false,node=null){
  const lampHousing=zone==='chrome'&&original.userData.partId?.startsWith('lamp_front_');
  const color=authored?hex:frontLens?'#f4ead6':lampHousing?'#4a3f4a':(CLAY_COLORS[zone]||('#'+original.color.getHexString()));
  material.color.set(zone==='paint'?clayPaintColor(color):color);
- return material;
+ useRoofCapMask(material);return material;
 }
 function updateClayBackground(){
  if(studioMode!=='clay')return;
@@ -767,7 +821,7 @@ function finishPartMaterial(material,entry,zone,sourceName,node){
  }
  if(/^(emblem_(front|rear)$|lettering_rear|badge_grade_)/.test(entry.id)&&zone==='chrome'){
   material.color.set('#eef0f2');material.roughness=.22;material.metalness=.85;
-  material.envMapIntensity=entry.id==='emblem_front'?22.0:3.0;material.clearcoat=.20;material.clearcoatRoughness=.12;
+  material.envMapIntensity=entry.id==='emblem_front'?22.0:8.0;material.clearcoat=.20;material.clearcoatRoughness=.12;
  }
  if(zone==='chrome'&&(entry.id==='grille'||entry.id==='bumper_front'||entry.id.startsWith('lamp_front_'))){
   material.color.set('#f4f5f6');material.roughness=.14;material.metalness=1;
@@ -789,7 +843,7 @@ await Promise.all(partEntries.map(async entry=>{
  root.traverse(part=>{
   if(!part.isMesh)return;
   const convert=source=>{
-   const sourceZone=zoneFor(source),zone=/_finish(?:3|4b)$/.test(entry.id)&&part.name.startsWith('clearglass_27')&&sourceZone==='lamp_red'?'lamp_clear':sourceZone,key=zone+':'+source.name+(/_finish(?:3|4b)$/.test(entry.id)&&zone==='lamp_red'?':'+part.name:'');
+   const sourceZone=['unsorted_09','unsorted_10'].includes(entry.id)&&zoneFor(source)==='lamp_red'?'black':zoneFor(source),zone=/_finish(?:3|4b)$/.test(entry.id)&&part.name.startsWith('clearglass_27')&&sourceZone==='lamp_red'?'lamp_clear':sourceZone,key=zone+':'+source.name+(/_finish(?:3|4b)$/.test(entry.id)&&zone==='lamp_red'?':'+part.name:'');
    if(!materialCache.has(key)){
     const template=zoneTemplates[zone]||source;
     const material=template.clone();material.vertexColors=false;

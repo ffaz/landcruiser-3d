@@ -1,0 +1,703 @@
+{
+  "baseline": "4dc22e5",
+  "branchedFrom": "acd7c4e",
+  "viewport": [
+    1440,
+    1000
+  ],
+  "sourceSha256": "418b4fdaf1cb1c6443b242e511f257e5f4df5f12d77766f07033f9f4bd9040da",
+  "item2": {
+    "before": {
+      "rectangle": [
+        480,
+        520,
+        980,
+        600
+      ],
+      "mask": "paint-only MeshBasic green, test only",
+      "paintPixels": 29614,
+      "p5_L": 60.50030396050937,
+      "p95_L": 87.05043735075218,
+      "spread_L": 26.550133390242806
+    },
+    "after": {
+      "rectangle": [
+        480,
+        520,
+        980,
+        600
+      ],
+      "mask": "paint-only MeshBasic green, test only",
+      "paintPixels": 29614,
+      "p5_L": 72.52187489686989,
+      "p95_L": 87.40559049326063,
+      "spread_L": 14.883715596390743
+    },
+    "reductionPercent": 43.941089192943494
+  },
+  "item3": {
+    "before": {
+      "profiles": [
+        {
+          "gap": "front",
+          "pixel": [
+            475,
+            470
+          ],
+          "adjacentPixels": [
+            463,
+            470,
+            470,
+            471
+          ],
+          "gap_L": 40.79210215756356,
+          "adjacentMedian_L": 83.50725382321335,
+          "delta_L": 42.715151665649785,
+          "halfDepthWidth_px": 1
+        },
+        {
+          "gap": "middle",
+          "pixel": [
+            731,
+            470
+          ],
+          "adjacentPixels": [
+            719,
+            470,
+            726,
+            471
+          ],
+          "gap_L": 34.00941583809289,
+          "adjacentMedian_L": 80.99024229330718,
+          "delta_L": 46.980826455214284,
+          "halfDepthWidth_px": 1
+        },
+        {
+          "gap": "front",
+          "pixel": [
+            473,
+            490
+          ],
+          "adjacentPixels": [
+            461,
+            490,
+            468,
+            491
+          ],
+          "gap_L": 42.435539431872655,
+          "adjacentMedian_L": 82.76424748131753,
+          "delta_L": 40.32870804944487,
+          "halfDepthWidth_px": 2
+        },
+        {
+          "gap": "middle",
+          "pixel": [
+            731,
+            490
+          ],
+          "adjacentPixels": [
+            719,
+            490,
+            726,
+            491
+          ],
+          "gap_L": 31.89864319955447,
+          "adjacentMedian_L": 79.10498674795082,
+          "delta_L": 47.20634354839635,
+          "halfDepthWidth_px": 1
+        },
+        {
+          "gap": "front",
+          "pixel": [
+            473,
+            510
+          ],
+          "adjacentPixels": [
+            461,
+            510,
+            468,
+            511
+          ],
+          "gap_L": 61.67370471755055,
+          "adjacentMedian_L": 80.91324784326441,
+          "delta_L": 19.239543125713865,
+          "halfDepthWidth_px": 1
+        },
+        {
+          "gap": "middle",
+          "pixel": [
+            731,
+            510
+          ],
+          "adjacentPixels": [
+            719,
+            510,
+            726,
+            511
+          ],
+          "gap_L": 33.468964472823735,
+          "adjacentMedian_L": 77.00147300994435,
+          "delta_L": 43.53250853712061,
+          "halfDepthWidth_px": 2
+        },
+        {
+          "gap": "front",
+          "pixel": [
+            474,
+            530
+          ],
+          "adjacentPixels": [
+            462,
+            530,
+            469,
+            531
+          ],
+          "gap_L": 64.2779833387779,
+          "adjacentMedian_L": 79.10498674795082,
+          "delta_L": 14.827003409172917,
+          "halfDepthWidth_px": 1
+        },
+        {
+          "gap": "middle",
+          "pixel": [
+            733,
+            530
+          ],
+          "adjacentPixels": [
+            721,
+            530,
+            728,
+            531
+          ],
+          "gap_L": 38.634715016314914,
+          "adjacentMedian_L": 74.72943702045386,
+          "delta_L": 36.094722004138944,
+          "halfDepthWidth_px": 1
+        },
+        {
+          "gap": "front",
+          "pixel": [
+            476,
+            550
+          ],
+          "adjacentPixels": [
+            464,
+            550,
+            471,
+            551
+          ],
+          "gap_L": 73.36413388894974,
+          "adjacentMedian_L": 78.37927793825806,
+          "delta_L": 5.015144049308319,
+          "halfDepthWidth_px": 2
+        },
+        {
+          "gap": "middle",
+          "pixel": [
+            736,
+            550
+          ],
+          "adjacentPixels": [
+            724,
+            550,
+            731,
+            551
+          ],
+          "gap_L": 13.259589168988324,
+          "adjacentMedian_L": 83.84008452805513,
+          "delta_L": 70.5804953590668,
+          "halfDepthWidth_px": 1
+        }
+      ],
+      "medianDelta_L": 41.52192985754733,
+      "minimumDelta_L": 5.015144049308319,
+      "medianWidth_px": 1.0
+    },
+    "after": {
+      "profiles": [
+        {
+          "gap": "front",
+          "pixel": [
+            475,
+            470
+          ],
+          "adjacentPixels": [
+            463,
+            470,
+            470,
+            471
+          ],
+          "gap_L": 37.141756826644034,
+          "adjacentMedian_L": 83.50725382321335,
+          "delta_L": 46.36549699656931,
+          "halfDepthWidth_px": 2
+        },
+        {
+          "gap": "middle",
+          "pixel": [
+            731,
+            470
+          ],
+          "adjacentPixels": [
+            719,
+            470,
+            726,
+            471
+          ],
+          "gap_L": 29.711019895153242,
+          "adjacentMedian_L": 81.35080683589091,
+          "delta_L": 51.639786940737665,
+          "halfDepthWidth_px": 2
+        },
+        {
+          "gap": "front",
+          "pixel": [
+            473,
+            490
+          ],
+          "adjacentPixels": [
+            461,
+            490,
+            468,
+            491
+          ],
+          "gap_L": 17.13814347980758,
+          "adjacentMedian_L": 82.76424748131753,
+          "delta_L": 65.62610400150994,
+          "halfDepthWidth_px": 1
+        },
+        {
+          "gap": "middle",
+          "pixel": [
+            731,
+            490
+          ],
+          "adjacentPixels": [
+            719,
+            490,
+            726,
+            491
+          ],
+          "gap_L": 27.447891638116893,
+          "adjacentMedian_L": 79.10498674795082,
+          "delta_L": 51.657095109833925,
+          "halfDepthWidth_px": 2
+        },
+        {
+          "gap": "front",
+          "pixel": [
+            473,
+            510
+          ],
+          "adjacentPixels": [
+            461,
+            510,
+            468,
+            511
+          ],
+          "gap_L": 55.092714961033806,
+          "adjacentMedian_L": 80.91324784326441,
+          "delta_L": 25.82053288223061,
+          "halfDepthWidth_px": 2
+        },
+        {
+          "gap": "middle",
+          "pixel": [
+            732,
+            510
+          ],
+          "adjacentPixels": [
+            720,
+            510,
+            727,
+            511
+          ],
+          "gap_L": 28.20898898980311,
+          "adjacentMedian_L": 77.28808897133229,
+          "delta_L": 49.079099981529176,
+          "halfDepthWidth_px": 2
+        },
+        {
+          "gap": "front",
+          "pixel": [
+            475,
+            530
+          ],
+          "adjacentPixels": [
+            463,
+            530,
+            470,
+            531
+          ],
+          "gap_L": 46.83824745819564,
+          "adjacentMedian_L": 79.10498674795082,
+          "delta_L": 32.26673928975518,
+          "halfDepthWidth_px": 2
+        },
+        {
+          "gap": "middle",
+          "pixel": [
+            733,
+            530
+          ],
+          "adjacentPixels": [
+            721,
+            530,
+            728,
+            531
+          ],
+          "gap_L": 36.54481675018101,
+          "adjacentMedian_L": 75.46230094168932,
+          "delta_L": 38.91748419150831,
+          "halfDepthWidth_px": 2
+        },
+        {
+          "gap": "front",
+          "pixel": [
+            478,
+            550
+          ],
+          "adjacentPixels": [
+            466,
+            550,
+            473,
+            551
+          ],
+          "gap_L": 46.86644561244097,
+          "adjacentMedian_L": 78.09349145653593,
+          "delta_L": 31.22704584409496,
+          "halfDepthWidth_px": 2
+        },
+        {
+          "gap": "middle",
+          "pixel": [
+            736,
+            550
+          ],
+          "adjacentPixels": [
+            724,
+            550,
+            731,
+            551
+          ],
+          "gap_L": 13.259589168988324,
+          "adjacentMedian_L": 85.98313416095716,
+          "delta_L": 72.72354499196884,
+          "halfDepthWidth_px": 1
+        }
+      ],
+      "medianDelta_L": 47.722298489049244,
+      "minimumDelta_L": 25.82053288223061,
+      "medianWidth_px": 2.0
+    },
+    "method": "Thin gaps measured with one-pixel scanlines; a 7x7 median would erase a 2px feature. Width is contiguous run below half the local paint-to-gap L* depth. All sampled rows retained, not filtered.",
+    "temporalLimitation": "Derivative filtering avoids hard shader thresholds. Static orbit inspection does not establish zero shimmer on physical iPad; no physical-device motion measurement was available."
+  },
+  "samples": {
+    "before:front:plate": {
+      "pixel": [
+        720,
+        600
+      ],
+      "median7x7_rgb": [
+        193.0,
+        191.0,
+        187.0
+      ],
+      "Lab": [
+        77.3925635145955,
+        -0.02929261170914188,
+        2.2590804360636207
+      ]
+    },
+    "after:front:plate": {
+      "pixel": [
+        720,
+        600
+      ],
+      "median7x7_rgb": [
+        231.0,
+        230.0,
+        229.0
+      ],
+      "Lab": [
+        91.34267394895404,
+        0.15834780583845465,
+        0.6041020395138208
+      ]
+    },
+    "before:side:door": {
+      "pixel": [
+        600,
+        530
+      ],
+      "median7x7_rgb": [
+        186.0,
+        186.0,
+        184.0
+      ],
+      "Lab": [
+        75.46230094168932,
+        -0.369455393184448,
+        1.0110125282062343
+      ]
+    },
+    "before:side:front_gap": {
+      "pixel": [
+        475,
+        490
+      ],
+      "median7x7_rgb": [
+        207.0,
+        206.0,
+        203.0
+      ],
+      "Lab": [
+        82.76424748131754,
+        -0.19769402211994302,
+        1.6091348975089126
+      ]
+    },
+    "after:side:door": {
+      "pixel": [
+        600,
+        530
+      ],
+      "median7x7_rgb": [
+        188.0,
+        188.0,
+        186.0
+      ],
+      "Lab": [
+        76.19369978169999,
+        -0.3687391947405638,
+        1.0089974245243383
+      ]
+    },
+    "after:side:front_gap": {
+      "pixel": [
+        475,
+        490
+      ],
+      "median7x7_rgb": [
+        207.0,
+        206.0,
+        203.0
+      ],
+      "Lab": [
+        82.76424748131754,
+        -0.19769402211994302,
+        1.6091348975089126
+      ]
+    },
+    "before:rear:lower_tailgate": {
+      "pixel": [
+        700,
+        580
+      ],
+      "median7x7_rgb": [
+        207.0,
+        207.0,
+        205.0
+      ],
+      "Lab": [
+        83.07209867504226,
+        -0.3623235716219142,
+        0.9909754872524212
+      ]
+    },
+    "before:rear:bumper": {
+      "pixel": [
+        800,
+        685
+      ],
+      "median7x7_rgb": [
+        212.0,
+        212.0,
+        210.0
+      ],
+      "Lab": [
+        84.86218920050378,
+        -0.3607422394348303,
+        0.9865411757360221
+      ]
+    },
+    "before:rear:lettering": {
+      "pixel": [
+        720,
+        470
+      ],
+      "median7x7_rgb": [
+        173.0,
+        175.0,
+        175.0
+      ],
+      "Lab": [
+        71.30943566629287,
+        -0.704761139299015,
+        -0.24744000800320798
+      ]
+    },
+    "after:rear:lower_tailgate": {
+      "pixel": [
+        700,
+        580
+      ],
+      "median7x7_rgb": [
+        213.0,
+        213.0,
+        212.0
+      ],
+      "Lab": [
+        85.24478957691058,
+        -0.18061516242534603,
+        0.4927180385160934
+      ]
+    },
+    "after:rear:bumper": {
+      "pixel": [
+        800,
+        685
+      ],
+      "median7x7_rgb": [
+        219.0,
+        219.0,
+        217.0
+      ],
+      "Lab": [
+        87.35507712198958,
+        -0.35859602047538797,
+        0.9805275344857867
+      ]
+    },
+    "after:rear:lettering": {
+      "pixel": [
+        720,
+        470
+      ],
+      "median7x7_rgb": [
+        174.0,
+        176.0,
+        176.0
+      ],
+      "Lab": [
+        71.67957823148961,
+        -0.7040252952628112,
+        -0.24718617126253672
+      ]
+    },
+    "before:top:cap": {
+      "pixel": [
+        1167,
+        351
+      ],
+      "median7x7_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "Lab": [
+        94.49649760687126,
+        0.157159512461702,
+        0.5997296119411688
+      ]
+    },
+    "before:top:roof": {
+      "pixel": [
+        950,
+        450
+      ],
+      "median7x7_rgb": [
+        236.0,
+        235.0,
+        233.0
+      ],
+      "Lab": [
+        93.07256001855937,
+        -0.01829371151929049,
+        1.0855322427701486
+      ]
+    },
+    "after:top:cap": {
+      "pixel": [
+        1167,
+        351
+      ],
+      "median7x7_rgb": [
+        68.0,
+        81.0,
+        89.0
+      ],
+      "Lab": [
+        33.636545412118295,
+        -3.0877515714859136,
+        -6.384103849567168
+      ]
+    },
+    "after:top:roof": {
+      "pixel": [
+        950,
+        450
+      ],
+      "median7x7_rgb": [
+        236.0,
+        235.0,
+        233.0
+      ],
+      "Lab": [
+        93.07256001855937,
+        -0.01829371151929049,
+        1.0855322427701486
+      ]
+    }
+  },
+  "imageHashes": {
+    "before-paint-mask.png": "9a6d074cde6792f9bd455e22f678c8ea458a478be5c88c7f983c70d67ad1c97a",
+    "orbit-overview.png": "d266135eda0615f38225df2ecc8acc4584796db243b6bc6d308bcc294762781f",
+    "after-paint-mask.png": "5b90484ed13d2a5fa860f300127136df213d905d5586c745d7d62454bdc21d58",
+    "crops/04-rail-cap-lower.png": "ca93c6e58a36c66e28bfe6dce8230da41110bd3383b29287e7797aff230031be",
+    "crops/04-rail-cap-upper.png": "ab3e734e9c949713b7916d79c671a2b00eb9042a65b77cccb78f1db85da131f5",
+    "crops/06-roof-ribs-kept.png": "9ab3de3c2ec704de6f39a79ffbdae3e9fd2381623a0cd1938c3964af57240c3c",
+    "crops/01-plate.png": "4e5fb2268f30d3a0690cebb1cd4dd4c1d9f20cf8f4d6e0f5d0e83a0ef5dac72e",
+    "crops/03-middle-gap.png": "018b5cc6f1cf3210e1bcedbb080c7cce985b73af490a3368e94bbcba27776640",
+    "crops/02-sensor-streaks.png": "fdb58b6bb5ce06f77bbdc1124a8b6c17ee1ed78e7b6276800505821fa7008bef",
+    "crops/02-lower-doors.png": "523983dcaf6e956965e490df6cb47f72d3821569fdb17b7627a016dc54a2959d",
+    "crops/02-rear-panel.png": "6dec25153e82ce7fa67faf0ca7949a9e0847cb7c59e5a279f0aa5bcfbac18c7e",
+    "crops/03-arch.png": "b2ff13e318e94d7e8ba7de8102cb7e6ce47ec404ac2549f3f7186f1a809db581",
+    "crops/06-spoiler-removed.png": "3487222783ebe4a77106e40cea33adb7812b5b430fcf0b38b47b98cbd5ccf7c8",
+    "crops/03-front-gap.png": "37ba6ade9cf47d8108b0876024a2f11575f9c427db95b15f1a9c2ab7cda3acc1",
+    "crops/04-red-hairline.png": "cdfc726fcd7720715f11452870857a126157450bf65fc9822559bc338a00a759",
+    "crops/04-orbit-045.png": "5bd029357611af891577ae8f93335400733cf592b53584be2a08459f93597c76",
+    "crops/05-lettering.png": "a48e38d0303d2a6fa47eeb5f21c61e91a73dd8a2114ee54740f13718f9ee20cd",
+    "orbits/315.png": "51124da774943fa66e3036ea0b71ccc6ba2308af33aedcc83a1e99c48bb21570",
+    "orbits/180.png": "bf393be766697b673b9da6b5fabcd17ff174fc99f48fe43d9e1f8e2c1107de07",
+    "orbits/045.png": "ba62317f15222920e0e18ff857ca68c6391d0a5e505343c006a488f62ab150c8",
+    "orbits/270.png": "86180ec1545b199efd8513abd0d5d0f21de5e667e7dbb62b7d072321dee08326",
+    "orbits/135.png": "d2f95946dcce60668757e1eca1044cb63012bd97cbff94cea184a8314f790f44",
+    "orbits/225.png": "6bfdf266305518e23a1e63485717b04313b3ddc4d1f583473ec8a8009edd2f10",
+    "orbits/090.png": "df882d1d956b398aad0a94a395592964a5fff6b9dc347fc822d97acb36cbc8bc",
+    "orbits/000.png": "bd754a878afc45381f9419a64aa8a1b28de66ea1a53cb9fc333645ff07b0ffa8",
+    "after/cream-front.png": "36a9fd7b9e3aa6e32e47eac8fd7d60d8542ad4b83adf3d969737278eb1cc053b",
+    "after/cream-top.png": "70e79a969892ac72fb982cc54d58506d9aaae5bdf6801e5ffce8167710de1b20",
+    "after/clay-quarter.png": "01e1df1d6430f13ff9a8409a47d4b3389530b0fdd76ba14b5fbc11e351a850ef",
+    "after/slate-quarter.png": "a33feade34c2844fa60b91cd3a2c4f4c951e7aefa2fcf6ada183b2253bf2729f",
+    "after/slate-top.png": "aefbb790dccb6495347fa4d229c9ef429acb6a704e016120a4987cc24a107253",
+    "after/slate-rear.png": "abf8d39f4921f632c55ca6c287b7a32ea5737709b855295e9543a8f8db478216",
+    "after/cream-quarter.png": "f4b29c7fb8652c638377340c2b40592ceb3151af9842b533cfa534c1c34ee469",
+    "after/slate-side.png": "fdf3de0ca6d7714935f60d7a1a7c2e37904d4bab23f0d6e0579cf21c62191df3",
+    "after/slate-front.png": "64e027ad0a677d802de375b4fbe40ff6da355470b2ae1dbc71ea6e6ec1417f0d",
+    "after/cream-rear.png": "d0fc11b58882a6b46df9a315b7a15d4f249f3605aff32b1afb137cf45fe89e4a",
+    "after/cream-side.png": "adff50e5d354d30633b5de90f1bceab6c94a5161cab7409fba4ef8daa0a60f3a",
+    "before/cream-front.png": "511160cc62944a68540582c919fca198f632a93fc4f951cf1d097776e8590152",
+    "before/cream-top.png": "2ed6cca3e3b9d3e84e200dca2646ac55eb4ce23b362eeab99c9e226f6ab79fe0",
+    "before/clay-quarter.png": "6f6fea139c072968da17287110f84b2dcf87864b31ba5bcf49d128f4c139fbbf",
+    "before/slate-quarter.png": "890b50fb305c2d48af6090d79bff72c423cff4d17ae2e75dea23bec4a5151044",
+    "before/slate-top.png": "7fe20b4d6c58678a2e14b5b0dac21929c9ae51d579aad290f8c498992196c1c5",
+    "before/slate-rear.png": "0c56e29ed3a6ecb0bd3fc3ad433d693ca61149371040a5313343c7364d1e42c2",
+    "before/cream-quarter.png": "6dd1e2c8ef80712069befcee8481d76172b53cddc5434ef872d95d496040aba7",
+    "before/slate-side.png": "18a608cff75473b2540d1e6ff8dbfe05f5bebc12541c93f4a23aea125c0675e8",
+    "before/slate-front.png": "6cf3a2f116f6dadcb72f9632da9cd131f2aa980a9269120513e75fe13cd2f5c9",
+    "before/cream-rear.png": "36d66b5779277bbbf9080fa3dfa1e92b48562a6e876588b9778cf84f2819e879",
+    "before/cream-side.png": "2e5d01ed5d645b743872ed834caf96fdf97e38b13fb1bf5f2182022fc0b341ed"
+  }
+}
