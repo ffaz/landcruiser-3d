@@ -4514,6 +4514,93 @@
       "derivedFrom": "lamp_rear_R",
       "variantOf": "lamp_rear_R_finish3",
       "purpose": "identical attributes and triangles; 22 source LED caps assigned an unlit reflective material"
+    },
+    {
+      "id": "front_plate",
+      "slot": "front_plate",
+      "rootNode": "front_plate",
+      "url": "parts/front_plate.glb",
+      "pivot": [
+        -2.581,
+        0.644,
+        0
+      ],
+      "rigidClass": "body",
+      "zones": [
+        "paint",
+        "black"
+      ],
+      "triangles": 180,
+      "bounds": {
+        "min": [
+          -2.5833,
+          0.579,
+          -0.163
+        ],
+        "max": [
+          -2.57,
+          0.709,
+          0.163
+        ]
+      },
+      "purpose": "Rounded blank plate and thin gasket; AO deliberately 1 on face; material mask hides only old plate component"
+    },
+    {
+      "id": "bumper_front_plate_clean",
+      "slot": "bumper_front",
+      "url": "parts/bumper_front_plate_clean.glb",
+      "pivot": [
+        -2.270462211108562,
+        0.6223291344332419,
+        0.000005125999450683594
+      ],
+      "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
+      "zones": [
+        "black",
+        "chrome",
+        "paint"
+      ],
+      "triangles": 21282,
+      "bounds": {
+        "min": [
+          -2.58500075340271,
+          0.3104752687520822,
+          -0.9814196434332998
+        ],
+        "max": [
+          -1.9559236688144144,
+          0.9341830001144016,
+          0.9814298954322012
+        ]
+      },
+      "rigidClass": "body",
+      "componentIds": [
+        1289,
+        1297,
+        1300,
+        1309,
+        1310,
+        1328,
+        1329,
+        1330,
+        1390,
+        1740,
+        1741,
+        1742,
+        1745,
+        1747,
+        1749,
+        1814,
+        1815,
+        1818,
+        1819,
+        1827
+      ],
+      "classification": "Blender loose pieces assigned by source family and bounding-box location",
+      "thumbnail": "../docs/foundation/parts/bumper_front.png",
+      "rootNode": "bumper_front_plate_clean",
+      "variantOf": "bumper_front",
+      "purpose": "Same stored attributes and triangle union; loose old plate assigned invisible material zone"
     }
   ],
   "displayBase": {
@@ -4539,7 +4626,7 @@
       "rigidClass": "body"
     },
     "bumper_front": {
-      "default": "bumper_front",
+      "default": "bumper_front_plate_clean",
       "pivot": [
         -2.270462211108562,
         0.6223291344332419,
@@ -4927,6 +5014,15 @@
         2.246749758720398,
         1.026725947856903,
         -0.6270960569381714
+      ],
+      "rigidClass": "body"
+    },
+    "front_plate": {
+      "default": "front_plate",
+      "pivot": [
+        -2.581,
+        0.644,
+        0
       ],
       "rigidClass": "body"
     }

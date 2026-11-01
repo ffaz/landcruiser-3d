@@ -2,7 +2,7 @@
   "slots": {
     "body_shell": "body_shell",
     "bonnet": "bonnet",
-    "bumper_front": "bumper_front",
+    "bumper_front": "bumper_front_plate_clean",
     "bumper_rear": "bumper_rear",
     "door_FL": "door_FL",
     "door_FR": "door_FR",
@@ -45,7 +45,8 @@
     "wheel_emblem_RR": "wheel_emblem_RR",
     "badge_grade": "badge_grade_GXR_finish4b",
     "gap_seal_rear_L": "gap_seal_rear_L",
-    "gap_seal_rear_R": "gap_seal_rear_R"
+    "gap_seal_rear_R": "gap_seal_rear_R",
+    "front_plate": "front_plate"
   },
   "paint": {
     "paint": "#f4f4ef"
