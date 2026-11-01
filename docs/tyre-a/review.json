@@ -1,0 +1,27 @@
+{
+  "design": "A only",
+  "sourceDescription": "user six-option reference board; A, approx 33 inch all-round expedition",
+  "calculatedSize": {
+    "sectionWidth_mm": 285,
+    "aspect_percent": 70,
+    "beadSeatDiameter_mm": 431.8,
+    "diameter_mm": 830.8,
+    "diameter_in": 32.70866141732284
+  },
+  "rootScale": [
+    1,
+    1,
+    1
+  ],
+  "files": {
+    "tyre-A-tread.png": "dc9eb3ada5a06e63172b784278ce9f463930066e5ecea049a2c5b6596b35c40e",
+    "car-A-quarter.png": "73b3b1874c49fb7a61071baf39237fe8824955a4aa96f0d5138311b0b9cbba23",
+    "tyre-A-front.png": "a61c4a332dbe6a9b747700b60b3babbad4dddd074e2152cd7d4cc78390b79eb5",
+    "tyre-A-quarter.png": "ef507096480bc45e5ae6e24f3a43d59aaea943a9265a2da60611307bb1ed5d44",
+    "car-A-side.png": "3265f9367f10c29d2dd1f74408c836aeec359ffb2761b3420162cbc661bc1626",
+    "car-A-front.png": "564b4ac224e381417ad44d1fc675ba80523923971d486fc4daa190cb1a8806b0"
+  },
+  "blender": "4.3.2",
+  "sourceTriangleBudget": 14900,
+  "B_to_F": "not built"
+}

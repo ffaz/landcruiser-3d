@@ -4514,6 +4514,254 @@
       "derivedFrom": "lamp_rear_R",
       "variantOf": "lamp_rear_R_finish3",
       "purpose": "identical attributes and triangles; 22 source LED caps assigned an unlit reflective material"
+    },
+    {
+      "id": "wheel_FL_at285",
+      "slot": "wheel_FL",
+      "url": "parts/wheel_FL_at285.glb",
+      "rootNode": "wheel_FL_at285",
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "tyre",
+        "rim",
+        "chrome",
+        "brake"
+      ],
+      "triangles": 14900,
+      "bounds": {
+        "min": [
+          -2.0502273535728452,
+          -0.018662026882171612,
+          0.6825000017881393
+        ],
+        "max": [
+          -1.2197726464271545,
+          0.8116620268821717,
+          0.9674999982118606
+        ]
+      },
+      "tyre_mm": 830.8,
+      "materialDefaults": {
+        "tyre": {
+          "color": "#242629",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "rim": {
+          "color": "#34383c",
+          "roughness": 0.46,
+          "metalness": 0.8,
+          "envMapIntensity": 0.85
+        },
+        "chrome": {
+          "color": "#a7adb1",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.8
+        },
+        "brake": {
+          "color": "#505358",
+          "roughness": 0.62,
+          "metalness": 0.65,
+          "envMapIntensity": 0.45
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_FL"
+      ],
+      "purpose": "Design A: clean all-round expedition 285/70R17, approx 33 inch; new wheel geometry and Cycles vertex AO"
+    },
+    {
+      "id": "wheel_FR_at285",
+      "slot": "wheel_FR",
+      "url": "parts/wheel_FR_at285.glb",
+      "rootNode": "wheel_FR_at285",
+      "pivot": [
+        -1.635,
+        0.3965,
+        -0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "tyre",
+        "rim",
+        "chrome",
+        "brake"
+      ],
+      "triangles": 14900,
+      "bounds": {
+        "min": [
+          -2.0502273535728452,
+          -0.018662026882171612,
+          -0.9674999982118606
+        ],
+        "max": [
+          -1.2197726464271545,
+          0.8116620268821717,
+          -0.6825000017881393
+        ]
+      },
+      "tyre_mm": 830.8,
+      "materialDefaults": {
+        "tyre": {
+          "color": "#242629",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "rim": {
+          "color": "#34383c",
+          "roughness": 0.46,
+          "metalness": 0.8,
+          "envMapIntensity": 0.85
+        },
+        "chrome": {
+          "color": "#a7adb1",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.8
+        },
+        "brake": {
+          "color": "#505358",
+          "roughness": 0.62,
+          "metalness": 0.65,
+          "envMapIntensity": 0.45
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_FR"
+      ],
+      "purpose": "Design A: clean all-round expedition 285/70R17, approx 33 inch; new wheel geometry and Cycles vertex AO"
+    },
+    {
+      "id": "wheel_RL_at285",
+      "slot": "wheel_RL",
+      "url": "parts/wheel_RL_at285.glb",
+      "rootNode": "wheel_RL_at285",
+      "pivot": [
+        1.215,
+        0.3965,
+        0.8225
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "tyre",
+        "rim",
+        "chrome",
+        "brake"
+      ],
+      "triangles": 14900,
+      "bounds": {
+        "min": [
+          0.7997726464271546,
+          -0.018662026882171612,
+          0.6800000017881394
+        ],
+        "max": [
+          1.6302273535728455,
+          0.8116620268821717,
+          0.9649999982118607
+        ]
+      },
+      "tyre_mm": 830.8,
+      "materialDefaults": {
+        "tyre": {
+          "color": "#242629",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "rim": {
+          "color": "#34383c",
+          "roughness": 0.46,
+          "metalness": 0.8,
+          "envMapIntensity": 0.85
+        },
+        "chrome": {
+          "color": "#a7adb1",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.8
+        },
+        "brake": {
+          "color": "#505358",
+          "roughness": 0.62,
+          "metalness": 0.65,
+          "envMapIntensity": 0.45
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_RL"
+      ],
+      "purpose": "Design A: clean all-round expedition 285/70R17, approx 33 inch; new wheel geometry and Cycles vertex AO"
+    },
+    {
+      "id": "wheel_RR_at285",
+      "slot": "wheel_RR",
+      "url": "parts/wheel_RR_at285.glb",
+      "rootNode": "wheel_RR_at285",
+      "pivot": [
+        1.215,
+        0.3965,
+        -0.8225
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "tyre",
+        "rim",
+        "chrome",
+        "brake"
+      ],
+      "triangles": 14900,
+      "bounds": {
+        "min": [
+          0.7997726464271546,
+          -0.018662026882171612,
+          -0.9649999982118607
+        ],
+        "max": [
+          1.6302273535728455,
+          0.8116620268821717,
+          -0.6800000017881394
+        ]
+      },
+      "tyre_mm": 830.8,
+      "materialDefaults": {
+        "tyre": {
+          "color": "#242629",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "rim": {
+          "color": "#34383c",
+          "roughness": 0.46,
+          "metalness": 0.8,
+          "envMapIntensity": 0.85
+        },
+        "chrome": {
+          "color": "#a7adb1",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.8
+        },
+        "brake": {
+          "color": "#505358",
+          "roughness": 0.62,
+          "metalness": 0.65,
+          "envMapIntensity": 0.45
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_RR"
+      ],
+      "purpose": "Design A: clean all-round expedition 285/70R17, approx 33 inch; new wheel geometry and Cycles vertex AO"
     }
   ],
   "displayBase": {

@@ -852,6 +852,8 @@ await Promise.all(partEntries.map(async entry=>{
     if(!['glass','lamp_clear','mirror'].includes(zone)&&!(entry.id.startsWith('lamp_rear_')&&zone==='lamp_red'))useBakedShading(material);
     if(entry.rigidClass==='wheel'&&!entry.wheelSlot&&zone==='black'){material.color.set('#0d1115');material.roughness=.56;material.envMapIntensity=1;}
     if(entry.rigidClass==='wheel'&&!entry.wheelSlot&&zone==='chrome'){material.color.set('#e1e4e5');material.roughness=.24;material.metalness=1;material.clearcoat=.15;material.clearcoatRoughness=.23;material.envMapIntensity=.95;}
+    // New workshop assets may author a finish per zone; base assets keep their accepted finish.
+    for(const [key,value]of Object.entries(entry.materialDefaults?.[zone]||{})){if(key==='color')material.color.set(value);else if(key in material)material[key]=value;}
     material.userData={...material.userData,zone,sourceMaterial:source.name,defaultColor:material.color.getHexString(),partId:entry.id};
     materialCache.set(key,material);
    }
@@ -962,12 +964,18 @@ const PRESET={
  top:new THREE.Vector3(0,1,.014)
 };
 let activePreset='side',fittedDistance=15,controls;
-const carBounds=new THREE.Box3().setFromObject(car);
+// Unselected catalogue variants must not affect dimensions or camera guards.
+function visibleBounds(root,target=new THREE.Box3()){
+ root.updateMatrixWorld(true);target.makeEmpty();const box=new THREE.Box3();
+ root.traverseVisible(o=>{if(!o.isMesh)return;o.geometry.computeBoundingBox();box.copy(o.geometry.boundingBox).applyMatrix4(o.matrixWorld);target.union(box);});
+ return target;
+}
+const carBounds=visibleBounds(car);
 // Bounds come from the stored meshes, including mirrors and rails.
 const cameraSafety={sphere:new THREE.Sphere(),panBox:new THREE.Box3(),collisionBox:new THREE.Box3(),
  margin:.35,minCameraY:.15,minDistance:4,maxPolarAngle:Math.PI-.014};
 function refreshCameraSafety(){
- carBounds.setFromObject(car);carBounds.getBoundingSphere(cameraSafety.sphere);
+ visibleBounds(car,carBounds);carBounds.getBoundingSphere(cameraSafety.sphere);
  const half=new THREE.Vector3(.18,.60,.15);
  cameraSafety.panBox.set(cameraSafety.sphere.center.clone().sub(half),cameraSafety.sphere.center.clone().add(half));
  cameraSafety.collisionBox.copy(carBounds).expandByScalar(.30);
@@ -1005,7 +1013,7 @@ function enforceCameraSafety(){
 const framingPoints=[],framingWithBase=[];
 function rebuildFramingPoints(){
  framingPoints.length=0;car.updateMatrixWorld(true);
- car.traverse(part=>{if(!part.isMesh)return;const positions=part.geometry.attributes.position;
+ car.traverseVisible(part=>{if(!part.isMesh)return;const positions=part.geometry.attributes.position;
   const stride=Math.max(1,Math.ceil(positions.count/150));
   for(let i=0;i<positions.count;i+=stride)framingPoints.push(new THREE.Vector3().fromBufferAttribute(positions,i).applyMatrix4(part.matrixWorld));
  });
@@ -1021,7 +1029,7 @@ function projectPoints(cam,points){
 }
 function projectedBounds(cam){return projectPoints(cam,plinth.visible?framingWithBase:framingPoints);}
 function boundsCorners(reference=false){
- carBounds.setFromObject(car);if(plinth.visible)carBounds.union(baseBounds);const box=reference?referenceBounds:carBounds;const points=[];
+ visibleBounds(car,carBounds);if(plinth.visible)carBounds.union(baseBounds);const box=reference?referenceBounds:carBounds;const points=[];
  for(const x of [box.min.x,box.max.x])for(const y of [box.min.y,box.max.y])for(const z of [box.min.z,box.max.z])points.push(new THREE.Vector3(x,y,z));
  return points;
 }

@@ -59,10 +59,14 @@ function fitCheck(state=lcBuild.getState()){
  const level=notes.some(n=>n.level==='clash')?'clash':notes.length?'tight':'ok';
  return {level,tyre_mm:tyre,tyres,mounts,notes};
 }
+function visibleBounds(group){
+ group.updateMatrixWorld(true);const box=new THREE.Box3(),piece=new THREE.Box3();
+ group.traverseVisible(o=>{if(!o.isMesh)return;o.geometry.computeBoundingBox();piece.copy(o.geometry.boundingBox).applyMatrix4(o.matrixWorld);box.union(piece);});return box;
+}
 function dimensions(){
  const box=new THREE.Box3();
- for(const group of [lcBuild.groups.body,lcBuild.groups.wheels])box.expandByObject(group);
- const body=new THREE.Box3().expandByObject(lcBuild.groups.body),size=box.getSize(new THREE.Vector3());
+ for(const group of [lcBuild.groups.body,lcBuild.groups.wheels])box.union(visibleBounds(group));
+ const body=visibleBounds(lcBuild.groups.body),size=box.getSize(new THREE.Vector3());
  return {length:Math.round(size.x*1000),height:Math.round(box.max.y*1000),width:Math.round(size.z*1000),clearance:Math.round(body.min.y*1000)};
 }
 function shareState(state){
