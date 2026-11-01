@@ -1,0 +1,14 @@
+{
+  "id": "badge_grade_GXR_finish4b",
+  "triangles": 5890,
+  "stemMetres": 0.0102,
+  "capHeightMetres": 0.02951592206954956,
+  "baselineMetres": 0.9463982582092285,
+  "reliefMetres": 0.005393345979563868,
+  "bevelMetres": 0.00196,
+  "plane": {
+    "a": -0.04009891431510972,
+    "b": -0.12403255850895614,
+    "c": 2.4061177197400827
+  }
+}

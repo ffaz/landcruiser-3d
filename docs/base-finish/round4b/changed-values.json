@@ -1,0 +1,830 @@
+{
+  "baseline": "0e2beba (same viewer as 2a325c3)",
+  "changes": [
+    {
+      "name": "Front chrome color",
+      "old": "#e1e4e5",
+      "new": "#f4f5f6",
+      "file": "index.html",
+      "line": 770,
+      "scope": [
+        "grille",
+        "lamp_front_L",
+        "lamp_front_R",
+        "bumper_front"
+      ]
+    },
+    {
+      "name": "Front chrome roughness",
+      "old": 0.52,
+      "new": 0.14,
+      "file": "index.html",
+      "line": 770,
+      "scope": [
+        "grille",
+        "lamp_front_L",
+        "lamp_front_R",
+        "bumper_front"
+      ]
+    },
+    {
+      "name": "Front chrome metalness",
+      "old": 0.45,
+      "new": 1.0,
+      "file": "index.html",
+      "line": 770,
+      "scope": [
+        "grille",
+        "lamp_front_L",
+        "lamp_front_R",
+        "bumper_front"
+      ]
+    },
+    {
+      "name": "Front chrome envMapIntensity",
+      "old": 0.85,
+      "new": 16.0,
+      "file": "index.html",
+      "line": 770,
+      "scope": [
+        "grille",
+        "lamp_front_L",
+        "lamp_front_R",
+        "bumper_front"
+      ]
+    },
+    {
+      "name": "Front chrome clearcoat",
+      "old": 0.08,
+      "new": 0.2,
+      "file": "index.html",
+      "line": 770,
+      "scope": [
+        "grille",
+        "lamp_front_L",
+        "lamp_front_R",
+        "bumper_front"
+      ]
+    },
+    {
+      "name": "Front chrome clearcoatRoughness",
+      "old": 0.3,
+      "new": 0.1,
+      "file": "index.html",
+      "line": 770,
+      "scope": [
+        "grille",
+        "lamp_front_L",
+        "lamp_front_R",
+        "bumper_front"
+      ]
+    },
+    {
+      "name": "Front emblem envMapIntensity",
+      "old": 8.0,
+      "new": 22.0,
+      "file": "index.html",
+      "line": 768
+    },
+    {
+      "name": "Front clear cover color",
+      "old": "#dce8f2",
+      "new": "#f4f5f5",
+      "file": "index.html",
+      "line": 774
+    },
+    {
+      "name": "Front clear cover opacity",
+      "old": 0.16,
+      "new": 0.1,
+      "file": "index.html",
+      "line": 774
+    },
+    {
+      "name": "Front clear cover roughness",
+      "old": 0.055,
+      "new": 0.04,
+      "file": "index.html",
+      "line": 774
+    },
+    {
+      "name": "Front clear cover emissiveColor",
+      "old": "#bfd4ef",
+      "new": "#000000",
+      "file": "index.html",
+      "line": 774
+    },
+    {
+      "name": "Front clear cover emissiveIntensity",
+      "old": 0.025,
+      "new": 0,
+      "file": "index.html",
+      "line": 774
+    },
+    {
+      "name": "Rear red lens color",
+      "old": "#97000e",
+      "new": "#d0000c",
+      "file": "index.html",
+      "line": 739
+    },
+    {
+      "name": "Separated unlit LED caps color",
+      "old": "#97000e",
+      "new": "#53020a",
+      "file": "index.html",
+      "line": 750,
+      "scope": [
+        "22 original caps in each finish4b lamp"
+      ]
+    },
+    {
+      "name": "Separated unlit LED caps roughness",
+      "old": 0.12,
+      "new": 0.18,
+      "file": "index.html",
+      "line": 750,
+      "scope": [
+        "22 original caps in each finish4b lamp"
+      ]
+    },
+    {
+      "name": "Separated unlit LED caps metalness",
+      "old": 0,
+      "new": 0.8,
+      "file": "index.html",
+      "line": 750,
+      "scope": [
+        "22 original caps in each finish4b lamp"
+      ]
+    },
+    {
+      "name": "Separated unlit LED caps envMapIntensity",
+      "old": 0.35,
+      "new": 0.85,
+      "file": "index.html",
+      "line": 750,
+      "scope": [
+        "22 original caps in each finish4b lamp"
+      ]
+    },
+    {
+      "name": "Separated unlit LED caps clearcoat",
+      "old": 1,
+      "new": 0.1,
+      "file": "index.html",
+      "line": 750,
+      "scope": [
+        "22 original caps in each finish4b lamp"
+      ]
+    },
+    {
+      "name": "Separated unlit LED caps opacity",
+      "old": 0.9,
+      "new": 1,
+      "file": "index.html",
+      "line": 750,
+      "scope": [
+        "22 original caps in each finish4b lamp"
+      ]
+    },
+    {
+      "name": "Separated unlit LED caps blending",
+      "old": "Custom RGB coloured filter",
+      "new": "Normal alpha, tinted cap",
+      "file": "index.html",
+      "line": 750,
+      "scope": [
+        "22 original caps in each finish4b lamp"
+      ]
+    },
+    {
+      "name": "Separated unlit LED caps draw order",
+      "old": 0,
+      "new": 2,
+      "file": "index.html",
+      "line": 750,
+      "scope": [
+        "22 original caps in each finish4b lamp"
+      ]
+    },
+    {
+      "name": "Default rear emissive intensity",
+      "old": {
+        "red": 0.32,
+        "clear": 0.12,
+        "orange": 0.06
+      },
+      "new": 0,
+      "file": "index.html",
+      "line": 860
+    },
+    {
+      "name": "lamps_on data state",
+      "old": null,
+      "new": {
+        "default": false,
+        "onIntensityRed": 0.32,
+        "onIntensityOtherRearLamps": 0.12
+      },
+      "file": "index.html",
+      "line": 828
+    },
+    {
+      "name": "lamps_on type validation",
+      "old": null,
+      "new": "boolean only",
+      "file": "index.html",
+      "line": 831
+    },
+    {
+      "name": "Cap material alias",
+      "old": null,
+      "new": "redglass_caps -> lamp_red",
+      "file": "index.html",
+      "line": 708
+    },
+    {
+      "name": "Supported rear finish variants",
+      "old": "finish3",
+      "new": [
+        "finish3",
+        "finish4b"
+      ],
+      "file": "index.html",
+      "line": 743
+    },
+    {
+      "name": "Red optical filter on LED caps",
+      "old": true,
+      "new": false,
+      "file": "index.html",
+      "line": 795
+    },
+    {
+      "name": "Clay G selection",
+      "old": null,
+      "new": "badge_grade_GXR when the selected variant is badge_grade_GXR_finish4b",
+      "file": "index.html",
+      "line": 866
+    },
+    {
+      "name": "Clay rear-lamp fallback",
+      "old": [
+        "finish",
+        "finish3"
+      ],
+      "new": [
+        "finish",
+        "finish3",
+        "finish4b"
+      ],
+      "file": "index.html",
+      "line": 867
+    },
+    {
+      "name": "Build slot lamp_rear_L",
+      "old": "lamp_rear_L_finish3",
+      "new": "lamp_rear_L_finish4b",
+      "file": "build.json",
+      "line": 14
+    },
+    {
+      "name": "Manifest default lamp_rear_L",
+      "old": "lamp_rear_L_finish3",
+      "new": "lamp_rear_L_finish4b",
+      "file": "model/manifest.json",
+      "line": 4623
+    },
+    {
+      "name": "Build slot lamp_rear_R",
+      "old": "lamp_rear_R_finish3",
+      "new": "lamp_rear_R_finish4b",
+      "file": "build.json",
+      "line": 15
+    },
+    {
+      "name": "Manifest default lamp_rear_R",
+      "old": "lamp_rear_R_finish3",
+      "new": "lamp_rear_R_finish4b",
+      "file": "model/manifest.json",
+      "line": 4632
+    },
+    {
+      "name": "Build slot badge_grade",
+      "old": "badge_grade_GXR",
+      "new": "badge_grade_GXR_finish4b",
+      "file": "build.json",
+      "line": 46
+    },
+    {
+      "name": "Manifest default badge_grade",
+      "old": "badge_grade_GXR",
+      "new": "badge_grade_GXR_finish4b",
+      "file": "model/manifest.json",
+      "line": 4907
+    },
+    {
+      "name": "Build slot gap_seal_rear_L",
+      "old": null,
+      "new": "gap_seal_rear_L",
+      "file": "build.json",
+      "line": 47
+    },
+    {
+      "name": "Build slot gap_seal_rear_R",
+      "old": null,
+      "new": "gap_seal_rear_R",
+      "file": "build.json",
+      "line": 48
+    },
+    {
+      "name": "Build lamps_on",
+      "old": null,
+      "new": false,
+      "file": "build.json",
+      "line": 55
+    },
+    {
+      "name": "G measured full stem mm",
+      "old": 10.6819460950714,
+      "new": 10.189604505461542,
+      "file": "tools/base-finish/round4b/make-g-data.py",
+      "line": 9,
+      "asset": "model/parts/badge_grade_GXR_finish4b.glb"
+    },
+    {
+      "name": "G measured front cap stem mm",
+      "old": 9.630003068618572,
+      "new": 6.263523129273304,
+      "file": "tools/base-finish/round4b/make-g-data.py",
+      "line": 9,
+      "asset": "model/parts/badge_grade_GXR_finish4b.glb"
+    },
+    {
+      "name": "G measured effective bevel inset mm",
+      "old": 0.5259715132264136,
+      "new": 1.963040688094119,
+      "file": "tools/base-finish/round4b/make-g-data.py",
+      "line": 9,
+      "asset": "model/parts/badge_grade_GXR_finish4b.glb"
+    },
+    {
+      "name": "G measured cap height mm",
+      "old": 29.47711944580078,
+      "new": 29.51592206954956,
+      "file": "tools/base-finish/round4b/make-g-data.py",
+      "line": 9,
+      "asset": "model/parts/badge_grade_GXR_finish4b.glb"
+    },
+    {
+      "name": "G measured baseline y mm",
+      "old": 946.3594555854797,
+      "new": 946.3982582092285,
+      "file": "tools/base-finish/round4b/make-g-data.py",
+      "line": 9,
+      "asset": "model/parts/badge_grade_GXR_finish4b.glb"
+    },
+    {
+      "name": "G authored bevel inset metres",
+      "old": 0.00055,
+      "new": 0.00196,
+      "file": "tools/base-finish/round4b/make-g-data.py",
+      "line": 13
+    },
+    {
+      "name": "G authored relief metres",
+      "old": 0.005699362852796597,
+      "new": 0.005393345979563868,
+      "file": "tools/base-finish/round4b/make-g-data.py",
+      "line": 13
+    },
+    {
+      "name": "G triangulation",
+      "old": "unconstrained extruded cap",
+      "new": "explicit inner bevel contour with planar cap",
+      "file": "tools/base-finish/round4b/make-g-data.py",
+      "line": 14
+    },
+    {
+      "name": "New G NORMAL authoring",
+      "old": "extrusion vertex normals",
+      "new": "analytic flat-cap / bevel normals",
+      "file": "tools/base-finish/round4b/build-g.mjs",
+      "line": 10
+    },
+    {
+      "name": "New seal skins",
+      "old": null,
+      "new": {
+        "thicknessAlongX_m": 0.0008,
+        "overlap_m": 0.01,
+        "mainEdgeRecess_m": 0.01,
+        "interiorRamp_m": 0.002
+      },
+      "file": "tools/base-finish/round4b/refit-seal-data.py",
+      "line": 16
+    },
+    {
+      "name": "Seal inner return",
+      "old": null,
+      "new": {
+        "x_m": [
+          2.2042,
+          2.205
+        ],
+        "y_m": [
+          1.007,
+          1.05
+        ],
+        "absZ_m": [
+          0.519,
+          0.57
+        ]
+      },
+      "file": "tools/base-finish/round4b/refit-seal-data.py",
+      "line": 26
+    },
+    {
+      "name": "Additive part gap_seal_rear_L",
+      "old": null,
+      "new": {
+        "id": "gap_seal_rear_L",
+        "slot": "gap_seal_rear_L",
+        "url": "parts/gap_seal_rear_L.glb",
+        "rootNode": "gap_seal_rear_L",
+        "pivot": [
+          2.246749758720398,
+          1.026725947856903,
+          0.6270960569381714
+        ],
+        "rigidClass": "body",
+        "zones": [
+          "black"
+        ],
+        "triangles": 16284,
+        "bounds": {
+          "min": [
+            2.2035083770751953,
+            0.9850000143051147,
+            0.5006921291351318
+          ],
+          "max": [
+            2.2899911403656006,
+            1.0684518814086914,
+            0.7534999847412109
+          ]
+        },
+        "purpose": "new 0.8 mm rubber backing, original meshes untouched",
+        "overlapMetres": 0.01
+      },
+      "file": "model/manifest.json",
+      "line": 4339,
+      "asset": "model/parts/gap_seal_rear_L.glb"
+    },
+    {
+      "name": "Additive part gap_seal_rear_R",
+      "old": null,
+      "new": {
+        "id": "gap_seal_rear_R",
+        "slot": "gap_seal_rear_R",
+        "url": "parts/gap_seal_rear_R.glb",
+        "rootNode": "gap_seal_rear_R",
+        "pivot": [
+          2.246749758720398,
+          1.026725947856903,
+          -0.6270960569381714
+        ],
+        "rigidClass": "body",
+        "zones": [
+          "black"
+        ],
+        "triangles": 16284,
+        "bounds": {
+          "min": [
+            2.2035083770751953,
+            0.9850000143051147,
+            -0.7534999847412109
+          ],
+          "max": [
+            2.2899911403656006,
+            1.0684518814086914,
+            -0.5006921291351318
+          ]
+        },
+        "purpose": "new 0.8 mm rubber backing, original meshes untouched",
+        "overlapMetres": 0.01
+      },
+      "file": "model/manifest.json",
+      "line": 4369,
+      "asset": "model/parts/gap_seal_rear_R.glb"
+    },
+    {
+      "name": "Additive part badge_grade_GXR_finish4b",
+      "old": null,
+      "new": {
+        "id": "badge_grade_GXR_finish4b",
+        "slot": "badge_grade",
+        "url": "parts/badge_grade_GXR_finish4b.glb",
+        "rootNode": "badge_grade_GXR_finish4b",
+        "pivot": [
+          2.293339258140394,
+          0.9611354470252991,
+          0.6172285377979279
+        ],
+        "pivotBasis": "source glyph group centre; unchanged source glyph transforms",
+        "zones": [
+          "chrome"
+        ],
+        "triangles": 8930,
+        "bounds": {
+          "min": [
+            2.281412961745945,
+            0.9463567137718201,
+            0.540575385093689
+          ],
+          "max": [
+            2.305328618896144,
+            0.9759141802787781,
+            0.6938816905021667
+          ]
+        },
+        "rigidClass": "body",
+        "sourceRecovery": {
+          "from": "lettering_rear",
+          "preservedNodes": [
+            "source_4_74",
+            "source_4_77",
+            "source_4_78",
+            "source_4_79",
+            "source_4_81"
+          ],
+          "newGeometry": [
+            "grade_G_new"
+          ]
+        },
+        "variantOf": "badge_grade_GXR",
+        "purpose": "new G only: source-R cap height, baseline and relief; original X/R/punctuation unchanged"
+      },
+      "file": "model/manifest.json",
+      "line": 4399,
+      "asset": "model/parts/badge_grade_GXR_finish4b.glb"
+    },
+    {
+      "name": "Additive part lamp_rear_L_finish4b",
+      "old": null,
+      "new": {
+        "id": "lamp_rear_L_finish4b",
+        "slot": "lamp_rear_L",
+        "url": "parts/lamp_rear_L_finish4b.glb",
+        "pivot": [
+          2.1915613357507393,
+          0.963238707959341,
+          0.683230474193339
+        ],
+        "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
+        "zones": [
+          "black",
+          "chrome",
+          "lamp_clear",
+          "lamp_orange",
+          "lamp_red"
+        ],
+        "triangles": 64045,
+        "bounds": {
+          "min": [
+            2.039112731038501,
+            0.640797887088982,
+            0.4406589110344298
+          ],
+          "max": [
+            2.344009940462977,
+            1.2856795288296998,
+            0.9258020373522483
+          ]
+        },
+        "rigidClass": "body",
+        "classification": "Base-finish variant: identical opening/positions/COLOR_0; repaired lens/reflector normals on this new copy only",
+        "thumbnail": "../docs/foundation/parts/lamp_rear_L.png",
+        "rootNode": "lamp_rear_L_finish4b",
+        "derivedFrom": "lamp_rear_L",
+        "variantOf": "lamp_rear_L_finish3",
+        "purpose": "identical attributes and triangles; 22 source LED caps assigned an unlit reflective material"
+      },
+      "file": "model/manifest.json",
+      "line": 4443,
+      "asset": "model/parts/lamp_rear_L_finish4b.glb"
+    },
+    {
+      "name": "Additive part lamp_rear_R_finish4b",
+      "old": null,
+      "new": {
+        "id": "lamp_rear_R_finish4b",
+        "slot": "lamp_rear_R",
+        "url": "parts/lamp_rear_R_finish4b.glb",
+        "pivot": [
+          2.1915613357507393,
+          0.9632777054246286,
+          -0.6865018093670008
+        ],
+        "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
+        "zones": [
+          "black",
+          "chrome",
+          "lamp_clear",
+          "lamp_orange",
+          "lamp_red"
+        ],
+        "triangles": 64460,
+        "bounds": {
+          "min": [
+            2.039112731038501,
+            0.640797887088982,
+            -0.9258083554445945
+          ],
+          "max": [
+            2.344009940462977,
+            1.2857575237602754,
+            -0.447195263289407
+          ]
+        },
+        "rigidClass": "body",
+        "classification": "Base-finish variant: identical opening/positions/COLOR_0; repaired lens/reflector normals on this new copy only",
+        "thumbnail": "../docs/foundation/parts/lamp_rear_R.png",
+        "rootNode": "lamp_rear_R_finish4b",
+        "derivedFrom": "lamp_rear_R",
+        "variantOf": "lamp_rear_R_finish3",
+        "purpose": "identical attributes and triangles; 22 source LED caps assigned an unlit reflective material"
+      },
+      "file": "model/manifest.json",
+      "line": 4481,
+      "asset": "model/parts/lamp_rear_R_finish4b.glb"
+    }
+  ],
+  "preserved": [
+    "all 49 pre-existing GLB bytes",
+    "all original POSITION/NORMAL/COLOR_0 and pivots",
+    "root scale 1.0 and body bounds",
+    "BASE_FINISH paint and side chrome",
+    "lighting, backgrounds, presets and controls",
+    "tyres, wheels, UI and existing paint picker"
+  ],
+  "newFiles": [
+    "docs/base-finish/round4b/README.md",
+    "docs/base-finish/round4b/after/clay-quarter.png",
+    "docs/base-finish/round4b/after/cream-front.json",
+    "docs/base-finish/round4b/after/cream-front.png",
+    "docs/base-finish/round4b/after/cream-quarter.json",
+    "docs/base-finish/round4b/after/cream-quarter.png",
+    "docs/base-finish/round4b/after/cream-rear.json",
+    "docs/base-finish/round4b/after/cream-rear.png",
+    "docs/base-finish/round4b/after/front-close.json",
+    "docs/base-finish/round4b/after/front-close.png",
+    "docs/base-finish/round4b/after/front-wide.json",
+    "docs/base-finish/round4b/after/front-wide.png",
+    "docs/base-finish/round4b/after/gap-L.json",
+    "docs/base-finish/round4b/after/gap-L.png",
+    "docs/base-finish/round4b/after/gap-R.json",
+    "docs/base-finish/round4b/after/gap-R.png",
+    "docs/base-finish/round4b/after/grade.json",
+    "docs/base-finish/round4b/after/grade.png",
+    "docs/base-finish/round4b/after/lamp.json",
+    "docs/base-finish/round4b/after/lamp.png",
+    "docs/base-finish/round4b/asset-audit.json",
+    "docs/base-finish/round4b/before/front-close.json",
+    "docs/base-finish/round4b/before/front-close.png",
+    "docs/base-finish/round4b/before/front-wide.json",
+    "docs/base-finish/round4b/before/front-wide.png",
+    "docs/base-finish/round4b/before/gap-L.json",
+    "docs/base-finish/round4b/before/gap-L.png",
+    "docs/base-finish/round4b/before/gap-R.json",
+    "docs/base-finish/round4b/before/gap-R.png",
+    "docs/base-finish/round4b/before/grade.json",
+    "docs/base-finish/round4b/before/grade.png",
+    "docs/base-finish/round4b/before/lamp.json",
+    "docs/base-finish/round4b/before/lamp.png",
+    "docs/base-finish/round4b/cap-zones.json",
+    "docs/base-finish/round4b/changed-values.json",
+    "docs/base-finish/round4b/chrome-comparison.png",
+    "docs/base-finish/round4b/close-gap-tan-probe.json",
+    "docs/base-finish/round4b/g-authoring.json",
+    "docs/base-finish/round4b/g-mount.json",
+    "docs/base-finish/round4b/gap-L-comparison.png",
+    "docs/base-finish/round4b/gap-R-comparison.png",
+    "docs/base-finish/round4b/gap-cabin-proof.json",
+    "docs/base-finish/round4b/glyph-before.json",
+    "docs/base-finish/round4b/glyph-numbers.json",
+    "docs/base-finish/round4b/grade-comparison.png",
+    "docs/base-finish/round4b/grille-detail-comparison.png",
+    "docs/base-finish/round4b/led-comparison.png",
+    "docs/base-finish/round4b/masks/after-000.png",
+    "docs/base-finish/round4b/masks/after-045.png",
+    "docs/base-finish/round4b/masks/after-090.png",
+    "docs/base-finish/round4b/masks/after-135.png",
+    "docs/base-finish/round4b/masks/after-180.png",
+    "docs/base-finish/round4b/masks/after-225.png",
+    "docs/base-finish/round4b/masks/after-270.png",
+    "docs/base-finish/round4b/masks/after-315.png",
+    "docs/base-finish/round4b/masks/before-000.png",
+    "docs/base-finish/round4b/masks/before-045.png",
+    "docs/base-finish/round4b/masks/before-090.png",
+    "docs/base-finish/round4b/masks/before-135.png",
+    "docs/base-finish/round4b/masks/before-180.png",
+    "docs/base-finish/round4b/masks/before-225.png",
+    "docs/base-finish/round4b/masks/before-270.png",
+    "docs/base-finish/round4b/masks/before-315.png",
+    "docs/base-finish/round4b/masks/front-chrome.png",
+    "docs/base-finish/round4b/masks/seal-000.png",
+    "docs/base-finish/round4b/masks/seal-045.png",
+    "docs/base-finish/round4b/masks/seal-090.png",
+    "docs/base-finish/round4b/masks/seal-135.png",
+    "docs/base-finish/round4b/masks/seal-180.png",
+    "docs/base-finish/round4b/masks/seal-225.png",
+    "docs/base-finish/round4b/masks/seal-270.png",
+    "docs/base-finish/round4b/masks/seal-315.png",
+    "docs/base-finish/round4b/orbit-gap-proof.json",
+    "docs/base-finish/round4b/orbits/000.json",
+    "docs/base-finish/round4b/orbits/000.png",
+    "docs/base-finish/round4b/orbits/045.json",
+    "docs/base-finish/round4b/orbits/045.png",
+    "docs/base-finish/round4b/orbits/090.json",
+    "docs/base-finish/round4b/orbits/090.png",
+    "docs/base-finish/round4b/orbits/135.json",
+    "docs/base-finish/round4b/orbits/135.png",
+    "docs/base-finish/round4b/orbits/180.json",
+    "docs/base-finish/round4b/orbits/180.png",
+    "docs/base-finish/round4b/orbits/225.json",
+    "docs/base-finish/round4b/orbits/225.png",
+    "docs/base-finish/round4b/orbits/270.json",
+    "docs/base-finish/round4b/orbits/270.png",
+    "docs/base-finish/round4b/orbits/315.json",
+    "docs/base-finish/round4b/orbits/315.png",
+    "docs/base-finish/round4b/pixels.json",
+    "docs/base-finish/round4b/proofs/lamps-off.png",
+    "docs/base-finish/round4b/proofs/lamps-on.png",
+    "docs/base-finish/round4b/proofs/proof-baseline-clay.png",
+    "docs/base-finish/round4b/proofs/proof-baseline-legacy-gap.png",
+    "docs/base-finish/round4b/proofs/proof-baseline-legacy-quarter.png",
+    "docs/base-finish/round4b/proofs/proof-current-clay.png",
+    "docs/base-finish/round4b/proofs/proof-current-legacy-gap.png",
+    "docs/base-finish/round4b/proofs/proof-current-legacy-quarter.png",
+    "docs/base-finish/round4b/proofs/proof-final-polish-seals-hidden.png",
+    "docs/base-finish/round4b/seal-visibility-ray-proof-final.json",
+    "docs/base-finish/round4b/sizes.json",
+    "docs/base-finish/round4b/source/capture-status.json",
+    "docs/base-finish/round4b/source/front-close.png",
+    "docs/base-finish/round4b/source/front-wide.png",
+    "docs/base-finish/round4b/source/grade.png",
+    "docs/base-finish/round4b/source/lamp.png",
+    "docs/base-finish/round4b/source/materials.json",
+    "docs/base-finish/round4b/source/reference.json",
+    "docs/base-finish/round4b/state-proof.json",
+    "docs/base-finish/round4b/validation/base-quarter.png",
+    "docs/base-finish/round4b/validation/front.png",
+    "docs/base-finish/round4b/validation/no-js.png",
+    "docs/base-finish/round4b/validation/orbit-000.png",
+    "docs/base-finish/round4b/validation/orbit-045.png",
+    "docs/base-finish/round4b/validation/orbit-090.png",
+    "docs/base-finish/round4b/validation/orbit-135.png",
+    "docs/base-finish/round4b/validation/orbit-180.png",
+    "docs/base-finish/round4b/validation/orbit-225.png",
+    "docs/base-finish/round4b/validation/orbit-270.png",
+    "docs/base-finish/round4b/validation/orbit-315.png",
+    "docs/base-finish/round4b/validation/pages-before.json",
+    "docs/base-finish/round4b/validation/quarter.png",
+    "docs/base-finish/round4b/validation/rear.png",
+    "docs/base-finish/round4b/validation/side.png",
+    "docs/base-finish/round4b/validation/top.png",
+    "docs/base-finish/round4b/validation/visual.json",
+    "docs/base-finish/round4b/validation/webkit.json",
+    "docs/base-finish/round4b/validation/webkit.png",
+    "model/parts/badge_grade_GXR_finish4b.glb",
+    "model/parts/gap_seal_rear_L.glb",
+    "model/parts/gap_seal_rear_R.glb",
+    "model/parts/lamp_rear_L_finish4b.glb",
+    "model/parts/lamp_rear_R_finish4b.glb",
+    "tools/base-finish/round4b/README.md",
+    "tools/base-finish/round4b/api.py",
+    "tools/base-finish/round4b/audit-assets.mjs",
+    "tools/base-finish/round4b/build-additions.mjs",
+    "tools/base-finish/round4b/build-g.mjs",
+    "tools/base-finish/round4b/capture-comparisons.py",
+    "tools/base-finish/round4b/capture-orbit-masks.py",
+    "tools/base-finish/round4b/check-closeup-tan.py",
+    "tools/base-finish/round4b/check-seal-visibility.py",
+    "tools/base-finish/round4b/check-state-regressions.py",
+    "tools/base-finish/round4b/classify-gap-cabin.py",
+    "tools/base-finish/round4b/export-source-glyphs.mjs",
+    "tools/base-finish/round4b/fit-g-mount.mjs",
+    "tools/base-finish/round4b/glyph-final-measure.py",
+    "tools/base-finish/round4b/make-g-data.py",
+    "tools/base-finish/round4b/make-seal-data.py",
+    "tools/base-finish/round4b/measure-glyphs.py",
+    "tools/base-finish/round4b/refit-seal-data.py",
+    "tools/base-finish/round4b/review-server.mjs",
+    "tools/base-finish/round4b/sample-gap-min.mjs",
+    "tools/base-finish/round4b/sample-gap.mjs",
+    "tools/base-finish/round4b/split-caps.mjs",
+    "tools/base-finish/round4b/verify-pixels.py"
+  ]
+}

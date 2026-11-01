@@ -1,5 +1,7 @@
 # Round 4 — stopped at the rear-opening geometry gate
 
+Historical audit. [Round 4b](../round4b/README.md) implements the independent finish items and closes the openings with new backing parts.
+
 **No finish changes were applied.** Item 4's instruction was: “If it needs geometry, do NOT edit. Report the triangles and the parts they belong to, and stop.” The rear wedges expose the cabin through an actual exterior opening, so that condition applies. Items 1–3 are deferred, not reported as completed. GXR, chrome emblems, the clear reverse strip, clean paint and all round-3 gains are retained.
 
 This is a diagnostic report on `base-finish-reference-review`, against `2a325c3`. **Every production byte is unchanged**: index.html, build.json, the manifest, all 49 existing GLBs and other model data ([SHA-256 audit](unchanged-assets.json)). Only report files are added. No owner photographs are needed; the reference remains the original ZIRODESIGN source and its native materials.

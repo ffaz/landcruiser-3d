@@ -1,0 +1,21 @@
+{
+  "source": "model/parts/badge_grade_GXR.glb",
+  "node": "grade_G_new",
+  "measurement": {
+    "fullStemMedianMm": 10.6819460950714,
+    "frontFaceStemMedianMm": 9.630003068618572,
+    "bevelInsetMeanMm": 0.5259715132264136,
+    "capHeightMm": 29.47711944580078,
+    "baselineMm": 946.3594555854797,
+    "reliefMm": 5.699587289775376,
+    "individualArms": {
+      "full": [
+        10.6819460950714
+      ],
+      "cap": [
+        9.630003068618572
+      ]
+    }
+  },
+  "method": "10 micrometre silhouette raster. X: median of four arm widths normal to fitted centreline at 12\u201324% and 77\u201389% cap height. R/G: left stem at 60\u201372%. Front cap: triangles within arccos(.995) of the mounting normal. Bevel inset = (full-stem width minus flat-cap width)/2; source facets vary by arm."
+}

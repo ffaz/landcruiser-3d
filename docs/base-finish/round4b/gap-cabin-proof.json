@@ -1,0 +1,68 @@
+[
+  {
+    "angle": 0,
+    "cabinPixelsAfter": 0,
+    "candidates": 0,
+    "classifiedParts": {}
+  },
+  {
+    "angle": 45,
+    "cabinPixelsAfter": 0,
+    "candidates": 0,
+    "classifiedParts": {}
+  },
+  {
+    "angle": 90,
+    "cabinPixelsAfter": 0,
+    "candidates": 0,
+    "classifiedParts": {}
+  },
+  {
+    "angle": 135,
+    "cabinPixelsAfter": 0,
+    "candidates": 18,
+    "classifiedParts": {
+      "lamp_rear_L_finish4b:black": 1,
+      "gap_seal_rear_L:black": 3,
+      "wheel_RR:tyre": 12,
+      "lamp_rear_L_finish4b:chrome": 2
+    },
+    "interiorHits": []
+  },
+  {
+    "angle": 180,
+    "cabinPixelsAfter": 0,
+    "candidates": 9,
+    "classifiedParts": {
+      "lamp_rear_L_finish4b:chrome": 1,
+      "lamp_rear_R_finish4b:black": 2,
+      "lamp_rear_R_finish4b:chrome": 1,
+      "tailgate:paint": 3,
+      "bumper_rear:paint": 2
+    },
+    "interiorHits": []
+  },
+  {
+    "angle": 225,
+    "cabinPixelsAfter": 0,
+    "candidates": 17,
+    "classifiedParts": {
+      "gap_seal_rear_R:black": 3,
+      "wheel_RL:tyre": 12,
+      "lamp_rear_R_finish4b:chrome": 2
+    },
+    "interiorHits": []
+  },
+  {
+    "angle": 270,
+    "cabinPixelsAfter": 0,
+    "candidates": 0,
+    "classifiedParts": {}
+  },
+  {
+    "angle": 315,
+    "cabinPixelsAfter": 0,
+    "candidates": 0,
+    "classifiedParts": {}
+  }
+]

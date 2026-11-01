@@ -10,23 +10,24 @@ The satin collectible materials and baked crevice/edge shading remain. No screen
 
 ## Clean base finish preview
 
-[Round 3: source/round-2/round-3 lamps, GXR/VXR comparison, chrome measurements and asset audit](docs/base-finish/round3/README.md). The reference is the original 979,826-triangle ZIRODESIGN model with its native materials (zero textures). The new GXR grade is the default; source X/R/punctuation, LAND CRUISER and V8 remain unchanged. VXR remains an optional part. Clay and clean bonnet shading are preserved; no owner photographs are needed.
+[Round 4b: source/before/after chrome, unlit LEDs, GXR stroke measurements and additive rear seals](docs/base-finish/round4b/README.md). The reference remains the original 979,826-triangle ZIRODESIGN model with its native materials. The source X/R/punctuation, LAND CRUISER and V8 are unchanged; VXR and earlier GXR/lamp variants remain available. No owner photographs are needed.
 
-Cream and Slate use the satin painted-metal base finish, soft reflection highlights, neutral dark trim, blue-grey tinted glass and satin exterior metal. Clay retains its separate warm matte paint, unlit plum glass, pink-grey trim, lighting, wheel/tyre and plinth presentation. No tyre geometry, mud, wear, decals, numbers, props or workshop UI is added.
+Cream and Slate use the satin painted-metal base finish, soft reflection highlights, neutral dark trim, blue-grey tinted glass, satin side metal and reflective front chrome. Clay retains its separate warm matte paint, unlit plum glass, pink-grey trim, lighting, wheel/tyre and plinth presentation. No tyre geometry, mud, wear, decals, numbers, props or workshop UI is added.
 
-Toyota emblems are separate default-visible body slots. Replacement rear-lamp variants preserve the original lamp positions, triangle topology and COLOR_0, with repaired lens/reflector normals only on the new copies. Original GLBs remain byte-identical and selectable. The existing body scale, pivots, controls and camera presets are preserved.
+Toyota emblems are separate default-visible body slots. Replacement rear-lamp variants preserve the original lamp positions, triangle topology and COLOR_0, with the inherited repaired lens/reflector normals retained on round-4b material-zone copies. Two separate black rear backing slots close the lamp/garnish openings. Original GLBs remain byte-identical and selectable. The existing body scale, pivots, controls and camera presets are preserved.
 
 [Earlier Cream detail](docs/cream-detail/README.md), [contact refinement](docs/cream-edges/README.md) and [Clay calibration](docs/clay-brightness/README.md) remain historical evidence.
 
 ## Foundation data
 
-The original vehicle contains **24 named parts and 10 unsorted pieces**, now supplemented by the source badge/lettering slots, a separate GXR/VXR grade slot and selectable rear-lamp finish variants, each with material-zone metadata and a review thumbnail. Integrated flare surfaces cannot be detached by loose-piece separation; a standalone frame/axle assembly could not be identified confidently. `arch_flares` and `chassis` therefore remain empty manifest slots. Other pivots are part-bbox centres, **not verified door hinges or mounting points**; wheel pivots use the authored hub coordinates.
+The original vehicle contains **24 named parts and 10 unsorted pieces**, now supplemented by the source badge/lettering slots, a separate GXR/VXR grade slot, selectable rear-lamp finish variants and two rear gasket slots, each with material-zone metadata and a review thumbnail. Integrated flare surfaces cannot be detached by loose-piece separation; a standalone frame/axle assembly could not be identified confidently. `arch_flares` and `chassis` therefore remain empty manifest slots. Other pivots are part-bbox centres, **not verified door hinges or mounting points**; wheel pivots use the authored hub coordinates.
 
 Use the browser console or a URL hash to exercise the data foundation:
 
 ```js
 await lcBuild.setState({ lift_mm: 50 }); // rigid body/parts lift; wheels stay fixed
 await lcBuild.setState({ paint: { 'door_FL:paint': '#cc3333' } });
+await lcBuild.setState({ lamps_on: false }); // default; true previews rear lamps
 await lcBuild.setState({ hidden: ['roof_rails'] });
 await lcBuild.setState({ slots: { spoiler: null } });
 const state = lcBuild.getState();

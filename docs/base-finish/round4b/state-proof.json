@@ -1,0 +1,170 @@
+{
+  "claySealsHidden": {
+    "differentPixels": 0,
+    "maxChannelDifference": 0
+  },
+  "isolatedHiddenSeals_quarter": {
+    "differentPixels": 0,
+    "maxChannelDifference": 0
+  },
+  "isolatedHiddenSeals_gap": {
+    "differentPixels": 0,
+    "maxChannelDifference": 0
+  },
+  "combinedFinishSealsHidden_vsBaseline": {
+    "differentPixels": 300843,
+    "maxChannelDifference": 249
+  },
+  "emission_off": [
+    {
+      "part": "lamp_rear_L_finish4b",
+      "source": "orangeglass",
+      "zone": "lamp_orange",
+      "emissiveIntensity": 0
+    },
+    {
+      "part": "lamp_rear_L_finish4b",
+      "source": "redglass",
+      "zone": "lamp_red",
+      "emissiveIntensity": 0
+    },
+    {
+      "part": "lamp_rear_L_finish4b",
+      "source": "redglass_lower",
+      "zone": "lamp_red",
+      "emissiveIntensity": 0
+    },
+    {
+      "part": "lamp_rear_L_finish4b",
+      "source": "redglass_caps",
+      "zone": "lamp_red",
+      "emissiveIntensity": 0
+    },
+    {
+      "part": "lamp_rear_L_finish4b",
+      "source": "clearglass",
+      "zone": "lamp_clear",
+      "emissiveIntensity": 0
+    },
+    {
+      "part": "lamp_rear_L_finish4b",
+      "source": "redglass",
+      "zone": "lamp_clear",
+      "emissiveIntensity": 0
+    },
+    {
+      "part": "lamp_rear_R_finish4b",
+      "source": "orangeglass",
+      "zone": "lamp_orange",
+      "emissiveIntensity": 0
+    },
+    {
+      "part": "lamp_rear_R_finish4b",
+      "source": "redglass",
+      "zone": "lamp_red",
+      "emissiveIntensity": 0
+    },
+    {
+      "part": "lamp_rear_R_finish4b",
+      "source": "redglass_lower",
+      "zone": "lamp_red",
+      "emissiveIntensity": 0
+    },
+    {
+      "part": "lamp_rear_R_finish4b",
+      "source": "redglass_caps",
+      "zone": "lamp_red",
+      "emissiveIntensity": 0
+    },
+    {
+      "part": "lamp_rear_R_finish4b",
+      "source": "clearglass",
+      "zone": "lamp_clear",
+      "emissiveIntensity": 0
+    },
+    {
+      "part": "lamp_rear_R_finish4b",
+      "source": "redglass",
+      "zone": "lamp_clear",
+      "emissiveIntensity": 0
+    }
+  ],
+  "emission_on": [
+    {
+      "part": "lamp_rear_L_finish4b",
+      "source": "orangeglass",
+      "zone": "lamp_orange",
+      "emissiveIntensity": 0.12
+    },
+    {
+      "part": "lamp_rear_L_finish4b",
+      "source": "redglass",
+      "zone": "lamp_red",
+      "emissiveIntensity": 0.32
+    },
+    {
+      "part": "lamp_rear_L_finish4b",
+      "source": "redglass_lower",
+      "zone": "lamp_red",
+      "emissiveIntensity": 0.32
+    },
+    {
+      "part": "lamp_rear_L_finish4b",
+      "source": "redglass_caps",
+      "zone": "lamp_red",
+      "emissiveIntensity": 0.32
+    },
+    {
+      "part": "lamp_rear_L_finish4b",
+      "source": "clearglass",
+      "zone": "lamp_clear",
+      "emissiveIntensity": 0.12
+    },
+    {
+      "part": "lamp_rear_L_finish4b",
+      "source": "redglass",
+      "zone": "lamp_clear",
+      "emissiveIntensity": 0.12
+    },
+    {
+      "part": "lamp_rear_R_finish4b",
+      "source": "orangeglass",
+      "zone": "lamp_orange",
+      "emissiveIntensity": 0.12
+    },
+    {
+      "part": "lamp_rear_R_finish4b",
+      "source": "redglass",
+      "zone": "lamp_red",
+      "emissiveIntensity": 0.32
+    },
+    {
+      "part": "lamp_rear_R_finish4b",
+      "source": "redglass_lower",
+      "zone": "lamp_red",
+      "emissiveIntensity": 0.32
+    },
+    {
+      "part": "lamp_rear_R_finish4b",
+      "source": "redglass_caps",
+      "zone": "lamp_red",
+      "emissiveIntensity": 0.32
+    },
+    {
+      "part": "lamp_rear_R_finish4b",
+      "source": "clearglass",
+      "zone": "lamp_clear",
+      "emissiveIntensity": 0.12
+    },
+    {
+      "part": "lamp_rear_R_finish4b",
+      "source": "redglass",
+      "zone": "lamp_clear",
+      "emissiveIntensity": 0.12
+    }
+  ],
+  "onOffDifference": {
+    "differentPixels": 299605,
+    "maxChannelDifference": 108
+  }
+}

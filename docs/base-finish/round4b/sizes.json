@@ -1,0 +1,35 @@
+{
+  "indexBeforeBytes": 90072,
+  "indexAfterBytes": 91702,
+  "allGLBsBeforeBytes": 16758268,
+  "allGLBsAfterBytes": 20718548,
+  "GLBCountBefore": 49,
+  "GLBCountAfter": 54,
+  "newGLBs": [
+    {
+      "file": "model/parts/gap_seal_rear_L.glb",
+      "bytes": 239348,
+      "sha256": "4c092e3da80edbcd0cb9024b7276d9dedac6eb2bff61d386dfc814fabebab86b"
+    },
+    {
+      "file": "model/parts/gap_seal_rear_R.glb",
+      "bytes": 239420,
+      "sha256": "ade740345421d076edef6b954f6d33b99445ac21a8e81d4ad1db7a3867177ae9"
+    },
+    {
+      "file": "model/parts/lamp_rear_L_finish4b.glb",
+      "bytes": 1682760,
+      "sha256": "153e6efcd656d067343ed297d44438a16852688352ddeebc7cb98d233524ea6f"
+    },
+    {
+      "file": "model/parts/badge_grade_GXR_finish4b.glb",
+      "bytes": 101140,
+      "sha256": "d3bf82f781e8ebc6cbf034edd3a907d7b7a1ee8bf29ef1a4c5fb9310180e9aee"
+    },
+    {
+      "file": "model/parts/lamp_rear_R_finish4b.glb",
+      "bytes": 1697612,
+      "sha256": "5b791f40f9c8f158c4203fbd46a092584be8c4e41600c1a8106bf5f273a21ea0"
+    }
+  ]
+}

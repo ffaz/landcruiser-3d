@@ -1,0 +1,170 @@
+[
+  {
+    "angle": 0,
+    "gapBoxes": [
+      [
+        614,
+        337,
+        679,
+        368
+      ],
+      [
+        875,
+        337,
+        940,
+        368
+      ]
+    ],
+    "sealFullyVisiblePixels": 0,
+    "farSurfaceCandidatePixelsBefore": 0,
+    "farSurfaceCandidatePixelsAfter": 0,
+    "sealPixelsOutsideFarDepthMask": 0
+  },
+  {
+    "angle": 45,
+    "gapBoxes": [
+      [
+        984,
+        341,
+        1052,
+        377
+      ],
+      [
+        1198,
+        367,
+        1272,
+        405
+      ]
+    ],
+    "sealFullyVisiblePixels": 0,
+    "farSurfaceCandidatePixelsBefore": 0,
+    "farSurfaceCandidatePixelsAfter": 0,
+    "sealPixelsOutsideFarDepthMask": 0
+  },
+  {
+    "angle": 90,
+    "gapBoxes": [
+      [
+        1280,
+        383,
+        1328,
+        423
+      ],
+      [
+        1337,
+        430,
+        1391,
+        475
+      ]
+    ],
+    "sealFullyVisiblePixels": 0,
+    "farSurfaceCandidatePixelsBefore": 0,
+    "farSurfaceCandidatePixelsAfter": 0,
+    "sealPixelsOutsideFarDepthMask": 0
+  },
+  {
+    "angle": 135,
+    "gapBoxes": [
+      [
+        1295,
+        452,
+        1374,
+        500
+      ],
+      [
+        1076,
+        497,
+        1163,
+        549
+      ]
+    ],
+    "sealFullyVisiblePixels": 253,
+    "farSurfaceCandidatePixelsBefore": 53,
+    "farSurfaceCandidatePixelsAfter": 1,
+    "sealPixelsOutsideFarDepthMask": 206
+  },
+  {
+    "angle": 180,
+    "gapBoxes": [
+      [
+        923,
+        513,
+        1017,
+        558
+      ],
+      [
+        537,
+        513,
+        631,
+        558
+      ]
+    ],
+    "sealFullyVisiblePixels": 524,
+    "farSurfaceCandidatePixelsBefore": 363,
+    "farSurfaceCandidatePixelsAfter": 0,
+    "sealPixelsOutsideFarDepthMask": 161
+  },
+  {
+    "angle": 225,
+    "gapBoxes": [
+      [
+        391,
+        497,
+        479,
+        549
+      ],
+      [
+        180,
+        452,
+        259,
+        500
+      ]
+    ],
+    "sealFullyVisiblePixels": 243,
+    "farSurfaceCandidatePixelsBefore": 56,
+    "farSurfaceCandidatePixelsAfter": 4,
+    "sealPixelsOutsideFarDepthMask": 198
+  },
+  {
+    "angle": 270,
+    "gapBoxes": [
+      [
+        163,
+        430,
+        217,
+        475
+      ],
+      [
+        226,
+        383,
+        274,
+        423
+      ]
+    ],
+    "sealFullyVisiblePixels": 0,
+    "farSurfaceCandidatePixelsBefore": 0,
+    "farSurfaceCandidatePixelsAfter": 0,
+    "sealPixelsOutsideFarDepthMask": 0
+  },
+  {
+    "angle": 315,
+    "gapBoxes": [
+      [
+        282,
+        367,
+        357,
+        405
+      ],
+      [
+        502,
+        341,
+        570,
+        377
+      ]
+    ],
+    "sealFullyVisiblePixels": 0,
+    "farSurfaceCandidatePixelsBefore": 0,
+    "farSurfaceCandidatePixelsAfter": 0,
+    "sealPixelsOutsideFarDepthMask": 0
+  }
+]

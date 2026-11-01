@@ -1,0 +1,26 @@
+[
+  {
+    "tested": 253,
+    "throughRecess": 253,
+    "edgeSamples": 0,
+    "frontSurfaceConflicts": [],
+    "maximumConflictMm": 0,
+    "angle": 135
+  },
+  {
+    "tested": 524,
+    "throughRecess": 524,
+    "edgeSamples": 0,
+    "frontSurfaceConflicts": [],
+    "maximumConflictMm": 0,
+    "angle": 180
+  },
+  {
+    "tested": 243,
+    "throughRecess": 243,
+    "edgeSamples": 0,
+    "frontSurfaceConflicts": [],
+    "maximumConflictMm": 0,
+    "angle": 225
+  }
+]

@@ -705,7 +705,7 @@ function updateClayBackground(){
   if(name==='centre')document.querySelector('meta[name="theme-color"]').content='#'+bg.getHexString();
  }
 }
-const aliases={carpaint:'paint',tire:'tyre',rim_second:'rim',brakedisk:'brake',windowglass:'glass',darkglass:'glass',redglass:'lamp_red',redglass_lower:'lamp_red',clearglass:'lamp_clear',orangeglass:'lamp_orange',garnish:'chrome'};
+const aliases={carpaint:'paint',tire:'tyre',rim_second:'rim',brakedisk:'brake',windowglass:'glass',darkglass:'glass',redglass:'lamp_red',redglass_lower:'lamp_red',redglass_caps:'lamp_red',clearglass:'lamp_clear',orangeglass:'lamp_orange',garnish:'chrome'};
 function zoneFor(material){const name=material.name.replace(/\.\d+$/,'').toLowerCase();return material.userData.zone||aliases[name]||name;}
 // Source lens normals are retained byte-for-byte. Standard flat lens shading
 // derives its lighting normal from the stored surface, without editing attributes.
@@ -736,16 +736,22 @@ function useRearRedFilter(material,node){
 function finishPartMaterial(material,entry,zone,sourceName,node){
  const rear=entry.id.startsWith('lamp_rear_');
  if(rear&&zone==='lamp_red'){
-  material.color.set('#97000e');material.roughness=.12;material.metalness=0;
+  material.color.set('#d0000c');material.roughness=.12;material.metalness=0;
   material.clearcoat=1;material.clearcoatRoughness=.10;material.envMapIntensity=.35;
   material.emissive.set('#970006');material.emissiveIntensity=.32;
   material.transparent=true;material.opacity=.94;material.depthWrite=false;
-  if(entry.id.endsWith('_finish3')&&!sourceName.startsWith('redglass_lower')){
+  if(/_finish(?:3|4b)$/.test(entry.id)&&!sourceName.startsWith('redglass_lower')){
    material.opacity=.90;material.blending=THREE.CustomBlending;material.blendEquation=THREE.AddEquation;
    material.blendSrc=THREE.SrcAlphaFactor;material.blendDst=THREE.SrcColorFactor;
    material.blendSrcAlpha=THREE.OneFactor;material.blendDstAlpha=THREE.OneMinusSrcAlphaFactor;
   }
   material.side=THREE.FrontSide;material.forceSinglePass=true;material.flatShading=false;
+ }
+ if(rear&&sourceName.startsWith('redglass_caps')){
+  material.color.set('#53020a');material.roughness=.18;material.metalness=.80;
+  material.envMapIntensity=.85;material.clearcoat=.10;material.clearcoatRoughness=.10;
+  material.transparent=true;material.opacity=1;material.depthWrite=false;material.blending=THREE.NormalBlending;node.renderOrder=2;
+  material.blendSrc=THREE.SrcAlphaFactor;material.blendDst=THREE.OneMinusSrcAlphaFactor;material.blendSrcAlpha=null;material.blendDstAlpha=null;
  }
  if(rear&&zone==='lamp_clear'){
   material.color.set('#f2f5f4');material.roughness=.10;material.clearcoat=.75;
@@ -759,7 +765,15 @@ function finishPartMaterial(material,entry,zone,sourceName,node){
  }
  if(/^(emblem_(front|rear)$|lettering_rear|badge_grade_)/.test(entry.id)&&zone==='chrome'){
   material.color.set('#eef0f2');material.roughness=.22;material.metalness=.85;
-  material.envMapIntensity=entry.id==='emblem_front'?8.0:3.0;material.clearcoat=.20;material.clearcoatRoughness=.12;
+  material.envMapIntensity=entry.id==='emblem_front'?22.0:3.0;material.clearcoat=.20;material.clearcoatRoughness=.12;
+ }
+ if(zone==='chrome'&&(entry.id==='grille'||entry.id==='bumper_front'||entry.id.startsWith('lamp_front_'))){
+  material.color.set('#f4f5f6');material.roughness=.14;material.metalness=1;
+  material.envMapIntensity=16.0;material.clearcoat=.20;material.clearcoatRoughness=.10;
+ }
+ if(zone==='lamp_clear'&&entry.id.startsWith('lamp_front_')){
+  material.color.set('#f4f5f5');material.opacity=.10;material.roughness=.04;
+  material.emissive.set(0x000000);material.emissiveIntensity=0;
  }
  if(entry.id==='tailgate'&&sourceName.toLowerCase()==='garnish'){
   material.roughness=.45;material.metalness=.45;material.envMapIntensity=.85;
@@ -773,12 +787,12 @@ await Promise.all(partEntries.map(async entry=>{
  root.traverse(part=>{
   if(!part.isMesh)return;
   const convert=source=>{
-   const sourceZone=zoneFor(source),zone=entry.id.endsWith('_finish3')&&part.name.startsWith('clearglass_27')&&sourceZone==='lamp_red'?'lamp_clear':sourceZone,key=zone+':'+source.name+(entry.id.endsWith('_finish3')&&zone==='lamp_red'?':'+part.name:'');
+   const sourceZone=zoneFor(source),zone=/_finish(?:3|4b)$/.test(entry.id)&&part.name.startsWith('clearglass_27')&&sourceZone==='lamp_red'?'lamp_clear':sourceZone,key=zone+':'+source.name+(/_finish(?:3|4b)$/.test(entry.id)&&zone==='lamp_red'?':'+part.name:'');
    if(!materialCache.has(key)){
     const template=zoneTemplates[zone]||source;
     const material=template.clone();material.vertexColors=false;
     finishPartMaterial(material,entry,zone,source.name,part);
-    if(entry.id.endsWith('_finish3')&&zone==='lamp_red'&&!source.name.startsWith('redglass_lower'))useRearRedFilter(material,part);
+    if(/_finish(?:3|4b)$/.test(entry.id)&&zone==='lamp_red'&&!source.name.startsWith('redglass_lower')&&!source.name.startsWith('redglass_caps'))useRearRedFilter(material,part);
     if(!['glass','lamp_clear','mirror'].includes(zone)&&!(entry.id.startsWith('lamp_rear_')&&zone==='lamp_red'))useBakedShading(material);
     if(entry.rigidClass==='wheel'&&!entry.wheelSlot&&zone==='black'){material.color.set('#0d1115');material.roughness=.56;material.envMapIntensity=1;}
     if(entry.rigidClass==='wheel'&&!entry.wheelSlot&&zone==='chrome'){material.color.set('#e1e4e5');material.roughness=.24;material.metalness=1;material.clearcoat=.15;material.clearcoatRoughness=.23;material.envMapIntensity=.95;}
@@ -812,8 +826,9 @@ const cloneJSON=value=>JSON.parse(JSON.stringify(value));
 const defaultSlots=Object.fromEntries(Object.entries(manifest.slots).map(([slot,value])=>[slot,value.default??null]));
 const availableZones=new Set(partEntries.flatMap(entry=>entry.zones));
 function mergeBuild(base,patch){
- const next={slots:{...base.slots,...patch.slots},paint:{...base.paint},lift_mm:patch.lift_mm??base.lift_mm,hidden:patch.hidden===undefined?[...base.hidden]:[...patch.hidden]};
+ const next={slots:{...base.slots,...patch.slots},paint:{...base.paint},lift_mm:patch.lift_mm??base.lift_mm,lamps_on:patch.lamps_on??base.lamps_on??false,hidden:patch.hidden===undefined?[...base.hidden]:[...patch.hidden]};
  for(const [key,value] of Object.entries(patch.paint||{})){if(value===null)delete next.paint[key];else next.paint[key]=value;}
+ if(typeof next.lamps_on!=='boolean')throw new Error('lamps_on must be boolean');
  if(!Number.isFinite(next.lift_mm))throw new Error('lift_mm must be a finite number');
  for(const [slot,id] of Object.entries(next.slots)){
   if(!manifest.slots[slot])throw new Error('Unknown slot: '+slot);
@@ -840,12 +855,16 @@ function applyZonePaint(){
  paint.color.set(buildState.paint.paint||DEFAULT_WHITE);
  const input=document.getElementById('customPaint');if(input)input.value='#'+paint.color.getHexString();
  document.querySelectorAll('[data-paint]').forEach(button=>button.classList.toggle('active',button.dataset.paint==='#'+paint.color.getHexString()));
- updateClayBackground();
+ updateLampState();updateClayBackground();
+}
+function updateLampState(){
+ for(const [id,root]of parts)if(id.startsWith('lamp_rear_'))root.traverse(o=>{if(o.isMesh)for(const m of(Array.isArray(o.material)?o.material:[o.material])){if(!m.userData.zone?.startsWith('lamp_'))continue;m.emissiveIntensity=buildState.lamps_on?(m.userData.zone==='lamp_red'?.32:.12):0;}});
 }
 function applyStudioPartVisibility(){
  const bundledSlots=new Set();for(const entry of partEntries){if(buildState.slots[entry.slot]===entry.id&&!buildState.hidden.includes(entry.id)&&!buildState.hidden.includes(entry.slot))for(const slot of entry.bundlesSlots||[])bundledSlots.add(slot);}
  for(const [id,root]of parts){const entry=entryById.get(id),selectedPart=buildState.slots[entry.slot];let selected=selectedPart;
-  if(studioMode==='clay'&&/^lamp_rear_[LR]_finish(?:3)?$/.test(selected||''))selected=selected.replace(/_finish(?:3)?$/,'');
+  if(studioMode==='clay'&&selected==='badge_grade_GXR_finish4b')selected='badge_grade_GXR';
+  if(studioMode==='clay'&&/^lamp_rear_[LR]_finish(?:3|4b)?$/.test(selected||''))selected=selected.replace(/_finish(?:3|4b)?$/,'');
   root.visible=selected===id&&!bundledSlots.has(entry.slot)&&!buildState.hidden.includes(id)&&!buildState.hidden.includes(selectedPart)&&!buildState.hidden.includes(entry.slot);
  }
 }

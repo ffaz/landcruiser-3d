@@ -1,0 +1,10 @@
+{
+  "url": "https://sketchfab.com/3d-models/land-cruise-2016-6bd227c034894019907f7eaf4fe23ded",
+  "author": "ZIRODESIGN",
+  "originalGLBSha256": "45cae7b0f6cd85db51f401a24fc19dd7e1ba9b17d1af624a9583ffe3f766b3e0",
+  "triangles": 979826,
+  "textures": 0,
+  "originalMaterials": "materials.json",
+  "capture": "Native Sketchfab Viewer API 1.12.1; original source materials/environment/postprocessing, software Chromium. Material, environment and postprocessing values were not changed. The parent document emitted a localStorage-access error; source rendering succeeded.",
+  "cameraLimit": "Native camera limits and renderer differ from the app. Reference images are visual comparisons, not camera-aligned Lab tests. Baseline/current app camera poses match exactly."
+}

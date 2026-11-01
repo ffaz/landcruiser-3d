@@ -4334,6 +4334,186 @@
       "derivedFrom": "lamp_rear_R",
       "variantOf": "lamp_rear_R_finish",
       "purpose": "separate material zones only; identical stored attributes and triangle union"
+    },
+    {
+      "id": "gap_seal_rear_L",
+      "slot": "gap_seal_rear_L",
+      "url": "parts/gap_seal_rear_L.glb",
+      "rootNode": "gap_seal_rear_L",
+      "pivot": [
+        2.246749758720398,
+        1.026725947856903,
+        0.6270960569381714
+      ],
+      "rigidClass": "body",
+      "zones": [
+        "black"
+      ],
+      "triangles": 16284,
+      "bounds": {
+        "min": [
+          2.2035083770751953,
+          0.9850000143051147,
+          0.5006921291351318
+        ],
+        "max": [
+          2.2899911403656006,
+          1.0684518814086914,
+          0.7534999847412109
+        ]
+      },
+      "purpose": "new 0.8 mm rubber backing, original meshes untouched",
+      "overlapMetres": 0.01
+    },
+    {
+      "id": "gap_seal_rear_R",
+      "slot": "gap_seal_rear_R",
+      "url": "parts/gap_seal_rear_R.glb",
+      "rootNode": "gap_seal_rear_R",
+      "pivot": [
+        2.246749758720398,
+        1.026725947856903,
+        -0.6270960569381714
+      ],
+      "rigidClass": "body",
+      "zones": [
+        "black"
+      ],
+      "triangles": 16284,
+      "bounds": {
+        "min": [
+          2.2035083770751953,
+          0.9850000143051147,
+          -0.7534999847412109
+        ],
+        "max": [
+          2.2899911403656006,
+          1.0684518814086914,
+          -0.5006921291351318
+        ]
+      },
+      "purpose": "new 0.8 mm rubber backing, original meshes untouched",
+      "overlapMetres": 0.01
+    },
+    {
+      "id": "badge_grade_GXR_finish4b",
+      "slot": "badge_grade",
+      "url": "parts/badge_grade_GXR_finish4b.glb",
+      "rootNode": "badge_grade_GXR_finish4b",
+      "pivot": [
+        2.293339258140394,
+        0.9611354470252991,
+        0.6172285377979279
+      ],
+      "pivotBasis": "source glyph group centre; unchanged source glyph transforms",
+      "zones": [
+        "chrome"
+      ],
+      "triangles": 8930,
+      "bounds": {
+        "min": [
+          2.281412961745945,
+          0.9463567137718201,
+          0.540575385093689
+        ],
+        "max": [
+          2.305328618896144,
+          0.9759141802787781,
+          0.6938816905021667
+        ]
+      },
+      "rigidClass": "body",
+      "sourceRecovery": {
+        "from": "lettering_rear",
+        "preservedNodes": [
+          "source_4_74",
+          "source_4_77",
+          "source_4_78",
+          "source_4_79",
+          "source_4_81"
+        ],
+        "newGeometry": [
+          "grade_G_new"
+        ]
+      },
+      "variantOf": "badge_grade_GXR",
+      "purpose": "new G only: source-R cap height, baseline and relief; original X/R/punctuation unchanged"
+    },
+    {
+      "id": "lamp_rear_L_finish4b",
+      "slot": "lamp_rear_L",
+      "url": "parts/lamp_rear_L_finish4b.glb",
+      "pivot": [
+        2.1915613357507393,
+        0.963238707959341,
+        0.683230474193339
+      ],
+      "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
+      "zones": [
+        "black",
+        "chrome",
+        "lamp_clear",
+        "lamp_orange",
+        "lamp_red"
+      ],
+      "triangles": 64045,
+      "bounds": {
+        "min": [
+          2.039112731038501,
+          0.640797887088982,
+          0.4406589110344298
+        ],
+        "max": [
+          2.344009940462977,
+          1.2856795288296998,
+          0.9258020373522483
+        ]
+      },
+      "rigidClass": "body",
+      "classification": "Base-finish variant: identical opening/positions/COLOR_0; repaired lens/reflector normals on this new copy only",
+      "thumbnail": "../docs/foundation/parts/lamp_rear_L.png",
+      "rootNode": "lamp_rear_L_finish4b",
+      "derivedFrom": "lamp_rear_L",
+      "variantOf": "lamp_rear_L_finish3",
+      "purpose": "identical attributes and triangles; 22 source LED caps assigned an unlit reflective material"
+    },
+    {
+      "id": "lamp_rear_R_finish4b",
+      "slot": "lamp_rear_R",
+      "url": "parts/lamp_rear_R_finish4b.glb",
+      "pivot": [
+        2.1915613357507393,
+        0.9632777054246286,
+        -0.6865018093670008
+      ],
+      "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
+      "zones": [
+        "black",
+        "chrome",
+        "lamp_clear",
+        "lamp_orange",
+        "lamp_red"
+      ],
+      "triangles": 64460,
+      "bounds": {
+        "min": [
+          2.039112731038501,
+          0.640797887088982,
+          -0.9258083554445945
+        ],
+        "max": [
+          2.344009940462977,
+          1.2857575237602754,
+          -0.447195263289407
+        ]
+      },
+      "rigidClass": "body",
+      "classification": "Base-finish variant: identical opening/positions/COLOR_0; repaired lens/reflector normals on this new copy only",
+      "thumbnail": "../docs/foundation/parts/lamp_rear_R.png",
+      "rootNode": "lamp_rear_R_finish4b",
+      "derivedFrom": "lamp_rear_R",
+      "variantOf": "lamp_rear_R_finish3",
+      "purpose": "identical attributes and triangles; 22 source LED caps assigned an unlit reflective material"
     }
   ],
   "displayBase": {
@@ -4440,7 +4620,7 @@
       "rigidClass": "body"
     },
     "lamp_rear_L": {
-      "default": "lamp_rear_L_finish3",
+      "default": "lamp_rear_L_finish4b",
       "pivot": [
         2.1915613357507393,
         0.963238707959341,
@@ -4449,7 +4629,7 @@
       "rigidClass": "body"
     },
     "lamp_rear_R": {
-      "default": "lamp_rear_R_finish3",
+      "default": "lamp_rear_R_finish4b",
       "pivot": [
         2.1915613357507393,
         0.9632777054246286,
@@ -4724,11 +4904,29 @@
       "wheelSlot": "wheel_RR"
     },
     "badge_grade": {
-      "default": "badge_grade_GXR",
+      "default": "badge_grade_GXR_finish4b",
       "pivot": [
         2.293339258140394,
         0.9611354470252991,
         0.6172285377979279
+      ],
+      "rigidClass": "body"
+    },
+    "gap_seal_rear_L": {
+      "default": "gap_seal_rear_L",
+      "pivot": [
+        2.246749758720398,
+        1.026725947856903,
+        0.6270960569381714
+      ],
+      "rigidClass": "body"
+    },
+    "gap_seal_rear_R": {
+      "default": "gap_seal_rear_R",
+      "pivot": [
+        2.246749758720398,
+        1.026725947856903,
+        -0.6270960569381714
       ],
       "rigidClass": "body"
     }

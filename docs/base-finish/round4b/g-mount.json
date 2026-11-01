@@ -1,0 +1,9 @@
+{
+  "node": "grade_G_new",
+  "rigidMountOffsetX": 0.000521304870334582,
+  "samples": 9074,
+  "minimumAllSampleGapMm": 0.1,
+  "backFaceMinimumGapMm": 0.1,
+  "backFaceMaximumGapMm": 0.6875034308342464,
+  "method": "Vertex and triangle-centre rays to immutable stored tailgate. Only the new G node translation changes."
+}

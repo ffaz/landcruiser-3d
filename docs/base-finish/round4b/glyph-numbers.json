@@ -1,0 +1,59 @@
+{
+  "R": {
+    "fullStemMedianMm": 10.609998565042677,
+    "frontFaceStemMedianMm": 6.689945489380451,
+    "bevelInsetMeanMm": 1.960026537831113,
+    "capHeightMm": 29.51592206954956,
+    "baselineMm": 946.3982582092285,
+    "reliefMm": 5.393345979563868,
+    "individualArms": {
+      "full": [
+        10.609998565042677
+      ],
+      "cap": [
+        6.689945489380451
+      ]
+    }
+  },
+  "X": {
+    "fullStemMedianMm": 9.797348722390932,
+    "frontFaceStemMedianMm": 5.77346433250289,
+    "bevelInsetMeanMm": 2.0119421949440213,
+    "capHeightMm": 29.503285884857178,
+    "baselineMm": 946.3567137718201,
+    "reliefMm": 5.404088500466919,
+    "individualArms": {
+      "full": [
+        9.671129716124247,
+        10.284417943502786,
+        9.923567728657616,
+        9.23347058155196
+      ],
+      "cap": [
+        5.961727423303093,
+        6.612804046062801,
+        5.585201241702686,
+        5.084583245130221
+      ]
+    }
+  },
+  "G": {
+    "fullStemMedianMm": 10.189604505461542,
+    "frontFaceStemMedianMm": 6.263523129273304,
+    "bevelInsetMeanMm": 1.963040688094119,
+    "capHeightMm": 29.51592206954956,
+    "baselineMm": 946.3982582092285,
+    "reliefMm": 5.393345979563868,
+    "individualArms": {
+      "full": [
+        10.189604505461542
+      ],
+      "cap": [
+        6.263523129273304
+      ]
+    }
+  },
+  "method": "10 micrometre silhouette raster. X: median of four arm widths normal to fitted centreline at 12\u201324% and 77\u201389% cap height. R/G: left stem at 60\u201372%. Front cap: triangles within arccos(.995) of the mounting normal. Bevel inset = (full-stem width minus flat-cap width)/2; source facets vary by arm.",
+  "GvsRStemPercent": -3.96224426425682,
+  "GvsXStemPercent": 4.0036931846076484
+}

@@ -1,0 +1,16 @@
+// Offline generator/audit. Usage: node SCRIPT REPO DEPS WORKDIR
+import fs from'node:fs/promises';import{createRequire}from'node:module';import{pathToFileURL}from'node:url';
+const r=createRequire(process.argv[3]+'/package.json'),imp=n=>import(pathToFileURL(r.resolve(n)).href),{Document,NodeIO}=await imp('@gltf-transform/core'),{ALL_EXTENSIONS,EXTMeshoptCompression}=await imp('@gltf-transform/extensions'),{MeshoptEncoder,MeshoptDecoder}=await imp('meshoptimizer'),TM=await imp('three'),T=TM.default||TM;
+await Promise.all([MeshoptDecoder.ready,MeshoptEncoder.ready]);const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.decoder':MeshoptDecoder,'meshopt.encoder':MeshoptEncoder});
+const repo=process.argv[2],data=JSON.parse(await fs.readFile(process.argv[4]+'/seal-data.json')),manifest=JSON.parse(await fs.readFile(repo+'/model/manifest.json')),build=JSON.parse(await fs.readFile(repo+'/build.json'));
+for(const side of['L','R']){
+ const id='gap_seal_rear_'+side,sgn=side==='L'?1:-1,positions=data.positions.map(p=>[p[0],p[1],p[2]*sgn]),indices=[...data.indices];if(sgn<0)for(let i=0;i<indices.length;i+=3)[indices[i+1],indices[i+2]]=[indices[i+2],indices[i+1]];
+ const g=new T.BufferGeometry().setAttribute('position',new T.Float32BufferAttribute(positions.flat(),3)).setIndex(indices);g.computeVertexNormals();
+ const bounds=new T.Box3().setFromBufferAttribute(g.attributes.position),pivot=bounds.getCenter(new T.Vector3()).toArray(),doc=new Document(),buffer=doc.createBuffer(),acc=(name,array,type)=>doc.createAccessor(name,buffer).setArray(array).setType(type),mat=doc.createMaterial('black').setBaseColorFactor([.021219,.023153,.025187,1]).setRoughnessFactor(.65).setMetallicFactor(0).setDoubleSided(true),color=new Float32Array(positions.length*3);
+ for(let i=0;i<positions.length;i++)color.set([1,.5,0],i*3);
+ const P=new Float32Array(positions.flatMap(p=>p.map((v,i)=>v-pivot[i]))),prim=doc.createPrimitive().setAttribute('POSITION',acc('seal_position',P,'VEC3')).setAttribute('NORMAL',acc('seal_normal',g.attributes.normal.array,'VEC3')).setAttribute('COLOR_0',acc('seal_ao_curvature',color,'VEC3')).setIndices(acc('seal_indices',new Uint32Array(indices),'SCALAR')).setMaterial(mat);
+ const node=doc.createNode(id).setTranslation(pivot).setMesh(doc.createMesh('Rubber_gap_backing').addPrimitive(prim));doc.createScene().addChild(node);doc.createExtension(EXTMeshoptCompression).setRequired(true).setEncoderOptions({method:EXTMeshoptCompression.EncoderMethod.QUANTIZE});const url='parts/'+id+'.glb';await io.write(repo+'/model/'+url,doc);
+ const entry={id,slot:id,url,rootNode:id,pivot,rigidClass:'body',zones:['black'],triangles:indices.length/3,bounds:{min:bounds.min.toArray(),max:bounds.max.toArray()},purpose:'new 0.8 mm rubber backing, original meshes untouched',overlapMetres:.010};
+ const k=manifest.parts.findIndex(e=>e.id===id);if(k<0)manifest.parts.push(entry);else manifest.parts[k]=entry;manifest.slots[id]={default:id,pivot,rigidClass:'body'};build.slots[id]=id;console.log(id,entry.bounds,entry.triangles);
+}
+await fs.writeFile(repo+'/model/manifest.json',JSON.stringify(manifest,null,2)+'\n');await fs.writeFile(repo+'/build.json',JSON.stringify(build,null,2)+'\n');
