@@ -1,3 +1,5 @@
+> Historical fit round at `7adae34`. [Current Cream likeness refinement](../refinement/README.md).
+
 # Rim fit and reference correction
 
 Baseline: `rims-review @ b0de49e`. Main/Pages were not modified.

@@ -1,0 +1,46 @@
+PASS desktop: closed by default
+PASS base build fits [{"arch":"front","mm":60,"status":"ok"},{"arch":"rear","mm":94,"status":"ok"}]
+PASS stock front clearance plausible (40–90 mm) 60 mm
+PASS 35" tyre at stock height is flagged [{"arch":"front","mm":12,"status":"tight"},{"arch":"rear","mm":46,"status":"ok"}]
+PASS lift increases clearance 12 → 32
+PASS 37" tyre clashes at stock height [{"arch":"front","mm":-13,"status":"clash"},{"arch":"rear","mm":21,"status":"tight"}]
+PASS live dimensions match base at stock {"length":5000,"height":1930,"width":2297,"clearance":236} vs {"length":5000,"height":1930,"width":2297,"clearance":236}
+PASS base body 5,000 × 1,930 × 2,297 {"length":5000,"height":1930,"width":2297,"clearance":236}
+PASS desktop: opens
+PASS desktop: eleven categories listed
+PASS desktop: 2.5" lift applies {"lift":63,"y":0.063,"wheels":0}
+PASS desktop: tyres: stock live, 3 soon, 3 won't fit on the stock rim
+PASS desktop: 35" says why it won't fit
+PASS desktop: rims: stock and three built designs live
+PASS desktop: rules: stock wheel has no notes []
+PASS desktop: rules: 35" on KMC fits, sticks out 29/34 mm [{"level":"tight","text":"Tyres stick out 29 mm (front), 34 mm (rear) past the arches: flares needed for road use in most places"}]
+PASS desktop: rules: 35" refused on 7.5" and 8" rims [[{"level":"clash","text":"35×12.50R17 mud-terrain needs an 8.5–11″ wide rim; Stock GXR alloy is 7.5″"},{"level":"clash","text":"Tyre inner edge 222 mm in from the hub face: hits the upper control arm"}],[{"level":"clash","text":"35×12.50R17 mud-terrain needs an 8.5–11″ wide rim; Shanaber steel · silver is 8″"},{"level":"tight","text":"Tyres stick out 22 mm (front), 27 mm (rear) past the arches: flares needed for road use in most places"}]]
+PASS desktop: rules: 285/70 on Method ET0 sticks out 31/36 mm [{"level":"tight","text":"Tyres stick out 31 mm (front), 36 mm (rear) past the arches: flares needed for road use in most places"}]
+PASS desktop: unbuilt tyre/rim refused by the viewer
+PASS desktop: compare shows base
+PASS desktop: compare returns to build
+PASS desktop: sheet height includes lift {"length":5000,"height":1993,"width":2297,"clearance":299}
+PASS desktop: share link carries the build #build={"lift_mm":63}
+PASS desktop: reset to base
+PASS desktop: Escape closes
+PASS desktop: no page errors
+PASS phone: closed by default
+PASS phone: opens
+PASS phone: eleven categories listed
+PASS phone: 2.5" lift applies {"lift":63,"y":0.063,"wheels":0}
+PASS phone: tyres: stock live, 3 soon, 3 won't fit on the stock rim
+PASS phone: 35" says why it won't fit
+PASS phone: rims: stock and three built designs live
+PASS phone: rules: stock wheel has no notes []
+PASS phone: rules: 35" on KMC fits, sticks out 29/34 mm [{"level":"tight","text":"Tyres stick out 29 mm (front), 34 mm (rear) past the arches: flares needed for road use in most places"}]
+PASS phone: rules: 35" refused on 7.5" and 8" rims [[{"level":"clash","text":"35×12.50R17 mud-terrain needs an 8.5–11″ wide rim; Stock GXR alloy is 7.5″"},{"level":"clash","text":"Tyre inner edge 222 mm in from the hub face: hits the upper control arm"}],[{"level":"clash","text":"35×12.50R17 mud-terrain needs an 8.5–11″ wide rim; Shanaber steel · silver is 8″"},{"level":"tight","text":"Tyres stick out 22 mm (front), 27 mm (rear) past the arches: flares needed for road use in most places"}]]
+PASS phone: rules: 285/70 on Method ET0 sticks out 31/36 mm [{"level":"tight","text":"Tyres stick out 31 mm (front), 36 mm (rear) past the arches: flares needed for road use in most places"}]
+PASS phone: unbuilt tyre/rim refused by the viewer
+PASS phone: compare shows base
+PASS phone: compare returns to build
+PASS phone: sheet height includes lift {"length":5000,"height":1993,"width":2297,"clearance":299}
+PASS phone: share link carries the build #build={"lift_mm":63}
+PASS phone: reset to base
+PASS phone: Escape closes
+PASS phone: no page errors
+45/45 workshop checks pass

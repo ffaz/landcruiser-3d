@@ -1,0 +1,248 @@
+[
+  {
+    "name": "studio selector",
+    "old": "Cream / Slate / Clay",
+    "new": "Cream only; selector removed",
+    "file": "index.html",
+    "line": 1254
+  },
+  {
+    "name": "KM720 cap radius_m",
+    "old": 0.0635,
+    "new": 0.066,
+    "file": "tools/rims/model.py",
+    "line": 94
+  },
+  {
+    "name": "KM720 face profile",
+    "old": "13 front profile samples; smoothed across booleans",
+    "new": "9 front samples; planar broad surfaces and two raised steps",
+    "file": "tools/rims/model.py",
+    "line": 50
+  },
+  {
+    "name": "KM720 logo",
+    "old": "blank",
+    "new": "shallow shaped KMC mark + WHEELS",
+    "file": "tools/rims/model.py",
+    "line": 127
+  },
+  {
+    "name": "KM720 slots",
+    "old": "8 capsules, 18 perimeter points",
+    "new": "8 identical capsules, 14 perimeter points; identical radial/tangential dimensions",
+    "file": "tools/rims/model.py",
+    "line": 71
+  },
+  {
+    "name": "KM720 lip step",
+    "old": "plain rolled lip",
+    "new": "additional bead ring step inside 462 mm flange",
+    "file": "tools/rims/model.py",
+    "line": 147
+  },
+  {
+    "name": "KM720 roughness",
+    "old": 0.68,
+    "new": 0.58,
+    "file": "tools/rims/register.mjs",
+    "line": 10
+  },
+  {
+    "name": "KM720 metalness",
+    "old": 0.5,
+    "new": 0.65,
+    "file": "tools/rims/register.mjs",
+    "line": 10
+  },
+  {
+    "name": "KM720 envMapIntensity",
+    "old": 1.5,
+    "new": 1.8,
+    "file": "tools/rims/register.mjs",
+    "line": 10
+  },
+  {
+    "name": "MR705 small windows_m",
+    "old": {
+      "inner": 0.126,
+      "outer": 0.198,
+      "innerHalfWidth": 0.014,
+      "outerHalfWidth": 0.025
+    },
+    "new": {
+      "inner": 0.139,
+      "outer": 0.183,
+      "innerHalfWidth": 0.026,
+      "outerHalfWidth": 0.034
+    },
+    "file": "tools/rims/model.py",
+    "line": 81
+  },
+  {
+    "name": "MR705 large windows_m",
+    "old": {
+      "inner": 0.126,
+      "outer": 0.198,
+      "innerHalfWidth": 0.02,
+      "outerHalfWidth": 0.032
+    },
+    "new": {
+      "inner": 0.119,
+      "outer": 0.183,
+      "innerHalfWidth": 0.034,
+      "outerHalfWidth": 0.044
+    },
+    "file": "tools/rims/model.py",
+    "line": 81
+  },
+  {
+    "name": "MR705 window corner radius_m",
+    "old": 0.006,
+    "new": 0.007,
+    "file": "tools/rims/model.py",
+    "line": 81
+  },
+  {
+    "name": "MR705 outer plateau starts_m",
+    "old": 0.203,
+    "new": 0.194,
+    "file": "tools/rims/model.py",
+    "line": 55
+  },
+  {
+    "name": "MR705 lettering",
+    "old": "blank",
+    "new": "curved METHOD top/bottom; cap METHOD / BEAD GRIP",
+    "file": "tools/rims/model.py",
+    "line": 150
+  },
+  {
+    "name": "MR705 outer lip",
+    "old": "existing rolled lip only",
+    "new": "additional raised Bead Grip ring inside 462 mm flange",
+    "file": "tools/rims/model.py",
+    "line": 157
+  },
+  {
+    "name": "new-rim face normals",
+    "old": "Boolean smooth corner averages",
+    "new": "planar normals on flat faces; analytic radial normals on curved pressing",
+    "file": "tools/rims/model.py",
+    "line": 216
+  },
+  {
+    "name": "new-rim flat face AO / curvature",
+    "old": "raw sparse interpolated bake",
+    "new": "R=.98 / G=.5 on flat front metal only; walls/curves retain bake",
+    "file": "tools/rims/model.py",
+    "line": 229
+  },
+  {
+    "name": "brake colour / roughness / env",
+    "old": {
+      "color": "#9aa2a8",
+      "roughness": 0.5,
+      "env": 1.3,
+      "metalness": 0.65
+    },
+    "new": {
+      "color": "#c1c7ca",
+      "roughness": 0.37,
+      "env": 2.3,
+      "metalness": 0.62
+    },
+    "file": "tools/rims/register.mjs",
+    "line": 11
+  },
+  {
+    "name": "caliper finish",
+    "old": "shared black",
+    "new": {
+      "color": "#b5b8b8",
+      "roughness": 0.46,
+      "metalness": 0.48,
+      "env": 1.8
+    },
+    "file": "tools/rims/register.mjs",
+    "line": 11
+  },
+  {
+    "name": "backing finish",
+    "old": "shared black",
+    "new": {
+      "color": "#575c61",
+      "roughness": 0.8,
+      "metalness": 0.2,
+      "env": 0.65
+    },
+    "file": "tools/rims/register.mjs",
+    "line": 11
+  },
+  {
+    "name": "inner barrel finish",
+    "old": "shared black",
+    "new": {
+      "color": "#666c71",
+      "roughness": 0.62,
+      "metalness": 0.4,
+      "env": 1.4
+    },
+    "file": "tools/rims/register.mjs",
+    "line": 11
+  },
+  {
+    "name": "new hardware AO floor",
+    "old": "R minimum .12",
+    "new": {
+      "brake": 0.78,
+      "caliper": 0.72,
+      "backing": 0.62,
+      "brake_detail": 0.8
+    },
+    "file": "tools/rims/model.py",
+    "line": 226
+  },
+  {
+    "name": "brake detail",
+    "old": "none",
+    "new": "two 0.7 mm wide machining witness rings and two caliper fasteners; 312 added triangles per rim",
+    "file": "tools/rims/model.py",
+    "line": 184
+  },
+  {
+    "name": "rim structural triangle ceiling",
+    "old": 15000,
+    "new": 20000,
+    "file": "tools/rims/verify.mjs",
+    "line": 12
+  },
+  {
+    "name": "bead-width measurement",
+    "old": "all material zones",
+    "new": "rim metal only; lettering no longer counted as bead-seat geometry",
+    "file": "tools/rims/verify.mjs",
+    "line": 9
+  },
+  {
+    "name": "rim checks for studio",
+    "old": "3 toggle-cycle checks",
+    "new": "3 Cream + complete visible brake package checks",
+    "file": "tools/rims/check-workshop.mjs",
+    "line": 27
+  },
+  {
+    "name": "viewer background tests",
+    "old": "switch/restore alternate studio",
+    "new": "neutral Cream theme and background invariant under paint selection",
+    "file": "tests/visual.mjs",
+    "line": 253
+  },
+  {
+    "name": "viewer display-base tests",
+    "old": "Clay base",
+    "new": "Cream satin base + correct framing + restore",
+    "file": "tests/visual.mjs",
+    "line": 338
+  }
+]

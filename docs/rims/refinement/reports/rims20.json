@@ -1,0 +1,1878 @@
+{
+  "results": [
+    {
+      "name": "default has no custom rim loaded",
+      "pass": true
+    },
+    {
+      "name": "kmc installs four rim copies",
+      "pass": true,
+      "detail": {
+        "state": {
+          "slots": {
+            "body_shell": "body_shell",
+            "bonnet": "bonnet",
+            "bumper_front": "bumper_front_plate_clean",
+            "bumper_rear": "bumper_rear",
+            "door_FL": "door_FL",
+            "door_FR": "door_FR",
+            "door_RL": "door_RL",
+            "door_RR": "door_RR",
+            "grille": "grille",
+            "lamp_front_L": "lamp_front_L",
+            "lamp_front_R": "lamp_front_R",
+            "lamp_rear_L": "lamp_rear_L_finish4b",
+            "lamp_rear_R": "lamp_rear_R_finish4b",
+            "mirror_L": "mirror_L",
+            "mirror_R": "mirror_R",
+            "roof_rails": "roof_rails",
+            "side_step_L": "side_step_L",
+            "side_step_R": "side_step_R",
+            "spoiler": null,
+            "tailgate": "tailgate",
+            "unsorted_01": "unsorted_01",
+            "unsorted_02": "unsorted_02",
+            "unsorted_03": "unsorted_03",
+            "unsorted_04": "unsorted_04",
+            "unsorted_05": "unsorted_05",
+            "unsorted_06": "unsorted_06",
+            "unsorted_07": "unsorted_07",
+            "unsorted_08": "unsorted_08",
+            "unsorted_09": "unsorted_09",
+            "unsorted_10": "unsorted_10",
+            "wheel_FL": "wheel_FL",
+            "wheel_FR": "wheel_FR",
+            "wheel_RL": "wheel_RL",
+            "wheel_RR": "wheel_RR",
+            "arch_flares": null,
+            "chassis": null,
+            "emblem_front": "emblem_front",
+            "emblem_rear": "emblem_rear",
+            "lettering_rear": "lettering_rear_base",
+            "wheel_emblem_FL": "wheel_emblem_FL",
+            "wheel_emblem_FR": "wheel_emblem_FR",
+            "wheel_emblem_RL": "wheel_emblem_RL",
+            "wheel_emblem_RR": "wheel_emblem_RR",
+            "badge_grade": "badge_grade_GXR_finish4b",
+            "gap_seal_rear_L": "gap_seal_rear_L",
+            "gap_seal_rear_R": "gap_seal_rear_R",
+            "front_plate": "front_plate",
+            "rim_FL": null,
+            "rim_FR": null,
+            "rim_RL": null,
+            "rim_RR": null
+          },
+          "paint": {
+            "paint": "#f4f4ef"
+          },
+          "lift_mm": 0,
+          "lamps_on": false,
+          "hidden": [],
+          "tyre": "stock",
+          "rim": "kmc"
+        },
+        "report": [
+          {
+            "corner": "FL",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              0.04200000000000004
+            ]
+          },
+          {
+            "corner": "FR",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              -0.04200000000000004
+            ]
+          },
+          {
+            "corner": "RL",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              0.04200000000000004
+            ]
+          },
+          {
+            "corner": "RR",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              -0.04200000000000004
+            ]
+          }
+        ],
+        "fit": {
+          "level": "ok",
+          "tyre_mm": 793,
+          "tyres": [
+            {
+              "arch": "front",
+              "mm": 60,
+              "status": "ok"
+            },
+            {
+              "arch": "rear",
+              "mm": 94,
+              "status": "ok"
+            }
+          ],
+          "mounts": [],
+          "wheel": {
+            "tyre": {
+              "id": "stock",
+              "label": "Stock 265/70R17",
+              "detail": "Factory tyre · stored 793 mm",
+              "od_mm": 793,
+              "width_mm": 265,
+              "rim_in": 17,
+              "rimWidth_in": [
+                7,
+                9
+              ],
+              "stock": true
+            },
+            "rim": {
+              "id": "kmc",
+              "built": true,
+              "label": "KMC KM720 Roswell · matte anthracite",
+              "detail": "17×8.5 · ET+18 · 5×150 · matte anthracite",
+              "diameter_in": 17,
+              "width_in": 8.5,
+              "offset_mm": 18,
+              "boltPattern": "5x150",
+              "centreBore_mm": 110.1,
+              "model": "kmc",
+              "color": "#7b7f83",
+              "assetId": "rim_FL_disc",
+              "sourceNote": "Reference-inspired face, adapted to the configured LC200 5x150 mount; not manufacturer CAD"
+            },
+            "mount": {
+              "ok": true,
+              "why": []
+            },
+            "side": {
+              "shift": 42,
+              "inner": 153,
+              "innerStatus": "ok",
+              "axles": [
+                {
+                  "axle": "front",
+                  "poke": 3,
+                  "status": "ok"
+                },
+                {
+                  "axle": "rear",
+                  "poke": 8,
+                  "status": "ok"
+                }
+              ]
+            },
+            "notes": []
+          },
+          "notes": []
+        },
+        "custom": 4
+      }
+    },
+    {
+      "name": "kmc keeps tyre and brake buffers",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            0.04200000000000004
+          ]
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            -0.04200000000000004
+          ]
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            0.04200000000000004
+          ]
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            -0.04200000000000004
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kmc applies configured rigid offset",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            0.04200000000000004
+          ]
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            -0.04200000000000004
+          ]
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            0.04200000000000004
+          ]
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            -0.04200000000000004
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kmc passes catalogue hub/width fit",
+      "pass": true,
+      "detail": {
+        "tyre": {
+          "id": "stock",
+          "label": "Stock 265/70R17",
+          "detail": "Factory tyre · stored 793 mm",
+          "od_mm": 793,
+          "width_mm": 265,
+          "rim_in": 17,
+          "rimWidth_in": [
+            7,
+            9
+          ],
+          "stock": true
+        },
+        "rim": {
+          "id": "kmc",
+          "built": true,
+          "label": "KMC KM720 Roswell · matte anthracite",
+          "detail": "17×8.5 · ET+18 · 5×150 · matte anthracite",
+          "diameter_in": 17,
+          "width_in": 8.5,
+          "offset_mm": 18,
+          "boltPattern": "5x150",
+          "centreBore_mm": 110.1,
+          "model": "kmc",
+          "color": "#7b7f83",
+          "assetId": "rim_FL_disc",
+          "sourceNote": "Reference-inspired face, adapted to the configured LC200 5x150 mount; not manufacturer CAD"
+        },
+        "mount": {
+          "ok": true,
+          "why": []
+        },
+        "side": {
+          "shift": 42,
+          "inner": 153,
+          "innerStatus": "ok",
+          "axles": [
+            {
+              "axle": "front",
+              "poke": 3,
+              "status": "ok"
+            },
+            {
+              "axle": "rear",
+              "poke": 8,
+              "status": "ok"
+            }
+          ]
+        },
+        "notes": []
+      }
+    },
+    {
+      "name": "steel installs four rim copies",
+      "pass": true,
+      "detail": {
+        "state": {
+          "slots": {
+            "body_shell": "body_shell",
+            "bonnet": "bonnet",
+            "bumper_front": "bumper_front_plate_clean",
+            "bumper_rear": "bumper_rear",
+            "door_FL": "door_FL",
+            "door_FR": "door_FR",
+            "door_RL": "door_RL",
+            "door_RR": "door_RR",
+            "grille": "grille",
+            "lamp_front_L": "lamp_front_L",
+            "lamp_front_R": "lamp_front_R",
+            "lamp_rear_L": "lamp_rear_L_finish4b",
+            "lamp_rear_R": "lamp_rear_R_finish4b",
+            "mirror_L": "mirror_L",
+            "mirror_R": "mirror_R",
+            "roof_rails": "roof_rails",
+            "side_step_L": "side_step_L",
+            "side_step_R": "side_step_R",
+            "spoiler": null,
+            "tailgate": "tailgate",
+            "unsorted_01": "unsorted_01",
+            "unsorted_02": "unsorted_02",
+            "unsorted_03": "unsorted_03",
+            "unsorted_04": "unsorted_04",
+            "unsorted_05": "unsorted_05",
+            "unsorted_06": "unsorted_06",
+            "unsorted_07": "unsorted_07",
+            "unsorted_08": "unsorted_08",
+            "unsorted_09": "unsorted_09",
+            "unsorted_10": "unsorted_10",
+            "wheel_FL": "wheel_FL",
+            "wheel_FR": "wheel_FR",
+            "wheel_RL": "wheel_RL",
+            "wheel_RR": "wheel_RR",
+            "arch_flares": null,
+            "chassis": null,
+            "emblem_front": "emblem_front",
+            "emblem_rear": "emblem_rear",
+            "lettering_rear": "lettering_rear_base",
+            "wheel_emblem_FL": "wheel_emblem_FL",
+            "wheel_emblem_FR": "wheel_emblem_FR",
+            "wheel_emblem_RL": "wheel_emblem_RL",
+            "wheel_emblem_RR": "wheel_emblem_RR",
+            "badge_grade": "badge_grade_GXR_finish4b",
+            "gap_seal_rear_L": "gap_seal_rear_L",
+            "gap_seal_rear_R": "gap_seal_rear_R",
+            "front_plate": "front_plate",
+            "rim_FL": null,
+            "rim_FR": null,
+            "rim_RL": null,
+            "rim_RR": null
+          },
+          "paint": {
+            "paint": "#f4f4ef"
+          },
+          "lift_mm": 0,
+          "lamps_on": false,
+          "hidden": [],
+          "tyre": "stock",
+          "rim": "steel"
+        },
+        "report": [
+          {
+            "corner": "FL",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              0.03500000000000003
+            ]
+          },
+          {
+            "corner": "FR",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              -0.03500000000000003
+            ]
+          },
+          {
+            "corner": "RL",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              0.03500000000000003
+            ]
+          },
+          {
+            "corner": "RR",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              -0.03500000000000003
+            ]
+          }
+        ],
+        "fit": {
+          "level": "ok",
+          "tyre_mm": 793,
+          "tyres": [
+            {
+              "arch": "front",
+              "mm": 60,
+              "status": "ok"
+            },
+            {
+              "arch": "rear",
+              "mm": 94,
+              "status": "ok"
+            }
+          ],
+          "mounts": [],
+          "wheel": {
+            "tyre": {
+              "id": "stock",
+              "label": "Stock 265/70R17",
+              "detail": "Factory tyre · stored 793 mm",
+              "od_mm": 793,
+              "width_mm": 265,
+              "rim_in": 17,
+              "rimWidth_in": [
+                7,
+                9
+              ],
+              "stock": true
+            },
+            "rim": {
+              "id": "steel",
+              "built": true,
+              "label": "Shanaber steel · silver",
+              "detail": "17×8 · ET+25 · 5×150 · silver",
+              "diameter_in": 17,
+              "width_in": 8,
+              "offset_mm": 25,
+              "boltPattern": "5x150",
+              "centreBore_mm": 110.1,
+              "model": "steel",
+              "color": "#c4c9cc",
+              "assetId": "rim_FL_steel",
+              "sourceNote": "Reference-inspired face, adapted to the configured LC200 5x150 mount; not manufacturer CAD"
+            },
+            "mount": {
+              "ok": true,
+              "why": []
+            },
+            "side": {
+              "shift": 35,
+              "inner": 160,
+              "innerStatus": "ok",
+              "axles": [
+                {
+                  "axle": "front",
+                  "poke": -4,
+                  "status": "ok"
+                },
+                {
+                  "axle": "rear",
+                  "poke": 1,
+                  "status": "ok"
+                }
+              ]
+            },
+            "notes": []
+          },
+          "notes": []
+        },
+        "custom": 4
+      }
+    },
+    {
+      "name": "steel keeps tyre and brake buffers",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            0.03500000000000003
+          ]
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            -0.03500000000000003
+          ]
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            0.03500000000000003
+          ]
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            -0.03500000000000003
+          ]
+        }
+      ]
+    },
+    {
+      "name": "steel applies configured rigid offset",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            0.03500000000000003
+          ]
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            -0.03500000000000003
+          ]
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            0.03500000000000003
+          ]
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            -0.03500000000000003
+          ]
+        }
+      ]
+    },
+    {
+      "name": "steel passes catalogue hub/width fit",
+      "pass": true,
+      "detail": {
+        "tyre": {
+          "id": "stock",
+          "label": "Stock 265/70R17",
+          "detail": "Factory tyre · stored 793 mm",
+          "od_mm": 793,
+          "width_mm": 265,
+          "rim_in": 17,
+          "rimWidth_in": [
+            7,
+            9
+          ],
+          "stock": true
+        },
+        "rim": {
+          "id": "steel",
+          "built": true,
+          "label": "Shanaber steel · silver",
+          "detail": "17×8 · ET+25 · 5×150 · silver",
+          "diameter_in": 17,
+          "width_in": 8,
+          "offset_mm": 25,
+          "boltPattern": "5x150",
+          "centreBore_mm": 110.1,
+          "model": "steel",
+          "color": "#c4c9cc",
+          "assetId": "rim_FL_steel",
+          "sourceNote": "Reference-inspired face, adapted to the configured LC200 5x150 mount; not manufacturer CAD"
+        },
+        "mount": {
+          "ok": true,
+          "why": []
+        },
+        "side": {
+          "shift": 35,
+          "inner": 160,
+          "innerStatus": "ok",
+          "axles": [
+            {
+              "axle": "front",
+              "poke": -4,
+              "status": "ok"
+            },
+            {
+              "axle": "rear",
+              "poke": 1,
+              "status": "ok"
+            }
+          ]
+        },
+        "notes": []
+      }
+    },
+    {
+      "name": "method installs four rim copies",
+      "pass": true,
+      "detail": {
+        "state": {
+          "slots": {
+            "body_shell": "body_shell",
+            "bonnet": "bonnet",
+            "bumper_front": "bumper_front_plate_clean",
+            "bumper_rear": "bumper_rear",
+            "door_FL": "door_FL",
+            "door_FR": "door_FR",
+            "door_RL": "door_RL",
+            "door_RR": "door_RR",
+            "grille": "grille",
+            "lamp_front_L": "lamp_front_L",
+            "lamp_front_R": "lamp_front_R",
+            "lamp_rear_L": "lamp_rear_L_finish4b",
+            "lamp_rear_R": "lamp_rear_R_finish4b",
+            "mirror_L": "mirror_L",
+            "mirror_R": "mirror_R",
+            "roof_rails": "roof_rails",
+            "side_step_L": "side_step_L",
+            "side_step_R": "side_step_R",
+            "spoiler": null,
+            "tailgate": "tailgate",
+            "unsorted_01": "unsorted_01",
+            "unsorted_02": "unsorted_02",
+            "unsorted_03": "unsorted_03",
+            "unsorted_04": "unsorted_04",
+            "unsorted_05": "unsorted_05",
+            "unsorted_06": "unsorted_06",
+            "unsorted_07": "unsorted_07",
+            "unsorted_08": "unsorted_08",
+            "unsorted_09": "unsorted_09",
+            "unsorted_10": "unsorted_10",
+            "wheel_FL": "wheel_FL",
+            "wheel_FR": "wheel_FR",
+            "wheel_RL": "wheel_RL",
+            "wheel_RR": "wheel_RR",
+            "arch_flares": null,
+            "chassis": null,
+            "emblem_front": "emblem_front",
+            "emblem_rear": "emblem_rear",
+            "lettering_rear": "lettering_rear_base",
+            "wheel_emblem_FL": "wheel_emblem_FL",
+            "wheel_emblem_FR": "wheel_emblem_FR",
+            "wheel_emblem_RL": "wheel_emblem_RL",
+            "wheel_emblem_RR": "wheel_emblem_RR",
+            "badge_grade": "badge_grade_GXR_finish4b",
+            "gap_seal_rear_L": "gap_seal_rear_L",
+            "gap_seal_rear_R": "gap_seal_rear_R",
+            "front_plate": "front_plate",
+            "rim_FL": null,
+            "rim_FR": null,
+            "rim_RL": null,
+            "rim_RR": null
+          },
+          "paint": {
+            "paint": "#f4f4ef"
+          },
+          "lift_mm": 0,
+          "lamps_on": false,
+          "hidden": [],
+          "tyre": "stock",
+          "rim": "method"
+        },
+        "report": [
+          {
+            "corner": "FL",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              0.06000000000000005
+            ]
+          },
+          {
+            "corner": "FR",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              -0.06000000000000005
+            ]
+          },
+          {
+            "corner": "RL",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              0.06000000000000005
+            ]
+          },
+          {
+            "corner": "RR",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              -0.06000000000000005
+            ]
+          }
+        ],
+        "fit": {
+          "level": "tight",
+          "tyre_mm": 793,
+          "tyres": [
+            {
+              "arch": "front",
+              "mm": 60,
+              "status": "ok"
+            },
+            {
+              "arch": "rear",
+              "mm": 94,
+              "status": "ok"
+            }
+          ],
+          "mounts": [],
+          "wheel": {
+            "tyre": {
+              "id": "stock",
+              "label": "Stock 265/70R17",
+              "detail": "Factory tyre · stored 793 mm",
+              "od_mm": 793,
+              "width_mm": 265,
+              "rim_in": 17,
+              "rimWidth_in": [
+                7,
+                9
+              ],
+              "stock": true
+            },
+            "rim": {
+              "id": "method",
+              "built": true,
+              "label": "Method MR705 · titanium",
+              "detail": "17×8.5 · ET0 · 5×150 · titanium",
+              "diameter_in": 17,
+              "width_in": 8.5,
+              "offset_mm": 0,
+              "boltPattern": "5x150",
+              "centreBore_mm": 110.3,
+              "model": "method",
+              "color": "#8a8f94",
+              "assetId": "rim_FL_window",
+              "sourceNote": "Reference-inspired face, adapted to the configured LC200 5x150 mount; not manufacturer CAD"
+            },
+            "mount": {
+              "ok": true,
+              "why": []
+            },
+            "side": {
+              "shift": 60,
+              "inner": 135,
+              "innerStatus": "ok",
+              "axles": [
+                {
+                  "axle": "front",
+                  "poke": 21,
+                  "status": "tight"
+                },
+                {
+                  "axle": "rear",
+                  "poke": 26,
+                  "status": "tight"
+                }
+              ]
+            },
+            "notes": [
+              {
+                "level": "tight",
+                "text": "Tyres stick out 21 mm (front), 26 mm (rear) past the arches: flares needed for road use in most places"
+              }
+            ]
+          },
+          "notes": [
+            {
+              "level": "tight",
+              "text": "Tyres stick out 21 mm (front), 26 mm (rear) past the arches: flares needed for road use in most places"
+            }
+          ]
+        },
+        "custom": 4
+      }
+    },
+    {
+      "name": "method keeps tyre and brake buffers",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            0.06000000000000005
+          ]
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            -0.06000000000000005
+          ]
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            0.06000000000000005
+          ]
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            -0.06000000000000005
+          ]
+        }
+      ]
+    },
+    {
+      "name": "method applies configured rigid offset",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            0.06000000000000005
+          ]
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            -0.06000000000000005
+          ]
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            0.06000000000000005
+          ]
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "tyreShift": [
+            -0.06000000000000005
+          ]
+        }
+      ]
+    },
+    {
+      "name": "method passes catalogue hub/width fit",
+      "pass": true,
+      "detail": {
+        "tyre": {
+          "id": "stock",
+          "label": "Stock 265/70R17",
+          "detail": "Factory tyre · stored 793 mm",
+          "od_mm": 793,
+          "width_mm": 265,
+          "rim_in": 17,
+          "rimWidth_in": [
+            7,
+            9
+          ],
+          "stock": true
+        },
+        "rim": {
+          "id": "method",
+          "built": true,
+          "label": "Method MR705 · titanium",
+          "detail": "17×8.5 · ET0 · 5×150 · titanium",
+          "diameter_in": 17,
+          "width_in": 8.5,
+          "offset_mm": 0,
+          "boltPattern": "5x150",
+          "centreBore_mm": 110.3,
+          "model": "method",
+          "color": "#8a8f94",
+          "assetId": "rim_FL_window",
+          "sourceNote": "Reference-inspired face, adapted to the configured LC200 5x150 mount; not manufacturer CAD"
+        },
+        "mount": {
+          "ok": true,
+          "why": []
+        },
+        "side": {
+          "shift": 60,
+          "inner": 135,
+          "innerStatus": "ok",
+          "axles": [
+            {
+              "axle": "front",
+              "poke": 21,
+              "status": "tight"
+            },
+            {
+              "axle": "rear",
+              "poke": 26,
+              "status": "tight"
+            }
+          ]
+        },
+        "notes": [
+          {
+            "level": "tight",
+            "text": "Tyres stick out 21 mm (front), 26 mm (rear) past the arches: flares needed for road use in most places"
+          }
+        ]
+      }
+    },
+    {
+      "name": "kmc retains Cream and complete brake package",
+      "pass": true,
+      "detail": {
+        "state": {
+          "slots": {
+            "body_shell": "body_shell",
+            "bonnet": "bonnet",
+            "bumper_front": "bumper_front_plate_clean",
+            "bumper_rear": "bumper_rear",
+            "door_FL": "door_FL",
+            "door_FR": "door_FR",
+            "door_RL": "door_RL",
+            "door_RR": "door_RR",
+            "grille": "grille",
+            "lamp_front_L": "lamp_front_L",
+            "lamp_front_R": "lamp_front_R",
+            "lamp_rear_L": "lamp_rear_L_finish4b",
+            "lamp_rear_R": "lamp_rear_R_finish4b",
+            "mirror_L": "mirror_L",
+            "mirror_R": "mirror_R",
+            "roof_rails": "roof_rails",
+            "side_step_L": "side_step_L",
+            "side_step_R": "side_step_R",
+            "spoiler": null,
+            "tailgate": "tailgate",
+            "unsorted_01": "unsorted_01",
+            "unsorted_02": "unsorted_02",
+            "unsorted_03": "unsorted_03",
+            "unsorted_04": "unsorted_04",
+            "unsorted_05": "unsorted_05",
+            "unsorted_06": "unsorted_06",
+            "unsorted_07": "unsorted_07",
+            "unsorted_08": "unsorted_08",
+            "unsorted_09": "unsorted_09",
+            "unsorted_10": "unsorted_10",
+            "wheel_FL": "wheel_FL",
+            "wheel_FR": "wheel_FR",
+            "wheel_RL": "wheel_RL",
+            "wheel_RR": "wheel_RR",
+            "arch_flares": null,
+            "chassis": null,
+            "emblem_front": "emblem_front",
+            "emblem_rear": "emblem_rear",
+            "lettering_rear": "lettering_rear_base",
+            "wheel_emblem_FL": "wheel_emblem_FL",
+            "wheel_emblem_FR": "wheel_emblem_FR",
+            "wheel_emblem_RL": "wheel_emblem_RL",
+            "wheel_emblem_RR": "wheel_emblem_RR",
+            "badge_grade": "badge_grade_GXR_finish4b",
+            "gap_seal_rear_L": "gap_seal_rear_L",
+            "gap_seal_rear_R": "gap_seal_rear_R",
+            "front_plate": "front_plate",
+            "rim_FL": null,
+            "rim_FR": null,
+            "rim_RL": null,
+            "rim_RR": null
+          },
+          "paint": {
+            "paint": "#f4f4ef"
+          },
+          "lift_mm": 0,
+          "lamps_on": false,
+          "hidden": [],
+          "tyre": "stock",
+          "rim": "kmc"
+        },
+        "report": [
+          {
+            "corner": "FL",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              0.04200000000000004
+            ]
+          },
+          {
+            "corner": "FR",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              -0.04200000000000004
+            ]
+          },
+          {
+            "corner": "RL",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              0.04200000000000004
+            ]
+          },
+          {
+            "corner": "RR",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              -0.04200000000000004
+            ]
+          }
+        ],
+        "fit": {
+          "level": "ok",
+          "tyre_mm": 793,
+          "tyres": [
+            {
+              "arch": "front",
+              "mm": 60,
+              "status": "ok"
+            },
+            {
+              "arch": "rear",
+              "mm": 94,
+              "status": "ok"
+            }
+          ],
+          "mounts": [],
+          "wheel": {
+            "tyre": {
+              "id": "stock",
+              "label": "Stock 265/70R17",
+              "detail": "Factory tyre · stored 793 mm",
+              "od_mm": 793,
+              "width_mm": 265,
+              "rim_in": 17,
+              "rimWidth_in": [
+                7,
+                9
+              ],
+              "stock": true
+            },
+            "rim": {
+              "id": "kmc",
+              "built": true,
+              "label": "KMC KM720 Roswell · matte anthracite",
+              "detail": "17×8.5 · ET+18 · 5×150 · matte anthracite",
+              "diameter_in": 17,
+              "width_in": 8.5,
+              "offset_mm": 18,
+              "boltPattern": "5x150",
+              "centreBore_mm": 110.1,
+              "model": "kmc",
+              "color": "#7b7f83",
+              "assetId": "rim_FL_disc",
+              "sourceNote": "Reference-inspired face, adapted to the configured LC200 5x150 mount; not manufacturer CAD"
+            },
+            "mount": {
+              "ok": true,
+              "why": []
+            },
+            "side": {
+              "shift": 42,
+              "inner": 153,
+              "innerStatus": "ok",
+              "axles": [
+                {
+                  "axle": "front",
+                  "poke": 3,
+                  "status": "ok"
+                },
+                {
+                  "axle": "rear",
+                  "poke": 8,
+                  "status": "ok"
+                }
+              ]
+            },
+            "notes": []
+          },
+          "notes": []
+        },
+        "custom": 4,
+        "zones": [
+          "rim",
+          "barrel",
+          "lettering",
+          "black",
+          "tyre",
+          "backing",
+          "brake",
+          "caliper",
+          "brake_detail",
+          "rim",
+          "barrel",
+          "lettering",
+          "black",
+          "tyre",
+          "backing",
+          "brake",
+          "caliper",
+          "brake_detail",
+          "rim",
+          "barrel",
+          "lettering",
+          "black",
+          "tyre",
+          "backing",
+          "brake",
+          "caliper",
+          "brake_detail",
+          "rim",
+          "barrel",
+          "lettering",
+          "black",
+          "tyre",
+          "backing",
+          "brake",
+          "caliper",
+          "brake_detail"
+        ],
+        "cream": true
+      }
+    },
+    {
+      "name": "steel retains Cream and complete brake package",
+      "pass": true,
+      "detail": {
+        "state": {
+          "slots": {
+            "body_shell": "body_shell",
+            "bonnet": "bonnet",
+            "bumper_front": "bumper_front_plate_clean",
+            "bumper_rear": "bumper_rear",
+            "door_FL": "door_FL",
+            "door_FR": "door_FR",
+            "door_RL": "door_RL",
+            "door_RR": "door_RR",
+            "grille": "grille",
+            "lamp_front_L": "lamp_front_L",
+            "lamp_front_R": "lamp_front_R",
+            "lamp_rear_L": "lamp_rear_L_finish4b",
+            "lamp_rear_R": "lamp_rear_R_finish4b",
+            "mirror_L": "mirror_L",
+            "mirror_R": "mirror_R",
+            "roof_rails": "roof_rails",
+            "side_step_L": "side_step_L",
+            "side_step_R": "side_step_R",
+            "spoiler": null,
+            "tailgate": "tailgate",
+            "unsorted_01": "unsorted_01",
+            "unsorted_02": "unsorted_02",
+            "unsorted_03": "unsorted_03",
+            "unsorted_04": "unsorted_04",
+            "unsorted_05": "unsorted_05",
+            "unsorted_06": "unsorted_06",
+            "unsorted_07": "unsorted_07",
+            "unsorted_08": "unsorted_08",
+            "unsorted_09": "unsorted_09",
+            "unsorted_10": "unsorted_10",
+            "wheel_FL": "wheel_FL",
+            "wheel_FR": "wheel_FR",
+            "wheel_RL": "wheel_RL",
+            "wheel_RR": "wheel_RR",
+            "arch_flares": null,
+            "chassis": null,
+            "emblem_front": "emblem_front",
+            "emblem_rear": "emblem_rear",
+            "lettering_rear": "lettering_rear_base",
+            "wheel_emblem_FL": "wheel_emblem_FL",
+            "wheel_emblem_FR": "wheel_emblem_FR",
+            "wheel_emblem_RL": "wheel_emblem_RL",
+            "wheel_emblem_RR": "wheel_emblem_RR",
+            "badge_grade": "badge_grade_GXR_finish4b",
+            "gap_seal_rear_L": "gap_seal_rear_L",
+            "gap_seal_rear_R": "gap_seal_rear_R",
+            "front_plate": "front_plate",
+            "rim_FL": null,
+            "rim_FR": null,
+            "rim_RL": null,
+            "rim_RR": null
+          },
+          "paint": {
+            "paint": "#f4f4ef"
+          },
+          "lift_mm": 0,
+          "lamps_on": false,
+          "hidden": [],
+          "tyre": "stock",
+          "rim": "steel"
+        },
+        "report": [
+          {
+            "corner": "FL",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              0.03500000000000003
+            ]
+          },
+          {
+            "corner": "FR",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              -0.03500000000000003
+            ]
+          },
+          {
+            "corner": "RL",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              0.03500000000000003
+            ]
+          },
+          {
+            "corner": "RR",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              -0.03500000000000003
+            ]
+          }
+        ],
+        "fit": {
+          "level": "ok",
+          "tyre_mm": 793,
+          "tyres": [
+            {
+              "arch": "front",
+              "mm": 60,
+              "status": "ok"
+            },
+            {
+              "arch": "rear",
+              "mm": 94,
+              "status": "ok"
+            }
+          ],
+          "mounts": [],
+          "wheel": {
+            "tyre": {
+              "id": "stock",
+              "label": "Stock 265/70R17",
+              "detail": "Factory tyre · stored 793 mm",
+              "od_mm": 793,
+              "width_mm": 265,
+              "rim_in": 17,
+              "rimWidth_in": [
+                7,
+                9
+              ],
+              "stock": true
+            },
+            "rim": {
+              "id": "steel",
+              "built": true,
+              "label": "Shanaber steel · silver",
+              "detail": "17×8 · ET+25 · 5×150 · silver",
+              "diameter_in": 17,
+              "width_in": 8,
+              "offset_mm": 25,
+              "boltPattern": "5x150",
+              "centreBore_mm": 110.1,
+              "model": "steel",
+              "color": "#c4c9cc",
+              "assetId": "rim_FL_steel",
+              "sourceNote": "Reference-inspired face, adapted to the configured LC200 5x150 mount; not manufacturer CAD"
+            },
+            "mount": {
+              "ok": true,
+              "why": []
+            },
+            "side": {
+              "shift": 35,
+              "inner": 160,
+              "innerStatus": "ok",
+              "axles": [
+                {
+                  "axle": "front",
+                  "poke": -4,
+                  "status": "ok"
+                },
+                {
+                  "axle": "rear",
+                  "poke": 1,
+                  "status": "ok"
+                }
+              ]
+            },
+            "notes": []
+          },
+          "notes": []
+        },
+        "custom": 4,
+        "zones": [
+          "rim",
+          "barrel",
+          "chrome",
+          "black",
+          "tyre",
+          "backing",
+          "brake",
+          "caliper",
+          "brake_detail",
+          "rim",
+          "barrel",
+          "chrome",
+          "black",
+          "tyre",
+          "backing",
+          "brake",
+          "caliper",
+          "brake_detail",
+          "rim",
+          "barrel",
+          "chrome",
+          "black",
+          "tyre",
+          "backing",
+          "brake",
+          "caliper",
+          "brake_detail",
+          "rim",
+          "barrel",
+          "chrome",
+          "black",
+          "tyre",
+          "backing",
+          "brake",
+          "caliper",
+          "brake_detail"
+        ],
+        "cream": true
+      }
+    },
+    {
+      "name": "method retains Cream and complete brake package",
+      "pass": true,
+      "detail": {
+        "state": {
+          "slots": {
+            "body_shell": "body_shell",
+            "bonnet": "bonnet",
+            "bumper_front": "bumper_front_plate_clean",
+            "bumper_rear": "bumper_rear",
+            "door_FL": "door_FL",
+            "door_FR": "door_FR",
+            "door_RL": "door_RL",
+            "door_RR": "door_RR",
+            "grille": "grille",
+            "lamp_front_L": "lamp_front_L",
+            "lamp_front_R": "lamp_front_R",
+            "lamp_rear_L": "lamp_rear_L_finish4b",
+            "lamp_rear_R": "lamp_rear_R_finish4b",
+            "mirror_L": "mirror_L",
+            "mirror_R": "mirror_R",
+            "roof_rails": "roof_rails",
+            "side_step_L": "side_step_L",
+            "side_step_R": "side_step_R",
+            "spoiler": null,
+            "tailgate": "tailgate",
+            "unsorted_01": "unsorted_01",
+            "unsorted_02": "unsorted_02",
+            "unsorted_03": "unsorted_03",
+            "unsorted_04": "unsorted_04",
+            "unsorted_05": "unsorted_05",
+            "unsorted_06": "unsorted_06",
+            "unsorted_07": "unsorted_07",
+            "unsorted_08": "unsorted_08",
+            "unsorted_09": "unsorted_09",
+            "unsorted_10": "unsorted_10",
+            "wheel_FL": "wheel_FL",
+            "wheel_FR": "wheel_FR",
+            "wheel_RL": "wheel_RL",
+            "wheel_RR": "wheel_RR",
+            "arch_flares": null,
+            "chassis": null,
+            "emblem_front": "emblem_front",
+            "emblem_rear": "emblem_rear",
+            "lettering_rear": "lettering_rear_base",
+            "wheel_emblem_FL": "wheel_emblem_FL",
+            "wheel_emblem_FR": "wheel_emblem_FR",
+            "wheel_emblem_RL": "wheel_emblem_RL",
+            "wheel_emblem_RR": "wheel_emblem_RR",
+            "badge_grade": "badge_grade_GXR_finish4b",
+            "gap_seal_rear_L": "gap_seal_rear_L",
+            "gap_seal_rear_R": "gap_seal_rear_R",
+            "front_plate": "front_plate",
+            "rim_FL": null,
+            "rim_FR": null,
+            "rim_RL": null,
+            "rim_RR": null
+          },
+          "paint": {
+            "paint": "#f4f4ef"
+          },
+          "lift_mm": 0,
+          "lamps_on": false,
+          "hidden": [],
+          "tyre": "stock",
+          "rim": "method"
+        },
+        "report": [
+          {
+            "corner": "FL",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              0.06000000000000005
+            ]
+          },
+          {
+            "corner": "FR",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              -0.06000000000000005
+            ]
+          },
+          {
+            "corner": "RL",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              0.06000000000000005
+            ]
+          },
+          {
+            "corner": "RR",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": false,
+            "tyreShift": [
+              -0.06000000000000005
+            ]
+          }
+        ],
+        "fit": {
+          "level": "tight",
+          "tyre_mm": 793,
+          "tyres": [
+            {
+              "arch": "front",
+              "mm": 60,
+              "status": "ok"
+            },
+            {
+              "arch": "rear",
+              "mm": 94,
+              "status": "ok"
+            }
+          ],
+          "mounts": [],
+          "wheel": {
+            "tyre": {
+              "id": "stock",
+              "label": "Stock 265/70R17",
+              "detail": "Factory tyre · stored 793 mm",
+              "od_mm": 793,
+              "width_mm": 265,
+              "rim_in": 17,
+              "rimWidth_in": [
+                7,
+                9
+              ],
+              "stock": true
+            },
+            "rim": {
+              "id": "method",
+              "built": true,
+              "label": "Method MR705 · titanium",
+              "detail": "17×8.5 · ET0 · 5×150 · titanium",
+              "diameter_in": 17,
+              "width_in": 8.5,
+              "offset_mm": 0,
+              "boltPattern": "5x150",
+              "centreBore_mm": 110.3,
+              "model": "method",
+              "color": "#8a8f94",
+              "assetId": "rim_FL_window",
+              "sourceNote": "Reference-inspired face, adapted to the configured LC200 5x150 mount; not manufacturer CAD"
+            },
+            "mount": {
+              "ok": true,
+              "why": []
+            },
+            "side": {
+              "shift": 60,
+              "inner": 135,
+              "innerStatus": "ok",
+              "axles": [
+                {
+                  "axle": "front",
+                  "poke": 21,
+                  "status": "tight"
+                },
+                {
+                  "axle": "rear",
+                  "poke": 26,
+                  "status": "tight"
+                }
+              ]
+            },
+            "notes": [
+              {
+                "level": "tight",
+                "text": "Tyres stick out 21 mm (front), 26 mm (rear) past the arches: flares needed for road use in most places"
+              }
+            ]
+          },
+          "notes": [
+            {
+              "level": "tight",
+              "text": "Tyres stick out 21 mm (front), 26 mm (rear) past the arches: flares needed for road use in most places"
+            }
+          ]
+        },
+        "custom": 4,
+        "zones": [
+          "rim",
+          "barrel",
+          "lettering",
+          "black",
+          "tyre",
+          "backing",
+          "brake",
+          "caliper",
+          "brake_detail",
+          "rim",
+          "barrel",
+          "lettering",
+          "black",
+          "tyre",
+          "backing",
+          "brake",
+          "caliper",
+          "brake_detail",
+          "rim",
+          "barrel",
+          "lettering",
+          "black",
+          "tyre",
+          "backing",
+          "brake",
+          "caliper",
+          "brake_detail",
+          "rim",
+          "barrel",
+          "lettering",
+          "black",
+          "tyre",
+          "backing",
+          "brake",
+          "caliper",
+          "brake_detail"
+        ],
+        "cream": true
+      }
+    },
+    {
+      "name": "original rim restores hardware and tyre offset",
+      "pass": true,
+      "detail": {
+        "state": {
+          "slots": {
+            "body_shell": "body_shell",
+            "bonnet": "bonnet",
+            "bumper_front": "bumper_front_plate_clean",
+            "bumper_rear": "bumper_rear",
+            "door_FL": "door_FL",
+            "door_FR": "door_FR",
+            "door_RL": "door_RL",
+            "door_RR": "door_RR",
+            "grille": "grille",
+            "lamp_front_L": "lamp_front_L",
+            "lamp_front_R": "lamp_front_R",
+            "lamp_rear_L": "lamp_rear_L_finish4b",
+            "lamp_rear_R": "lamp_rear_R_finish4b",
+            "mirror_L": "mirror_L",
+            "mirror_R": "mirror_R",
+            "roof_rails": "roof_rails",
+            "side_step_L": "side_step_L",
+            "side_step_R": "side_step_R",
+            "spoiler": null,
+            "tailgate": "tailgate",
+            "unsorted_01": "unsorted_01",
+            "unsorted_02": "unsorted_02",
+            "unsorted_03": "unsorted_03",
+            "unsorted_04": "unsorted_04",
+            "unsorted_05": "unsorted_05",
+            "unsorted_06": "unsorted_06",
+            "unsorted_07": "unsorted_07",
+            "unsorted_08": "unsorted_08",
+            "unsorted_09": "unsorted_09",
+            "unsorted_10": "unsorted_10",
+            "wheel_FL": "wheel_FL",
+            "wheel_FR": "wheel_FR",
+            "wheel_RL": "wheel_RL",
+            "wheel_RR": "wheel_RR",
+            "arch_flares": null,
+            "chassis": null,
+            "emblem_front": "emblem_front",
+            "emblem_rear": "emblem_rear",
+            "lettering_rear": "lettering_rear_base",
+            "wheel_emblem_FL": "wheel_emblem_FL",
+            "wheel_emblem_FR": "wheel_emblem_FR",
+            "wheel_emblem_RL": "wheel_emblem_RL",
+            "wheel_emblem_RR": "wheel_emblem_RR",
+            "badge_grade": "badge_grade_GXR_finish4b",
+            "gap_seal_rear_L": "gap_seal_rear_L",
+            "gap_seal_rear_R": "gap_seal_rear_R",
+            "front_plate": "front_plate",
+            "rim_FL": null,
+            "rim_FR": null,
+            "rim_RL": null,
+            "rim_RR": null
+          },
+          "paint": {
+            "paint": "#f4f4ef"
+          },
+          "lift_mm": 0,
+          "lamps_on": false,
+          "hidden": [],
+          "tyre": "stock",
+          "rim": "stock"
+        },
+        "report": [
+          {
+            "corner": "FL",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": true,
+            "tyreShift": [
+              0
+            ]
+          },
+          {
+            "corner": "FR",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": true,
+            "tyreShift": [
+              0
+            ]
+          },
+          {
+            "corner": "RL",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": true,
+            "tyreShift": [
+              0
+            ]
+          },
+          {
+            "corner": "RR",
+            "tyreUnchanged": true,
+            "tyreVisible": true,
+            "brakeVisible": true,
+            "oldHardwareVisible": true,
+            "tyreShift": [
+              0
+            ]
+          }
+        ],
+        "fit": {
+          "level": "ok",
+          "tyre_mm": 793,
+          "tyres": [
+            {
+              "arch": "front",
+              "mm": 60,
+              "status": "ok"
+            },
+            {
+              "arch": "rear",
+              "mm": 94,
+              "status": "ok"
+            }
+          ],
+          "mounts": [],
+          "wheel": {
+            "tyre": {
+              "id": "stock",
+              "label": "Stock 265/70R17",
+              "detail": "Factory tyre · stored 793 mm",
+              "od_mm": 793,
+              "width_mm": 265,
+              "rim_in": 17,
+              "rimWidth_in": [
+                7,
+                9
+              ],
+              "stock": true
+            },
+            "rim": {
+              "id": "stock",
+              "label": "Stock GXR alloy",
+              "detail": "17×7.5 · ET+60 · 5×150",
+              "diameter_in": 17,
+              "width_in": 7.5,
+              "offset_mm": 60,
+              "boltPattern": "5x150",
+              "centreBore_mm": 110.1,
+              "stock": true
+            },
+            "mount": {
+              "ok": true,
+              "why": []
+            },
+            "side": {
+              "shift": 0,
+              "inner": 195,
+              "innerStatus": "ok",
+              "axles": [
+                {
+                  "axle": "front",
+                  "poke": -39,
+                  "status": "ok"
+                },
+                {
+                  "axle": "rear",
+                  "poke": -34,
+                  "status": "ok"
+                }
+              ]
+            },
+            "notes": []
+          },
+          "notes": []
+        },
+        "custom": 0
+      }
+    },
+    {
+      "name": "share carries native rim state",
+      "pass": true
+    },
+    {
+      "name": "reset restores complete stock state",
+      "pass": true
+    },
+    {
+      "name": "no console errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "consoleErrors": []
+}

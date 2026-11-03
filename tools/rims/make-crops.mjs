@@ -10,5 +10,10 @@ for(const studio of ['cream'])for(const corner of ['FL','RR']){
  const text=Object.entries(labels).map(([k,l],i)=>`<text x="${i*960+480}" y="35">${l}</text>`).join('');
  panels.push({input:Buffer.from(`<svg width="3840" height="54"><rect width="3840" height="54" fill="#ebebe9"/><g fill="#34383c" font-family="sans-serif" text-anchor="middle" font-size="28">${text}</g></svg>`),left:0,top:900});
  await sharp({create:{width:3840,height:954,channels:3,background:'#ebebe9'}}).composite(panels).png().toFile(out+'/comparison-'+studio+'-'+corner+'.png');
+ for(const [i,rim]of ['kmc','method','steel'].entries()){
+  const footer=Buffer.from(`<svg width="1920" height="54"><rect width="1920" height="54" fill="#ebebe9"/><g fill="#34383c" font-family="sans-serif" text-anchor="middle" font-size="28"><text x="480" y="35">Stock</text><text x="1440" y="35">${labels[rim]}</text></g></svg>`);
+  await sharp({create:{width:1920,height:954,channels:3,background:'#ebebe9'}}).composite([{input:panels[0].input,left:0,top:0},{input:panels[i+1].input,left:960,top:0},{input:footer,left:0,top:900}]).png().toFile(out+'/stock-vs-'+rim+'-'+corner+'.png');
+ }
+
 }
-await fs.writeFile(work+'/gap-proof.json',JSON.stringify(rows,null,2)+'\n');console.log('Six comparison sheets and 24 crops');
+await fs.writeFile(work+'/gap-proof.json',JSON.stringify(rows,null,2)+'\n');console.log('Two Cream comparison sheets, eight crops and six stock pairs');

@@ -1,5 +1,5 @@
 // Native catalogue integration: lazy rim loading, stock tyre/brake preservation,
-// rigid offset shifts, all studios, original rim restoration, reset and sharing.
+// rigid offset shifts, Cream, original rim restoration, reset and sharing.
 import fs from 'node:fs/promises';import{openViewer}from'../workshop/page.mjs';
 const[deps,chromium,output]=process.argv.slice(2),v=await openViewer({deps,chromium}),results=[];
 const check=(name,pass,detail)=>{results.push({name,pass:!!pass,detail});if(!pass)throw Error(name+': '+JSON.stringify(detail));};
@@ -23,6 +23,11 @@ try{
  }
  // Cream is the only studio: repaint the body three times instead and check the rims survive each re-material.
  for(const hex of ['#15191d','#a9b0b8','#f4f4ef']){await page.click(`[data-paint="${hex}"]`);const p=await page.evaluate(()=>({studio:'paint '+document.querySelector('.swatch.active')?.title,...__inspectRims()}));check(p.studio+' preserves custom rims and tyres',p.custom===4&&p.report.every(r=>r.tyreUnchanged&&r.tyreVisible&&!r.oldHardwareVisible),p);}
+ for(const id of ['kmc','steel','method']){
+  await page.click('#workshop [data-opt='+id+']');await page.waitForFunction(id=>lcBuild.getState().rim===id,id,{timeout:120000});
+  const p=await page.evaluate(()=>{const t=__inspectRims(),root=lcBuild.groups.wheels.getObjectByName('Workshop tyres and rims'),zones=[];root.traverse(n=>{if(n.isMesh&&n.visible)zones.push(n.material.userData.zone)});return{...t,zones,cream:!document.querySelector('#bgToggle')};});
+  check(id+' retains Cream and complete brake package',p.cream&&p.custom===4&&['tyre','brake','caliper','backing'].every(z=>p.zones.includes(z))&&p.report.every(r=>r.tyreUnchanged&&r.tyreVisible&&!r.oldHardwareVisible),p);
+ }
  await page.click('#workshop [data-opt=stock]');await page.waitForFunction(()=>lcBuild.getState().rim==='stock');
  const restored=await page.evaluate(()=>__inspectRims());
  check('original rim restores hardware and tyre offset',restored.custom===0&&restored.report.every(r=>r.oldHardwareVisible&&r.tyreUnchanged&&r.tyreVisible&&r.tyreShift.every(x=>x===0)),restored);
