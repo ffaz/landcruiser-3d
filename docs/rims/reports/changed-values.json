@@ -1,0 +1,307 @@
+{
+  "baseline": "c480d15",
+  "changes": [
+    {
+      "name": "Independent rim slots",
+      "old": "absent",
+      "new": [
+        "rim_FL",
+        "rim_FR",
+        "rim_RL",
+        "rim_RR"
+      ],
+      "file": "model/manifest.json"
+    },
+    {
+      "name": "Existing rim hardware visibility",
+      "old": "always visible within selected wheel",
+      "new": "hidden when a replacement rim is visible; tyre and brake retained",
+      "file": "index.html",
+      "line": 963
+    },
+    {
+      "name": "Apply rim visibility on build change",
+      "old": "applyStudioPartVisibility() only",
+      "new": "applyStudioPartVisibility(); applyRimVisibility()",
+      "file": "index.html",
+      "line": 995
+    },
+    {
+      "name": "Apply rim visibility on studio change",
+      "old": "applyStudioPartVisibility(); applyZonePaint()",
+      "new": "applyStudioPartVisibility(); applyRimVisibility(); applyZonePaint()",
+      "file": "index.html",
+      "line": 1243
+    },
+    {
+      "name": "Rims catalogue category",
+      "old": "absent",
+      "new": [
+        "Original rim",
+        "Dished disc \u00b7 satin black",
+        "Round-hole steel \u00b7 silver",
+        "Eight-window \u00b7 satin black"
+      ],
+      "file": "model/workshop.json"
+    },
+    {
+      "name": "Workshop category smoke assertion",
+      "old": "fixed 10",
+      "new": "catalogue category count (11)",
+      "file": "tools/workshop/smoke.mjs",
+      "line": 34
+    },
+    {
+      "name": "disc.rim.color",
+      "old": "new part (no previous value)",
+      "new": "#555b60",
+      "file": "tools/rims/register.mjs",
+      "line": 10
+    },
+    {
+      "name": "disc.rim.roughness",
+      "old": "new part (no previous value)",
+      "new": 0.38,
+      "file": "tools/rims/register.mjs",
+      "line": 10
+    },
+    {
+      "name": "disc.rim.metalness",
+      "old": "new part (no previous value)",
+      "new": 0.7,
+      "file": "tools/rims/register.mjs",
+      "line": 10
+    },
+    {
+      "name": "disc.rim.envMapIntensity",
+      "old": "new part (no previous value)",
+      "new": 1.6,
+      "file": "tools/rims/register.mjs",
+      "line": 10
+    },
+    {
+      "name": "disc.chrome.color",
+      "old": "new part (no previous value)",
+      "new": "#858c92",
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "disc.chrome.roughness",
+      "old": "new part (no previous value)",
+      "new": 0.34,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "disc.chrome.metalness",
+      "old": "new part (no previous value)",
+      "new": 0.85,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "disc.chrome.envMapIntensity",
+      "old": "new part (no previous value)",
+      "new": 0.95,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "disc.black.color",
+      "old": "new part (no previous value)",
+      "new": "#242629",
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "disc.black.roughness",
+      "old": "new part (no previous value)",
+      "new": 0.85,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "disc.black.metalness",
+      "old": "new part (no previous value)",
+      "new": 0,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "disc.black.envMapIntensity",
+      "old": "new part (no previous value)",
+      "new": 0.18,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "steel.rim.color",
+      "old": "new part (no previous value)",
+      "new": "#c4c9cc",
+      "file": "tools/rims/register.mjs",
+      "line": 10
+    },
+    {
+      "name": "steel.rim.roughness",
+      "old": "new part (no previous value)",
+      "new": 0.36,
+      "file": "tools/rims/register.mjs",
+      "line": 10
+    },
+    {
+      "name": "steel.rim.metalness",
+      "old": "new part (no previous value)",
+      "new": 0.65,
+      "file": "tools/rims/register.mjs",
+      "line": 10
+    },
+    {
+      "name": "steel.rim.envMapIntensity",
+      "old": "new part (no previous value)",
+      "new": 2.8,
+      "file": "tools/rims/register.mjs",
+      "line": 10
+    },
+    {
+      "name": "steel.chrome.color",
+      "old": "new part (no previous value)",
+      "new": "#858c92",
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "steel.chrome.roughness",
+      "old": "new part (no previous value)",
+      "new": 0.34,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "steel.chrome.metalness",
+      "old": "new part (no previous value)",
+      "new": 0.85,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "steel.chrome.envMapIntensity",
+      "old": "new part (no previous value)",
+      "new": 0.95,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "steel.black.color",
+      "old": "new part (no previous value)",
+      "new": "#242629",
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "steel.black.roughness",
+      "old": "new part (no previous value)",
+      "new": 0.85,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "steel.black.metalness",
+      "old": "new part (no previous value)",
+      "new": 0,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "steel.black.envMapIntensity",
+      "old": "new part (no previous value)",
+      "new": 0.18,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "window.rim.color",
+      "old": "new part (no previous value)",
+      "new": "#454a4f",
+      "file": "tools/rims/register.mjs",
+      "line": 10
+    },
+    {
+      "name": "window.rim.roughness",
+      "old": "new part (no previous value)",
+      "new": 0.4,
+      "file": "tools/rims/register.mjs",
+      "line": 10
+    },
+    {
+      "name": "window.rim.metalness",
+      "old": "new part (no previous value)",
+      "new": 0.7,
+      "file": "tools/rims/register.mjs",
+      "line": 10
+    },
+    {
+      "name": "window.rim.envMapIntensity",
+      "old": "new part (no previous value)",
+      "new": 1.8,
+      "file": "tools/rims/register.mjs",
+      "line": 10
+    },
+    {
+      "name": "window.chrome.color",
+      "old": "new part (no previous value)",
+      "new": "#858c92",
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "window.chrome.roughness",
+      "old": "new part (no previous value)",
+      "new": 0.34,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "window.chrome.metalness",
+      "old": "new part (no previous value)",
+      "new": 0.85,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "window.chrome.envMapIntensity",
+      "old": "new part (no previous value)",
+      "new": 0.95,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "window.black.color",
+      "old": "new part (no previous value)",
+      "new": "#242629",
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "window.black.roughness",
+      "old": "new part (no previous value)",
+      "new": 0.85,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "window.black.metalness",
+      "old": "new part (no previous value)",
+      "new": 0,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "window.black.envMapIntensity",
+      "old": "new part (no previous value)",
+      "new": 0.18,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    }
+  ]
+}

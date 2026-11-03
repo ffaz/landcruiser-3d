@@ -31,7 +31,7 @@ for(const viewport of [{width:1440,height:1000},{width:390,height:844}]){
  }
  await page.click('#workshopToggle');
  check(`${tag}: opens`,await page.evaluate(()=>document.body.classList.contains('workshop-open')));
- check(`${tag}: ten categories listed`,(await page.locator('#workshop .ws-row').count())===10);
+ check(`${tag}: catalogue categories listed`,(await page.locator('#workshop .ws-row').count())===(await page.evaluate(()=>lcWorkshop.data.categories.length)));
  await shot('home');
  await page.click('#workshop [data-cat=stance]');
  await page.click('#workshop [data-opt=lift63]');

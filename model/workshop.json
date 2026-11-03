@@ -390,6 +390,50 @@
       ]
     },
     {
+      "id": "rims",
+      "label": "Rims",
+      "options": [
+        {
+          "id": "original_rim",
+          "label": "Original rim",
+          "detail": "Restore the rim supplied with the selected tyre"
+        },
+        {
+          "id": "rim_disc",
+          "label": "Dished disc · satin black",
+          "detail": "17-inch · independent rim swap · selected tyre retained",
+          "requires": [
+            "rim_FL_disc",
+            "rim_FR_disc",
+            "rim_RL_disc",
+            "rim_RR_disc"
+          ]
+        },
+        {
+          "id": "rim_steel",
+          "label": "Round-hole steel · silver",
+          "detail": "17-inch · independent rim swap · selected tyre retained",
+          "requires": [
+            "rim_FL_steel",
+            "rim_FR_steel",
+            "rim_RL_steel",
+            "rim_RR_steel"
+          ]
+        },
+        {
+          "id": "rim_window",
+          "label": "Eight-window · satin black",
+          "detail": "17-inch · independent rim swap · selected tyre retained",
+          "requires": [
+            "rim_FL_window",
+            "rim_FR_window",
+            "rim_RL_window",
+            "rim_RR_window"
+          ]
+        }
+      ]
+    },
+    {
       "id": "front",
       "label": "Front",
       "options": [

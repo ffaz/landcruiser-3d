@@ -957,6 +957,29 @@ function applyStudioPartVisibility(){
   root.visible=selected===id&&!bundledSlots.has(entry.slot)&&!buildState.hidden.includes(id)&&!buildState.hidden.includes(selectedPart)&&!buildState.hidden.includes(entry.slot);
  }
 }
+// Independent rim swaps hide only the chosen wheel's hardware meshes.
+// Tyre/brake attributes, hub transforms and stored GLBs remain untouched.
+const wheelHardwareVisibility=new WeakMap();
+function applyRimVisibility(){
+ const replacements=new Map();
+ for(const entry of partEntries)if(entry.replacesWheelHardware&&parts.get(entry.id)?.visible){
+  const wheelId=buildState.slots[entry.replacesWheelHardware];
+  if(!parts.get(wheelId)?.visible){parts.get(entry.id).visible=false;continue;}
+  replacements.set(wheelId,entry.id);
+ }
+ for(const entry of partEntries){
+  if(!/^wheel_(FL|FR|RL|RR)$/.test(entry.slot))continue;
+  const replacement=replacements.has(entry.id);
+  parts.get(entry.id).traverse(node=>{
+   if(!node.isMesh)return;
+   const materials=Array.isArray(node.material)?node.material:[node.material];
+   if(materials.some(m=>m.userData.partId!==entry.id))return;
+   if(!wheelHardwareVisibility.has(node))wheelHardwareVisibility.set(node,node.visible);
+   const retained=materials.every(m=>['tyre','brake'].includes(m.userData.zone));
+   node.visible=wheelHardwareVisibility.get(node)&&(!replacement||retained);
+  });
+ }
+}
 // Tyre swaps are rigid too: a wheel part declares its tyre diameter (tyre_mm) and
 // the hubs rise by half the difference from stock; the body rides on top.
 const STOCK_TYRE_MM=793;
@@ -969,7 +992,7 @@ function applyBuild(){
  const tyreRise=(tyreDiameterMM()-STOCK_TYRE_MM)/2000;
  wheelGroup.position.y=tyreRise;
  bodyGroup.position.y=tyreRise+buildState.lift_mm/1000;clayBakedUniforms.uClayBodyLift.value=bodyGroup.position.y;
- applyStudioPartVisibility();
+ applyStudioPartVisibility();applyRimVisibility();
  applyZonePaint();car.updateMatrixWorld(true);rebuildFramingPoints();refreshCameraSafety();
  const displayedBase=plinth.visible;plinth.visible=false;bakeContactShadow();plinth.visible=displayedBase;
  enforceCameraSafety();updateClipping();centreProjection();requestRender();
@@ -1217,7 +1240,7 @@ function setStudio(mode){
   fill.color.copy(originalLighting.fillColor);fill.groundColor.copy(originalLighting.groundColor);fill.intensity=originalLighting.fillIntensity;
   document.querySelector('meta[name="theme-color"]').content=mode==='cream'?'#EBEBE9':'#4a6a82';
  }
- applyStudioPartVisibility();applyZonePaint();
+ applyStudioPartVisibility();applyRimVisibility();applyZonePaint();
  plinth.traverse(part=>{if(part.isMesh){const current=originalMaterials.get(part.material)||part.material;
   part.material=studioMaterial(current,current===baseTopMaterial?'base_top':'base_edge');
  }});

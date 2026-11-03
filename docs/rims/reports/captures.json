@@ -1,0 +1,170 @@
+[
+  {
+    "name": "default-current-slate",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "slate",
+    "errors": []
+  },
+  {
+    "name": "default-baseline-slate",
+    "sourceSha256": "856a1f0129b687270c0e6a4c5f837353fae125f94cbe92f02ccd97241238944e",
+    "studio": "slate",
+    "errors": []
+  },
+  {
+    "name": "window-wheel-quarter",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "window-car-clay",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "clay",
+    "errors": []
+  },
+  {
+    "name": "window-stock-tyre",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "steel-car-quarter",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "default-current-cream",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "disc-car-side",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "steel-car-side",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "steel-rim-quarter",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "window-car-quarter",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "disc-wheel-quarter",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "disc-rim-front",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "window-car-slate",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "slate",
+    "errors": []
+  },
+  {
+    "name": "window-rim-back",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "disc-car-quarter",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "default-baseline-clay",
+    "sourceSha256": "856a1f0129b687270c0e6a4c5f837353fae125f94cbe92f02ccd97241238944e",
+    "studio": "clay",
+    "errors": []
+  },
+  {
+    "name": "steel-rim-back",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "steel-wheel-quarter",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "disc-rim-back",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "disc-rim-quarter",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "default-current-clay",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "clay",
+    "errors": []
+  },
+  {
+    "name": "window-car-side",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "workshop-rims",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "steel-rim-front",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "window-rim-front",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "default-baseline-cream",
+    "sourceSha256": "856a1f0129b687270c0e6a4c5f837353fae125f94cbe92f02ccd97241238944e",
+    "studio": "cream",
+    "errors": []
+  },
+  {
+    "name": "window-rim-quarter",
+    "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+    "studio": "cream",
+    "errors": []
+  }
+]

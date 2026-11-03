@@ -5841,6 +5841,670 @@
         "wheel_emblem_RR"
       ],
       "purpose": "Unbranded five-rib highway tread from supplied image in 265/70R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+    },
+    {
+      "id": "rim_FL_disc",
+      "slot": "rim_FL",
+      "url": "parts/rim_FL_disc.glb",
+      "rootNode": "rim_FL_disc",
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "black"
+      ],
+      "triangles": 9784,
+      "bounds": {
+        "min": [
+          -1.866000006198883,
+          0.16549999380111696,
+          0.7169999971985817
+        ],
+        "max": [
+          -1.403999993801117,
+          0.6275000061988831,
+          0.9594999969005584
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "replacesWheelHardware": "wheel_FL",
+      "materialDefaults": {
+        "rim": {
+          "color": "#555b60",
+          "roughness": 0.38,
+          "metalness": 0.7,
+          "envMapIntensity": 1.6
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#242629",
+          "roughness": 0.85,
+          "metalness": 0,
+          "envMapIntensity": 0.18
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_FL"
+      ],
+      "purpose": "Dished disc · satin black; reference-inspired unbranded 17-inch rim; tyre and brake retained"
+    },
+    {
+      "id": "rim_FR_disc",
+      "slot": "rim_FR",
+      "url": "parts/rim_FR_disc.glb",
+      "rootNode": "rim_FR_disc",
+      "pivot": [
+        -1.635,
+        0.3965,
+        -0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "black"
+      ],
+      "triangles": 9784,
+      "bounds": {
+        "min": [
+          -1.866000006198883,
+          0.16549999380111696,
+          -0.9594999969005584
+        ],
+        "max": [
+          -1.403999993801117,
+          0.6275000061988831,
+          -0.7169999971985817
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "replacesWheelHardware": "wheel_FR",
+      "materialDefaults": {
+        "rim": {
+          "color": "#555b60",
+          "roughness": 0.38,
+          "metalness": 0.7,
+          "envMapIntensity": 1.6
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#242629",
+          "roughness": 0.85,
+          "metalness": 0,
+          "envMapIntensity": 0.18
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_FR"
+      ],
+      "purpose": "Dished disc · satin black; reference-inspired unbranded 17-inch rim; tyre and brake retained"
+    },
+    {
+      "id": "rim_RL_disc",
+      "slot": "rim_RL",
+      "url": "parts/rim_RL_disc.glb",
+      "rootNode": "rim_RL_disc",
+      "pivot": [
+        1.215,
+        0.3965,
+        0.8225
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "black"
+      ],
+      "triangles": 9784,
+      "bounds": {
+        "min": [
+          0.983999993801117,
+          0.16549999380111696,
+          0.7144999971985817
+        ],
+        "max": [
+          1.4460000061988831,
+          0.6275000061988831,
+          0.9569999969005585
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "replacesWheelHardware": "wheel_RL",
+      "materialDefaults": {
+        "rim": {
+          "color": "#555b60",
+          "roughness": 0.38,
+          "metalness": 0.7,
+          "envMapIntensity": 1.6
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#242629",
+          "roughness": 0.85,
+          "metalness": 0,
+          "envMapIntensity": 0.18
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_RL"
+      ],
+      "purpose": "Dished disc · satin black; reference-inspired unbranded 17-inch rim; tyre and brake retained"
+    },
+    {
+      "id": "rim_RR_disc",
+      "slot": "rim_RR",
+      "url": "parts/rim_RR_disc.glb",
+      "rootNode": "rim_RR_disc",
+      "pivot": [
+        1.215,
+        0.3965,
+        -0.8225
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "black"
+      ],
+      "triangles": 9784,
+      "bounds": {
+        "min": [
+          0.983999993801117,
+          0.16549999380111696,
+          -0.9569999969005585
+        ],
+        "max": [
+          1.4460000061988831,
+          0.6275000061988831,
+          -0.7144999971985817
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "replacesWheelHardware": "wheel_RR",
+      "materialDefaults": {
+        "rim": {
+          "color": "#555b60",
+          "roughness": 0.38,
+          "metalness": 0.7,
+          "envMapIntensity": 1.6
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#242629",
+          "roughness": 0.85,
+          "metalness": 0,
+          "envMapIntensity": 0.18
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_RR"
+      ],
+      "purpose": "Dished disc · satin black; reference-inspired unbranded 17-inch rim; tyre and brake retained"
+    },
+    {
+      "id": "rim_FL_steel",
+      "slot": "rim_FL",
+      "url": "parts/rim_FL_steel.glb",
+      "rootNode": "rim_FL_steel",
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "chrome",
+        "black"
+      ],
+      "triangles": 11464,
+      "bounds": {
+        "min": [
+          -1.866000006198883,
+          0.16549999380111696,
+          0.7169999971985817
+        ],
+        "max": [
+          -1.403999993801117,
+          0.6275000061988831,
+          0.9594999969005584
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "replacesWheelHardware": "wheel_FL",
+      "materialDefaults": {
+        "rim": {
+          "color": "#c4c9cc",
+          "roughness": 0.36,
+          "metalness": 0.65,
+          "envMapIntensity": 2.8
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#242629",
+          "roughness": 0.85,
+          "metalness": 0,
+          "envMapIntensity": 0.18
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_FL"
+      ],
+      "purpose": "Round-hole steel · silver; reference-inspired unbranded 17-inch rim; tyre and brake retained"
+    },
+    {
+      "id": "rim_FR_steel",
+      "slot": "rim_FR",
+      "url": "parts/rim_FR_steel.glb",
+      "rootNode": "rim_FR_steel",
+      "pivot": [
+        -1.635,
+        0.3965,
+        -0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "chrome",
+        "black"
+      ],
+      "triangles": 11464,
+      "bounds": {
+        "min": [
+          -1.866000006198883,
+          0.16549999380111696,
+          -0.9594999969005584
+        ],
+        "max": [
+          -1.403999993801117,
+          0.6275000061988831,
+          -0.7169999971985817
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "replacesWheelHardware": "wheel_FR",
+      "materialDefaults": {
+        "rim": {
+          "color": "#c4c9cc",
+          "roughness": 0.36,
+          "metalness": 0.65,
+          "envMapIntensity": 2.8
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#242629",
+          "roughness": 0.85,
+          "metalness": 0,
+          "envMapIntensity": 0.18
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_FR"
+      ],
+      "purpose": "Round-hole steel · silver; reference-inspired unbranded 17-inch rim; tyre and brake retained"
+    },
+    {
+      "id": "rim_RL_steel",
+      "slot": "rim_RL",
+      "url": "parts/rim_RL_steel.glb",
+      "rootNode": "rim_RL_steel",
+      "pivot": [
+        1.215,
+        0.3965,
+        0.8225
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "chrome",
+        "black"
+      ],
+      "triangles": 11464,
+      "bounds": {
+        "min": [
+          0.983999993801117,
+          0.16549999380111696,
+          0.7144999971985817
+        ],
+        "max": [
+          1.4460000061988831,
+          0.6275000061988831,
+          0.9569999969005585
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "replacesWheelHardware": "wheel_RL",
+      "materialDefaults": {
+        "rim": {
+          "color": "#c4c9cc",
+          "roughness": 0.36,
+          "metalness": 0.65,
+          "envMapIntensity": 2.8
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#242629",
+          "roughness": 0.85,
+          "metalness": 0,
+          "envMapIntensity": 0.18
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_RL"
+      ],
+      "purpose": "Round-hole steel · silver; reference-inspired unbranded 17-inch rim; tyre and brake retained"
+    },
+    {
+      "id": "rim_RR_steel",
+      "slot": "rim_RR",
+      "url": "parts/rim_RR_steel.glb",
+      "rootNode": "rim_RR_steel",
+      "pivot": [
+        1.215,
+        0.3965,
+        -0.8225
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "chrome",
+        "black"
+      ],
+      "triangles": 11464,
+      "bounds": {
+        "min": [
+          0.983999993801117,
+          0.16549999380111696,
+          -0.9569999969005585
+        ],
+        "max": [
+          1.4460000061988831,
+          0.6275000061988831,
+          -0.7144999971985817
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "replacesWheelHardware": "wheel_RR",
+      "materialDefaults": {
+        "rim": {
+          "color": "#c4c9cc",
+          "roughness": 0.36,
+          "metalness": 0.65,
+          "envMapIntensity": 2.8
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#242629",
+          "roughness": 0.85,
+          "metalness": 0,
+          "envMapIntensity": 0.18
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_RR"
+      ],
+      "purpose": "Round-hole steel · silver; reference-inspired unbranded 17-inch rim; tyre and brake retained"
+    },
+    {
+      "id": "rim_FL_window",
+      "slot": "rim_FL",
+      "url": "parts/rim_FL_window.glb",
+      "rootNode": "rim_FL_window",
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "black"
+      ],
+      "triangles": 9016,
+      "bounds": {
+        "min": [
+          -1.866000006198883,
+          0.16549999380111696,
+          0.7169999971985817
+        ],
+        "max": [
+          -1.403999993801117,
+          0.6275000061988831,
+          0.9594999969005584
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "replacesWheelHardware": "wheel_FL",
+      "materialDefaults": {
+        "rim": {
+          "color": "#454a4f",
+          "roughness": 0.4,
+          "metalness": 0.7,
+          "envMapIntensity": 1.8
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#242629",
+          "roughness": 0.85,
+          "metalness": 0,
+          "envMapIntensity": 0.18
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_FL"
+      ],
+      "purpose": "Eight-window · satin black; reference-inspired unbranded 17-inch rim; tyre and brake retained"
+    },
+    {
+      "id": "rim_FR_window",
+      "slot": "rim_FR",
+      "url": "parts/rim_FR_window.glb",
+      "rootNode": "rim_FR_window",
+      "pivot": [
+        -1.635,
+        0.3965,
+        -0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "black"
+      ],
+      "triangles": 9016,
+      "bounds": {
+        "min": [
+          -1.866000006198883,
+          0.16549999380111696,
+          -0.9594999969005584
+        ],
+        "max": [
+          -1.403999993801117,
+          0.6275000061988831,
+          -0.7169999971985817
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "replacesWheelHardware": "wheel_FR",
+      "materialDefaults": {
+        "rim": {
+          "color": "#454a4f",
+          "roughness": 0.4,
+          "metalness": 0.7,
+          "envMapIntensity": 1.8
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#242629",
+          "roughness": 0.85,
+          "metalness": 0,
+          "envMapIntensity": 0.18
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_FR"
+      ],
+      "purpose": "Eight-window · satin black; reference-inspired unbranded 17-inch rim; tyre and brake retained"
+    },
+    {
+      "id": "rim_RL_window",
+      "slot": "rim_RL",
+      "url": "parts/rim_RL_window.glb",
+      "rootNode": "rim_RL_window",
+      "pivot": [
+        1.215,
+        0.3965,
+        0.8225
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "black"
+      ],
+      "triangles": 9016,
+      "bounds": {
+        "min": [
+          0.983999993801117,
+          0.16549999380111696,
+          0.7144999971985817
+        ],
+        "max": [
+          1.4460000061988831,
+          0.6275000061988831,
+          0.9569999969005585
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "replacesWheelHardware": "wheel_RL",
+      "materialDefaults": {
+        "rim": {
+          "color": "#454a4f",
+          "roughness": 0.4,
+          "metalness": 0.7,
+          "envMapIntensity": 1.8
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#242629",
+          "roughness": 0.85,
+          "metalness": 0,
+          "envMapIntensity": 0.18
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_RL"
+      ],
+      "purpose": "Eight-window · satin black; reference-inspired unbranded 17-inch rim; tyre and brake retained"
+    },
+    {
+      "id": "rim_RR_window",
+      "slot": "rim_RR",
+      "url": "parts/rim_RR_window.glb",
+      "rootNode": "rim_RR_window",
+      "pivot": [
+        1.215,
+        0.3965,
+        -0.8225
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "black"
+      ],
+      "triangles": 9016,
+      "bounds": {
+        "min": [
+          0.983999993801117,
+          0.16549999380111696,
+          -0.9569999969005585
+        ],
+        "max": [
+          1.4460000061988831,
+          0.6275000061988831,
+          -0.7144999971985817
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "replacesWheelHardware": "wheel_RR",
+      "materialDefaults": {
+        "rim": {
+          "color": "#454a4f",
+          "roughness": 0.4,
+          "metalness": 0.7,
+          "envMapIntensity": 1.8
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#242629",
+          "roughness": 0.85,
+          "metalness": 0,
+          "envMapIntensity": 0.18
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_RR"
+      ],
+      "purpose": "Eight-window · satin black; reference-inspired unbranded 17-inch rim; tyre and brake retained"
     }
   ],
   "displayBase": {
@@ -6265,6 +6929,42 @@
         0
       ],
       "rigidClass": "body"
+    },
+    "rim_FL": {
+      "default": null,
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel"
+    },
+    "rim_FR": {
+      "default": null,
+      "pivot": [
+        -1.635,
+        0.3965,
+        -0.825
+      ],
+      "rigidClass": "wheel"
+    },
+    "rim_RL": {
+      "default": null,
+      "pivot": [
+        1.215,
+        0.3965,
+        0.8225
+      ],
+      "rigidClass": "wheel"
+    },
+    "rim_RR": {
+      "default": null,
+      "pivot": [
+        1.215,
+        0.3965,
+        -0.8225
+      ],
+      "rigidClass": "wheel"
     }
   },
   "missingTargets": {

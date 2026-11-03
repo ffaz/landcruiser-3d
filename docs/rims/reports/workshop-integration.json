@@ -1,0 +1,752 @@
+{
+  "results": [
+    {
+      "name": "disc UI installs all four rims",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FL_disc"
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FR_disc"
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RL_disc"
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RR_disc"
+        }
+      ]
+    },
+    {
+      "name": "disc retains stock tyres and brakes",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FL_disc"
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FR_disc"
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RL_disc"
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RR_disc"
+        }
+      ]
+    },
+    {
+      "name": "disc tyre size/ride unchanged",
+      "pass": true,
+      "detail": {
+        "level": "ok",
+        "tyre_mm": 793,
+        "tyres": [
+          {
+            "arch": "front",
+            "mm": 60,
+            "status": "ok"
+          },
+          {
+            "arch": "rear",
+            "mm": 94,
+            "status": "ok"
+          }
+        ],
+        "mounts": [],
+        "notes": []
+      }
+    },
+    {
+      "name": "steel UI installs all four rims",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FL_steel"
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FR_steel"
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RL_steel"
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RR_steel"
+        }
+      ]
+    },
+    {
+      "name": "steel retains stock tyres and brakes",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FL_steel"
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FR_steel"
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RL_steel"
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RR_steel"
+        }
+      ]
+    },
+    {
+      "name": "steel tyre size/ride unchanged",
+      "pass": true,
+      "detail": {
+        "level": "ok",
+        "tyre_mm": 793,
+        "tyres": [
+          {
+            "arch": "front",
+            "mm": 60,
+            "status": "ok"
+          },
+          {
+            "arch": "rear",
+            "mm": 94,
+            "status": "ok"
+          }
+        ],
+        "mounts": [],
+        "notes": []
+      }
+    },
+    {
+      "name": "window UI installs all four rims",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FL_window"
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FR_window"
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RL_window"
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RR_window"
+        }
+      ]
+    },
+    {
+      "name": "window retains stock tyres and brakes",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FL_window"
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FR_window"
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RL_window"
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RR_window"
+        }
+      ]
+    },
+    {
+      "name": "window tyre size/ride unchanged",
+      "pass": true,
+      "detail": {
+        "level": "ok",
+        "tyre_mm": 793,
+        "tyres": [
+          {
+            "arch": "front",
+            "mm": 60,
+            "status": "ok"
+          },
+          {
+            "arch": "rear",
+            "mm": 94,
+            "status": "ok"
+          }
+        ],
+        "mounts": [],
+        "notes": []
+      }
+    },
+    {
+      "name": "original rim restores stock hardware",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": true,
+          "rimVisible": false,
+          "rim": null
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": true,
+          "rimVisible": false,
+          "rim": null
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": true,
+          "rimVisible": false,
+          "rim": null
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": true,
+          "rimVisible": false,
+          "rim": null
+        }
+      ]
+    },
+    {
+      "name": "stock tyre works with independent silver rim",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FL_steel"
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FR_steel"
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RL_steel"
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RR_steel"
+        }
+      ]
+    },
+    {
+      "name": "at285 tyre works with independent silver rim",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FL_steel"
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FR_steel"
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RL_steel"
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RR_steel"
+        }
+      ]
+    },
+    {
+      "name": "ht26570 tyre works with independent silver rim",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FL_steel"
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FR_steel"
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RL_steel"
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RR_steel"
+        }
+      ]
+    },
+    {
+      "name": "at26570 tyre works with independent silver rim",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FL_steel"
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FR_steel"
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RL_steel"
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RR_steel"
+        }
+      ]
+    },
+    {
+      "name": "at28565 tyre works with independent silver rim",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FL_steel"
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FR_steel"
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RL_steel"
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RR_steel"
+        }
+      ]
+    },
+    {
+      "name": "at26575 tyre works with independent silver rim",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FL_steel"
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FR_steel"
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RL_steel"
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RR_steel"
+        }
+      ]
+    },
+    {
+      "name": "slate preserves rim/tyre visibility",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FL_steel"
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FR_steel"
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RL_steel"
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RR_steel"
+        }
+      ]
+    },
+    {
+      "name": "clay preserves rim/tyre visibility",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FL_steel"
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FR_steel"
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RL_steel"
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RR_steel"
+        }
+      ]
+    },
+    {
+      "name": "cream preserves rim/tyre visibility",
+      "pass": true,
+      "detail": [
+        {
+          "corner": "FL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FL_steel"
+        },
+        {
+          "corner": "FR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_FR_steel"
+        },
+        {
+          "corner": "RL",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RL_steel"
+        },
+        {
+          "corner": "RR",
+          "tyreUnchanged": true,
+          "tyreVisible": true,
+          "brakeVisible": true,
+          "oldHardwareVisible": false,
+          "rimVisible": true,
+          "rim": "rim_RR_steel"
+        }
+      ]
+    },
+    {
+      "name": "reset restores complete stock state",
+      "pass": true
+    },
+    {
+      "name": "no console errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "consoleErrors": []
+}
