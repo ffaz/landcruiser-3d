@@ -10,7 +10,7 @@ mkdir -p /tmp/lc200-before
 git archive HEAD | tar -x -C /tmp/lc200-before
 node tests/visual.mjs --source /tmp/lc200-before/index.html --asset-root /tmp/lc200-before --mode before --output /tmp/lc200-evidence
 
-# Capture all five presets in Cream and Slate, plus eight rotation angles.
+# Capture all five presets, plus eight rotation angles (--both-studios is accepted but Cream is the only studio).
 node tests/visual.mjs --both-studios --output /tmp/lc200-evidence
 
 # Exercise controls and camera fitting without saving screenshots.
@@ -61,72 +61,9 @@ All test servers serve external GLBs, JSON and the pinned Three.js Meshopt decod
 
 When `window.lcBuild` is available, the full visual check additionally verifies a 50 mm rigid body lift with every wheel fixed, byte-identical POSITION buffers, uniform root scale 1, global/per-part paint, hidden parts, empty/restored slots, `#lift_mm=50`, and clearing the hash back to defaults. The viewer API is tested as data-only state; no workshop UI is introduced. Geometry provenance and lossless compression are checked separately by the offline asset audit.
 
-## Clay material regression
+## Clay, Slate and the studio regressions
 
-`clay.mjs` captures Front, Side and 3/4 in Cream/Slate before the change, then those
-same views and six Clay views (orange and white, each in Front/Side/3/4) after it. Its temporary page keeps
-byte snapshots of POSITION/NORMAL/COLOR_0 and every vehicle node transform. It
-checks those through studio changes, all four swatches, custom colours, per-part
-paint overrides and restoration. It compares Cream/Slate material, lighting,
-background and camera state against the baseline; actual images remain available
-for visual/pixel comparison. Clay may reduce transparent-lens draw passes, and
-must not add draws or rendered triangles relative to Cream.
-
-```sh
-node tests/clay.mjs --mode before --source /tmp/before/index.html --output /tmp/clay-evidence
-node tests/clay.mjs --mode after --output /tmp/clay-evidence
-node tests/clay.mjs --mode stock --output /tmp/clay-evidence
-```
-
-Pass `--deps` and `--three-dir` as with the other harnesses. Defaults expect their
-already prepared local Playwright and Three.js dependencies. The warm orange
-custom paint in Clay screenshots is a test-only choice; production paint defaults
-and build.json are unchanged. `webkit-benchmark.mjs --studio clay` selects Clay
-before measuring the actual renderer; compare with `--studio cream` on the same
-idle host. This remains software-rendered emulation, not physical iPad timing.
-
-The Clay tuning regression checks that authored white `#f4f4ef` stays unchanged in build state while its Clay material displays warm cream `#efe6da`. It also tests custom pure white and pastel blue (`#dde9f1`), so light coloured finishes are not mistaken for white. Clay keeps ridge **0.52** and valley **0.72** unchanged during the white-paint calibration. The regression also verifies a 50 mm body lift anchors the Clay height-lighting uniform at 0.05 m while wheel positions and POSITION/NORMAL/COLOR_0 buffers remain unchanged, then restores the default state. Pale headlamp lenses and vertically graded plum glass may use colour-stable MeshBasicMaterial in Clay; the original materials must restore exactly in Cream/Slate. Muted red tail-lamp materials are recorded and checked.
-
-## Cream showroom regression
-
-`cream.mjs` checks Cream refinements against frozen before fixtures while requiring
-Slate and Clay to remain pixel-identical. Use the same Playwright/local Three.js
-dependency directory as the other harnesses, with `sharp` installed there for
-lossless PNG comparison. Production CDN imports remain unchanged.
-
-```sh
-# Before editing, freeze source and assets, then record the fixture images/state.
-mkdir -p /tmp/cream-source-before
-git archive HEAD | tar -x -C /tmp/cream-source-before
-node tests/cream.mjs --mode before --source /tmp/cream-source-before/index.html --asset-root /tmp/cream-source-before --output /tmp/cream-before
-
-# After editing, compare the live source to the frozen fixtures.
-node tests/cream.mjs --mode after --baseline /tmp/cream-before --output /tmp/cream-after
-```
-
-Pass `--deps`, `--three-dir` or `--chromium` when using non-default dependency paths.
-Before fixtures include all five white presets in each studio, plus orange 3/4
-in Slate and Clay. The after run compares all **12 Slate/Clay PNGs pixel by
-pixel**, captures Cream presets, and checks all five cameras against the baseline.
-It also compares Cream's first-load Side render with the same view after a
-studio cycle, which catches initial paint/contact settings that only apply after
-clicking the studio button.
-
-Checks preserve Cream's glass, lamp, chrome, wheel and tyre properties, paint satin properties,
-global lights/exposure and original studio AO/ridge/valley settings. They verify Cream's
-separate stronger detail uniforms, neutral grey background, near-black trim variant and
-unchanged contact-shadow settings. Wheel-assembly black zones retain their original materials.
-They exercise the actual four swatch buttons, custom white/orange/pastel paint,
-per-part paint/trim overrides, hidden/empty slots, mode restoration and a rigid
-50 mm lift with fixed wheels. POSITION/NORMAL/COLOR_0 buffers, node matrices,
-root scale and all model/build hashes must stay intact. Each explicit final
-render must use one screen render, no target render, and unchanged draw/triangle
-counts and shadow-map settings. Temporary render suppression speeds capture;
-it is not an iPad performance measurement.
-
-Cream follow-up checks also verify unchanged original gain uniforms, reuse of the existing floor/contact texture, and Base clipping/restoration without buffer changes.
-
-Cream detail evidence is in [`docs/cream-detail`](../docs/cream-detail/README.md), including the same-coordinate 7×7 sample ledger and every changed artistic value.
+Clay and Slate were removed on 3 November 2026; Cream is the only studio. `clay.mjs` and `cream.mjs` compared studios against each other and went with them. Their findings stay in the docs/ history. Removing them left every Cream render pixel-identical on desktop.
 
 ## All-studio base finish
 

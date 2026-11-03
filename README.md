@@ -4,7 +4,7 @@
 
 The physical car root uses uniform **scale 1.0**. Source vertex positions, normals, baked `COLOR_0` AO/curvature and encoded node transforms are retained, except for one approved offline correction: the rear overhang was un-stretched to **1.200 m** on 28 October 2026, giving a **5.000 m** model body ([record](docs/rear-overhang/README.md)). Runtime length, height, tyre and spoiler reshaping has been removed. Blender **4.3.2** identifies loose pieces; export selects original triangles and copies original attribute values. The lossless Meshopt roundtrip is verified with the decoder shipped in Three.js 0.166.1.
 
-Front, Side, Rear, 3/4, Top, Auto, Reset, the existing **four paint swatches plus custom picker**, Cream/Slate/Clay, Clean view, Base and touch controls remain. Presets restore the distances and directions from commit `1169290`: Side is level at y=0.40 m. A camera y≥0.15 m rule replaces the old 85° limit; sphere-distance, cabin-collision and pan-target guards remain. One finger rotates; pinch zooms; two fingers pan. Clean view restores with a stationary canvas tap, H or Escape.
+Front, Side, Rear, 3/4, Top, Auto, Reset, the existing **four paint swatches plus custom picker**, Clean view, Base and touch controls remain. Presets restore the distances and directions from commit `1169290`: Side is level at y=0.40 m. A camera y≥0.15 m rule replaces the old 85° limit; sphere-distance, cabin-collision and pan-target guards remain. One finger rotates; pinch zooms; two fingers pan. Clean view restores with a stationary canvas tap, H or Escape.
 
 The satin collectible materials and baked crevice/edge shading remain. No screen-space AO or live cavity pass is added. The blurred contact map updates when build state changes; rendering stops when controls are idle.
 
@@ -12,7 +12,7 @@ The satin collectible materials and baked crevice/edge shading remain. No screen
 
 [Round 4b: source/before/after chrome, unlit LEDs, GXR stroke measurements and additive rear seals](docs/base-finish/round4b/README.md). The reference remains the original 979,826-triangle ZIRODESIGN model with its native materials. The source X/R/punctuation, LAND CRUISER and V8 are unchanged; VXR and earlier GXR/lamp variants remain available. No owner photographs are needed.
 
-Cream and Slate use the satin painted-metal base finish, soft reflection highlights, neutral dark trim, blue-grey tinted glass, satin side metal and reflective front chrome. Clay retains its separate warm matte paint, unlit plum glass, pink-grey trim, lighting, wheel/tyre and plinth presentation. No tyre geometry, mud, wear, decals, numbers, props or workshop UI is added.
+The Cream studio is the only studio (Slate and Clay were removed on 3 November 2026). It uses the satin painted-metal base finish, soft reflection highlights, neutral dark trim, blue-grey tinted glass, satin side metal and reflective front chrome. No tyre geometry, mud, wear, decals, numbers, props or workshop UI is added.
 
 Toyota emblems are separate default-visible body slots. Replacement rear-lamp variants preserve the original lamp positions, triangle topology and COLOR_0, with the inherited repaired lens/reflector normals retained on round-4b material-zone copies. Two separate black rear backing slots close the lamp/garnish openings. Original GLBs remain byte-identical and selectable. The existing body scale, pivots, controls and camera presets are preserved.
 

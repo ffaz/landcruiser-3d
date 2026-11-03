@@ -470,6 +470,389 @@
    ]
   }
  ],
+ "piecesNote": "Every outside part, for tapping on the car. A tap finds the first piece listing the tapped slot (and zone, where zones are given). finishes lists the choices per material zone besides stock; removable pieces can be taken off. The cabin interior is never offered.",
+ "pieces": [
+  {
+   "id": "body",
+   "label": "Body paint",
+   "slots": [
+    "body_shell"
+   ],
+   "zones": [
+    "paint"
+   ],
+   "paint": true
+  },
+  {
+   "id": "windows",
+   "label": "Windows",
+   "slots": [
+    "body_shell",
+    "door_FL",
+    "door_FR",
+    "door_RL",
+    "door_RR",
+    "tailgate"
+   ],
+   "zones": [
+    "glass"
+   ],
+   "finishes": {
+    "glass": [
+     "tint_35",
+     "tint_15",
+     "tint_5"
+    ]
+   }
+  },
+  {
+   "id": "trim",
+   "label": "Body trim",
+   "slots": [
+    "body_shell",
+    "unsorted_03",
+    "unsorted_05"
+   ],
+   "zones": [
+    "black",
+    "lamp_clear"
+   ],
+   "detail": "Window surrounds, pillars and arch liners",
+   "finishes": {
+    "black": [
+     "gloss_black",
+     "matte_black"
+    ]
+   }
+  },
+  {
+   "id": "bonnet",
+   "label": "Bonnet",
+   "slots": [
+    "bonnet"
+   ],
+   "finishes": {
+    "paint": [
+     "gloss_black",
+     "matte_black"
+    ]
+   }
+  },
+  {
+   "id": "front",
+   "label": "Front bumper",
+   "slots": [
+    "bumper_front",
+    "front_plate"
+   ],
+   "category": "front",
+   "finishes": {
+    "chrome": [
+     "gloss_black",
+     "matte_black",
+     "body"
+    ],
+    "paint": [
+     "gloss_black",
+     "matte_black"
+    ]
+   }
+  },
+  {
+   "id": "grille",
+   "label": "Grille",
+   "slots": [
+    "grille",
+    "unsorted_06",
+    "unsorted_07",
+    "unsorted_08"
+   ],
+   "finishes": {
+    "chrome": [
+     "gloss_black",
+     "matte_black",
+     "body"
+    ]
+   }
+  },
+  {
+   "id": "badges",
+   "label": "Badges",
+   "slots": [
+    "emblem_front",
+    "emblem_rear",
+    "lettering_rear",
+    "badge_grade"
+   ],
+   "detail": "Toyota emblems, rear lettering and grade badge",
+   "finishes": {
+    "chrome": [
+     "gloss_black",
+     "matte_black"
+    ]
+   },
+   "removable": true
+  },
+  {
+   "id": "headlamps",
+   "label": "Headlamps",
+   "slots": [
+    "lamp_front_L",
+    "lamp_front_R"
+   ],
+   "finishes": {
+    "lamp_clear": [
+     "smoked"
+    ],
+    "chrome": [
+     "gloss_black",
+     "matte_black"
+    ]
+   }
+  },
+  {
+   "id": "mirrors",
+   "label": "Mirrors",
+   "slots": [
+    "mirror_L",
+    "mirror_R"
+   ],
+   "finishes": {
+    "paint": [
+     "gloss_black",
+     "matte_black"
+    ],
+    "chrome": [
+     "gloss_black",
+     "matte_black",
+     "body"
+    ]
+   }
+  },
+  {
+   "id": "door_FL",
+   "label": "Front left door",
+   "slots": [
+    "door_FL"
+   ],
+   "finishes": {
+    "paint": [
+     "gloss_black",
+     "matte_black"
+    ],
+    "chrome": [
+     "gloss_black",
+     "matte_black",
+     "body"
+    ]
+   }
+  },
+  {
+   "id": "door_FR",
+   "label": "Front right door",
+   "slots": [
+    "door_FR"
+   ],
+   "finishes": {
+    "paint": [
+     "gloss_black",
+     "matte_black"
+    ],
+    "chrome": [
+     "gloss_black",
+     "matte_black",
+     "body"
+    ]
+   }
+  },
+  {
+   "id": "door_RL",
+   "label": "Rear left door",
+   "slots": [
+    "door_RL"
+   ],
+   "finishes": {
+    "paint": [
+     "gloss_black",
+     "matte_black"
+    ],
+    "chrome": [
+     "gloss_black",
+     "matte_black",
+     "body"
+    ]
+   }
+  },
+  {
+   "id": "door_RR",
+   "label": "Rear right door",
+   "slots": [
+    "door_RR"
+   ],
+   "finishes": {
+    "paint": [
+     "gloss_black",
+     "matte_black"
+    ],
+    "chrome": [
+     "gloss_black",
+     "matte_black",
+     "body"
+    ]
+   }
+  },
+  {
+   "id": "window_chrome",
+   "label": "Window chrome",
+   "slots": [
+    "unsorted_01",
+    "unsorted_02"
+   ],
+   "finishes": {
+    "chrome": [
+     "gloss_black",
+     "matte_black",
+     "body"
+    ]
+   }
+  },
+  {
+   "id": "roof",
+   "label": "Roof rails",
+   "slots": [
+    "roof_rails"
+   ],
+   "category": "roof",
+   "finishes": {
+    "chrome": [
+     "gloss_black",
+     "matte_black"
+    ],
+    "paint": [
+     "gloss_black",
+     "matte_black"
+    ]
+   },
+   "removable": true
+  },
+  {
+   "id": "sides",
+   "label": "Side steps",
+   "slots": [
+    "side_step_L",
+    "side_step_R"
+   ],
+   "category": "sides",
+   "finishes": {
+    "black": [
+     "gloss_black",
+     "matte_black",
+     "body"
+    ],
+    "chrome": [
+     "gloss_black",
+     "matte_black"
+    ]
+   },
+   "removable": true
+  },
+  {
+   "id": "tailgate",
+   "label": "Tailgate",
+   "slots": [
+    "tailgate",
+    "unsorted_09",
+    "unsorted_10"
+   ],
+   "category": "rear",
+   "finishes": {
+    "paint": [
+     "gloss_black",
+     "matte_black"
+    ],
+    "chrome": [
+     "gloss_black",
+     "matte_black",
+     "body"
+    ]
+   }
+  },
+  {
+   "id": "rear",
+   "label": "Rear bumper",
+   "slots": [
+    "bumper_rear",
+    "unsorted_04"
+   ],
+   "category": "rear",
+   "finishes": {
+    "chrome": [
+     "gloss_black",
+     "matte_black",
+     "body"
+    ],
+    "paint": [
+     "gloss_black",
+     "matte_black"
+    ]
+   }
+  },
+  {
+   "id": "taillamps",
+   "label": "Tail lamps",
+   "slots": [
+    "lamp_rear_L",
+    "lamp_rear_R",
+    "gap_seal_rear_L",
+    "gap_seal_rear_R"
+   ],
+   "category": "lighting",
+   "finishes": {
+    "lamp_red": [
+     "smoked"
+    ],
+    "chrome": [
+     "gloss_black",
+     "matte_black"
+    ]
+   }
+  },
+  {
+   "id": "tyres",
+   "label": "Tyres",
+   "slots": [
+    "wheel_FL",
+    "wheel_FR",
+    "wheel_RL",
+    "wheel_RR"
+   ],
+   "zones": [
+    "tyre"
+   ],
+   "category": "tyres"
+  },
+  {
+   "id": "rims",
+   "label": "Rims",
+   "slots": [
+    "wheel_FL",
+    "wheel_FR",
+    "wheel_RL",
+    "wheel_RR",
+    "wheel_emblem_FL",
+    "wheel_emblem_FR",
+    "wheel_emblem_RL",
+    "wheel_emblem_RR"
+   ],
+   "zones": [
+    "rim",
+    "chrome",
+    "black",
+    "brake"
+   ],
+   "category": "rims"
+  }
+ ],
  "arches": {
   "method": "Rays from each hub centre in the side plane (10°–170° from straight ahead), across the tyre width; nearest non-wheel surface. tools/workshop/measure_arches.mjs",
   "front": {

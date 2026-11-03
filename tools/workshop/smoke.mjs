@@ -31,7 +31,7 @@ for(const viewport of [{width:1440,height:1000},{width:390,height:844}]){
  }
  await page.click('#workshopToggle');
  check(`${tag}: opens`,await page.evaluate(()=>document.body.classList.contains('workshop-open')));
- check(`${tag}: eleven categories listed`,(await page.locator('#workshop .ws-row').count())===11);
+ check(`${tag}: Parts row plus eleven categories listed`,(await page.locator('#workshop .ws-row[data-cat]').count())===11&&(await page.locator('#workshop .ws-row[data-parts]').count())===1);
  await shot('home');
  await page.click('#workshop [data-cat=stance]');
  await page.click('#workshop [data-opt=lift63]');
@@ -70,6 +70,34 @@ for(const viewport of [{width:1440,height:1000},{width:390,height:844}]){
  check(`${tag}: share link carries the build`,hash==='#build={"lift_mm":63}',hash);
  await page.click('#workshop [data-reset]');
  check(`${tag}: reset to base`,(await page.evaluate(()=>window.lcBuild.getState().lift_mm))===0);
+ // Parts: a real tap on the car opens that part; finishes, removal and sharing follow.
+ await page.click('#workshop [data-home]');
+ const target=await page.evaluate(()=>{const rect=document.getElementById('workshop').getBoundingClientRect(),w=window.lcWorkshop;
+  const free={x0:innerWidth>650?rect.right+10:0,y1:innerWidth>650?innerHeight:rect.top-10};
+  for(let y=80;y<free.y1;y+=6)for(let x=free.x0;x<innerWidth;x+=6){const piece=w.pieceFor(window.lcView.pick(x,y));if(piece?.id==='door_RL')return {x,y};}
+  return null;});
+ check(`${tag}: parts: rear left door found on screen`,!!target,JSON.stringify(target));
+ if(target)await page.mouse.click(target.x,target.y);
+ check(`${tag}: parts: tapping the car opens that part`,(await page.locator('#workshop .ws-title').innerText())==='Rear left door');
+ check(`${tag}: parts: tapped part is highlighted`,await page.evaluate(()=>{let n=0;window.lcBuild.parts.get('door_RL').traverse(o=>{if(o.userData.pickOverlay)n++;});return n>0;}));
+ await page.click('#workshop [data-finish="paint:gloss_black"]');
+ const door=await page.evaluate(()=>({finish:window.lcBuild.getState().finish,colors:(()=>{const out=new Set();window.lcBuild.parts.get('door_RL').traverse(o=>{if(o.isMesh&&!o.userData.pickOverlay)for(const m of [].concat(o.material))if(m.userData.zone==='paint')out.add(m.color.getHexString());});return [...out];})()}));
+ check(`${tag}: parts: gloss black door paint applied`,door.finish['door_RL:paint']==='gloss_black'&&door.colors.length&&door.colors.every(c=>c==='0b0d0f'),JSON.stringify(door));
+ const logicParts=await page.evaluate(()=>{const w=window.lcWorkshop;return {interior:w.pieceFor({slot:'body_shell',zone:'interior'}),glass:w.pieceFor({slot:'door_FL',zone:'glass'})?.id,tyre:w.pieceFor({slot:'wheel_FL',zone:'tyre'})?.id,rim:w.pieceFor({slot:'wheel_FL',zone:'rim'})?.id,
+  every:(()=>{const m=window.lcBuild.getManifest(),state=window.lcBuild.getState(),missing=[];for(const [slot,id]of Object.entries(state.slots)){if(!id)continue;const e=[m.base,...m.parts].find(p=>p.id===id);for(const zone of e.zones)if(zone!=='interior'&&!(slot==='body_shell'&&zone==='mirror')&&!w.pieceFor({slot,zone}))missing.push(slot+':'+zone);}return missing;})()};});
+ check(`${tag}: parts: interior is never offered`,logicParts.interior===null);
+ check(`${tag}: parts: glass → Windows, tyre → Tyres, rim → Rims`,logicParts.glass==='windows'&&logicParts.tyre==='tyres'&&logicParts.rim==='rims',JSON.stringify(logicParts));
+ check(`${tag}: parts: every outside surface belongs to a part`,logicParts.every.length===0,logicParts.every.join(' '));
+ await page.click('#workshop [data-parts]');await page.click('#workshop [data-piece=badges]');
+ await page.click('#workshop [data-remove=remove]');
+ check(`${tag}: parts: badges come off`,await page.evaluate(()=>!window.lcBuild.parts.get('emblem_front').visible&&window.lcBuild.getState().hidden.includes('emblem_front')));
+ await page.click('#workshop [data-parts]');await page.click('#workshop [data-piece=windows]');
+ await page.click('#workshop [data-finish="glass:tint_15"]');
+ await page.click('#workshop [data-parts]');await page.click('#workshop [data-home]');await page.click('#workshop [data-share]');
+ const partsHash=JSON.parse(decodeURIComponent(await page.evaluate(()=>location.hash)).replace(/^#build=/,'')||'{}');
+ check(`${tag}: parts: share link carries finishes and removed parts`,partsHash.finish?.['door_RL:paint']==='gloss_black'&&partsHash.finish?.['door_FL:glass']==='tint_15'&&partsHash.hidden?.includes('emblem_front'),JSON.stringify(partsHash));
+ await page.click('#workshop [data-sheet]');await page.click('#workshop [data-reset]');
+ check(`${tag}: parts: reset clears finishes and refits parts`,await page.evaluate(()=>{const s=window.lcBuild.getState();return !Object.keys(s.finish).length&&!s.hidden.includes('emblem_front')&&window.lcBuild.parts.get('emblem_front').visible;}));
  await page.keyboard.press('Escape');
  check(`${tag}: Escape closes`,!(await page.evaluate(()=>document.body.classList.contains('workshop-open'))));
  check(`${tag}: no page errors`,viewer.errors.length===0,viewer.errors.join(' | '));

@@ -18,17 +18,11 @@
   Source dimensions/overhang provenance: docs/foundation/overhang-notes.md.
 -->
 <style>
-  :root { color-scheme: dark; --bg1:#4a6a82; --bg2:#3a4f60; --ink:#edf4f8; --muted:#c3d1de; --panel:rgba(14,27,39,.42); --line:rgba(239,246,255,.16); --accent:#b7d9e6; }
+  :root { color-scheme: light; --ink:#283440; --muted:#62707c; --panel:rgba(255,252,245,.79); --line:rgba(62,76,86,.14); --accent:#385c73; }
   * { box-sizing:border-box }
   html,body { width:100%;height:100%;margin:0;overflow:hidden; }
   body {font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink);
-    background:linear-gradient(180deg,var(--bg1) 0%,#405b70 52%,var(--bg2) 100%); transition:background .35s ease; }
-  body.cream { color:#283440;--ink:#283440;--muted:#62707c;--panel:rgba(255,252,245,.79);--line:rgba(62,76,86,.14);--accent:#385c73;
-    color-scheme:light;background:radial-gradient(ellipse at 50% 42%,#ECECEA 0%,#EBEBE9 50%,#E1E1DF 100%); }
-  body.clay {color:#4a3f4a;--ink:#4a3f4a;--muted:#806e7b;--panel:rgba(255,245,236,.57);--line:rgba(91,66,84,.16);--accent:#73556a;
-    color-scheme:light;background:radial-gradient(ellipse at 50% 42%,var(--clay-centre,#f1e1d7) 0%,var(--clay-mid,#ecdbd1) 53%,var(--clay-edge,#dfcabe) 100%);}
-  body.clay .viewbtn.active{background:rgba(111,78,101,.13)}
-  body.clay::after{background:radial-gradient(ellipse at 50% 45%,transparent 50%,rgba(83,56,76,.035) 100%)}
+    background:radial-gradient(ellipse at 50% 42%,#ECECEA 0%,#EBEBE9 50%,#E1E1DF 100%); }
   body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:2;background:radial-gradient(ellipse at 50% 45%,transparent 48%,rgba(25,22,18,.045) 100%);}
   #viewer {position:absolute;inset:0;touch-action:none;outline:0; }
   #viewer canvas {width:100%;height:100%;display:block;touch-action:none;}
@@ -54,7 +48,7 @@
   .viewbar,.finishbar {display:flex;align-items:center;gap:5px;border:1px solid var(--line);background:var(--panel);border-radius:16px;padding:7px;box-shadow:0 10px 35px rgba(0,0,0,.06);backdrop-filter:blur(23px);-webkit-backdrop-filter:blur(23px);}
   .viewbtn {border:1px solid transparent;background:transparent;border-radius:11px;min-height:36px;padding:0 13px;font-size:11px;font-weight:650;letter-spacing:.025em;white-space:nowrap;transition:background .2s,border-color .2s;}
   .viewbtn.active {background:rgba(225,240,252,.18);border-color:var(--line)}
-  body.cream .viewbtn.active {background:rgba(70,99,121,.14)}
+  .viewbtn.active {background:rgba(70,99,121,.14)}
   .vline {width:1px;height:24px;background:var(--line);margin:0 2px;}
   .finishbar {gap:12px;min-height:49px;padding:7px 12px 7px 16px;}
   .finishbar label {font-size:10px;text-transform:uppercase;letter-spacing:.16em;font-weight:750;opacity:.78;}
@@ -93,7 +87,7 @@
   .swatch{width:19px;height:19px}
   #customPaint{width:23px;height:23px}
   .hint{font-size:9px;opacity:.45}
-  body.cream{--panel:rgba(255,252,247,.57)}
+  body{--panel:rgba(255,252,247,.57)}
   .topbar,.bottom,.hint{transition:opacity .16s ease,visibility .16s ease}
   body.clean-view .topbar,body.clean-view .bottom,body.clean-view .hint{opacity:0;visibility:hidden;pointer-events:none}
   #viewer canvas{outline:none}
@@ -112,7 +106,7 @@
 }
 </script>
 </head>
-<body class="cream" data-studio="cream">
+<body>
 <main id="viewer" aria-label="Interactive rotatable model of a 2021 Toyota Land Cruiser 200"></main>
 <noscript>
  <style>#loader{display:none}.nojs{position:absolute;inset:25% 8%;display:grid;place-content:center;text-align:center;font:14px/1.8 system-ui;color:#283440}.nojs strong{font-size:22px}</style>
@@ -125,7 +119,6 @@
     <button type="button" class="utility" id="baseToggle" aria-pressed="false" title="Show the collectible display base">Base</button>
     <button type="button" class="utility" id="workshopToggle" aria-pressed="false" aria-controls="workshop" title="Open the workshop: lift, wheels, accessories and build sheet">Workshop</button>
     <button type="button" class="utility" id="cleanToggle" aria-pressed="false" title="Hide all controls. Tap the canvas or press H to show them again.">Clean view</button>
-    <button type="button" class="utility" id="bgToggle" title="Switch to Slate studio"><span class="dot" aria-hidden="true"></span><span id="bgLabel">Studio: Cream ▸</span></button>
   </div>
 </header>
 <div class="bottom">
@@ -200,7 +193,6 @@ const DEFAULT_WHITE = '#f4f4ef';
 // ────────────────────────────────────────────────────────────────────────────
 const holder=document.getElementById('viewer');
 let needsRender=true;
-let studioMode='cream';
 function requestRender(){needsRender=true;}
 let frameInset=0,frameInsetBottom=0; // px reserved by an open panel (workshop): left side or bottom sheet
 const renderer=new THREE.WebGLRenderer({antialias:true, alpha:true, powerPreference:'high-performance'});
@@ -217,9 +209,8 @@ renderer.outputColorSpace=THREE.SRGBColorSpace;
 holder.appendChild(renderer.domElement);
 const scene=new THREE.Scene();
 // Reflection studio is deliberately separate from the transparent visible scene.
-// Same single PMREM map and existing bake pipeline; switch its studio profile only
-// on a studio toggle. There is no additional per-frame pass or resident environment.
-function createStudioEnvironment(clay=false){
+// One PMREM map, built once. There is no additional per-frame pass or resident environment.
+function createStudioEnvironment(){
 const studio=new RoomEnvironment();
 studio.traverse(o=>{
   if(o.isLight)o.intensity*=.12;
@@ -242,15 +233,15 @@ function softbox(w,h,position,intensity){
 }
 softbox(7,2.3,[-2.5,6,4.5],5.0);
 softbox(6.5,1.1,[.4,7,-.5],4.0);
-if(clay)softbox(6,.9,[.8,2.8,-5],2.8);else softbox(1.4,.60,[3.7,1.9,-5],215.0);
+softbox(1.4,.60,[3.7,1.9,-5],215.0);
 softbox(2.2,3.2,[-6,3.2,-1.5],1.4);
-softbox(7.2,.65,[0,2.4,6],clay?6.5:2.5);
-if(clay)softbox(7,.55,[.5,2.4,-6],4.0);else softbox(1.8,.60,[5,.9,-5],200.0);
+softbox(7.2,.65,[0,2.4,6],2.5);
+softbox(1.8,.60,[5,.9,-5],200.0);
 const pmrem=new THREE.PMREMGenerator(renderer);
 const target=pmrem.fromScene(studio,.025,.1,80);
 studio.traverse(o=>{if(o.isMesh){o.material.map?.dispose();}});studio.dispose();pmrem.dispose();return target;
 }
-let studioTarget=createStudioEnvironment(false),environmentIsClay=false;
+const studioTarget=createStudioEnvironment();
 scene.environment=studioTarget.texture;scene.environmentIntensity=.65;
 const fill=new THREE.HemisphereLight(0xf7f5f0,0x52565c,.60);scene.add(fill);
 const key=new THREE.DirectionalLight(0xfffbf5,1.65);
@@ -295,7 +286,7 @@ const orange=physical('#d66b18',.13,0,.8);orange.emissive.set('#8c3505');orange.
 const interiorMat=new THREE.MeshStandardMaterial({color:'#776753',roughness:.88,metalness:0});
 
 // COLOR_0 contains linear data, not paint colour: R=Cycles AO; G=signed curvature.
-// Original studio strengths remain independent of Cream and Clay variants.
+// Original studio strengths remain independent of the Cream variants.
 const BAKED_LOOK=Object.freeze({ao:.90,ridge:.70,valley:.90});
 const bakedUniforms={
  uBakedAO:{value:BAKED_LOOK.ao},uBakedRidge:{value:BAKED_LOOK.ridge},uBakedValley:{value:BAKED_LOOK.valley}
@@ -307,75 +298,44 @@ const creamDetailUniforms={uCreamTrimSpecular:{value:CREAM_DETAIL.trimSpecular},
 const creamBakedUniforms={uCreamKeyGain:{value:CREAM_LOOK.keyGain},uCreamFillGain:{value:CREAM_LOOK.fillGain},
  uCreamKeyDirection:{value:new THREE.Vector3(...CREAM_LOOK.keyDirection).normalize()},uCreamKeyTint:{value:new THREE.Color(CREAM_LOOK.keyTint)},uCreamContactPower:{value:CREAM_LOOK.nearContactPower},uCreamContactBand:{value:new THREE.Vector2(...CREAM_LOOK.nearContactBand)},
  uCreamRearFill:{value:CREAM_DETAIL.rearFill},uCreamGrazingFloor:{value:.20},uCreamGrazingRange:{value:new THREE.Vector2(.03,.30)}};
-// Clay has its own material programs/uniforms; the original studio math is unchanged.
-const CLAY_LOOK=Object.freeze({ao:.65,ridge:.52,valley:.72});
-const clayBakedUniforms={uBakedAO:{value:CLAY_LOOK.ao},uBakedRidge:{value:CLAY_LOOK.ridge},
- uBakedValley:{value:CLAY_LOOK.valley},uClayOcclusionTint:{value:new THREE.Color('#a58e72')},
- uClayLowerKey:{value:.09},uClayHeightStart:{value:.65},uClayHeightEnd:{value:1.14},uClayBodyLift:{value:0}};
-function useMainClayShading(material,clay=false,cream=false){
- const clayPaint=clay&&material.userData.zone==='paint';
- const heightPaint=clayPaint&&!material.userData.partId?.startsWith('side_step_');
+// Body lift (tyre rise + suspension lift) for masks drawn in stored body coordinates.
+const bodyLiftUniform={value:0};
+function useMainBakedShading(material,cream=false){
  material.onBeforeCompile=shader=>{
-  Object.assign(shader.uniforms,clay?clayBakedUniforms:cream?creamDetailUniforms:bakedUniforms);
+  Object.assign(shader.uniforms,cream?creamDetailUniforms:bakedUniforms);
   shader.vertexShader=shader.vertexShader.replace('#include <common>',
    '#include <common>\nattribute vec3 bakedShading; varying vec2 vBakedShading;');
   shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>',
    '#include <begin_vertex>\nvBakedShading=bakedShading.rg;');
   shader.fragmentShader=shader.fragmentShader.replace('#include <common>',
-   '#include <common>\nvarying vec2 vBakedShading; uniform float uBakedAO; uniform float uBakedRidge; uniform float uBakedValley;'+(clay?' uniform vec3 uClayOcclusionTint;':'')+(cream?' uniform float uCreamAOExponent; uniform float uCreamTrimSpecular;':''));
-  if(heightPaint){
-   shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying float vClayPaintHeight; uniform float uClayBodyLift;');
-   shader.vertexShader=shader.vertexShader.replace('#include <worldpos_vertex>',`#include <worldpos_vertex>
-    #ifdef USE_ENVMAP
-     vClayPaintHeight=worldPosition.y-uClayBodyLift;
-    #else
-     vClayPaintHeight=(modelMatrix*vec4(transformed,1.0)).y-uClayBodyLift;
-    #endif`);
-   shader.fragmentShader=shader.fragmentShader.replace('#include <common>',
-    '#include <common>\nvarying float vClayPaintHeight; uniform float uClayLowerKey; uniform float uClayHeightStart; uniform float uClayHeightEnd;');
-  }
+   '#include <common>\nvarying vec2 vBakedShading; uniform float uBakedAO; uniform float uBakedRidge; uniform float uBakedValley;'+(cream?' uniform float uCreamAOExponent; uniform float uCreamTrimSpecular;':''));
   shader.fragmentShader=shader.fragmentShader.replace('#include <aomap_fragment>',`#include <aomap_fragment>
    float bakedAO=${cream?'pow(clamp(vBakedShading.r,0.0,1.0),mix(1.0,uCreamAOExponent,smoothstep(0.02,0.10,abs(vBakedShading.g-0.5)*2.0)))':'clamp(vBakedShading.r,0.0,1.0)'};
    float bakedRidge=max(0.0,(vBakedShading.g-0.5-1.0/255.0)*2.0);
    float bakedValley=max(0.0,(0.5-vBakedShading.g-1.0/255.0)*2.0);
-   float bakedCavity=clamp(1.0-(1.0-bakedAO)*uBakedAO-bakedValley*uBakedValley*0.35,${clay?'0.42':cream?'0.10':'0.18'},1.0);
-   ${clay?`vec3 clayCavity=mix(vec3(1.0),uClayOcclusionTint,1.0-bakedCavity);
-   ${clayPaint?`// Broad flat-panel AO belongs to indirect light; retain direct cavity shading at creases.
-   float keyCavity=clamp(1.0-(1.0-bakedAO)*uBakedAO*smoothstep(0.04,0.25,max(bakedRidge,bakedValley))-bakedValley*uBakedValley*0.35,0.42,1.0);
-   vec3 keyCavityTint=mix(vec3(1.0),uClayOcclusionTint,1.0-keyCavity);
-   reflectedLight.directDiffuse*=mix(vec3(1.0),keyCavityTint,0.65);`:
-   'reflectedLight.directDiffuse*=mix(vec3(1.0),clayCavity,0.65);'}
-   ${heightPaint?'reflectedLight.directDiffuse*=mix(uClayLowerKey,1.0,smoothstep(uClayHeightStart,uClayHeightEnd,vClayPaintHeight));':''}
-   reflectedLight.indirectDiffuse*=clayCavity;
-   reflectedLight.indirectSpecular*=mix(vec3(1.0),clayCavity,0.72);
-   reflectedLight.directSpecular*=mix(vec3(1.0),clayCavity,0.25);
-   #ifdef USE_CLEARCOAT
-    clearcoatSpecularIndirect*=mix(vec3(1.0),clayCavity,0.72);
-   #endif`:`
+   float bakedCavity=clamp(1.0-(1.0-bakedAO)*uBakedAO-bakedValley*uBakedValley*0.35,${cream?'0.10':'0.18'},1.0);
+   
    reflectedLight.directDiffuse*=mix(1.0,bakedCavity,${cream?'0.90':'0.65'});
    reflectedLight.indirectDiffuse*=bakedCavity;
    reflectedLight.indirectSpecular*=mix(1.0,bakedCavity,${cream?'0.85':'0.72'});
    reflectedLight.directSpecular*=mix(1.0,bakedCavity,${cream?'0.50':'0.25'});
    #ifdef USE_CLEARCOAT
     clearcoatSpecularIndirect*=mix(1.0,bakedCavity,${cream?'0.85':'0.72'});
-   #endif`}
+   #endif
    reflectedLight.indirectDiffuse+=diffuseColor.rgb*bakedRidge*uBakedRidge*0.13;
 
    ${cream&&material.userData.zone==='black'?'reflectedLight.directSpecular*=uCreamTrimSpecular; reflectedLight.indirectSpecular*=uCreamTrimSpecular;':''}
   `);
  };
- material.customProgramCacheKey=()=> heightPaint?'lc200-clay-paint-height-v2':clayPaint?'lc200-clay-paint-v2':clay?'lc200-baked-ao-curvature-clay-v1':cream?'lc200-cream-baked-detail-v1':'lc200-baked-ao-curvature-v1';
+ material.customProgramCacheKey=()=> cream?'lc200-cream-baked-detail-v1':'lc200-baked-ao-curvature-v1';
  return material;
 }
 function useOriginalPanelShading(material,cream=false){
- const clay=false;
- const clayPaint=clay&&material.userData.zone==='paint';
- const heightPaint=clayPaint&&!material.userData.partId?.startsWith('side_step_');
  const handle=material.userData.partId?.startsWith('door_F')?[-.178,1.066]:material.userData.partId?.startsWith('door_R')?[.845,1.111]:null;
  const retainFineCavity=material.userData.partId==='bonnet';
  material.onBeforeCompile=shader=>{
-  shader.uniforms.uPanelBodyLift=clayBakedUniforms.uClayBodyLift;
-  Object.assign(shader.uniforms,clay?clayBakedUniforms:cream?creamDetailUniforms:bakedUniforms);
+  shader.uniforms.uPanelBodyLift=bodyLiftUniform;
+  Object.assign(shader.uniforms,cream?creamDetailUniforms:bakedUniforms);
   if(cream)Object.assign(shader.uniforms,{uBakedAO:{value:1.12},uBakedRidge:{value:1.0},uBakedValley:{value:1.35}});
   if(retainFineCavity)shader.uniforms.uBonnetCreaseDiffuse={value:BASE_FINISH.bonnetCreaseDiffuse};
   shader.vertexShader=shader.vertexShader.replace('#include <common>',
@@ -383,18 +343,7 @@ function useOriginalPanelShading(material,cream=false){
   shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>',
    '#include <begin_vertex>\nvBakedShading=bakedShading.rg; vPanelPosition=(modelMatrix*vec4(position,1.0)).xyz; vPanelPosition.y-=uPanelBodyLift;');
   shader.fragmentShader=shader.fragmentShader.replace('#include <common>',
-   '#include <common>\nvarying vec2 vBakedShading; varying vec3 vPanelPosition; uniform float uBakedAO; uniform float uBakedRidge; uniform float uBakedValley;'+(retainFineCavity?' uniform float uBonnetCreaseDiffuse;':'')+(clay?' uniform vec3 uClayOcclusionTint;':'')+(cream?' uniform float uCreamAOExponent; uniform float uCreamTrimSpecular;':''));
-  if(heightPaint){
-   shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying float vClayPaintHeight; uniform float uClayBodyLift;');
-   shader.vertexShader=shader.vertexShader.replace('#include <worldpos_vertex>',`#include <worldpos_vertex>
-    #ifdef USE_ENVMAP
-     vClayPaintHeight=worldPosition.y-uClayBodyLift;
-    #else
-     vClayPaintHeight=(modelMatrix*vec4(transformed,1.0)).y-uClayBodyLift;
-    #endif`);
-   shader.fragmentShader=shader.fragmentShader.replace('#include <common>',
-    '#include <common>\nvarying float vClayPaintHeight; uniform float uClayLowerKey; uniform float uClayHeightStart; uniform float uClayHeightEnd;');
-  }
+   '#include <common>\nvarying vec2 vBakedShading; varying vec3 vPanelPosition; uniform float uBakedAO; uniform float uBakedRidge; uniform float uBakedValley;'+(retainFineCavity?' uniform float uBonnetCreaseDiffuse;':'')+(cream?' uniform float uCreamAOExponent; uniform float uCreamTrimSpecular;':''));
   shader.fragmentShader=shader.fragmentShader.replace('#include <aomap_fragment>',`#include <aomap_fragment>
    float bakedAO=${cream?'pow(clamp(vBakedShading.r,0.0,1.0),mix(1.0,uCreamAOExponent,smoothstep(0.02,0.10,abs(vBakedShading.g-0.5)*2.0)))':'clamp(vBakedShading.r,0.0,1.0)'};
    float bakedRidge=max(0.0,(vBakedShading.g-0.5-1.0/255.0)*2.0);
@@ -405,27 +354,15 @@ function useOriginalPanelShading(material,cream=false){
    ${retainFineCavity?'panelCrease=max(panelCrease,max(1.0-smoothstep(.12,.22,vBakedShading.r),smoothstep(.015,.050,fwidth(vBakedShading.r))));':''}
    ${handle?`float handleCup=1.0-smoothstep(1.0,1.40,length((vPanelPosition.xy-vec2(${handle[0]},${handle[1]}))/vec2(.165,.055))); panelCrease=max(panelCrease,handleCup);`:''}
    bakedAO=mix(1.0,bakedAO,panelCrease); bakedValley*=panelCrease;
-   float bakedCavity=clamp(1.0-(1.0-bakedAO)*uBakedAO-bakedValley*uBakedValley*0.35,${clay?'0.42':cream?'0.10':'0.18'},1.0);
-   ${clay?`vec3 clayCavity=mix(vec3(1.0),uClayOcclusionTint,1.0-bakedCavity);
-   ${clayPaint?`// Broad flat-panel AO belongs to indirect light; retain direct cavity shading at creases.
-   float keyCavity=clamp(1.0-(1.0-bakedAO)*uBakedAO*smoothstep(0.04,0.25,max(bakedRidge,bakedValley))-bakedValley*uBakedValley*0.35,0.42,1.0);
-   vec3 keyCavityTint=mix(vec3(1.0),uClayOcclusionTint,1.0-keyCavity);
-   reflectedLight.directDiffuse*=mix(vec3(1.0),keyCavityTint,0.65);`:
-   'reflectedLight.directDiffuse*=mix(vec3(1.0),clayCavity,0.65);'}
-   ${heightPaint?'reflectedLight.directDiffuse*=mix(uClayLowerKey,1.0,smoothstep(uClayHeightStart,uClayHeightEnd,vClayPaintHeight));':''}
-   reflectedLight.indirectDiffuse*=clayCavity;
-   reflectedLight.indirectSpecular*=mix(vec3(1.0),clayCavity,0.72);
-   reflectedLight.directSpecular*=mix(vec3(1.0),clayCavity,0.25);
-   #ifdef USE_CLEARCOAT
-    clearcoatSpecularIndirect*=mix(vec3(1.0),clayCavity,0.72);
-   #endif`:`
+   float bakedCavity=clamp(1.0-(1.0-bakedAO)*uBakedAO-bakedValley*uBakedValley*0.35,${cream?'0.10':'0.18'},1.0);
+   
    reflectedLight.directDiffuse*=mix(1.0,bakedCavity,${cream?'0.90':'0.65'});
    reflectedLight.indirectDiffuse*=bakedCavity;
    reflectedLight.indirectSpecular*=mix(1.0,bakedCavity,${cream?'0.85':'0.72'});
    reflectedLight.directSpecular*=mix(1.0,bakedCavity,${cream?'0.50':'0.25'});
    #ifdef USE_CLEARCOAT
     clearcoatSpecularIndirect*=mix(1.0,bakedCavity,${cream?'0.85':'0.72'});
-   #endif`}
+   #endif
    reflectedLight.indirectDiffuse+=diffuseColor.rgb*bakedRidge*uBakedRidge*0.13;
    ${retainFineCavity?`// Strong rear softboxes need directional occlusion at the stored bonnet fold.
    vec3 bonnetWorldNormal=inverseTransformDirection(geometryNormal,viewMatrix);
@@ -437,74 +374,39 @@ function useOriginalPanelShading(material,cream=false){
  material.customProgramCacheKey=()=> 'lc200-closeup-original-panel-v1-'+material.userData.partId;
  return material;
 }
-function useBakedShading(material,clay=false,cream=false){
- if(material.userData.handleHardware&&!clay)return useMainClayShading(material,false,false);
- if(!clay&&material.userData.zone==='paint')return useOriginalPanelShading(material,cream);
- if(clay)return useMainClayShading(material,true,false);
- const clayPaint=clay&&material.userData.zone==='paint';
- const heightPaint=clayPaint&&!material.userData.partId?.startsWith('side_step_');
- const cleanPanel=material.userData.zone==='paint';
+function useBakedShading(material,cream=false){
+ if(material.userData.handleHardware)return useMainBakedShading(material);
+ if(material.userData.zone==='paint')return useOriginalPanelShading(material,cream);
  material.onBeforeCompile=shader=>{
-  Object.assign(shader.uniforms,clay?clayBakedUniforms:cream?creamDetailUniforms:bakedUniforms,finishSeamUniforms);
+  Object.assign(shader.uniforms,cream?creamDetailUniforms:bakedUniforms,finishSeamUniforms);
   shader.vertexShader=shader.vertexShader.replace('#include <common>',
    '#include <common>\nattribute vec3 bakedShading; varying vec2 vBakedShading;');
   shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>',
    '#include <begin_vertex>\nvBakedShading=bakedShading.rg;');
   shader.fragmentShader=shader.fragmentShader.replace('#include <common>',
-   '#include <common>\nvarying vec2 vBakedShading; uniform float uBakedAO; uniform float uBakedRidge; uniform float uBakedValley; uniform float uFinishSharpGap; uniform float uFinishSeam; uniform vec2 uFinishSeamValley; uniform vec2 uFinishSeamOcclusion; uniform float uFinishBlackSpecular;'+(clay?' uniform vec3 uClayOcclusionTint;':'')+(cream?' uniform float uCreamAOExponent; uniform float uCreamTrimSpecular;':''));
-  if(heightPaint){
-   shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying float vClayPaintHeight; uniform float uClayBodyLift;');
-   shader.vertexShader=shader.vertexShader.replace('#include <worldpos_vertex>',`#include <worldpos_vertex>
-    #ifdef USE_ENVMAP
-     vClayPaintHeight=worldPosition.y-uClayBodyLift;
-    #else
-     vClayPaintHeight=(modelMatrix*vec4(transformed,1.0)).y-uClayBodyLift;
-    #endif`);
-   shader.fragmentShader=shader.fragmentShader.replace('#include <common>',
-    '#include <common>\nvarying float vClayPaintHeight; uniform float uClayLowerKey; uniform float uClayHeightStart; uniform float uClayHeightEnd;');
-  }
+   '#include <common>\nvarying vec2 vBakedShading; uniform float uBakedAO; uniform float uBakedRidge; uniform float uBakedValley; uniform float uFinishSharpGap; uniform float uFinishSeam; uniform vec2 uFinishSeamValley; uniform vec2 uFinishSeamOcclusion; uniform float uFinishBlackSpecular;'+(cream?' uniform float uCreamAOExponent; uniform float uCreamTrimSpecular;':''));
   shader.fragmentShader=shader.fragmentShader.replace('#include <aomap_fragment>',`#include <aomap_fragment>
    float bakedAO=${cream?'pow(clamp(vBakedShading.r,0.0,1.0),mix(1.0,uCreamAOExponent,smoothstep(0.02,0.10,abs(vBakedShading.g-0.5)*2.0)))':'clamp(vBakedShading.r,0.0,1.0)'};
    float bakedRidge=max(0.0,(vBakedShading.g-0.5-1.0/255.0)*2.0);
    float bakedValley=max(0.0,(0.5-vBakedShading.g-1.0/255.0)*2.0);
-   ${cleanPanel?'float panelCrease=smoothstep(0.18,0.40,max(bakedRidge,bakedValley));\n   // Recover authored narrow crevices, not a drawn line or a broad AO blotch.\n   panelCrease=max(panelCrease,max(1.0-smoothstep(.12,.22,vBakedShading.r),smoothstep(.015,.050,fwidth(vBakedShading.r)))); bakedAO=mix(1.0,bakedAO,panelCrease); bakedValley*=panelCrease;':''}
-   float bakedCavity=clamp(1.0-(1.0-bakedAO)*uBakedAO-bakedValley*uBakedValley*0.35,${clay?'0.42':cream?'0.06':'0.18'},1.0);
-   ${material.userData.zone==='paint'?`// Enhance only concave, already-occluded baked regions; broad panels stay clean.
-   float bakedSeam=smoothstep(uFinishSeamValley.x,uFinishSeamValley.y,bakedValley)*smoothstep(uFinishSeamOcclusion.x,uFinishSeamOcclusion.y,1.0-bakedAO);
-   bakedCavity*=1.0-uFinishSeam*bakedSeam;
-   float bakedSharpGap=smoothstep(0.50,0.75,bakedRidge)*smoothstep(0.02,0.20,1.0-bakedAO);
-   bakedCavity*=1.0-uFinishSharpGap*bakedSharpGap;`:''}
-   ${clay?`vec3 clayCavity=mix(vec3(1.0),uClayOcclusionTint,1.0-bakedCavity);
-   ${clayPaint?`// Broad flat-panel AO belongs to indirect light; retain direct cavity shading at creases.
-   float keyCavity=clamp(1.0-(1.0-bakedAO)*uBakedAO*smoothstep(0.04,0.25,max(bakedRidge,bakedValley))-bakedValley*uBakedValley*0.35,0.42,1.0);
-   keyCavity*=1.0-uFinishSeam*bakedSeam;
-   vec3 keyCavityTint=mix(vec3(1.0),uClayOcclusionTint,1.0-keyCavity);
-   reflectedLight.directDiffuse*=mix(vec3(1.0),keyCavityTint,0.65);`:
-   'reflectedLight.directDiffuse*=mix(vec3(1.0),clayCavity,0.65);'}
-   ${heightPaint?'reflectedLight.directDiffuse*=mix(uClayLowerKey,1.0,smoothstep(uClayHeightStart,uClayHeightEnd,vClayPaintHeight));':''}
-   reflectedLight.indirectDiffuse*=clayCavity;
-   reflectedLight.indirectSpecular*=mix(vec3(1.0),clayCavity,0.72);
-   reflectedLight.directSpecular*=mix(vec3(1.0),clayCavity,0.25);
-   #ifdef USE_CLEARCOAT
-    clearcoatSpecularIndirect*=mix(vec3(1.0),clayCavity,0.72);
-   #endif`:`
+   float bakedCavity=clamp(1.0-(1.0-bakedAO)*uBakedAO-bakedValley*uBakedValley*0.35,${cream?'0.06':'0.18'},1.0);
+   
    reflectedLight.directDiffuse*=mix(1.0,bakedCavity,${cream?'1.00':'0.65'});
    reflectedLight.indirectDiffuse*=bakedCavity;
    reflectedLight.indirectSpecular*=mix(1.0,bakedCavity,${cream?'1.00':'0.72'});
    reflectedLight.directSpecular*=mix(1.0,bakedCavity,${cream?'1.00':'0.25'});
    #ifdef USE_CLEARCOAT
     clearcoatSpecularIndirect*=mix(1.0,bakedCavity,${cream?'1.00':'0.72'});
-    ${material.userData.zone==='paint'?'clearcoatSpecularDirect*=bakedCavity;':''}
-   #endif`}
-   reflectedLight.indirectDiffuse+=diffuseColor.rgb*bakedRidge*uBakedRidge*0.13${(material.userData.zone==='paint'||(['black','chrome'].includes(material.userData.zone)&&!material.userData.partId?.startsWith('wheel_')))?'*bakedCavity*bakedAO*bakedAO*bakedAO':''};
+   #endif
+   reflectedLight.indirectDiffuse+=diffuseColor.rgb*bakedRidge*uBakedRidge*0.13${(['black','chrome'].includes(material.userData.zone)&&!material.userData.partId?.startsWith('wheel_'))?'*bakedCavity*bakedAO*bakedAO*bakedAO':''};
    ${material.userData.zone==='black'&&!material.userData.partId?.startsWith('wheel_')?'reflectedLight.directSpecular*=uFinishBlackSpecular; reflectedLight.indirectSpecular*=uFinishBlackSpecular;':''}
   `);
  };
- material.customProgramCacheKey=()=> (heightPaint?'lc200-clay-paint-height-v2':clayPaint?'lc200-clay-paint-v2':clay?'lc200-baked-ao-curvature-clay-v1':cream?'lc200-cream-baked-detail-v5':'lc200-baked-ao-curvature-v5')+(material.userData.zone==='paint'?'-paint'+(cleanPanel?'-clean-panel':''):material.userData.zone==='black'&&!material.userData.partId?.startsWith('wheel_')?'-neutral-trim':material.userData.zone==='chrome'&&!material.userData.partId?.startsWith('wheel_')?'-metal-trim':'');
+ material.customProgramCacheKey=()=> (cream?'lc200-cream-baked-detail-v5':'lc200-baked-ao-curvature-v5')+(material.userData.zone==='black'&&!material.userData.partId?.startsWith('wheel_')?'-neutral-trim':material.userData.zone==='chrome'&&!material.userData.partId?.startsWith('wheel_')?'-metal-trim':'');
  return material;
 }
 function useCreamPaintShading(material){
- useBakedShading(material,false,true);
+ useBakedShading(material,true);
  const bakedCompile=material.onBeforeCompile;
  material.onBeforeCompile=shader=>{
   bakedCompile(shader);Object.assign(shader.uniforms,creamBakedUniforms);
@@ -530,7 +432,7 @@ function useRoofCapMask(material){
  roofMaskMaterials.add(material);const compile=material.onBeforeCompile;
  material.onBeforeCompile=shader=>{
   compile(shader);
-  shader.uniforms.uPolishLift=clayBakedUniforms.uClayBodyLift;
+  shader.uniforms.uPolishLift=bodyLiftUniform;
   shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vRailBody; uniform float uPolishLift;');
   shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvRailBody=(modelMatrix*vec4(position,1.0)).xyz; vRailBody.y-=uPolishLift;');
   shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vRailBody;');
@@ -544,7 +446,7 @@ function useRoofEdgeFinish(material){
  if(material.userData.partId!=='body_shell'||!['paint','black'].includes(material.userData.zone)||roofFinishMaterials.has(material))return;
  roofFinishMaterials.add(material);const compile=material.onBeforeCompile,cache=material.customProgramCacheKey.bind(material),isBlack=material.userData.zone==='black';
  material.onBeforeCompile=shader=>{
-  compile(shader);Object.assign(shader.uniforms,{uRoofBodyLift:clayBakedUniforms.uClayBodyLift,uRoofColor:roofFinishColor,uRoofRoughness:roofFinishRoughness,uRoofKeyGain:creamBakedUniforms.uCreamKeyGain,uRoofFillGain:creamBakedUniforms.uCreamFillGain,uRoofKeyTint:creamBakedUniforms.uCreamKeyTint});
+  compile(shader);Object.assign(shader.uniforms,{uRoofBodyLift:bodyLiftUniform,uRoofColor:roofFinishColor,uRoofRoughness:roofFinishRoughness,uRoofKeyGain:creamBakedUniforms.uCreamKeyGain,uRoofFillGain:creamBakedUniforms.uCreamFillGain,uRoofKeyTint:creamBakedUniforms.uCreamKeyTint});
   shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vRoofBody; uniform float uRoofBodyLift;');
   shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvRoofBody=(modelMatrix*vec4(position,1.0)).xyz;vRoofBody.y-=uRoofBodyLift;');
   shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vRoofBody;uniform vec3 uRoofColor;uniform float uRoofRoughness;uniform float uRoofKeyGain;uniform float uRoofFillGain;uniform vec3 uRoofKeyTint;');
@@ -619,8 +521,7 @@ creamGroundMaterial.onBeforeCompile=shader=>{
 };
 creamGroundMaterial.customProgramCacheKey=()=> 'lc200-cream-ground-band-v1';
 function showContactShadow(){
- const cream=studioMode==='cream';floor.material=cream?creamGroundMaterial:originalFloorMaterial;
- floor.visible=cream;contactPlane.visible=!cream;
+ floor.material=creamGroundMaterial;floor.visible=true;contactPlane.visible=false;
 }
 const contactCamera=new THREE.OrthographicCamera(-3.4,3.4,1.9,-1.9,.001,1.8);
 contactCamera.position.set(0,-.001,0);contactCamera.up.set(0,0,1);contactCamera.lookAt(0,1,0);
@@ -671,121 +572,55 @@ const entryById=new Map(partEntries.map(entry=>[entry.id,entry]));
 const parts=new Map();
 const zoneTemplates={paint,chrome,black:blackPlastic,tyre:tireMat,rim:rimMat,brake:softChrome,
  glass:windowGlass,mirror:chrome,lamp_red:tailRed,lamp_clear:lampLens,lamp_orange:orange,interior:interiorMat};
-// Retain every original studio material; Clay variants are created once, on demand.
-const clayMaterials=new Map(),clayLensMaterials=new WeakMap(),clayGlassMaterials=new WeakMap(),creamMaterials=new WeakMap(),originalMaterials=new WeakMap();
-const CLAY_COLORS=Object.freeze({black:'#4a3f4a',tyre:'#4a3f4a',glass:'#403240',
- chrome:'#c8bcc0',rim:'#b8a8af',brake:'#95858f',mirror:'#746572',interior:'#7c6977',
- lamp_red:'#a16f73',lamp_clear:'#eadbc2',lamp_orange:'#eadbc2',base_top:'#d7c1b5',base_edge:'#806d7d'});
-function clayPaintColor(hex){
- const color=new THREE.Color(hex),rgb={};color.getRGB(rgb,THREE.SRGBColorSpace);
- const low=Math.min(rgb.r,rgb.g,rgb.b),high=Math.max(rgb.r,rgb.g,rgb.b);
- // A display-only white finish: the authored build colour remains unchanged.
- return low>.86&&high-low<.04?'#efe6da':'#'+color.getHexString();
-}
-function useClayLampCentre(material,node){
- // Read the existing bounds/decoding frame once. Never add or edit an attribute.
- // Projection into the source lamp's up/width plane stays attached under rigid lift.
- node.updateWorldMatrix(true,false);
- const box=node.geometry.boundingBox||new THREE.Box3().setFromBufferAttribute(node.geometry.getAttribute('position'));
- const size=box.getSize(new THREE.Vector3()),centre=box.getCenter(new THREE.Vector3()),m=node.matrixWorld.elements;
- const rowY=new THREE.Vector3(m[1],m[5],m[9]),rowZ=new THREE.Vector3(m[2],m[6],m[10]);
- const extent=row=>Math.max(.000001,(Math.abs(row.x)*size.x+Math.abs(row.y)*size.y+Math.abs(row.z)*size.z)/2);
- rowY.divideScalar(extent(rowY));rowZ.divideScalar(extent(rowZ));
- const uniforms={uClayLampRowY:{value:rowY},uClayLampRowZ:{value:rowZ},
-  uClayLampCentre:{value:new THREE.Vector2(centre.dot(rowY),centre.dot(rowZ))}};
- material.onBeforeCompile=shader=>{
-  Object.assign(shader.uniforms,uniforms);
-  shader.vertexShader=shader.vertexShader.replace('#include <common>',
-   '#include <common>\nvarying vec2 vClayLampOffset; uniform vec3 uClayLampRowY; uniform vec3 uClayLampRowZ; uniform vec2 uClayLampCentre;');
-  shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>',`#include <begin_vertex>
-   vec2 lampOffset=vec2(dot(position,uClayLampRowY),dot(position,uClayLampRowZ))-uClayLampCentre;
-   vClayLampOffset=lampOffset;`);
-  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec2 vClayLampOffset;');
-  shader.fragmentShader=shader.fragmentShader.replace('#include <color_fragment>',
-   '#include <color_fragment>\nfloat lampCentre=max(0.0,1.0-dot(vClayLampOffset,vClayLampOffset));\ndiffuseColor.rgb*=1.0+0.12*lampCentre;');
- };
- material.customProgramCacheKey=()=> 'lc200-clay-front-lens-centre-v4';
-}
-function useClayGlassGradient(material,node){
- node.updateWorldMatrix(true,false);
- const box=node.geometry.boundingBox||new THREE.Box3().setFromBufferAttribute(node.geometry.getAttribute('position'));
- const size=box.getSize(new THREE.Vector3()),centre=box.getCenter(new THREE.Vector3()),m=node.matrixWorld.elements;
- const row=new THREE.Vector3(m[1],m[5],m[9]);
- const span=Math.max(.000001,Math.abs(row.x)*size.x+Math.abs(row.y)*size.y+Math.abs(row.z)*size.z);row.divideScalar(span);
- const uniform={value:new THREE.Vector4(row.x,row.y,row.z,.5-centre.dot(row))};
- material.onBeforeCompile=shader=>{
-  shader.uniforms.uClayGlassY=uniform;
-  shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying float vClayGlassHeight; uniform vec4 uClayGlassY;');
-  shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvClayGlassHeight=clamp(dot(position,uClayGlassY.xyz)+uClayGlassY.w,0.0,1.0);');
-  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying float vClayGlassHeight;');
-  shader.fragmentShader=shader.fragmentShader.replace('#include <color_fragment>','#include <color_fragment>\ndiffuseColor.rgb*=mix(0.88,1.16,vClayGlassHeight);');
- };
- material.customProgramCacheKey=()=> 'lc200-clay-glass-height-v2';
-}
-function studioMaterial(current,zone,hex,authored=false,node=null){
+// Retain every original studio material; Cream variants are created once, on demand.
+const creamMaterials=new WeakMap(),originalMaterials=new WeakMap();
+function studioMaterial(current,zone,hex,authored=false){
  const original=originalMaterials.get(current)||current;
  if(hex!==undefined)original.color.set(hex);
  const creamTrim=zone==='black'&&!original.userData.partId?.startsWith('wheel_');
- if(studioMode!=='clay'&&(zone==='paint'||(studioMode==='cream'&&creamTrim))){
-  let material=creamMaterials.get(original);
-  if(!material){
-   material=original.clone();material.userData={...original.userData,studio:'base'};
-   if(creamTrim){material.roughness=CREAM_DETAIL.trimRoughness;material.envMapIntensity=CREAM_DETAIL.trimEnv;useBakedShading(material,false,true);}
-   else {useCreamPaintShading(material);}
-   creamMaterials.set(original,material);originalMaterials.set(material,original);
-  }
-  material.color.copy(original.color);if(original.userData.partId==='front_plate'&&zone==='paint')material.color.set('#bab9b3');
-  if(creamTrim&&!authored)material.color.set(CREAM_DETAIL.trimColor);
-  return applySurfaceFinish(material);
- }
- if(studioMode!=='clay'){return applySurfaceFinish(original);}
- const frontLens=zone==='lamp_clear'&&original.userData.partId?.startsWith('lamp_front_')&&node;
- const glassGradient=zone==='glass'&&node;
- let material=frontLens?clayLensMaterials.get(node):glassGradient?clayGlassMaterials.get(node):clayMaterials.get(original);
+ if(zone!=='paint'&&!creamTrim)return applySurfaceFinish(original);
+ let material=creamMaterials.get(original);
  if(!material){
-  // Keep plum glass and cream lenses faithful under the stronger paint key.
-  // Unlit Clay variants are cheaper than the original physical glass/lenses.
-  material=glassGradient||frontLens?new THREE.MeshBasicMaterial({color:original.color,side:original.side,
-   transparent:!!glassGradient,opacity:glassGradient?.94:1,depthWrite:true,toneMapped:false}):original.clone();
-  material.metalness=0;material.roughness=zone==='paint'?.85:.90;
-  if('clearcoat' in material){material.clearcoat=0;material.clearcoatRoughness=1;material.specularIntensity=.10;}
-  material.envMapIntensity=zone==='paint'?.035:.02;
-  material.emissive?.set(0x000000);material.emissiveIntensity=0;
-  if(zone==='glass'){material.opacity=.94;material.envMapIntensity=.015;}
-  if(zone.startsWith('lamp_')){material.transparent=false;material.opacity=1;material.depthWrite=true;}
-  if(original.userData.partId?.startsWith('lamp_rear_')&&zone!=='black'){material.blending=THREE.NormalBlending;material.blendSrc=THREE.SrcAlphaFactor;material.blendDst=THREE.OneMinusSrcAlphaFactor;material.blendSrcAlpha=null;material.blendDstAlpha=null;material.side=THREE.DoubleSide;material.forceSinglePass=false;material.flatShading=zone==='lamp_red'||zone==='lamp_clear'||zone==='lamp_orange';}
-  if(frontLens){material.transparent=true;material.opacity=.65;material.depthWrite=false;material.side=THREE.FrontSide;material.forceSinglePass=true;}
-  if(!['glass','lamp_clear','mirror'].includes(zone))useBakedShading(material,true);
-  if(frontLens)useClayLampCentre(material,node);
-  if(glassGradient)useClayGlassGradient(material,node);
-  material.userData={...original.userData,studio:'clay'};
-  if(frontLens)clayLensMaterials.set(node,material);else if(glassGradient)clayGlassMaterials.set(node,material);else clayMaterials.set(original,material);
-  originalMaterials.set(material,original);
+  material=original.clone();material.userData={...original.userData,studio:'base'};
+  if(creamTrim){material.roughness=CREAM_DETAIL.trimRoughness;material.envMapIntensity=CREAM_DETAIL.trimEnv;useBakedShading(material,true);}
+  else {useCreamPaintShading(material);}
+  creamMaterials.set(original,material);originalMaterials.set(material,original);
  }
- const lampHousing=zone==='chrome'&&original.userData.partId?.startsWith('lamp_front_');
- const color=authored?hex:frontLens?'#f4ead6':lampHousing?'#4a3f4a':(CLAY_COLORS[zone]||('#'+original.color.getHexString()));
- material.color.set(zone==='paint'?clayPaintColor(color):color);
+ material.color.copy(original.color);if(original.userData.partId==='front_plate'&&zone==='paint')material.color.set('#bab9b3');
+ if(creamTrim&&!authored)material.color.set(CREAM_DETAIL.trimColor);
  return applySurfaceFinish(material);
 }
-function updateClayBackground(){
- if(studioMode!=='clay')return;
- if(clayPaintColor(buildState.paint.paint||DEFAULT_WHITE)==='#efe6da'){
-  for(const [name,color] of [['centre','#d9cbb8'],['mid','#d9cbb8'],['edge','#cdbda7']])document.body.style.setProperty('--clay-'+name,color);
-  document.querySelector('meta[name="theme-color"]').content='#d9cbb8';return;
+// Workshop finishes, keyed by slot and zone (state.finish["mirror_L:paint"]="gloss_black").
+// Each is a variant of the studio material: stored meshes and baked shading stay as they are;
+// only colour and surface constants change.
+const FINISHES=Object.freeze({
+ gloss_black:{label:'Gloss black',zones:['paint','chrome','black'],color:'#0b0d0f',metalness:.05,roughness:.14,clearcoat:1,clearcoatRoughness:.05,envMapIntensity:.9},
+ matte_black:{label:'Matte black',zones:['paint','chrome','black'],color:'#1b1d1f',metalness:0,roughness:.82,clearcoat:0,envMapIntensity:.25},
+ body:{label:'Body colour',zones:['chrome','black'],color:'body',metalness:.04,roughness:.42,clearcoat:.35,clearcoatRoughness:.30,envMapIntensity:.70},
+ smoked:{label:'Smoked',zones:['lamp_clear','lamp_red','lamp_orange'],shade:.32,opacity:.55},
+ tint_35:{label:'Light tint · 35%',zones:['glass'],shade:.70,opacity:.88},
+ tint_15:{label:'Dark tint · 15%',zones:['glass'],shade:.42,opacity:.94},
+ tint_5:{label:'Limo tint · 5%',zones:['glass'],shade:.20,opacity:.985}
+});
+const finishVariants=new WeakMap();
+function withFinish(material,zone,id){
+ const finish=FINISHES[id];if(!finish)return material;
+ let byId=finishVariants.get(material);if(!byId)finishVariants.set(material,byId=new Map());
+ let variant=byId.get(id);
+ if(!variant){
+  variant=material.clone();variant.onBeforeCompile=material.onBeforeCompile;variant.customProgramCacheKey=material.customProgramCacheKey;
+  variant.userData={...material.userData,finish:id};
+  // Painted panels keep the car's own paint surface; only matte changes it. Trim takes the full finish.
+  const surface=zone!=='paint'?finish:id==='matte_black'?{roughness:finish.roughness,clearcoat:0}:{};
+  for(const key of ['metalness','roughness','clearcoat','clearcoatRoughness','envMapIntensity'])if(surface[key]!==undefined&&key in variant)variant[key]=surface[key];
+  byId.set(id,variant);originalMaterials.set(variant,originalMaterials.get(material)||material);
  }
- const color=new THREE.Color(clayPaintColor(buildState.paint.paint||DEFAULT_WHITE)),hsl={};color.getHSL(hsl,THREE.SRGBColorSpace);
- const rgb={};color.getRGB(rgb,THREE.SRGBColorSpace);
- const chroma=Math.max(rgb.r,rgb.g,rgb.b)-Math.min(rgb.r,rgb.g,rgb.b);
- // Neutral finishes have no useful hue; keep them in a warm porcelain family.
- const hasHue=hsl.s>.20&&chroma>.025;
- const hue=hasHue?hsl.h:.09,saturation=hasHue?Math.min(.52,Math.max(.12,hsl.s*.70)):.18;
- const centre=Math.min(.99,Math.max(.90,hsl.l+(1-hsl.l)*.76));
- const edge=Math.max(hsl.l+(1-hsl.l)*.30,centre-.045),mid=(centre+edge)/2;
- for(const [name,lightness] of [['centre',centre],['mid',mid],['edge',edge]]){
-  const bg=new THREE.Color().setHSL(hue,saturation,lightness,THREE.SRGBColorSpace);
-  document.body.style.setProperty('--clay-'+name,'#'+bg.getHexString());
-  if(name==='centre')document.querySelector('meta[name="theme-color"]').content='#'+bg.getHexString();
- }
+ const body=buildState.paint.paint||DEFAULT_WHITE;
+ variant.color.copy(material.color);variant.opacity=material.opacity;variant.emissive?.copy(material.emissive);
+ if(finish.color)variant.color.set(finish.color==='body'?body:finish.color);
+ if(finish.shade){variant.color.multiplyScalar(finish.shade);variant.emissive?.multiplyScalar(finish.shade);}
+ if(finish.opacity&&variant.transparent&&zone!=='lamp_red')variant.opacity=Math.max(material.opacity,finish.opacity);
+ return variant;
 }
 const aliases={carpaint:'paint',tire:'tyre',rim_second:'rim',brakedisk:'brake',windowglass:'glass',darkglass:'glass',redglass:'lamp_red',redglass_lower:'lamp_red',redglass_caps:'lamp_red',clearglass:'lamp_clear',orangeglass:'lamp_orange',garnish:'chrome'};
 function zoneFor(material){const name=material.name.replace(/\.\d+$/,'').toLowerCase();return material.userData.zone||aliases[name]||name;}
@@ -923,8 +758,13 @@ const cloneJSON=value=>JSON.parse(JSON.stringify(value));
 const defaultSlots=Object.fromEntries(Object.entries(manifest.slots).map(([slot,value])=>[slot,value.default??null]));
 const availableZones=new Set(partEntries.flatMap(entry=>entry.zones));
 function mergeBuild(base,patch){
- const next={slots:{...base.slots,...patch.slots},paint:{...base.paint},lift_mm:patch.lift_mm??base.lift_mm,lamps_on:patch.lamps_on??base.lamps_on??false,hidden:patch.hidden===undefined?[...base.hidden]:[...patch.hidden],
+ const next={slots:{...base.slots,...patch.slots},paint:{...base.paint},finish:{...base.finish},lift_mm:patch.lift_mm??base.lift_mm,lamps_on:patch.lamps_on??base.lamps_on??false,hidden:patch.hidden===undefined?[...base.hidden]:[...patch.hidden],
   tyre:patch.tyre??base.tyre??'stock',rim:patch.rim??base.rim??'stock'};
+ for(const [key,value] of Object.entries(patch.finish||{})){if(value===null)delete next.finish[key];else next.finish[key]=value;}
+ for(const [key,value] of Object.entries(next.finish)){
+  const [slot,zone]=key.split(':');
+  if(!manifest.slots[slot]||!FINISHES[value]?.zones.includes(zone)||!partEntries.some(entry=>entry.slot===slot&&entry.zones.includes(zone)))throw new Error('Invalid finish: '+key+'='+value);
+ }
  if(!tyreById.has(next.tyre))throw new Error('Unknown tyre: '+next.tyre);
  if(!rimById.has(next.rim))throw new Error('Unknown rim: '+next.rim);
  if(tyreById.get(next.tyre).built===false||rimById.get(next.rim).built===false)throw new Error('Tyre or rim not built yet');
@@ -942,14 +782,14 @@ function mergeBuild(base,patch){
  if(next.hidden.some(id=>typeof id!=='string'||(!entryById.has(id)&&!manifest.slots[id])))throw new Error('Unknown hidden part');
  return next;
 }
-const baseBuild=mergeBuild({slots:defaultSlots,paint:{paint:DEFAULT_WHITE},lift_mm:0,hidden:[],tyre:'stock',rim:'stock'},buildFile);
+const baseBuild=mergeBuild({slots:defaultSlots,paint:{paint:DEFAULT_WHITE},finish:{},lift_mm:0,hidden:[],tyre:'stock',rim:'stock'},buildFile);
 let buildState=cloneJSON(baseBuild);
 function applyZonePaint(){
- for(const [id,root] of parts){root.traverse(part=>{if(!part.isMesh)return;
+ for(const [id,root] of parts){root.traverse(part=>{if(!part.isMesh||part.userData.pickOverlay)return;
   const update=material=>{const original=originalMaterials.get(material)||material;
    const zone=original.userData.zone,authored=buildState.paint[id+':'+zone]??buildState.paint[zone];
    const hex=authored??('#'+original.userData.defaultColor);
-   return studioMaterial(original,zone,hex,authored!==undefined,part);
+   return withFinish(studioMaterial(original,zone,hex,authored!==undefined,part),zone,buildState.finish[entryById.get(original.userData.partId||id).slot+':'+zone]);
   };
   part.material=Array.isArray(part.material)?part.material.map(update):update(part.material);
  });}
@@ -957,8 +797,8 @@ function applyZonePaint(){
  paint.color.set(buildState.paint.paint||DEFAULT_WHITE);
  const input=document.getElementById('customPaint');if(input)input.value='#'+paint.color.getHexString();
  document.querySelectorAll('[data-paint]').forEach(button=>button.classList.toggle('active',button.dataset.paint==='#'+paint.color.getHexString()));
- const roofColor=buildState.paint['body_shell:paint']||buildState.paint.paint||DEFAULT_WHITE;roofFinishColor.value.set(studioMode==='clay'?clayPaintColor(roofColor):roofColor);roofFinishRoughness.value=studioMode==='clay'?.85:.62;
- updateLampState();updateClayBackground();
+ const roofColor=buildState.paint['body_shell:paint']||buildState.paint.paint||DEFAULT_WHITE;roofFinishColor.value.set(roofColor);roofFinishRoughness.value=.62;
+ updateLampState();
 }
 function updateLampState(){
  for(const [id,root]of parts)if(id.startsWith('lamp_rear_'))root.traverse(o=>{if(o.isMesh)for(const m of(Array.isArray(o.material)?o.material:[o.material])){if(!m.userData.zone?.startsWith('lamp_'))continue;m.emissiveIntensity=buildState.lamps_on?(m.userData.zone==='lamp_red'?.32:.12):0;}});
@@ -966,8 +806,6 @@ function updateLampState(){
 function applyStudioPartVisibility(){
  const bundledSlots=new Set();for(const entry of partEntries){if(buildState.slots[entry.slot]===entry.id&&!buildState.hidden.includes(entry.id)&&!buildState.hidden.includes(entry.slot))for(const slot of entry.bundlesSlots||[])bundledSlots.add(slot);}
  for(const [id,root]of parts){const entry=entryById.get(id),selectedPart=buildState.slots[entry.slot];let selected=selectedPart;
-  if(studioMode==='clay'&&selected==='badge_grade_GXR_finish4b')selected='badge_grade_GXR';
-  if(studioMode==='clay'&&/^lamp_rear_[LR]_finish(?:3|4b)?$/.test(selected||''))selected=selected.replace(/_finish(?:3|4b)?$/,'');
   root.visible=selected===id&&!bundledSlots.has(entry.slot)&&!buildState.hidden.includes(id)&&!buildState.hidden.includes(selectedPart)&&!buildState.hidden.includes(entry.slot);
  }
  // Workshop tyres/rims: the stock wheel keeps only the halves still in use (its centre badge rides on the rim).
@@ -975,7 +813,7 @@ function applyStudioPartVisibility(){
  const customTyre=buildState.tyre!=='stock',customRim=buildState.rim!=='stock',shift=customRim?(wheelCatalog.vehicle.stockOffset_mm-rimById.get(buildState.rim).offset_mm)/1000:0;
  for(const [id,root]of parts){const entry=entryById.get(id);if(entry.rigidClass!=='wheel'||entry.wheelSlot)continue;
   const side=Math.sign(entry.pivot?.[2]??manifest.slots[entry.slot].pivot[2]);
-  root.traverse(mesh=>{if(!mesh.isMesh)return;const zone=[].concat(mesh.material)[0].userData.zone;
+  root.traverse(mesh=>{if(!mesh.isMesh||mesh.userData.pickOverlay)return;const zone=[].concat(mesh.material)[0].userData.zone;
    mesh.visible=zone==='tyre'?!customTyre:zone==='brake'||!customRim;
    if(zone==='tyre'){mesh.userData.stockZ??=mesh.position.z;mesh.position.z=mesh.userData.stockZ+side*shift;}
   });
@@ -1000,15 +838,8 @@ function syncCustomWheels(){
   corner.name=slot+'_workshop';corner.position.set(...pivot);corner.rotation.y=pivot[2]>0?0:Math.PI;customWheels.add(corner);
  }
 }
-const clayWheelMaterials=new WeakMap();
 function paintCustomWheels(){
- customWheels.traverse(mesh=>{if(!mesh.isMesh)return;const own=mesh.userData.ownMaterial??=mesh.material;
-  if(studioMode!=='clay'){mesh.material=own;return;}
-  let clay=clayWheelMaterials.get(own);
-  if(!clay){clay=new THREE.MeshStandardMaterial({color:CLAY_COLORS[mesh.userData.zone]||CLAY_COLORS.rim,roughness:.9,metalness:0,side:own.side,
-   alphaMap:own.alphaMap||null,alphaTest:own.alphaTest||0,bumpMap:own.bumpMap||null,bumpScale:own.bumpScale??1});clayWheelMaterials.set(own,clay);}
-  mesh.material=clay;
- });
+ customWheels.traverse(mesh=>{if(mesh.isMesh&&!mesh.userData.pickOverlay)mesh.material=mesh.userData.ownMaterial??=mesh.material;});
 }
 // Tyre swaps are rigid too: a wheel part declares its tyre diameter (tyre_mm) and
 // the hubs rise by half the difference from stock; the body rides on top.
@@ -1023,7 +854,7 @@ function applyBuild(){
  syncCustomWheels();
  const tyreRise=(tyreDiameterMM()-STOCK_TYRE_MM)/2000;
  wheelGroup.position.y=tyreRise;
- bodyGroup.position.y=tyreRise+buildState.lift_mm/1000;clayBakedUniforms.uClayBodyLift.value=bodyGroup.position.y;
+ bodyGroup.position.y=tyreRise+buildState.lift_mm/1000;bodyLiftUniform.value=bodyGroup.position.y;
  applyStudioPartVisibility();
  applyZonePaint();car.updateMatrixWorld(true);rebuildFramingPoints();refreshCameraSafety();
  const displayedBase=plinth.visible;plinth.visible=false;bakeContactShadow();plinth.visible=displayedBase;
@@ -1099,7 +930,7 @@ function enforceCameraSafety(){
 const framingPoints=[],framingWithBase=[];
 function rebuildFramingPoints(){
  framingPoints.length=0;car.updateMatrixWorld(true);
- car.traverse(part=>{if(!part.isMesh)return;const positions=part.geometry.attributes.position;
+ car.traverse(part=>{if(!part.isMesh||part.userData.pickOverlay)return;const positions=part.geometry.attributes.position;
   const stride=Math.max(1,Math.ceil(positions.count/150));
   for(let i=0;i<positions.count;i+=stride)framingPoints.push(new THREE.Vector3().fromBufferAttribute(positions,i).applyMatrix4(part.matrixWorld));
  });
@@ -1239,48 +1070,6 @@ function setPaint(color,clicked){
 }
 swatches.forEach(s=>s.addEventListener('click',()=>setPaint(s.dataset.paint,s)));
 paintInput.addEventListener('input',e=>setPaint(e.target.value,null));
-const bgToggle=document.getElementById('bgToggle');
-const studioModes=['cream','slate','clay'],studioLabels={cream:'Cream',slate:'Slate',clay:'Clay'};
-const originalLighting={exposure:renderer.toneMappingExposure,environment:scene.environmentIntensity,
- keyColor:key.color.clone(),keyIntensity:key.intensity,keyPosition:key.position.clone(),
- fillColor:fill.color.clone(),groundColor:fill.groundColor.clone(),fillIntensity:fill.intensity};
-function updateStudioEnvironment(clay){
- if(clay===environmentIsClay)return;
- studioTarget.dispose();studioTarget=createStudioEnvironment(clay);environmentIsClay=clay;
- scene.environment=studioTarget.texture;
- const update=m=>{if(m?.envMap)m.envMap=scene.environment;};
- [paint,chrome,softChrome,metalDark,windowGlass,blackPlastic,tireMat,rimMat,lampLens,tailRed,orange,interiorMat,baseTopMaterial,baseEdgeMaterial].forEach(update);
- for(const root of parts.values())root.traverse(o=>{if(o.isMesh)for(const m of(Array.isArray(o.material)?o.material:[o.material])){
-  update(m);const original=originalMaterials.get(m)||m;update(original);update(creamMaterials.get(original));update(clayMaterials.get(original));
- }});
- for(const m of clayMaterials.values())update(m);
-}
-function setStudio(mode){
- studioMode=mode;const clay=mode==='clay';updateStudioEnvironment(clay);
- document.body.classList.toggle('cream',mode==='cream');document.body.classList.toggle('clay',clay);document.body.dataset.studio=mode;
- const next=studioModes[(studioModes.indexOf(mode)+1)%studioModes.length];
- document.getElementById('bgLabel').textContent='Studio: '+studioLabels[mode]+' ▸';
- bgToggle.title='Switch to '+studioLabels[next]+' studio';
- bgToggle.setAttribute('aria-label',studioLabels[mode]+' studio. '+bgToggle.title);bgToggle.removeAttribute('aria-pressed');
- if(clay){
-  renderer.toneMappingExposure=2.40;scene.environmentIntensity=.10;
-  key.color.set('#ffe0b0');key.intensity=5.80;key.position.set(-3.8,10,1.2);
-  fill.color.set('#fff0df');fill.groundColor.set('#c2a688');fill.intensity=.45;
- }else{
-  renderer.toneMappingExposure=originalLighting.exposure;scene.environmentIntensity=originalLighting.environment;
-  key.color.copy(originalLighting.keyColor);key.intensity=originalLighting.keyIntensity;key.position.copy(originalLighting.keyPosition);
-  fill.color.copy(originalLighting.fillColor);fill.groundColor.copy(originalLighting.groundColor);fill.intensity=originalLighting.fillIntensity;
-  document.querySelector('meta[name="theme-color"]').content=mode==='cream'?'#EBEBE9':'#4a6a82';
- }
- applyStudioPartVisibility();applyZonePaint();
- plinth.traverse(part=>{if(part.isMesh){const current=originalMaterials.get(part.material)||part.material;
-  part.material=studioMaterial(current,current===baseTopMaterial?'base_top':'base_edge');
- }});
- contactTint.value.set(clay?'#604450':0x000000);contactNearTint.value=clay?.20:1;contactNearStrength.value=clay?1.30:1;creamBakedUniforms.uCreamContactPower.value=mode==='cream'?CREAM_LOOK.nearContactPower:0;contactMaterial.opacity=clay?.94:1;
- const displayedBase=plinth.visible;plinth.visible=false;bakeContactShadow();plinth.visible=displayedBase;
- requestRender();
-}
-bgToggle.addEventListener('click',()=>setStudio(studioModes[(studioModes.indexOf(studioMode)+1)%studioModes.length]));
 const cleanToggle=document.getElementById('cleanToggle');
 renderer.domElement.tabIndex=0;
 function setCleanView(hidden){
@@ -1334,13 +1123,65 @@ function animate(){
   const guarded=enforceCameraSafety();
   if(wasTweening || moved || guarded || needsRender){updateClipping();renderFrame();needsRender=false;}
 }
-bgToggle.setAttribute('aria-label','Cream studio. Switch to Slate studio');
 await hashBuild().catch(async error=>{console.warn('Build hash ignored:',error.message);await commitBuild(()=>cloneJSON(baseBuild));});
 renderFrame();
 document.getElementById('loader').classList.add('hidden');
 animate();
+// Workshop picking: the first visible surface under a screen point, as {slot, partId, zone}.
+// The cabin interior (and the inside mirror on the shell) is never offered; glass in front of it is.
+const raycaster=new THREE.Raycaster(),pickPoint=new THREE.Vector2();
+function pickPart(clientX,clientY){
+ const rect=renderer.domElement.getBoundingClientRect();
+ pickPoint.set((clientX-rect.left)/rect.width*2-1,-(clientY-rect.top)/rect.height*2+1);
+ raycaster.setFromCamera(pickPoint,camera);
+ const meshes=[];car.traverseVisible(o=>{if(o.isMesh&&!o.userData.pickOverlay)meshes.push(o);});
+ for(const hit of raycaster.intersectObjects(meshes,false)){
+  const material=Array.isArray(hit.object.material)?hit.object.material[hit.face.materialIndex]:hit.object.material;
+  if(!material||material.visible===false)continue;
+  let corner=hit.object;while(corner&&!corner.name?.endsWith('_workshop'))corner=corner.parent;
+  if(corner)return {slot:corner.name.replace(/_workshop$/,''),partId:null,zone:material.userData.zone==='tyre'?'tyre':'rim'};
+  const original=originalMaterials.get(material)||material,{partId,zone}=original.userData,entry=entryById.get(partId);
+  if(!entry)continue;
+  if(zone==='interior'||(entry.slot==='body_shell'&&zone==='mirror'))return null;
+  return {slot:entry.slot,partId,zone};
+ }
+ return null;
+}
+// Highlights are see-through overlays sharing each mesh's geometry; nothing stored is touched.
+const highlightMaterials={select:new THREE.MeshBasicMaterial({color:'#2f80d8',transparent:true,opacity:.30,depthWrite:false,toneMapped:false,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-4}),
+ hover:new THREE.MeshBasicMaterial({color:'#2f80d8',transparent:true,opacity:.14,depthWrite:false,toneMapped:false,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-4})};
+const skipOverlay=new THREE.MeshBasicMaterial({visible:false}),overlays={select:[],hover:[]};
+function setHighlight(kind,targets){
+ for(const overlay of overlays[kind])overlay.removeFromParent();overlays[kind]=[];
+ const zonesFor=new Map((targets||[]).map(t=>[t.slot,t.zones||null]));
+ const add=(mesh,zones)=>{
+  const ok=m=>{const zone=(originalMaterials.get(m)||m).userData.zone;return zone!=='interior'&&(!zones||zones.includes(zone)||(zones.includes('rim')&&zone!=='tyre'&&mesh.parent?.name?.endsWith?.('_workshop')));};
+  const list=[].concat(mesh.material);if(!list.some(ok))return;
+  const overlay=new THREE.Mesh(mesh.geometry,Array.isArray(mesh.material)?mesh.material.map(m=>ok(m)?highlightMaterials[kind]:skipOverlay):highlightMaterials[kind]);
+  overlay.userData.pickOverlay=true;overlay.renderOrder=20;mesh.add(overlay);overlays[kind].push(overlay);
+ };
+ for(const [id,root] of parts){if(!root.visible)continue;
+  root.traverseVisible(mesh=>{if(!mesh.isMesh||mesh.userData.pickOverlay)return;const own=entryById.get((originalMaterials.get([].concat(mesh.material)[0])||[].concat(mesh.material)[0]).userData.partId);
+   if(own&&zonesFor.has(own.slot))add(mesh,zonesFor.get(own.slot));});
+ }
+ for(const corner of customWheels.children){const slot=corner.name.replace(/_workshop$/,'');if(!zonesFor.has(slot))continue;
+  const zones=zonesFor.get(slot);corner.traverseVisible(mesh=>{if(mesh.isMesh&&!mesh.userData.pickOverlay&&(!zones||zones.includes(mesh.material.userData?.zone==='tyre'?'tyre':'rim')))add(mesh,null);});}
+ requestRender();
+}
+// A tap (one pointer, under 6 px of travel, under 600 ms) outside Clean view is offered to the workshop.
+let viewTap=null;
+renderer.domElement.addEventListener('pointerdown',e=>{
+ viewTap=!document.body.classList.contains('clean-view')&&e.isPrimary?{id:e.pointerId,x:e.clientX,y:e.clientY,time:performance.now()}:null;
+},{passive:true});
+renderer.domElement.addEventListener('pointermove',e=>{if(viewTap&&(e.pointerId!==viewTap.id||Math.hypot(e.clientX-viewTap.x,e.clientY-viewTap.y)>6))viewTap=null;},{passive:true});
+renderer.domElement.addEventListener('pointerup',e=>{
+ if(viewTap&&viewTap.id===e.pointerId&&performance.now()-viewTap.time<600&&Math.hypot(e.clientX-viewTap.x,e.clientY-viewTap.y)<=6)
+  window.dispatchEvent(new CustomEvent('lcview-tap',{detail:{clientX:e.clientX,clientY:e.clientY}}));
+ viewTap=null;
+},{passive:true});
+renderer.domElement.addEventListener('pointercancel',()=>{viewTap=null;},{passive:true});
 // Workshop panel (workshop.js) is a separate module that only talks to lcBuild/lcView.
-window.lcView=Object.freeze({setInset(px,bottomPx=0){
+window.lcView=Object.freeze({pick:pickPart,highlight:setHighlight,finishes:FINISHES,canvas:renderer.domElement,setInset(px,bottomPx=0){
  const next=Math.max(0,px|0),nextBottom=Math.max(0,bottomPx|0);if(next===frameInset&&nextBottom===frameInsetBottom)return;
  frameInset=next;frameInsetBottom=nextBottom;
  // Refit the current preset into the space left beside the panel; free orbits just recentre.

@@ -96,7 +96,49 @@ function shareState(state){
  for(const key of ['tyre','rim'])if(state[key]!==base[key])diff[key]=state[key];
  const paint=Object.fromEntries(Object.entries(state.paint).filter(([key,value])=>base.paint[key]!==value));
  if(Object.keys(paint).length)diff.paint=paint;
+ if(Object.keys(state.finish).length)diff.finish={...state.finish};
+ if(JSON.stringify([...state.hidden].sort())!==JSON.stringify([...base.hidden].sort()))diff.hidden=[...state.hidden];
  return diff;
+}
+
+// ── Pieces: every outside part, picked by tapping the car or from the Parts list ──
+// A piece names slots (and zones) of the stored car, an optional upgrade category,
+// finish choices per zone and whether it can be taken off. The cabin interior is never a piece.
+const FINISHES=lcView.finishes;
+const ZONE_LABEL={paint:'Paint',chrome:'Chrome trim',black:'Black trim',glass:'Window tint',lamp_clear:'Lenses',lamp_red:'Lenses'};
+const pieces=data.pieces.map(piece=>({...piece}));
+// Accessory parts arriving later belong to their category's piece, so a tap on a bull bar opens Front.
+for(const category of data.categories){
+ if(category.catalog)continue;
+ const slots=categoryPartSlots(category);if(!slots.length)continue;
+ const piece=pieces.find(p=>p.category===category.id);
+ if(piece)piece.slots=[...new Set([...piece.slots,...slots])];else pieces.push({id:category.id,label:category.label,slots,category:category.id});
+}
+const pieceById=new Map(pieces.map(piece=>[piece.id,piece]));
+const pieceFor=hit=>hit&&pieces.find(piece=>piece.slots.includes(hit.slot)&&(!piece.zones||piece.zones.includes(hit.zone)))||null;
+const slotZones=slot=>new Set([manifest.base,...manifest.parts].filter(entry=>entry.slot===slot).flatMap(entry=>entry.zones));
+const zoneSlots=(piece,zone)=>piece.slots.filter(slot=>slotZones(slot).has(zone));
+const pieceFinish=(piece,zone,state)=>state.finish[zoneSlots(piece,zone)[0]+':'+zone]||'stock';
+const pieceRemoved=(piece,state)=>!!piece.removable&&piece.slots.every(slot=>state.hidden.includes(slot));
+const finishPatch=(piece,zone,id)=>({finish:Object.fromEntries(zoneSlots(piece,zone).map(slot=>[slot+':'+zone,id==='stock'?null:id]))});
+function removePatch(piece,remove,state){
+ const hidden=state.hidden.filter(slot=>!piece.slots.includes(slot));
+ return {hidden:remove?[...hidden,...piece.slots]:hidden};
+}
+const PAINTS=[...document.querySelectorAll('[data-paint]')].map(button=>({hex:button.dataset.paint,label:button.title}));
+const paintName=hex=>PAINTS.find(p=>p.hex===hex)?.label||hex;
+// What changed on a piece, in words, for the Parts list and the build sheet.
+function pieceChanges(piece,state){
+ if(pieceRemoved(piece,state))return ['Removed'];
+ const out=[];
+ if(piece.paint&&state.paint.paint!==lcBuild.getBaseState().paint.paint)out.push(paintName(state.paint.paint));
+ for(const zone of Object.keys(piece.finishes||{})){const id=pieceFinish(piece,zone,state);if(id!=='stock')out.push(`${ZONE_LABEL[zone]}: ${FINISHES[id].label.toLowerCase()}`);}
+ return out;
+}
+// The car lights up what the open page is about: the piece, or the wheels behind Tyres/Rims.
+function highlightTargets(){
+ const piece=view.startsWith('piece:')?pieceById.get(view.slice(6)):['tyres','rims'].includes(view)?pieceById.get(view):null;
+ return piece?piece.slots.map(slot=>({slot,zones:piece.zones||null})):null;
 }
 
 // ── Panel ──────────────────────────────────────────────────────────────────
@@ -147,6 +189,11 @@ body.clean-view #workshop{display:none}
 #workshop .ws-btn{border:1px solid var(--line);border-radius:10px;padding:10px;font-weight:650;background:transparent}
 #workshop .ws-btn.pri{background:var(--ink);color:#f4f4ef;border-color:var(--ink)}
 #workshop .ws-note{opacity:.6;line-height:1.5}
+#workshop .ws-chips{display:flex;flex-wrap:wrap;gap:6px;margin:-4px 0 4px}
+#workshop .ws-chip{border:1px solid var(--line);border-radius:100px;padding:7px 11px;background:transparent;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+#workshop .ws-chip[aria-checked=true]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset;color:var(--accent)}
+#workshop .ws-chip[disabled]{opacity:.45;cursor:default}
+#workshop .ws-paint i{width:12px;height:12px;border-radius:50%;border:1px solid rgba(0,0,0,.25)}
 #workshopToggle[aria-pressed=true]{background:var(--ink);color:#f4f4ef;border-color:var(--ink)}
 @media (max-width:650px){#workshop{left:10px;right:10px;width:auto;top:auto;bottom:10px;height:52vh;padding:14px 14px}
  body.workshop-open .bottom{visibility:hidden}}
@@ -164,34 +211,54 @@ const statusHTML=fit=>{
  const detail=fit.notes.length?fit.notes.map(n=>esc(n.text)).join('<br>'):`Tyre ${fit.tyre_mm} mm · front ${fit.tyres[0].mm} mm / rear ${fit.tyres[1].mm} mm arch clearance${fit.mounts.length?` · ${fit.mounts.length} parts on mounts`:''}`;
  return `<div class="ws-status"><span class="ws-led ${fit.level}"></span><div>${title}<small>${detail}</small></div></div>`;
 };
+function optionsHTML(category,state,current=selectedOption(category,state)){
+ return `<div class="ws-opts" role="radiogroup" aria-label="${esc(category.label)}">${category.options.map(option=>{const fits=wheelFit(option,state),ok=available(option,state);
+  // Reasons name the option itself; inside its own row that is implied.
+  const detail=fits.ok?option.detail||'':fits.why.map(why=>why.startsWith(option.label+' ')?why.slice(option.label.length+1).replace(/^./,c=>c.toUpperCase()):why).join('. ');
+  return `<button class="ws-opt${fits.ok?'':' nofit'}" role="radio" data-opt="${option.id}" data-optcat="${category.id}" aria-checked="${option===current}" ${ok?'':'disabled'}><span class="ws-radio"></span><span class="ws-t"><div class="ws-n">${esc(option.label)}</div><div class="ws-v">${esc(detail)}</div></span>${ok?'':`<span class="ws-soon">${fits.ok?'soon':'won’t fit'}</span>`}</button>`;}).join('')}</div>`;
+}
 function render(){
  const state=lcBuild.getState(),fit=fitCheck(state),locked=!!compareBase;
  const compare=`<div class="ws-seg" role="group" aria-label="Compare"><button data-compare="base" aria-pressed="${locked}">Base car</button><button data-compare="build" aria-pressed="${!locked}">My build</button></div>`;
  let body='';
  if(view==='home'){
   body=`<div class="ws-head"><div><div class="ws-micro">Workshop</div><div class="ws-title">My build</div></div><button class="ws-x" data-close aria-label="Close workshop">×</button></div>${compare}
-  <div class="ws-scroll"><div class="ws-list">${data.categories.map((category,i)=>{const option=selectedOption(category,state),mod=option&&option!==category.options[0];
+  <div class="ws-scroll"><div class="ws-list">${(()=>{const changed=pieces.filter(piece=>pieceChanges(piece,state).length).length;
+   return `<button class="ws-row${changed?' mod':''}" data-parts ${locked?'disabled':''}><span class="ws-num">◎</span><span class="ws-t"><div class="ws-n">Parts</div><div class="ws-v">${changed?`${changed} part${changed>1?'s':''} changed`:'Tap any part of the car'}</div></span><span aria-hidden="true">›</span></button>`;})()}${data.categories.map((category,i)=>{const option=selectedOption(category,state),mod=option&&option!==category.options[0];
    return `<button class="ws-row${mod?' mod':''}" data-cat="${category.id}" ${locked?'disabled':''}><span class="ws-num">${i+1}</span><span class="ws-t"><div class="ws-n">${esc(category.label)}</div><div class="ws-v">${esc(option?option.label:'Stock')}</div></span><span aria-hidden="true">›</span></button>`;}).join('')}</div>
-  <p class="ws-note">Options marked “soon” need their 3D parts first. Mount points, tyre clearance and the fit check are already live.</p></div>
+  <p class="ws-note">Tap any part of the car to change it: finish, tint, upgrades, or take it off. Options marked “soon” need their 3D parts first.</p></div>
   ${statusHTML(fit)}<div class="ws-actions"><button class="ws-btn" data-sheet>Build sheet</button><button class="ws-btn pri" data-share>${flash||'Copy share link'}</button></div>`;
  }else if(view==='sheet'){
   const now=dimensions(),base=baseDims,row=(label,a,b)=>`<tr><td>${label}</td><td>${a.toLocaleString()}</td><td>${b.toLocaleString()}</td><td class="${a!==b?'d':''}">${a===b?'0':(b>a?'+':'')+(b-a).toLocaleString()}</td></tr>`;
   body=`<div class="ws-head"><button class="ws-back" data-home aria-label="Back">‹</button><div><div class="ws-micro">Workshop</div><div class="ws-title">Build sheet</div></div></div>
   <div class="ws-scroll"><table><tr><th>mm</th><th>Base</th><th>Build</th><th>Δ</th></tr>${row('Length',base.length,now.length)}${row('Height',base.height,now.height)}${row('Width (mirrors)',base.width,now.width)}${row('Lowest body point',base.clearance,now.clearance)}${row('Tyre diameter',STOCK,fit.tyre_mm)}</table>
-  <div class="ws-micro">Installed</div><div class="ws-list">${data.categories.map(category=>{const option=selectedOption(category,state);return `<div class="ws-row" style="cursor:default"><span class="ws-t"><div class="ws-n">${esc(option?option.label:'Stock')}</div><div class="ws-v">${esc(category.label)}</div></span></div>`;}).join('')}</div>
+  <div class="ws-micro">Installed</div><div class="ws-list">${data.categories.map(category=>{const option=selectedOption(category,state);return `<div class="ws-row" style="cursor:default"><span class="ws-t"><div class="ws-n">${esc(option?option.label:'Stock')}</div><div class="ws-v">${esc(category.label)}</div></span></div>`;}).join('')}${pieces.map(piece=>{const changes=pieceChanges(piece,state);return changes.length?`<div class="ws-row" style="cursor:default"><span class="ws-t"><div class="ws-n">${esc(changes.join(' · '))}</div><div class="ws-v">${esc(piece.label)}</div></span></div>`:'';}).join('')}</div>
   <p class="ws-note">${esc(data.clearanceNote)}</p></div>${statusHTML(fit)}
   <div class="ws-actions"><button class="ws-btn" data-reset>Reset to base</button><button class="ws-btn pri" data-share>${flash||'Copy share link'}</button></div>`;
+ }else if(view==='parts'){
+  body=`<div class="ws-head"><button class="ws-back" data-home aria-label="Back">‹</button><div><div class="ws-micro">Workshop</div><div class="ws-title">Parts</div></div></div>
+  <div class="ws-scroll"><p class="ws-note">Tap a part on the car, or pick it here.</p><div class="ws-list">${pieces.map(piece=>{const changes=pieceChanges(piece,state);
+   return `<button class="ws-row${changes.length?' mod':''}" data-piece="${piece.id}"><span class="ws-t"><div class="ws-n">${esc(piece.label)}</div><div class="ws-v">${esc(changes.length?changes.join(' · '):piece.detail||'Stock')}</div></span><span aria-hidden="true">›</span></button>`;}).join('')}</div></div>${statusHTML(fit)}`;
+ }else if(view.startsWith('piece:')){
+  const piece=pieceById.get(view.slice(6)),removed=pieceRemoved(piece,state),category=piece.category&&data.categories.find(c=>c.id===piece.category);
+  const chips=(zone,ids,current)=>`<div class="ws-micro">${esc(ZONE_LABEL[zone])}</div><div class="ws-chips" role="radiogroup" aria-label="${esc(ZONE_LABEL[zone])}">${['stock',...ids].map(id=>
+   `<button class="ws-chip" role="radio" data-finish="${zone}:${id}" aria-checked="${current===id}" ${removed?'disabled':''}>${esc(id==='stock'?'Stock':FINISHES[id].label)}</button>`).join('')}</div>`;
+  body=`<div class="ws-head"><button class="ws-back" data-parts aria-label="Back to parts">‹</button><div><div class="ws-micro">Part</div><div class="ws-title">${esc(piece.label)}</div></div></div>
+  <div class="ws-scroll">${piece.detail?`<p class="ws-note">${esc(piece.detail)}</p>`:''}
+  ${piece.paint?`<div class="ws-micro">Colour</div><div class="ws-chips" role="radiogroup" aria-label="Colour">${PAINTS.map(p=>`<button class="ws-chip ws-paint" role="radio" data-painthex="${p.hex}" aria-checked="${state.paint.paint===p.hex}"><i style="background:${p.hex}"></i>${esc(p.label)}</button>`).join('')}</div><p class="ws-note">Other parts can be set to body colour, gloss or matte black from their own pages.</p>`:''}
+  ${Object.entries(piece.finishes||{}).map(([zone,ids])=>chips(zone,ids,pieceFinish(piece,zone,state))).join('')}
+  ${category?`<div class="ws-micro">${esc(category.label)}${category.catalog?'':' upgrades'}</div>${optionsHTML(category,state)}`:''}
+  ${piece.removable?`<button class="ws-btn" data-remove="${removed?'refit':'remove'}">${removed?'Refit this part':'Take this part off'}</button>`:''}
+  ${!piece.paint&&!piece.finishes&&!category&&!piece.removable?'<p class="ws-note">Nothing to change on this part yet.</p>':''}</div>${statusHTML(fit)}`;
  }else{
   const category=data.categories.find(c=>c.id===view),current=selectedOption(category,state);
   body=`<div class="ws-head"><button class="ws-back" data-home aria-label="Back">‹</button><div><div class="ws-micro">Workshop</div><div class="ws-title">${esc(category.label)}</div></div></div>
-  <div class="ws-scroll"><div class="ws-opts" role="radiogroup" aria-label="${esc(category.label)}">${category.options.map(option=>{const fits=wheelFit(option,state),ok=available(option,state);
-   // Reasons name the option itself; inside its own row that is implied.
-   const detail=fits.ok?option.detail||'':fits.why.map(why=>why.startsWith(option.label+' ')?why.slice(option.label.length+1).replace(/^./,c=>c.toUpperCase()):why).join('. ');
-   return `<button class="ws-opt${fits.ok?'':' nofit'}" role="radio" data-opt="${option.id}" aria-checked="${option===current}" ${ok?'':'disabled'}><span class="ws-radio"></span><span class="ws-t"><div class="ws-n">${esc(option.label)}</div><div class="ws-v">${esc(detail)}</div></span>${ok?'':`<span class="ws-soon">${fits.ok?'soon':'won’t fit'}</span>`}</button>`;}).join('')}</div>
+  <div class="ws-scroll">${optionsHTML(category,state,current)}
   ${category.catalog?`<p class="ws-note">${esc(category.catalog==='tyres'?`Fitted to: ${specOf.rim(state.rim).label} (${specOf.rim(state.rim).detail}). “Won’t fit” is checked against this rim; “soon” sizes fit but need their 3D models.`:`Carrying: ${specOf.tyre(state.tyre).label}. “Won’t fit” is checked against this tyre; “soon” rims fit but need their 3D models.`)} ${esc(wheels.vehicle.note)}</p>`:''}
   ${category.catalog==='tyres'||category.id==='stance'?`<p class="ws-note">${esc(data.clearanceNote)}</p>`:''}</div>${statusHTML(fit)}`;
  }
  panel.innerHTML=body;
+ lcView.highlight('select',highlightTargets());
 }
 const baseDims=(()=>{
  // Base numbers come from the stored part bounds of the default build (lift 0, stock tyres).
@@ -215,7 +282,7 @@ function setOpen(open){
  const shown=open&&!document.body.classList.contains('clean-view'),side=innerWidth>650,rect=panel.getBoundingClientRect();
  // Side panel on wide screens, bottom sheet on phones: the car refits into what is left.
  lcView.setInset(shown&&side?rect.right+12:0,shown&&!side?innerHeight-rect.top+8:0);
- if(open)render();
+ if(open)render();else{lcView.highlight('select',null);lcView.highlight('hover',null);lcView.canvas.style.cursor='';}
 }
 panel.addEventListener('click',async event=>{
  const t=event.target.closest('button');if(!t||t.disabled)return;
@@ -223,6 +290,11 @@ panel.addEventListener('click',async event=>{
  if(t.dataset.home!==undefined){view='home';return render();}
  if(t.dataset.sheet!==undefined){view='sheet';return render();}
  if(t.dataset.cat){view=t.dataset.cat;return render();}
+ if(t.dataset.parts!==undefined){view='parts';return render();}
+ if(t.dataset.piece){view='piece:'+t.dataset.piece;return render();}
+ if(t.dataset.finish){const piece=pieceById.get(view.slice(6)),[zone,id]=t.dataset.finish.split(':');await lcBuild.setState(finishPatch(piece,zone,id));return render();}
+ if(t.dataset.painthex){await lcBuild.setState({paint:{paint:t.dataset.painthex}});return render();}
+ if(t.dataset.remove){const piece=pieceById.get(view.slice(6));await lcBuild.setState(removePatch(piece,t.dataset.remove==='remove',lcBuild.getState()));return render();}
  if(t.dataset.share!==undefined)return share();
  if(t.dataset.reset!==undefined){compareBase=null;await lcBuild.replaceState({});return render();}
  if(t.dataset.compare){
@@ -231,16 +303,33 @@ panel.addEventListener('click',async event=>{
   return render();
  }
  if(t.dataset.opt){
-  const category=data.categories.find(c=>c.id===view),option=category.options.find(o=>o.id===t.dataset.opt);
+  const category=data.categories.find(c=>c.id===t.dataset.optcat),option=category.options.find(o=>o.id===t.dataset.opt);
   // New tyres and rims are built on first use; say so while that runs.
   if(option.set){const v=t.querySelector('.ws-v');if(v)v.textContent='Fitting…';panel.querySelectorAll('.ws-opt').forEach(b=>b.disabled=true);}
   await lcBuild.setState(patchFor(category,option));render();
  }
 });
 toggle.addEventListener('click',()=>setOpen(!document.body.classList.contains('workshop-open')));
+// Tapping the car opens that part's page; a tap on empty space goes back to the list.
+const workshopLive=()=>document.body.classList.contains('workshop-open')&&!document.body.classList.contains('clean-view')&&!compareBase;
+addEventListener('lcview-tap',event=>{
+ if(!workshopLive())return;
+ const piece=pieceFor(lcView.pick(event.detail.clientX,event.detail.clientY));
+ if(piece){view='piece:'+piece.id;render();}else if(view.startsWith('piece:')){view='parts';render();}
+});
+// Mouse hover lights the part under the pointer (at most every 60 ms; touch has no hover).
+let hoverTimer=0,hoverPoint=null,hoverPiece=null;
+lcView.canvas.addEventListener('pointermove',event=>{
+ if(event.pointerType!=='mouse'||event.buttons||!workshopLive())return;
+ hoverPoint=[event.clientX,event.clientY];if(hoverTimer)return;
+ hoverTimer=setTimeout(()=>{hoverTimer=0;const piece=pieceFor(lcView.pick(...hoverPoint));
+  if(piece===hoverPiece)return;hoverPiece=piece;lcView.canvas.style.cursor=piece?'pointer':'';
+  lcView.highlight('hover',piece&&view!=='piece:'+piece.id?piece.slots.map(slot=>({slot,zones:piece.zones||null})):null);},60);
+},{passive:true});
+lcView.canvas.addEventListener('pointerleave',()=>{hoverPiece=null;lcView.canvas.style.cursor='';lcView.highlight('hover',null);},{passive:true});
 addEventListener('keydown',event=>{if(event.key==='Escape'&&document.body.classList.contains('workshop-open'))setOpen(false);});
 addEventListener('resize',()=>{if(document.body.classList.contains('workshop-open'))setOpen(true);},{passive:true});
 addEventListener('lcbuild-change',()=>{if(document.body.classList.contains('workshop-open'))render();});
 new MutationObserver(()=>{if(document.body.classList.contains('workshop-open'))setOpen(true);}).observe(document.body,{attributes:true,attributeFilter:['class']});
 
-window.lcWorkshop=Object.freeze({data,wheels,wheelChecks,wheelFit,fitCheck,tyreClearance,mountChecks,dimensions,baseDims,patchFor,selectedOption,shareState,open:()=>setOpen(true),close:()=>setOpen(false)});
+window.lcWorkshop=Object.freeze({data,wheels,pieces,pieceFor,pieceChanges,wheelChecks,wheelFit,fitCheck,tyreClearance,mountChecks,dimensions,baseDims,patchFor,selectedOption,shareState,open:()=>setOpen(true),close:()=>setOpen(false)});

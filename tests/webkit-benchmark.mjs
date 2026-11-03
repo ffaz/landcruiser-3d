@@ -16,7 +16,7 @@ for(let i=2;i<process.argv.length;i++){
  if(!['--source','--output','--deps','--three-dir','--frames','--library-path','--asset-root','--studio'].includes(key)||!process.argv[i+1])throw Error('Expected --source, --output, --deps, --three-dir, --frames or --library-path followed by a value');
  options[key.slice(2)]=process.argv[++i];
 }
-if(!['cream','slate','clay'].includes(options.studio))throw Error('--studio must be cream, slate or clay');
+if(options.studio!=='cream')throw Error('--studio: Cream is the only studio');
 options.frames=Number(options.frames);
 if(!Number.isInteger(options.frames)||options.frames<12||options.frames>120)throw Error('--frames must be an integer from12 to120');
 for(const key of ['source','output','deps'])options[key]=path.resolve(options[key]);
@@ -39,7 +39,6 @@ try{
  const page=await browser.newPage({...devices['iPad Pro 11'],viewport:{width:1366,height:1024},deviceScaleFactor:1});
  page.on('pageerror',e=>errors.push({type:'pageerror',message:e.message}));page.on('console',m=>{if(m.type()==='error')errors.push({type:'console',message:m.text()})});page.on('requestfailed',r=>errors.push({type:'request',url:r.url(),message:r.failure()?.errorText}));
  await page.goto(`http://127.0.0.1:${server.address().port}${testBasePath}`,{timeout:120000});await page.waitForSelector('#loader.hidden',{state:'attached',timeout:120000});
- await page.evaluate(desired=>{const current=()=>document.body.dataset.studio||(document.body.classList.contains('clay')?'clay':document.body.classList.contains('cream')?'cream':'slate');for(let tries=0;tries<3&&current()!==desired;tries++)document.querySelector('#bgToggle').click();if(current()!==desired)throw Error('Could not select '+desired+' studio')},options.studio);
  await page.evaluate(()=>document.querySelector('[data-view=quarter]').click());
  await page.waitForFunction(()=>window.__perf&&!window.__perf.isTweening(),null,{timeout:120000});
  result=await page.evaluate(async(frameCount)=>{
