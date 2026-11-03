@@ -1,0 +1,83 @@
+{
+  "fit": {
+    "level": "ok",
+    "tyre_mm": 802.8,
+    "tyres": [
+      {
+        "arch": "front",
+        "mm": 56,
+        "status": "ok"
+      },
+      {
+        "arch": "rear",
+        "mm": 89,
+        "status": "ok"
+      }
+    ],
+    "mounts": [],
+    "notes": []
+  },
+  "state": {
+    "slots": {
+      "body_shell": "body_shell",
+      "bonnet": "bonnet",
+      "bumper_front": "bumper_front_plate_clean",
+      "bumper_rear": "bumper_rear",
+      "door_FL": "door_FL",
+      "door_FR": "door_FR",
+      "door_RL": "door_RL",
+      "door_RR": "door_RR",
+      "grille": "grille",
+      "lamp_front_L": "lamp_front_L",
+      "lamp_front_R": "lamp_front_R",
+      "lamp_rear_L": "lamp_rear_L_finish4b",
+      "lamp_rear_R": "lamp_rear_R_finish4b",
+      "mirror_L": "mirror_L",
+      "mirror_R": "mirror_R",
+      "roof_rails": "roof_rails",
+      "side_step_L": "side_step_L",
+      "side_step_R": "side_step_R",
+      "spoiler": null,
+      "tailgate": "tailgate",
+      "unsorted_01": "unsorted_01",
+      "unsorted_02": "unsorted_02",
+      "unsorted_03": "unsorted_03",
+      "unsorted_04": "unsorted_04",
+      "unsorted_05": "unsorted_05",
+      "unsorted_06": "unsorted_06",
+      "unsorted_07": "unsorted_07",
+      "unsorted_08": "unsorted_08",
+      "unsorted_09": "unsorted_09",
+      "unsorted_10": "unsorted_10",
+      "wheel_FL": "wheel_FL_ht26570",
+      "wheel_FR": "wheel_FR_ht26570",
+      "wheel_RL": "wheel_RL_ht26570",
+      "wheel_RR": "wheel_RR_ht26570",
+      "arch_flares": null,
+      "chassis": null,
+      "emblem_front": "emblem_front",
+      "emblem_rear": "emblem_rear",
+      "lettering_rear": "lettering_rear_base",
+      "wheel_emblem_FL": "wheel_emblem_FL",
+      "wheel_emblem_FR": "wheel_emblem_FR",
+      "wheel_emblem_RL": "wheel_emblem_RL",
+      "wheel_emblem_RR": "wheel_emblem_RR",
+      "badge_grade": "badge_grade_GXR_finish4b",
+      "gap_seal_rear_L": "gap_seal_rear_L",
+      "gap_seal_rear_R": "gap_seal_rear_R",
+      "front_plate": "front_plate"
+    },
+    "paint": {
+      "paint": "#f4f4ef"
+    },
+    "lift_mm": 0,
+    "lamps_on": false,
+    "hidden": []
+  },
+  "dimensions": {
+    "length": 5000,
+    "height": 1935,
+    "width": 2297,
+    "clearance": 241
+  }
+}
