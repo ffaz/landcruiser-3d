@@ -1,37 +1,16 @@
 {
   "mode": "after",
   "source": "/workspace/lc-rims-review/index.html",
-  "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+  "sourceSha256": "55d7bef0f25e7470b93759bd8a85d67993d288ee77039cc7f07f95ad2c38e7fa",
   "threeVersion": "0.166.1",
-  "checksOnly": false,
+  "checksOnly": true,
   "bothStudios": true,
   "viewport": {
     "width": 1440,
     "height": 1000
   },
   "method": "Real UI and camera updates; test-only intermediate GPU draw suppression; product final frame rendered for every screenshot.",
-  "snapshots": [
-    "cream/front.png",
-    "cream/side.png",
-    "cream/rear.png",
-    "cream/quarter.png",
-    "cream/top.png",
-    "slate/front.png",
-    "slate/side.png",
-    "slate/rear.png",
-    "slate/quarter.png",
-    "slate/top.png",
-    "orbit-000.png",
-    "orbit-045.png",
-    "orbit-090.png",
-    "orbit-135.png",
-    "orbit-180.png",
-    "orbit-225.png",
-    "orbit-270.png",
-    "orbit-315.png",
-    "base-quarter.png",
-    "no-js.png"
-  ],
+  "snapshots": [],
   "reusedSnapshots": [],
   "errors": [],
   "checks": {
@@ -151,7 +130,7 @@
         "safePolar": true,
         "minCameraY": 0.15,
         "aboveMinimum": true,
-        "widthFraction": 0.8029786328774091
+        "widthFraction": 0.8034356628868835
       },
       {
         "studio": "slate",
@@ -261,7 +240,7 @@
         "safePolar": true,
         "minCameraY": 0.15,
         "aboveMinimum": true,
-        "widthFraction": 0.8029786328774091
+        "widthFraction": 0.8034356628868835
       }
     ],
     "autoRotate": {
@@ -289,9 +268,9 @@
     "reset": true,
     "bakedCoverage": true,
     "bakedData": {
-      "opaqueMeshes": 341,
-      "coveredOpaqueMeshes": 341,
-      "vertices": 1301733,
+      "opaqueMeshes": 233,
+      "coveredOpaqueMeshes": 233,
+      "vertices": 872749,
       "missing": [],
       "strengths": {
         "ao": 0.9,
@@ -339,34 +318,34 @@
       },
       {
         "view": "rear",
-        "widthFraction": 0.7629692962503282,
+        "widthFraction": 0.7614707779027504,
         "bounds": {
-          "minX": -0.7629692962503282,
-          "maxX": 0.7629692962503282,
-          "minY": -0.6989635358358648,
-          "maxY": 0.7420885358358651
+          "minX": -0.7614707779027504,
+          "maxX": 0.7614707779027504,
+          "minY": -0.6989514249725902,
+          "maxY": 0.7420764249725903
         },
         "visible": true
       },
       {
         "view": "quarter",
-        "widthFraction": 0.7975981963764768,
+        "widthFraction": 0.797598196376477,
         "bounds": {
-          "minX": -0.797598196376476,
-          "maxX": 0.7975981963764776,
-          "minY": -0.5446985507338756,
-          "maxY": 0.5878235507338752
+          "minX": -0.7975981963764769,
+          "maxX": 0.7975981963764771,
+          "minY": -0.5446985507338755,
+          "maxY": 0.5878235507338753
         },
         "visible": true
       },
       {
         "view": "top",
-        "widthFraction": 0.7977611531518982,
+        "widthFraction": 0.7977611531518984,
         "bounds": {
-          "minX": -0.7977611536201112,
-          "maxX": 0.7977611526836852,
-          "minY": -0.576614224821197,
-          "maxY": 0.6197383940941369
+          "minX": -0.7977611536201115,
+          "maxX": 0.7977611526836854,
+          "minY": -0.5766142248211961,
+          "maxY": 0.6197383940941382
         },
         "visible": true
       }
@@ -394,7 +373,7 @@
         1
       ],
       "bodyMeshes": 245,
-      "wheelMeshes": 142,
+      "wheelMeshes": 34,
       "maxBodyDeltaError": 4.163336342344337e-17,
       "maxWheelMovement": 0,
       "positionArraysUnchanged": true,
@@ -480,8 +459,8 @@
     },
     {
       "path": "model/manifest.json",
-      "bytes": 155437,
-      "sha256": "c2f99b207e99ccdef887bd07c3a0aa76e07bfa5abf1c1a554aa2d30816de2c00"
+      "bytes": 157161,
+      "sha256": "bd691936a038429cb025eb1b15d35e4b42c8a63f3e5d5bb19dc0da9bcc43d98a"
     },
     {
       "path": "model/parts/badge_grade_GXR.glb",
@@ -640,63 +619,63 @@
     },
     {
       "path": "model/parts/rim_FL_disc.glb",
-      "bytes": 218652,
-      "sha256": "b09c4f6747bc74d4eb14bff2265b8b0a2367acd595756b2aae31e991f524d42d"
+      "bytes": 230432,
+      "sha256": "7178bcb4b7bc52c3c15057e96e8767d3522bc2b790c316f1235045f7ed0c3d37"
     },
     {
       "path": "model/parts/rim_FL_steel.glb",
-      "bytes": 275272,
-      "sha256": "3d309214f8f99a9be7b6aaba14277d04215db7633fbcfd5c50f57ec0aa3c5149"
+      "bytes": 288532,
+      "sha256": "739f34a7b3fb10296d818c77797188912fcc93c402bf774cbecdb2a16af2e8b3"
     },
     {
       "path": "model/parts/rim_FL_window.glb",
-      "bytes": 213904,
-      "sha256": "826cd83e0ae74e14cacf859b52b82304c9b6b63f25d5b396815fe328f4520408"
+      "bytes": 226864,
+      "sha256": "deb23451720cab048be1faf89e36d3ea772a3d092d08fc01a9709d18d4563de2"
     },
     {
       "path": "model/parts/rim_FR_disc.glb",
-      "bytes": 226924,
-      "sha256": "0a263758b48caf8c37bb713b0cb6b6e027855cc4805db023f59e3b5ce8327b55"
+      "bytes": 240588,
+      "sha256": "63d9fc9a708386e633f4de6fc002a826c2961cd3f8b60f79047dce825654c252"
     },
     {
       "path": "model/parts/rim_FR_steel.glb",
-      "bytes": 284944,
-      "sha256": "cab43078a3c9c91579c4fe1f022274c46208d92dd89c88684f2df0550e0d4192"
+      "bytes": 300036,
+      "sha256": "ee1374d327500197183643591ad15415ad6a3207443ccd23e8392a61fa203d94"
     },
     {
       "path": "model/parts/rim_FR_window.glb",
-      "bytes": 222416,
-      "sha256": "144977c5fbb0a0771fe645773b7dd3717adfe3447285186949f06fd0480d6e58"
+      "bytes": 237220,
+      "sha256": "decd985b68419e19f5a33481ec2043c23a04da20386b12d904d44d6ae6021483"
     },
     {
       "path": "model/parts/rim_RL_disc.glb",
-      "bytes": 218652,
-      "sha256": "33c97fddaa3b56f05f6bf3d7c9b5a289311230e11906709b3672656b82d555bb"
+      "bytes": 230432,
+      "sha256": "d8c3d7d5780ed78161325f12b0a65e0417be5c66ff5ae83003e34be4e5ab80c5"
     },
     {
       "path": "model/parts/rim_RL_steel.glb",
-      "bytes": 275272,
-      "sha256": "b897920b3923073e238442742d64eb73be000cff9702d62c00445a102f49dd8e"
+      "bytes": 288532,
+      "sha256": "adb07a7708ba127695e7872d53e87f98f99f1f21b84a71cea4c9e4a4fcafdeb9"
     },
     {
       "path": "model/parts/rim_RL_window.glb",
-      "bytes": 213904,
-      "sha256": "e2f2f8d7d8f519ec2770d33025a795981c9a118d037b8a83b8108fba7b13e835"
+      "bytes": 226864,
+      "sha256": "8aa4511ebd4ffe60343923049290cb9d5ad47b18e3c1c450823c74d495b9322a"
     },
     {
       "path": "model/parts/rim_RR_disc.glb",
-      "bytes": 226924,
-      "sha256": "7cdc12a5ea929d5de9824344638030ccc18034dcdff9997626e4f11ca10eaa82"
+      "bytes": 240588,
+      "sha256": "179f73720fd6d62db36d64a28119b61abda8f9e225d4f37cacf3a6f2e57a1100"
     },
     {
       "path": "model/parts/rim_RR_steel.glb",
-      "bytes": 284944,
-      "sha256": "41ab39342260cd63bcb09011df174d044e62a591f3d8d5d75e6ceca9eb5947c3"
+      "bytes": 300036,
+      "sha256": "4a4121c1c6f39c1f070b85e508d0f7b051bf5b4971132233bd5c05e908bb3f4c"
     },
     {
       "path": "model/parts/rim_RR_window.glb",
-      "bytes": 222416,
-      "sha256": "5f1a74cc10e039dc9083d92163f358318381de9a143915688ffdb78683313a27"
+      "bytes": 237220,
+      "sha256": "3c74a8f7e7aca85d10115e80a1ed1263ea5e191099d5c508b42e0445a53f2fed"
     },
     {
       "path": "model/parts/roof_rails.glb",
@@ -914,11 +893,16 @@
       "sha256": "51147c884257439e786411951352644881a42edb9c37b69525beda0b29b9daf8"
     },
     {
+      "path": "model/wheels.json",
+      "bytes": 5105,
+      "sha256": "a7eb877765f5defb7c990e47ea030d5b1eb4cc0707cff3f661a8ec6e8f145af5"
+    },
+    {
       "path": "model/workshop.json",
-      "bytes": 15490,
-      "sha256": "3f7593b6555718de47c816837ea99d5788181c9c112e9fb28014b2d8ac8e7d34"
+      "bytes": 9209,
+      "sha256": "b6975066780731f9e42d36442dbaa41f7576c6ea9fe81ed6f494234014c2d657"
     }
   ],
-  "assetSha256": "f7be41f0f52bb5ed64692335c2464eac84778f14248c652e0a688aa3f8339a26",
+  "assetSha256": "0fd6a5e4fad7bc6f3e5b8cf7fa83abf118dcad6e24cce151db75d158b0acca62",
   "visualInspectionRequired": true
 }

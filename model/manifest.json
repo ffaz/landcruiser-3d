@@ -4662,7 +4662,8 @@
       "bundlesSlots": [
         "wheel_emblem_FL"
       ],
-      "purpose": "Design A: clean all-round expedition 285/70R17, approx 33 inch; new wheel geometry and Cycles vertex AO"
+      "purpose": "Design A: clean all-round expedition 285/70R17, approx 33 inch; new wheel geometry and Cycles vertex AO",
+      "lazy": true
     },
     {
       "id": "wheel_FR_at285",
@@ -4724,7 +4725,8 @@
       "bundlesSlots": [
         "wheel_emblem_FR"
       ],
-      "purpose": "Design A: clean all-round expedition 285/70R17, approx 33 inch; new wheel geometry and Cycles vertex AO"
+      "purpose": "Design A: clean all-round expedition 285/70R17, approx 33 inch; new wheel geometry and Cycles vertex AO",
+      "lazy": true
     },
     {
       "id": "wheel_RL_at285",
@@ -4786,7 +4788,8 @@
       "bundlesSlots": [
         "wheel_emblem_RL"
       ],
-      "purpose": "Design A: clean all-round expedition 285/70R17, approx 33 inch; new wheel geometry and Cycles vertex AO"
+      "purpose": "Design A: clean all-round expedition 285/70R17, approx 33 inch; new wheel geometry and Cycles vertex AO",
+      "lazy": true
     },
     {
       "id": "wheel_RR_at285",
@@ -4848,7 +4851,8 @@
       "bundlesSlots": [
         "wheel_emblem_RR"
       ],
-      "purpose": "Design A: clean all-round expedition 285/70R17, approx 33 inch; new wheel geometry and Cycles vertex AO"
+      "purpose": "Design A: clean all-round expedition 285/70R17, approx 33 inch; new wheel geometry and Cycles vertex AO",
+      "lazy": true
     },
     {
       "id": "wheel_FL_at26575",
@@ -4910,7 +4914,8 @@
       "bundlesSlots": [
         "wheel_emblem_FL"
       ],
-      "purpose": "Approved A tread style in 265/75R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+      "purpose": "Approved A tread style in 265/75R17; new geometry and Cycles AO; unchanged 17-inch wheel",
+      "lazy": true
     },
     {
       "id": "wheel_FR_at26575",
@@ -4972,7 +4977,8 @@
       "bundlesSlots": [
         "wheel_emblem_FR"
       ],
-      "purpose": "Approved A tread style in 265/75R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+      "purpose": "Approved A tread style in 265/75R17; new geometry and Cycles AO; unchanged 17-inch wheel",
+      "lazy": true
     },
     {
       "id": "wheel_RL_at26575",
@@ -5034,7 +5040,8 @@
       "bundlesSlots": [
         "wheel_emblem_RL"
       ],
-      "purpose": "Approved A tread style in 265/75R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+      "purpose": "Approved A tread style in 265/75R17; new geometry and Cycles AO; unchanged 17-inch wheel",
+      "lazy": true
     },
     {
       "id": "wheel_RR_at26575",
@@ -5096,7 +5103,8 @@
       "bundlesSlots": [
         "wheel_emblem_RR"
       ],
-      "purpose": "Approved A tread style in 265/75R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+      "purpose": "Approved A tread style in 265/75R17; new geometry and Cycles AO; unchanged 17-inch wheel",
+      "lazy": true
     },
     {
       "id": "wheel_FL_at28565",
@@ -5158,7 +5166,8 @@
       "bundlesSlots": [
         "wheel_emblem_FL"
       ],
-      "purpose": "Approved A tread style in 285/65R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+      "purpose": "Approved A tread style in 285/65R17; new geometry and Cycles AO; unchanged 17-inch wheel",
+      "lazy": true
     },
     {
       "id": "wheel_FR_at28565",
@@ -5220,7 +5229,8 @@
       "bundlesSlots": [
         "wheel_emblem_FR"
       ],
-      "purpose": "Approved A tread style in 285/65R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+      "purpose": "Approved A tread style in 285/65R17; new geometry and Cycles AO; unchanged 17-inch wheel",
+      "lazy": true
     },
     {
       "id": "wheel_RL_at28565",
@@ -5282,7 +5292,8 @@
       "bundlesSlots": [
         "wheel_emblem_RL"
       ],
-      "purpose": "Approved A tread style in 285/65R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+      "purpose": "Approved A tread style in 285/65R17; new geometry and Cycles AO; unchanged 17-inch wheel",
+      "lazy": true
     },
     {
       "id": "wheel_RR_at28565",
@@ -5344,7 +5355,8 @@
       "bundlesSlots": [
         "wheel_emblem_RR"
       ],
-      "purpose": "Approved A tread style in 285/65R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+      "purpose": "Approved A tread style in 285/65R17; new geometry and Cycles AO; unchanged 17-inch wheel",
+      "lazy": true
     },
     {
       "id": "wheel_FL_at26570",
@@ -5406,7 +5418,8 @@
       "bundlesSlots": [
         "wheel_emblem_FL"
       ],
-      "purpose": "Approved A expedition tread in 265/70R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+      "purpose": "Approved A expedition tread in 265/70R17; new geometry and Cycles AO; unchanged 17-inch wheel",
+      "lazy": true
     },
     {
       "id": "wheel_FR_at26570",
@@ -5468,7 +5481,8 @@
       "bundlesSlots": [
         "wheel_emblem_FR"
       ],
-      "purpose": "Approved A expedition tread in 265/70R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+      "purpose": "Approved A expedition tread in 265/70R17; new geometry and Cycles AO; unchanged 17-inch wheel",
+      "lazy": true
     },
     {
       "id": "wheel_RL_at26570",
@@ -5530,7 +5544,8 @@
       "bundlesSlots": [
         "wheel_emblem_RL"
       ],
-      "purpose": "Approved A expedition tread in 265/70R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+      "purpose": "Approved A expedition tread in 265/70R17; new geometry and Cycles AO; unchanged 17-inch wheel",
+      "lazy": true
     },
     {
       "id": "wheel_RR_at26570",
@@ -5592,7 +5607,8 @@
       "bundlesSlots": [
         "wheel_emblem_RR"
       ],
-      "purpose": "Approved A expedition tread in 265/70R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+      "purpose": "Approved A expedition tread in 265/70R17; new geometry and Cycles AO; unchanged 17-inch wheel",
+      "lazy": true
     },
     {
       "id": "wheel_FL_ht26570",
@@ -5654,7 +5670,8 @@
       "bundlesSlots": [
         "wheel_emblem_FL"
       ],
-      "purpose": "Unbranded five-rib highway tread from supplied image in 265/70R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+      "purpose": "Unbranded five-rib highway tread from supplied image in 265/70R17; new geometry and Cycles AO; unchanged 17-inch wheel",
+      "lazy": true
     },
     {
       "id": "wheel_FR_ht26570",
@@ -5716,7 +5733,8 @@
       "bundlesSlots": [
         "wheel_emblem_FR"
       ],
-      "purpose": "Unbranded five-rib highway tread from supplied image in 265/70R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+      "purpose": "Unbranded five-rib highway tread from supplied image in 265/70R17; new geometry and Cycles AO; unchanged 17-inch wheel",
+      "lazy": true
     },
     {
       "id": "wheel_RL_ht26570",
@@ -5778,7 +5796,8 @@
       "bundlesSlots": [
         "wheel_emblem_RL"
       ],
-      "purpose": "Unbranded five-rib highway tread from supplied image in 265/70R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+      "purpose": "Unbranded five-rib highway tread from supplied image in 265/70R17; new geometry and Cycles AO; unchanged 17-inch wheel",
+      "lazy": true
     },
     {
       "id": "wheel_RR_ht26570",
@@ -5840,7 +5859,8 @@
       "bundlesSlots": [
         "wheel_emblem_RR"
       ],
-      "purpose": "Unbranded five-rib highway tread from supplied image in 265/70R17; new geometry and Cycles AO; unchanged 17-inch wheel"
+      "purpose": "Unbranded five-rib highway tread from supplied image in 265/70R17; new geometry and Cycles AO; unchanged 17-inch wheel",
+      "lazy": true
     },
     {
       "id": "rim_FL_disc",
@@ -5857,20 +5877,24 @@
         "rim",
         "black"
       ],
-      "triangles": 9784,
+      "triangles": 10292,
       "bounds": {
         "min": [
           -1.866000006198883,
           0.16549999380111696,
-          0.7169999971985817
+          0.7118097066879272
         ],
         "max": [
           -1.403999993801117,
           0.6275000061988831,
-          0.9594999969005584
+          0.9659638375043869
         ]
       },
       "beadSeat_mm": 431.8,
+      "width_in": 8.5,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
+      "lazy": true,
       "replacesWheelHardware": "wheel_FL",
       "materialDefaults": {
         "rim": {
@@ -5912,20 +5936,24 @@
         "rim",
         "black"
       ],
-      "triangles": 9784,
+      "triangles": 10292,
       "bounds": {
         "min": [
           -1.866000006198883,
           0.16549999380111696,
-          -0.9594999969005584
+          -0.9659638375043869
         ],
         "max": [
           -1.403999993801117,
           0.6275000061988831,
-          -0.7169999971985817
+          -0.7118097066879272
         ]
       },
       "beadSeat_mm": 431.8,
+      "width_in": 8.5,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
+      "lazy": true,
       "replacesWheelHardware": "wheel_FR",
       "materialDefaults": {
         "rim": {
@@ -5967,20 +5995,24 @@
         "rim",
         "black"
       ],
-      "triangles": 9784,
+      "triangles": 10292,
       "bounds": {
         "min": [
           0.983999993801117,
           0.16549999380111696,
-          0.7144999971985817
+          0.7093097066879273
         ],
         "max": [
           1.4460000061988831,
           0.6275000061988831,
-          0.9569999969005585
+          0.9634638375043869
         ]
       },
       "beadSeat_mm": 431.8,
+      "width_in": 8.5,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
+      "lazy": true,
       "replacesWheelHardware": "wheel_RL",
       "materialDefaults": {
         "rim": {
@@ -6022,20 +6054,24 @@
         "rim",
         "black"
       ],
-      "triangles": 9784,
+      "triangles": 10292,
       "bounds": {
         "min": [
           0.983999993801117,
           0.16549999380111696,
-          -0.9569999969005585
+          -0.9634638375043869
         ],
         "max": [
           1.4460000061988831,
           0.6275000061988831,
-          -0.7144999971985817
+          -0.7093097066879273
         ]
       },
       "beadSeat_mm": 431.8,
+      "width_in": 8.5,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
+      "lazy": true,
       "replacesWheelHardware": "wheel_RR",
       "materialDefaults": {
         "rim": {
@@ -6078,20 +6114,24 @@
         "chrome",
         "black"
       ],
-      "triangles": 11464,
+      "triangles": 11860,
       "bounds": {
         "min": [
           -1.866000006198883,
           0.16549999380111696,
-          0.7169999971985817
+          0.7184679627418518
         ],
         "max": [
           -1.403999993801117,
           0.6275000061988831,
-          0.9594999969005584
+          0.9576718479394912
         ]
       },
       "beadSeat_mm": 431.8,
+      "width_in": 8,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
+      "lazy": true,
       "replacesWheelHardware": "wheel_FL",
       "materialDefaults": {
         "rim": {
@@ -6134,20 +6174,24 @@
         "chrome",
         "black"
       ],
-      "triangles": 11464,
+      "triangles": 11860,
       "bounds": {
         "min": [
           -1.866000006198883,
           0.16549999380111696,
-          -0.9594999969005584
+          -0.9576718479394912
         ],
         "max": [
           -1.403999993801117,
           0.6275000061988831,
-          -0.7169999971985817
+          -0.7184679627418518
         ]
       },
       "beadSeat_mm": 431.8,
+      "width_in": 8,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
+      "lazy": true,
       "replacesWheelHardware": "wheel_FR",
       "materialDefaults": {
         "rim": {
@@ -6190,20 +6234,24 @@
         "chrome",
         "black"
       ],
-      "triangles": 11464,
+      "triangles": 11860,
       "bounds": {
         "min": [
           0.983999993801117,
           0.16549999380111696,
-          0.7144999971985817
+          0.7159679627418518
         ],
         "max": [
           1.4460000061988831,
           0.6275000061988831,
-          0.9569999969005585
+          0.9551718479394913
         ]
       },
       "beadSeat_mm": 431.8,
+      "width_in": 8,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
+      "lazy": true,
       "replacesWheelHardware": "wheel_RL",
       "materialDefaults": {
         "rim": {
@@ -6246,20 +6294,24 @@
         "chrome",
         "black"
       ],
-      "triangles": 11464,
+      "triangles": 11860,
       "bounds": {
         "min": [
           0.983999993801117,
           0.16549999380111696,
-          -0.9569999969005585
+          -0.9551718479394913
         ],
         "max": [
           1.4460000061988831,
           0.6275000061988831,
-          -0.7144999971985817
+          -0.7159679627418518
         ]
       },
       "beadSeat_mm": 431.8,
+      "width_in": 8,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
+      "lazy": true,
       "replacesWheelHardware": "wheel_RR",
       "materialDefaults": {
         "rim": {
@@ -6301,20 +6353,24 @@
         "rim",
         "black"
       ],
-      "triangles": 9016,
+      "triangles": 9556,
       "bounds": {
         "min": [
           -1.866000006198883,
           0.16549999380111696,
-          0.7169999971985817
+          0.7118097066879272
         ],
         "max": [
           -1.403999993801117,
           0.6275000061988831,
-          0.9594999969005584
+          0.9659638375043869
         ]
       },
       "beadSeat_mm": 431.8,
+      "width_in": 8.5,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.3,
+      "lazy": true,
       "replacesWheelHardware": "wheel_FL",
       "materialDefaults": {
         "rim": {
@@ -6356,20 +6412,24 @@
         "rim",
         "black"
       ],
-      "triangles": 9016,
+      "triangles": 9556,
       "bounds": {
         "min": [
           -1.866000006198883,
           0.16549999380111696,
-          -0.9594999969005584
+          -0.9659638375043869
         ],
         "max": [
           -1.403999993801117,
           0.6275000061988831,
-          -0.7169999971985817
+          -0.7118097066879272
         ]
       },
       "beadSeat_mm": 431.8,
+      "width_in": 8.5,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.3,
+      "lazy": true,
       "replacesWheelHardware": "wheel_FR",
       "materialDefaults": {
         "rim": {
@@ -6411,20 +6471,24 @@
         "rim",
         "black"
       ],
-      "triangles": 9016,
+      "triangles": 9556,
       "bounds": {
         "min": [
           0.983999993801117,
           0.16549999380111696,
-          0.7144999971985817
+          0.7093097066879273
         ],
         "max": [
           1.4460000061988831,
           0.6275000061988831,
-          0.9569999969005585
+          0.9634638375043869
         ]
       },
       "beadSeat_mm": 431.8,
+      "width_in": 8.5,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.3,
+      "lazy": true,
       "replacesWheelHardware": "wheel_RL",
       "materialDefaults": {
         "rim": {
@@ -6466,20 +6530,24 @@
         "rim",
         "black"
       ],
-      "triangles": 9016,
+      "triangles": 9556,
       "bounds": {
         "min": [
           0.983999993801117,
           0.16549999380111696,
-          -0.9569999969005585
+          -0.9634638375043869
         ],
         "max": [
           1.4460000061988831,
           0.6275000061988831,
-          -0.7144999971985817
+          -0.7093097066879273
         ]
       },
       "beadSeat_mm": 431.8,
+      "width_in": 8.5,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.3,
+      "lazy": true,
       "replacesWheelHardware": "wheel_RR",
       "materialDefaults": {
         "rim": {

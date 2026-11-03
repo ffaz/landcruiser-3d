@@ -1,16 +1,16 @@
 # Reference rim collection — 17-inch
 
-Three unbranded interpretations of the supplied photographs, in the car's clean die-cast finish. They are independently selectable under **Workshop → Rims**, with four hub-pivoted copies per design. The selected tyre package and its brake geometry remain in place.
+Three unbranded interpretations of the supplied photographs, adapted to the live workshop's **5×150 LC200 mounting pattern**. Face styling follows the references; these are not certified manufacturer CAD models.
 
 [![Three rims](images/comparison.png)](images/comparison.png)
 
-[![With unchanged 265/70R17 expedition tyres](images/comparison-with-tyres.png)](images/comparison-with-tyres.png)
+[![With unchanged stock tyres](images/comparison-with-tyres.png)](images/comparison-with-tyres.png)
 
 [![On the car](images/comparison-on-car.png)](images/comparison-on-car.png)
 
 ## Full-size renders
 
-Actual Three.js viewer captures, 1440 × 1000. The comparison sheets above are resized layouts of these captures.
+Actual Three.js viewer captures at 1440 × 1000. Comparison sheets are resized layouts of these captures.
 
 | View | Dished disc / satin black | Round-hole steel / silver | Eight-window / satin black |
 |---|---|---|---|
@@ -21,45 +21,53 @@ Actual Three.js viewer captures, 1440 × 1000. The comparison sheets above are r
 | Car 3/4 | [Open](images/disc-car-quarter.png) | [Open](images/steel-car-quarter.png) | [Open](images/window-car-quarter.png) |
 | Car side | [Open](images/disc-car-side.png) | [Open](images/steel-car-side.png) | [Open](images/window-car-side.png) |
 
-[Workshop selection](images/workshop-rims.png) · [Eight-window with stock tyre](images/window-stock-tyre.png) · [Slate](images/window-car-slate.png) · [Clay](images/window-car-clay.png)
+[Native workshop selection](images/workshop-rims.png) · [Slate](images/window-car-slate.png) · [Clay](images/window-car-clay.png)
 
-## Shapes and finish
+## Shapes and configured dimensions
 
-- **Dished disc:** eight narrow slots around a nearly solid face, shallow circular pressing, raised hub shoulder, blank cap and six service nuts.
-- **Silver pressed steel:** eighteen round vents, bowl-shaped pressing, open centre with rolled edge, six nuts and a silver metallic finish.
-- **Eight-window:** eight large bevelled openings, broad spokes, blank centre cap and six nuts. The manufacturer's [Method 701 description](https://www.methodracewheels.com/products/701-matte-black) confirms the eight-window layout used as supplementary reference; these assets remain generic interpretations of the user's images.
+- **Dished disc:** eight narrow slots, shallow circular pressing, raised hub shoulder, blank cap and five service nuts.
+- **Silver pressed steel:** eighteen round vents, bowl-shaped pressing, open rolled centre and five nuts.
+- **Eight-window:** eight large bevelled openings, broad spokes, blank cap and five nuts. The manufacturer's [Method 701 description](https://www.methodracewheels.com/products/701-matte-black) confirms the eight-window layout used as supplementary reference; no claim is made that this generic model reproduces a factory product exactly.
 
-Each has a hollow barrel, rolled lip and seated valve. Bead-seat diameter is **431.8 mm**, authored for the existing 17-inch tyre assets. The largest flange diameter measures **462.0 mm**; a flange extending past the nominal bead seat is intentional. Width, dish, six-lug layout and mounting depth are visual design choices from the supplied references and existing model, not certified manufacturer fitment dimensions. No brand lettering, simulated wear, dirt or other workshop accessories were added.
+Each has a closed hollow barrel, rolled lips and seated valve. The photos show six-lug examples; the final parts use five lugs to match the current catalogue. No brand lettering, simulated wear, dirt or additional accessories were added.
 
-The black designs use satin coated-metal finishes; silver is brighter with a broad highlight. Rim finishes use the existing studio shading. Clay uses the existing clay rim/trim palette.
+| Design / native catalogue ID | Bead seat | Width (measured) | Catalogue offset | Centre bore in authored face |
+|---|---:|---:|---:|---:|
+| Dished disc / `kmc` | 431.8 mm / 17″ | 215.900 mm / 8.5″ | +18 mm | 110.1 mm |
+| Silver steel / `steel` | 431.8 mm / 17″ | 203.200 mm / 8″ | +25 mm | 110.1 mm |
+| Eight-window / `method` | 431.8 mm / 17″ | 215.900 mm / 8.5″ | 0 mm | 110.3 mm |
+
+Offsets, widths and bore requirements follow `model/wheels.json` from Main `a52ad7b`. The flange diameter measures **462.0 mm**, intentionally larger than the nominal bead seat. The native catalogue's mount/width checks remain active, including its lateral-clearance notes. Real vehicle fit, steering/suspension clearance and physical iPad performance have not been validated.
 
 ## Assets and integration
 
 | Design | Triangles per rim | Four GLBs, bytes |
 |---|---:|---:|
-| Dished disc | 9,784 | 891,136 |
-| Silver pressed steel | 11,464 | 1,120,368 |
-| Eight-window | 9,016 | 872,640 |
-| Total | 12 standalone parts | 2,884,144 |
+| Dished disc | 10,292 | 942,040 |
+| Silver pressed steel | 11,860 | 1,177,136 |
+| Eight-window | 9,556 | 928,168 |
+| Total | 12 new parts | 3,047,344 |
 
-Blender **4.3.2**, Cycles AO bake at 32 samples. COLOR_0 R = AO, G = signed curvature (.5 flat), B reserved. Meshopt compression; root scale [1,1,1], hub pivots copied from the existing wheel slots. Source files are in `model/source/rim-{disc,steel,window}.blend`.
+Blender **4.3.2**, Cycles AO bake at 32 samples. COLOR_0 R = AO, G = signed curvature (.5 flat), B reserved. Meshopt compression; root scale [1,1,1], hub pivots copied from the existing wheel slots. Editable sources: `model/source/rim-{disc,steel,window}.blend`.
 
-New slots default to null, so the original rim supplied with the chosen tyre remains the default. Selecting a replacement hides only the old wheel's hardware meshes; tyre/brake meshes and their buffers are retained. “Original rim” restores the supplied hardware. Tyre package selection retains an independently chosen rim. Existing rigid tyre-height adjustments and suspension lift continue to move the complete wheel group.
+The branch incorporates Main's new catalogue commit `a52ad7b`. Choose **Workshop → Rims**: the three custom entries are now built and selectable. Their canonical GLB loads on first use, then all four hub copies share its geometry/materials. The stored stock tyre and brake buffers remain unchanged. The native offset moves each tyre/rim rigidly; the brake stays on its hub. “Stock GXR alloy” restores the original hardware. Share/reset use Main's native `rim` build-state field.
 
-No stored GLB, geometry buffer, NORMAL or COLOR_0 was edited. No new realtime effects, maps or render passes. Rims add geometry; physical iPad performance and real vehicle fitment have not been measured or validated.
+Other tyre sizes remain unbuilt in the native catalogue, as on Main. Earlier tyre-review GLBs and documents remain in the branch unchanged, with their optional parts marked lazy; this rim task does not enable or re-label those tyre designs.
+
+Existing car materials, camera presets and studio settings are preserved. New rims use the existing baked-shading and studio-material functions, including Clay's palette. No new realtime maps, effects or render passes. Stored car GLBs, NORMAL and COLOR_0 are untouched.
 
 ## Verification
 
-- [Asset verification](reports/verification.json): **12 valid new rim GLBs; all 76 pre-existing GLBs byte-identical** to `c480d15`.
-- [Viewer](reports/viewer.json): **31/31**, including overhangLock, Cream + Slate, zero console errors. [Final asset check run](reports/viewer-final.json) records the finalized material assets.
-- [Workshop smoke](reports/workshop-smoke.log): **31/31**, desktop and emulated phone UI.
-- [Independent-rim integration](reports/workshop-integration.json): **21/21**, selecting each rim through the real UI; all six built tyre packages; unchanged tyre attribute hashes; tyre/brake visibility; original-rim restoration; all three studios; stock reset; zero console errors.
-- [Default parity](reports/default-parity.json): clean-view 3/4 at 1440 × 1000, **0 changed pixels** in Cream, Slate and Clay compared with `c480d15` when new rims are unselected.
+- [Asset verification](reports/verification.json): **12 valid new rim GLBs; all 76 pre-task GLBs byte-identical** to `c480d15`. Root scale/pivots, finite attributes, unit normals, baked AO range, flange diameter and measured bead-seat width pass.
+- [Viewer](reports/viewer-final.json): **31/31**, Cream + Slate and overhangLock, zero console errors, using the final native integration.
+- [Workshop smoke](reports/workshop-smoke.log): **45/45**, desktop and emulated phone UI; existing mount/width rules retained.
+- [Native-rim integration](reports/workshop-integration.json): **20/20** — real UI selection, four copies, unchanged stock tyre attribute hashes, retained brake/tyre visibility, configured rigid offsets, all studios, original-rim restoration, sharing/reset, zero console errors.
+- [Default parity](reports/default-parity.json): clean-view 3/4 at 1440 × 1000, **0 changed pixels** in Cream, Slate and Clay versus Main `a52ad7b` when stock rims are selected.
 - [Changed values](reports/changed-values.json) and [capture provenance](reports/captures.json).
 
-Tests use Playwright Chromium with SwiftShader and a local unpacked copy of Three.js 0.166.1. The production importmap remains pinned to CDN 0.166.1. Phone UI is emulated; no physical-device claims.
+Tests use Playwright Chromium with SwiftShader and a local unpacked Three.js 0.166.1. Production stays pinned to CDN 0.166.1. Phone UI is emulated; no physical-device claims.
 
-Delivered only on **rims-review**, based on the tyre review branch. Main and GitHub Pages are unchanged.
+Delivered on **rims-review** only; Main and Pages have not been modified by this work. The earlier six-lug review commit is superseded by this native-catalogue integration and five-lug assets.
 
 ## Rebuild
 
@@ -74,4 +82,4 @@ node tools/rims/verify.mjs REPO DEPS WORK
 node tools/rims/check-workshop.mjs DEPS CHROMIUM WORK/workshop-integration.json
 ```
 
-`tools/rims/preview.py` drives the existing test-only review server for standalone/fitted renders and default parity; `tools/rims/preview-workshop.mjs` captures the real workshop panel after its camera tween settles.
+`tools/rims/preview.py` drives the existing test-only review server. Its baseline folder should contain Main `a52ad7b`'s index.html and links to the shared assets. `tools/rims/preview-workshop.mjs` captures the native panel after the camera settles.

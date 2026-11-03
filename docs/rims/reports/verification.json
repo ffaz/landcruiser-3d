@@ -4,7 +4,7 @@
   "newRims": [
     {
       "id": "rim_FL_disc",
-      "triangles": 9784,
+      "triangles": 10292,
       "rootScale": [
         1,
         1,
@@ -17,6 +17,9 @@
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
       "beadSeat_mm": 431.8,
+      "measuredBeadWidth_mm": 215.9000039100647,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
       "AO": [
         0.11999999731779099,
         1
@@ -25,11 +28,11 @@
         0.36666664481163025,
         0.7333338260650635
       ],
-      "bytes": 218648
+      "bytes": 230432
     },
     {
       "id": "rim_FR_disc",
-      "triangles": 9784,
+      "triangles": 10292,
       "rootScale": [
         1,
         1,
@@ -42,6 +45,9 @@
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
       "beadSeat_mm": 431.8,
+      "measuredBeadWidth_mm": 215.9000039100647,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
       "AO": [
         0.11999999731779099,
         1
@@ -50,11 +56,11 @@
         0.36666664481163025,
         0.7333338260650635
       ],
-      "bytes": 226920
+      "bytes": 240588
     },
     {
       "id": "rim_RL_disc",
-      "triangles": 9784,
+      "triangles": 10292,
       "rootScale": [
         1,
         1,
@@ -67,6 +73,9 @@
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
       "beadSeat_mm": 431.8,
+      "measuredBeadWidth_mm": 215.9000039100647,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
       "AO": [
         0.11999999731779099,
         1
@@ -75,11 +84,11 @@
         0.36666664481163025,
         0.7333338260650635
       ],
-      "bytes": 218648
+      "bytes": 230432
     },
     {
       "id": "rim_RR_disc",
-      "triangles": 9784,
+      "triangles": 10292,
       "rootScale": [
         1,
         1,
@@ -92,6 +101,9 @@
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
       "beadSeat_mm": 431.8,
+      "measuredBeadWidth_mm": 215.9000039100647,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
       "AO": [
         0.11999999731779099,
         1
@@ -100,11 +112,11 @@
         0.36666664481163025,
         0.7333338260650635
       ],
-      "bytes": 226920
+      "bytes": 240588
     },
     {
       "id": "rim_FL_steel",
-      "triangles": 11464,
+      "triangles": 11860,
       "rootScale": [
         1,
         1,
@@ -117,19 +129,22 @@
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
       "beadSeat_mm": 431.8,
+      "measuredBeadWidth_mm": 203.19999754428864,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
       "AO": [
         0.11999999731779099,
         1
       ],
       "curvature": [
         0.36666664481163025,
-        0.7333338260650635
+        0.7333338856697083
       ],
-      "bytes": 275256
+      "bytes": 288532
     },
     {
       "id": "rim_FR_steel",
-      "triangles": 11464,
+      "triangles": 11860,
       "rootScale": [
         1,
         1,
@@ -142,19 +157,22 @@
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
       "beadSeat_mm": 431.8,
+      "measuredBeadWidth_mm": 203.19999754428864,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
       "AO": [
         0.11999999731779099,
         1
       ],
       "curvature": [
         0.36666664481163025,
-        0.7333338260650635
+        0.7333338856697083
       ],
-      "bytes": 284928
+      "bytes": 300036
     },
     {
       "id": "rim_RL_steel",
-      "triangles": 11464,
+      "triangles": 11860,
       "rootScale": [
         1,
         1,
@@ -167,19 +185,22 @@
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
       "beadSeat_mm": 431.8,
+      "measuredBeadWidth_mm": 203.19999754428864,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
       "AO": [
         0.11999999731779099,
         1
       ],
       "curvature": [
         0.36666664481163025,
-        0.7333338260650635
+        0.7333338856697083
       ],
-      "bytes": 275256
+      "bytes": 288532
     },
     {
       "id": "rim_RR_steel",
-      "triangles": 11464,
+      "triangles": 11860,
       "rootScale": [
         1,
         1,
@@ -192,19 +213,22 @@
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
       "beadSeat_mm": 431.8,
+      "measuredBeadWidth_mm": 203.19999754428864,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
       "AO": [
         0.11999999731779099,
         1
       ],
       "curvature": [
         0.36666664481163025,
-        0.7333338260650635
+        0.7333338856697083
       ],
-      "bytes": 284928
+      "bytes": 300036
     },
     {
       "id": "rim_FL_window",
-      "triangles": 9016,
+      "triangles": 9556,
       "rootScale": [
         1,
         1,
@@ -217,6 +241,9 @@
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
       "beadSeat_mm": 431.8,
+      "measuredBeadWidth_mm": 215.9000039100647,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.3,
       "AO": [
         0.11999999731779099,
         1
@@ -225,11 +252,11 @@
         0.36666664481163025,
         0.7333338260650635
       ],
-      "bytes": 213904
+      "bytes": 226864
     },
     {
       "id": "rim_FR_window",
-      "triangles": 9016,
+      "triangles": 9556,
       "rootScale": [
         1,
         1,
@@ -242,6 +269,9 @@
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
       "beadSeat_mm": 431.8,
+      "measuredBeadWidth_mm": 215.9000039100647,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.3,
       "AO": [
         0.11999999731779099,
         1
@@ -250,11 +280,11 @@
         0.36666664481163025,
         0.7333338260650635
       ],
-      "bytes": 222416
+      "bytes": 237220
     },
     {
       "id": "rim_RL_window",
-      "triangles": 9016,
+      "triangles": 9556,
       "rootScale": [
         1,
         1,
@@ -267,6 +297,9 @@
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
       "beadSeat_mm": 431.8,
+      "measuredBeadWidth_mm": 215.9000039100647,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.3,
       "AO": [
         0.11999999731779099,
         1
@@ -275,11 +308,11 @@
         0.36666664481163025,
         0.7333338260650635
       ],
-      "bytes": 213904
+      "bytes": 226864
     },
     {
       "id": "rim_RR_window",
-      "triangles": 9016,
+      "triangles": 9556,
       "rootScale": [
         1,
         1,
@@ -292,6 +325,9 @@
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
       "beadSeat_mm": 431.8,
+      "measuredBeadWidth_mm": 215.9000039100647,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.3,
       "AO": [
         0.11999999731779099,
         1
@@ -300,8 +336,8 @@
         0.36666664481163025,
         0.7333338260650635
       ],
-      "bytes": 222416
+      "bytes": 237220
     }
   ],
-  "totalNewBytes": 2884144
+  "totalNewBytes": 3047344
 }

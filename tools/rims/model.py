@@ -3,13 +3,16 @@ import bpy, math, sys, json, bmesh
 from pathlib import Path
 args=sys.argv[sys.argv.index('--')+1:];work=Path(args[0]);style=args[1];work.mkdir(parents=True,exist_ok=True)
 assert style in ['disc','steel','window']
+LUGS=5;PCD=.150;BORE=.1103 if style=='window' else .1101
+WIDTH_IN=8.0 if style=='steel' else 8.5
+WIDTH_FACTOR=WIDTH_IN*25.4/206.0
 bpy.ops.object.select_all(action='SELECT');bpy.ops.object.delete(use_global=False)
 materials={}
 for z in ['rim','chrome','black']:
  m=bpy.data.materials.new(z);m.diffuse_color=(.15,.15,.15,1);materials[z]=m
 objects=[]
 def mesh(name,vs,fs,zone='rim'):
- m=bpy.data.meshes.new(name);m.from_pydata(vs,[],fs);m.update();o=bpy.data.objects.new(name,m);bpy.context.collection.objects.link(o);m.materials.append(materials[zone]);objects.append(o)
+ m=bpy.data.meshes.new(name);m.from_pydata([(x,y,z*WIDTH_FACTOR) for x,y,z in vs],[],fs);m.update();o=bpy.data.objects.new(name,m);bpy.context.collection.objects.link(o);m.materials.append(materials[zone]);objects.append(o)
  for p in m.polygons:p.use_smooth=True
  return o
 def lathe(name,profile,zone='rim',n=64,closed=False):
@@ -18,7 +21,7 @@ def lathe(name,profile,zone='rim',n=64,closed=False):
   for j in range(k if closed else k-1):fs.append((i*k+j,((i+1)%n)*k+j,((i+1)%n)*k+(j+1)%k,i*k+(j+1)%k))
  return mesh(name,vs,[tuple(reversed(f)) for f in fs] if closed else fs,zone)
 def cyl(name,r,d,z,zone='rim',n=24,x=0,y=0):
- bpy.ops.mesh.primitive_cylinder_add(vertices=n,radius=r,depth=d,location=(x,y,z));o=bpy.context.object;o.name=name;o.data.materials.append(materials[zone]);objects.append(o)
+ bpy.ops.mesh.primitive_cylinder_add(vertices=n,radius=r,depth=d*WIDTH_FACTOR,location=(x,y,z*WIDTH_FACTOR));o=bpy.context.object;o.name=name;o.data.materials.append(materials[zone]);objects.append(o)
  for p in o.data.polygons:p.use_smooth=len(p.vertices)==4
  return o
 def cut(target,cutter):
@@ -33,14 +36,16 @@ def polygon_cut(target,poly,a):
  for j in range(k):fs.append((j,(j+1)%k,(j+1)%k+k,j+k))
  cut(target,mesh('Window cutter',vs,fs))
 # Same 431.8 mm bead seat as the existing tyres; the rolled flange extends beyond it.
-barrel=[(.2159,-.103),(.226,-.108),(.231,-.104),(.231,-.098),(.222,-.094),(.214,-.090),(.207,-.068),(.205,.065),(.212,.093),(.222,.105),(.231,.110),(.231,.116),(.227,.120),(.219,.117),(.2159,.109)]
+barrel=[(.2159,-.103),(.226,-.108),(.231,-.104),(.231,-.098),(.222,-.094),(.214,-.090),(.207,-.068),(.205,.065),(.212,.093),(.222,.105),(.231,.110),(.231,.116),(.227,.120),(.219,.117),(.2159,.103)]
+# Inner return wall closes the barrel; bead-seat spacing equals the catalogue width.
+barrel += [(.213,.101),(.201,.063),(.203,-.068),(.213,-.101),barrel[0]]
 lathe('Rolled lip and hollow barrel',barrel)
 if style=='disc':
- front=[(.042,.081),(.053,.082),(.061,.080),(.084,.072),(.091,.066),(.162,.066),(.165,.0645),(.168,.0645),(.171,.066),(.179,.069),(.212,.080)]
+ front=[(BORE/2,.081),(.062,.082),(.065,.080),(.084,.072),(.091,.066),(.162,.066),(.165,.0645),(.168,.0645),(.171,.066),(.179,.069),(.212,.080)]
 elif style=='steel':
- front=[(.035,.083),(.047,.087),(.055,.088),(.079,.088),(.092,.078),(.105,.073),(.118,.080),(.132,.095),(.145,.099),(.193,.100),(.212,.112)]
+ front=[(BORE/2,.083),(.059,.087),(.064,.088),(.079,.088),(.092,.078),(.105,.073),(.118,.080),(.132,.095),(.145,.099),(.193,.100),(.212,.112)]
 else:
- front=[(.045,.099),(.059,.103),(.082,.101),(.096,.095),(.109,.099),(.125,.104),(.190,.112),(.212,.116)]
+ front=[(BORE/2,.099),(.064,.103),(.082,.101),(.096,.095),(.109,.099),(.125,.104),(.190,.112),(.212,.116)]
 profile=front+[(r,z-.007) for r,z in reversed(front)]
 face=lathe('Dished structural face',profile,closed=True)
 if style=='disc':
@@ -56,23 +61,23 @@ else:
  for i in range(8):
   poly=[(.114,-.016),(.120,-.023),(.185,-.033),(.197,-.026),(.197,.026),(.185,.033),(.120,.023),(.114,.016)]
   polygon_cut(face,poly,2*math.pi*i/8+math.pi/2)
-# Six mounting holes/cups, washers and service nuts; blank centre caps on the black designs.
-for i in range(6):
- a=2*math.pi*i/6+math.pi/2;x=.06985*math.cos(a);y=.06985*math.sin(a)
+# LC200 catalogue fit: five mounting holes on 150 mm PCD; blank caps on black designs.
+for i in range(LUGS):
+ a=2*math.pi*i/LUGS+math.pi/2;x=.075*math.cos(a);y=.075*math.sin(a)
  cut(face,cyl('Lug bore cutter',.0095,.22,.075,n=12,x=x,y=y))
 bevel(face,.0012 if style!='steel' else .0015)
-zlug={'disc':.087,'steel':.098,'window':.112}[style]
-for i in range(6):
- a=2*math.pi*i/6+math.pi/2;x=.06985*math.cos(a);y=.06985*math.sin(a)
- washer=cyl('Lug seat',.0124,.004,zlug-.007,'rim' if style!='steel' else 'chrome',16,x,y);bevel(washer,.0006)
- nut=cyl('Six service nuts',.0085,.013,zlug,'rim' if style!='steel' else 'chrome',6,x,y);bevel(nut,.0008)
+zlug={'disc':.0758,'steel':.088,'window':.1018}[style]+.008
+for i in range(LUGS):
+ a=2*math.pi*i/LUGS+math.pi/2;x=.075*math.cos(a);y=.075*math.sin(a)
+ washer=cyl('Lug seat',.0124,.004,zlug-.006,'rim' if style!='steel' else 'chrome',16,x,y);bevel(washer,.0006)
+ nut=cyl('Five service nuts',.0085,.013,zlug,'rim' if style!='steel' else 'chrome',6,x,y);bevel(nut,.0008)
 if style!='steel':
  z={'disc':.101,'window':.117}[style]
- lathe('Centre-cap shoulder',[(.041,z-.007),(.048,z-.007),(.052,z-.003),(.052,z+.003),(.048,z+.006),(.042,z+.006)],n=48)
- cap=cyl('Blank centre cap',.046,.007,z+.004,n=48);bevel(cap,.0009)
+ lathe('Centre-cap shoulder',[(.054,z-.007),(.059,z-.007),(.061,z-.003),(.061,z+.003),(.058,z+.006),(.054,z+.006)],n=48)
+ cap=cyl('Blank centre cap',.057,.007,z+.004,n=48);bevel(cap,.0009)
 else:
  # The silver reference has an open centre, with a recessed hub behind it when fitted.
- lathe('Open hub rolled edge',[(.035,.079),(.036,.084),(.039,.088),(.043,.087)],n=48)
+ lathe('Open hub rolled edge',[(BORE/2,.079),(.057,.084),(.060,.088),(.062,.087)],n=48)
 # Valve seated in the rolled flange; restrained rubber and metal details.
 a=-math.pi/2-.08;x=.219*math.cos(a);y=.219*math.sin(a)
 cyl('Valve rubber foot',.005,.010,.111,'black',12,x,y)
@@ -101,6 +106,6 @@ for t in me.loop_triangles:
  for li in t.loops:
   vi=me.loops[li].vertex_index;g['positions'].extend(me.vertices[vi].co);g['normals'].extend(me.corner_normals[li].vector);g['colors'].extend([max(.12,min(1,sum(attr.data[li].color[:3])/3)),curv[vi],0])
 triangles=sum(len(g['positions'])//9 for g in groups.values())
-(work/'rim-data.json').write_text(json.dumps({'style':style,'groups':groups,'triangles':triangles,'blender':bpy.app.version_string,'beadSeat_mm':431.8,'bake':{'type':'Cycles AO','samples':32,'target':'CORNER color attribute','curvature':'signed dihedral vertex average'}},separators=(',',':')))
+(work/'rim-data.json').write_text(json.dumps({'style':style,'groups':groups,'triangles':triangles,'blender':bpy.app.version_string,'beadSeat_mm':431.8,'width_in':WIDTH_IN,'boltPattern':'5x150','centreBore_mm':BORE*1000,'bake':{'type':'Cycles AO','samples':32,'target':'CORNER color attribute','curvature':'signed dihedral vertex average'}},separators=(',',':')))
 bpy.ops.wm.save_as_mainfile(filepath=str(work/('rim-'+style+'.blend')))
 print('RIM_TRIANGLES',style,triangles)

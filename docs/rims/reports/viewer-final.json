@@ -1,7 +1,7 @@
 {
   "mode": "after",
   "source": "/workspace/lc-rims-review/index.html",
-  "sourceSha256": "8d838566685f080256f1d0d989f2db56547f0d02eeff89e00b6aa60ec0b1a04c",
+  "sourceSha256": "55d7bef0f25e7470b93759bd8a85d67993d288ee77039cc7f07f95ad2c38e7fa",
   "threeVersion": "0.166.1",
   "checksOnly": true,
   "bothStudios": true,
@@ -130,7 +130,7 @@
         "safePolar": true,
         "minCameraY": 0.15,
         "aboveMinimum": true,
-        "widthFraction": 0.8029786328774091
+        "widthFraction": 0.8034356628868835
       },
       {
         "studio": "slate",
@@ -240,7 +240,7 @@
         "safePolar": true,
         "minCameraY": 0.15,
         "aboveMinimum": true,
-        "widthFraction": 0.8029786328774091
+        "widthFraction": 0.8034356628868835
       }
     ],
     "autoRotate": {
@@ -268,9 +268,9 @@
     "reset": true,
     "bakedCoverage": true,
     "bakedData": {
-      "opaqueMeshes": 341,
-      "coveredOpaqueMeshes": 341,
-      "vertices": 1301733,
+      "opaqueMeshes": 233,
+      "coveredOpaqueMeshes": 233,
+      "vertices": 872749,
       "missing": [],
       "strengths": {
         "ao": 0.9,
@@ -318,34 +318,34 @@
       },
       {
         "view": "rear",
-        "widthFraction": 0.7629692962503282,
+        "widthFraction": 0.7614707779027504,
         "bounds": {
-          "minX": -0.7629692962503282,
-          "maxX": 0.7629692962503282,
-          "minY": -0.6989635358358648,
-          "maxY": 0.7420885358358651
+          "minX": -0.7614707779027504,
+          "maxX": 0.7614707779027504,
+          "minY": -0.6989514249725902,
+          "maxY": 0.7420764249725903
         },
         "visible": true
       },
       {
         "view": "quarter",
-        "widthFraction": 0.7975981963764768,
+        "widthFraction": 0.797598196376477,
         "bounds": {
-          "minX": -0.797598196376476,
-          "maxX": 0.7975981963764776,
-          "minY": -0.5446985507338756,
-          "maxY": 0.5878235507338752
+          "minX": -0.7975981963764769,
+          "maxX": 0.7975981963764771,
+          "minY": -0.5446985507338755,
+          "maxY": 0.5878235507338753
         },
         "visible": true
       },
       {
         "view": "top",
-        "widthFraction": 0.7977611531518982,
+        "widthFraction": 0.7977611531518984,
         "bounds": {
-          "minX": -0.7977611536201112,
-          "maxX": 0.7977611526836852,
-          "minY": -0.576614224821197,
-          "maxY": 0.6197383940941369
+          "minX": -0.7977611536201115,
+          "maxX": 0.7977611526836854,
+          "minY": -0.5766142248211961,
+          "maxY": 0.6197383940941382
         },
         "visible": true
       }
@@ -373,7 +373,7 @@
         1
       ],
       "bodyMeshes": 245,
-      "wheelMeshes": 142,
+      "wheelMeshes": 34,
       "maxBodyDeltaError": 4.163336342344337e-17,
       "maxWheelMovement": 0,
       "positionArraysUnchanged": true,
@@ -459,8 +459,8 @@
     },
     {
       "path": "model/manifest.json",
-      "bytes": 155425,
-      "sha256": "dc92035dbc33d0490733edc72aa713edc6f3c89a9d20d318f06d7b58679be744"
+      "bytes": 157161,
+      "sha256": "bd691936a038429cb025eb1b15d35e4b42c8a63f3e5d5bb19dc0da9bcc43d98a"
     },
     {
       "path": "model/parts/badge_grade_GXR.glb",
@@ -619,63 +619,63 @@
     },
     {
       "path": "model/parts/rim_FL_disc.glb",
-      "bytes": 218648,
-      "sha256": "aa1d9bac8500fc4066c7170cdc3ee4d15af26d2c3a1d8f7212b59daaeee1725a"
+      "bytes": 230432,
+      "sha256": "7178bcb4b7bc52c3c15057e96e8767d3522bc2b790c316f1235045f7ed0c3d37"
     },
     {
       "path": "model/parts/rim_FL_steel.glb",
-      "bytes": 275256,
-      "sha256": "efa2dca471c6349534050632885c7f4927d683a5fa66c1262f1bf2cf4bef5d46"
+      "bytes": 288532,
+      "sha256": "739f34a7b3fb10296d818c77797188912fcc93c402bf774cbecdb2a16af2e8b3"
     },
     {
       "path": "model/parts/rim_FL_window.glb",
-      "bytes": 213904,
-      "sha256": "3420691af1b50bfabd10033fa0e65cfdfbbc35a04feb0ed9403366176a5210af"
+      "bytes": 226864,
+      "sha256": "deb23451720cab048be1faf89e36d3ea772a3d092d08fc01a9709d18d4563de2"
     },
     {
       "path": "model/parts/rim_FR_disc.glb",
-      "bytes": 226920,
-      "sha256": "49dcc83d69fa3e0a78bc928d8508b7df311645b89543c3f8a32a90510355f3fa"
+      "bytes": 240588,
+      "sha256": "63d9fc9a708386e633f4de6fc002a826c2961cd3f8b60f79047dce825654c252"
     },
     {
       "path": "model/parts/rim_FR_steel.glb",
-      "bytes": 284928,
-      "sha256": "550eaf633d62e5f15afd381e0ba9b4ac10a0477677206676e9dcb468869e1dce"
+      "bytes": 300036,
+      "sha256": "ee1374d327500197183643591ad15415ad6a3207443ccd23e8392a61fa203d94"
     },
     {
       "path": "model/parts/rim_FR_window.glb",
-      "bytes": 222416,
-      "sha256": "f44e135d41138ccd430e5af305d0fb1598965ae85d9c0105a1e9e0b32501b97c"
+      "bytes": 237220,
+      "sha256": "decd985b68419e19f5a33481ec2043c23a04da20386b12d904d44d6ae6021483"
     },
     {
       "path": "model/parts/rim_RL_disc.glb",
-      "bytes": 218648,
-      "sha256": "03a18f455223add26857fa957612df4db6115faa4e8070dcf0f2f428a8fd98ca"
+      "bytes": 230432,
+      "sha256": "d8c3d7d5780ed78161325f12b0a65e0417be5c66ff5ae83003e34be4e5ab80c5"
     },
     {
       "path": "model/parts/rim_RL_steel.glb",
-      "bytes": 275256,
-      "sha256": "20a5f2b3191d24db266dc02b76c8ec75e4991efc12bdde76bdce706163f7daf3"
+      "bytes": 288532,
+      "sha256": "adb07a7708ba127695e7872d53e87f98f99f1f21b84a71cea4c9e4a4fcafdeb9"
     },
     {
       "path": "model/parts/rim_RL_window.glb",
-      "bytes": 213904,
-      "sha256": "b229b1750840629d80797c45f5fbfb6d793347ff7e38c747a3ea375401a3d464"
+      "bytes": 226864,
+      "sha256": "8aa4511ebd4ffe60343923049290cb9d5ad47b18e3c1c450823c74d495b9322a"
     },
     {
       "path": "model/parts/rim_RR_disc.glb",
-      "bytes": 226920,
-      "sha256": "1adc07ffaf8b7323cb24dd15bd5a9e56928e87d34be3df11b6c681cc8fc8caf4"
+      "bytes": 240588,
+      "sha256": "179f73720fd6d62db36d64a28119b61abda8f9e225d4f37cacf3a6f2e57a1100"
     },
     {
       "path": "model/parts/rim_RR_steel.glb",
-      "bytes": 284928,
-      "sha256": "42f30f55a92bf053d928cb728aabf249cf9cfc78865c207f5cc989f98d0b76ce"
+      "bytes": 300036,
+      "sha256": "4a4121c1c6f39c1f070b85e508d0f7b051bf5b4971132233bd5c05e908bb3f4c"
     },
     {
       "path": "model/parts/rim_RR_window.glb",
-      "bytes": 222416,
-      "sha256": "0059a4f31dfcc49b4667427af27346470580cd52669343c38e9504dfa852bf3d"
+      "bytes": 237220,
+      "sha256": "3c74a8f7e7aca85d10115e80a1ed1263ea5e191099d5c508b42e0445a53f2fed"
     },
     {
       "path": "model/parts/roof_rails.glb",
@@ -893,11 +893,16 @@
       "sha256": "51147c884257439e786411951352644881a42edb9c37b69525beda0b29b9daf8"
     },
     {
+      "path": "model/wheels.json",
+      "bytes": 5105,
+      "sha256": "a7eb877765f5defb7c990e47ea030d5b1eb4cc0707cff3f661a8ec6e8f145af5"
+    },
+    {
       "path": "model/workshop.json",
-      "bytes": 15490,
-      "sha256": "3f7593b6555718de47c816837ea99d5788181c9c112e9fb28014b2d8ac8e7d34"
+      "bytes": 9209,
+      "sha256": "b6975066780731f9e42d36442dbaa41f7576c6ea9fe81ed6f494234014c2d657"
     }
   ],
-  "assetSha256": "2d317c62631f473e668d1ec5d7696f7e64f43331cb4c0a2dc23d3ef6ba290588",
+  "assetSha256": "0fd6a5e4fad7bc6f3e5b8cf7fa83abf118dcad6e24cce151db75d158b0acca62",
   "visualInspectionRequired": true
 }

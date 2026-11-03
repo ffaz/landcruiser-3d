@@ -657,10 +657,11 @@ function bakeContactShadow(){
 // All physical dimensions come from the stored asset; no vertex-fitting code.
 const modelManifestURL=new URL('./model/manifest.json',document.baseURI);
 async function readJSON(url){const response=await fetch(url);if(!response.ok)throw new Error(`Cannot load ${url.pathname}: ${response.status}`);return response.json();}
-const [manifest,buildFile,cameraReference]=await Promise.all([
+const [manifest,buildFile,cameraReference,wheelCatalog]=await Promise.all([
  readJSON(modelManifestURL),readJSON(new URL('./build.json',document.baseURI)),
- readJSON(new URL('./model/camera-reference.json',document.baseURI))
+ readJSON(new URL('./model/camera-reference.json',document.baseURI)),readJSON(new URL('./model/wheels.json',document.baseURI))
 ]);
+const tyreById=new Map(wheelCatalog.tyres.map(t=>[t.id,t])),rimById=new Map(wheelCatalog.rims.map(r=>[r.id,r]));
 const loader=new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
 const bodyGroup=new THREE.Group(),wheelGroup=new THREE.Group();bodyGroup.name='Rigid body and parts';wheelGroup.name='Fixed wheels';car.add(bodyGroup,wheelGroup);
 // The stored side hem has R=1/G≈0.51: derive its missing shutline from immutable
@@ -866,7 +867,8 @@ function finishPartMaterial(material,entry,zone,sourceName,node){
  }
 }
 let bakedVertexCount=0;
-await Promise.all(partEntries.map(async entry=>{
+// Optional workshop parts ("lazy": true) load only when a build first selects them.
+async function loadPart(entry){
  const asset=await loader.loadAsync(new URL(entry.url,modelManifestURL).href);
  const root=asset.scene.getObjectByName(entry.rootNode||entry.id)||asset.scene;
  const materialCache=new Map();
@@ -882,7 +884,7 @@ await Promise.all(partEntries.map(async entry=>{
     if(!['glass','lamp_clear','mirror'].includes(zone)&&!(entry.id.startsWith('lamp_rear_')&&zone==='lamp_red'))useBakedShading(material);
     if(entry.rigidClass==='wheel'&&!entry.wheelSlot&&zone==='black'){material.color.set('#0d1115');material.roughness=.56;material.envMapIntensity=1;}
     if(entry.rigidClass==='wheel'&&!entry.wheelSlot&&zone==='chrome'){material.color.set('#e1e4e5');material.roughness=.24;material.metalness=1;material.clearcoat=.15;material.clearcoatRoughness=.23;material.envMapIntensity=.95;}
-    // New workshop assets may author a finish per zone; base assets keep their accepted finish.
+    // Additive workshop parts author their own finish without changing base materials.
     for(const [key,value]of Object.entries(entry.materialDefaults?.[zone]||{})){if(key==='color')material.color.set(value);else if(key in material)material[key]=value;}
     material.userData={...material.userData,zone,sourceMaterial:source.name,defaultColor:material.color.getHexString(),partId:entry.id};
     materialCache.set(key,material);
@@ -895,7 +897,16 @@ await Promise.all(partEntries.map(async entry=>{
  bakedVertexCount+=bindBakedAttribute(root);
  root.name=entry.id;root.userData={...root.userData,partId:entry.id,slot:entry.slot,zones:entry.zones,rigidClass:entry.rigidClass};
  (entry.rigidClass==='wheel'?wheelGroup:bodyGroup).add(root);parts.set(entry.id,root);
-}));
+}
+await Promise.all(partEntries.filter(entry=>!entry.lazy).map(loadPart));
+const lazyLoads=new Map();
+function ensurePartsFor(state){
+ const ids=[...new Set(Object.values(state.slots))].filter(id=>id&&!parts.has(id));
+ return Promise.all(ids.map(id=>{
+  if(!lazyLoads.has(id))lazyLoads.set(id,loadPart(entryById.get(id)).then(()=>{parts.get(id).visible=false;car.updateMatrixWorld(true);}));
+  return lazyLoads.get(id);
+ }));
+}
 car.updateMatrixWorld(true);
 for(const entry of partEntries){if(entry.wheelSlot&&parts.has(entry.wheelSlot))parts.get(entry.wheelSlot).attach(parts.get(entry.id));}
 car.updateMatrixWorld(true);
@@ -914,7 +925,11 @@ const cloneJSON=value=>JSON.parse(JSON.stringify(value));
 const defaultSlots=Object.fromEntries(Object.entries(manifest.slots).map(([slot,value])=>[slot,value.default??null]));
 const availableZones=new Set(partEntries.flatMap(entry=>entry.zones));
 function mergeBuild(base,patch){
- const next={slots:{...base.slots,...patch.slots},paint:{...base.paint},lift_mm:patch.lift_mm??base.lift_mm,lamps_on:patch.lamps_on??base.lamps_on??false,hidden:patch.hidden===undefined?[...base.hidden]:[...patch.hidden]};
+ const next={slots:{...base.slots,...patch.slots},paint:{...base.paint},lift_mm:patch.lift_mm??base.lift_mm,lamps_on:patch.lamps_on??base.lamps_on??false,hidden:patch.hidden===undefined?[...base.hidden]:[...patch.hidden],
+  tyre:patch.tyre??base.tyre??'stock',rim:patch.rim??base.rim??'stock'};
+ if(!tyreById.has(next.tyre))throw new Error('Unknown tyre: '+next.tyre);
+ if(!rimById.has(next.rim))throw new Error('Unknown rim: '+next.rim);
+ if(tyreById.get(next.tyre).built===false||rimById.get(next.rim).built===false)throw new Error('Tyre or rim not built yet');
  for(const [key,value] of Object.entries(patch.paint||{})){if(value===null)delete next.paint[key];else next.paint[key]=value;}
  if(typeof next.lamps_on!=='boolean')throw new Error('lamps_on must be boolean');
  if(!Number.isFinite(next.lift_mm))throw new Error('lift_mm must be a finite number');
@@ -929,7 +944,7 @@ function mergeBuild(base,patch){
  if(next.hidden.some(id=>typeof id!=='string'||(!entryById.has(id)&&!manifest.slots[id])))throw new Error('Unknown hidden part');
  return next;
 }
-const baseBuild=mergeBuild({slots:defaultSlots,paint:{paint:DEFAULT_WHITE},lift_mm:0,hidden:[]},buildFile);
+const baseBuild=mergeBuild({slots:defaultSlots,paint:{paint:DEFAULT_WHITE},lift_mm:0,hidden:[],tyre:'stock',rim:'stock'},buildFile);
 let buildState=cloneJSON(baseBuild);
 function applyZonePaint(){
  for(const [id,root] of parts){root.traverse(part=>{if(!part.isMesh)return;
@@ -940,6 +955,7 @@ function applyZonePaint(){
   };
   part.material=Array.isArray(part.material)?part.material.map(update):update(part.material);
  });}
+ paintCustomWheels();
  paint.color.set(buildState.paint.paint||DEFAULT_WHITE);
  const input=document.getElementById('customPaint');if(input)input.value='#'+paint.color.getHexString();
  document.querySelectorAll('[data-paint]').forEach(button=>button.classList.toggle('active',button.dataset.paint==='#'+paint.color.getHexString()));
@@ -956,58 +972,78 @@ function applyStudioPartVisibility(){
   if(studioMode==='clay'&&/^lamp_rear_[LR]_finish(?:3|4b)?$/.test(selected||''))selected=selected.replace(/_finish(?:3|4b)?$/,'');
   root.visible=selected===id&&!bundledSlots.has(entry.slot)&&!buildState.hidden.includes(id)&&!buildState.hidden.includes(selectedPart)&&!buildState.hidden.includes(entry.slot);
  }
-}
-// Independent rim swaps hide only the chosen wheel's hardware meshes.
-// Tyre/brake attributes, hub transforms and stored GLBs remain untouched.
-const wheelHardwareVisibility=new WeakMap();
-function applyRimVisibility(){
- const replacements=new Map();
- for(const entry of partEntries)if(entry.replacesWheelHardware&&parts.get(entry.id)?.visible){
-  const wheelId=buildState.slots[entry.replacesWheelHardware];
-  if(!parts.get(wheelId)?.visible){parts.get(entry.id).visible=false;continue;}
-  replacements.set(wheelId,entry.id);
- }
- for(const entry of partEntries){
-  if(!/^wheel_(FL|FR|RL|RR)$/.test(entry.slot))continue;
-  const replacement=replacements.has(entry.id);
-  parts.get(entry.id).traverse(node=>{
-   if(!node.isMesh)return;
-   const materials=Array.isArray(node.material)?node.material:[node.material];
-   if(materials.some(m=>m.userData.partId!==entry.id))return;
-   if(!wheelHardwareVisibility.has(node))wheelHardwareVisibility.set(node,node.visible);
-   const retained=materials.every(m=>['tyre','brake'].includes(m.userData.zone));
-   node.visible=wheelHardwareVisibility.get(node)&&(!replacement||retained);
+ // Workshop tyres/rims: the stock wheel keeps only the halves still in use (its centre badge rides on the rim).
+ // A stock tyre on an aftermarket rim moves out with the rim's offset; the brake disc stays on the hub.
+ const customTyre=buildState.tyre!=='stock',customRim=buildState.rim!=='stock',shift=customRim?(wheelCatalog.vehicle.stockOffset_mm-rimById.get(buildState.rim).offset_mm)/1000:0;
+ for(const [id,root]of parts){const entry=entryById.get(id);if(entry.rigidClass!=='wheel'||entry.wheelSlot||entry.replacesWheelHardware)continue;
+  const side=Math.sign(entry.pivot?.[2]??manifest.slots[entry.slot].pivot[2]);
+  root.traverse(mesh=>{if(!mesh.isMesh)return;const zone=[].concat(mesh.material)[0].userData.zone;
+   mesh.visible=zone==='tyre'?!customTyre:zone==='brake'||!customRim;
+   if(zone==='tyre'){mesh.userData.stockZ??=mesh.position.z;mesh.position.z=mesh.userData.stockZ+side*shift;}
   });
  }
+}
+// Workshop tyres and rims: the builder (wheels/assemble.js) ships with their 3D models; until then every
+// catalog entry other than stock is built:false and never reaches here. Built on first use, then one shared build per tyre/rim, cloned onto
+// each hub; right-hand corners are turned, not mirrored, so lettering reads correctly.
+const customWheels=new THREE.Group();customWheels.name='Workshop tyres and rims';wheelGroup.add(customWheels);
+let wheelKit=null,customWheelKey='stock|stock';
+async function ensureWheelsFor(state){
+ if(state.tyre==='stock'&&state.rim==='stock')return;
+ wheelKit??=await import('./wheels/assemble.js');
+ await wheelKit.prepare(tyreById.get(state.tyre),rimById.get(state.rim),{loadRim:async id=>{const entry=entryById.get(id);if(!entry)throw Error('Unknown rim asset '+id);await ensurePartsFor({slots:{[entry.slot]:id}});return parts.get(id);}});
+}
+function syncCustomWheels(){
+ const key=buildState.tyre+'|'+buildState.rim;if(key===customWheelKey)return;
+ customWheelKey=key;customWheels.clear();if(key==='stock|stock')return;
+ for(const slot of ['wheel_FL','wheel_FR','wheel_RL','wheel_RR']){
+  const pivot=manifest.slots[slot].pivot,corner=wheelKit.corner(tyreById.get(buildState.tyre),rimById.get(buildState.rim),wheelCatalog.vehicle.stockOffset_mm);
+  corner.name=slot+'_workshop';corner.position.set(...pivot);corner.rotation.y=pivot[2]>0?0:Math.PI;customWheels.add(corner);
+ }
+}
+function paintCustomWheels(){
+ customWheels.traverse(mesh=>{if(!mesh.isMesh)return;
+  const own=mesh.userData.ownMaterial??=mesh.material,original=originalMaterials.get(own)||own;
+  const zone=original.userData.zone,authored=buildState.paint[original.userData.partId+':'+zone]??buildState.paint[zone];
+  mesh.material=studioMaterial(own,zone,authored??('#'+original.userData.defaultColor),authored!==undefined,mesh);
+ });
 }
 // Tyre swaps are rigid too: a wheel part declares its tyre diameter (tyre_mm) and
 // the hubs rise by half the difference from stock; the body rides on top.
 const STOCK_TYRE_MM=793;
 function tyreDiameterMM(){
+ if(buildState.tyre!=='stock')return tyreById.get(buildState.tyre).od_mm;
  const sizes=['wheel_FL','wheel_FR','wheel_RL','wheel_RR'].map(slot=>entryById.get(buildState.slots[slot])?.tyre_mm??STOCK_TYRE_MM);
  return Math.max(...sizes);
 }
 function applyBuild(){
  // A lift changes one group translation. All mesh buffers and wheel poses stay fixed.
+ syncCustomWheels();
  const tyreRise=(tyreDiameterMM()-STOCK_TYRE_MM)/2000;
  wheelGroup.position.y=tyreRise;
  bodyGroup.position.y=tyreRise+buildState.lift_mm/1000;clayBakedUniforms.uClayBodyLift.value=bodyGroup.position.y;
- applyStudioPartVisibility();applyRimVisibility();
+ applyStudioPartVisibility();
  applyZonePaint();car.updateMatrixWorld(true);rebuildFramingPoints();refreshCameraSafety();
  const displayedBase=plinth.visible;plinth.visible=false;bakeContactShadow();plinth.visible=displayedBase;
  enforceCameraSafety();updateClipping();centreProjection();requestRender();
  window.dispatchEvent(new CustomEvent('lcbuild-change'));
 }
-async function setBuildState(patch){buildState=mergeBuild(buildState,patch);applyBuild();return cloneJSON(buildState);}
+// State changes run one at a time, so a slower lazy part load can never apply out of order.
+let buildQueue=Promise.resolve();
+function commitBuild(compute){
+ const run=buildQueue.then(async()=>{const next=compute();await ensurePartsFor(next);await ensureWheelsFor(next);buildState=next;applyBuild();return cloneJSON(buildState);});
+ buildQueue=run.catch(()=>{});return run;
+}
+function setBuildState(patch){return commitBuild(()=>mergeBuild(buildState,patch));}
 function hashBuild(){
  const params=new URLSearchParams(location.hash.slice(1));const patch=params.has('build')?JSON.parse(params.get('build')):{};
  if(params.has('lift_mm'))patch.lift_mm=Number(params.get('lift_mm'));
- buildState=mergeBuild(baseBuild,patch);applyBuild();
+ return commitBuild(()=>mergeBuild(baseBuild,patch));
 }
 window.lcBuild=Object.freeze({getState:()=>cloneJSON(buildState),getBaseState:()=>cloneJSON(baseBuild),setState:setBuildState,
- replaceState:async state=>{buildState=mergeBuild(baseBuild,state);applyBuild();return cloneJSON(buildState);},
+ replaceState:state=>commitBuild(()=>mergeBuild(baseBuild,state)),
  tyreDiameterMM,getManifest:()=>cloneJSON(manifest),parts,groups:{body:bodyGroup,wheels:wheelGroup}});
-window.addEventListener('hashchange',()=>{try{hashBuild();}catch(error){console.warn('Build hash ignored:',error.message);}});
+window.addEventListener('hashchange',()=>{hashBuild().catch(error=>console.warn('Build hash ignored:',error.message));});
 
 // 4. LONG-LENS CAMERA AND FRAMING; all views stay above the ground.
 const target=new THREE.Vector3(.02,.40,0);
@@ -1018,18 +1054,12 @@ const PRESET={
  top:new THREE.Vector3(0,1,.014)
 };
 let activePreset='side',fittedDistance=15,controls;
-// Unselected catalogue variants must not affect dimensions or camera guards.
-function visibleBounds(root,target=new THREE.Box3()){
- root.updateMatrixWorld(true);target.makeEmpty();const box=new THREE.Box3();
- root.traverseVisible(o=>{if(!o.isMesh)return;o.geometry.computeBoundingBox();box.copy(o.geometry.boundingBox).applyMatrix4(o.matrixWorld);target.union(box);});
- return target;
-}
-const carBounds=visibleBounds(car);
+const carBounds=new THREE.Box3().setFromObject(car);
 // Bounds come from the stored meshes, including mirrors and rails.
 const cameraSafety={sphere:new THREE.Sphere(),panBox:new THREE.Box3(),collisionBox:new THREE.Box3(),
  margin:.35,minCameraY:.15,minDistance:4,maxPolarAngle:Math.PI-.014};
 function refreshCameraSafety(){
- visibleBounds(car,carBounds);carBounds.getBoundingSphere(cameraSafety.sphere);
+ carBounds.setFromObject(car);carBounds.getBoundingSphere(cameraSafety.sphere);
  const half=new THREE.Vector3(.18,.60,.15);
  cameraSafety.panBox.set(cameraSafety.sphere.center.clone().sub(half),cameraSafety.sphere.center.clone().add(half));
  cameraSafety.collisionBox.copy(carBounds).expandByScalar(.30);
@@ -1067,7 +1097,7 @@ function enforceCameraSafety(){
 const framingPoints=[],framingWithBase=[];
 function rebuildFramingPoints(){
  framingPoints.length=0;car.updateMatrixWorld(true);
- car.traverseVisible(part=>{if(!part.isMesh)return;const positions=part.geometry.attributes.position;
+ car.traverse(part=>{if(!part.isMesh)return;const positions=part.geometry.attributes.position;
   const stride=Math.max(1,Math.ceil(positions.count/150));
   for(let i=0;i<positions.count;i+=stride)framingPoints.push(new THREE.Vector3().fromBufferAttribute(positions,i).applyMatrix4(part.matrixWorld));
  });
@@ -1083,7 +1113,7 @@ function projectPoints(cam,points){
 }
 function projectedBounds(cam){return projectPoints(cam,plinth.visible?framingWithBase:framingPoints);}
 function boundsCorners(reference=false){
- visibleBounds(car,carBounds);if(plinth.visible)carBounds.union(baseBounds);const box=reference?referenceBounds:carBounds;const points=[];
+ carBounds.setFromObject(car);if(plinth.visible)carBounds.union(baseBounds);const box=reference?referenceBounds:carBounds;const points=[];
  for(const x of [box.min.x,box.max.x])for(const y of [box.min.y,box.max.y])for(const z of [box.min.z,box.max.z])points.push(new THREE.Vector3(x,y,z));
  return points;
 }
@@ -1240,7 +1270,7 @@ function setStudio(mode){
   fill.color.copy(originalLighting.fillColor);fill.groundColor.copy(originalLighting.groundColor);fill.intensity=originalLighting.fillIntensity;
   document.querySelector('meta[name="theme-color"]').content=mode==='cream'?'#EBEBE9':'#4a6a82';
  }
- applyStudioPartVisibility();applyRimVisibility();applyZonePaint();
+ applyStudioPartVisibility();applyZonePaint();
  plinth.traverse(part=>{if(part.isMesh){const current=originalMaterials.get(part.material)||part.material;
   part.material=studioMaterial(current,current===baseTopMaterial?'base_top':'base_edge');
  }});
@@ -1303,7 +1333,7 @@ function animate(){
   if(wasTweening || moved || guarded || needsRender){updateClipping();renderFrame();needsRender=false;}
 }
 bgToggle.setAttribute('aria-label','Cream studio. Switch to Slate studio');
-hashBuild();
+await hashBuild().catch(async error=>{console.warn('Build hash ignored:',error.message);await commitBuild(()=>cloneJSON(baseBuild));});
 renderFrame();
 document.getElementById('loader').classList.add('hidden');
 animate();

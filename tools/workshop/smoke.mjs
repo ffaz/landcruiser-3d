@@ -31,7 +31,7 @@ for(const viewport of [{width:1440,height:1000},{width:390,height:844}]){
  }
  await page.click('#workshopToggle');
  check(`${tag}: opens`,await page.evaluate(()=>document.body.classList.contains('workshop-open')));
- check(`${tag}: catalogue categories listed`,(await page.locator('#workshop .ws-row').count())===(await page.evaluate(()=>lcWorkshop.data.categories.length)));
+ check(`${tag}: eleven categories listed`,(await page.locator('#workshop .ws-row').count())===11);
  await shot('home');
  await page.click('#workshop [data-cat=stance]');
  await page.click('#workshop [data-opt=lift63]');
@@ -39,10 +39,22 @@ for(const viewport of [{width:1440,height:1000},{width:390,height:844}]){
  check(`${tag}: 2.5" lift applies`,lifted.lift===63&&Math.abs(lifted.y-.063)<1e-9&&lifted.wheels===0,JSON.stringify(lifted));
  await shot('stance');
  await page.click('#workshop [data-home]');
- await page.click('#workshop [data-cat=wheels]');
- const missingTyres=await page.evaluate(()=>{const ids=new Set(lcBuild.getManifest().parts.map(p=>p.id));return lcWorkshop.data.categories.find(c=>c.id==='wheels').options.filter(o=>(o.requires||[]).some(id=>!ids.has(id))).length});
- check(`${tag}: unbuilt tyres disabled`,(await page.locator('#workshop .ws-opt[disabled]').count())===missingTyres);
- await shot('wheels');
+ // Tyres and rims: two sections. Real LC200 fit rules apply; sizes without 3D models are listed as "soon".
+ await page.click('#workshop [data-cat=tyres]');
+ check(`${tag}: tyres: stock live, 3 soon, 3 won't fit on the stock rim`,(await page.locator('#workshop .ws-opt:not([disabled])').count())===1&&(await page.locator('#workshop .ws-opt.nofit').count())===3&&(await page.locator('#workshop .ws-soon',{hasText:'soon'}).count())===3);
+ check(`${tag}: 35" says why it won't fit`,(await page.locator('#workshop [data-opt=mt35] .ws-v').innerText()).startsWith('Needs an 8.5–11″ wide rim'));
+ await shot('tyres');
+ await page.click('#workshop [data-home]');
+ await page.click('#workshop [data-cat=rims]');
+ check(`${tag}: rims: stock and three built designs live`,(await page.locator('#workshop .ws-opt:not([disabled])').count())===4&&(await page.locator('#workshop .ws-opt.nofit').count())===0);
+ const rules=await page.evaluate(()=>{const w=window.lcWorkshop,c=s=>w.wheelChecks({tyre:'stock',rim:'stock',...s});
+  return {stock:c({}).notes,kmc35:c({tyre:'mt35',rim:'kmc'}).notes,stock35:c({tyre:'mt35'}).notes,steel35:c({tyre:'mt35',rim:'steel'}).notes,m285:c({tyre:'at285',rim:'method'}).notes};});
+ check(`${tag}: rules: stock wheel has no notes`,rules.stock.length===0,JSON.stringify(rules.stock));
+ check(`${tag}: rules: 35" on KMC fits, sticks out 29/34 mm`,rules.kmc35.length===1&&rules.kmc35[0].level==='tight'&&/29 mm \(front\), 34 mm \(rear\)/.test(rules.kmc35[0].text),JSON.stringify(rules.kmc35));
+ check(`${tag}: rules: 35" refused on 7.5" and 8" rims`,rules.stock35[0]?.level==='clash'&&rules.steel35[0]?.level==='clash',JSON.stringify([rules.stock35,rules.steel35]));
+ check(`${tag}: rules: 285/70 on Method ET0 sticks out 31/36 mm`,rules.m285.length===1&&/31 mm \(front\), 36 mm \(rear\)/.test(rules.m285[0].text),JSON.stringify(rules.m285));
+ const refused=await page.evaluate(async()=>{try{await window.lcBuild.setState({tyre:'mt35',rim:'kmc'});return false;}catch{return window.lcBuild.getState().tyre==='stock';}});
+ check(`${tag}: unbuilt tyre/rim refused by the viewer`,refused);
  await page.click('#workshop [data-home]');
  await page.click('#workshop [data-compare=base]');
  check(`${tag}: compare shows base`,(await page.evaluate(()=>window.lcBuild.getState().lift_mm))===0);

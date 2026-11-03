@@ -9,6 +9,8 @@ const data=JSON.parse(await fs.readFile(work+'/rim-data.json')),manifest=JSON.pa
 const names={disc:'Dished disc · satin black',steel:'Round-hole steel · silver',window:'Eight-window · satin black'};
 const rimFinish={disc:{color:'#555b60',roughness:.38,metalness:.70,envMapIntensity:1.6},steel:{color:'#c4c9cc',roughness:.36,metalness:.65,envMapIntensity:2.8},window:{color:'#454a4f',roughness:.40,metalness:.70,envMapIntensity:1.8}};
 const defaults={rim:rimFinish[style],chrome:{color:'#858c92',roughness:.34,metalness:.85,envMapIntensity:.95},black:{color:'#242629',roughness:.85,metalness:0,envMapIntensity:.18}},report=[];
+// Keep the previous tyre review assets in the repo, loading optional variants only on demand.
+for(const p of manifest.parts)if(/^wheel_(FL|FR|RL|RR)_/.test(p.id))p.lazy=true;
 for(const corner of ['FL','FR','RL','RR']){
  const slot='rim_'+corner,id=slot+'_'+style,pivot=manifest.slots['wheel_'+corner].pivot,sign=corner.endsWith('R')?-1:1;
  manifest.slots[slot]??={default:null,pivot,rigidClass:'wheel'};
@@ -23,16 +25,14 @@ for(const corner of ['FL','FR','RL','RR']){
  }
  doc.createScene().addChild(root);await doc.transform(weld(),dedup());doc.createExtension(EXTMeshoptCompression).setRequired(true).setEncoderOptions({method:EXTMeshoptCompression.EncoderMethod.QUANTIZE});
  const url='parts/'+id+'.glb';await io.write(repo+'/model/'+url,doc);
- const entry={id,slot,url,rootNode:id,pivot,rigidClass:'wheel',zones:Object.keys(data.groups),triangles:data.triangles,bounds:{min:lo,max:hi},beadSeat_mm:431.8,replacesWheelHardware:'wheel_'+corner,materialDefaults:defaults,bundlesSlots:['wheel_emblem_'+corner],purpose:names[style]+'; reference-inspired unbranded 17-inch rim; tyre and brake retained'};
+ const entry={id,slot,url,rootNode:id,pivot,rigidClass:'wheel',zones:Object.keys(data.groups),triangles:data.triangles,bounds:{min:lo,max:hi},beadSeat_mm:431.8,width_in:data.width_in,boltPattern:data.boltPattern,centreBore_mm:data.centreBore_mm,lazy:true,replacesWheelHardware:'wheel_'+corner,materialDefaults:defaults,bundlesSlots:['wheel_emblem_'+corner],purpose:names[style]+'; reference-inspired unbranded 17-inch rim; tyre and brake retained'};
  const index=manifest.parts.findIndex(p=>p.id===id);if(index<0)manifest.parts.push(entry);else manifest.parts[index]=entry;
  report.push({id,triangles:data.triangles,pivot,bytes:(await fs.stat(repo+'/model/'+url)).size,bounds:entry.bounds});
 }
 await fs.writeFile(repo+'/model/manifest.json',JSON.stringify(manifest,null,2)+'\n');
-for(const file of ['model/workshop.json','tools/workshop/workshop-base.json']){
- const w=JSON.parse(await fs.readFile(repo+'/'+file));let c=w.categories.find(c=>c.id==='rims');
- if(!c){c={id:'rims',label:'Rims',options:[{id:'original_rim',label:'Original rim',detail:'Restore the rim supplied with the selected tyre'}]};w.categories.splice(w.categories.findIndex(c=>c.id==='wheels')+1,0,c);}
- const option={id:'rim_'+style,label:names[style],detail:'17-inch · independent rim swap · selected tyre retained',requires:['FL','FR','RL','RR'].map(c=>'rim_'+c+'_'+style)};
- const i=c.options.findIndex(o=>o.id===option.id);if(i<0)c.options.push(option);else c.options[i]=option;
- await fs.writeFile(repo+'/'+file,JSON.stringify(w,null,2)+'\n');
-}
-await fs.writeFile(work+'/asset-report.json',JSON.stringify({design:names[style],blender:data.blender,beadSeat_mm:data.beadSeat_mm,bake:data.bake,files:report},null,2)+'\n');console.log(style,data.triangles,report.reduce((a,b)=>a+b.bytes,0)+' bytes');
+// Integrate with the current native Tyres/Rims catalogue; its fit rules and offsets are retained.
+const wheels=JSON.parse(await fs.readFile(repo+'/model/wheels.json'));
+const catId={disc:'kmc',steel:'steel',window:'method'}[style],rim=wheels.rims.find(r=>r.id===catId);
+Object.assign(rim,{built:true,label:names[style],color:rimFinish[style].color,assetId:'rim_FL_'+style,sourceNote:'Reference-inspired face, adapted to the configured LC200 5x150 mount; not manufacturer CAD'});
+await fs.writeFile(repo+'/model/wheels.json',JSON.stringify(wheels,null,2)+'\n');
+await fs.writeFile(work+'/asset-report.json',JSON.stringify({design:names[style],blender:data.blender,beadSeat_mm:data.beadSeat_mm,width_in:data.width_in,boltPattern:data.boltPattern,centreBore_mm:data.centreBore_mm,bake:data.bake,files:report},null,2)+'\n');console.log(style,data.triangles,report.reduce((a,b)=>a+b.bytes,0)+' bytes');

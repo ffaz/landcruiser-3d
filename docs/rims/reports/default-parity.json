@@ -2,16 +2,19 @@
   {
     "studio": "cream",
     "changedPixels": 0,
-    "maxChannelDifference": 0
+    "maxChannelDifference": 0,
+    "baseline": "a52ad7b"
   },
   {
     "studio": "slate",
     "changedPixels": 0,
-    "maxChannelDifference": 0
+    "maxChannelDifference": 0,
+    "baseline": "a52ad7b"
   },
   {
     "studio": "clay",
     "changedPixels": 0,
-    "maxChannelDifference": 0
+    "maxChannelDifference": 0,
+    "baseline": "a52ad7b"
   }
 ]
