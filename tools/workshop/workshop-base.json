@@ -25,12 +25,8 @@
    {"id": "lift63", "label": "2.5\" lift", "detail": "63 mm", "patch": {"lift_mm": 63}},
    {"id": "lift76", "label": "3\" lift", "detail": "76 mm", "patch": {"lift_mm": 76}}
   ]},
-  {"id": "wheels", "label": "Wheels & tyres", "options": [
-   {"id": "stock", "label": "Stock GXR alloy", "detail": "265/70R17 label · stored 793 mm"},
-   {"id": "at285", "label": "285/70R17 AT", "detail": "830 mm", "tyre_mm": 830, "requires": ["wheel_FL_at285", "wheel_FR_at285", "wheel_RL_at285", "wheel_RR_at285"]},
-   {"id": "mt315", "label": "315/70R17 MT · black steel", "detail": "873 mm", "tyre_mm": 873, "requires": ["wheel_FL_mt315", "wheel_FR_mt315", "wheel_RL_mt315", "wheel_RR_mt315"]},
-   {"id": "mt35", "label": "35×12.50R17 MT · black steel", "detail": "889 mm", "tyre_mm": 889, "requires": ["wheel_FL_mt35", "wheel_FR_mt35", "wheel_RL_mt35", "wheel_RR_mt35"]}
-  ]},
+  {"id": "tyres", "label": "Tyres", "catalog": "tyres"},
+  {"id": "rims", "label": "Rims", "catalog": "rims"},
   {"id": "front", "label": "Front", "options": [
    {"id": "stock", "label": "Stock bumper", "detail": "Factory GXR"},
    {"id": "bullbar", "label": "Steel bull bar", "detail": "Mount: front_bar", "requires": ["bullbar"]},

@@ -2,18 +2,31 @@
 // mounts, measured arches) and only drives the viewer through window.lcBuild
 // and window.lcView. It never touches meshes, materials or the camera directly.
 import * as THREE from 'three';
+import {mountable,lateral} from './wheels/fit.js';
 
 const lcBuild=window.lcBuild,lcView=window.lcView;
 if(!lcBuild||!lcView)throw Error('Viewer API not ready');
-const data=await (await fetch(new URL('model/workshop.json',import.meta.url))).json();
+const [data,wheels]=await Promise.all(['model/workshop.json','model/wheels.json'].map(async file=>(await fetch(new URL(file,import.meta.url))).json()));
 const manifest=lcBuild.getManifest();
 const entries=new Map([manifest.base,...manifest.parts].map(entry=>[entry.id,entry]));
 const STOCK=data.stockTyre_mm;
 
 // ── Pure logic (also exercised by tests through window.lcWorkshop) ─────────
-const available=option=>(option.requires||[]).every(id=>entries.has(id));
+// Tyres and rims are catalog categories: options come from model/wheels.json and set state.tyre / state.rim.
+// Each is offered only with what it can really be fitted to; the other half's current choice decides.
+const KEY={tyres:'tyre',rims:'rim'};
+const specOf={tyre:id=>wheels.tyres.find(t=>t.id===id),rim:id=>wheels.rims.find(r=>r.id===id)};
+for(const category of data.categories)if(category.catalog)category.options=wheels[category.catalog].map(item=>({...item,set:{[KEY[category.catalog]]:item.id}}));
+function wheelFit(option,state){
+ if(!option.set)return {ok:true,why:[]};
+ const tyre=specOf.tyre(option.set.tyre??state.tyre),rim=specOf.rim(option.set.rim??state.rim);
+ return mountable(wheels,tyre,rim);
+}
+// Tyres and rims marked built:false are listed with their real fit but wait for their 3D models.
+const available=(option,state=lcBuild.getState())=>(option.requires||[]).every(id=>entries.has(id))&&option.built!==false&&wheelFit(option,state).ok;
 const categoryPartSlots=category=>[...new Set(category.options.flatMap(option=>(option.requires||[]).map(id=>entries.get(id)?.slot).filter(Boolean)))];
 function patchFor(category,option){
+ if(option.set)return {...option.set};
  // Start from the category's stock state, then add this option's parts and fields.
  const slots={};
  for(const slot of categoryPartSlots(category))slots[slot]=manifest.slots[slot]?.default??null;
@@ -23,12 +36,14 @@ function patchFor(category,option){
  return patch;
 }
 function isSelected(option,state){
+ if(option.set)return Object.entries(option.set).every(([key,value])=>state[key]===value);
  if(option.requires?.length)return option.requires.every(id=>state.slots[entries.get(id)?.slot]===id);
  if(option.patch)return Object.entries(option.patch).every(([key,value])=>typeof value!=='object'&&state[key]===value);
  return false;
 }
 function selectedOption(category,state){
- return category.options.find(option=>available(option)&&isSelected(option,state))||
+ if(category.catalog)return category.options.find(option=>isSelected(option,state))||null;
+ return category.options.find(option=>available(option,state)&&isSelected(option,state))||
   category.options.find(option=>!option.requires&&!option.patch)||null;
 }
 function tyreClearance(tyre_mm,lift_mm){
@@ -52,12 +67,19 @@ function mountChecks(state){
  }
  return out;
 }
+function wheelChecks(state){
+ const tyre=specOf.tyre(state.tyre),rim=specOf.rim(state.rim),mount=mountable(wheels,tyre,rim),side=lateral(wheels,tyre,rim),notes=mount.why.map(text=>({level:'clash',text}));
+ const poke=side.axles.filter(a=>a.status!=='ok');
+ if(poke.length)notes.push({level:'tight',text:`Tyres stick out ${poke.map(a=>`${a.poke} mm (${a.axle})`).join(', ')} past the arches: flares needed for road use in most places`});
+ if(side.innerStatus!=='ok')notes.push({level:side.innerStatus,text:`Tyre inner edge ${side.inner} mm in from the hub face: ${side.innerStatus==='tight'?'may touch the upper control arm at full lock':'hits the upper control arm'}`});
+ return {tyre,rim,mount,side,notes};
+}
 function fitCheck(state=lcBuild.getState()){
- const tyre=lcBuild.tyreDiameterMM(),tyres=tyreClearance(tyre,state.lift_mm),mounts=mountChecks(state);
- const notes=[...tyres.filter(t=>t.status!=='ok').map(t=>({level:t.status,text:`${t.arch==='front'?'Front':'Rear'} arch ${t.mm} mm clearance${t.status==='tight'?': liner trim likely':': tyre hits the arch'}`})),
+ const tyre=lcBuild.tyreDiameterMM(),tyres=tyreClearance(tyre,state.lift_mm),mounts=mountChecks(state),wheel=wheelChecks(state);
+ const notes=[...wheel.notes,...tyres.filter(t=>t.status!=='ok').map(t=>({level:t.status,text:`${t.arch==='front'?'Front':'Rear'} arch ${t.mm} mm clearance${t.status==='tight'?': liner trim likely':': tyre hits the arch'}`})),
   ...mounts.filter(m=>m.status!=='ok').map(m=>({level:'clash',text:`${m.id}: ${m.note}`}))];
  const level=notes.some(n=>n.level==='clash')?'clash':notes.length?'tight':'ok';
- return {level,tyre_mm:tyre,tyres,mounts,notes};
+ return {level,tyre_mm:tyre,tyres,mounts,wheel,notes};
 }
 function dimensions(){
  const box=new THREE.Box3();
@@ -71,6 +93,7 @@ function shareState(state){
  if(Object.keys(slots).length)diff.slots=slots;
  if(state.lift_mm!==base.lift_mm)diff.lift_mm=state.lift_mm;
  if(state.lamps_on!==base.lamps_on)diff.lamps_on=state.lamps_on;
+ for(const key of ['tyre','rim'])if(state[key]!==base[key])diff[key]=state[key];
  const paint=Object.fromEntries(Object.entries(state.paint).filter(([key,value])=>base.paint[key]!==value));
  if(Object.keys(paint).length)diff.paint=paint;
  return diff;
@@ -105,6 +128,7 @@ body.clean-view #workshop{display:none}
 #workshop .ws-opt{display:flex;align-items:center;gap:11px;border:1px solid var(--line);border-radius:12px;padding:10px 11px;background:transparent;text-align:left;width:100%}
 #workshop .ws-opt[aria-checked=true]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
 #workshop .ws-opt[disabled]{opacity:.45;cursor:default}
+#workshop .ws-opt.nofit .ws-v{white-space:normal;opacity:.85}
 #workshop .ws-radio{width:14px;height:14px;flex:none;border-radius:50%;border:1.5px solid currentColor;opacity:.6}
 #workshop .ws-opt[aria-checked=true] .ws-radio{border:4px solid var(--accent);opacity:1}
 #workshop .ws-soon{font-size:9px;font-weight:650;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:100px;padding:3px 7px;white-space:nowrap}
@@ -160,9 +184,12 @@ function render(){
  }else{
   const category=data.categories.find(c=>c.id===view),current=selectedOption(category,state);
   body=`<div class="ws-head"><button class="ws-back" data-home aria-label="Back">‹</button><div><div class="ws-micro">Workshop</div><div class="ws-title">${esc(category.label)}</div></div></div>
-  <div class="ws-scroll"><div class="ws-opts" role="radiogroup" aria-label="${esc(category.label)}">${category.options.map(option=>{const ok=available(option);
-   return `<button class="ws-opt" role="radio" data-opt="${option.id}" aria-checked="${option===current}" ${ok?'':'disabled'}><span class="ws-radio"></span><span class="ws-t"><div class="ws-n">${esc(option.label)}</div><div class="ws-v">${esc(option.detail||'')}</div></span>${ok?'':'<span class="ws-soon">soon</span>'}</button>`;}).join('')}</div>
-  ${category.id==='wheels'||category.id==='stance'?`<p class="ws-note">${esc(data.clearanceNote)}</p>`:''}</div>${statusHTML(fit)}`;
+  <div class="ws-scroll"><div class="ws-opts" role="radiogroup" aria-label="${esc(category.label)}">${category.options.map(option=>{const fits=wheelFit(option,state),ok=available(option,state);
+   // Reasons name the option itself; inside its own row that is implied.
+   const detail=fits.ok?option.detail||'':fits.why.map(why=>why.startsWith(option.label+' ')?why.slice(option.label.length+1).replace(/^./,c=>c.toUpperCase()):why).join('. ');
+   return `<button class="ws-opt${fits.ok?'':' nofit'}" role="radio" data-opt="${option.id}" aria-checked="${option===current}" ${ok?'':'disabled'}><span class="ws-radio"></span><span class="ws-t"><div class="ws-n">${esc(option.label)}</div><div class="ws-v">${esc(detail)}</div></span>${ok?'':`<span class="ws-soon">${fits.ok?'soon':'won’t fit'}</span>`}</button>`;}).join('')}</div>
+  ${category.catalog?`<p class="ws-note">${esc(category.catalog==='tyres'?`Fitted to: ${specOf.rim(state.rim).label} (${specOf.rim(state.rim).detail}). “Won’t fit” is checked against this rim; “soon” sizes fit but need their 3D models.`:`Carrying: ${specOf.tyre(state.tyre).label}. “Won’t fit” is checked against this tyre; “soon” rims fit but need their 3D models.`)} ${esc(wheels.vehicle.note)}</p>`:''}
+  ${category.catalog==='tyres'||category.id==='stance'?`<p class="ws-note">${esc(data.clearanceNote)}</p>`:''}</div>${statusHTML(fit)}`;
  }
  panel.innerHTML=body;
 }
@@ -205,6 +232,8 @@ panel.addEventListener('click',async event=>{
  }
  if(t.dataset.opt){
   const category=data.categories.find(c=>c.id===view),option=category.options.find(o=>o.id===t.dataset.opt);
+  // New tyres and rims are built on first use; say so while that runs.
+  if(option.set){const v=t.querySelector('.ws-v');if(v)v.textContent='Fitting…';panel.querySelectorAll('.ws-opt').forEach(b=>b.disabled=true);}
   await lcBuild.setState(patchFor(category,option));render();
  }
 });
@@ -214,4 +243,4 @@ addEventListener('resize',()=>{if(document.body.classList.contains('workshop-ope
 addEventListener('lcbuild-change',()=>{if(document.body.classList.contains('workshop-open'))render();});
 new MutationObserver(()=>{if(document.body.classList.contains('workshop-open'))setOpen(true);}).observe(document.body,{attributes:true,attributeFilter:['class']});
 
-window.lcWorkshop=Object.freeze({data,fitCheck,tyreClearance,mountChecks,dimensions,baseDims,patchFor,selectedOption,shareState,open:()=>setOpen(true),close:()=>setOpen(false)});
+window.lcWorkshop=Object.freeze({data,wheels,wheelChecks,wheelFit,fitCheck,tyreClearance,mountChecks,dimensions,baseDims,patchFor,selectedOption,shareState,open:()=>setOpen(true),close:()=>setOpen(false)});
