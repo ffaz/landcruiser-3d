@@ -1,0 +1,73 @@
+[
+  {
+    "style": "disc",
+    "baseline": "7adae34",
+    "method": "sorted authored positions rounded to 1e-8 m; material splits combined",
+    "checks": {
+      "rubber": {
+        "before": "9fd37a0362920fbc893637c6071bb410d69c3c5c893e861207b8bbed6c6fe432",
+        "after": "9fd37a0362920fbc893637c6071bb410d69c3c5c893e861207b8bbed6c6fe432",
+        "identical": true
+      },
+      "rotor_hat_studs": {
+        "before": "39a6381acfaf2cc76cbbff574bef2b96be59c76c3a5ce2eefea5a71dd0de5d3d",
+        "after": "39a6381acfaf2cc76cbbff574bef2b96be59c76c3a5ce2eefea5a71dd0de5d3d",
+        "identical": true
+      },
+      "barrel_valve_backing_caliper": {
+        "before": "b305922e75cc29f5b67abb740bfeb5f7277e8c49d12b183658d811a36fb0a025",
+        "after": "b305922e75cc29f5b67abb740bfeb5f7277e8c49d12b183658d811a36fb0a025",
+        "identical": true
+      }
+    }
+  },
+  {
+    "style": "window",
+    "baseline": "7adae34",
+    "method": "sorted authored positions rounded to 1e-8 m; material splits combined",
+    "checks": {
+      "rubber": {
+        "before": "9fd37a0362920fbc893637c6071bb410d69c3c5c893e861207b8bbed6c6fe432",
+        "after": "9fd37a0362920fbc893637c6071bb410d69c3c5c893e861207b8bbed6c6fe432",
+        "identical": true
+      },
+      "rotor_hat_studs": {
+        "before": "39a6381acfaf2cc76cbbff574bef2b96be59c76c3a5ce2eefea5a71dd0de5d3d",
+        "after": "39a6381acfaf2cc76cbbff574bef2b96be59c76c3a5ce2eefea5a71dd0de5d3d",
+        "identical": true
+      },
+      "barrel_valve_backing_caliper": {
+        "before": "b305922e75cc29f5b67abb740bfeb5f7277e8c49d12b183658d811a36fb0a025",
+        "after": "b305922e75cc29f5b67abb740bfeb5f7277e8c49d12b183658d811a36fb0a025",
+        "identical": true
+      }
+    }
+  },
+  {
+    "style": "steel",
+    "baseline": "7adae34",
+    "method": "sorted authored positions rounded to 1e-8 m; material splits combined",
+    "checks": {
+      "rubber": {
+        "before": "4f1051521aac598295b50bec2df0e99b203d51b45c0e99210ec1356036d863d9",
+        "after": "4f1051521aac598295b50bec2df0e99b203d51b45c0e99210ec1356036d863d9",
+        "identical": true
+      },
+      "rotor_hat_studs": {
+        "before": "96a871b7785070e1b7ca11dfccffe83f5f73e3413ced0ceb665d5bd772ca23c3",
+        "after": "96a871b7785070e1b7ca11dfccffe83f5f73e3413ced0ceb665d5bd772ca23c3",
+        "identical": true
+      },
+      "barrel_valve_backing_caliper": {
+        "before": "0deed8b56b480432ed6487b35060f5f14dd08ac6662612105d46524d75be57d2",
+        "after": "0deed8b56b480432ed6487b35060f5f14dd08ac6662612105d46524d75be57d2",
+        "identical": true
+      },
+      "entire_accepted_steel_part": {
+        "before": "1d3453c66b6a5146a550c0c7fe5962b598003b4be860195df4aba2ca7be462f3",
+        "after": "1d3453c66b6a5146a550c0c7fe5962b598003b4be860195df4aba2ca7be462f3",
+        "identical": true
+      }
+    }
+  }
+]

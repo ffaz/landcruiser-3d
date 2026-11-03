@@ -1,0 +1,19 @@
+{
+  "imagesCommitted": false,
+  "sources": {
+    "method-quarter": "https://www.methodracewheels.com/cdn/shop/products/method-mr705-wheel-5lug-matte-titanium-17x8-5-1000_1000x1000.jpg?v=1747785623",
+    "method-front": "https://www.methodracewheels.com/cdn/shop/products/method-mr705-wheel-6lug-matte-titanium-17x8-5-face-1000_1000x1000.jpg?v=1747785623",
+    "steel-quarter": "https://wheel-tire.ae/wp-content/uploads/2021/11/TN01-SIZE-17-PCD-5X150-SILVER-LANDCRUSER-WEB.jpg",
+    "kmc-near-front": "https://www.kmcwheels.com/media/catalog/product/k/m/km720-17x85-et18-5-anthracite_a1-png.png",
+    "kmc-quarter": "https://www.kmcwheels.com/media/catalog/product/k/m/km720-17x85-et18-5-anthracite_a2-png.png",
+    "kmcProduct": "https://www.kmcwheels.com/kmc-roswell",
+    "methodProduct": "https://www.methodracewheels.com/products/705-matte-titanium",
+    "steelProduct": "https://wheel-tire.ae/product/fr-tn01-land-cruiser-steel-wheels/",
+    "kmcFrontRetailer": "https://4wheelonline.com/images/kmc/kmc-km720-roswell-matte-anthracite-wheels-slide3.jpg"
+  },
+  "limitations": [
+    "KMC first-party images retrieved: near-front and 3/4; exact front-on comparison uses a retailer-hosted catalogue image.",
+    "TN01 supplier gallery supplies one oblique image only; front render is provided as a diagnostic, not paired with an invented front photo.",
+    "Reference mounting variants differ; accepted LC200 5x150 dimensions and offsets take precedence."
+  ]
+}

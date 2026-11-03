@@ -8,8 +8,7 @@ def ev(c):return api('eval',{'code':c})
 def cap(n):api('capture',{'name':n,'samples':False});print(n,flush=True)
 api('reload',{'source':'current'});ev("document.body.classList.add('clean-view');true")
 gates=[]
-for studio in ['cream','slate','clay']:
- api('studio',{'studio':studio})
+for studio in ['cream']:
  for corner in ['FL','RR']:
   pos=[-7.73,2.84,8.22] if corner=='FL' else [7.77,2.84,-8.22]
   for rim in (['kmc','method','steel'] if os.environ.get('LC_SKIP_STOCK') else ['stock','kmc','method','steel']):
@@ -40,6 +39,6 @@ for style,rim in [('disc','kmc'),('steel','steel'),('window','method')]:
  window.__rimBeauty=t.parts.get('rim_FL_STYLE').clone(true);__rimBeauty.visible=true;__rimBeauty.position.set(0,.39655,0);t.scene.add(__rimBeauty);t.car.visible=false;t.plinth.visible=false;t.floor.visible=false;t.contactPlane.visible=true;t.bakeContactShadow();t.controls.target.set(0,.42,0);t.camera.position.set(-1.4,1.1,3);t.camera.near=.02;t.camera.far=30;t.camera.clearViewOffset();t.camera.lookAt(t.controls.target);return true;})()'''.replace('STYLE',style))
  cap(style+'-wheel-quarter')
  # Metal face comparison: hardware/adapter omitted only for the product-style reference render.
- ev("__wheelBeauty.visible=false;__rimBeauty.position.set(0,.231,0);__rimBeauty.traverse(n=>{if(n.isMesh)n.visible=['rim','chrome'].includes(n.material.userData.zone);});__creamTest.controls.target.set(0,.26,0);__creamTest.camera.position.set(-.82,.63,1.75);__creamTest.camera.lookAt(__creamTest.controls.target);__creamTest.bakeContactShadow();true")
+ ev("__wheelBeauty.visible=false;__rimBeauty.position.set(0,.231,0);__rimBeauty.traverse(n=>{if(n.isMesh)n.visible=['rim','chrome','lettering'].includes(n.material.userData.zone);});__creamTest.controls.target.set(0,.26,0);__creamTest.camera.position.set(-.82,.63,1.75);__creamTest.camera.lookAt(__creamTest.controls.target);__creamTest.bakeContactShadow();true")
  cap(style+'-rim-quarter')
  ev('__creamTest.camera.position.set(0,.35,1.94);__creamTest.camera.lookAt(__creamTest.controls.target);true');cap(style+'-rim-front')

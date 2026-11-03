@@ -1,5 +1,5 @@
 // Native catalogue integration: lazy rim loading, stock tyre/brake preservation,
-// rigid offset shifts, all studios, original rim restoration, reset and sharing.
+// rigid offset shifts, Cream, original rim restoration, reset and sharing.
 import fs from 'node:fs/promises';import{openViewer}from'../workshop/page.mjs';
 const[deps,chromium,output]=process.argv.slice(2),v=await openViewer({deps,chromium}),results=[];
 const check=(name,pass,detail)=>{results.push({name,pass:!!pass,detail});if(!pass)throw Error(name+': '+JSON.stringify(detail));};
@@ -21,7 +21,11 @@ try{
   check(id+' applies configured rigid offset',p.report.every(r=>r.tyreShift.every(x=>Math.abs(Math.abs(x)-shift)<1e-6)),p.report);
   check(id+' passes catalogue hub/width fit',p.fit.wheel.mount.ok&&p.fit.wheel.rim.boltPattern==='5x150',p.fit.wheel);
  }
- for(let i=0;i<3;i++){await page.click('#bgToggle');const p=await page.evaluate(()=>({studio:document.body.dataset.studio,...__inspectRims()}));check(p.studio+' preserves custom rims and tyres',p.custom===4&&p.report.every(r=>r.tyreUnchanged&&r.tyreVisible&&!r.oldHardwareVisible),p);}
+ for(const id of ['kmc','steel','method']){
+  await page.click('#workshop [data-opt='+id+']');await page.waitForFunction(id=>lcBuild.getState().rim===id,id,{timeout:120000});
+  const p=await page.evaluate(()=>{const t=__inspectRims(),root=lcBuild.groups.wheels.getObjectByName('Workshop tyres and rims'),zones=[];root.traverse(n=>{if(n.isMesh&&n.visible)zones.push(n.material.userData.zone)});return{...t,zones,cream:document.body.classList.contains('cream')};});
+  check(id+' retains Cream and complete brake package',p.cream&&p.custom===4&&['tyre','brake','caliper','backing'].every(z=>p.zones.includes(z))&&p.report.every(r=>r.tyreUnchanged&&r.tyreVisible&&!r.oldHardwareVisible),p);
+ }
  await page.click('#workshop [data-opt=stock]');await page.waitForFunction(()=>lcBuild.getState().rim==='stock');
  const restored=await page.evaluate(()=>__inspectRims());
  check('original rim restores hardware and tyre offset',restored.custom===0&&restored.report.every(r=>r.oldHardwareVisible&&r.tyreUnchanged&&r.tyreVisible&&r.tyreShift.every(x=>x===0)),restored);

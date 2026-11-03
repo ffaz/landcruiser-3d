@@ -1,0 +1,246 @@
+{
+  "baseline": "7adae34",
+  "branch": "rims-review",
+  "threeVersion": "0.166.1",
+  "blenderVersion": "4.3.2",
+  "capture": "1440x1000 Chromium, SwiftShader; fixed diagnostic poses; product photos outside repository",
+  "sourceSha256": "a559dcbf65f234c84ebc579c826ec70a243e1a067ee86ca8635e3bc8c1cd1134",
+  "assetSha256": "6da85f7954c3b48beb0a9295c1728c4db9966e49d6a3ff4d4fb7c57ba5b5aae9",
+  "tests": {
+    "rims": "20/20",
+    "workshop": "45/45",
+    "viewer": "31/31",
+    "consoleErrors": 0
+  },
+  "mainAndPagesUnchanged": {
+    "main": "a52ad7b3e7d3eed7710d93dc8bcebbdb204db91d",
+    "pagesSha256": "cf2b1a1fb8275d74700019f28f27937023e5448cd2c24a824309244da1d932c5"
+  },
+  "images": [
+    {
+      "file": "docs/rims/refinement/images/comparison-cream-FL.png",
+      "bytes": 2203760,
+      "sha256": "033b0aabedd1d979b325b12128584781265cd93fc413ec347ccbbddba97dfeb2"
+    },
+    {
+      "file": "docs/rims/refinement/images/comparison-cream-RR.png",
+      "bytes": 2174039,
+      "sha256": "a4e423939cd5d8d23d0ab2fc9440113adb3028077f07fd18fd9c8464a9b617f1"
+    },
+    {
+      "file": "docs/rims/refinement/images/disc-car-quarter.png",
+      "bytes": 607571,
+      "sha256": "bdbbf143df6272c557ea57ed4191e56d364a3acbfc8feeaecc27fd0248be1c09"
+    },
+    {
+      "file": "docs/rims/refinement/images/disc-car-side.png",
+      "bytes": 431221,
+      "sha256": "4ced79a1f7bffb8c095c6c214f01c3cf995fd4b4f9ac1c7edd31f5575daee3e1"
+    },
+    {
+      "file": "docs/rims/refinement/images/disc-face-front.png",
+      "bytes": 422958,
+      "sha256": "c3b9dafce5140eaeaf461e0a3c57642d56d2bad259f9b6fff2a15fef6c93fef0"
+    },
+    {
+      "file": "docs/rims/refinement/images/disc-face-quarter.png",
+      "bytes": 494243,
+      "sha256": "23600f511ad96815a1b9b63800fb8161524f4d1864c66d3691acd69ffc8d2cb2"
+    },
+    {
+      "file": "docs/rims/refinement/images/disc-rim-front.png",
+      "bytes": 371312,
+      "sha256": "28d66a0db080f68baba118e1d3e9ea6013cda124fc40b82cb45f96d74bd11662"
+    },
+    {
+      "file": "docs/rims/refinement/images/disc-rim-quarter.png",
+      "bytes": 418290,
+      "sha256": "1b8e4e47592740fd0aeeba267e4cf48bdc7eeba40bbcf3f72097e7627414ba65"
+    },
+    {
+      "file": "docs/rims/refinement/images/disc-wheel-quarter.png",
+      "bytes": 424383,
+      "sha256": "c71cfd111e6c7d46d6354eecfe192b2de5df538749b6267bcbd95dbd531d6996"
+    },
+    {
+      "file": "docs/rims/refinement/images/fit-cream-FL-kmc-3x.png",
+      "bytes": 503309,
+      "sha256": "b0f05eaa1d0fb47dde81297abb72f712517d885aaf4ae7f3bd0a239b124b62ed"
+    },
+    {
+      "file": "docs/rims/refinement/images/fit-cream-FL-kmc.png",
+      "bytes": 610117,
+      "sha256": "b13e57d311ef229399e199de48b6165741efbf14c1fdf9762ad285a2e13dd512"
+    },
+    {
+      "file": "docs/rims/refinement/images/fit-cream-FL-method-3x.png",
+      "bytes": 528932,
+      "sha256": "eac1ce66d818a4f7b440dc4c37c23526c19d7e9928d47683d2246a7a0d068585"
+    },
+    {
+      "file": "docs/rims/refinement/images/fit-cream-FL-method.png",
+      "bytes": 615787,
+      "sha256": "859d397262e91d8d29fbe35cef5295d54879ff241fb4e29c7e11b1adf5eb66bf"
+    },
+    {
+      "file": "docs/rims/refinement/images/fit-cream-FL-steel-3x.png",
+      "bytes": 537911,
+      "sha256": "98429d56dbfc9f5725a5e61d45b8f9e6feded5f21d61bca883a9cb39f7680b7d"
+    },
+    {
+      "file": "docs/rims/refinement/images/fit-cream-FL-steel.png",
+      "bytes": 615430,
+      "sha256": "36dce287deae400914780ff15af7a9a9b741f7fcddabb6f934d98635ac508c7d"
+    },
+    {
+      "file": "docs/rims/refinement/images/fit-cream-FL-stock-3x.png",
+      "bytes": 571597,
+      "sha256": "67d8ee311127378a181418f0babfa360b91504100898d72adcce8afe942388b5"
+    },
+    {
+      "file": "docs/rims/refinement/images/fit-cream-FL-stock.png",
+      "bytes": 621974,
+      "sha256": "896c57a97100e1bafda6b4ef80a96a359fa7e5ab3db9292f8f4fae1e0e7e2c52"
+    },
+    {
+      "file": "docs/rims/refinement/images/fit-cream-RR-kmc-3x.png",
+      "bytes": 537480,
+      "sha256": "f85c05996c6a1f446cf8208347f221d74980f90618132ed87cb45dc7ddc089c9"
+    },
+    {
+      "file": "docs/rims/refinement/images/fit-cream-RR-kmc.png",
+      "bytes": 568203,
+      "sha256": "74013b2368e4b66ed324b307fdd0a8ecfa1ef26ff51299d13854dd3dfdb75c21"
+    },
+    {
+      "file": "docs/rims/refinement/images/fit-cream-RR-method-3x.png",
+      "bytes": 577131,
+      "sha256": "caa45b64eab4354a04b0b0bcb125566c6095f257380197cca68310832425c014"
+    },
+    {
+      "file": "docs/rims/refinement/images/fit-cream-RR-method.png",
+      "bytes": 574438,
+      "sha256": "0bf764731997417359d5ea4efa694479affd616a3e8fd3116cbfb36197cdb5c3"
+    },
+    {
+      "file": "docs/rims/refinement/images/fit-cream-RR-steel-3x.png",
+      "bytes": 556273,
+      "sha256": "5d0d9376bfd77ad6aae108cd4fa10f4e03707eb4baf8c20202caba8b835d9a77"
+    },
+    {
+      "file": "docs/rims/refinement/images/fit-cream-RR-steel.png",
+      "bytes": 571651,
+      "sha256": "c366f0400a05b48ddc0be81b4eb937466b0be672c24dbd253f6d0fad430e78bd"
+    },
+    {
+      "file": "docs/rims/refinement/images/fit-cream-RR-stock-3x.png",
+      "bytes": 598468,
+      "sha256": "2bc96007782eaf9edb07c3605977aeea78fb615432c191a5f722db54abcf0e65"
+    },
+    {
+      "file": "docs/rims/refinement/images/fit-cream-RR-stock.png",
+      "bytes": 581307,
+      "sha256": "c2aeda54cc00003391fbab4a5e4659b005906e9d0355342ab89a5a6d38623135"
+    },
+    {
+      "file": "docs/rims/refinement/images/steel-car-quarter.png",
+      "bytes": 614150,
+      "sha256": "69bb0092492b4f38a7a3a52e12acdc51588b78531415807ee621a62d6f4c4255"
+    },
+    {
+      "file": "docs/rims/refinement/images/steel-car-side.png",
+      "bytes": 439726,
+      "sha256": "294691d6d456d673526f056bb3ae6235935b910cd6b66e0389c7e3c8dd5d8070"
+    },
+    {
+      "file": "docs/rims/refinement/images/steel-face-front.png",
+      "bytes": 505504,
+      "sha256": "ee0edbf78e93667aeba9594ee3bce4b4dd3c6a49db376490e11470f00f30228d"
+    },
+    {
+      "file": "docs/rims/refinement/images/steel-face-quarter.png",
+      "bytes": 572136,
+      "sha256": "6e3a42136dedd4bcee852b9fd15f2dd2b45fabf5cd296f456919d4caccaeda32"
+    },
+    {
+      "file": "docs/rims/refinement/images/steel-rim-front.png",
+      "bytes": 431068,
+      "sha256": "00b1b2e7e4ebf259bd8e4b676707ae49b40eac4e7d81969dc83faf68073f1646"
+    },
+    {
+      "file": "docs/rims/refinement/images/steel-rim-quarter.png",
+      "bytes": 465244,
+      "sha256": "d3462128f9540ea097c4f15bb614b51d1ea34b909e961ef92f6a3c71076a1a79"
+    },
+    {
+      "file": "docs/rims/refinement/images/steel-wheel-quarter.png",
+      "bytes": 447580,
+      "sha256": "1064ed2616b2443a5dda66208ddff978dcf9c84d3e8a2f18bf58788fd29b4914"
+    },
+    {
+      "file": "docs/rims/refinement/images/stock-vs-kmc-FL.png",
+      "bytes": 1093621,
+      "sha256": "3be39f78c4d86968241fb024148e1292369aa1bdee6935616016eaa66c038f73"
+    },
+    {
+      "file": "docs/rims/refinement/images/stock-vs-kmc-RR.png",
+      "bytes": 1136465,
+      "sha256": "ef33cbe2729b421135050acb638ba7173c324cb2f5a0ce093eb2a9283a133fda"
+    },
+    {
+      "file": "docs/rims/refinement/images/stock-vs-method-FL.png",
+      "bytes": 1130022,
+      "sha256": "8f1ca2edbca44b30bae5db1a42010288684108cb3f3da0d5e36c4ad37eec8d35"
+    },
+    {
+      "file": "docs/rims/refinement/images/stock-vs-method-RR.png",
+      "bytes": 1183515,
+      "sha256": "42288a6b43e7f51c0ddc1507c3bfc800f3d204f98f53dd0028181097cdd5307c"
+    },
+    {
+      "file": "docs/rims/refinement/images/stock-vs-steel-FL.png",
+      "bytes": 1133875,
+      "sha256": "cba7221104504e4fed7574bcf452fb42e32757b2ed5a0f019853fce51fe8d5c2"
+    },
+    {
+      "file": "docs/rims/refinement/images/stock-vs-steel-RR.png",
+      "bytes": 1164988,
+      "sha256": "654937e57ae8c8c0e5403688161a457264aed7670099841fb4abea3cc0842714"
+    },
+    {
+      "file": "docs/rims/refinement/images/window-car-quarter.png",
+      "bytes": 614740,
+      "sha256": "498c5eeb96792bf52b68759121e85e2f6c9b4504dd6ec894aeddf4e3100c0575"
+    },
+    {
+      "file": "docs/rims/refinement/images/window-car-side.png",
+      "bytes": 435463,
+      "sha256": "19459783376a45b551a3abd9551296b4dfbe859fd20fa2316011b8e77546f114"
+    },
+    {
+      "file": "docs/rims/refinement/images/window-face-front.png",
+      "bytes": 424638,
+      "sha256": "3b1eccc44d26db911ef94bbd79be3833d4bb0396146cf6eb173766b733146c1b"
+    },
+    {
+      "file": "docs/rims/refinement/images/window-face-quarter.png",
+      "bytes": 536282,
+      "sha256": "d0ba89a0dc519ec0b8a26bb2f0f8d3f5e0077811179948c1a8259532d0b26c86"
+    },
+    {
+      "file": "docs/rims/refinement/images/window-rim-front.png",
+      "bytes": 381653,
+      "sha256": "2e1cf26209aaf458b5eb8d728938ebd371c2d7a1b72ab3c52706fa84bd765f9c"
+    },
+    {
+      "file": "docs/rims/refinement/images/window-rim-quarter.png",
+      "bytes": 443678,
+      "sha256": "60db55c56883487ef9a29ecdfee5334b77da672401bd9b253884459857defbea"
+    },
+    {
+      "file": "docs/rims/refinement/images/window-wheel-quarter.png",
+      "bytes": 435084,
+      "sha256": "0792c56032904b4dd445258206e12d46a6444c503c063dc5a9c1e04ff350ea37"
+    }
+  ]
+}

@@ -20,7 +20,7 @@ for (let i = 2; i < process.argv.length; i++) {
   const key = process.argv[i];
   if (key === '--views-only') options.viewsOnly = true;
   else if (key === '--checks-only') options.checksOnly = true;
-  else if (key === '--both-studios') options.bothStudios = true;
+  else if (key === '--both-studios') console.warn('--both-studios is obsolete; this viewer captures Cream only');
   else if (key === '--resume') options.resume = true;
   else if (['--source', '--output', '--mode', '--deps', '--three-dir', '--chromium', '--asset-root'].includes(key)) {
     if (!process.argv[i + 1] || process.argv[i + 1].startsWith('--')) throw new Error(`Missing value for ${key}`);
@@ -151,22 +151,16 @@ try {
     await page.waitForFunction(() => !window.__visualTest.isTweening(), null, {timeout: 60000});
     await page.evaluate(() => window.__visualTest.pause());
   };
-  const currentStudio = () => page.evaluate(() => document.body.dataset.studio ||
-    (document.body.classList.contains('clay') ? 'clay' : document.body.classList.contains('cream') ? 'cream' : 'slate'));
+  // Current viewer has one studio. Do not depend on the removed studio button.
+  const currentStudio = () => page.evaluate(() => document.body.classList.contains('cream') ? 'cream' : 'unknown');
   const initialStudio = await currentStudio();
   checks.defaultCream = options.mode === 'before' || initialStudio === 'cream';
-  const setStudio = async studio => {
-    for(let tries=0;tries<3;tries++){
-      if(await currentStudio()===studio)return;
-      await page.evaluate(() => document.querySelector('#bgToggle').click());
-    }
-    throw Error('Studio toggle did not reach '+studio);
-  };
+  const setStudio = async studio => {if(studio!=='cream')throw Error('This viewer supports Cream only');};
   let initialSide;
   const presetObservations = [];
   // The real preset buttons, tween and projection fitting still run normally.
   // Only intermediate GPU draws are suppressed in the temporary page.
-  for (const studio of options.bothStudios ? ['cream', 'slate'] : [initialStudio]) {
+  for (const studio of [initialStudio]) {
     await setStudio(studio);
     for (const view of ['front', 'side', 'rear', 'quarter', 'top']) {
       await settleView(view);
@@ -256,20 +250,10 @@ try {
       input.dispatchEvent(new Event('input', {bubbles: true}));
     });
     checks.customPaint = await page.evaluate(() => window.__visualTest.paint.color.getHexString() === 'aabbcc');
-    await page.evaluate(() => document.querySelector('#bgToggle').click());
-    const alternate = await page.evaluate(() => ({studio:document.body.dataset.studio ||
-      (document.body.classList.contains('clay')?'clay':document.body.classList.contains('cream')?'cream':'slate'),
-      label: document.querySelector('#bgLabel').textContent,
-      pressed: document.querySelector('#bgToggle').getAttribute('aria-pressed')}));
-    const threeStudios=await page.evaluate(()=>document.body.dataset.studio!==undefined);
-    // The label names the current studio; older sources named the next one.
-    const expectedLabel='Studio: '+({cream:'Cream',slate:'Slate',clay:'Clay'})[alternate.studio]+' ▸';
-    const legacyLabel=threeStudios?({cream:'Slate studio',slate:'Clay studio',clay:'Cream studio'})[alternate.studio]:alternate.studio==='cream'?'Slate studio':'Cream studio';
-    checks.background = alternate.studio !== initialStudio &&
-      (alternate.pressed===null || alternate.pressed===String(alternate.studio==='cream')) &&
-      (alternate.label===expectedLabel || (options.mode==='before'&&(alternate.label===legacyLabel||(alternate.studio==='cream'&&alternate.label==='Blue studio'))));
-    await setStudio(initialStudio);
-    checks.backgroundRestores=(await currentStudio())===initialStudio;
+    const background=await page.evaluate(()=>({class:document.body.classList.contains('cream'),gradient:getComputedStyle(document.body).backgroundImage,theme:document.querySelector('meta[name="theme-color"]').content}));
+    checks.background=background.class&&background.gradient.includes('rgb(235, 235, 233)')&&background.theme.toLowerCase()==='#ebebe9';
+    await page.evaluate(()=>{const input=document.querySelector('#customPaint');input.value='#f4f4ef';input.dispatchEvent(new Event('input',{bubbles:true}));});
+    checks.backgroundRestores=(await page.evaluate(()=>getComputedStyle(document.body).backgroundImage))===background.gradient;
     const hasCleanView = !!await page.locator('#cleanToggle').count();
     if (hasCleanView) {
       await page.locator('#cleanToggle').click();
@@ -348,13 +332,13 @@ try {
     checks.baseRestores=await page.evaluate(before=>{const t=window.__visualTest;return document.querySelector('#baseToggle').getAttribute('aria-pressed')==='false'&&t.plinth.visible===false&&
       Math.abs(t.controls.getDistance()-before.distance)<.001&&t.camera.position.distanceTo(new t.THREE.Vector3(...before.position))<.001&&t.controls.target.distanceTo(new t.THREE.Vector3(...before.target))<.001},before);
   }
-  if(!options.viewsOnly && await page.evaluate(()=>!!document.body.dataset.studio&&!!window.__visualTest.plinth)){
-    await setStudio('clay');await page.evaluate(()=>document.querySelector('#baseToggle').click());await settleView('quarter');
-    const clayBase=await page.evaluate(()=>{const t=window.__visualTest,b=t.projectedBounds(t.camera),materials=[];t.plinth.traverse(o=>{if(o.isMesh)materials.push(...(Array.isArray(o.material)?o.material:[o.material]))});return{visible:t.plinth.visible,bounds:b,widthFraction:(b.maxX-b.minX)/2,matte:materials.length>0&&materials.every(m=>m.roughness>=.8&&(m.clearcoat??0)===0&&m.envMapIntensity<=.2)}});
-    checks.clayBase=clayBase.visible&&clayBase.matte&&clayBase.widthFraction>=.75&&clayBase.widthFraction<=.85&&clayBase.bounds.minX>=-1.01&&clayBase.bounds.maxX<=1.01&&clayBase.bounds.minY>=-1.01&&clayBase.bounds.maxY<=1.01;
-    checks.clayBaseObservation=clayBase;
-    await page.evaluate(()=>document.querySelector('#baseToggle').click());await setStudio(initialStudio);
-    checks.clayBaseRestores=await page.evaluate(()=>!window.__visualTest.plinth.visible&&document.querySelector('#baseToggle').getAttribute('aria-pressed')==='false');
+  if(!options.viewsOnly && await page.evaluate(()=>!!window.__visualTest.plinth)){
+    await page.evaluate(()=>document.querySelector('#baseToggle').click());await settleView('quarter');
+    const base=await page.evaluate(()=>{const t=window.__visualTest,b=t.projectedBounds(t.camera),materials=[];t.plinth.traverse(o=>{if(o.isMesh)materials.push(...(Array.isArray(o.material)?o.material:[o.material]))});return{visible:t.plinth.visible,bounds:b,widthFraction:(b.maxX-b.minX)/2,satin:materials.length>0&&materials.every(m=>m.roughness>=.4)}});
+    checks.creamBase=base.visible&&base.satin&&base.widthFraction>=.75&&base.widthFraction<=.85&&base.bounds.minX>=-1.01&&base.bounds.maxX<=1.01&&base.bounds.minY>=-1.01&&base.bounds.maxY<=1.01;
+    checks.creamBaseObservation=base;
+    await page.evaluate(()=>document.querySelector('#baseToggle').click());
+    checks.creamBaseRestores=await page.evaluate(()=>!window.__visualTest.plinth.visible&&document.querySelector('#baseToggle').getAttribute('aria-pressed')==='false');
   }
   if(!options.viewsOnly && await page.evaluate(()=>!!window.lcBuild)){
     const foundation=await page.evaluate(async()=>{
