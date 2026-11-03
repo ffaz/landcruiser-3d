@@ -1,0 +1,67 @@
+{
+  "oneDesign": "A",
+  "originalGLBsUnchanged": 54,
+  "files": [
+    {
+      "id": "wheel_FL_at285",
+      "pass": true,
+      "triangles": 14900,
+      "diameterMeasured_mm": 830.7896610604001,
+      "widthMeasured_mm": 284.9999964237213,
+      "AO": [
+        0.11999999731779099,
+        1
+      ],
+      "curvature": [
+        0.32511666417121887,
+        0.8075695037841797
+      ]
+    },
+    {
+      "id": "wheel_FR_at285",
+      "pass": true,
+      "triangles": 14900,
+      "diameterMeasured_mm": 830.7896610604001,
+      "widthMeasured_mm": 284.9999964237213,
+      "AO": [
+        0.11999999731779099,
+        1
+      ],
+      "curvature": [
+        0.32511666417121887,
+        0.8075695037841797
+      ]
+    },
+    {
+      "id": "wheel_RL_at285",
+      "pass": true,
+      "triangles": 14900,
+      "diameterMeasured_mm": 830.7896610604001,
+      "widthMeasured_mm": 284.9999964237213,
+      "AO": [
+        0.11999999731779099,
+        1
+      ],
+      "curvature": [
+        0.32511666417121887,
+        0.8075695037841797
+      ]
+    },
+    {
+      "id": "wheel_RR_at285",
+      "pass": true,
+      "triangles": 14900,
+      "diameterMeasured_mm": 830.7896610604001,
+      "widthMeasured_mm": 284.9999964237213,
+      "AO": [
+        0.11999999731779099,
+        1
+      ],
+      "curvature": [
+        0.32511666417121887,
+        0.8075695037841797
+      ]
+    }
+  ],
+  "productionThree": "0.166.1"
+}

@@ -40,7 +40,8 @@ for(const viewport of [{width:1440,height:1000},{width:390,height:844}]){
  await shot('stance');
  await page.click('#workshop [data-home]');
  await page.click('#workshop [data-cat=wheels]');
- check(`${tag}: unbuilt tyres disabled`,(await page.locator('#workshop .ws-opt[disabled]').count())===3);
+ const missingTyres=await page.evaluate(()=>{const ids=new Set(lcBuild.getManifest().parts.map(p=>p.id));return lcWorkshop.data.categories.find(c=>c.id==='wheels').options.filter(o=>(o.requires||[]).some(id=>!ids.has(id))).length});
+ check(`${tag}: unbuilt tyres disabled`,(await page.locator('#workshop .ws-opt[disabled]').count())===missingTyres);
  await shot('wheels');
  await page.click('#workshop [data-home]');
  await page.click('#workshop [data-compare=base]');

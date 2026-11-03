@@ -1,0 +1,32 @@
+PASS desktop: closed by default
+PASS base build fits [{"arch":"front","mm":60,"status":"ok"},{"arch":"rear","mm":94,"status":"ok"}]
+PASS stock front clearance plausible (40–90 mm) 60 mm
+PASS 35" tyre at stock height is flagged [{"arch":"front","mm":12,"status":"tight"},{"arch":"rear","mm":46,"status":"ok"}]
+PASS lift increases clearance 12 → 32
+PASS 37" tyre clashes at stock height [{"arch":"front","mm":-13,"status":"clash"},{"arch":"rear","mm":21,"status":"tight"}]
+PASS live dimensions match base at stock {"length":5000,"height":1930,"width":2297,"clearance":236} vs {"length":5000,"height":1930,"width":2297,"clearance":236}
+PASS base body 5,000 × 1,930 × 2,297 {"length":5000,"height":1930,"width":2297,"clearance":236}
+PASS desktop: opens
+PASS desktop: ten categories listed
+PASS desktop: 2.5" lift applies {"lift":63,"y":0.063,"wheels":0}
+PASS desktop: unbuilt tyres disabled
+PASS desktop: compare shows base
+PASS desktop: compare returns to build
+PASS desktop: sheet height includes lift {"length":5000,"height":1993,"width":2297,"clearance":299}
+PASS desktop: share link carries the build #build={"lift_mm":63}
+PASS desktop: reset to base
+PASS desktop: Escape closes
+PASS desktop: no page errors
+PASS phone: closed by default
+PASS phone: opens
+PASS phone: ten categories listed
+PASS phone: 2.5" lift applies {"lift":63,"y":0.063,"wheels":0}
+PASS phone: unbuilt tyres disabled
+PASS phone: compare shows base
+PASS phone: compare returns to build
+PASS phone: sheet height includes lift {"length":5000,"height":1993,"width":2297,"clearance":299}
+PASS phone: share link carries the build #build={"lift_mm":63}
+PASS phone: reset to base
+PASS phone: Escape closes
+PASS phone: no page errors
+31/31 workshop checks pass

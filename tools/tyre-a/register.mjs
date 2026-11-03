@@ -1,0 +1,21 @@
+// One design, exported in the four existing hub frames. No existing GLB is written.
+import fs from'node:fs/promises';import{createRequire}from'node:module';import{pathToFileURL}from'node:url';
+const[repo,deps,work]=process.argv.slice(2),require=createRequire(deps+'/package.json'),imp=n=>import(pathToFileURL(require.resolve(n)).href),{Document,NodeIO}=await imp('@gltf-transform/core'),{ALL_EXTENSIONS,EXTMeshoptCompression}=await imp('@gltf-transform/extensions'),{MeshoptEncoder,MeshoptDecoder}=await imp('meshoptimizer'),{weld,dedup}=await imp('@gltf-transform/functions');await Promise.all([MeshoptEncoder.ready,MeshoptDecoder.ready]);
+const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.decoder':MeshoptDecoder,'meshopt.encoder':MeshoptEncoder}),data=JSON.parse(await fs.readFile(work+'/wheel-data.json')),manifest=JSON.parse(await fs.readFile(repo+'/model/manifest.json')),report=[];
+if(data.triangles>15000)throw Error('Triangle budget: '+data.triangles);
+const defaults={tyre:{color:'#242629',roughness:.90,metalness:0,envMapIntensity:.22},rim:{color:'#34383c',roughness:.46,metalness:.80,envMapIntensity:.85},chrome:{color:'#a7adb1',roughness:.34,metalness:.85,envMapIntensity:.80},brake:{color:'#505358',roughness:.62,metalness:.65,envMapIntensity:.45}};
+for(const slot of['wheel_FL','wheel_FR','wheel_RL','wheel_RR']){
+ const id=slot+'_at285',pivot=manifest.slots[slot].pivot,sgn=slot.endsWith('R')?-1:1,doc=new Document(),buffer=doc.createBuffer(),root=doc.createNode(id).setTranslation(pivot),lo=[Infinity,Infinity,Infinity],hi=[-Infinity,-Infinity,-Infinity];let maxRadius=0;
+ for(const[zone,g]of Object.entries(data.groups)){
+  const P=new Float32Array(g.positions),N=new Float32Array(g.normals),C=new Float32Array(g.colors),I=new Uint32Array(P.length/3);for(let i=0;i<I.length;i++)I[i]=i;
+  if(sgn<0){for(let i=2;i<P.length;i+=3){P[i]*=-1;N[i]*=-1;}for(let i=0;i<I.length;i+=3)[I[i+1],I[i+2]]=[I[i+2],I[i+1]];}
+  for(let i=0;i<P.length;i+=3){for(let j=0;j<3;j++){lo[j]=Math.min(lo[j],P[i+j]+pivot[j]);hi[j]=Math.max(hi[j],P[i+j]+pivot[j]);}if(zone==='tyre')maxRadius=Math.max(maxRadius,Math.hypot(P[i],P[i+1]));}
+  const acc=(name,a,type)=>doc.createAccessor(name,buffer).setArray(a).setType(type),mat=doc.createMaterial(zone).setRoughnessFactor(defaults[zone].roughness).setMetallicFactor(defaults[zone].metalness).setExtras({zone});
+  const prim=doc.createPrimitive().setMaterial(mat).setAttribute('POSITION',acc(zone+'_position',P,'VEC3')).setAttribute('NORMAL',acc(zone+'_normal',N,'VEC3')).setAttribute('COLOR_0',acc(zone+'_ao_curvature',C,'VEC3')).setIndices(acc(zone+'_indices',I,'SCALAR'));root.addChild(doc.createNode(zone).setMesh(doc.createMesh(zone).addPrimitive(prim)));
+ }
+ doc.createScene().addChild(root);await doc.transform(weld(),dedup());doc.createExtension(EXTMeshoptCompression).setRequired(true).setEncoderOptions({method:EXTMeshoptCompression.EncoderMethod.QUANTIZE});const url='parts/'+id+'.glb';await io.write(repo+'/model/'+url,doc);
+ const entry={id,slot,url,rootNode:id,pivot,rigidClass:'wheel',zones:Object.keys(data.groups),triangles:data.triangles,bounds:{min:lo,max:hi},tyre_mm:830.8,materialDefaults:defaults,bundlesSlots:['wheel_emblem_'+slot.slice(-2)],purpose:'Design A: clean all-round expedition 285/70R17, approx 33 inch; new wheel geometry and Cycles vertex AO'};let i=manifest.parts.findIndex(e=>e.id===id);if(i<0)manifest.parts.push(entry);else manifest.parts[i]=entry;report.push({id,triangles:data.triangles,pivot,tyreRadius_m:maxRadius,bounds:entry.bounds,bytes:(await fs.stat(repo+'/model/'+url)).size});
+}
+await fs.writeFile(repo+'/model/manifest.json',JSON.stringify(manifest,null,2)+'\n');
+for(const file of['model/workshop.json','tools/workshop/workshop-base.json']){let w=JSON.parse(await fs.readFile(repo+'/'+file));let opt=w.categories.find(c=>c.id==='wheels').options.find(o=>o.id==='at285');opt.label='A · 33″ expedition AT';opt.detail='285/70R17 · 830.8 mm · dark steel';opt.tyre_mm=830.8;await fs.writeFile(repo+'/'+file,JSON.stringify(w,null,2)+'\n');}
+await fs.writeFile(work+'/asset-report.json',JSON.stringify({design:'A only',blender:data.blender,bake:data.bake,files:report},null,2));console.log(report);
