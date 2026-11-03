@@ -1,10 +1,10 @@
 {
-  "baseline": "c480d15",
-  "originalGLBsUnchanged": 76,
+  "baseline": "a52ad7b",
+  "originalGLBsUnchanged": 56,
   "newRims": [
     {
       "id": "rim_FL_disc",
-      "triangles": 10292,
+      "triangles": 14894,
       "rootScale": [
         1,
         1,
@@ -16,6 +16,8 @@
         0.825
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
+      "rubberFillerDiameter_mm": 534.0000194254811,
+      "rotorDiameter_mm": 354.00002074694373,
       "beadSeat_mm": 431.8,
       "measuredBeadWidth_mm": 215.9000039100647,
       "boltPattern": "5x150",
@@ -25,14 +27,14 @@
         1
       ],
       "curvature": [
-        0.36666664481163025,
-        0.7333338260650635
+        0.29999998211860657,
+        0.8000001311302185
       ],
-      "bytes": 230432
+      "bytes": 312940
     },
     {
       "id": "rim_FR_disc",
-      "triangles": 10292,
+      "triangles": 14894,
       "rootScale": [
         1,
         1,
@@ -44,6 +46,8 @@
         -0.825
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
+      "rubberFillerDiameter_mm": 534.0000194254811,
+      "rotorDiameter_mm": 354.00002074694373,
       "beadSeat_mm": 431.8,
       "measuredBeadWidth_mm": 215.9000039100647,
       "boltPattern": "5x150",
@@ -53,14 +57,14 @@
         1
       ],
       "curvature": [
-        0.36666664481163025,
-        0.7333338260650635
+        0.29999998211860657,
+        0.8000001311302185
       ],
-      "bytes": 240588
+      "bytes": 314068
     },
     {
       "id": "rim_RL_disc",
-      "triangles": 10292,
+      "triangles": 14894,
       "rootScale": [
         1,
         1,
@@ -72,6 +76,8 @@
         0.8225
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
+      "rubberFillerDiameter_mm": 534.0000194254811,
+      "rotorDiameter_mm": 354.00002074694373,
       "beadSeat_mm": 431.8,
       "measuredBeadWidth_mm": 215.9000039100647,
       "boltPattern": "5x150",
@@ -81,14 +87,14 @@
         1
       ],
       "curvature": [
-        0.36666664481163025,
-        0.7333338260650635
+        0.29999998211860657,
+        0.8000001311302185
       ],
-      "bytes": 230432
+      "bytes": 312940
     },
     {
       "id": "rim_RR_disc",
-      "triangles": 10292,
+      "triangles": 14894,
       "rootScale": [
         1,
         1,
@@ -100,6 +106,8 @@
         -0.8225
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
+      "rubberFillerDiameter_mm": 534.0000194254811,
+      "rotorDiameter_mm": 354.00002074694373,
       "beadSeat_mm": 431.8,
       "measuredBeadWidth_mm": 215.9000039100647,
       "boltPattern": "5x150",
@@ -109,14 +117,14 @@
         1
       ],
       "curvature": [
-        0.36666664481163025,
-        0.7333338260650635
+        0.29999998211860657,
+        0.8000001311302185
       ],
-      "bytes": 240588
+      "bytes": 314068
     },
     {
       "id": "rim_FL_steel",
-      "triangles": 11860,
+      "triangles": 13943,
       "rootScale": [
         1,
         1,
@@ -128,6 +136,8 @@
         0.825
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
+      "rubberFillerDiameter_mm": 534.0000194254811,
+      "rotorDiameter_mm": 354.00002074694373,
       "beadSeat_mm": 431.8,
       "measuredBeadWidth_mm": 203.19999754428864,
       "boltPattern": "5x150",
@@ -137,14 +147,14 @@
         1
       ],
       "curvature": [
-        0.36666664481163025,
-        0.7333338856697083
+        0.29999998211860657,
+        0.8000001311302185
       ],
-      "bytes": 288532
+      "bytes": 306176
     },
     {
       "id": "rim_FR_steel",
-      "triangles": 11860,
+      "triangles": 13943,
       "rootScale": [
         1,
         1,
@@ -156,6 +166,8 @@
         -0.825
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
+      "rubberFillerDiameter_mm": 534.0000194254811,
+      "rotorDiameter_mm": 354.00002074694373,
       "beadSeat_mm": 431.8,
       "measuredBeadWidth_mm": 203.19999754428864,
       "boltPattern": "5x150",
@@ -165,14 +177,14 @@
         1
       ],
       "curvature": [
-        0.36666664481163025,
-        0.7333338856697083
+        0.29999998211860657,
+        0.8000001311302185
       ],
-      "bytes": 300036
+      "bytes": 310880
     },
     {
       "id": "rim_RL_steel",
-      "triangles": 11860,
+      "triangles": 13943,
       "rootScale": [
         1,
         1,
@@ -184,6 +196,8 @@
         0.8225
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
+      "rubberFillerDiameter_mm": 534.0000194254811,
+      "rotorDiameter_mm": 354.00002074694373,
       "beadSeat_mm": 431.8,
       "measuredBeadWidth_mm": 203.19999754428864,
       "boltPattern": "5x150",
@@ -193,14 +207,14 @@
         1
       ],
       "curvature": [
-        0.36666664481163025,
-        0.7333338856697083
+        0.29999998211860657,
+        0.8000001311302185
       ],
-      "bytes": 288532
+      "bytes": 306176
     },
     {
       "id": "rim_RR_steel",
-      "triangles": 11860,
+      "triangles": 13943,
       "rootScale": [
         1,
         1,
@@ -212,6 +226,8 @@
         -0.8225
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
+      "rubberFillerDiameter_mm": 534.0000194254811,
+      "rotorDiameter_mm": 354.00002074694373,
       "beadSeat_mm": 431.8,
       "measuredBeadWidth_mm": 203.19999754428864,
       "boltPattern": "5x150",
@@ -221,14 +237,14 @@
         1
       ],
       "curvature": [
-        0.36666664481163025,
-        0.7333338856697083
+        0.29999998211860657,
+        0.8000001311302185
       ],
-      "bytes": 300036
+      "bytes": 310880
     },
     {
       "id": "rim_FL_window",
-      "triangles": 9556,
+      "triangles": 13278,
       "rootScale": [
         1,
         1,
@@ -240,6 +256,8 @@
         0.825
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
+      "rubberFillerDiameter_mm": 534.0000194254811,
+      "rotorDiameter_mm": 354.00002074694373,
       "beadSeat_mm": 431.8,
       "measuredBeadWidth_mm": 215.9000039100647,
       "boltPattern": "5x150",
@@ -249,14 +267,14 @@
         1
       ],
       "curvature": [
-        0.36666664481163025,
-        0.7333338260650635
+        0.29999998211860657,
+        0.8000001311302185
       ],
-      "bytes": 226864
+      "bytes": 296664
     },
     {
       "id": "rim_FR_window",
-      "triangles": 9556,
+      "triangles": 13278,
       "rootScale": [
         1,
         1,
@@ -268,6 +286,8 @@
         -0.825
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
+      "rubberFillerDiameter_mm": 534.0000194254811,
+      "rotorDiameter_mm": 354.00002074694373,
       "beadSeat_mm": 431.8,
       "measuredBeadWidth_mm": 215.9000039100647,
       "boltPattern": "5x150",
@@ -277,14 +297,14 @@
         1
       ],
       "curvature": [
-        0.36666664481163025,
-        0.7333338260650635
+        0.29999998211860657,
+        0.8000001311302185
       ],
-      "bytes": 237220
+      "bytes": 299064
     },
     {
       "id": "rim_RL_window",
-      "triangles": 9556,
+      "triangles": 13278,
       "rootScale": [
         1,
         1,
@@ -296,6 +316,8 @@
         0.8225
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
+      "rubberFillerDiameter_mm": 534.0000194254811,
+      "rotorDiameter_mm": 354.00002074694373,
       "beadSeat_mm": 431.8,
       "measuredBeadWidth_mm": 215.9000039100647,
       "boltPattern": "5x150",
@@ -305,14 +327,14 @@
         1
       ],
       "curvature": [
-        0.36666664481163025,
-        0.7333338260650635
+        0.29999998211860657,
+        0.8000001311302185
       ],
-      "bytes": 226864
+      "bytes": 296664
     },
     {
       "id": "rim_RR_window",
-      "triangles": 9556,
+      "triangles": 13278,
       "rootScale": [
         1,
         1,
@@ -324,6 +346,8 @@
         -0.8225
       ],
       "maxFlangeDiameter_mm": 462.00001449857916,
+      "rubberFillerDiameter_mm": 534.0000194254811,
+      "rotorDiameter_mm": 354.00002074694373,
       "beadSeat_mm": 431.8,
       "measuredBeadWidth_mm": 215.9000039100647,
       "boltPattern": "5x150",
@@ -333,11 +357,11 @@
         1
       ],
       "curvature": [
-        0.36666664481163025,
-        0.7333338260650635
+        0.29999998211860657,
+        0.8000001311302185
       ],
-      "bytes": 237220
+      "bytes": 299064
     }
   ],
-  "totalNewBytes": 3047344
+  "totalNewBytes": 3679584
 }

@@ -1,0 +1,411 @@
+{
+  "baseline": "b0de49e",
+  "changes": [
+    {
+      "name": "disc.rim.color",
+      "old": "#555b60",
+      "new": "#7b7f83",
+      "file": "tools/rims/register.mjs",
+      "line": 10
+    },
+    {
+      "name": "disc.rim.roughness",
+      "old": 0.38,
+      "new": 0.68,
+      "file": "tools/rims/register.mjs",
+      "line": 10
+    },
+    {
+      "name": "disc.rim.metalness",
+      "old": 0.7,
+      "new": 0.5,
+      "file": "tools/rims/register.mjs",
+      "line": 10
+    },
+    {
+      "name": "disc.rim.envMapIntensity",
+      "old": 1.6,
+      "new": 1.5,
+      "file": "tools/rims/register.mjs",
+      "line": 10
+    },
+    {
+      "name": "disc.black.color",
+      "old": "#242629",
+      "new": "#1b1e20",
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "disc.black.roughness",
+      "old": 0.85,
+      "new": 0.9,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "disc.black.envMapIntensity",
+      "old": 0.18,
+      "new": 0.15,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "disc.tyre.color",
+      "old": null,
+      "new": "#202326",
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "disc.tyre.roughness",
+      "old": null,
+      "new": 0.9,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "disc.tyre.metalness",
+      "old": null,
+      "new": 0,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "disc.tyre.envMapIntensity",
+      "old": null,
+      "new": 0.22,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "disc.brake.color",
+      "old": null,
+      "new": "#9aa2a8",
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "disc.brake.roughness",
+      "old": null,
+      "new": 0.5,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "disc.brake.metalness",
+      "old": null,
+      "new": 0.65,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "disc.brake.envMapIntensity",
+      "old": null,
+      "new": 1.3,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "steel.black.color",
+      "old": "#242629",
+      "new": "#1b1e20",
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "steel.black.roughness",
+      "old": 0.85,
+      "new": 0.9,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "steel.black.envMapIntensity",
+      "old": 0.18,
+      "new": 0.15,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "steel.tyre.color",
+      "old": null,
+      "new": "#202326",
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "steel.tyre.roughness",
+      "old": null,
+      "new": 0.9,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "steel.tyre.metalness",
+      "old": null,
+      "new": 0,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "steel.tyre.envMapIntensity",
+      "old": null,
+      "new": 0.22,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "steel.brake.color",
+      "old": null,
+      "new": "#9aa2a8",
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "steel.brake.roughness",
+      "old": null,
+      "new": 0.5,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "steel.brake.metalness",
+      "old": null,
+      "new": 0.65,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "steel.brake.envMapIntensity",
+      "old": null,
+      "new": 1.3,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "window.rim.color",
+      "old": "#454a4f",
+      "new": "#8a8f94",
+      "file": "tools/rims/register.mjs",
+      "line": 10
+    },
+    {
+      "name": "window.rim.roughness",
+      "old": 0.4,
+      "new": 0.5,
+      "file": "tools/rims/register.mjs",
+      "line": 10
+    },
+    {
+      "name": "window.rim.metalness",
+      "old": 0.7,
+      "new": 0.62,
+      "file": "tools/rims/register.mjs",
+      "line": 10
+    },
+    {
+      "name": "window.rim.envMapIntensity",
+      "old": 1.8,
+      "new": 1.5,
+      "file": "tools/rims/register.mjs",
+      "line": 10
+    },
+    {
+      "name": "window.black.color",
+      "old": "#242629",
+      "new": "#1b1e20",
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "window.black.roughness",
+      "old": 0.85,
+      "new": 0.9,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "window.black.envMapIntensity",
+      "old": 0.18,
+      "new": 0.15,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "window.tyre.color",
+      "old": null,
+      "new": "#202326",
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "window.tyre.roughness",
+      "old": null,
+      "new": 0.9,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "window.tyre.metalness",
+      "old": null,
+      "new": 0,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "window.tyre.envMapIntensity",
+      "old": null,
+      "new": 0.22,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "window.brake.color",
+      "old": null,
+      "new": "#9aa2a8",
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "window.brake.roughness",
+      "old": null,
+      "new": 0.5,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "window.brake.metalness",
+      "old": null,
+      "new": 0.65,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "window.brake.envMapIntensity",
+      "old": null,
+      "new": 1.3,
+      "file": "tools/rims/register.mjs",
+      "line": 11
+    },
+    {
+      "name": "KM720 face",
+      "old": "deep plain bowl / clipped slots",
+      "new": "flat stepped face, two raised rings, 8 capsule slots",
+      "file": "tools/rims/model.py",
+      "line": 48
+    },
+    {
+      "name": "MR705 windows",
+      "old": 8,
+      "new": 10,
+      "file": "tools/rims/model.py",
+      "line": 79
+    },
+    {
+      "name": "Shanaber hub / face",
+      "old": "open bore / deeper pressing",
+      "new": "raised flatter plate, closed dark hub behind bore",
+      "file": "tools/rims/model.py",
+      "line": 51
+    },
+    {
+      "name": "Bead adapter and brakes",
+      "old": "absent",
+      "new": "534 mm rubber outer band; 354 mm vented rotor; hub/studs/caliper/backing",
+      "file": "tools/rims/model.py",
+      "line": 103
+    },
+    {
+      "name": "Inner barrel finish",
+      "old": "exterior metallic finish",
+      "new": "dark interior coating",
+      "file": "tools/rims/model.py",
+      "line": 43
+    },
+    {
+      "name": "Mounted capture",
+      "old": "source root overwritten",
+      "new": "car-frame wheel rebased with a wrapper, tyre visible",
+      "file": "tools/rims/review-capture.py",
+      "line": 36
+    },
+    {
+      "name": "Rims panel note",
+      "old": "\u201csoon\u201d rims fit but need their 3D models",
+      "new": "All rim models are built",
+      "file": "workshop.js",
+      "line": 191
+    },
+    {
+      "name": "Unused tyre GLBs",
+      "old": 20,
+      "new": 0,
+      "file": "model/manifest.json",
+      "line": null
+    },
+    {
+      "name": "steel.detail",
+      "old": "17\u00d78 \u00b7 ET+25 \u00b7 5\u00d7150",
+      "new": "17\u00d78 \u00b7 ET+25 \u00b7 5\u00d7150 \u00b7 silver",
+      "file": "model/wheels.json",
+      "line": 148
+    },
+    {
+      "name": "steel.label",
+      "old": "Round-hole steel \u00b7 silver",
+      "new": "Shanaber steel \u00b7 silver",
+      "file": "model/wheels.json",
+      "line": 147
+    },
+    {
+      "name": "kmc.detail",
+      "old": "17\u00d78.5 \u00b7 ET+18 \u00b7 5\u00d7150 \u00b7 satin black",
+      "new": "17\u00d78.5 \u00b7 ET+18 \u00b7 5\u00d7150 \u00b7 matte anthracite",
+      "file": "model/wheels.json",
+      "line": 163
+    },
+    {
+      "name": "kmc.label",
+      "old": "Dished disc \u00b7 satin black",
+      "new": "KMC KM720 Roswell \u00b7 matte anthracite",
+      "file": "model/wheels.json",
+      "line": 162
+    },
+    {
+      "name": "kmc.color",
+      "old": "#555b60",
+      "new": "#7b7f83",
+      "file": "model/wheels.json",
+      "line": 170
+    },
+    {
+      "name": "method.detail",
+      "old": "17\u00d78.5 \u00b7 ET0 \u00b7 5\u00d7150 \u00b7 matte black",
+      "new": "17\u00d78.5 \u00b7 ET0 \u00b7 5\u00d7150 \u00b7 titanium",
+      "file": "model/wheels.json",
+      "line": 178
+    },
+    {
+      "name": "method.label",
+      "old": "Eight-window \u00b7 satin black",
+      "new": "Method MR705 \u00b7 titanium",
+      "file": "model/wheels.json",
+      "line": 177
+    },
+    {
+      "name": "method.color",
+      "old": "#454a4f",
+      "new": "#8a8f94",
+      "file": "model/wheels.json",
+      "line": 185
+    },
+    {
+      "name": "Centre cap mounting shoulder",
+      "old": "back at cap z \u2212 7 mm",
+      "new": "back at cap z \u2212 12 mm; overlaps the front plate",
+      "file": "tools/rims/model.py",
+      "line": 94
+    }
+  ]
+}

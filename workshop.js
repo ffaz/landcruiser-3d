@@ -188,7 +188,7 @@ function render(){
    // Reasons name the option itself; inside its own row that is implied.
    const detail=fits.ok?option.detail||'':fits.why.map(why=>why.startsWith(option.label+' ')?why.slice(option.label.length+1).replace(/^./,c=>c.toUpperCase()):why).join('. ');
    return `<button class="ws-opt${fits.ok?'':' nofit'}" role="radio" data-opt="${option.id}" aria-checked="${option===current}" ${ok?'':'disabled'}><span class="ws-radio"></span><span class="ws-t"><div class="ws-n">${esc(option.label)}</div><div class="ws-v">${esc(detail)}</div></span>${ok?'':`<span class="ws-soon">${fits.ok?'soon':'won’t fit'}</span>`}</button>`;}).join('')}</div>
-  ${category.catalog?`<p class="ws-note">${esc(category.catalog==='tyres'?`Fitted to: ${specOf.rim(state.rim).label} (${specOf.rim(state.rim).detail}). “Won’t fit” is checked against this rim; “soon” sizes fit but need their 3D models.`:`Carrying: ${specOf.tyre(state.tyre).label}. “Won’t fit” is checked against this tyre; “soon” rims fit but need their 3D models.`)} ${esc(wheels.vehicle.note)}</p>`:''}
+  ${category.catalog?`<p class="ws-note">${esc(category.catalog==='tyres'?`Fitted to: ${specOf.rim(state.rim).label} (${specOf.rim(state.rim).detail}). “Won’t fit” is checked against this rim; “soon” sizes fit but need their 3D models.`:`Carrying: ${specOf.tyre(state.tyre).label}. All rim models are built. “Won’t fit” is checked against this tyre.`)} ${esc(wheels.vehicle.note)}</p>`:''}
   ${category.catalog==='tyres'||category.id==='stance'?`<p class="ws-note">${esc(data.clearanceNote)}</p>`:''}</div>${statusHTML(fit)}`;
  }
  panel.innerHTML=body;

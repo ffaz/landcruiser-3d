@@ -459,8 +459,8 @@
     },
     {
       "path": "model/manifest.json",
-      "bytes": 157161,
-      "sha256": "bd691936a038429cb025eb1b15d35e4b42c8a63f3e5d5bb19dc0da9bcc43d98a"
+      "bytes": 133407,
+      "sha256": "2c5cd385c84014a427275ceab3c9abd53e13228a5463c003356a6710d15f4f30"
     },
     {
       "path": "model/parts/badge_grade_GXR.glb",
@@ -619,63 +619,63 @@
     },
     {
       "path": "model/parts/rim_FL_disc.glb",
-      "bytes": 230432,
-      "sha256": "7178bcb4b7bc52c3c15057e96e8767d3522bc2b790c316f1235045f7ed0c3d37"
+      "bytes": 312940,
+      "sha256": "ef04afedb411307ce5be0618dbabf0f9d36a4f67f68475b733e9c4c65cfd0ae3"
     },
     {
       "path": "model/parts/rim_FL_steel.glb",
-      "bytes": 288532,
-      "sha256": "739f34a7b3fb10296d818c77797188912fcc93c402bf774cbecdb2a16af2e8b3"
+      "bytes": 306176,
+      "sha256": "63dab982a476443e0eb99703dcdd55775bf077aa5e33423f3b3e089657d33e3f"
     },
     {
       "path": "model/parts/rim_FL_window.glb",
-      "bytes": 226864,
-      "sha256": "deb23451720cab048be1faf89e36d3ea772a3d092d08fc01a9709d18d4563de2"
+      "bytes": 296664,
+      "sha256": "20779289c18081735ad025b5b688c336592146c59fa2c835e1b5f0a601f50343"
     },
     {
       "path": "model/parts/rim_FR_disc.glb",
-      "bytes": 240588,
-      "sha256": "63d9fc9a708386e633f4de6fc002a826c2961cd3f8b60f79047dce825654c252"
+      "bytes": 314068,
+      "sha256": "58ff10bc10db185ffc0ba6297bbda40584a2856f59e18f95257e9adfd82f5531"
     },
     {
       "path": "model/parts/rim_FR_steel.glb",
-      "bytes": 300036,
-      "sha256": "ee1374d327500197183643591ad15415ad6a3207443ccd23e8392a61fa203d94"
+      "bytes": 310880,
+      "sha256": "867e7f9fbe9b853eb3cdf33c78ced9fddbf707d82aca0bc6458a5899b057f52d"
     },
     {
       "path": "model/parts/rim_FR_window.glb",
-      "bytes": 237220,
-      "sha256": "decd985b68419e19f5a33481ec2043c23a04da20386b12d904d44d6ae6021483"
+      "bytes": 299064,
+      "sha256": "4c2f7c5eb6ec936d16750dd55e5ce80a863d8ed12cfe359e2bfe36160cb8ebd9"
     },
     {
       "path": "model/parts/rim_RL_disc.glb",
-      "bytes": 230432,
-      "sha256": "d8c3d7d5780ed78161325f12b0a65e0417be5c66ff5ae83003e34be4e5ab80c5"
+      "bytes": 312940,
+      "sha256": "392201f0d35c4a9418c6c571f4ab6c1f0f950ffd12da9d935c1d5fe0b370374f"
     },
     {
       "path": "model/parts/rim_RL_steel.glb",
-      "bytes": 288532,
-      "sha256": "adb07a7708ba127695e7872d53e87f98f99f1f21b84a71cea4c9e4a4fcafdeb9"
+      "bytes": 306176,
+      "sha256": "3183e022574751219f40fa22b9c36f811162706bd8253c28b33c6f3b93349621"
     },
     {
       "path": "model/parts/rim_RL_window.glb",
-      "bytes": 226864,
-      "sha256": "8aa4511ebd4ffe60343923049290cb9d5ad47b18e3c1c450823c74d495b9322a"
+      "bytes": 296664,
+      "sha256": "255977e97ad2aa506b3491541f41f536fc4d0e9413498066c8e76ef0993a7901"
     },
     {
       "path": "model/parts/rim_RR_disc.glb",
-      "bytes": 240588,
-      "sha256": "179f73720fd6d62db36d64a28119b61abda8f9e225d4f37cacf3a6f2e57a1100"
+      "bytes": 314068,
+      "sha256": "98a8226ba94dea2d801f3d984b2f83e2a1e102852503b0380980e6a1416c702f"
     },
     {
       "path": "model/parts/rim_RR_steel.glb",
-      "bytes": 300036,
-      "sha256": "4a4121c1c6f39c1f070b85e508d0f7b051bf5b4971132233bd5c05e908bb3f4c"
+      "bytes": 310880,
+      "sha256": "3a4a76b7e6982024a2aa855f2405cf73a0948f567bb0f80673c85bed7d6cb7ba"
     },
     {
       "path": "model/parts/rim_RR_window.glb",
-      "bytes": 237220,
-      "sha256": "3c74a8f7e7aca85d10115e80a1ed1263ea5e191099d5c508b42e0445a53f2fed"
+      "bytes": 299064,
+      "sha256": "180371938b91eca7ddea44526dc1f919d965ac6fd221e815425d44f7f0bcbe35"
     },
     {
       "path": "model/parts/roof_rails.glb",
@@ -758,59 +758,9 @@
       "sha256": "f34286896012460f6b8da3a6ed95742a55fd016d206283ceb56da1446fed7d8e"
     },
     {
-      "path": "model/parts/wheel_FL_at26570.glb",
-      "bytes": 386400,
-      "sha256": "01f2348ff77128b4e716a9f5a550beaa5eb339c996f3537848e54db9525af43e"
-    },
-    {
-      "path": "model/parts/wheel_FL_at26575.glb",
-      "bytes": 379076,
-      "sha256": "2e33b37b76349ca917f176486aefa76509a3907a84e25d65fe0695f36c3d26e1"
-    },
-    {
-      "path": "model/parts/wheel_FL_at285.glb",
-      "bytes": 374856,
-      "sha256": "417b7a11745cf2565b26b06c4e9bb17919d59ca1e32fda5531f34318d9019754"
-    },
-    {
-      "path": "model/parts/wheel_FL_at28565.glb",
-      "bytes": 371496,
-      "sha256": "4236e307f75965ebbbb0701b194c4f53827cb6123d9edb49b06008a732601f05"
-    },
-    {
-      "path": "model/parts/wheel_FL_ht26570.glb",
-      "bytes": 317412,
-      "sha256": "bfbd4ffbf37d07266f7e257fd06ac43ca24d729097b70f9f9ddca439bc2e153b"
-    },
-    {
       "path": "model/parts/wheel_FR.glb",
       "bytes": 531204,
       "sha256": "a4e5badcfb3cf990ca3e9c99e8bb434ef18235261f9d3c6c9373d41be99c5382"
-    },
-    {
-      "path": "model/parts/wheel_FR_at26570.glb",
-      "bytes": 397740,
-      "sha256": "dab0566f3a85325033afaa1a4347c263f80d96ba5114a06fab994e6f7f0ffb8b"
-    },
-    {
-      "path": "model/parts/wheel_FR_at26575.glb",
-      "bytes": 390416,
-      "sha256": "a48cd804edee993b29c2e0786b1c538a9477daf4663c8e4b3a2178eacf93fb8d"
-    },
-    {
-      "path": "model/parts/wheel_FR_at285.glb",
-      "bytes": 385960,
-      "sha256": "f05ebfe849ed3c70c003d8dceac4ddd021624b57bea5436f4fdaa6373adc87ca"
-    },
-    {
-      "path": "model/parts/wheel_FR_at28565.glb",
-      "bytes": 382096,
-      "sha256": "f8890f77499df63c6c9e85a08440b836836427dcd51433261b297e84abe4428f"
-    },
-    {
-      "path": "model/parts/wheel_FR_ht26570.glb",
-      "bytes": 336708,
-      "sha256": "6ce952598816dc0d534bf0c2f5748d0f30ba8b3ba2a7fb003f5123a0fbf7d76f"
     },
     {
       "path": "model/parts/wheel_RL.glb",
@@ -818,59 +768,9 @@
       "sha256": "a2c5735bb2ef5fb48415d499258c3d56523add26b0cd3bd76c1f1a8b4b40f9a5"
     },
     {
-      "path": "model/parts/wheel_RL_at26570.glb",
-      "bytes": 386400,
-      "sha256": "66107a42fe671b79eccb8a2d5b2e203bbedd585ad4eea27deaec01d573ce27f4"
-    },
-    {
-      "path": "model/parts/wheel_RL_at26575.glb",
-      "bytes": 379076,
-      "sha256": "d7b23724ffcebc08a0a18eb6073774a3ab9625f9566509ae30b0558a07934f4d"
-    },
-    {
-      "path": "model/parts/wheel_RL_at285.glb",
-      "bytes": 374856,
-      "sha256": "380012f7bfc5a53b94843d9a406bfe112f5bbab67d3f86c9dc7028bc43633220"
-    },
-    {
-      "path": "model/parts/wheel_RL_at28565.glb",
-      "bytes": 371496,
-      "sha256": "6c220f29a2ca3c9cd30a4309a6a19b16935a8972326df62612e3af1e637bdd71"
-    },
-    {
-      "path": "model/parts/wheel_RL_ht26570.glb",
-      "bytes": 317412,
-      "sha256": "2a24fcaceb8dc6f7d1b346f0b5cbceab3f2273ecc820caf920fc7415073641dc"
-    },
-    {
       "path": "model/parts/wheel_RR.glb",
       "bytes": 525848,
       "sha256": "44ee9b4fa9e8adb4ad0e223a7f6c343b1e807fb0a55a92fe37ebeb8930d9bd96"
-    },
-    {
-      "path": "model/parts/wheel_RR_at26570.glb",
-      "bytes": 397740,
-      "sha256": "369e062d78de43651d1a23143b8beb51ff59fdcb386b7c7e217b61f9427e4ea2"
-    },
-    {
-      "path": "model/parts/wheel_RR_at26575.glb",
-      "bytes": 390416,
-      "sha256": "9c93e18f64ee5d8d793fb651b74ff27839ffeaa960e84dc4336f27ed1cc2f4ab"
-    },
-    {
-      "path": "model/parts/wheel_RR_at285.glb",
-      "bytes": 385960,
-      "sha256": "bac803ae812f0966627f6d9746fa858c1d1827962ac974e12ed4ad6d1d034c4b"
-    },
-    {
-      "path": "model/parts/wheel_RR_at28565.glb",
-      "bytes": 382096,
-      "sha256": "e9f146ee0a1f03e934b5fb40b966d66f6be8cfb9eea4c6e1789e7b1ef15d8055"
-    },
-    {
-      "path": "model/parts/wheel_RR_ht26570.glb",
-      "bytes": 336708,
-      "sha256": "28eae8581ac669659a49ee9d6c56139476eb400293368c523ea1668f4a413122"
     },
     {
       "path": "model/parts/wheel_emblem_FL.glb",
@@ -894,8 +794,8 @@
     },
     {
       "path": "model/wheels.json",
-      "bytes": 5105,
-      "sha256": "a7eb877765f5defb7c990e47ea030d5b1eb4cc0707cff3f661a8ec6e8f145af5"
+      "bytes": 5123,
+      "sha256": "48d3cca196c2d88f46354ea56462613251690551e967acb92523a33b3377d33a"
     },
     {
       "path": "model/workshop.json",
@@ -903,6 +803,6 @@
       "sha256": "b6975066780731f9e42d36442dbaa41f7576c6ea9fe81ed6f494234014c2d657"
     }
   ],
-  "assetSha256": "0fd6a5e4fad7bc6f3e5b8cf7fa83abf118dcad6e24cce151db75d158b0acca62",
+  "assetSha256": "fa8acc0090337c8a4b8d08f483e70475e492ebcb176a07ae20e80e8098907004",
   "visualInspectionRequired": true
 }

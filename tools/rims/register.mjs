@@ -6,11 +6,9 @@ const[repo,deps,work]=process.argv.slice(2),require=createRequire(deps+'/package
 const{Document,NodeIO}=await imp('@gltf-transform/core'),{ALL_EXTENSIONS,EXTMeshoptCompression}=await imp('@gltf-transform/extensions'),{MeshoptEncoder,MeshoptDecoder}=await imp('meshoptimizer'),{weld,dedup}=await imp('@gltf-transform/functions');await Promise.all([MeshoptEncoder.ready,MeshoptDecoder.ready]);
 const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.decoder':MeshoptDecoder,'meshopt.encoder':MeshoptEncoder});
 const data=JSON.parse(await fs.readFile(work+'/rim-data.json')),manifest=JSON.parse(await fs.readFile(repo+'/model/manifest.json')),style=data.style;
-const names={disc:'Dished disc · satin black',steel:'Round-hole steel · silver',window:'Eight-window · satin black'};
-const rimFinish={disc:{color:'#555b60',roughness:.38,metalness:.70,envMapIntensity:1.6},steel:{color:'#c4c9cc',roughness:.36,metalness:.65,envMapIntensity:2.8},window:{color:'#454a4f',roughness:.40,metalness:.70,envMapIntensity:1.8}};
-const defaults={rim:rimFinish[style],chrome:{color:'#858c92',roughness:.34,metalness:.85,envMapIntensity:.95},black:{color:'#242629',roughness:.85,metalness:0,envMapIntensity:.18}},report=[];
-// Keep the previous tyre review assets in the repo, loading optional variants only on demand.
-for(const p of manifest.parts)if(/^wheel_(FL|FR|RL|RR)_/.test(p.id))p.lazy=true;
+const names={disc:'KMC KM720 Roswell · matte anthracite',steel:'Shanaber steel · silver',window:'Method MR705 · titanium'};
+const rimFinish={disc:{color:'#7b7f83',roughness:.68,metalness:.50,envMapIntensity:1.5},steel:{color:'#c4c9cc',roughness:.36,metalness:.65,envMapIntensity:2.8},window:{color:'#8a8f94',roughness:.50,metalness:.62,envMapIntensity:1.5}};
+const defaults={rim:rimFinish[style],chrome:{color:'#858c92',roughness:.34,metalness:.85,envMapIntensity:.95},black:{color:'#1b1e20',roughness:.90,metalness:0,envMapIntensity:.15},tyre:{color:'#202326',roughness:.90,metalness:0,envMapIntensity:.22},brake:{color:'#9aa2a8',roughness:.50,metalness:.65,envMapIntensity:1.3}},report=[];
 for(const corner of ['FL','FR','RL','RR']){
  const slot='rim_'+corner,id=slot+'_'+style,pivot=manifest.slots['wheel_'+corner].pivot,sign=corner.endsWith('R')?-1:1;
  manifest.slots[slot]??={default:null,pivot,rigidClass:'wheel'};
@@ -25,7 +23,7 @@ for(const corner of ['FL','FR','RL','RR']){
  }
  doc.createScene().addChild(root);await doc.transform(weld(),dedup());doc.createExtension(EXTMeshoptCompression).setRequired(true).setEncoderOptions({method:EXTMeshoptCompression.EncoderMethod.QUANTIZE});
  const url='parts/'+id+'.glb';await io.write(repo+'/model/'+url,doc);
- const entry={id,slot,url,rootNode:id,pivot,rigidClass:'wheel',zones:Object.keys(data.groups),triangles:data.triangles,bounds:{min:lo,max:hi},beadSeat_mm:431.8,width_in:data.width_in,boltPattern:data.boltPattern,centreBore_mm:data.centreBore_mm,lazy:true,replacesWheelHardware:'wheel_'+corner,materialDefaults:defaults,bundlesSlots:['wheel_emblem_'+corner],purpose:names[style]+'; reference-inspired unbranded 17-inch rim; tyre and brake retained'};
+ const entry={id,slot,url,rootNode:id,pivot,rigidClass:'wheel',zones:Object.keys(data.groups),triangles:data.triangles,bounds:{min:lo,max:hi},beadSeat_mm:431.8,width_in:data.width_in,boltPattern:data.boltPattern,centreBore_mm:data.centreBore_mm,lazy:true,replacesWheelHardware:'wheel_'+corner,materialDefaults:defaults,bundlesSlots:['wheel_emblem_'+corner],features:data.features,purpose:names[style]+'; 17-inch metal lip, rubber bead adapter and opaque brake package; stored tyre retained'};
  const index=manifest.parts.findIndex(p=>p.id===id);if(index<0)manifest.parts.push(entry);else manifest.parts[index]=entry;
  report.push({id,triangles:data.triangles,pivot,bytes:(await fs.stat(repo+'/model/'+url)).size,bounds:entry.bounds});
 }
@@ -33,6 +31,7 @@ await fs.writeFile(repo+'/model/manifest.json',JSON.stringify(manifest,null,2)+'
 // Integrate with the current native Tyres/Rims catalogue; its fit rules and offsets are retained.
 const wheels=JSON.parse(await fs.readFile(repo+'/model/wheels.json'));
 const catId={disc:'kmc',steel:'steel',window:'method'}[style],rim=wheels.rims.find(r=>r.id===catId);
-Object.assign(rim,{built:true,label:names[style],color:rimFinish[style].color,assetId:'rim_FL_'+style,sourceNote:'Reference-inspired face, adapted to the configured LC200 5x150 mount; not manufacturer CAD'});
+const finish={disc:'matte anthracite',steel:'silver',window:'titanium'}[style],offset=rim.offset_mm===0?'0':(rim.offset_mm>0?'+':'')+rim.offset_mm;
+Object.assign(rim,{built:true,label:names[style],detail:'17×'+rim.width_in+' · ET'+offset+' · 5×150 · '+finish,color:rimFinish[style].color,assetId:'rim_FL_'+style,sourceNote:'Reference-inspired face, adapted to the configured LC200 5x150 mount; not manufacturer CAD'});
 await fs.writeFile(repo+'/model/wheels.json',JSON.stringify(wheels,null,2)+'\n');
-await fs.writeFile(work+'/asset-report.json',JSON.stringify({design:names[style],blender:data.blender,beadSeat_mm:data.beadSeat_mm,width_in:data.width_in,boltPattern:data.boltPattern,centreBore_mm:data.centreBore_mm,bake:data.bake,files:report},null,2)+'\n');console.log(style,data.triangles,report.reduce((a,b)=>a+b.bytes,0)+' bytes');
+await fs.writeFile(work+'/asset-report.json',JSON.stringify({design:names[style],blender:data.blender,beadSeat_mm:data.beadSeat_mm,width_in:data.width_in,boltPattern:data.boltPattern,centreBore_mm:data.centreBore_mm,bake:data.bake,features:data.features,files:report},null,2)+'\n');console.log(style,data.triangles,report.reduce((a,b)=>a+b.bytes,0)+' bytes');
