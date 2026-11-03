@@ -389,7 +389,9 @@ try {
     rendererObservations.fov >= 18 && rendererObservations.fov <= 22);
   checks.renderer = rendererObservations;
   checks.model = await page.evaluate(() => {
-    const t = window.__visualTest, box = new t.THREE.Box3().setFromObject(t.car);
+    const t = window.__visualTest, box = new t.THREE.Box3(), piece=new t.THREE.Box3();
+    t.car.updateMatrixWorld(true);
+    t.car.traverseVisible(o=>{if(!o.isMesh)return;o.geometry.computeBoundingBox();piece.copy(o.geometry.boundingBox).applyMatrix4(o.matrixWorld);box.union(piece);});
     return {dimensions: t.DIM, bounds: {min: box.min, max: box.max}, triangles: t.renderer.info.render.triangles, drawCalls: t.renderer.info.render.calls};
   });
   if(await page.evaluate(()=>!!window.lcBuild)){

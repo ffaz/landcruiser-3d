@@ -719,6 +719,8 @@ async function loadPart(entry){
     if(!['glass','lamp_clear','mirror'].includes(zone)&&!(entry.id.startsWith('lamp_rear_')&&zone==='lamp_red'))useBakedShading(material);
     if(entry.rigidClass==='wheel'&&!entry.wheelSlot&&zone==='black'){material.color.set('#0d1115');material.roughness=.56;material.envMapIntensity=1;}
     if(entry.rigidClass==='wheel'&&!entry.wheelSlot&&zone==='chrome'){material.color.set('#e1e4e5');material.roughness=.24;material.metalness=1;material.clearcoat=.15;material.clearcoatRoughness=.23;material.envMapIntensity=.95;}
+    // Additive workshop parts author their own finish without changing base materials.
+    for(const [key,value]of Object.entries(entry.materialDefaults?.[zone]||{})){if(key==='color')material.color.set(value);else if(key in material)material[key]=value;}
     material.userData={...material.userData,zone,sourceMaterial:source.name,defaultColor:material.color.getHexString(),partId:entry.id};
     materialCache.set(key,material);
    }
@@ -811,7 +813,7 @@ function applyStudioPartVisibility(){
  // Workshop tyres/rims: the stock wheel keeps only the halves still in use (its centre badge rides on the rim).
  // A stock tyre on an aftermarket rim moves out with the rim's offset; the brake disc stays on the hub.
  const customTyre=buildState.tyre!=='stock',customRim=buildState.rim!=='stock',shift=customRim?(wheelCatalog.vehicle.stockOffset_mm-rimById.get(buildState.rim).offset_mm)/1000:0;
- for(const [id,root]of parts){const entry=entryById.get(id);if(entry.rigidClass!=='wheel'||entry.wheelSlot)continue;
+ for(const [id,root]of parts){const entry=entryById.get(id);if(entry.rigidClass!=='wheel'||entry.wheelSlot||entry.replacesWheelHardware)continue;
   const side=Math.sign(entry.pivot?.[2]??manifest.slots[entry.slot].pivot[2]);
   root.traverse(mesh=>{if(!mesh.isMesh||mesh.userData.pickOverlay)return;const zone=[].concat(mesh.material)[0].userData.zone;
    mesh.visible=zone==='tyre'?!customTyre:zone==='brake'||!customRim;
@@ -824,11 +826,10 @@ function applyStudioPartVisibility(){
 // each hub; right-hand corners are turned, not mirrored, so lettering reads correctly.
 const customWheels=new THREE.Group();customWheels.name='Workshop tyres and rims';wheelGroup.add(customWheels);
 let wheelKit=null,customWheelKey='stock|stock';
-const coarsePointer=matchMedia('(pointer:coarse)').matches;
 async function ensureWheelsFor(state){
  if(state.tyre==='stock'&&state.rim==='stock')return;
  wheelKit??=await import('./wheels/assemble.js');
- await wheelKit.prepare(tyreById.get(state.tyre),rimById.get(state.rim),{texSize:Math.min(coarsePointer?4096:8192,renderer.capabilities.maxTextureSize)});
+ await wheelKit.prepare(tyreById.get(state.tyre),rimById.get(state.rim),{loadRim:async id=>{const entry=entryById.get(id);if(!entry)throw Error('Unknown rim asset '+id);await ensurePartsFor({slots:{[entry.slot]:id}});return parts.get(id);}});
 }
 function syncCustomWheels(){
  const key=buildState.tyre+'|'+buildState.rim;if(key===customWheelKey)return;
@@ -839,7 +840,11 @@ function syncCustomWheels(){
  }
 }
 function paintCustomWheels(){
- customWheels.traverse(mesh=>{if(mesh.isMesh&&!mesh.userData.pickOverlay)mesh.material=mesh.userData.ownMaterial??=mesh.material;});
+ customWheels.traverse(mesh=>{if(!mesh.isMesh||mesh.userData.pickOverlay)return;
+  const own=mesh.userData.ownMaterial??=mesh.material,original=originalMaterials.get(own)||own;
+  const zone=original.userData.zone,authored=buildState.paint[original.userData.partId+':'+zone]??buildState.paint[zone];
+  mesh.material=studioMaterial(own,zone,authored??('#'+original.userData.defaultColor),authored!==undefined,mesh);
+ });
 }
 // Tyre swaps are rigid too: a wheel part declares its tyre diameter (tyre_mm) and
 // the hubs rise by half the difference from stock; the body rides on top.

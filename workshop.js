@@ -254,7 +254,7 @@ function render(){
   const category=data.categories.find(c=>c.id===view),current=selectedOption(category,state);
   body=`<div class="ws-head"><button class="ws-back" data-home aria-label="Back">‹</button><div><div class="ws-micro">Workshop</div><div class="ws-title">${esc(category.label)}</div></div></div>
   <div class="ws-scroll">${optionsHTML(category,state,current)}
-  ${category.catalog?`<p class="ws-note">${esc(category.catalog==='tyres'?`Fitted to: ${specOf.rim(state.rim).label} (${specOf.rim(state.rim).detail}). “Won’t fit” is checked against this rim; “soon” sizes fit but need their 3D models.`:`Carrying: ${specOf.tyre(state.tyre).label}. “Won’t fit” is checked against this tyre; “soon” rims fit but need their 3D models.`)} ${esc(wheels.vehicle.note)}</p>`:''}
+  ${category.catalog?`<p class="ws-note">${esc(category.catalog==='tyres'?`Fitted to: ${specOf.rim(state.rim).label} (${specOf.rim(state.rim).detail}). “Won’t fit” is checked against this rim; “soon” sizes fit but need their 3D models.`:`Carrying: ${specOf.tyre(state.tyre).label}. All rim models are built. “Won’t fit” is checked against this tyre.`)} ${esc(wheels.vehicle.note)}</p>`:''}
   ${category.catalog==='tyres'||category.id==='stance'?`<p class="ws-note">${esc(data.clearanceNote)}</p>`:''}</div>${statusHTML(fit)}`;
  }
  panel.innerHTML=body;

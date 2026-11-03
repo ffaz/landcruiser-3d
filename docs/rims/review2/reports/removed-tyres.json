@@ -1,0 +1,27 @@
+{
+  "count": 20,
+  "bytes": 7444320,
+  "files": {
+    "model/parts/wheel_FL_at26570.glb": 386400,
+    "model/parts/wheel_FL_at26575.glb": 379076,
+    "model/parts/wheel_FL_at285.glb": 374856,
+    "model/parts/wheel_FL_at28565.glb": 371496,
+    "model/parts/wheel_FL_ht26570.glb": 317412,
+    "model/parts/wheel_FR_at26570.glb": 397740,
+    "model/parts/wheel_FR_at26575.glb": 390416,
+    "model/parts/wheel_FR_at285.glb": 385960,
+    "model/parts/wheel_FR_at28565.glb": 382096,
+    "model/parts/wheel_FR_ht26570.glb": 336708,
+    "model/parts/wheel_RL_at26570.glb": 386400,
+    "model/parts/wheel_RL_at26575.glb": 379076,
+    "model/parts/wheel_RL_at285.glb": 374856,
+    "model/parts/wheel_RL_at28565.glb": 371496,
+    "model/parts/wheel_RL_ht26570.glb": 317412,
+    "model/parts/wheel_RR_at26570.glb": 397740,
+    "model/parts/wheel_RR_at26575.glb": 390416,
+    "model/parts/wheel_RR_at285.glb": 385960,
+    "model/parts/wheel_RR_at28565.glb": 382096,
+    "model/parts/wheel_RR_ht26570.glb": 336708
+  },
+  "preservedOnBranch": "tyres-26570-review"
+}

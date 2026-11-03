@@ -4601,6 +4601,958 @@
       "rootNode": "bumper_front_plate_clean",
       "variantOf": "bumper_front",
       "purpose": "Same stored attributes and triangle union; loose old plate assigned invisible material zone"
+    },
+    {
+      "id": "rim_FL_disc",
+      "slot": "rim_FL",
+      "url": "parts/rim_FL_disc.glb",
+      "rootNode": "rim_FL_disc",
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "black",
+        "tyre",
+        "brake"
+      ],
+      "triangles": 14894,
+      "bounds": {
+        "min": [
+          -1.901999989748001,
+          0.12950001025199892,
+          0.6860000014305114
+        ],
+        "max": [
+          -1.368000010251999,
+          0.6634999897480012,
+          0.9659638375043869
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "width_in": 8.5,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
+      "lazy": true,
+      "replacesWheelHardware": "wheel_FL",
+      "materialDefaults": {
+        "rim": {
+          "color": "#7b7f83",
+          "roughness": 0.68,
+          "metalness": 0.5,
+          "envMapIntensity": 1.5
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#1b1e20",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.15
+        },
+        "tyre": {
+          "color": "#202326",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "brake": {
+          "color": "#9aa2a8",
+          "roughness": 0.5,
+          "metalness": 0.65,
+          "envMapIntensity": 1.3
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_FL"
+      ],
+      "features": {
+        "ventCount": 8,
+        "rotorDiameter_mm": 354,
+        "rubberFillerOuter_mm": 534,
+        "metalFlange_mm": 462
+      },
+      "purpose": "KMC KM720 Roswell · matte anthracite; 17-inch metal lip, rubber bead adapter and opaque brake package; stored tyre retained"
+    },
+    {
+      "id": "rim_FR_disc",
+      "slot": "rim_FR",
+      "url": "parts/rim_FR_disc.glb",
+      "rootNode": "rim_FR_disc",
+      "pivot": [
+        -1.635,
+        0.3965,
+        -0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "black",
+        "tyre",
+        "brake"
+      ],
+      "triangles": 14894,
+      "bounds": {
+        "min": [
+          -1.901999989748001,
+          0.12950001025199892,
+          -0.9659638375043869
+        ],
+        "max": [
+          -1.368000010251999,
+          0.6634999897480012,
+          -0.6860000014305114
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "width_in": 8.5,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
+      "lazy": true,
+      "replacesWheelHardware": "wheel_FR",
+      "materialDefaults": {
+        "rim": {
+          "color": "#7b7f83",
+          "roughness": 0.68,
+          "metalness": 0.5,
+          "envMapIntensity": 1.5
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#1b1e20",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.15
+        },
+        "tyre": {
+          "color": "#202326",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "brake": {
+          "color": "#9aa2a8",
+          "roughness": 0.5,
+          "metalness": 0.65,
+          "envMapIntensity": 1.3
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_FR"
+      ],
+      "features": {
+        "ventCount": 8,
+        "rotorDiameter_mm": 354,
+        "rubberFillerOuter_mm": 534,
+        "metalFlange_mm": 462
+      },
+      "purpose": "KMC KM720 Roswell · matte anthracite; 17-inch metal lip, rubber bead adapter and opaque brake package; stored tyre retained"
+    },
+    {
+      "id": "rim_RL_disc",
+      "slot": "rim_RL",
+      "url": "parts/rim_RL_disc.glb",
+      "rootNode": "rim_RL_disc",
+      "pivot": [
+        1.215,
+        0.3965,
+        0.8225
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "black",
+        "tyre",
+        "brake"
+      ],
+      "triangles": 14894,
+      "bounds": {
+        "min": [
+          0.948000010251999,
+          0.12950001025199892,
+          0.6835000014305115
+        ],
+        "max": [
+          1.4819999897480012,
+          0.6634999897480012,
+          0.9634638375043869
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "width_in": 8.5,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
+      "lazy": true,
+      "replacesWheelHardware": "wheel_RL",
+      "materialDefaults": {
+        "rim": {
+          "color": "#7b7f83",
+          "roughness": 0.68,
+          "metalness": 0.5,
+          "envMapIntensity": 1.5
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#1b1e20",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.15
+        },
+        "tyre": {
+          "color": "#202326",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "brake": {
+          "color": "#9aa2a8",
+          "roughness": 0.5,
+          "metalness": 0.65,
+          "envMapIntensity": 1.3
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_RL"
+      ],
+      "features": {
+        "ventCount": 8,
+        "rotorDiameter_mm": 354,
+        "rubberFillerOuter_mm": 534,
+        "metalFlange_mm": 462
+      },
+      "purpose": "KMC KM720 Roswell · matte anthracite; 17-inch metal lip, rubber bead adapter and opaque brake package; stored tyre retained"
+    },
+    {
+      "id": "rim_RR_disc",
+      "slot": "rim_RR",
+      "url": "parts/rim_RR_disc.glb",
+      "rootNode": "rim_RR_disc",
+      "pivot": [
+        1.215,
+        0.3965,
+        -0.8225
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "black",
+        "tyre",
+        "brake"
+      ],
+      "triangles": 14894,
+      "bounds": {
+        "min": [
+          0.948000010251999,
+          0.12950001025199892,
+          -0.9634638375043869
+        ],
+        "max": [
+          1.4819999897480012,
+          0.6634999897480012,
+          -0.6835000014305115
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "width_in": 8.5,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
+      "lazy": true,
+      "replacesWheelHardware": "wheel_RR",
+      "materialDefaults": {
+        "rim": {
+          "color": "#7b7f83",
+          "roughness": 0.68,
+          "metalness": 0.5,
+          "envMapIntensity": 1.5
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#1b1e20",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.15
+        },
+        "tyre": {
+          "color": "#202326",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "brake": {
+          "color": "#9aa2a8",
+          "roughness": 0.5,
+          "metalness": 0.65,
+          "envMapIntensity": 1.3
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_RR"
+      ],
+      "features": {
+        "ventCount": 8,
+        "rotorDiameter_mm": 354,
+        "rubberFillerOuter_mm": 534,
+        "metalFlange_mm": 462
+      },
+      "purpose": "KMC KM720 Roswell · matte anthracite; 17-inch metal lip, rubber bead adapter and opaque brake package; stored tyre retained"
+    },
+    {
+      "id": "rim_FL_steel",
+      "slot": "rim_FL",
+      "url": "parts/rim_FL_steel.glb",
+      "rootNode": "rim_FL_steel",
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "black",
+        "chrome",
+        "tyre",
+        "brake"
+      ],
+      "triangles": 13943,
+      "bounds": {
+        "min": [
+          -1.901999989748001,
+          0.12950001025199892,
+          0.6860000014305114
+        ],
+        "max": [
+          -1.368000010251999,
+          0.6634999897480012,
+          0.9639999985694885
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "width_in": 8,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
+      "lazy": true,
+      "replacesWheelHardware": "wheel_FL",
+      "materialDefaults": {
+        "rim": {
+          "color": "#c4c9cc",
+          "roughness": 0.36,
+          "metalness": 0.65,
+          "envMapIntensity": 2.8
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#1b1e20",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.15
+        },
+        "tyre": {
+          "color": "#202326",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "brake": {
+          "color": "#9aa2a8",
+          "roughness": 0.5,
+          "metalness": 0.65,
+          "envMapIntensity": 1.3
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_FL"
+      ],
+      "features": {
+        "ventCount": 18,
+        "rotorDiameter_mm": 354,
+        "rubberFillerOuter_mm": 534,
+        "metalFlange_mm": 462
+      },
+      "purpose": "Shanaber steel · silver; 17-inch metal lip, rubber bead adapter and opaque brake package; stored tyre retained"
+    },
+    {
+      "id": "rim_FR_steel",
+      "slot": "rim_FR",
+      "url": "parts/rim_FR_steel.glb",
+      "rootNode": "rim_FR_steel",
+      "pivot": [
+        -1.635,
+        0.3965,
+        -0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "black",
+        "chrome",
+        "tyre",
+        "brake"
+      ],
+      "triangles": 13943,
+      "bounds": {
+        "min": [
+          -1.901999989748001,
+          0.12950001025199892,
+          -0.9639999985694885
+        ],
+        "max": [
+          -1.368000010251999,
+          0.6634999897480012,
+          -0.6860000014305114
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "width_in": 8,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
+      "lazy": true,
+      "replacesWheelHardware": "wheel_FR",
+      "materialDefaults": {
+        "rim": {
+          "color": "#c4c9cc",
+          "roughness": 0.36,
+          "metalness": 0.65,
+          "envMapIntensity": 2.8
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#1b1e20",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.15
+        },
+        "tyre": {
+          "color": "#202326",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "brake": {
+          "color": "#9aa2a8",
+          "roughness": 0.5,
+          "metalness": 0.65,
+          "envMapIntensity": 1.3
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_FR"
+      ],
+      "features": {
+        "ventCount": 18,
+        "rotorDiameter_mm": 354,
+        "rubberFillerOuter_mm": 534,
+        "metalFlange_mm": 462
+      },
+      "purpose": "Shanaber steel · silver; 17-inch metal lip, rubber bead adapter and opaque brake package; stored tyre retained"
+    },
+    {
+      "id": "rim_RL_steel",
+      "slot": "rim_RL",
+      "url": "parts/rim_RL_steel.glb",
+      "rootNode": "rim_RL_steel",
+      "pivot": [
+        1.215,
+        0.3965,
+        0.8225
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "black",
+        "chrome",
+        "tyre",
+        "brake"
+      ],
+      "triangles": 13943,
+      "bounds": {
+        "min": [
+          0.948000010251999,
+          0.12950001025199892,
+          0.6835000014305115
+        ],
+        "max": [
+          1.4819999897480012,
+          0.6634999897480012,
+          0.9614999985694885
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "width_in": 8,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
+      "lazy": true,
+      "replacesWheelHardware": "wheel_RL",
+      "materialDefaults": {
+        "rim": {
+          "color": "#c4c9cc",
+          "roughness": 0.36,
+          "metalness": 0.65,
+          "envMapIntensity": 2.8
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#1b1e20",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.15
+        },
+        "tyre": {
+          "color": "#202326",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "brake": {
+          "color": "#9aa2a8",
+          "roughness": 0.5,
+          "metalness": 0.65,
+          "envMapIntensity": 1.3
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_RL"
+      ],
+      "features": {
+        "ventCount": 18,
+        "rotorDiameter_mm": 354,
+        "rubberFillerOuter_mm": 534,
+        "metalFlange_mm": 462
+      },
+      "purpose": "Shanaber steel · silver; 17-inch metal lip, rubber bead adapter and opaque brake package; stored tyre retained"
+    },
+    {
+      "id": "rim_RR_steel",
+      "slot": "rim_RR",
+      "url": "parts/rim_RR_steel.glb",
+      "rootNode": "rim_RR_steel",
+      "pivot": [
+        1.215,
+        0.3965,
+        -0.8225
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "black",
+        "chrome",
+        "tyre",
+        "brake"
+      ],
+      "triangles": 13943,
+      "bounds": {
+        "min": [
+          0.948000010251999,
+          0.12950001025199892,
+          -0.9614999985694885
+        ],
+        "max": [
+          1.4819999897480012,
+          0.6634999897480012,
+          -0.6835000014305115
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "width_in": 8,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
+      "lazy": true,
+      "replacesWheelHardware": "wheel_RR",
+      "materialDefaults": {
+        "rim": {
+          "color": "#c4c9cc",
+          "roughness": 0.36,
+          "metalness": 0.65,
+          "envMapIntensity": 2.8
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#1b1e20",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.15
+        },
+        "tyre": {
+          "color": "#202326",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "brake": {
+          "color": "#9aa2a8",
+          "roughness": 0.5,
+          "metalness": 0.65,
+          "envMapIntensity": 1.3
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_RR"
+      ],
+      "features": {
+        "ventCount": 18,
+        "rotorDiameter_mm": 354,
+        "rubberFillerOuter_mm": 534,
+        "metalFlange_mm": 462
+      },
+      "purpose": "Shanaber steel · silver; 17-inch metal lip, rubber bead adapter and opaque brake package; stored tyre retained"
+    },
+    {
+      "id": "rim_FL_window",
+      "slot": "rim_FL",
+      "url": "parts/rim_FL_window.glb",
+      "rootNode": "rim_FL_window",
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "black",
+        "tyre",
+        "brake"
+      ],
+      "triangles": 13278,
+      "bounds": {
+        "min": [
+          -1.901999989748001,
+          0.12950001025199892,
+          0.6860000014305114
+        ],
+        "max": [
+          -1.368000010251999,
+          0.6634999897480012,
+          0.9659638375043869
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "width_in": 8.5,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.3,
+      "lazy": true,
+      "replacesWheelHardware": "wheel_FL",
+      "materialDefaults": {
+        "rim": {
+          "color": "#8a8f94",
+          "roughness": 0.5,
+          "metalness": 0.62,
+          "envMapIntensity": 1.5
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#1b1e20",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.15
+        },
+        "tyre": {
+          "color": "#202326",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "brake": {
+          "color": "#9aa2a8",
+          "roughness": 0.5,
+          "metalness": 0.65,
+          "envMapIntensity": 1.3
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_FL"
+      ],
+      "features": {
+        "ventCount": 10,
+        "rotorDiameter_mm": 354,
+        "rubberFillerOuter_mm": 534,
+        "metalFlange_mm": 462
+      },
+      "purpose": "Method MR705 · titanium; 17-inch metal lip, rubber bead adapter and opaque brake package; stored tyre retained"
+    },
+    {
+      "id": "rim_FR_window",
+      "slot": "rim_FR",
+      "url": "parts/rim_FR_window.glb",
+      "rootNode": "rim_FR_window",
+      "pivot": [
+        -1.635,
+        0.3965,
+        -0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "black",
+        "tyre",
+        "brake"
+      ],
+      "triangles": 13278,
+      "bounds": {
+        "min": [
+          -1.901999989748001,
+          0.12950001025199892,
+          -0.9659638375043869
+        ],
+        "max": [
+          -1.368000010251999,
+          0.6634999897480012,
+          -0.6860000014305114
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "width_in": 8.5,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.3,
+      "lazy": true,
+      "replacesWheelHardware": "wheel_FR",
+      "materialDefaults": {
+        "rim": {
+          "color": "#8a8f94",
+          "roughness": 0.5,
+          "metalness": 0.62,
+          "envMapIntensity": 1.5
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#1b1e20",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.15
+        },
+        "tyre": {
+          "color": "#202326",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "brake": {
+          "color": "#9aa2a8",
+          "roughness": 0.5,
+          "metalness": 0.65,
+          "envMapIntensity": 1.3
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_FR"
+      ],
+      "features": {
+        "ventCount": 10,
+        "rotorDiameter_mm": 354,
+        "rubberFillerOuter_mm": 534,
+        "metalFlange_mm": 462
+      },
+      "purpose": "Method MR705 · titanium; 17-inch metal lip, rubber bead adapter and opaque brake package; stored tyre retained"
+    },
+    {
+      "id": "rim_RL_window",
+      "slot": "rim_RL",
+      "url": "parts/rim_RL_window.glb",
+      "rootNode": "rim_RL_window",
+      "pivot": [
+        1.215,
+        0.3965,
+        0.8225
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "black",
+        "tyre",
+        "brake"
+      ],
+      "triangles": 13278,
+      "bounds": {
+        "min": [
+          0.948000010251999,
+          0.12950001025199892,
+          0.6835000014305115
+        ],
+        "max": [
+          1.4819999897480012,
+          0.6634999897480012,
+          0.9634638375043869
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "width_in": 8.5,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.3,
+      "lazy": true,
+      "replacesWheelHardware": "wheel_RL",
+      "materialDefaults": {
+        "rim": {
+          "color": "#8a8f94",
+          "roughness": 0.5,
+          "metalness": 0.62,
+          "envMapIntensity": 1.5
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#1b1e20",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.15
+        },
+        "tyre": {
+          "color": "#202326",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "brake": {
+          "color": "#9aa2a8",
+          "roughness": 0.5,
+          "metalness": 0.65,
+          "envMapIntensity": 1.3
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_RL"
+      ],
+      "features": {
+        "ventCount": 10,
+        "rotorDiameter_mm": 354,
+        "rubberFillerOuter_mm": 534,
+        "metalFlange_mm": 462
+      },
+      "purpose": "Method MR705 · titanium; 17-inch metal lip, rubber bead adapter and opaque brake package; stored tyre retained"
+    },
+    {
+      "id": "rim_RR_window",
+      "slot": "rim_RR",
+      "url": "parts/rim_RR_window.glb",
+      "rootNode": "rim_RR_window",
+      "pivot": [
+        1.215,
+        0.3965,
+        -0.8225
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "black",
+        "tyre",
+        "brake"
+      ],
+      "triangles": 13278,
+      "bounds": {
+        "min": [
+          0.948000010251999,
+          0.12950001025199892,
+          -0.9634638375043869
+        ],
+        "max": [
+          1.4819999897480012,
+          0.6634999897480012,
+          -0.6835000014305115
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "width_in": 8.5,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.3,
+      "lazy": true,
+      "replacesWheelHardware": "wheel_RR",
+      "materialDefaults": {
+        "rim": {
+          "color": "#8a8f94",
+          "roughness": 0.5,
+          "metalness": 0.62,
+          "envMapIntensity": 1.5
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#1b1e20",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.15
+        },
+        "tyre": {
+          "color": "#202326",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "brake": {
+          "color": "#9aa2a8",
+          "roughness": 0.5,
+          "metalness": 0.65,
+          "envMapIntensity": 1.3
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_RR"
+      ],
+      "features": {
+        "ventCount": 10,
+        "rotorDiameter_mm": 354,
+        "rubberFillerOuter_mm": 534,
+        "metalFlange_mm": 462
+      },
+      "purpose": "Method MR705 · titanium; 17-inch metal lip, rubber bead adapter and opaque brake package; stored tyre retained"
     }
   ],
   "displayBase": {
@@ -5025,6 +5977,42 @@
         0
       ],
       "rigidClass": "body"
+    },
+    "rim_FL": {
+      "default": null,
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel"
+    },
+    "rim_FR": {
+      "default": null,
+      "pivot": [
+        -1.635,
+        0.3965,
+        -0.825
+      ],
+      "rigidClass": "wheel"
+    },
+    "rim_RL": {
+      "default": null,
+      "pivot": [
+        1.215,
+        0.3965,
+        0.8225
+      ],
+      "rigidClass": "wheel"
+    },
+    "rim_RR": {
+      "default": null,
+      "pivot": [
+        1.215,
+        0.3965,
+        -0.8225
+      ],
+      "rigidClass": "wheel"
     }
   },
   "missingTargets": {

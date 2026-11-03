@@ -46,7 +46,7 @@ for(const viewport of [{width:1440,height:1000},{width:390,height:844}]){
  await shot('tyres');
  await page.click('#workshop [data-home]');
  await page.click('#workshop [data-cat=rims]');
- check(`${tag}: rims: stock live, 3 soon`,(await page.locator('#workshop .ws-opt:not([disabled])').count())===1&&(await page.locator('#workshop .ws-opt.nofit').count())===0);
+ check(`${tag}: rims: stock and three built designs live`,(await page.locator('#workshop .ws-opt:not([disabled])').count())===4&&(await page.locator('#workshop .ws-opt.nofit').count())===0);
  const rules=await page.evaluate(()=>{const w=window.lcWorkshop,c=s=>w.wheelChecks({tyre:'stock',rim:'stock',...s});
   return {stock:c({}).notes,kmc35:c({tyre:'mt35',rim:'kmc'}).notes,stock35:c({tyre:'mt35'}).notes,steel35:c({tyre:'mt35',rim:'steel'}).notes,m285:c({tyre:'at285',rim:'method'}).notes};});
  check(`${tag}: rules: stock wheel has no notes`,rules.stock.length===0,JSON.stringify(rules.stock));

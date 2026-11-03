@@ -1,0 +1,458 @@
+[
+  {
+    "pixel": [
+      543.7183858279384,
+      744.6504048957617
+    ],
+    "misses": [],
+    "samples": 249,
+    "name": "fit-cream-FL-kmc",
+    "studio": "cream",
+    "corner": "FL",
+    "rim": "kmc",
+    "crop": {
+      "left": 384,
+      "top": 595,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      547.0622723994023,
+      745.5959475900022
+    ],
+    "misses": [],
+    "samples": 299,
+    "name": "fit-cream-FL-method",
+    "studio": "cream",
+    "corner": "FL",
+    "rim": "method",
+    "crop": {
+      "left": 387,
+      "top": 596,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      642.5118881924419,
+      722.4752346674484
+    ],
+    "misses": [],
+    "samples": 249,
+    "name": "fit-cream-RR-kmc",
+    "studio": "cream",
+    "corner": "RR",
+    "rim": "kmc",
+    "crop": {
+      "left": 483,
+      "top": 572,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      645.8784852510297,
+      723.3631214088188
+    ],
+    "misses": [],
+    "samples": 299,
+    "name": "fit-cream-RR-method",
+    "studio": "cream",
+    "corner": "RR",
+    "rim": "method",
+    "crop": {
+      "left": 486,
+      "top": 573,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      543.7183858279383,
+      744.6504048957617
+    ],
+    "misses": [],
+    "samples": 249,
+    "name": "fit-slate-FL-kmc",
+    "studio": "slate",
+    "corner": "FL",
+    "rim": "kmc",
+    "crop": {
+      "left": 384,
+      "top": 595,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      547.0622723994023,
+      745.5959475900022
+    ],
+    "misses": [],
+    "samples": 299,
+    "name": "fit-slate-FL-method",
+    "studio": "slate",
+    "corner": "FL",
+    "rim": "method",
+    "crop": {
+      "left": 387,
+      "top": 596,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      642.5118881924419,
+      722.4752346674484
+    ],
+    "misses": [],
+    "samples": 249,
+    "name": "fit-slate-RR-kmc",
+    "studio": "slate",
+    "corner": "RR",
+    "rim": "kmc",
+    "crop": {
+      "left": 483,
+      "top": 572,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      645.8784852510297,
+      723.3631214088188
+    ],
+    "misses": [],
+    "samples": 299,
+    "name": "fit-slate-RR-method",
+    "studio": "slate",
+    "corner": "RR",
+    "rim": "method",
+    "crop": {
+      "left": 486,
+      "top": 573,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      543.7183858279383,
+      744.6504048957617
+    ],
+    "misses": [],
+    "samples": 249,
+    "name": "fit-clay-FL-kmc",
+    "studio": "clay",
+    "corner": "FL",
+    "rim": "kmc",
+    "crop": {
+      "left": 384,
+      "top": 595,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      547.0622723994023,
+      745.5959475900022
+    ],
+    "misses": [],
+    "samples": 299,
+    "name": "fit-clay-FL-method",
+    "studio": "clay",
+    "corner": "FL",
+    "rim": "method",
+    "crop": {
+      "left": 387,
+      "top": 596,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      642.5118881924419,
+      722.4752346674484
+    ],
+    "misses": [],
+    "samples": 249,
+    "name": "fit-clay-RR-kmc",
+    "studio": "clay",
+    "corner": "RR",
+    "rim": "kmc",
+    "crop": {
+      "left": 483,
+      "top": 572,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      645.8784852510297,
+      723.3631214088188
+    ],
+    "misses": [],
+    "samples": 299,
+    "name": "fit-clay-RR-method",
+    "studio": "clay",
+    "corner": "RR",
+    "rim": "method",
+    "crop": {
+      "left": 486,
+      "top": 573,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      542.4203645037636,
+      744.2833665546542
+    ],
+    "misses": [],
+    "samples": 499,
+    "name": "fit-cream-FL-steel",
+    "studio": "cream",
+    "corner": "FL",
+    "rim": "steel",
+    "crop": {
+      "left": 382,
+      "top": 594,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      641.2049770807253,
+      722.1305575266891
+    ],
+    "misses": [],
+    "samples": 499,
+    "name": "fit-cream-RR-steel",
+    "studio": "cream",
+    "corner": "RR",
+    "rim": "steel",
+    "crop": {
+      "left": 481,
+      "top": 572,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      542.4203645037636,
+      744.2833665546542
+    ],
+    "misses": [],
+    "samples": 499,
+    "name": "fit-slate-FL-steel",
+    "studio": "slate",
+    "corner": "FL",
+    "rim": "steel",
+    "crop": {
+      "left": 382,
+      "top": 594,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      641.2049770807253,
+      722.1305575266891
+    ],
+    "misses": [],
+    "samples": 499,
+    "name": "fit-slate-RR-steel",
+    "studio": "slate",
+    "corner": "RR",
+    "rim": "steel",
+    "crop": {
+      "left": 481,
+      "top": 572,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      542.4203645037636,
+      744.2833665546542
+    ],
+    "misses": [],
+    "samples": 499,
+    "name": "fit-clay-FL-steel",
+    "studio": "clay",
+    "corner": "FL",
+    "rim": "steel",
+    "crop": {
+      "left": 382,
+      "top": 594,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      641.2049770807253,
+      722.1305575266891
+    ],
+    "misses": [],
+    "samples": 499,
+    "name": "fit-clay-RR-steel",
+    "studio": "clay",
+    "corner": "RR",
+    "rim": "steel",
+    "crop": {
+      "left": 481,
+      "top": 572,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      535.9501540424621,
+      742.4538008378952
+    ],
+    "misses": [],
+    "samples": 0,
+    "name": "fit-cream-FL-stock",
+    "studio": "cream",
+    "corner": "FL",
+    "rim": "stock",
+    "crop": {
+      "left": 376,
+      "top": 592,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      634.6898358234643,
+      720.412292037886
+    ],
+    "misses": [],
+    "samples": 0,
+    "name": "fit-cream-RR-stock",
+    "studio": "cream",
+    "corner": "RR",
+    "rim": "stock",
+    "crop": {
+      "left": 475,
+      "top": 570,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      535.9501540424621,
+      742.4538008378952
+    ],
+    "misses": [],
+    "samples": 0,
+    "name": "fit-slate-FL-stock",
+    "studio": "slate",
+    "corner": "FL",
+    "rim": "stock",
+    "crop": {
+      "left": 376,
+      "top": 592,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      634.6898358234643,
+      720.412292037886
+    ],
+    "misses": [],
+    "samples": 0,
+    "name": "fit-slate-RR-stock",
+    "studio": "slate",
+    "corner": "RR",
+    "rim": "stock",
+    "crop": {
+      "left": 475,
+      "top": 570,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      535.9501540424621,
+      742.4538008378952
+    ],
+    "misses": [],
+    "samples": 0,
+    "name": "fit-clay-FL-stock",
+    "studio": "clay",
+    "corner": "FL",
+    "rim": "stock",
+    "crop": {
+      "left": 376,
+      "top": 592,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  },
+  {
+    "pixel": [
+      634.6898358234643,
+      720.412292037886
+    ],
+    "misses": [],
+    "samples": 0,
+    "name": "fit-clay-RR-stock",
+    "studio": "clay",
+    "corner": "RR",
+    "rim": "stock",
+    "crop": {
+      "left": 475,
+      "top": 570,
+      "width": 320,
+      "height": 300,
+      "scale": 3
+    }
+  }
+]
