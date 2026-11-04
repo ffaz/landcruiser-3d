@@ -1,0 +1,430 @@
+{
+  "status": "in_progress",
+  "capture": "candidate1",
+  "allS1S2Passed": false,
+  "criteria": [
+    {
+      "id": "G1",
+      "severity": "S1",
+      "view": "fq",
+      "measured": {
+        "front_glass": [
+          0.4054967463082598,
+          true
+        ],
+        "rear_glass": [
+          0.17624620444799088,
+          true
+        ],
+        "quarter_glass": [
+          0.1720787694388743,
+          true
+        ]
+      },
+      "threshold": {
+        "front_glass": [
+          0.35,
+          0.55
+        ],
+        "rear_glass_max": 0.25,
+        "quarter_glass_max": 0.25
+      },
+      "status": "partial",
+      "passed": null,
+      "note": "Tailgate is not visible in fq; separate rear measurement still required. Ratios are display-referred Rec.709 luma, not linear radiance."
+    },
+    {
+      "id": "G2",
+      "severity": "S2",
+      "view": "side / front glass",
+      "measured": 0.17267962998809355,
+      "threshold": 0.15,
+      "status": "pass",
+      "passed": true,
+      "note": "Top/bottom 20% of eroded visible-window semantic mask."
+    },
+    {
+      "id": "G3",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "P1",
+      "severity": "S1",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "P2",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "P3",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "S1",
+      "severity": "S1",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "S2",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "S3",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "F1",
+      "severity": "S1",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "F2",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "F3",
+      "severity": "S3",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "R1",
+      "severity": "S1",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "R2",
+      "severity": "S1",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "R3",
+      "severity": "S1",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "R4",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "R6",
+      "severity": "S3",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "T1",
+      "severity": "S1",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "T2",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "T4",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "W1",
+      "severity": "S1",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "W2",
+      "severity": "S1",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "W3",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "W4",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "B1",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "B2",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "B3",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "K1",
+      "severity": "S1",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "K2",
+      "severity": "S1",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "K3",
+      "severity": "S1",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "K4",
+      "severity": "S1",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "K5",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "K6",
+      "severity": "S3",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "M1",
+      "severity": "S1",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "M2",
+      "severity": "S1",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "M3",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "M4",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "M5",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "M6",
+      "severity": "S3",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "H1",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "H2",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "H3",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "H4",
+      "severity": "S2",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    },
+    {
+      "id": "H5",
+      "severity": "S3",
+      "view": null,
+      "measured": null,
+      "threshold": null,
+      "status": "pending",
+      "passed": null
+    }
+  ],
+  "measurementFile": "/workspace/full-car-pass/work/candidate1/measurements.json",
+  "notes": [
+    "No likeness percentage claimed before the full acceptance run.",
+    "No Main/Pages publication."
+  ]
+}

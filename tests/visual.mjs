@@ -302,8 +302,8 @@ try {
     checks.bakedCoverage=bakedData.opaqueMeshes>0&&bakedData.missing.length===0;
     checks.bakedData=bakedData;
     const materials=await page.evaluate(()=>window.__visualTest.toyMaterials());
-    checks.toyMaterials=Math.abs(materials.paint.roughness-.42)<.015&&Math.abs(materials.paint.clearcoat-.35)<.03&&
-      Math.abs(materials.paint.clearcoatRoughness-.30)<.02&&materials.glass==='46545f'&&Math.abs(materials.chromeRoughness-.52)<.03&&materials.glassTransmission===0&&Math.abs(materials.glassOpacity-.80)<.01;
+    checks.toyMaterials=Math.abs(materials.paint.roughness-.30)<.015&&Math.abs(materials.paint.clearcoat-.65)<.03&&
+      Math.abs(materials.paint.clearcoatRoughness-.18)<.02&&materials.glass==='46545f'&&Math.abs(materials.chromeRoughness-.18)<.03&&materials.glassTransmission===0&&Math.abs(materials.glassOpacity-.80)<.01;
     checks.materialObservations=materials;
   }
   if(!options.viewsOnly&&await page.locator('#baseToggle').count()){

@@ -16,8 +16,8 @@ for studio in ['cream']:
    ev("(async()=>{await lcBuild.setState({rim:'"+rim+"'});const t=__creamTest;t.camera.position.fromArray("+json.dumps(pos)+");t.controls.target.set(.02,.96,0);t.camera.clearViewOffset();t.camera.lookAt(t.controls.target);t.camera.updateMatrixWorld(true);return true;})()")
    info=ev("""(()=>{const t=__creamTest,state=lcBuild.getState(),cat=lcWorkshop.wheels,r=cat.rims.find(r=>r.id===state.rim),c='"""+corner+"""',p=lcBuild.getManifest().slots['wheel_'+c].pivot,v=new t.THREE.Vector3(...p);v.z+=Math.sign(p[2])*(cat.vehicle.stockOffset_mm-r.offset_mm)/1000;v.project(t.camera);const out={pixel:[(v.x+1)*720,(1-v.y)*500],misses:[],samples:0};if(state.rim==='stock')return out;
     const own=lcBuild.groups.wheels.getObjectByName('wheel_'+c+'_workshop'),part=own.children[0],stock=lcBuild.parts.get('wheel_'+c),targets=[];
-    const N=state.rim==='kmc'?8:state.rim==='method'?10:18,R=state.rim==='kmc'?.195:state.rim==='method'?.162:.169;
-    for(let i=0;i<N;i++){const a=2*Math.PI*i/N+Math.PI/2+(state.rim==='steel'?Math.PI/18:0);for(const dr of [-.008,-.004,0,.004,.008])for(const da of [-.06,-.03,0,.03,.06])targets.push(['vent_'+i+'_'+dr+'_'+da,(R+dr)*Math.cos(a+da),(R+dr)*Math.sin(a+da),.12]);}
+    const N=state.rim==='kmc'?9:state.rim==='method'?10:16,R=state.rim==='kmc'?.170:state.rim==='method'?.162:.169;
+    for(let i=0;i<N;i++){const a=2*Math.PI*i/N+Math.PI/2;for(const dr of [-.008,-.004,0,.004,.008])for(const da of [-.06,-.03,0,.03,.06])targets.push(['vent_'+i+'_'+dr+'_'+da,(R+dr)*Math.cos(a+da),(R+dr)*Math.sin(a+da),.12]);}
     for(let i=0;i<48;i++){const a=2*Math.PI*i/48;targets.push(['bead_'+i,.247*Math.cos(a),.247*Math.sin(a),.14]);}
     targets.push(['hub',0,0,.12]);part.updateWorldMatrix(true,true);stock.updateWorldMatrix(true,true);
     for(const [name,x,y,z]of targets){const world=part.localToWorld(new t.THREE.Vector3(x,y,z)),ray=new t.THREE.Raycaster(t.camera.position,world.sub(t.camera.position).normalize(),0,50),hits=ray.intersectObjects([own,stock],true).filter(h=>{for(let o=h.object;o;o=o.parent)if(!o.visible)return false;return true;});out.samples++;if(!hits.length)out.misses.push(name);}

@@ -1,0 +1,1139 @@
+[
+  {
+    "id": "body_shell",
+    "file": "model/base.glb",
+    "sha256Before": "d995514aa4c7db48e3a146f68796b4131a486b4dccb7311443cb0e1f6d2f2ce0",
+    "sha256After": "d995514aa4c7db48e3a146f68796b4131a486b4dccb7311443cb0e1f6d2f2ce0",
+    "bytesBefore": 956900,
+    "bytesAfter": 956900,
+    "trianglesBefore": 72487,
+    "trianglesAfter": 72487,
+    "changed": false
+  },
+  {
+    "id": "bonnet",
+    "file": "model/parts/bonnet.glb",
+    "sha256Before": "5ba6b66701bf29a97835e276b482bab1d99dde0fdccbff4bcf3cc7d61ab9fdb0",
+    "sha256After": "5ba6b66701bf29a97835e276b482bab1d99dde0fdccbff4bcf3cc7d61ab9fdb0",
+    "bytesBefore": 67584,
+    "bytesAfter": 67584,
+    "trianglesBefore": 3184,
+    "trianglesAfter": 3184,
+    "changed": false
+  },
+  {
+    "id": "bumper_front",
+    "file": "model/parts/bumper_front.glb",
+    "sha256Before": "3499b4fc6b63e4c9fbeb39da19ac2b93b0a31a20387f89e64d05275b76366f43",
+    "sha256After": "3499b4fc6b63e4c9fbeb39da19ac2b93b0a31a20387f89e64d05275b76366f43",
+    "bytesBefore": 321568,
+    "bytesAfter": 321568,
+    "trianglesBefore": 21282,
+    "trianglesAfter": 21282,
+    "changed": false
+  },
+  {
+    "id": "bumper_rear",
+    "file": "model/parts/bumper_rear.glb",
+    "sha256Before": "5c450bda24ea16200ce699e304c421edf666825dbd7e0daf9524524bbca57cef",
+    "sha256After": "5c450bda24ea16200ce699e304c421edf666825dbd7e0daf9524524bbca57cef",
+    "bytesBefore": 226624,
+    "bytesAfter": 226624,
+    "trianglesBefore": 16605,
+    "trianglesAfter": 16605,
+    "changed": false
+  },
+  {
+    "id": "door_FL",
+    "file": "model/parts/door_FL.glb",
+    "sha256Before": "c02fd81291983bc3ff94e99b6878b7a42401f06b454d47b3bfd3fc84e318095b",
+    "sha256After": "c02fd81291983bc3ff94e99b6878b7a42401f06b454d47b3bfd3fc84e318095b",
+    "bytesBefore": 171704,
+    "bytesAfter": 171704,
+    "trianglesBefore": 14147,
+    "trianglesAfter": 14147,
+    "changed": false
+  },
+  {
+    "id": "door_FR",
+    "file": "model/parts/door_FR.glb",
+    "sha256Before": "dd405b7b30ceb224919865e97a4811ce4959042352d1fbfbea72259ac25efbfe",
+    "sha256After": "dd405b7b30ceb224919865e97a4811ce4959042352d1fbfbea72259ac25efbfe",
+    "bytesBefore": 168372,
+    "bytesAfter": 168372,
+    "trianglesBefore": 13897,
+    "trianglesAfter": 13897,
+    "changed": false
+  },
+  {
+    "id": "door_RL",
+    "file": "model/parts/door_RL.glb",
+    "sha256Before": "51f6df45bcddb933678e6ac841dec73a15ef03065d86c9a1f186fd6a87d87445",
+    "sha256After": "51f6df45bcddb933678e6ac841dec73a15ef03065d86c9a1f186fd6a87d87445",
+    "bytesBefore": 193360,
+    "bytesAfter": 193360,
+    "trianglesBefore": 18983,
+    "trianglesAfter": 18983,
+    "changed": false
+  },
+  {
+    "id": "door_RR",
+    "file": "model/parts/door_RR.glb",
+    "sha256Before": "db246b44362a522121bcfae6a3f61afb2328840a023a6121adbcfa56d65eba9e",
+    "sha256After": "db246b44362a522121bcfae6a3f61afb2328840a023a6121adbcfa56d65eba9e",
+    "bytesBefore": 194388,
+    "bytesAfter": 194388,
+    "trianglesBefore": 18984,
+    "trianglesAfter": 18984,
+    "changed": false
+  },
+  {
+    "id": "grille",
+    "file": "model/parts/grille.glb",
+    "sha256Before": "01bc6a06f89ff1b51aa6726f5d7a434dabc8365ada998d633d8b9729b6248866",
+    "sha256After": "01bc6a06f89ff1b51aa6726f5d7a434dabc8365ada998d633d8b9729b6248866",
+    "bytesBefore": 387008,
+    "bytesAfter": 387008,
+    "trianglesBefore": 34967,
+    "trianglesAfter": 34967,
+    "changed": false
+  },
+  {
+    "id": "lamp_front_L",
+    "file": "model/parts/lamp_front_L.glb",
+    "sha256Before": "87457fd7efe6ae03faa4ef2a9f262edc04d9c277e89b55e6ba33991c2473fba8",
+    "sha256After": "87457fd7efe6ae03faa4ef2a9f262edc04d9c277e89b55e6ba33991c2473fba8",
+    "bytesBefore": 1013968,
+    "bytesAfter": 1013968,
+    "trianglesBefore": 67619,
+    "trianglesAfter": 67619,
+    "changed": false
+  },
+  {
+    "id": "lamp_front_R",
+    "file": "model/parts/lamp_front_R.glb",
+    "sha256Before": "32d86bcd59cd402d921bd0f0154cf90ed1dede5b39151ee4b0619e35612acd66",
+    "sha256After": "32d86bcd59cd402d921bd0f0154cf90ed1dede5b39151ee4b0619e35612acd66",
+    "bytesBefore": 996016,
+    "bytesAfter": 996016,
+    "trianglesBefore": 67618,
+    "trianglesAfter": 67618,
+    "changed": false
+  },
+  {
+    "id": "lamp_rear_L",
+    "file": "model/parts/lamp_rear_L.glb",
+    "sha256Before": "03af882a0fb9d8ba69f30ada74d5df4efab94d901fbe97b1b81595495346681e",
+    "sha256After": "03af882a0fb9d8ba69f30ada74d5df4efab94d901fbe97b1b81595495346681e",
+    "bytesBefore": 744296,
+    "bytesAfter": 744296,
+    "trianglesBefore": 64045,
+    "trianglesAfter": 64045,
+    "changed": false
+  },
+  {
+    "id": "lamp_rear_R",
+    "file": "model/parts/lamp_rear_R.glb",
+    "sha256Before": "b52513357bdb1b3207932a3b0e2e80ea20556e03a88c3ab4e2a4691bba959efc",
+    "sha256After": "b52513357bdb1b3207932a3b0e2e80ea20556e03a88c3ab4e2a4691bba959efc",
+    "bytesBefore": 751696,
+    "bytesAfter": 751696,
+    "trianglesBefore": 64460,
+    "trianglesAfter": 64460,
+    "changed": false
+  },
+  {
+    "id": "mirror_L",
+    "file": "model/parts/mirror_L.glb",
+    "sha256Before": "6a13b02bc934fe7d8118bbab81882ac453e940e308e79633547e7291e0c56a4a",
+    "sha256After": "6a13b02bc934fe7d8118bbab81882ac453e940e308e79633547e7291e0c56a4a",
+    "bytesBefore": 100320,
+    "bytesAfter": 100320,
+    "trianglesBefore": 10168,
+    "trianglesAfter": 10168,
+    "changed": false
+  },
+  {
+    "id": "mirror_R",
+    "file": "model/parts/mirror_R.glb",
+    "sha256Before": "1724ce5f9211f6555bc16eb97ffd4c3e25e34e9de2f96adeca5503a916fb053e",
+    "sha256After": "1724ce5f9211f6555bc16eb97ffd4c3e25e34e9de2f96adeca5503a916fb053e",
+    "bytesBefore": 101060,
+    "bytesAfter": 101060,
+    "trianglesBefore": 10161,
+    "trianglesAfter": 10161,
+    "changed": false
+  },
+  {
+    "id": "roof_rails",
+    "file": "model/parts/roof_rails.glb",
+    "sha256Before": "215053544a616ffabf3eeb46ebbe633477c4995bad77f1accd1b4966af45629b",
+    "sha256After": "215053544a616ffabf3eeb46ebbe633477c4995bad77f1accd1b4966af45629b",
+    "bytesBefore": 103868,
+    "bytesAfter": 103868,
+    "trianglesBefore": 10368,
+    "trianglesAfter": 10368,
+    "changed": false
+  },
+  {
+    "id": "side_step_L",
+    "file": "model/parts/side_step_L.glb",
+    "sha256Before": "bffa4e60e19829e8577c4f2f74ce48fdc3a6f65439151b1ae8967b5c35d6e59a",
+    "sha256After": "bffa4e60e19829e8577c4f2f74ce48fdc3a6f65439151b1ae8967b5c35d6e59a",
+    "bytesBefore": 192180,
+    "bytesAfter": 192180,
+    "trianglesBefore": 16756,
+    "trianglesAfter": 16756,
+    "changed": false
+  },
+  {
+    "id": "side_step_R",
+    "file": "model/parts/side_step_R.glb",
+    "sha256Before": "7e459c5d54a86d6cdea1864edfa8ed6238fe9f4d77c966ae1f5c8570a27f341e",
+    "sha256After": "7e459c5d54a86d6cdea1864edfa8ed6238fe9f4d77c966ae1f5c8570a27f341e",
+    "bytesBefore": 180484,
+    "bytesAfter": 180484,
+    "trianglesBefore": 14979,
+    "trianglesAfter": 14979,
+    "changed": false
+  },
+  {
+    "id": "spoiler",
+    "file": "model/parts/spoiler.glb",
+    "sha256Before": "48bf436c1baf6829810d4b2dd32368fd75e1351a1ebb0c0340e7f6e56e8f08ca",
+    "sha256After": "48bf436c1baf6829810d4b2dd32368fd75e1351a1ebb0c0340e7f6e56e8f08ca",
+    "bytesBefore": 232728,
+    "bytesAfter": 232728,
+    "trianglesBefore": 16540,
+    "trianglesAfter": 16540,
+    "changed": false
+  },
+  {
+    "id": "tailgate",
+    "file": "model/parts/tailgate.glb",
+    "sha256Before": "65dd95db47db55f181edc72fa24df5ffe9536c7f5f08877bcad1b1cff1bf3093",
+    "sha256After": "65dd95db47db55f181edc72fa24df5ffe9536c7f5f08877bcad1b1cff1bf3093",
+    "bytesBefore": 432816,
+    "bytesAfter": 432816,
+    "trianglesBefore": 30791,
+    "trianglesAfter": 30791,
+    "changed": false
+  },
+  {
+    "id": "unsorted_01",
+    "file": "model/parts/unsorted_01.glb",
+    "sha256Before": "526e253559ae70a4f828695cd6c3c4ea2d35e4447d7dff09ba7bd64c36cc3ef8",
+    "sha256After": "526e253559ae70a4f828695cd6c3c4ea2d35e4447d7dff09ba7bd64c36cc3ef8",
+    "bytesBefore": 15924,
+    "bytesAfter": 15924,
+    "trianglesBefore": 1088,
+    "trianglesAfter": 1088,
+    "changed": false
+  },
+  {
+    "id": "unsorted_02",
+    "file": "model/parts/unsorted_02.glb",
+    "sha256Before": "b6e4b50d9fa2e3ff222d9fba040883c8764381057e3074ae48b253877b3fb5dc",
+    "sha256After": "b6e4b50d9fa2e3ff222d9fba040883c8764381057e3074ae48b253877b3fb5dc",
+    "bytesBefore": 16068,
+    "bytesAfter": 16068,
+    "trianglesBefore": 1088,
+    "trianglesAfter": 1088,
+    "changed": false
+  },
+  {
+    "id": "unsorted_03",
+    "file": "model/parts/unsorted_03.glb",
+    "sha256Before": "2e3290ee0936604b06d95d50d9ef04ddd01173b55366ebfb45a2f2de5fc83ab0",
+    "sha256After": "2e3290ee0936604b06d95d50d9ef04ddd01173b55366ebfb45a2f2de5fc83ab0",
+    "bytesBefore": 10508,
+    "bytesAfter": 10508,
+    "trianglesBefore": 676,
+    "trianglesAfter": 676,
+    "changed": false
+  },
+  {
+    "id": "unsorted_04",
+    "file": "model/parts/unsorted_04.glb",
+    "sha256Before": "7f6f24003be4777502fb1f2e33ee30a650dde7c2f3d50d94cadc99846aa33edd",
+    "sha256After": "7f6f24003be4777502fb1f2e33ee30a650dde7c2f3d50d94cadc99846aa33edd",
+    "bytesBefore": 15420,
+    "bytesAfter": 15420,
+    "trianglesBefore": 557,
+    "trianglesAfter": 557,
+    "changed": false
+  },
+  {
+    "id": "unsorted_05",
+    "file": "model/parts/unsorted_05.glb",
+    "sha256Before": "97bdbf6538e8ffec325cfbf44fa5ac8059ac0022db3bdf18da9c35c3fea4f0ba",
+    "sha256After": "97bdbf6538e8ffec325cfbf44fa5ac8059ac0022db3bdf18da9c35c3fea4f0ba",
+    "bytesBefore": 16632,
+    "bytesAfter": 16632,
+    "trianglesBefore": 1823,
+    "trianglesAfter": 1823,
+    "changed": false
+  },
+  {
+    "id": "unsorted_06",
+    "file": "model/parts/unsorted_06.glb",
+    "sha256Before": "090f240ad85896afdcd2670e9eb34aba887e9f065d70b5173e8b9583965d0aa7",
+    "sha256After": "090f240ad85896afdcd2670e9eb34aba887e9f065d70b5173e8b9583965d0aa7",
+    "bytesBefore": 8728,
+    "bytesAfter": 8728,
+    "trianglesBefore": 800,
+    "trianglesAfter": 800,
+    "changed": false
+  },
+  {
+    "id": "unsorted_07",
+    "file": "model/parts/unsorted_07.glb",
+    "sha256Before": "b45468ef7b33e798aec5e2ae93beba5b4491c42fc74ae719ecf368fe79b186b6",
+    "sha256After": "b45468ef7b33e798aec5e2ae93beba5b4491c42fc74ae719ecf368fe79b186b6",
+    "bytesBefore": 3752,
+    "bytesAfter": 3752,
+    "trianglesBefore": 44,
+    "trianglesAfter": 44,
+    "changed": false
+  },
+  {
+    "id": "unsorted_08",
+    "file": "model/parts/unsorted_08.glb",
+    "sha256Before": "494bd90ab37b6e3edbde2c61b1b31f659ab5c4a70572ccf5d39c45fed21e5fbe",
+    "sha256After": "494bd90ab37b6e3edbde2c61b1b31f659ab5c4a70572ccf5d39c45fed21e5fbe",
+    "bytesBefore": 9660,
+    "bytesAfter": 9660,
+    "trianglesBefore": 466,
+    "trianglesAfter": 466,
+    "changed": false
+  },
+  {
+    "id": "unsorted_09",
+    "file": "model/parts/unsorted_09.glb",
+    "sha256Before": "b75a1ddb1f8183f59ddaaf6cc09e1a8d61e5790475f5255703a8b4e91b24a779",
+    "sha256After": "b75a1ddb1f8183f59ddaaf6cc09e1a8d61e5790475f5255703a8b4e91b24a779",
+    "bytesBefore": 16008,
+    "bytesAfter": 16008,
+    "trianglesBefore": 1152,
+    "trianglesAfter": 1152,
+    "changed": false
+  },
+  {
+    "id": "unsorted_10",
+    "file": "model/parts/unsorted_10.glb",
+    "sha256Before": "9b077c5603ec4fd84effc8e08c78216d1c4e2cc318c244a5b528b9bcca7b80e2",
+    "sha256After": "9b077c5603ec4fd84effc8e08c78216d1c4e2cc318c244a5b528b9bcca7b80e2",
+    "bytesBefore": 39844,
+    "bytesAfter": 39844,
+    "trianglesBefore": 3393,
+    "trianglesAfter": 3393,
+    "changed": false
+  },
+  {
+    "id": "wheel_FL",
+    "file": "model/parts/wheel_FL.glb",
+    "sha256Before": "f34286896012460f6b8da3a6ed95742a55fd016d206283ceb56da1446fed7d8e",
+    "sha256After": "f34286896012460f6b8da3a6ed95742a55fd016d206283ceb56da1446fed7d8e",
+    "bytesBefore": 590088,
+    "bytesAfter": 590088,
+    "trianglesBefore": 40111,
+    "trianglesAfter": 40111,
+    "changed": false
+  },
+  {
+    "id": "wheel_FR",
+    "file": "model/parts/wheel_FR.glb",
+    "sha256Before": "a4e5badcfb3cf990ca3e9c99e8bb434ef18235261f9d3c6c9373d41be99c5382",
+    "sha256After": "a4e5badcfb3cf990ca3e9c99e8bb434ef18235261f9d3c6c9373d41be99c5382",
+    "bytesBefore": 531204,
+    "bytesAfter": 531204,
+    "trianglesBefore": 34724,
+    "trianglesAfter": 34724,
+    "changed": false
+  },
+  {
+    "id": "wheel_RL",
+    "file": "model/parts/wheel_RL.glb",
+    "sha256Before": "a2c5735bb2ef5fb48415d499258c3d56523add26b0cd3bd76c1f1a8b4b40f9a5",
+    "sha256After": "a2c5735bb2ef5fb48415d499258c3d56523add26b0cd3bd76c1f1a8b4b40f9a5",
+    "bytesBefore": 541520,
+    "bytesAfter": 541520,
+    "trianglesBefore": 33772,
+    "trianglesAfter": 33772,
+    "changed": false
+  },
+  {
+    "id": "wheel_RR",
+    "file": "model/parts/wheel_RR.glb",
+    "sha256Before": "44ee9b4fa9e8adb4ad0e223a7f6c343b1e807fb0a55a92fe37ebeb8930d9bd96",
+    "sha256After": "44ee9b4fa9e8adb4ad0e223a7f6c343b1e807fb0a55a92fe37ebeb8930d9bd96",
+    "bytesBefore": 525848,
+    "bytesAfter": 525848,
+    "trianglesBefore": 33786,
+    "trianglesAfter": 33786,
+    "changed": false
+  },
+  {
+    "id": "emblem_front",
+    "file": "model/parts/emblem_front.glb",
+    "sha256Before": "469e2d1e95479620c88841cce7c5285a9c8292207c681214356f6d6c5f620044",
+    "sha256After": "469e2d1e95479620c88841cce7c5285a9c8292207c681214356f6d6c5f620044",
+    "bytesBefore": 70076,
+    "bytesAfter": 70076,
+    "trianglesBefore": 5168,
+    "trianglesAfter": 5168,
+    "changed": false
+  },
+  {
+    "id": "emblem_rear",
+    "file": "model/parts/emblem_rear.glb",
+    "sha256Before": "1e88b997faeb87ff179644f0816a937960fd137866ef7b8c3572d97dc6f65817",
+    "sha256After": "1e88b997faeb87ff179644f0816a937960fd137866ef7b8c3572d97dc6f65817",
+    "bytesBefore": 239932,
+    "bytesAfter": 239932,
+    "trianglesBefore": 19328,
+    "trianglesAfter": 19328,
+    "changed": false
+  },
+  {
+    "id": "lamp_rear_L_finish",
+    "file": "model/parts/lamp_rear_L_finish.glb",
+    "sha256Before": "d50acc1efd040bc83a220e327a986847303eb1adb7d0bdaa856108a385f8fc0b",
+    "sha256After": "d50acc1efd040bc83a220e327a986847303eb1adb7d0bdaa856108a385f8fc0b",
+    "bytesBefore": 1368768,
+    "bytesAfter": 1368768,
+    "trianglesBefore": 64045,
+    "trianglesAfter": 64045,
+    "changed": false
+  },
+  {
+    "id": "lamp_rear_R_finish",
+    "file": "model/parts/lamp_rear_R_finish.glb",
+    "sha256Before": "d73b4f9a46511f1876bb344e03b799d8044400d9d4b477a1cd65a6179aeacabf",
+    "sha256After": "d73b4f9a46511f1876bb344e03b799d8044400d9d4b477a1cd65a6179aeacabf",
+    "bytesBefore": 1384148,
+    "bytesAfter": 1384148,
+    "trianglesBefore": 64460,
+    "trianglesAfter": 64460,
+    "changed": false
+  },
+  {
+    "id": "lettering_rear",
+    "file": "model/parts/lettering_rear.glb",
+    "sha256Before": "7aae0bf5d25afb68f574c0b89ffb27393de59cb8fa4a6d0f8706297d5eb08e8b",
+    "sha256After": "7aae0bf5d25afb68f574c0b89ffb27393de59cb8fa4a6d0f8706297d5eb08e8b",
+    "bytesBefore": 145664,
+    "bytesAfter": 145664,
+    "trianglesBefore": 9300,
+    "trianglesAfter": 9300,
+    "changed": false
+  },
+  {
+    "id": "wheel_emblem_FL",
+    "file": "model/parts/wheel_emblem_FL.glb",
+    "sha256Before": "2f2184dea8a54d03507b3e36547a069cccc62812daf994b92a18cf6d6edd2b20",
+    "sha256After": "2f2184dea8a54d03507b3e36547a069cccc62812daf994b92a18cf6d6edd2b20",
+    "bytesBefore": 18564,
+    "bytesAfter": 18564,
+    "trianglesBefore": 1208,
+    "trianglesAfter": 1208,
+    "changed": false
+  },
+  {
+    "id": "wheel_emblem_FR",
+    "file": "model/parts/wheel_emblem_FR.glb",
+    "sha256Before": "f03f9fb5187f261764d6165fd69488318791e7686322f1f92116c6ffb5fac7d5",
+    "sha256After": "f03f9fb5187f261764d6165fd69488318791e7686322f1f92116c6ffb5fac7d5",
+    "bytesBefore": 18564,
+    "bytesAfter": 18564,
+    "trianglesBefore": 1208,
+    "trianglesAfter": 1208,
+    "changed": false
+  },
+  {
+    "id": "wheel_emblem_RL",
+    "file": "model/parts/wheel_emblem_RL.glb",
+    "sha256Before": "d5c83fdf638da58e14315f70e5ee5ea9e23738b400bb127d0b5ac945bbb76f59",
+    "sha256After": "d5c83fdf638da58e14315f70e5ee5ea9e23738b400bb127d0b5ac945bbb76f59",
+    "bytesBefore": 18572,
+    "bytesAfter": 18572,
+    "trianglesBefore": 1208,
+    "trianglesAfter": 1208,
+    "changed": false
+  },
+  {
+    "id": "wheel_emblem_RR",
+    "file": "model/parts/wheel_emblem_RR.glb",
+    "sha256Before": "51147c884257439e786411951352644881a42edb9c37b69525beda0b29b9daf8",
+    "sha256After": "51147c884257439e786411951352644881a42edb9c37b69525beda0b29b9daf8",
+    "bytesBefore": 18556,
+    "bytesAfter": 18556,
+    "trianglesBefore": 1208,
+    "trianglesAfter": 1208,
+    "changed": false
+  },
+  {
+    "id": "lettering_rear_base",
+    "file": "model/parts/lettering_rear_base.glb",
+    "sha256Before": "3d6ae7272a391740ae35f632564952be99c8f6d703db5c92dbe82f979d8efbd5",
+    "sha256After": "3d6ae7272a391740ae35f632564952be99c8f6d703db5c92dbe82f979d8efbd5",
+    "bytesBefore": 99660,
+    "bytesAfter": 99660,
+    "trianglesBefore": 5456,
+    "trianglesAfter": 5456,
+    "changed": false
+  },
+  {
+    "id": "badge_grade_VXR",
+    "file": "model/parts/badge_grade_VXR.glb",
+    "sha256Before": "4bc7e77ac8bd256ae113ce8fa485f9c23716a073aff5515b97d39038a8d388f8",
+    "sha256After": "4bc7e77ac8bd256ae113ce8fa485f9c23716a073aff5515b97d39038a8d388f8",
+    "bytesBefore": 47372,
+    "bytesAfter": 47372,
+    "trianglesBefore": 3844,
+    "trianglesAfter": 3844,
+    "changed": false
+  },
+  {
+    "id": "badge_grade_GXR",
+    "file": "model/parts/badge_grade_GXR.glb",
+    "sha256Before": "01b13484da29a6576b05ac033b1c15efa23402cac84b0fae4dd24817d7e06c18",
+    "sha256After": "01b13484da29a6576b05ac033b1c15efa23402cac84b0fae4dd24817d7e06c18",
+    "bytesBefore": 52832,
+    "bytesAfter": 52832,
+    "trianglesBefore": 3404,
+    "trianglesAfter": 3404,
+    "changed": false
+  },
+  {
+    "id": "lamp_rear_L_finish3",
+    "file": "model/parts/lamp_rear_L_finish3.glb",
+    "sha256Before": "c5359ac044ad98be8ba1bd461eb61ef3543cd34b33291e39f20c15bc07cf6644",
+    "sha256After": "c5359ac044ad98be8ba1bd461eb61ef3543cd34b33291e39f20c15bc07cf6644",
+    "bytesBefore": 1685012,
+    "bytesAfter": 1685012,
+    "trianglesBefore": 64045,
+    "trianglesAfter": 64045,
+    "changed": false
+  },
+  {
+    "id": "lamp_rear_R_finish3",
+    "file": "model/parts/lamp_rear_R_finish3.glb",
+    "sha256Before": "82dcefafb4f6f0331282339f850d27b77de065d818a9d50ddcec5a4b88aff7ee",
+    "sha256After": "82dcefafb4f6f0331282339f850d27b77de065d818a9d50ddcec5a4b88aff7ee",
+    "bytesBefore": 1698556,
+    "bytesAfter": 1698556,
+    "trianglesBefore": 64460,
+    "trianglesAfter": 64460,
+    "changed": false
+  },
+  {
+    "id": "gap_seal_rear_L",
+    "file": "model/parts/gap_seal_rear_L.glb",
+    "sha256Before": "4c092e3da80edbcd0cb9024b7276d9dedac6eb2bff61d386dfc814fabebab86b",
+    "sha256After": "4c092e3da80edbcd0cb9024b7276d9dedac6eb2bff61d386dfc814fabebab86b",
+    "bytesBefore": 239348,
+    "bytesAfter": 239348,
+    "trianglesBefore": 16284,
+    "trianglesAfter": 16284,
+    "changed": false
+  },
+  {
+    "id": "gap_seal_rear_R",
+    "file": "model/parts/gap_seal_rear_R.glb",
+    "sha256Before": "ade740345421d076edef6b954f6d33b99445ac21a8e81d4ad1db7a3867177ae9",
+    "sha256After": "ade740345421d076edef6b954f6d33b99445ac21a8e81d4ad1db7a3867177ae9",
+    "bytesBefore": 239420,
+    "bytesAfter": 239420,
+    "trianglesBefore": 16284,
+    "trianglesAfter": 16284,
+    "changed": false
+  },
+  {
+    "id": "badge_grade_GXR_finish4b",
+    "file": "model/parts/badge_grade_GXR_finish4b.glb",
+    "sha256Before": "d3bf82f781e8ebc6cbf034edd3a907d7b7a1ee8bf29ef1a4c5fb9310180e9aee",
+    "sha256After": "d3bf82f781e8ebc6cbf034edd3a907d7b7a1ee8bf29ef1a4c5fb9310180e9aee",
+    "bytesBefore": 101140,
+    "bytesAfter": 101140,
+    "trianglesBefore": 8930,
+    "trianglesAfter": 8930,
+    "changed": false
+  },
+  {
+    "id": "lamp_rear_L_finish4b",
+    "file": "model/parts/lamp_rear_L_finish4b.glb",
+    "sha256Before": "153e6efcd656d067343ed297d44438a16852688352ddeebc7cb98d233524ea6f",
+    "sha256After": "12c620d9d37f24dae1c1791dff95b0fcf45550094d3e324471917c156e5c6b6a",
+    "bytesBefore": 1682760,
+    "bytesAfter": 1614644,
+    "trianglesBefore": 64045,
+    "trianglesAfter": 64709,
+    "changed": true,
+    "originalAttributes": [
+      {
+        "node": "chrome_1",
+        "primitive": 0,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "chrome_1",
+        "primitive": 0,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "chrome_1",
+        "primitive": 0,
+        "semantic": "COLOR_0",
+        "identical": true
+      },
+      {
+        "node": "chrome_2",
+        "primitive": 0,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "chrome_2",
+        "primitive": 0,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "chrome_2",
+        "primitive": 0,
+        "semantic": "COLOR_0",
+        "identical": true
+      },
+      {
+        "node": "chrome_4",
+        "primitive": 0,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "chrome_4",
+        "primitive": 0,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "chrome_4",
+        "primitive": 0,
+        "semantic": "COLOR_0",
+        "identical": true
+      },
+      {
+        "node": "black_11",
+        "primitive": 0,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "black_11",
+        "primitive": 0,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "black_11",
+        "primitive": 0,
+        "semantic": "COLOR_0",
+        "identical": true
+      },
+      {
+        "node": "black_12",
+        "primitive": 0,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "black_12",
+        "primitive": 0,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "black_12",
+        "primitive": 0,
+        "semantic": "COLOR_0",
+        "identical": true
+      },
+      {
+        "node": "orangeglass_21",
+        "primitive": 0,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "orangeglass_21",
+        "primitive": 0,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "orangeglass_21",
+        "primitive": 0,
+        "semantic": "COLOR_0",
+        "identical": true
+      },
+      {
+        "node": "redglass_25",
+        "primitive": 0,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "redglass_25",
+        "primitive": 0,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "redglass_25",
+        "primitive": 0,
+        "semantic": "COLOR_0",
+        "identical": true
+      },
+      {
+        "node": "redglass_25",
+        "primitive": 1,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "redglass_25",
+        "primitive": 1,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "redglass_25",
+        "primitive": 1,
+        "semantic": "COLOR_0",
+        "identical": true
+      },
+      {
+        "node": "redglass_25",
+        "primitive": 2,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "redglass_25",
+        "primitive": 2,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "redglass_25",
+        "primitive": 2,
+        "semantic": "COLOR_0",
+        "identical": true
+      },
+      {
+        "node": "clearglass_27",
+        "primitive": 0,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "clearglass_27",
+        "primitive": 0,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "clearglass_27",
+        "primitive": 0,
+        "semantic": "COLOR_0",
+        "identical": true
+      },
+      {
+        "node": "clearglass_27",
+        "primitive": 1,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "clearglass_27",
+        "primitive": 1,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "clearglass_27",
+        "primitive": 1,
+        "semantic": "COLOR_0",
+        "identical": true
+      }
+    ]
+  },
+  {
+    "id": "lamp_rear_R_finish4b",
+    "file": "model/parts/lamp_rear_R_finish4b.glb",
+    "sha256Before": "5b791f40f9c8f158c4203fbd46a092584be8c4e41600c1a8106bf5f273a21ea0",
+    "sha256After": "c858ed79825b2c3e9d29dc765b88025b96accaea514e42a355af91e203769df3",
+    "bytesBefore": 1697612,
+    "bytesAfter": 1627904,
+    "trianglesBefore": 64460,
+    "trianglesAfter": 65124,
+    "changed": true,
+    "originalAttributes": [
+      {
+        "node": "chrome_1",
+        "primitive": 0,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "chrome_1",
+        "primitive": 0,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "chrome_1",
+        "primitive": 0,
+        "semantic": "COLOR_0",
+        "identical": true
+      },
+      {
+        "node": "chrome_2",
+        "primitive": 0,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "chrome_2",
+        "primitive": 0,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "chrome_2",
+        "primitive": 0,
+        "semantic": "COLOR_0",
+        "identical": true
+      },
+      {
+        "node": "chrome_4",
+        "primitive": 0,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "chrome_4",
+        "primitive": 0,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "chrome_4",
+        "primitive": 0,
+        "semantic": "COLOR_0",
+        "identical": true
+      },
+      {
+        "node": "black_11",
+        "primitive": 0,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "black_11",
+        "primitive": 0,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "black_11",
+        "primitive": 0,
+        "semantic": "COLOR_0",
+        "identical": true
+      },
+      {
+        "node": "black_12",
+        "primitive": 0,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "black_12",
+        "primitive": 0,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "black_12",
+        "primitive": 0,
+        "semantic": "COLOR_0",
+        "identical": true
+      },
+      {
+        "node": "orangeglass_21",
+        "primitive": 0,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "orangeglass_21",
+        "primitive": 0,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "orangeglass_21",
+        "primitive": 0,
+        "semantic": "COLOR_0",
+        "identical": true
+      },
+      {
+        "node": "redglass_25",
+        "primitive": 0,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "redglass_25",
+        "primitive": 0,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "redglass_25",
+        "primitive": 0,
+        "semantic": "COLOR_0",
+        "identical": true
+      },
+      {
+        "node": "redglass_25",
+        "primitive": 1,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "redglass_25",
+        "primitive": 1,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "redglass_25",
+        "primitive": 1,
+        "semantic": "COLOR_0",
+        "identical": true
+      },
+      {
+        "node": "redglass_25",
+        "primitive": 2,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "redglass_25",
+        "primitive": 2,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "redglass_25",
+        "primitive": 2,
+        "semantic": "COLOR_0",
+        "identical": true
+      },
+      {
+        "node": "clearglass_27",
+        "primitive": 0,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "clearglass_27",
+        "primitive": 0,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "clearglass_27",
+        "primitive": 0,
+        "semantic": "COLOR_0",
+        "identical": true
+      },
+      {
+        "node": "clearglass_27",
+        "primitive": 1,
+        "semantic": "POSITION",
+        "identical": true
+      },
+      {
+        "node": "clearglass_27",
+        "primitive": 1,
+        "semantic": "NORMAL",
+        "identical": true
+      },
+      {
+        "node": "clearglass_27",
+        "primitive": 1,
+        "semantic": "COLOR_0",
+        "identical": true
+      }
+    ]
+  },
+  {
+    "id": "front_plate",
+    "file": "model/parts/front_plate.glb",
+    "sha256Before": "774ede6a1a413ec39279bc734617245edb538a02e4be8b2a082d5644a17e961b",
+    "sha256After": "774ede6a1a413ec39279bc734617245edb538a02e4be8b2a082d5644a17e961b",
+    "bytesBefore": 6544,
+    "bytesAfter": 6544,
+    "trianglesBefore": 180,
+    "trianglesAfter": 180,
+    "changed": false
+  },
+  {
+    "id": "bumper_front_plate_clean",
+    "file": "model/parts/bumper_front_plate_clean.glb",
+    "sha256Before": "58a9cceb9e6d239a59e7380af2ef0a18eb6e2afa7be2fe138bd39ae4f21b0286",
+    "sha256After": "58a9cceb9e6d239a59e7380af2ef0a18eb6e2afa7be2fe138bd39ae4f21b0286",
+    "bytesBefore": 323284,
+    "bytesAfter": 323284,
+    "trianglesBefore": 21282,
+    "trianglesAfter": 21282,
+    "changed": false
+  },
+  {
+    "id": "rim_FL_disc",
+    "file": "model/parts/rim_FL_disc.glb",
+    "sha256Before": "dc3e9779018e74ccb91477838e27deb85d0e28ec5c9671d86513382261445146",
+    "sha256After": "05d097b020861d9a48592861c1232f77f7752e40ca261e475b0e32958f9c7d18",
+    "bytesBefore": 328444,
+    "bytesAfter": 408268,
+    "trianglesBefore": 14692,
+    "trianglesAfter": 18118,
+    "changed": true
+  },
+  {
+    "id": "rim_FR_disc",
+    "file": "model/parts/rim_FR_disc.glb",
+    "sha256Before": "6c3d42ed41c748d8db8f2a2c03d9097ac01779df84e1e8c97bca398da58faeae",
+    "sha256After": "df6b26f1f9dad37c698387ddef859f86559d5ba1a473223f0930707bfbd7c1f2",
+    "bytesBefore": 330260,
+    "bytesAfter": 408124,
+    "trianglesBefore": 14692,
+    "trianglesAfter": 18118,
+    "changed": true
+  },
+  {
+    "id": "rim_RL_disc",
+    "file": "model/parts/rim_RL_disc.glb",
+    "sha256Before": "8b2ce6da9031d0f4122b8d011b4687dce911c407772a09dfbdf93c56c3ead8b0",
+    "sha256After": "2ba04a78760fc46494faed3046120b45064af7340e54cc419a2dca10f7e4d9a3",
+    "bytesBefore": 328444,
+    "bytesAfter": 408268,
+    "trianglesBefore": 14692,
+    "trianglesAfter": 18118,
+    "changed": true
+  },
+  {
+    "id": "rim_RR_disc",
+    "file": "model/parts/rim_RR_disc.glb",
+    "sha256Before": "101a6e4fa3e62c5133ead1fa2964e15f1af4805c91aa928b110600a645897182",
+    "sha256After": "03b806f8b673f50c9fb3a3a95ccc16a5ba72aeb1f553ecaf8c55ea8fb2e58099",
+    "bytesBefore": 330260,
+    "bytesAfter": 408124,
+    "trianglesBefore": 14692,
+    "trianglesAfter": 18118,
+    "changed": true
+  },
+  {
+    "id": "rim_FL_steel",
+    "file": "model/parts/rim_FL_steel.glb",
+    "sha256Before": "55d091ded3ad66f9821747d7af661922ea595cb27c4363333cfd6a2151163846",
+    "sha256After": "eacda823ecdaaecc6343a9820e2ba23cd0742b809dcc9364a753badf4b6bd94c",
+    "bytesBefore": 331432,
+    "bytesAfter": 314224,
+    "trianglesBefore": 14255,
+    "trianglesAfter": 13521,
+    "changed": true
+  },
+  {
+    "id": "rim_FR_steel",
+    "file": "model/parts/rim_FR_steel.glb",
+    "sha256Before": "8cdb8aa9ffbc68e1c6c1ca4a4e84b89acc9db61e4bbb54ff35df0a81d56d1a8a",
+    "sha256After": "758e904207d29ed9eff92d3305a4fbc7678bf5e11b9849f1fd7d47360bc3dc0f",
+    "bytesBefore": 337756,
+    "bytesAfter": 320272,
+    "trianglesBefore": 14255,
+    "trianglesAfter": 13521,
+    "changed": true
+  },
+  {
+    "id": "rim_RL_steel",
+    "file": "model/parts/rim_RL_steel.glb",
+    "sha256Before": "fc0e5b403a06b7d5e768b54612a6600007832abbf2fb00e465945c3bc1ed8eb6",
+    "sha256After": "33b7ab00bbc493a41c00f53c43586119fa2868924ba9e7121545ec908a4f11b4",
+    "bytesBefore": 331432,
+    "bytesAfter": 314224,
+    "trianglesBefore": 14255,
+    "trianglesAfter": 13521,
+    "changed": true
+  },
+  {
+    "id": "rim_RR_steel",
+    "file": "model/parts/rim_RR_steel.glb",
+    "sha256Before": "c588700d8f64ea9836265a6ca54ceec30b1886d8e802472733dd2b7cf72a4400",
+    "sha256After": "3d9aecb777f869b04b64ceed2ba40b3849ed48a44bf7292ed16184031b460951",
+    "bytesBefore": 337756,
+    "bytesAfter": 320272,
+    "trianglesBefore": 14255,
+    "trianglesAfter": 13521,
+    "changed": true
+  },
+  {
+    "id": "rim_FL_window",
+    "file": "model/parts/rim_FL_window.glb",
+    "sha256Before": "5b89c589f859714c6005d85231f26eee35bc1cfc53d43c4eda4a425097b8236a",
+    "sha256After": "f2a5bbcf5eef784c4328a9a76051765705ab3f0fa9fa57f29e25a1ed47d38243",
+    "bytesBefore": 397344,
+    "bytesAfter": 398236,
+    "trianglesBefore": 17940,
+    "trianglesAfter": 18052,
+    "changed": true
+  },
+  {
+    "id": "rim_FR_window",
+    "file": "model/parts/rim_FR_window.glb",
+    "sha256Before": "2f79ef8171035064030dc26cc35746c92224a40a4f175fd389aef24e311721a6",
+    "sha256After": "a5ffc79873b0b1d2f9e270d726348eba58971cdab678a0865e5abcb3aeb64669",
+    "bytesBefore": 402348,
+    "bytesAfter": 403896,
+    "trianglesBefore": 17940,
+    "trianglesAfter": 18052,
+    "changed": true
+  },
+  {
+    "id": "rim_RL_window",
+    "file": "model/parts/rim_RL_window.glb",
+    "sha256Before": "d0c1354d11258c9cd509fe54bc1cac5ce25a7b50fd23ba8f68f2488b96d264df",
+    "sha256After": "a898c4520106209277e777e8ddde9eed72793188cf2386334fb1c00c8f5b802b",
+    "bytesBefore": 397344,
+    "bytesAfter": 398236,
+    "trianglesBefore": 17940,
+    "trianglesAfter": 18052,
+    "changed": true
+  },
+  {
+    "id": "rim_RR_window",
+    "file": "model/parts/rim_RR_window.glb",
+    "sha256Before": "0434c4586f53efd9c6e350827166b1101707fc72e6691120b8d4dbe0b2ad95da",
+    "sha256After": "a0b32f9c1a65bfcc7b2502206aa5414a9d1ddbb563ade9a814cd3b4eb8667d30",
+    "bytesBefore": 402348,
+    "bytesAfter": 403896,
+    "trianglesBefore": 17940,
+    "trianglesAfter": 18052,
+    "changed": true
+  }
+]

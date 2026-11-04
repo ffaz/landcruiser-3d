@@ -9,7 +9,7 @@ WIDTH_IN=8.0 if style=='steel' else 8.5
 WIDTH_FACTOR=WIDTH_IN*25.4/206.0
 bpy.ops.object.select_all(action='SELECT');bpy.ops.object.delete(use_global=False)
 materials={}
-for z in ['rim','chrome','black','tyre','brake','caliper','backing','lettering','barrel','brake_detail']:
+for z in ['rim','chrome','black','tyre','brake','caliper','backing','lettering','barrel','brake_detail','hubcap']:
  m=bpy.data.materials.new(z);m.diffuse_color=(.15,.15,.15,1);materials[z]=m
 objects=[]
 def mesh(name,vs,fs,zone='rim'):
@@ -47,12 +47,12 @@ for poly in barrel_obj.data.polygons:
  if poly.index%(len(barrel)-1)>=14:poly.material_index=1
 if style=='disc':
  # KM720: flat lug ring, two concentric raised steps and a shallow outer vent band.
- front=[(BORE/2,.112),(.098,.112),(.106,.115),(.148,.115),(.152,.117),(.157,.117),(.177,.117),(.183,.114),(.212,.114)]
+ front=[(BORE/2,.085),(.089,.085),(.096,.105),(.112,.105),(.117,.109),(.144,.109),(.149,.115),(.160,.115),(.164,.108),(.180,.108),(.186,.117),(.212,.117)]
 elif style=='steel':
  front=[(BORE/2,.102),(.062,.105),(.082,.105),(.094,.100),(.106,.095),(.118,.101),(.134,.109),(.194,.109),(.212,.113)]
 else:
  # MR705: flat split-five-spoke face / ten tapered windows and a wide raised lip.
- front=[(BORE/2,.111),(.090,.111),(.099,.112),(.108,.115),(.114,.116),(.187,.116),(.194,.119),(.212,.119)]
+ front=[(BORE/2,.083),(.088,.083),(.100,.091),(.111,.115),(.175,.115),(.184,.119),(.212,.119)]
 profile=front+[(r,z-.007) for r,z in reversed(front)]
 face=lathe('Reference wheel face',profile,closed=True)
 def rounded(poly,amount=.005,steps=3):
@@ -66,34 +66,34 @@ def rounded(poly,amount=.005,steps=3):
    t=j/steps;out.append(((1-t)**2*a[0]+2*(1-t)*t*p[0]+t*t*b[0],(1-t)**2*a[1]+2*(1-t)*t*p[1]+t*t*b[1]))
  return out
 if style=='disc':
- for i in range(8):
+ for i in range(9):
   poly=[]
-  # Tangential capsule: true rounded ends, 20 mm radial width, 60 mm length.
-  for cy,start in [(.020,0),(-.020,math.pi)]:
-   for j in range(7):
-    a=start+j*math.pi/6;poly.append((.195+.010*math.cos(a),cy+.010*math.sin(a)))
-  polygon_cut(face,poly,2*math.pi*i/8+math.pi/2)
+  # Tangential capsule: 14 mm radial width, 60 mm overall length.
+  for cy,start in [(.023,0),(-.023,math.pi)]:
+   for j in range(13):
+    a=start+j*math.pi/12;poly.append((.169+.007*math.cos(a),cy+.007*math.sin(a)))
+  polygon_cut(face,poly,2*math.pi*i/9+math.pi/2)
 elif style=='steel':
- for i in range(18):
-  a=2*math.pi*(i+.5)/18;cut(face,cyl('Round vent cutter',.0145,.25,.075,n=16,x=.169*math.cos(a),y=.169*math.sin(a)))
+ for i in range(16):
+  a=2*math.pi*i/16+math.pi/2;cut(face,cyl('Round vent cutter',.0145,.25,.075,n=16,x=.169*math.cos(a),y=.169*math.sin(a)))
 else:
  for i in range(10):
-  ri,ro,wi,wo=(.139,.183,.026,.034) if i%2==0 else (.119,.183,.034,.044)
+  ri,ro,wi,wo=(.131,.163,.025,.0315) if i%2==0 else (.1055,.165,.030,.0383)
   polygon_cut(face,rounded([(ri,-wi),(ro,-wo),(ro,wo),(ri,wi)],.007),2*math.pi*i/10+math.pi/2)
 # LC200 catalogue fit: accepted five-hole 150 mm PCD is unchanged.
 for i in range(LUGS):
  a=2*math.pi*i/LUGS+math.pi/2;x=.075*math.cos(a);y=.075*math.sin(a)
  cut(face,cyl('Lug bore cutter',.0095,.22,.075,n=12,x=x,y=y))
 bevel(face,.0012 if style!='steel' else .0015)
-zlug={'disc':.110,'steel':.105,'window':.111}[style]+.008
+zlug={'disc':.085,'steel':.105,'window':.083}[style]+.008
 for i in range(LUGS):
  a=2*math.pi*i/LUGS+math.pi/2;x=.075*math.cos(a);y=.075*math.sin(a)
- washer=cyl('Lug seat',.0124,.004,zlug-.006,'rim' if style!='steel' else 'chrome',16,x,y);bevel(washer,.0006)
- nut=cyl('Five service nuts',.0085,.013,zlug,'rim' if style!='steel' else 'chrome',6,x,y);bevel(nut,.0008)
+ washer=cyl('Lug seat',.0124,.004,zlug-.006,'black' if style!='steel' else 'chrome',16,x,y);bevel(washer,.0006)
+ nut=cyl('Five service nuts',.0100,.013,zlug,'black' if style!='steel' else 'chrome',6,x,y);bevel(nut,.0008)
 if style!='steel':
- z={'disc':.119,'window':.119}[style];cap_r=.066 if style=='disc' else .056
- lathe('Centre-cap shoulder',[(BORE/2,z-.012),(.062 if style=='disc' else cap_r+.001,z-.012),(cap_r,z+.002),(cap_r,z+.004),(BORE/2,z+.004)],n=40)
- cap=cyl('Flat centre cap',cap_r,.005,z+.002,n=48);bevel(cap,.0007)
+ z={'disc':.092,'window':.090}[style];cap_r=.055 if style=='disc' else .056
+ lathe('Centre-cap shoulder',[(BORE/2,z-.012),(cap_r+.001,z-.012),(cap_r,z+.002),(cap_r,z+.004),(BORE/2,z+.004)],n=40)
+ cap=cyl('Flat centre cap',cap_r,.005,z+.002,'rim' if style=='disc' else 'hubcap',n=48);bevel(cap,.0007)
 else:
  lathe('Raised centre hub plate',[(BORE/2,.095),(.057,.102),(.062,.105),(.065,.105)],n=48)
 # Analytic lathe shading is independent of the Boolean's sparse ngon triangulation.
@@ -140,10 +140,10 @@ def kmc_mark(x,y,z,width,height):
   mark=mesh('Cast KMC mark',vs,fs,'lettering')
   for poly in mark.data.polygons:poly.use_smooth=False
 if style=='disc':
- # Cap enlarged to the maximum circle clear of the accepted five service nuts.
- kmc_mark(0,.009,.12448,.089,.020);label('WHEELS',0,-.016,.1247,.079,.0065)
- lathe('Cap perimeter relief',[(.062,.1235),(.063,.1245),(.064,.1245),(.0645,.1235)],n=48)
- # Visible machined bead/lip step, entirely inside the accepted 462 mm flange.
+ # Small source-reference cap inside the accepted five service nuts.
+ kmc_mark(0,.009,.09748,.069,.016);label('WHEELS',0,-.014,.0977,.062,.0055)
+ lathe('Cap perimeter relief',[(.051,.0965),(.052,.0975),(.053,.0975),(.054,.0965)],n=48)
+ # Tone-on-tone bead/lip step, entirely inside the accepted 462 mm flange.
  lathe('Outer bead ring step',[(.214,.117),(.216,.119),(.224,.119),(.226,.117)],n=64)
  kmc_mark(0,.219,.120,.039,.008)
 elif style=='window':
@@ -152,11 +152,11 @@ elif style=='window':
   for i,ch in enumerate('METHOD'):
    a=math.pi/2+(2.5-i)*.135+(math.pi if bottom else 0)
    label(ch,.1115*math.cos(a),.1115*math.sin(a),.117,.012,.014,a-math.pi/2)
- label('METHOD',0,.006,.1247,.078,.011)
- label('BEAD GRIP',0,-.012,.1247,.074,.0048)
+ label('METHOD',0,.006,.0957,.078,.011)
+ label('BEAD GRIP',0,-.012,.0957,.074,.0048)
  lathe('Raised Bead Grip outer ring',[(.208,.117),(.212,.121),(.224,.121),(.226,.118)],n=64)
 # Valve seated in the rolled flange; restrained rubber and metal details.
-a=-math.pi/2-.08;x=.219*math.cos(a);y=.219*math.sin(a)
+a=-math.pi/2;x=.219*math.cos(a);y=.219*math.sin(a)
 cyl('Valve rubber foot',.005,.010,.111,'black',12,x,y)
 cyl('Valve stem',.003,.018,.121,'black',12,x,y)
 cyl('Valve cap',.0037,.005,.132,'black',12,x,y)
@@ -176,9 +176,9 @@ for i in range(16):
  a=2*math.pi*i/16;r=.142
  bpy.ops.mesh.primitive_cube_add(size=1,location=(r*math.cos(a),r*math.sin(a),.033*WIDTH_FACTOR));o=bpy.context.object;o.name='Rotor ventilation vane';o.dimensions=(.063,.006,.012*WIDTH_FACTOR);o.rotation_euler.z=a;bpy.ops.object.transform_apply(location=False,rotation=False,scale=True);o.data.materials.append(materials['brake']);objects.append(o)
 cyl('Closed rotor hat and stud hub',.094,.046,.060,'brake',32)
-cyl('Dark hub nose behind the centre bore',.053,.020,.090,'black',24)
+cyl('Metal hub nose behind the centre bore',.053,.020,.090 if style=='steel' else .075,'brake',24)
 for i in range(5):
- a=math.pi/2+2*math.pi*i/5;cyl('Hub stud',.005,.060,.088,'brake',8,.075*math.cos(a),.075*math.sin(a))
+ a=math.pi/2+2*math.pi*i/5;cyl('Hub stud',.005,.060 if style=='steel' else .036,.088 if style=='steel' else .069,'brake',8,.075*math.cos(a),.075*math.sin(a))
 # Compact, rounded floating caliper housing behind the face.
 bpy.ops.mesh.primitive_cube_add(size=1,location=(-.145,.060,.057*WIDTH_FACTOR));cal=bpy.context.object;cal.name='Brake caliper';cal.dimensions=(.058,.092,.060*WIDTH_FACTOR);cal.rotation_euler.z=-.35;bpy.ops.object.transform_apply(location=False,rotation=False,scale=True);cal.data.materials.append(materials['caliper']);objects.append(cal);bevel(cal,.008)
 # Fine factory machining rings on the existing rotor face, and caliper fasteners.
@@ -229,6 +229,6 @@ for t in me.loop_triangles:
    ao=.98;edge=.5
   g['colors'].extend([ao,edge,0])
 triangles=sum(len(g['positions'])//9 for g in groups.values())
-(work/'rim-data.json').write_text(json.dumps({'style':style,'groups':groups,'triangles':triangles,'blender':bpy.app.version_string,'beadSeat_mm':431.8,'width_in':WIDTH_IN,'features':{'ventCount':8 if style=='disc' else 18 if style=='steel' else 10,'rotorDiameter_mm':354,'methodWindowRadii_mm':[139,183,119,183] if style=='window' else None,'capDiameter_mm':132 if style=='disc' else 112 if style=='window' else None,'rubberFillerOuter_mm':534,'metalFlange_mm':462},'boltPattern':'5x150','centreBore_mm':BORE*1000,'bake':{'type':'Cycles AO','samples':32,'target':'CORNER color attribute','curvature':'signed dihedral vertex average'}},separators=(',',':')))
+(work/'rim-data.json').write_text(json.dumps({'style':style,'groups':groups,'triangles':triangles,'blender':bpy.app.version_string,'beadSeat_mm':431.8,'width_in':WIDTH_IN,'features':{'ventCount':9 if style=='disc' else 16 if style=='steel' else 10,'rotorDiameter_mm':354,'methodWindowRadii_mm':[131,163,105.5,165] if style=='window' else None,'capDiameter_mm':110 if style=='disc' else 112 if style=='window' else None,'rubberFillerOuter_mm':534,'metalFlange_mm':462},'boltPattern':'5x150','centreBore_mm':BORE*1000,'bake':{'type':'Cycles AO','samples':32,'target':'CORNER color attribute','curvature':'signed dihedral vertex average'}},separators=(',',':')))
 bpy.ops.wm.save_as_mainfile(filepath=str(work/('rim-'+style+'.blend')))
 print('RIM_TRIANGLES',style,triangles)
