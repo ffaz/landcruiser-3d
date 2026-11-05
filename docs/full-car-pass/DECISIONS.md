@@ -303,3 +303,32 @@ Rear shows crisp light letters and small bright edges on the satin bar; sampled 
 ### C2 — front satin silver
 Grille/headlamp chrome `#e6ecef/.28/.55/1.40 → #bdc5cc/.38/.60/1.0` (colour/roughness/metalness/environment); diffuse silver support `.22–.38 → .14–.26`, edge response `.12 → .18`.
 Chose a darker satin face with small bevel catches, rejecting mirror reflections or any grille/housing redesign. Hero shows silver housing/surround distinct from white paint, with readable projector detail and bright narrow edge accents; protected source parts and the rear chrome strip remain intact.
+
+## Task 5 fix-up 2
+
+Pulled through Task 1 `120702e`, re-read TARGET sections 1 and 3, and recorded the owner's corrected Method layout/lettering placement in TARGET. The new inward lettering and titanium hub ring supersede the earlier outward-lettering/dark-recess directions. Built with Blender 4.3.2 and inspected one front and one 3/4 on-car capture of each rim at 1600×1000; images remain outside Git. Compared the Method front capture to the supplied normalized radii/angles and sampled its face tone as requested. No test suites or comparison-image reports were produced.
+
+1. **Method light matte titanium:** kept pigment `#8a8f94`; roughness/metalness/environment `.50/.62/1.5 → .62/.10/3.0`, clearcoat `0`, restrained physical specular intensity `.35`.
+   Rejected a lighter pigment, emissive fill, global studio changes and mirror-like metal. Unobstructed front flat-face samples are approximately **147/255** (sRGB luma), within the requested 145–155 range; 3/4 remains satin with broad lip shading rather than dark gunmetal.
+2. **Method radial casting:** cap radius `56 → 30.03 mm (.13R)`; a raised titanium hub replaces the broad dark recess, with its shaded edge near `.34R`, flat bands `.34–.49R` and `.74–.85R`, dark bead-grip step `.86–.88R` and titanium lip `.89–1R`. Cosmetic cap reduction preserves the actual rear 110.3 mm mounting bore.
+   **The approximate `.20R` nut-circle request was not applied:** locked 5×150 requires a 75 mm radius, **.325R** at the locked 231 mm lip radius. Rejected breaking that mount to match the approximation; retained five black nuts and seated their front presentation on the raised ring. Front/3/4 show the small cap, titanium ring, flatter bands and relocated groove, with the existing hardware clear behind the face.
+3. **Method windows:** prior unequal 33°/39° centre spacing → exact **36° clockwise pitch**, short at 0/72/144/216/288° and long at 36/108/180/252/324°. Short mouth radii **136.29–170.94 mm (.59–.74R)** with 19°/22° inner/outer widths; long **113.19–170.94 mm (.49–.74R)** with 30°/27° widths; sampled circular edges retain radius through the middle instead of cutting straight inward chords.
+   Rejected the previous smaller normalization radius, equal angular slopes and shifted long-window centres. Rounded mouths have a **4.62 mm (.02R)** chamfer band. Front comparison shows short at 12 and long at 6; representative raster widths near their rounded inner/outer edges are **18.8°/21.6°** at the top and **29.8°/26.8°** at the bottom. Dark-hardware-only masks omit lit walls and therefore give smaller radial reaches; the stated recipe dimensions describe the complete mouth outline.
+4. **METHOD inner-band casting:** glyph radius **190 → 94.71 mm (.41R)** in the flat band; the upper word reads normally and the lower word is rotated upside-down. Cap text scales with the 60.06 mm cap diameter.
+   Rejected the now-corrected outward-placement instruction and crossing either windows or hub hardware. Both captures show raised face-coloured words wholly in the solid inner band above/below the hub, clear of the openings and groove.
+5. **Method opening depth:** retained dark rotor/hat/barrel/caliper/backing and their geometry; new mouth walls use the titanium pigment with roughness `.66` and environment `2.2`, below the face's response. The new face clears the unchanged `.083 m` hat-front plane by more than the previous 1.5 mm minimum.
+   Rejected flat painted aperture plates, moving the brakes and restoring coplanar surfaces. Front shows the slightly darker chamfer band; 3/4 shows its illuminated thickness followed by the darker hardware at a second depth, without hub moiré.
+6. **Shanaber exposed nose:** flat-ended cylinder → a smoothly rounded forged nose, still within the existing **106 mm diameter and z .080–.100 m envelope**, behind the unchanged open bore and metal nut ring.
+   Rejected adding a cover/cap, filling the bore and moving the brakes or fit surfaces. Front shows a clear light-to-dark gradient instead of a zero-spread disc; 3/4 shows the raised nose, bore-edge separation and five metal nuts. The sixteen half-pitch holes and lower valve position remain intact.
+7. **KMC lower-left wall light:** kept all geometry/counts, dark hardware and `#55595d` face/lip. Pocket-wall environment `1.1 → 1.35`, metalness `.30 → .20`, with a modest frontward broadening of positive-z chamfer normals only.
+   Rejected lighter pigment, emissive borders and a local painted highlight. Front/3/4 keep nine dark slots with more readable 7–9-o'clock wall edges, while the cast cap mark and dark face/lip remain consistent.
+
+Generator counts and file sizes:
+
+| Rim | Triangles per rim, before → after | Four GLBs total bytes, before → after | Final bytes per left / right GLB |
+|---|---:|---:|---:|
+| KMC | 21,056 → 21,056 | 1,828,896 → 1,828,568 | 457,188 / 457,096 |
+| Method | 18,736 → 23,010 | 1,598,664 → 1,990,072 | 495,268 / 499,768 |
+| Shanaber | 13,792 → 14,212 | 1,265,984 → 1,298,864 | 322,052 / 327,380 |
+
+Left/right sizes apply to front and rear. Method's added radial bands, rear-bore transition and rounded polar pockets account for the increase; Shanaber adds 420 nose triangles. Rebuilt only authored aftermarket rim GLBs. `index.html`, source car GLBs and their attributes, stock rim, 462 mm outer lip diameter, wheel offsets, 5×150 centres, adapters, rotor/caliper/shield geometry, body locks, Three.js version and render-pass count are untouched. The requested steel nose shaping is confined to its original outer envelope. All seven items have implementation work; item 2's incompatible approximate nut-circle radius remains explicitly excepted above.
