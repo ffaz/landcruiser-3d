@@ -279,3 +279,27 @@ Re-read `docs/TARGET.md` section 1 after pulling through `1aeef0a`. Inspected th
    Chose diffuse support and small bevel catches to recover light silver without mirror regions; rejected restoring the old environment gain of 16. Final hero shows brighter grille-surround and headlamp-housing edges with readable inner detail and soft satin faces; no geometry, lens or grille-bar layout changed.
 5. **Side-step:** `loadPart` renders the source rail's paint zone as chrome, rather than letting the body swatch repaint it white; `finishPartMaterial` uses `#b7c0c7/.40/.50/.85` (colour/roughness/metalness/environment), with soft orientation/height shading. The native black tread zone is unchanged.
    Rejected changing only the tiny existing chrome lamp frame: source-node inspection showed the main rail was `carpaint_6`. Final Side/hero show a distinct silver rail surrounding the black pad. The passing pale-silver chrome lower-door strip is unchanged, as requested.
+
+## Task 2 — panel lines, handle cups and silver separation (2026-11-05)
+
+Read `docs/TARGET.md` first; based on `120702e`. Inspected exactly one Side, front 3/4 and Rear capture at 1600×1000, outside git. Only sampled those final images for the requested remeasurement; no test suites, comparison images or reports. Stored GLBs, NORMAL/COLOR_0, source design, locks and render-pass count are untouched.
+
+### S1 — door shut lines
+Asymmetric `.0030/.0007 m` door and `.0018 m` body shading → `.0014/.0008 m` caps with a derivative-based 1.1-pixel core; 128 → 192 source sections and perpendicular-distance correction replace slope-based dropout.
+Chose source-following sampling and neutral output rather than smoothing/redrawing the curve or moving panel edges. Side samples at y 440/460/480/500 show two dark pixels with neutral RGB (e.g. 62/62/62, 68/68/68); hero no longer has the added broad hem band. Source bends remain, rather than inventing a straight B-pillar transition.
+
+### S3/B3 — bonnet, lamp and roof-adjacent strokes (incomplete)
+Broad curvature/AO shoulders and derivative-triggered bonnet darkening → deep-source-occlusion core (`.55–.88`) and narrower valley response (`.12–.38`), with deep crevices neutralised after colour conversion. This also reduces paint-side cavity darkening beside the glazing; source window trim stays intact.
+Rejected moving source edges, hiding grille/lamp surfaces or painting a replacement border. Hero still shows 3–4 dark pixels at the bonnet-to-grille opening (e.g. x 450, y 506–509); the ≤2-pixel requirement is not achieved. No claim of a completed fix for the source opening or front-view roofline; only the three requested views were captured.
+
+### T4 — handle-cup halos
+Forced `.165×.055 m` oval restoring full AO → `.125×.038 m` inner-cup region with `.32` source-occlusion weight and reduced valley weight; surrounding broad AO is no longer forced back on.
+Kept source handles/cups and hardware materials, rejecting flat painted patches or replacement geometry. Side and hero show clean paint around the cups with a small concave shade beneath the original silver handles rather than a wide dark halo.
+
+### C1 — LAND CRUISER relief
+Letter-only diffuse support `.38 → .80` and edge response `.16 → .22`; bar finish and lower V8 components stay unchanged. Chose relief-specific fill rather than brightening the whole garnish or restoring mirror cards.
+Rear shows crisp light letters and small bright edges on the satin bar; sampled letter faces are roughly 209–211 against adjacent bar 178–184, with brighter edge pixels around 223–225. These are final-image samples, not an independent acceptance score.
+
+### C2 — front satin silver
+Grille/headlamp chrome `#e6ecef/.28/.55/1.40 → #bdc5cc/.38/.60/1.0` (colour/roughness/metalness/environment); diffuse silver support `.22–.38 → .14–.26`, edge response `.12 → .18`.
+Chose a darker satin face with small bevel catches, rejecting mirror reflections or any grille/housing redesign. Hero shows silver housing/surround distinct from white paint, with readable projector detail and bright narrow edge accents; protected source parts and the rear chrome strip remain intact.

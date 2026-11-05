@@ -332,7 +332,7 @@ function useMainBakedShading(material,cream=false){
 }
 // Read-only cross-sections of the stored door surface, sampled once on load.
 // These identify the real hem; no mesh, normal or COLOR_0 is rewritten.
-const DOOR_EDGE_SAMPLES=128,doorEdgeProfiles=new Map();
+const DOOR_EDGE_SAMPLES=192,doorEdgeProfiles=new Map();
 function recordDoorEdges(root,id){
  if(!/^door_[FR][LR]$/.test(id))return;
  root.updateWorldMatrix(true,true);const triangles=[],p=new THREE.Vector3();
@@ -370,11 +370,19 @@ function useOriginalPanelShading(material,cream=false){
    float bakedAO=${cream?'pow(clamp(vBakedShading.r,0.0,1.0),mix(1.0,uCreamAOExponent,smoothstep(0.02,0.10,abs(vBakedShading.g-0.5)*2.0)))':'clamp(vBakedShading.r,0.0,1.0)'};
    float bakedRidge=max(0.0,(vBakedShading.g-0.5-1.0/255.0)*2.0);
    float bakedValley=max(0.0,(0.5-vBakedShading.g-1.0/255.0)*2.0);
-   // Retain original cavity/ridge shading at creases and handle cups; clean only broad flat paint.
+   // Separate deep source crevices from the broad baked AO shoulder around them.
+   // This narrows the rendered shade, not the source panel or its curve.
+   float sourceOcclusion=1.0-clamp(vBakedShading.r,0.0,1.0);
+   float creaseCore=smoothstep(.55,.88,sourceOcclusion);
+   bakedAO=1.0-sourceOcclusion*creaseCore;
+   bakedValley*=smoothstep(.12,.38,bakedValley);
    float panelCrease=smoothstep(0.18,0.40,max(bakedRidge,bakedValley));
    // Recover authored narrow crevices, not a drawn line or a broad AO blotch.
-   ${retainFineCavity?'panelCrease=max(panelCrease,max(1.0-smoothstep(.12,.22,vBakedShading.r),smoothstep(.015,.050,fwidth(vBakedShading.r))));':''}
-   ${handle?`float handleCup=1.0-smoothstep(1.0,1.40,length((vPanelPosition.xy-vec2(${handle[0]},${handle[1]}))/vec2(.165,.055))); panelCrease=max(panelCrease,handleCup);`:''}
+   panelCrease=max(panelCrease,creaseCore);
+   ${handle?`// The cup keeps its authored concavity; do not reintroduce an oval AO halo.
+   float handleCup=1.0-smoothstep(.85,1.15,length((vPanelPosition.xy-vec2(${handle[0]},${handle[1]}))/vec2(.125,.038)));
+   bakedAO=mix(bakedAO,1.0-sourceOcclusion*.32,handleCup);
+   bakedValley*=1.0-.65*handleCup;`:''}
    bakedAO=mix(1.0,bakedAO,panelCrease); bakedValley*=panelCrease;
    float bakedCavity=clamp(1.0-(1.0-bakedAO)*uBakedAO-bakedValley*uBakedValley*0.35,${cream?'0.10':'0.18'},1.0);
    
@@ -393,6 +401,14 @@ function useOriginalPanelShading(material,cream=false){
    ${cream&&material.userData.zone==='black'?'reflectedLight.directSpecular*=uCreamTrimSpecular; reflectedLight.indirectSpecular*=uCreamTrimSpecular;':''}
   `);
  };
+ const compileCrease=material.onBeforeCompile;
+ material.onBeforeCompile=shader=>{compileCrease(shader);
+  shader.fragmentShader=shader.fragmentShader.replace('#include <colorspace_fragment>',`#include <colorspace_fragment>
+   // Neutralise only the deep authored crevice, across every paint swatch.
+   float creaseNeutral=creaseCore*panelCrease;
+   float creaseLuma=dot(gl_FragColor.rgb,vec3(.2126,.7152,.0722));
+   gl_FragColor.rgb=mix(gl_FragColor.rgb,vec3(creaseLuma),creaseNeutral);`);
+ };
  if(handle||material.userData.partId==='body_shell'){
   const bodyFrontHem=material.userData.partId==='body_shell';
   const compilePanel=material.onBeforeCompile;
@@ -406,16 +422,19 @@ function useOriginalPanelShading(material,cream=false){
     ${bodyFrontHem?'hemDistances.y=10.0;':''}
     bool leftHem=hemDistances.x<hemDistances.y;
     float hemDistance=min(hemDistances.x,hemDistances.y);
-    vec2 edgeSlope=abs(uDoorEdges[row0+1]-uDoorEdges[row0])/${.82/127};
+    vec2 edgeSlope=abs(uDoorEdges[row0+1]-uDoorEdges[row0])/${.82/(DOOR_EDGE_SAMPLES-1)};
     float hemSlope=leftHem?edgeSlope.x:edgeSlope.y;
-    float hemWidth=${bodyFrontHem?'.0018':'leftHem?.0030:.0007'};
-    float hemAA=max(fwidth(hemDistance)*.30,.00012);
-    float hemCoverage=(1.-smoothstep(hemWidth-hemAA,hemWidth+hemAA,hemDistance))*(1.-smoothstep(1.5,2.5,hemSlope))*smoothstep(.43,.45,vPanelPosition.y)*(1.-smoothstep(1.21,1.23,vPanelPosition.y))*smoothstep(.85,.89,abs(vPanelPosition.z));
-    float hemShade=min(dot(gl_FragColor.rgb,vec3(.2126,.7152,.0722)),.18);
+    hemDistance/=sqrt(1.0+hemSlope*hemSlope);
+    float hemPixel=max(fwidth(hemDistance),.00001);
+    float hemWidth=min(${bodyFrontHem?'.0008':'.0014'},hemPixel*.55);
+    float hemAA=hemPixel*.5;
+    // Preserve steep source curves rather than fading out their sampled segments.
+    float hemCoverage=(1.-smoothstep(max(0.0,hemWidth-hemAA),hemWidth+hemAA,hemDistance))*smoothstep(.43,.45,vPanelPosition.y)*(1.-smoothstep(1.21,1.23,vPanelPosition.y))*smoothstep(.85,.89,abs(vPanelPosition.z));
+    float hemShade=min(dot(gl_FragColor.rgb,vec3(.2126,.7152,.0722)),.24);
     gl_FragColor.rgb=mix(gl_FragColor.rgb,vec3(hemShade),hemCoverage);`);
   };
  }
- material.customProgramCacheKey=()=> 'lc200-source-door-edge-satin-v2-'+material.userData.partId;
+ material.customProgramCacheKey=()=> 'lc200-source-door-edge-satin-v3-'+material.userData.partId;
  return material;
 }
 function useBakedShading(material,cream=false){
@@ -463,11 +482,11 @@ function useBakedShading(material,cream=false){
      reflectedLight.indirectSpecular+=diffuseColor.rgb*.06*silverEdge*bakedCavity;
     `:material.userData.silverRole==='letter'?`
      float barLetter=smoothstep(1.02,1.04,vSilverPosition.y)*(1.0-smoothstep(.52,.56,abs(vSilverPosition.z)));
-     silverFill+=.38*barLetter;
-     reflectedLight.indirectSpecular+=diffuseColor.rgb*.16*silverEdge*barLetter*bakedCavity;
+     silverFill+=.80*barLetter;
+     reflectedLight.indirectSpecular+=diffuseColor.rgb*.22*silverEdge*barLetter*bakedCavity;
     `:material.userData.silverRole==='front'?`
-     silverFill=.22+.16*max(silverNormal.y,0.0);
-     reflectedLight.indirectSpecular+=diffuseColor.rgb*.12*silverEdge*bakedCavity;
+     silverFill=.14+.12*max(silverNormal.y,0.0);
+     reflectedLight.indirectSpecular+=diffuseColor.rgb*.18*silverEdge*bakedCavity;
     `:material.userData.silverRole==='step'?`
      float stepTop=smoothstep(.31,.54,vSilverPosition.y);
      silverFill=.10+.10*max(silverNormal.y,0.0);
@@ -518,7 +537,7 @@ function useCreamPaintShading(material){
   shader.fragmentShader=shader.fragmentShader.replace('#include <aomap_fragment>',
    'float creamFacing=abs(dot(geometryNormal,geometryViewDir));\nfloat creamLowView=1.0-smoothstep(0.04,0.14,abs(cameraPosition.y)/max(length(cameraPosition),0.001));\nfloat creamEdgeGain=mix(1.0,mix(uCreamGrazingFloor,1.0,smoothstep(uCreamGrazingRange.x,uCreamGrazingRange.y,creamFacing)),creamLowView);\nreflectedLight.directDiffuse*=uCreamKeyGain*uCreamKeyTint*creamEdgeGain;\nvec3 creamWorldNormal=inverseTransformDirection(geometryNormal,viewMatrix);\nfloat creamRearWeight=smoothstep(0.15,0.80,creamWorldNormal.x);\nreflectedLight.indirectDiffuse*=uCreamFillGain*mix(1.0,uCreamRearFill,creamRearWeight);\n#include <aomap_fragment>');
  };
- material.customProgramCacheKey=()=> 'lc200-closeup-paint-lighting-satin-v8-'+material.userData.partId;
+ material.customProgramCacheKey=()=> 'lc200-closeup-paint-lighting-satin-v9-'+material.userData.partId;
  return material;
 }
 // Recessed side gaps are filtered in screen space, without moving mesh edges.
@@ -894,7 +913,7 @@ function finishPartMaterial(material,entry,zone,sourceName,node){
   material.envMapIntensity=1.10;material.clearcoat=.08;material.clearcoatRoughness=.30;
  }
  if(zone==='chrome'&&(entry.id==='grille'||entry.id.startsWith('lamp_front_'))){
-  material.color.set('#e6ecef');material.roughness=.28;material.metalness=.55;material.envMapIntensity=1.40;
+  material.color.set('#bdc5cc');material.roughness=.38;material.metalness=.60;material.envMapIntensity=1.0;
   material.userData.silverRole='front';
  }
  if(zone==='lamp_clear'&&entry.id.startsWith('lamp_front_')){
