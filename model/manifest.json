@@ -4616,8 +4616,9 @@
       "zones": [
         "rim",
         "barrel",
-        "pocket_wall",
         "edge_catch",
+        "nut_pocket",
+        "pocket_wall",
         "black",
         "nut_metal",
         "lettering",
@@ -4628,7 +4629,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 27469,
+      "triangles": 31942,
       "bounds": {
         "min": [
           -1.901999989748001,
@@ -4638,7 +4639,7 @@
         "max": [
           -1.368000010251999,
           0.6634999897480012,
-          0.9659638375043869
+          0.9743598669767379
         ]
       },
       "beadSeat_mm": 431.8,
@@ -4664,9 +4665,9 @@
         },
         "edge_catch": {
           "color": "#55595d",
-          "roughness": 0.42,
-          "metalness": 0.35,
-          "envMapIntensity": 1.35
+          "roughness": 0.3,
+          "metalness": 0.45,
+          "envMapIntensity": 1.8
         },
         "nut_metal": {
           "color": "#636b73",
@@ -4675,16 +4676,24 @@
           "envMapIntensity": 1.15
         },
         "bead_groove": {
-          "color": "#43484d",
-          "roughness": 0.72,
-          "metalness": 0.12,
-          "envMapIntensity": 0.65
+          "color": "#3b4045",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.5
+        },
+        "groove_shoulder": {
+          "color": "#55595d",
+          "roughness": 0.85,
+          "metalness": 0.02,
+          "envMapIntensity": 2,
+          "clearcoat": 0,
+          "specularIntensity": 0.15
         },
         "pocket_wall": {
           "color": "#55595d",
           "roughness": 0.4,
           "metalness": 0.2,
-          "envMapIntensity": 1.35
+          "envMapIntensity": 1.65
         },
         "hub_metal": {
           "color": "#bdc5cb",
@@ -4763,6 +4772,14 @@
           "roughness": 0.48,
           "metalness": 0.35,
           "envMapIntensity": 0.75
+        },
+        "nut_pocket": {
+          "color": "#303539",
+          "roughness": 0.65,
+          "metalness": 0.15,
+          "envMapIntensity": 1,
+          "clearcoat": 0,
+          "specularIntensity": 0.25
         }
       },
       "bundlesSlots": [
@@ -4772,7 +4789,7 @@
         "ventCount": 9,
         "rotorDiameter_mm": 354,
         "methodWindowRadii_mm": null,
-        "capDiameter_mm": 76,
+        "capDiameter_mm": 92.4,
         "rubberFillerOuter_mm": 534,
         "metalFlange_mm": 462
       },
@@ -4792,8 +4809,9 @@
       "zones": [
         "rim",
         "barrel",
-        "pocket_wall",
         "edge_catch",
+        "nut_pocket",
+        "pocket_wall",
         "black",
         "nut_metal",
         "lettering",
@@ -4804,12 +4822,12 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 27469,
+      "triangles": 31942,
       "bounds": {
         "min": [
           -1.901999989748001,
           0.12950001025199892,
-          -0.9659638375043869
+          -0.9743598669767379
         ],
         "max": [
           -1.368000010251999,
@@ -4840,9 +4858,9 @@
         },
         "edge_catch": {
           "color": "#55595d",
-          "roughness": 0.42,
-          "metalness": 0.35,
-          "envMapIntensity": 1.35
+          "roughness": 0.3,
+          "metalness": 0.45,
+          "envMapIntensity": 1.8
         },
         "nut_metal": {
           "color": "#636b73",
@@ -4851,16 +4869,24 @@
           "envMapIntensity": 1.15
         },
         "bead_groove": {
-          "color": "#43484d",
-          "roughness": 0.72,
-          "metalness": 0.12,
-          "envMapIntensity": 0.65
+          "color": "#3b4045",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.5
+        },
+        "groove_shoulder": {
+          "color": "#55595d",
+          "roughness": 0.85,
+          "metalness": 0.02,
+          "envMapIntensity": 2,
+          "clearcoat": 0,
+          "specularIntensity": 0.15
         },
         "pocket_wall": {
           "color": "#55595d",
           "roughness": 0.4,
           "metalness": 0.2,
-          "envMapIntensity": 1.35
+          "envMapIntensity": 1.65
         },
         "hub_metal": {
           "color": "#bdc5cb",
@@ -4939,6 +4965,14 @@
           "roughness": 0.48,
           "metalness": 0.35,
           "envMapIntensity": 0.75
+        },
+        "nut_pocket": {
+          "color": "#303539",
+          "roughness": 0.65,
+          "metalness": 0.15,
+          "envMapIntensity": 1,
+          "clearcoat": 0,
+          "specularIntensity": 0.25
         }
       },
       "bundlesSlots": [
@@ -4948,7 +4982,7 @@
         "ventCount": 9,
         "rotorDiameter_mm": 354,
         "methodWindowRadii_mm": null,
-        "capDiameter_mm": 76,
+        "capDiameter_mm": 92.4,
         "rubberFillerOuter_mm": 534,
         "metalFlange_mm": 462
       },
@@ -4968,8 +5002,9 @@
       "zones": [
         "rim",
         "barrel",
-        "pocket_wall",
         "edge_catch",
+        "nut_pocket",
+        "pocket_wall",
         "black",
         "nut_metal",
         "lettering",
@@ -4980,7 +5015,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 27469,
+      "triangles": 31942,
       "bounds": {
         "min": [
           0.948000010251999,
@@ -4990,7 +5025,7 @@
         "max": [
           1.4819999897480012,
           0.6634999897480012,
-          0.9634638375043869
+          0.971859866976738
         ]
       },
       "beadSeat_mm": 431.8,
@@ -5016,9 +5051,9 @@
         },
         "edge_catch": {
           "color": "#55595d",
-          "roughness": 0.42,
-          "metalness": 0.35,
-          "envMapIntensity": 1.35
+          "roughness": 0.3,
+          "metalness": 0.45,
+          "envMapIntensity": 1.8
         },
         "nut_metal": {
           "color": "#636b73",
@@ -5027,16 +5062,24 @@
           "envMapIntensity": 1.15
         },
         "bead_groove": {
-          "color": "#43484d",
-          "roughness": 0.72,
-          "metalness": 0.12,
-          "envMapIntensity": 0.65
+          "color": "#3b4045",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.5
+        },
+        "groove_shoulder": {
+          "color": "#55595d",
+          "roughness": 0.85,
+          "metalness": 0.02,
+          "envMapIntensity": 2,
+          "clearcoat": 0,
+          "specularIntensity": 0.15
         },
         "pocket_wall": {
           "color": "#55595d",
           "roughness": 0.4,
           "metalness": 0.2,
-          "envMapIntensity": 1.35
+          "envMapIntensity": 1.65
         },
         "hub_metal": {
           "color": "#bdc5cb",
@@ -5115,6 +5158,14 @@
           "roughness": 0.48,
           "metalness": 0.35,
           "envMapIntensity": 0.75
+        },
+        "nut_pocket": {
+          "color": "#303539",
+          "roughness": 0.65,
+          "metalness": 0.15,
+          "envMapIntensity": 1,
+          "clearcoat": 0,
+          "specularIntensity": 0.25
         }
       },
       "bundlesSlots": [
@@ -5124,7 +5175,7 @@
         "ventCount": 9,
         "rotorDiameter_mm": 354,
         "methodWindowRadii_mm": null,
-        "capDiameter_mm": 76,
+        "capDiameter_mm": 92.4,
         "rubberFillerOuter_mm": 534,
         "metalFlange_mm": 462
       },
@@ -5144,8 +5195,9 @@
       "zones": [
         "rim",
         "barrel",
-        "pocket_wall",
         "edge_catch",
+        "nut_pocket",
+        "pocket_wall",
         "black",
         "nut_metal",
         "lettering",
@@ -5156,12 +5208,12 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 27469,
+      "triangles": 31942,
       "bounds": {
         "min": [
           0.948000010251999,
           0.12950001025199892,
-          -0.9634638375043869
+          -0.971859866976738
         ],
         "max": [
           1.4819999897480012,
@@ -5192,9 +5244,9 @@
         },
         "edge_catch": {
           "color": "#55595d",
-          "roughness": 0.42,
-          "metalness": 0.35,
-          "envMapIntensity": 1.35
+          "roughness": 0.3,
+          "metalness": 0.45,
+          "envMapIntensity": 1.8
         },
         "nut_metal": {
           "color": "#636b73",
@@ -5203,16 +5255,24 @@
           "envMapIntensity": 1.15
         },
         "bead_groove": {
-          "color": "#43484d",
-          "roughness": 0.72,
-          "metalness": 0.12,
-          "envMapIntensity": 0.65
+          "color": "#3b4045",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.5
+        },
+        "groove_shoulder": {
+          "color": "#55595d",
+          "roughness": 0.85,
+          "metalness": 0.02,
+          "envMapIntensity": 2,
+          "clearcoat": 0,
+          "specularIntensity": 0.15
         },
         "pocket_wall": {
           "color": "#55595d",
           "roughness": 0.4,
           "metalness": 0.2,
-          "envMapIntensity": 1.35
+          "envMapIntensity": 1.65
         },
         "hub_metal": {
           "color": "#bdc5cb",
@@ -5291,6 +5351,14 @@
           "roughness": 0.48,
           "metalness": 0.35,
           "envMapIntensity": 0.75
+        },
+        "nut_pocket": {
+          "color": "#303539",
+          "roughness": 0.65,
+          "metalness": 0.15,
+          "envMapIntensity": 1,
+          "clearcoat": 0,
+          "specularIntensity": 0.25
         }
       },
       "bundlesSlots": [
@@ -5300,7 +5368,7 @@
         "ventCount": 9,
         "rotorDiameter_mm": 354,
         "methodWindowRadii_mm": null,
-        "capDiameter_mm": 76,
+        "capDiameter_mm": 92.4,
         "rubberFillerOuter_mm": 534,
         "metalFlange_mm": 462
       },
@@ -5331,7 +5399,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 21660,
+      "triangles": 29621,
       "bounds": {
         "min": [
           -1.901999989748001,
@@ -5367,9 +5435,9 @@
         },
         "edge_catch": {
           "color": "#d5dade",
-          "roughness": 0.42,
-          "metalness": 0.35,
-          "envMapIntensity": 1.35
+          "roughness": 0.3,
+          "metalness": 0.45,
+          "envMapIntensity": 1.8
         },
         "nut_metal": {
           "color": "#81898f",
@@ -5378,22 +5446,32 @@
           "envMapIntensity": 1.15
         },
         "bead_groove": {
-          "color": "#43484d",
-          "roughness": 0.72,
-          "metalness": 0.12,
-          "envMapIntensity": 0.65
+          "color": "#3b4045",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.5
+        },
+        "groove_shoulder": {
+          "color": "#d5dade",
+          "roughness": 0.85,
+          "metalness": 0.02,
+          "envMapIntensity": 2,
+          "clearcoat": 0,
+          "specularIntensity": 0.15
         },
         "pocket_wall": {
-          "color": "#d5dade",
-          "roughness": 0.75,
-          "metalness": 0.1,
-          "envMapIntensity": 0.9
+          "color": "#41484d",
+          "roughness": 0.96,
+          "metalness": 0,
+          "envMapIntensity": 0.35,
+          "clearcoat": 0,
+          "specularIntensity": 0.05
         },
         "hub_metal": {
-          "color": "#626a70",
-          "roughness": 0.82,
-          "metalness": 0.15,
-          "envMapIntensity": 0.45,
+          "color": "#92989d",
+          "roughness": 0.86,
+          "metalness": 0.08,
+          "envMapIntensity": 1,
           "clearcoat": 0,
           "specularIntensity": 0.2
         },
@@ -5434,10 +5512,12 @@
           "envMapIntensity": 0.6
         },
         "barrel": {
-          "color": "#939da5",
-          "roughness": 0.62,
-          "metalness": 0.25,
-          "envMapIntensity": 0.65
+          "color": "#495156",
+          "roughness": 0.88,
+          "metalness": 0.04,
+          "envMapIntensity": 0.5,
+          "clearcoat": 0,
+          "specularIntensity": 0.1
         },
         "caliper": {
           "color": "#53585c",
@@ -5468,6 +5548,14 @@
           "roughness": 0.48,
           "metalness": 0.35,
           "envMapIntensity": 0.75
+        },
+        "nut_pocket": {
+          "color": "#303539",
+          "roughness": 0.65,
+          "metalness": 0.15,
+          "envMapIntensity": 1,
+          "clearcoat": 0,
+          "specularIntensity": 0.25
         }
       },
       "bundlesSlots": [
@@ -5508,7 +5596,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 21660,
+      "triangles": 29621,
       "bounds": {
         "min": [
           -1.901999989748001,
@@ -5544,9 +5632,9 @@
         },
         "edge_catch": {
           "color": "#d5dade",
-          "roughness": 0.42,
-          "metalness": 0.35,
-          "envMapIntensity": 1.35
+          "roughness": 0.3,
+          "metalness": 0.45,
+          "envMapIntensity": 1.8
         },
         "nut_metal": {
           "color": "#81898f",
@@ -5555,22 +5643,32 @@
           "envMapIntensity": 1.15
         },
         "bead_groove": {
-          "color": "#43484d",
-          "roughness": 0.72,
-          "metalness": 0.12,
-          "envMapIntensity": 0.65
+          "color": "#3b4045",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.5
+        },
+        "groove_shoulder": {
+          "color": "#d5dade",
+          "roughness": 0.85,
+          "metalness": 0.02,
+          "envMapIntensity": 2,
+          "clearcoat": 0,
+          "specularIntensity": 0.15
         },
         "pocket_wall": {
-          "color": "#d5dade",
-          "roughness": 0.75,
-          "metalness": 0.1,
-          "envMapIntensity": 0.9
+          "color": "#41484d",
+          "roughness": 0.96,
+          "metalness": 0,
+          "envMapIntensity": 0.35,
+          "clearcoat": 0,
+          "specularIntensity": 0.05
         },
         "hub_metal": {
-          "color": "#626a70",
-          "roughness": 0.82,
-          "metalness": 0.15,
-          "envMapIntensity": 0.45,
+          "color": "#92989d",
+          "roughness": 0.86,
+          "metalness": 0.08,
+          "envMapIntensity": 1,
           "clearcoat": 0,
           "specularIntensity": 0.2
         },
@@ -5611,10 +5709,12 @@
           "envMapIntensity": 0.6
         },
         "barrel": {
-          "color": "#939da5",
-          "roughness": 0.62,
-          "metalness": 0.25,
-          "envMapIntensity": 0.65
+          "color": "#495156",
+          "roughness": 0.88,
+          "metalness": 0.04,
+          "envMapIntensity": 0.5,
+          "clearcoat": 0,
+          "specularIntensity": 0.1
         },
         "caliper": {
           "color": "#53585c",
@@ -5645,6 +5745,14 @@
           "roughness": 0.48,
           "metalness": 0.35,
           "envMapIntensity": 0.75
+        },
+        "nut_pocket": {
+          "color": "#303539",
+          "roughness": 0.65,
+          "metalness": 0.15,
+          "envMapIntensity": 1,
+          "clearcoat": 0,
+          "specularIntensity": 0.25
         }
       },
       "bundlesSlots": [
@@ -5685,7 +5793,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 21660,
+      "triangles": 29621,
       "bounds": {
         "min": [
           0.948000010251999,
@@ -5721,9 +5829,9 @@
         },
         "edge_catch": {
           "color": "#d5dade",
-          "roughness": 0.42,
-          "metalness": 0.35,
-          "envMapIntensity": 1.35
+          "roughness": 0.3,
+          "metalness": 0.45,
+          "envMapIntensity": 1.8
         },
         "nut_metal": {
           "color": "#81898f",
@@ -5732,22 +5840,32 @@
           "envMapIntensity": 1.15
         },
         "bead_groove": {
-          "color": "#43484d",
-          "roughness": 0.72,
-          "metalness": 0.12,
-          "envMapIntensity": 0.65
+          "color": "#3b4045",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.5
+        },
+        "groove_shoulder": {
+          "color": "#d5dade",
+          "roughness": 0.85,
+          "metalness": 0.02,
+          "envMapIntensity": 2,
+          "clearcoat": 0,
+          "specularIntensity": 0.15
         },
         "pocket_wall": {
-          "color": "#d5dade",
-          "roughness": 0.75,
-          "metalness": 0.1,
-          "envMapIntensity": 0.9
+          "color": "#41484d",
+          "roughness": 0.96,
+          "metalness": 0,
+          "envMapIntensity": 0.35,
+          "clearcoat": 0,
+          "specularIntensity": 0.05
         },
         "hub_metal": {
-          "color": "#626a70",
-          "roughness": 0.82,
-          "metalness": 0.15,
-          "envMapIntensity": 0.45,
+          "color": "#92989d",
+          "roughness": 0.86,
+          "metalness": 0.08,
+          "envMapIntensity": 1,
           "clearcoat": 0,
           "specularIntensity": 0.2
         },
@@ -5788,10 +5906,12 @@
           "envMapIntensity": 0.6
         },
         "barrel": {
-          "color": "#939da5",
-          "roughness": 0.62,
-          "metalness": 0.25,
-          "envMapIntensity": 0.65
+          "color": "#495156",
+          "roughness": 0.88,
+          "metalness": 0.04,
+          "envMapIntensity": 0.5,
+          "clearcoat": 0,
+          "specularIntensity": 0.1
         },
         "caliper": {
           "color": "#53585c",
@@ -5822,6 +5942,14 @@
           "roughness": 0.48,
           "metalness": 0.35,
           "envMapIntensity": 0.75
+        },
+        "nut_pocket": {
+          "color": "#303539",
+          "roughness": 0.65,
+          "metalness": 0.15,
+          "envMapIntensity": 1,
+          "clearcoat": 0,
+          "specularIntensity": 0.25
         }
       },
       "bundlesSlots": [
@@ -5862,7 +5990,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 21660,
+      "triangles": 29621,
       "bounds": {
         "min": [
           0.948000010251999,
@@ -5898,9 +6026,9 @@
         },
         "edge_catch": {
           "color": "#d5dade",
-          "roughness": 0.42,
-          "metalness": 0.35,
-          "envMapIntensity": 1.35
+          "roughness": 0.3,
+          "metalness": 0.45,
+          "envMapIntensity": 1.8
         },
         "nut_metal": {
           "color": "#81898f",
@@ -5909,22 +6037,32 @@
           "envMapIntensity": 1.15
         },
         "bead_groove": {
-          "color": "#43484d",
-          "roughness": 0.72,
-          "metalness": 0.12,
-          "envMapIntensity": 0.65
+          "color": "#3b4045",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.5
+        },
+        "groove_shoulder": {
+          "color": "#d5dade",
+          "roughness": 0.85,
+          "metalness": 0.02,
+          "envMapIntensity": 2,
+          "clearcoat": 0,
+          "specularIntensity": 0.15
         },
         "pocket_wall": {
-          "color": "#d5dade",
-          "roughness": 0.75,
-          "metalness": 0.1,
-          "envMapIntensity": 0.9
+          "color": "#41484d",
+          "roughness": 0.96,
+          "metalness": 0,
+          "envMapIntensity": 0.35,
+          "clearcoat": 0,
+          "specularIntensity": 0.05
         },
         "hub_metal": {
-          "color": "#626a70",
-          "roughness": 0.82,
-          "metalness": 0.15,
-          "envMapIntensity": 0.45,
+          "color": "#92989d",
+          "roughness": 0.86,
+          "metalness": 0.08,
+          "envMapIntensity": 1,
           "clearcoat": 0,
           "specularIntensity": 0.2
         },
@@ -5965,10 +6103,12 @@
           "envMapIntensity": 0.6
         },
         "barrel": {
-          "color": "#939da5",
-          "roughness": 0.62,
-          "metalness": 0.25,
-          "envMapIntensity": 0.65
+          "color": "#495156",
+          "roughness": 0.88,
+          "metalness": 0.04,
+          "envMapIntensity": 0.5,
+          "clearcoat": 0,
+          "specularIntensity": 0.1
         },
         "caliper": {
           "color": "#53585c",
@@ -5999,6 +6139,14 @@
           "roughness": 0.48,
           "metalness": 0.35,
           "envMapIntensity": 0.75
+        },
+        "nut_pocket": {
+          "color": "#303539",
+          "roughness": 0.65,
+          "metalness": 0.15,
+          "envMapIntensity": 1,
+          "clearcoat": 0,
+          "specularIntensity": 0.25
         }
       },
       "bundlesSlots": [
@@ -6030,6 +6178,7 @@
         "lip",
         "barrel",
         "bead_groove",
+        "groove_shoulder",
         "pocket_wall",
         "black",
         "hubcap",
@@ -6080,9 +6229,9 @@
         },
         "edge_catch": {
           "color": "#8a8f94",
-          "roughness": 0.42,
-          "metalness": 0.35,
-          "envMapIntensity": 1.35,
+          "roughness": 0.3,
+          "metalness": 0.45,
+          "envMapIntensity": 1.8,
           "clearcoat": 0,
           "specularIntensity": 0.35
         },
@@ -6093,16 +6242,24 @@
           "envMapIntensity": 1.15
         },
         "bead_groove": {
-          "color": "#43484d",
-          "roughness": 0.72,
-          "metalness": 0.12,
-          "envMapIntensity": 0.65
+          "color": "#3b4045",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.5
+        },
+        "groove_shoulder": {
+          "color": "#8a8f94",
+          "roughness": 0.85,
+          "metalness": 0.02,
+          "envMapIntensity": 2,
+          "clearcoat": 0,
+          "specularIntensity": 0.15
         },
         "pocket_wall": {
           "color": "#8a8f94",
-          "roughness": 0.58,
+          "roughness": 0.53,
           "metalness": 0.1,
-          "envMapIntensity": 3.4,
+          "envMapIntensity": 3.8,
           "clearcoat": 0,
           "specularIntensity": 0.35
         },
@@ -6221,6 +6378,7 @@
         "lip",
         "barrel",
         "bead_groove",
+        "groove_shoulder",
         "pocket_wall",
         "black",
         "hubcap",
@@ -6271,9 +6429,9 @@
         },
         "edge_catch": {
           "color": "#8a8f94",
-          "roughness": 0.42,
-          "metalness": 0.35,
-          "envMapIntensity": 1.35,
+          "roughness": 0.3,
+          "metalness": 0.45,
+          "envMapIntensity": 1.8,
           "clearcoat": 0,
           "specularIntensity": 0.35
         },
@@ -6284,16 +6442,24 @@
           "envMapIntensity": 1.15
         },
         "bead_groove": {
-          "color": "#43484d",
-          "roughness": 0.72,
-          "metalness": 0.12,
-          "envMapIntensity": 0.65
+          "color": "#3b4045",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.5
+        },
+        "groove_shoulder": {
+          "color": "#8a8f94",
+          "roughness": 0.85,
+          "metalness": 0.02,
+          "envMapIntensity": 2,
+          "clearcoat": 0,
+          "specularIntensity": 0.15
         },
         "pocket_wall": {
           "color": "#8a8f94",
-          "roughness": 0.58,
+          "roughness": 0.53,
           "metalness": 0.1,
-          "envMapIntensity": 3.4,
+          "envMapIntensity": 3.8,
           "clearcoat": 0,
           "specularIntensity": 0.35
         },
@@ -6412,6 +6578,7 @@
         "lip",
         "barrel",
         "bead_groove",
+        "groove_shoulder",
         "pocket_wall",
         "black",
         "hubcap",
@@ -6462,9 +6629,9 @@
         },
         "edge_catch": {
           "color": "#8a8f94",
-          "roughness": 0.42,
-          "metalness": 0.35,
-          "envMapIntensity": 1.35,
+          "roughness": 0.3,
+          "metalness": 0.45,
+          "envMapIntensity": 1.8,
           "clearcoat": 0,
           "specularIntensity": 0.35
         },
@@ -6475,16 +6642,24 @@
           "envMapIntensity": 1.15
         },
         "bead_groove": {
-          "color": "#43484d",
-          "roughness": 0.72,
-          "metalness": 0.12,
-          "envMapIntensity": 0.65
+          "color": "#3b4045",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.5
+        },
+        "groove_shoulder": {
+          "color": "#8a8f94",
+          "roughness": 0.85,
+          "metalness": 0.02,
+          "envMapIntensity": 2,
+          "clearcoat": 0,
+          "specularIntensity": 0.15
         },
         "pocket_wall": {
           "color": "#8a8f94",
-          "roughness": 0.58,
+          "roughness": 0.53,
           "metalness": 0.1,
-          "envMapIntensity": 3.4,
+          "envMapIntensity": 3.8,
           "clearcoat": 0,
           "specularIntensity": 0.35
         },
@@ -6603,6 +6778,7 @@
         "lip",
         "barrel",
         "bead_groove",
+        "groove_shoulder",
         "pocket_wall",
         "black",
         "hubcap",
@@ -6653,9 +6829,9 @@
         },
         "edge_catch": {
           "color": "#8a8f94",
-          "roughness": 0.42,
-          "metalness": 0.35,
-          "envMapIntensity": 1.35,
+          "roughness": 0.3,
+          "metalness": 0.45,
+          "envMapIntensity": 1.8,
           "clearcoat": 0,
           "specularIntensity": 0.35
         },
@@ -6666,16 +6842,24 @@
           "envMapIntensity": 1.15
         },
         "bead_groove": {
-          "color": "#43484d",
-          "roughness": 0.72,
-          "metalness": 0.12,
-          "envMapIntensity": 0.65
+          "color": "#3b4045",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.5
+        },
+        "groove_shoulder": {
+          "color": "#8a8f94",
+          "roughness": 0.85,
+          "metalness": 0.02,
+          "envMapIntensity": 2,
+          "clearcoat": 0,
+          "specularIntensity": 0.15
         },
         "pocket_wall": {
           "color": "#8a8f94",
-          "roughness": 0.58,
+          "roughness": 0.53,
           "metalness": 0.1,
-          "envMapIntensity": 3.4,
+          "envMapIntensity": 3.8,
           "clearcoat": 0,
           "specularIntensity": 0.35
         },
