@@ -332,3 +332,25 @@ Generator counts and file sizes:
 | Shanaber | 13,792 → 14,212 | 1,265,984 → 1,298,864 | 322,052 / 327,380 |
 
 Left/right sizes apply to front and rear. Method's added radial bands, rear-bore transition and rounded polar pockets account for the increase; Shanaber adds 420 nose triangles. Rebuilt only authored aftermarket rim GLBs. `index.html`, source car GLBs and their attributes, stock rim, 462 mm outer lip diameter, wheel offsets, 5×150 centres, adapters, rotor/caliper/shield geometry, body locks, Three.js version and render-pass count are untouched. The requested steel nose shaping is confined to its original outer envelope. All seven items have implementation work; item 2's incompatible approximate nut-circle radius remains explicitly excepted above.
+
+## Task 2 fix-up 1 — source-edge artefacts and material relief (2026-11-05)
+
+Pulled/rebased to `f05fe23` before editing and re-read TARGET, its Variants table, VERIFIED and the relevant decision entries. TARGET is unchanged; there is no proposed correction to it. Inspected final 1600×1000 Side, front 3/4 and Rear captures plus a camera-zoom-3 door-gap crop, all outside Git. No test suites, comparison images or reports were produced. Source GLBs, POSITION/NORMAL/COLOR_0, transforms, design locks, lighting, Three.js version and render-pass count are unchanged. The only new vertex input is a transient material mask identifying existing lettering islands.
+
+1. **Stray dashes — partial; source A-pillar detail retained.** Added material depth offsets for the existing door/bonnet paint and separated the overlapping body paint-node material cache; removed the synthetic hem-darkening stroke entirely. Chose depth ordering rather than painting replacement lines or deleting source faces.
+   Side/hero show the beltline, sill and rear-quarter shading without the previous broken secondary strokes. A source-surface ray inspection identifies the remaining small A-pillar projection as `body_shell/black_12`; that stored trim detail remains visible in Side. Rejected erasing/repainting the source trim to claim a complete fix: TARGET's source-design rule wins, so item 1 is not claimed complete.
+
+2. **Door shuts and brown fringe.** Hem overlay → source crevice only, with colour correction covering the source fold and its neighbouring antialiased pixels; source sampling now reaches y 1.30. Neutralised hidden cabin surfaces below the beltline, including cabin-centre upholstery actually visible through the gap, rather than only the side backing.
+   Rejected another width-clamped drawn line and a darkest-pixel-only judgement. The final 3× crop shows a single thin grey stroke through the top, middle and bottom, without the former brown lower section or paired dashed hairlines; Side/hero retain the source curve. No independent acceptance score or claimed test result.
+
+3. **Bonnet/grille crevice.** Pure-black upper backing → neutral dark-grey material fill with a vertical depth gradient on the existing grille/upper-front backing faces (`unsorted_07/08`). The stored upper strip spans y 1.0759–1.1142; the visible opening remains geometrically wide.
+   Chose the requested shaded-crevice route rather than moving the bonnet/grille, hiding faces or drawing a narrower border. Hero shows a grey return above the darker recessed opening instead of one uniformly black band; this is a shading fix, not a claim that the source opening was narrowed to two pixels.
+
+4. **Front satin silver.** Grille colour/roughness/metalness/environment `#bdc5cc/.38/.60/1.0 → #cbd2d8/.30/.78/1.8`; lamp chrome uses `#aeb8c0` and environment `1.4`. Normal-dependent diffuse support and source-edge catches replace the more uniform grey support.
+   Rejected mirror cards, global lighting changes and housing/grille redesign. Hero shows brighter upper bar edges, mid-grey lower faces, shaped surround returns and silver lamp rims against the white paint. Lens, indicator and reflector materials are untouched.
+
+5. **LAND CRUISER relief, side and rear.** Lower-door source letter islands now receive their own `.95` diffuse support and `.36` edge response via a read-only connectivity-derived `reliefLetter` rendering attribute; the surrounding strip and handle keep their materials. Rear letter flanks receive less fill and stronger `.34` catches; garnish edge response `.06 → .10`.
+   Rejected recolouring the whole lower-door strip, moving/rebuilding letters or adding text decals. Side/hero show light, legible door-strip lettering rather than dark faint marks; Rear keeps the readable lettering with more distinct relief edges on the satin bar.
+
+6. **Handle cups.** Full-cup AO/valley treatment → weak source occlusion below the handle only, no upper-cup valley/ridge enhancement, and a local upper-cup material fill floor calibrated for the existing AgX exposure. Stored and shader normals are unchanged.
+   Rejected smoothing the cup, replacing geometry and additive fill that left a grey/bright blob. The final 3× crop shows clean paint above and beside the handle, with the source cup and contact definition beneath it; Side/hero no longer show the surrounding grey smudge.
