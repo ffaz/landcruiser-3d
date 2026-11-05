@@ -4617,7 +4617,9 @@
         "rim",
         "barrel",
         "pocket_wall",
+        "edge_catch",
         "black",
+        "nut_metal",
         "lettering",
         "tyre",
         "backing",
@@ -4626,7 +4628,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 21056,
+      "triangles": 27469,
       "bounds": {
         "min": [
           -1.901999989748001,
@@ -4651,6 +4653,26 @@
           "roughness": 0.58,
           "metalness": 0.45,
           "envMapIntensity": 1
+        },
+        "lip": {
+          "color": "#55595d",
+          "roughness": 0.8,
+          "metalness": 0.08,
+          "envMapIntensity": 2.4,
+          "clearcoat": 0,
+          "specularIntensity": 0.2
+        },
+        "edge_catch": {
+          "color": "#55595d",
+          "roughness": 0.42,
+          "metalness": 0.35,
+          "envMapIntensity": 1.35
+        },
+        "nut_metal": {
+          "color": "#636b73",
+          "roughness": 0.38,
+          "metalness": 0.4,
+          "envMapIntensity": 1.15
         },
         "bead_groove": {
           "color": "#43484d",
@@ -4750,7 +4772,7 @@
         "ventCount": 9,
         "rotorDiameter_mm": 354,
         "methodWindowRadii_mm": null,
-        "capDiameter_mm": 110,
+        "capDiameter_mm": 76,
         "rubberFillerOuter_mm": 534,
         "metalFlange_mm": 462
       },
@@ -4771,7 +4793,9 @@
         "rim",
         "barrel",
         "pocket_wall",
+        "edge_catch",
         "black",
+        "nut_metal",
         "lettering",
         "tyre",
         "backing",
@@ -4780,7 +4804,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 21056,
+      "triangles": 27469,
       "bounds": {
         "min": [
           -1.901999989748001,
@@ -4805,6 +4829,26 @@
           "roughness": 0.58,
           "metalness": 0.45,
           "envMapIntensity": 1
+        },
+        "lip": {
+          "color": "#55595d",
+          "roughness": 0.8,
+          "metalness": 0.08,
+          "envMapIntensity": 2.4,
+          "clearcoat": 0,
+          "specularIntensity": 0.2
+        },
+        "edge_catch": {
+          "color": "#55595d",
+          "roughness": 0.42,
+          "metalness": 0.35,
+          "envMapIntensity": 1.35
+        },
+        "nut_metal": {
+          "color": "#636b73",
+          "roughness": 0.38,
+          "metalness": 0.4,
+          "envMapIntensity": 1.15
         },
         "bead_groove": {
           "color": "#43484d",
@@ -4904,7 +4948,7 @@
         "ventCount": 9,
         "rotorDiameter_mm": 354,
         "methodWindowRadii_mm": null,
-        "capDiameter_mm": 110,
+        "capDiameter_mm": 76,
         "rubberFillerOuter_mm": 534,
         "metalFlange_mm": 462
       },
@@ -4925,7 +4969,9 @@
         "rim",
         "barrel",
         "pocket_wall",
+        "edge_catch",
         "black",
+        "nut_metal",
         "lettering",
         "tyre",
         "backing",
@@ -4934,7 +4980,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 21056,
+      "triangles": 27469,
       "bounds": {
         "min": [
           0.948000010251999,
@@ -4959,6 +5005,26 @@
           "roughness": 0.58,
           "metalness": 0.45,
           "envMapIntensity": 1
+        },
+        "lip": {
+          "color": "#55595d",
+          "roughness": 0.8,
+          "metalness": 0.08,
+          "envMapIntensity": 2.4,
+          "clearcoat": 0,
+          "specularIntensity": 0.2
+        },
+        "edge_catch": {
+          "color": "#55595d",
+          "roughness": 0.42,
+          "metalness": 0.35,
+          "envMapIntensity": 1.35
+        },
+        "nut_metal": {
+          "color": "#636b73",
+          "roughness": 0.38,
+          "metalness": 0.4,
+          "envMapIntensity": 1.15
         },
         "bead_groove": {
           "color": "#43484d",
@@ -5058,7 +5124,7 @@
         "ventCount": 9,
         "rotorDiameter_mm": 354,
         "methodWindowRadii_mm": null,
-        "capDiameter_mm": 110,
+        "capDiameter_mm": 76,
         "rubberFillerOuter_mm": 534,
         "metalFlange_mm": 462
       },
@@ -5079,7 +5145,9 @@
         "rim",
         "barrel",
         "pocket_wall",
+        "edge_catch",
         "black",
+        "nut_metal",
         "lettering",
         "tyre",
         "backing",
@@ -5088,7 +5156,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 21056,
+      "triangles": 27469,
       "bounds": {
         "min": [
           0.948000010251999,
@@ -5113,6 +5181,26 @@
           "roughness": 0.58,
           "metalness": 0.45,
           "envMapIntensity": 1
+        },
+        "lip": {
+          "color": "#55595d",
+          "roughness": 0.8,
+          "metalness": 0.08,
+          "envMapIntensity": 2.4,
+          "clearcoat": 0,
+          "specularIntensity": 0.2
+        },
+        "edge_catch": {
+          "color": "#55595d",
+          "roughness": 0.42,
+          "metalness": 0.35,
+          "envMapIntensity": 1.35
+        },
+        "nut_metal": {
+          "color": "#636b73",
+          "roughness": 0.38,
+          "metalness": 0.4,
+          "envMapIntensity": 1.15
         },
         "bead_groove": {
           "color": "#43484d",
@@ -5212,7 +5300,7 @@
         "ventCount": 9,
         "rotorDiameter_mm": 354,
         "methodWindowRadii_mm": null,
-        "capDiameter_mm": 110,
+        "capDiameter_mm": 76,
         "rubberFillerOuter_mm": 534,
         "metalFlange_mm": 462
       },
@@ -5232,16 +5320,18 @@
       "zones": [
         "rim",
         "barrel",
-        "hub_metal",
+        "pocket_wall",
+        "nut_metal",
         "black",
         "tyre",
         "backing",
         "brake",
         "hat",
+        "hub_metal",
         "caliper",
         "brake_detail"
       ],
-      "triangles": 14212,
+      "triangles": 21660,
       "bounds": {
         "min": [
           -1.901999989748001,
@@ -5267,6 +5357,26 @@
           "metalness": 0.25,
           "envMapIntensity": 1.2
         },
+        "lip": {
+          "color": "#d5dade",
+          "roughness": 0.8,
+          "metalness": 0.08,
+          "envMapIntensity": 2.4,
+          "clearcoat": 0,
+          "specularIntensity": 0.2
+        },
+        "edge_catch": {
+          "color": "#d5dade",
+          "roughness": 0.42,
+          "metalness": 0.35,
+          "envMapIntensity": 1.35
+        },
+        "nut_metal": {
+          "color": "#81898f",
+          "roughness": 0.65,
+          "metalness": 0.4,
+          "envMapIntensity": 1.15
+        },
         "bead_groove": {
           "color": "#43484d",
           "roughness": 0.72,
@@ -5275,15 +5385,17 @@
         },
         "pocket_wall": {
           "color": "#d5dade",
-          "roughness": 0.4,
-          "metalness": 0.3,
-          "envMapIntensity": 1.1
+          "roughness": 0.75,
+          "metalness": 0.1,
+          "envMapIntensity": 0.9
         },
         "hub_metal": {
-          "color": "#bdc5cb",
-          "roughness": 0.4,
-          "metalness": 0.35,
-          "envMapIntensity": 1.1
+          "color": "#626a70",
+          "roughness": 0.82,
+          "metalness": 0.15,
+          "envMapIntensity": 0.45,
+          "clearcoat": 0,
+          "specularIntensity": 0.2
         },
         "chrome": {
           "color": "#858c92",
@@ -5385,16 +5497,18 @@
       "zones": [
         "rim",
         "barrel",
-        "hub_metal",
+        "pocket_wall",
+        "nut_metal",
         "black",
         "tyre",
         "backing",
         "brake",
         "hat",
+        "hub_metal",
         "caliper",
         "brake_detail"
       ],
-      "triangles": 14212,
+      "triangles": 21660,
       "bounds": {
         "min": [
           -1.901999989748001,
@@ -5420,6 +5534,26 @@
           "metalness": 0.25,
           "envMapIntensity": 1.2
         },
+        "lip": {
+          "color": "#d5dade",
+          "roughness": 0.8,
+          "metalness": 0.08,
+          "envMapIntensity": 2.4,
+          "clearcoat": 0,
+          "specularIntensity": 0.2
+        },
+        "edge_catch": {
+          "color": "#d5dade",
+          "roughness": 0.42,
+          "metalness": 0.35,
+          "envMapIntensity": 1.35
+        },
+        "nut_metal": {
+          "color": "#81898f",
+          "roughness": 0.65,
+          "metalness": 0.4,
+          "envMapIntensity": 1.15
+        },
         "bead_groove": {
           "color": "#43484d",
           "roughness": 0.72,
@@ -5428,15 +5562,17 @@
         },
         "pocket_wall": {
           "color": "#d5dade",
-          "roughness": 0.4,
-          "metalness": 0.3,
-          "envMapIntensity": 1.1
+          "roughness": 0.75,
+          "metalness": 0.1,
+          "envMapIntensity": 0.9
         },
         "hub_metal": {
-          "color": "#bdc5cb",
-          "roughness": 0.4,
-          "metalness": 0.35,
-          "envMapIntensity": 1.1
+          "color": "#626a70",
+          "roughness": 0.82,
+          "metalness": 0.15,
+          "envMapIntensity": 0.45,
+          "clearcoat": 0,
+          "specularIntensity": 0.2
         },
         "chrome": {
           "color": "#858c92",
@@ -5538,16 +5674,18 @@
       "zones": [
         "rim",
         "barrel",
-        "hub_metal",
+        "pocket_wall",
+        "nut_metal",
         "black",
         "tyre",
         "backing",
         "brake",
         "hat",
+        "hub_metal",
         "caliper",
         "brake_detail"
       ],
-      "triangles": 14212,
+      "triangles": 21660,
       "bounds": {
         "min": [
           0.948000010251999,
@@ -5573,6 +5711,26 @@
           "metalness": 0.25,
           "envMapIntensity": 1.2
         },
+        "lip": {
+          "color": "#d5dade",
+          "roughness": 0.8,
+          "metalness": 0.08,
+          "envMapIntensity": 2.4,
+          "clearcoat": 0,
+          "specularIntensity": 0.2
+        },
+        "edge_catch": {
+          "color": "#d5dade",
+          "roughness": 0.42,
+          "metalness": 0.35,
+          "envMapIntensity": 1.35
+        },
+        "nut_metal": {
+          "color": "#81898f",
+          "roughness": 0.65,
+          "metalness": 0.4,
+          "envMapIntensity": 1.15
+        },
         "bead_groove": {
           "color": "#43484d",
           "roughness": 0.72,
@@ -5581,15 +5739,17 @@
         },
         "pocket_wall": {
           "color": "#d5dade",
-          "roughness": 0.4,
-          "metalness": 0.3,
-          "envMapIntensity": 1.1
+          "roughness": 0.75,
+          "metalness": 0.1,
+          "envMapIntensity": 0.9
         },
         "hub_metal": {
-          "color": "#bdc5cb",
-          "roughness": 0.4,
-          "metalness": 0.35,
-          "envMapIntensity": 1.1
+          "color": "#626a70",
+          "roughness": 0.82,
+          "metalness": 0.15,
+          "envMapIntensity": 0.45,
+          "clearcoat": 0,
+          "specularIntensity": 0.2
         },
         "chrome": {
           "color": "#858c92",
@@ -5691,16 +5851,18 @@
       "zones": [
         "rim",
         "barrel",
-        "hub_metal",
+        "pocket_wall",
+        "nut_metal",
         "black",
         "tyre",
         "backing",
         "brake",
         "hat",
+        "hub_metal",
         "caliper",
         "brake_detail"
       ],
-      "triangles": 14212,
+      "triangles": 21660,
       "bounds": {
         "min": [
           0.948000010251999,
@@ -5726,6 +5888,26 @@
           "metalness": 0.25,
           "envMapIntensity": 1.2
         },
+        "lip": {
+          "color": "#d5dade",
+          "roughness": 0.8,
+          "metalness": 0.08,
+          "envMapIntensity": 2.4,
+          "clearcoat": 0,
+          "specularIntensity": 0.2
+        },
+        "edge_catch": {
+          "color": "#d5dade",
+          "roughness": 0.42,
+          "metalness": 0.35,
+          "envMapIntensity": 1.35
+        },
+        "nut_metal": {
+          "color": "#81898f",
+          "roughness": 0.65,
+          "metalness": 0.4,
+          "envMapIntensity": 1.15
+        },
         "bead_groove": {
           "color": "#43484d",
           "roughness": 0.72,
@@ -5734,15 +5916,17 @@
         },
         "pocket_wall": {
           "color": "#d5dade",
-          "roughness": 0.4,
-          "metalness": 0.3,
-          "envMapIntensity": 1.1
+          "roughness": 0.75,
+          "metalness": 0.1,
+          "envMapIntensity": 0.9
         },
         "hub_metal": {
-          "color": "#bdc5cb",
-          "roughness": 0.4,
-          "metalness": 0.35,
-          "envMapIntensity": 1.1
+          "color": "#626a70",
+          "roughness": 0.82,
+          "metalness": 0.15,
+          "envMapIntensity": 0.45,
+          "clearcoat": 0,
+          "specularIntensity": 0.2
         },
         "chrome": {
           "color": "#858c92",
@@ -5843,6 +6027,7 @@
       "rigidClass": "wheel",
       "zones": [
         "rim",
+        "lip",
         "barrel",
         "bead_groove",
         "pocket_wall",
@@ -5857,7 +6042,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 23010,
+      "triangles": 29759,
       "bounds": {
         "min": [
           -1.901999989748001,
@@ -5867,7 +6052,7 @@
         "max": [
           -1.368000010251999,
           0.6634999897480012,
-          0.9659638375043869
+          0.9691080123186111
         ]
       },
       "beadSeat_mm": 431.8,
@@ -5885,6 +6070,28 @@
           "clearcoat": 0,
           "specularIntensity": 0.35
         },
+        "lip": {
+          "color": "#8a8f94",
+          "roughness": 0.8,
+          "metalness": 0.08,
+          "envMapIntensity": 2.4,
+          "clearcoat": 0,
+          "specularIntensity": 0.2
+        },
+        "edge_catch": {
+          "color": "#8a8f94",
+          "roughness": 0.42,
+          "metalness": 0.35,
+          "envMapIntensity": 1.35,
+          "clearcoat": 0,
+          "specularIntensity": 0.35
+        },
+        "nut_metal": {
+          "color": "#636b73",
+          "roughness": 0.38,
+          "metalness": 0.4,
+          "envMapIntensity": 1.15
+        },
         "bead_groove": {
           "color": "#43484d",
           "roughness": 0.72,
@@ -5893,9 +6100,9 @@
         },
         "pocket_wall": {
           "color": "#8a8f94",
-          "roughness": 0.66,
+          "roughness": 0.58,
           "metalness": 0.1,
-          "envMapIntensity": 2.2,
+          "envMapIntensity": 3.4,
           "clearcoat": 0,
           "specularIntensity": 0.35
         },
@@ -5924,10 +6131,10 @@
           "envMapIntensity": 0.22
         },
         "brake": {
-          "color": "#4c4f52",
-          "roughness": 0.5,
-          "metalness": 0.25,
-          "envMapIntensity": 0.65
+          "color": "#373c41",
+          "roughness": 0.62,
+          "metalness": 0.3,
+          "envMapIntensity": 0.75
         },
         "hat": {
           "color": "#303438",
@@ -5948,10 +6155,10 @@
           "envMapIntensity": 0.65
         },
         "caliper": {
-          "color": "#53585c",
-          "roughness": 0.55,
-          "metalness": 0.25,
-          "envMapIntensity": 0.65
+          "color": "#292e32",
+          "roughness": 0.7,
+          "metalness": 0.18,
+          "envMapIntensity": 0.55
         },
         "backing": {
           "color": "#14181c",
@@ -6011,6 +6218,7 @@
       "rigidClass": "wheel",
       "zones": [
         "rim",
+        "lip",
         "barrel",
         "bead_groove",
         "pocket_wall",
@@ -6025,12 +6233,12 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 23010,
+      "triangles": 29759,
       "bounds": {
         "min": [
           -1.901999989748001,
           0.12950001025199892,
-          -0.9659638375043869
+          -0.9691080123186111
         ],
         "max": [
           -1.368000010251999,
@@ -6053,6 +6261,28 @@
           "clearcoat": 0,
           "specularIntensity": 0.35
         },
+        "lip": {
+          "color": "#8a8f94",
+          "roughness": 0.8,
+          "metalness": 0.08,
+          "envMapIntensity": 2.4,
+          "clearcoat": 0,
+          "specularIntensity": 0.2
+        },
+        "edge_catch": {
+          "color": "#8a8f94",
+          "roughness": 0.42,
+          "metalness": 0.35,
+          "envMapIntensity": 1.35,
+          "clearcoat": 0,
+          "specularIntensity": 0.35
+        },
+        "nut_metal": {
+          "color": "#636b73",
+          "roughness": 0.38,
+          "metalness": 0.4,
+          "envMapIntensity": 1.15
+        },
         "bead_groove": {
           "color": "#43484d",
           "roughness": 0.72,
@@ -6061,9 +6291,9 @@
         },
         "pocket_wall": {
           "color": "#8a8f94",
-          "roughness": 0.66,
+          "roughness": 0.58,
           "metalness": 0.1,
-          "envMapIntensity": 2.2,
+          "envMapIntensity": 3.4,
           "clearcoat": 0,
           "specularIntensity": 0.35
         },
@@ -6092,10 +6322,10 @@
           "envMapIntensity": 0.22
         },
         "brake": {
-          "color": "#4c4f52",
-          "roughness": 0.5,
-          "metalness": 0.25,
-          "envMapIntensity": 0.65
+          "color": "#373c41",
+          "roughness": 0.62,
+          "metalness": 0.3,
+          "envMapIntensity": 0.75
         },
         "hat": {
           "color": "#303438",
@@ -6116,10 +6346,10 @@
           "envMapIntensity": 0.65
         },
         "caliper": {
-          "color": "#53585c",
-          "roughness": 0.55,
-          "metalness": 0.25,
-          "envMapIntensity": 0.65
+          "color": "#292e32",
+          "roughness": 0.7,
+          "metalness": 0.18,
+          "envMapIntensity": 0.55
         },
         "backing": {
           "color": "#14181c",
@@ -6179,6 +6409,7 @@
       "rigidClass": "wheel",
       "zones": [
         "rim",
+        "lip",
         "barrel",
         "bead_groove",
         "pocket_wall",
@@ -6193,7 +6424,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 23010,
+      "triangles": 29759,
       "bounds": {
         "min": [
           0.948000010251999,
@@ -6203,7 +6434,7 @@
         "max": [
           1.4819999897480012,
           0.6634999897480012,
-          0.9634638375043869
+          0.9666080123186112
         ]
       },
       "beadSeat_mm": 431.8,
@@ -6221,6 +6452,28 @@
           "clearcoat": 0,
           "specularIntensity": 0.35
         },
+        "lip": {
+          "color": "#8a8f94",
+          "roughness": 0.8,
+          "metalness": 0.08,
+          "envMapIntensity": 2.4,
+          "clearcoat": 0,
+          "specularIntensity": 0.2
+        },
+        "edge_catch": {
+          "color": "#8a8f94",
+          "roughness": 0.42,
+          "metalness": 0.35,
+          "envMapIntensity": 1.35,
+          "clearcoat": 0,
+          "specularIntensity": 0.35
+        },
+        "nut_metal": {
+          "color": "#636b73",
+          "roughness": 0.38,
+          "metalness": 0.4,
+          "envMapIntensity": 1.15
+        },
         "bead_groove": {
           "color": "#43484d",
           "roughness": 0.72,
@@ -6229,9 +6482,9 @@
         },
         "pocket_wall": {
           "color": "#8a8f94",
-          "roughness": 0.66,
+          "roughness": 0.58,
           "metalness": 0.1,
-          "envMapIntensity": 2.2,
+          "envMapIntensity": 3.4,
           "clearcoat": 0,
           "specularIntensity": 0.35
         },
@@ -6260,10 +6513,10 @@
           "envMapIntensity": 0.22
         },
         "brake": {
-          "color": "#4c4f52",
-          "roughness": 0.5,
-          "metalness": 0.25,
-          "envMapIntensity": 0.65
+          "color": "#373c41",
+          "roughness": 0.62,
+          "metalness": 0.3,
+          "envMapIntensity": 0.75
         },
         "hat": {
           "color": "#303438",
@@ -6284,10 +6537,10 @@
           "envMapIntensity": 0.65
         },
         "caliper": {
-          "color": "#53585c",
-          "roughness": 0.55,
-          "metalness": 0.25,
-          "envMapIntensity": 0.65
+          "color": "#292e32",
+          "roughness": 0.7,
+          "metalness": 0.18,
+          "envMapIntensity": 0.55
         },
         "backing": {
           "color": "#14181c",
@@ -6347,6 +6600,7 @@
       "rigidClass": "wheel",
       "zones": [
         "rim",
+        "lip",
         "barrel",
         "bead_groove",
         "pocket_wall",
@@ -6361,12 +6615,12 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 23010,
+      "triangles": 29759,
       "bounds": {
         "min": [
           0.948000010251999,
           0.12950001025199892,
-          -0.9634638375043869
+          -0.9666080123186112
         ],
         "max": [
           1.4819999897480012,
@@ -6389,6 +6643,28 @@
           "clearcoat": 0,
           "specularIntensity": 0.35
         },
+        "lip": {
+          "color": "#8a8f94",
+          "roughness": 0.8,
+          "metalness": 0.08,
+          "envMapIntensity": 2.4,
+          "clearcoat": 0,
+          "specularIntensity": 0.2
+        },
+        "edge_catch": {
+          "color": "#8a8f94",
+          "roughness": 0.42,
+          "metalness": 0.35,
+          "envMapIntensity": 1.35,
+          "clearcoat": 0,
+          "specularIntensity": 0.35
+        },
+        "nut_metal": {
+          "color": "#636b73",
+          "roughness": 0.38,
+          "metalness": 0.4,
+          "envMapIntensity": 1.15
+        },
         "bead_groove": {
           "color": "#43484d",
           "roughness": 0.72,
@@ -6397,9 +6673,9 @@
         },
         "pocket_wall": {
           "color": "#8a8f94",
-          "roughness": 0.66,
+          "roughness": 0.58,
           "metalness": 0.1,
-          "envMapIntensity": 2.2,
+          "envMapIntensity": 3.4,
           "clearcoat": 0,
           "specularIntensity": 0.35
         },
@@ -6428,10 +6704,10 @@
           "envMapIntensity": 0.22
         },
         "brake": {
-          "color": "#4c4f52",
-          "roughness": 0.5,
-          "metalness": 0.25,
-          "envMapIntensity": 0.65
+          "color": "#373c41",
+          "roughness": 0.62,
+          "metalness": 0.3,
+          "envMapIntensity": 0.75
         },
         "hat": {
           "color": "#303438",
@@ -6452,10 +6728,10 @@
           "envMapIntensity": 0.65
         },
         "caliper": {
-          "color": "#53585c",
-          "roughness": 0.55,
-          "metalness": 0.25,
-          "envMapIntensity": 0.65
+          "color": "#292e32",
+          "roughness": 0.7,
+          "metalness": 0.18,
+          "envMapIntensity": 0.55
         },
         "backing": {
           "color": "#14181c",

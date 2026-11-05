@@ -354,3 +354,52 @@ Pulled/rebased to `f05fe23` before editing and re-read TARGET, its Variants tabl
 
 6. **Handle cups.** Full-cup AO/valley treatment → weak source occlusion below the handle only, no upper-cup valley/ridge enhancement, and a local upper-cup material fill floor calibrated for the existing AgX exposure. Stored and shader normals are unchanged.
    Rejected smoothing the cup, replacing geometry and additive fill that left a grey/bright blob. The final 3× crop shows clean paint above and beside the handle, with the source cup and contact definition beneath it; Side/hero no longer show the surrounding grey smudge.
+
+## Task 5 fix-up 3
+
+Started from `f05fe23`; read TARGET's rim rows and section 2 Variants table plus VERIFIED's photo tags. **No disagreement with TARGET; TARGET.md is unchanged.** Method/KMC front catalogue references judge face design/colour/layout only, never their six-lug mounts or hub pads. The KMC five-lug quarter reference alone judges nut seating. Shanaber's face-on tile judges the pressing, not the vehicle hub. Our three mounts remain five nuts on 5×150; Method's raised titanium ring ends at .34R.
+
+Inspected the owner's attached photos and montage against one final face and 3/4 on-car capture of each rim. Normalized face capture lip radii were approximately 306 px (KMC, matching the 620 px front reference), 472 px (Method, matching the 1000 px front reference), and 147 px (Shanaber, matching the face tile in the review montage). KMC's quarter was inspected against its five-lug quarter photograph. Reference images stayed in the conversation; no other photos were downloaded, and neither references nor screenshots/copies enter Git. Superseded working captures were replaced after correcting geometry conflicts they exposed. No test suites or independent scoring were run.
+
+### Method MR705
+
+1. **Openings:** single planar chamfer → two-stage curved pocket shoulder, retaining the .02R band; wall environment `2.2 → 3.4` with a broader frontward normal lobe. Dark iron now has radial baked shading and a darker caliper, retaining the original rotor/caliper/barrel geometry.
+   Rejected a uniform painted aperture fill, white empty cutouts that discard the locked brakes, and extra live lights/passes. Face shows a lit perimeter and machining/radial variation behind it; 3/4 shows the wall followed by darker hardware at a separate depth, including visible barrel gaps.
+2. **Corners:** short clamped 3.5 mm corner rounding → true 8 mm edge-length fillets with five quadratic subdivisions and separate circular inner/outer arcs.
+   Rejected hard trapezoids and increasing angular widths/radii to fake roundness. Against the attached front photo, all ten mouths have softer corner turns while retaining the accepted radial reaches, short/long alternation and exact 36° pitch.
+3. **Raised hub:** titanium top `z .113 → .123 m` over the `.106 m` flat face, with a light upper catch and a shaded descending edge ending at **.34R**. Five black nuts retain their 75 mm circle; the small cap remains .13R.
+   Rejected copying the six-lug dark well or pad, and a zero-width step that caused a self-intersecting generated shell. Final face/3/4 show a raised titanium platform with an outer shadow edge, without restoring the old oversized black recess or hub moiré.
+4. **Lip:** narrow, angular front roll → broad convex front profile within the unchanged 231 mm outer radius. Same #8a8f94 pigment, with roughness `.80`, metalness `.08`, environment `2.4` and restrained specular response rather than the face's `.62/.10/3.0` response.
+   Rejected a machined bright border and lowering the whole passing face tone. The final pair shows a thicker rounded matte rim with a broad light-to-shade falloff instead of a hard bright flange; groove and face-band locations remain unchanged.
+5. **METHOD relief:** glyph width/height `10/9 → 11.5/10.5 mm`, extrusion/bevel `.65/.20 → 1.20/.35 mm`; retains the face pigment and the accepted .41R position above/below the hub.
+   Rejected black printed lettering, moving it back to the outer band and making the face darker for contrast. Front reads the bolder words against the face; 3/4 reveals lit bevel tops and shaded lower edges. The lower word remains upside-down.
+
+### Shanaber Gulf steel
+
+1. **Open centre:** broad smooth dome → narrower stepped spindle nose with a flat top, softened shoulders and a small centre drilling, inside the original nose envelope. Bare metal becomes dull/darker `#626a70/.82/.15/.45`; nuts use separate restrained metal. Removed the redundant ring that was coplanar with the painted pressing.
+   Rejected a domed cover, a shiny collar and copying the photographed vehicle hub. Both views show the open bore around a smaller raised matte metal nose, with five metal nuts on the painted metal ring; the bright collar is gone.
+2. **Pressed holes:** diameter `29 → 26 mm`; circle sides `16 → 24`, softened two-segment 1.5 mm pressed-edge bevel and rougher hole-wall paint.
+   Rejected raised flanges, hard reflective inner rings and changes to the accepted sixteen-hole count/half-pitch phase. The face comparison shows slightly smaller plain openings; 3/4 keeps the wall depth without sharp interior glare, with the valve between the lower pair.
+3. **Lip and steps:** thin front flange → broader convex rolled lip, plus shallow continuous rolled contours on the inner and outer face. The accepted satin silver-grey paint is retained.
+   Rejected chrome, painted concentric lines and narrow flat ridge tops that looked like stripes. Face/3/4 show a wider rounded outer rim and soft raised concentric transitions through the pressing, consistent with the permitted Shanaber face-on reference.
+
+### KMC KM720 Roswell
+
+1. **Small cap:** cap radius `55 → 38 mm` (diameter `110 → 76 mm`), with a narrow raised bezel; KMC/WHEELS relief scales to fit inside the five-lug circle. The smaller cosmetic opening retains the actual rear mounting bore.
+   Rejected a large logo disc and a bright separate cap colour. The quarter photograph supports the smaller cap and bezel catch; both final views read KMC/WHEELS in the dark family. Moving only the new face plane to .088 m clears the previously hidden .085 m hub-nose front; boundary normals/shading were corrected to remove the exposed triangular streaks.
+2. **Wide pocket slots:** mouth `60×14 → 68×22 mm`, with a 4 mm wide, 6 mm deep chamfer; centre radius `169 → 174 mm`. The complete mouth and its darker throat were judged at the same lip diameter against the attached front photograph.
+   Rejected literally doubling/tripling the full mouth, which overshot the supplied photograph's complete slot outlines; instead widened the actual throat and visible chamfer. Final images show nine broad outlined pockets with lit walls and dark hardware, rather than thin black slits. Count, 40° spacing, top phase and bottom valve are unchanged.
+3. **Five nuts:** all-black heads → restrained dark metal heads with a 1 mm two-segment bevel, retaining black seats and five 20 mm service nuts on the locked 5×150 circle.
+   Rejected six nuts from the front catalogue shot, altered bolt circles and uniformly bright chrome heads. The final pair shows all five nuts with distinct rim catches and darker seats; this was checked against the five-lug quarter reference only.
+4. **Steps/lip catches:** .6 mm single finish bevel → 1.2 mm two-segment edge catches on the authored face, with dedicated same-pigment edge shading. Lip and face remain matte dark **#55595d**.
+   Rejected a lightened lip, emissive highlights and broad mirror reflection strips. Front/3/4 show crisp concentric-step catches and a restrained lip edge, while the broad face/lip stay dark as required by the owner rather than matching the brighter catalogue lighting.
+
+Build output values (triangles per rim; bytes across all four mounted GLBs):
+
+| Rim | Triangles, before → after | Four GLBs bytes, before → after | Final per left / right GLB bytes |
+|---|---:|---:|---:|
+| Method | 23,010 → 29,759 | 1,990,072 → 2,406,320 | 598,948 / 604,212 |
+| Shanaber | 14,212 → 21,660 | 1,298,864 → 1,768,760 | 439,272 / 445,108 |
+| KMC | 21,056 → 27,469 | 1,828,568 → 1,810,472 | 453,788 / 451,448 |
+
+Left/right values apply at front and rear. Rounded walls, rolled profiles, higher-sided steel holes and two-segment bevels add triangles; file compression also reflects the simpler corrected planar shading. Changed only the authored aftermarket rim generator/registration, twelve rim GLBs, their manifest entries and this log. TARGET.md, VERIFIED.md, index.html, source car/stock rim assets and their NORMAL/COLOR_0, offsets, mounting circles, adapters, brake geometry, body/wheelbase/overhang locks, Three.js version and render-pass count are unchanged.
