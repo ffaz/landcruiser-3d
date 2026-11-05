@@ -152,7 +152,7 @@
       "boltPattern": "5x150",
       "centreBore_mm": 110.1,
       "model": "steel",
-      "color": "#a8afb4",
+      "color": "#d5dade",
       "assetId": "rim_FL_steel",
       "sourceNote": "Reference-inspired face, adapted to the configured LC200 5x150 mount; not manufacturer CAD"
     },

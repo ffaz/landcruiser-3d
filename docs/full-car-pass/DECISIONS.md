@@ -234,3 +234,33 @@ Followed `docs/TARGET.md` sections 1 and 3; no conflicting owner decision. Built
   Rejected changing the shared radius for every style. Steel views show the smaller five metal nuts and visible open-centre hub.
 
 Build output counts (triangles per rim; bytes summed across its four mounted GLBs): KMC **19,018 → 19,018**, **1,710,568 → 1,722,192 B**; Method **17,774 → 17,770**, **1,602,352 → 1,626,912 B**; Shanaber **13,521 → 13,792**, **1,268,992 → 1,296,920 B**. These are generator/file-size values, not a test report. Regenerated only the twelve authored aftermarket rim GLBs and their material/catalogue metadata; source car GLBs, their NORMAL/COLOR_0, source design, body/overhang/wheelbase locks, three.js version and render-pass count are unchanged. Generated `.blend` working files remain outside the checkout; `model.py` is the reproducible source of these builds.
+
+
+## Task 5 fix-up 1
+
+Re-read TARGET sections 1 and 3 at `1aeef0a`, including the explicit dark-KMC decision. Used the reviewer's supplied Method angles/radial proportions. Built with Blender 4.3.2; inspected one final front and 3/4 on-car image of each rim at 1600×1000. Images and build working files stay outside Git; the steel pair was replaced after separating its existing centre-ring finish. No test runs or comparison reports were made; numerical image acceptance remains with the independent reviewer.
+
+1. **Dark KMC / light-defined detail:** face and lip retain exactly `#55595d`, roughness `.58`, metalness `.45`, environment `1`; explicit pocket walls and bevelled cast relief now carry the highlights.
+   Rejected lighter face/lip pigments, emissive edges and a bright machined lip. Both views retain the dark anthracite family, with step edges, pocket outlines and relief readable through illumination; the face and lip still share one finish.
+2. **KMC pocket interiors and 9-o'clock sliver:** mixed grey brake/caliper finishes → KMC-only near-black `#101418/.78/.10/.20` (colour/roughness/metalness/environment). Replaced the clamped automatic pocket bevel with a 2.2 mm inset, 4.5 mm deep tapered mouth and independent wall normals, plus a .6 mm finishing bevel.
+   Rejected painted slot decals, moving/removing the locked brake package and a brighter wall pigment. Face-on shows nine dark interiors with lit perimeter walls; 3/4 shows actual depth. The separate dark vertical sliver is no longer visible in the left slot. Count, 40° pitch and top-slot phase are retained.
+3. **KMC cap and lip marks:** unbevelled KMC relief → .28 mm cast-edge bevel; WHEELS font extrusion/bevel `.35/.10 → .65/.20 mm`. The raised lettering gets an AO floor `.92` and roughness/environment `.34/1.35`, while keeping the rim's pigment.
+   Rejected printed contrasting text and lightening the cap. The front view now clearly reads `kmc / WHEELS`; the oblique view catches the cast edges. The small 12-o'clock lip mark is also more legible with bevels and controlled relief occlusion.
+4. **Method alternating windows:** common 24° mouths → alternating **21° short / 28° long** mouths, with short at 12 o'clock. Alternating centres at 33°/39° spacing give nominal 8.5°/14.5° spoke gaps; retained short radii `.131–.163 m` and long `.1055–.165 m`.
+   Rejected equal widths and changing the already accepted radial reaches. Front shows five short and five long openings with the narrower/wider alternating spoke rhythm; 3/4 retains the layout. This uses the reviewer's official-photo measurements rather than an inaccessible photograph or a new invented reference.
+5. **Method front-visible pocket walls:** automatic 1.2 mm bevel → explicit 2.5 mm inset, 4.5 mm deep sloped pocket wall and .6 mm finish bevel. Wall colour stays the titanium face colour, with its own roughness/metalness and non-smoothed wall normals.
+   Rejected flat dark aperture polygons, a larger brake gap and contrasting painted borders. Each face-on opening now has a visible illuminated wall against the deeper hardware; 3/4 shows the wall and rear hardware at distinct depths. METHOD remains wholly on the solid land and the 1.5 mm hub-face clearance/moiré fix stays intact.
+6. **Shanaber light satin silver:** rim `#a8afb4/.44/.42/1.35 → #d5dade/.44/.25/1.20`, keeping the pressing, hole phase and broad rolled lip unchanged.
+   Rejected chrome metalness, mirror-like roughness and flattening the curved dish. Both views show lighter silver paint and a broad soft dish sheen, rather than the earlier mid-grey finish; this targets the requested 150–170 luminance range without claiming a new reviewer measurement.
+7. **Shanaber open centre / barrel:** hub nose, studs, nuts and existing centre-ring surfaces → separate satin metal `#bdc5cb/.40/.35/1.10` with restrained occlusion; inner barrel `#50585f → #939da5` retains its rough metal finish.
+   Rejected adding a cap, moving the hub/brakes and filling the bore. Front shows the metal hub nose inside the dark open-bore gap, surrounded by its metal ring and five 17 mm nuts; 3/4 shows the ring depth and a lighter barrel return through the holes. All sixteen half-pitch openings and the valve between the lower pair remain visible.
+
+Generator triangles and GLB file sizes (not a test report):
+
+| Rim | Triangles per rim, before → after | Four GLBs total bytes, before → after | Final bytes per left / right GLB |
+|---|---:|---:|---:|
+| KMC | 19,018 → 21,056 | 1,722,192 → 1,828,896 | 457,264 / 457,184 |
+| Method | 17,770 → 18,736 | 1,626,912 → 1,598,664 | 396,976 / 402,356 |
+| Shanaber | 13,792 → 13,792 | 1,296,920 → 1,265,984 | 313,560 / 319,432 |
+
+Left/right sizes apply to front and rear on the corresponding side. Added pocket-wall and letter bevel triangles account for the alloy-rim increase; no simplification was applied to source car assets. Changes are limited to the rim generator/registration code, twelve generated aftermarket rim GLBs, their manifest/catalogue metadata and this log. `index.html`, stock rim/source car GLBs, their NORMAL/COLOR_0, all fit dimensions, offsets, adapters, brake geometry, body locks, Three.js version and render-pass count are unchanged.

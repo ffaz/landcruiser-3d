@@ -4616,6 +4616,7 @@
       "zones": [
         "rim",
         "barrel",
+        "pocket_wall",
         "black",
         "lettering",
         "tyre",
@@ -4625,7 +4626,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 19018,
+      "triangles": 21056,
       "bounds": {
         "min": [
           -1.901999989748001,
@@ -4651,6 +4652,18 @@
           "metalness": 0.45,
           "envMapIntensity": 1
         },
+        "pocket_wall": {
+          "color": "#55595d",
+          "roughness": 0.4,
+          "metalness": 0.3,
+          "envMapIntensity": 1.1
+        },
+        "hub_metal": {
+          "color": "#bdc5cb",
+          "roughness": 0.4,
+          "metalness": 0.35,
+          "envMapIntensity": 1.1
+        },
         "chrome": {
           "color": "#858c92",
           "roughness": 0.34,
@@ -4670,46 +4683,46 @@
           "envMapIntensity": 0.22
         },
         "brake": {
-          "color": "#4c4f52",
-          "roughness": 0.5,
-          "metalness": 0.25,
-          "envMapIntensity": 0.65
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
         },
         "hat": {
-          "color": "#303438",
-          "roughness": 0.58,
-          "metalness": 0.25,
-          "envMapIntensity": 0.45
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
         },
         "brake_detail": {
-          "color": "#454a4e",
-          "roughness": 0.52,
-          "metalness": 0.35,
-          "envMapIntensity": 0.6
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
         },
         "barrel": {
-          "color": "#292e32",
+          "color": "#171c20",
           "roughness": 0.62,
           "metalness": 0.25,
           "envMapIntensity": 0.65
         },
         "caliper": {
-          "color": "#53585c",
-          "roughness": 0.55,
-          "metalness": 0.25,
-          "envMapIntensity": 0.65
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
         },
         "backing": {
-          "color": "#14181c",
-          "roughness": 0.82,
+          "color": "#101418",
+          "roughness": 0.78,
           "metalness": 0.1,
-          "envMapIntensity": 0.25
+          "envMapIntensity": 0.2
         },
         "lettering": {
           "color": "#55595d",
-          "roughness": 0.58,
+          "roughness": 0.34,
           "metalness": 0.45,
-          "envMapIntensity": 1
+          "envMapIntensity": 1.35
         },
         "hubcap": {
           "color": "#303438",
@@ -4751,6 +4764,7 @@
       "zones": [
         "rim",
         "barrel",
+        "pocket_wall",
         "black",
         "lettering",
         "tyre",
@@ -4760,7 +4774,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 19018,
+      "triangles": 21056,
       "bounds": {
         "min": [
           -1.901999989748001,
@@ -4786,6 +4800,18 @@
           "metalness": 0.45,
           "envMapIntensity": 1
         },
+        "pocket_wall": {
+          "color": "#55595d",
+          "roughness": 0.4,
+          "metalness": 0.3,
+          "envMapIntensity": 1.1
+        },
+        "hub_metal": {
+          "color": "#bdc5cb",
+          "roughness": 0.4,
+          "metalness": 0.35,
+          "envMapIntensity": 1.1
+        },
         "chrome": {
           "color": "#858c92",
           "roughness": 0.34,
@@ -4805,46 +4831,46 @@
           "envMapIntensity": 0.22
         },
         "brake": {
-          "color": "#4c4f52",
-          "roughness": 0.5,
-          "metalness": 0.25,
-          "envMapIntensity": 0.65
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
         },
         "hat": {
-          "color": "#303438",
-          "roughness": 0.58,
-          "metalness": 0.25,
-          "envMapIntensity": 0.45
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
         },
         "brake_detail": {
-          "color": "#454a4e",
-          "roughness": 0.52,
-          "metalness": 0.35,
-          "envMapIntensity": 0.6
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
         },
         "barrel": {
-          "color": "#292e32",
+          "color": "#171c20",
           "roughness": 0.62,
           "metalness": 0.25,
           "envMapIntensity": 0.65
         },
         "caliper": {
-          "color": "#53585c",
-          "roughness": 0.55,
-          "metalness": 0.25,
-          "envMapIntensity": 0.65
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
         },
         "backing": {
-          "color": "#14181c",
-          "roughness": 0.82,
+          "color": "#101418",
+          "roughness": 0.78,
           "metalness": 0.1,
-          "envMapIntensity": 0.25
+          "envMapIntensity": 0.2
         },
         "lettering": {
           "color": "#55595d",
-          "roughness": 0.58,
+          "roughness": 0.34,
           "metalness": 0.45,
-          "envMapIntensity": 1
+          "envMapIntensity": 1.35
         },
         "hubcap": {
           "color": "#303438",
@@ -4886,6 +4912,7 @@
       "zones": [
         "rim",
         "barrel",
+        "pocket_wall",
         "black",
         "lettering",
         "tyre",
@@ -4895,7 +4922,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 19018,
+      "triangles": 21056,
       "bounds": {
         "min": [
           0.948000010251999,
@@ -4921,6 +4948,18 @@
           "metalness": 0.45,
           "envMapIntensity": 1
         },
+        "pocket_wall": {
+          "color": "#55595d",
+          "roughness": 0.4,
+          "metalness": 0.3,
+          "envMapIntensity": 1.1
+        },
+        "hub_metal": {
+          "color": "#bdc5cb",
+          "roughness": 0.4,
+          "metalness": 0.35,
+          "envMapIntensity": 1.1
+        },
         "chrome": {
           "color": "#858c92",
           "roughness": 0.34,
@@ -4940,46 +4979,46 @@
           "envMapIntensity": 0.22
         },
         "brake": {
-          "color": "#4c4f52",
-          "roughness": 0.5,
-          "metalness": 0.25,
-          "envMapIntensity": 0.65
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
         },
         "hat": {
-          "color": "#303438",
-          "roughness": 0.58,
-          "metalness": 0.25,
-          "envMapIntensity": 0.45
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
         },
         "brake_detail": {
-          "color": "#454a4e",
-          "roughness": 0.52,
-          "metalness": 0.35,
-          "envMapIntensity": 0.6
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
         },
         "barrel": {
-          "color": "#292e32",
+          "color": "#171c20",
           "roughness": 0.62,
           "metalness": 0.25,
           "envMapIntensity": 0.65
         },
         "caliper": {
-          "color": "#53585c",
-          "roughness": 0.55,
-          "metalness": 0.25,
-          "envMapIntensity": 0.65
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
         },
         "backing": {
-          "color": "#14181c",
-          "roughness": 0.82,
+          "color": "#101418",
+          "roughness": 0.78,
           "metalness": 0.1,
-          "envMapIntensity": 0.25
+          "envMapIntensity": 0.2
         },
         "lettering": {
           "color": "#55595d",
-          "roughness": 0.58,
+          "roughness": 0.34,
           "metalness": 0.45,
-          "envMapIntensity": 1
+          "envMapIntensity": 1.35
         },
         "hubcap": {
           "color": "#303438",
@@ -5021,6 +5060,7 @@
       "zones": [
         "rim",
         "barrel",
+        "pocket_wall",
         "black",
         "lettering",
         "tyre",
@@ -5030,7 +5070,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 19018,
+      "triangles": 21056,
       "bounds": {
         "min": [
           0.948000010251999,
@@ -5056,6 +5096,18 @@
           "metalness": 0.45,
           "envMapIntensity": 1
         },
+        "pocket_wall": {
+          "color": "#55595d",
+          "roughness": 0.4,
+          "metalness": 0.3,
+          "envMapIntensity": 1.1
+        },
+        "hub_metal": {
+          "color": "#bdc5cb",
+          "roughness": 0.4,
+          "metalness": 0.35,
+          "envMapIntensity": 1.1
+        },
         "chrome": {
           "color": "#858c92",
           "roughness": 0.34,
@@ -5075,46 +5127,46 @@
           "envMapIntensity": 0.22
         },
         "brake": {
-          "color": "#4c4f52",
-          "roughness": 0.5,
-          "metalness": 0.25,
-          "envMapIntensity": 0.65
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
         },
         "hat": {
-          "color": "#303438",
-          "roughness": 0.58,
-          "metalness": 0.25,
-          "envMapIntensity": 0.45
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
         },
         "brake_detail": {
-          "color": "#454a4e",
-          "roughness": 0.52,
-          "metalness": 0.35,
-          "envMapIntensity": 0.6
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
         },
         "barrel": {
-          "color": "#292e32",
+          "color": "#171c20",
           "roughness": 0.62,
           "metalness": 0.25,
           "envMapIntensity": 0.65
         },
         "caliper": {
-          "color": "#53585c",
-          "roughness": 0.55,
-          "metalness": 0.25,
-          "envMapIntensity": 0.65
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
         },
         "backing": {
-          "color": "#14181c",
-          "roughness": 0.82,
+          "color": "#101418",
+          "roughness": 0.78,
           "metalness": 0.1,
-          "envMapIntensity": 0.25
+          "envMapIntensity": 0.2
         },
         "lettering": {
           "color": "#55595d",
-          "roughness": 0.58,
+          "roughness": 0.34,
           "metalness": 0.45,
-          "envMapIntensity": 1
+          "envMapIntensity": 1.35
         },
         "hubcap": {
           "color": "#303438",
@@ -5156,7 +5208,7 @@
       "zones": [
         "rim",
         "barrel",
-        "chrome",
+        "hub_metal",
         "black",
         "tyre",
         "backing",
@@ -5186,10 +5238,22 @@
       "replacesWheelHardware": "wheel_FL",
       "materialDefaults": {
         "rim": {
-          "color": "#a8afb4",
+          "color": "#d5dade",
           "roughness": 0.44,
-          "metalness": 0.42,
-          "envMapIntensity": 1.35
+          "metalness": 0.25,
+          "envMapIntensity": 1.2
+        },
+        "pocket_wall": {
+          "color": "#d5dade",
+          "roughness": 0.4,
+          "metalness": 0.3,
+          "envMapIntensity": 1.1
+        },
+        "hub_metal": {
+          "color": "#bdc5cb",
+          "roughness": 0.4,
+          "metalness": 0.35,
+          "envMapIntensity": 1.1
         },
         "chrome": {
           "color": "#858c92",
@@ -5228,7 +5292,7 @@
           "envMapIntensity": 0.6
         },
         "barrel": {
-          "color": "#50585f",
+          "color": "#939da5",
           "roughness": 0.62,
           "metalness": 0.25,
           "envMapIntensity": 0.65
@@ -5246,9 +5310,9 @@
           "envMapIntensity": 0.25
         },
         "lettering": {
-          "color": "#a8afb4",
-          "roughness": 0.44,
-          "metalness": 0.42,
+          "color": "#d5dade",
+          "roughness": 0.34,
+          "metalness": 0.25,
           "envMapIntensity": 1.35
         },
         "hubcap": {
@@ -5291,7 +5355,7 @@
       "zones": [
         "rim",
         "barrel",
-        "chrome",
+        "hub_metal",
         "black",
         "tyre",
         "backing",
@@ -5321,10 +5385,22 @@
       "replacesWheelHardware": "wheel_FR",
       "materialDefaults": {
         "rim": {
-          "color": "#a8afb4",
+          "color": "#d5dade",
           "roughness": 0.44,
-          "metalness": 0.42,
-          "envMapIntensity": 1.35
+          "metalness": 0.25,
+          "envMapIntensity": 1.2
+        },
+        "pocket_wall": {
+          "color": "#d5dade",
+          "roughness": 0.4,
+          "metalness": 0.3,
+          "envMapIntensity": 1.1
+        },
+        "hub_metal": {
+          "color": "#bdc5cb",
+          "roughness": 0.4,
+          "metalness": 0.35,
+          "envMapIntensity": 1.1
         },
         "chrome": {
           "color": "#858c92",
@@ -5363,7 +5439,7 @@
           "envMapIntensity": 0.6
         },
         "barrel": {
-          "color": "#50585f",
+          "color": "#939da5",
           "roughness": 0.62,
           "metalness": 0.25,
           "envMapIntensity": 0.65
@@ -5381,9 +5457,9 @@
           "envMapIntensity": 0.25
         },
         "lettering": {
-          "color": "#a8afb4",
-          "roughness": 0.44,
-          "metalness": 0.42,
+          "color": "#d5dade",
+          "roughness": 0.34,
+          "metalness": 0.25,
           "envMapIntensity": 1.35
         },
         "hubcap": {
@@ -5426,7 +5502,7 @@
       "zones": [
         "rim",
         "barrel",
-        "chrome",
+        "hub_metal",
         "black",
         "tyre",
         "backing",
@@ -5456,10 +5532,22 @@
       "replacesWheelHardware": "wheel_RL",
       "materialDefaults": {
         "rim": {
-          "color": "#a8afb4",
+          "color": "#d5dade",
           "roughness": 0.44,
-          "metalness": 0.42,
-          "envMapIntensity": 1.35
+          "metalness": 0.25,
+          "envMapIntensity": 1.2
+        },
+        "pocket_wall": {
+          "color": "#d5dade",
+          "roughness": 0.4,
+          "metalness": 0.3,
+          "envMapIntensity": 1.1
+        },
+        "hub_metal": {
+          "color": "#bdc5cb",
+          "roughness": 0.4,
+          "metalness": 0.35,
+          "envMapIntensity": 1.1
         },
         "chrome": {
           "color": "#858c92",
@@ -5498,7 +5586,7 @@
           "envMapIntensity": 0.6
         },
         "barrel": {
-          "color": "#50585f",
+          "color": "#939da5",
           "roughness": 0.62,
           "metalness": 0.25,
           "envMapIntensity": 0.65
@@ -5516,9 +5604,9 @@
           "envMapIntensity": 0.25
         },
         "lettering": {
-          "color": "#a8afb4",
-          "roughness": 0.44,
-          "metalness": 0.42,
+          "color": "#d5dade",
+          "roughness": 0.34,
+          "metalness": 0.25,
           "envMapIntensity": 1.35
         },
         "hubcap": {
@@ -5561,7 +5649,7 @@
       "zones": [
         "rim",
         "barrel",
-        "chrome",
+        "hub_metal",
         "black",
         "tyre",
         "backing",
@@ -5591,10 +5679,22 @@
       "replacesWheelHardware": "wheel_RR",
       "materialDefaults": {
         "rim": {
-          "color": "#a8afb4",
+          "color": "#d5dade",
           "roughness": 0.44,
-          "metalness": 0.42,
-          "envMapIntensity": 1.35
+          "metalness": 0.25,
+          "envMapIntensity": 1.2
+        },
+        "pocket_wall": {
+          "color": "#d5dade",
+          "roughness": 0.4,
+          "metalness": 0.3,
+          "envMapIntensity": 1.1
+        },
+        "hub_metal": {
+          "color": "#bdc5cb",
+          "roughness": 0.4,
+          "metalness": 0.35,
+          "envMapIntensity": 1.1
         },
         "chrome": {
           "color": "#858c92",
@@ -5633,7 +5733,7 @@
           "envMapIntensity": 0.6
         },
         "barrel": {
-          "color": "#50585f",
+          "color": "#939da5",
           "roughness": 0.62,
           "metalness": 0.25,
           "envMapIntensity": 0.65
@@ -5651,9 +5751,9 @@
           "envMapIntensity": 0.25
         },
         "lettering": {
-          "color": "#a8afb4",
-          "roughness": 0.44,
-          "metalness": 0.42,
+          "color": "#d5dade",
+          "roughness": 0.34,
+          "metalness": 0.25,
           "envMapIntensity": 1.35
         },
         "hubcap": {
@@ -5696,6 +5796,7 @@
       "zones": [
         "rim",
         "barrel",
+        "pocket_wall",
         "black",
         "hubcap",
         "lettering",
@@ -5707,7 +5808,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 17770,
+      "triangles": 18736,
       "bounds": {
         "min": [
           -1.901999989748001,
@@ -5732,6 +5833,18 @@
           "roughness": 0.5,
           "metalness": 0.62,
           "envMapIntensity": 1.5
+        },
+        "pocket_wall": {
+          "color": "#8a8f94",
+          "roughness": 0.4,
+          "metalness": 0.3,
+          "envMapIntensity": 1.1
+        },
+        "hub_metal": {
+          "color": "#bdc5cb",
+          "roughness": 0.4,
+          "metalness": 0.35,
+          "envMapIntensity": 1.1
         },
         "chrome": {
           "color": "#858c92",
@@ -5770,7 +5883,7 @@
           "envMapIntensity": 0.6
         },
         "barrel": {
-          "color": "#292e32",
+          "color": "#171c20",
           "roughness": 0.62,
           "metalness": 0.25,
           "envMapIntensity": 0.65
@@ -5789,9 +5902,9 @@
         },
         "lettering": {
           "color": "#8a8f94",
-          "roughness": 0.5,
+          "roughness": 0.34,
           "metalness": 0.62,
-          "envMapIntensity": 1.5
+          "envMapIntensity": 1.35
         },
         "hubcap": {
           "color": "#303438",
@@ -5838,6 +5951,7 @@
       "zones": [
         "rim",
         "barrel",
+        "pocket_wall",
         "black",
         "hubcap",
         "lettering",
@@ -5849,7 +5963,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 17770,
+      "triangles": 18736,
       "bounds": {
         "min": [
           -1.901999989748001,
@@ -5874,6 +5988,18 @@
           "roughness": 0.5,
           "metalness": 0.62,
           "envMapIntensity": 1.5
+        },
+        "pocket_wall": {
+          "color": "#8a8f94",
+          "roughness": 0.4,
+          "metalness": 0.3,
+          "envMapIntensity": 1.1
+        },
+        "hub_metal": {
+          "color": "#bdc5cb",
+          "roughness": 0.4,
+          "metalness": 0.35,
+          "envMapIntensity": 1.1
         },
         "chrome": {
           "color": "#858c92",
@@ -5912,7 +6038,7 @@
           "envMapIntensity": 0.6
         },
         "barrel": {
-          "color": "#292e32",
+          "color": "#171c20",
           "roughness": 0.62,
           "metalness": 0.25,
           "envMapIntensity": 0.65
@@ -5931,9 +6057,9 @@
         },
         "lettering": {
           "color": "#8a8f94",
-          "roughness": 0.5,
+          "roughness": 0.34,
           "metalness": 0.62,
-          "envMapIntensity": 1.5
+          "envMapIntensity": 1.35
         },
         "hubcap": {
           "color": "#303438",
@@ -5980,6 +6106,7 @@
       "zones": [
         "rim",
         "barrel",
+        "pocket_wall",
         "black",
         "hubcap",
         "lettering",
@@ -5991,7 +6118,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 17770,
+      "triangles": 18736,
       "bounds": {
         "min": [
           0.948000010251999,
@@ -6016,6 +6143,18 @@
           "roughness": 0.5,
           "metalness": 0.62,
           "envMapIntensity": 1.5
+        },
+        "pocket_wall": {
+          "color": "#8a8f94",
+          "roughness": 0.4,
+          "metalness": 0.3,
+          "envMapIntensity": 1.1
+        },
+        "hub_metal": {
+          "color": "#bdc5cb",
+          "roughness": 0.4,
+          "metalness": 0.35,
+          "envMapIntensity": 1.1
         },
         "chrome": {
           "color": "#858c92",
@@ -6054,7 +6193,7 @@
           "envMapIntensity": 0.6
         },
         "barrel": {
-          "color": "#292e32",
+          "color": "#171c20",
           "roughness": 0.62,
           "metalness": 0.25,
           "envMapIntensity": 0.65
@@ -6073,9 +6212,9 @@
         },
         "lettering": {
           "color": "#8a8f94",
-          "roughness": 0.5,
+          "roughness": 0.34,
           "metalness": 0.62,
-          "envMapIntensity": 1.5
+          "envMapIntensity": 1.35
         },
         "hubcap": {
           "color": "#303438",
@@ -6122,6 +6261,7 @@
       "zones": [
         "rim",
         "barrel",
+        "pocket_wall",
         "black",
         "hubcap",
         "lettering",
@@ -6133,7 +6273,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 17770,
+      "triangles": 18736,
       "bounds": {
         "min": [
           0.948000010251999,
@@ -6158,6 +6298,18 @@
           "roughness": 0.5,
           "metalness": 0.62,
           "envMapIntensity": 1.5
+        },
+        "pocket_wall": {
+          "color": "#8a8f94",
+          "roughness": 0.4,
+          "metalness": 0.3,
+          "envMapIntensity": 1.1
+        },
+        "hub_metal": {
+          "color": "#bdc5cb",
+          "roughness": 0.4,
+          "metalness": 0.35,
+          "envMapIntensity": 1.1
         },
         "chrome": {
           "color": "#858c92",
@@ -6196,7 +6348,7 @@
           "envMapIntensity": 0.6
         },
         "barrel": {
-          "color": "#292e32",
+          "color": "#171c20",
           "roughness": 0.62,
           "metalness": 0.25,
           "envMapIntensity": 0.65
@@ -6215,9 +6367,9 @@
         },
         "lettering": {
           "color": "#8a8f94",
-          "roughness": 0.5,
+          "roughness": 0.34,
           "metalness": 0.62,
-          "envMapIntensity": 1.5
+          "envMapIntensity": 1.35
         },
         "hubcap": {
           "color": "#303438",
