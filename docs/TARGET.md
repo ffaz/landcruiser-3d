@@ -62,6 +62,7 @@ If the owner supplies renders of the source model in this look, they go in `docs
 | 2026-11-03 | Shanaber (Gulf Toyota steel wheel): open centre, no cap, hub and 5 nuts visible as metal. 16 evenly spaced PLAIN pressed holes (no raised flanges), symmetric about the vertical axis, with the valve between two holes at 6. Satin silver-grey paint with a soft broad sheen. Broad rolled lip. |
 | 2026-11-05 | The overall look is a die-cast collectible model (section 1), not photoreal. |
 | 2026-11-05 | Workshop tint_5 (limo tint) may go very dark: the interior does NOT need to show through it. |
+| 2026-11-05 | KMC stays DARK anthracite (#55595d face and lip). Its slots, steps and cast lettering must read through light (lit walls, edge highlights, relief), not by lightening the colour. |
 
 Out of scope for the base car: mud, decals and accessories. Those are workshop mods. The overland build (muddy white, #92) belongs to the workshop.
 
