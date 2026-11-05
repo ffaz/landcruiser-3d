@@ -591,3 +591,48 @@ The final images show the Method's cupped centre/large cap and alternating cast 
 Decoded all twelve mounted rim GLBs: finite unit normals, matching triangle counts, unchanged mount/catalogue fields and bounds within .1 mm of the authored bounds. Maximum is 38,702 triangles / 424,948 bytes, below the earlier iPad budget even with the unrestricted modelling permission. Verified five physical nut clusters on the unchanged 150 mm PCD; cap radius matches .235R; front-roll winding is correct. Raw rotor/hat/caliper/backing/brake-detail and tyre-adapter positions remain identical to the starting builds. Shanaber's four GLB hashes and manifest entries, index.html and wheels.json remain unchanged. Restored the steel generator's original nut-bevel branch to avoid any future spillover.
 
 Changed only the rim generator and registration, eight Method/KMC GLBs, their manifest entries and this log. No stored car/stock rim/tyre GLB or source NORMAL/COLOR_0, TARGET/VERIFIED, wheel mounting/size/offset, Three.js 0.166.1, studio light, body lock or per-frame render-pass changes. The previous local checkpoint and this completed revision are pushed together once to full-car-pass after pull --rebase; main is untouched.
+
+
+## Rims self-check loop — KMC scratch reconstruction (2026-11-05)
+
+Scope: the owner's latest instruction rejects KMC outright and accepts Method and Shanaber. Rebuilt KMC independently in `tools/rims/kmc.py`; the other two rims' eight GLBs and manifest entries remain identical to 02c3810. Read TARGET sections 1–3 and VERIFIED's variant tags first. No TARGET disagreement or edit. My earlier 8/10 KMC assessment did not predict the owner's verdict and is not evidence of acceptance.
+
+Used the attached catalogue front for ring/slot proportions, the five-lug quarter for depth and nut-edge character, and the tagged 5×150 machined quarter for the low cone and recessed seats. The latter judges geometry only: the model retains #55595d. Did not copy six-lug hub geometry or the reference's bright finish. Photos, captures, material trials and equal-diameter pairs stay outside Git.
+
+### Loop 1 — new construction, 6.5/10
+
+Three visible differences: the new flange was too round; service heads looked like grey buttons; the fine circular steps lacked definition. Replaced the previous face rather than editing it: a recessed centre/dish, separate inner and outer section surfaces, and nine explicit mouth/chamfer/throat lofts. These openings are geometry, without a Boolean through the slot band.
+
+The face/quarter comparison showed real dish depth, but the rolled flange still suggested a steel wheel. Rejected that lip and retained the scratch topology. The new section has 144 angular samples, coherent section normals, and a single front flange surface rather than stacked rings.
+
+### Loop 2 — flange and seats, 7.0/10
+
+Three differences: the nut cone still read nearly flat; nuts sat too high; the raised lands remained too weak at normal car scale. Changed the rolled front into a broad, nearly flat KMC flange with a small outer edge roll, added narrow service-seat rims and retained the physical 5×150 through bores.
+
+The screenshots showed a more appropriate flange and clearer service hardware. Rejected a whole-face metallic trial: it made the wheel darker without clarifying its shape. Retained face/lip pigment #55595d and the existing satin base response; added coherent crevice shade at the actual circular folds rather than dark painted bands.
+
+### Loop 3 — stronger section, 7.0/10
+
+Three differences: the outer face crest became too high, partly hiding far-side apertures in quarter view; the broad lands rose too steeply; their catches were still uneven. Tested stronger true risers and a straight-sided low cone, with the cap below the main face and black service heads.
+
+Rejected the excessive 118 mm outer-land crest: it added depth but reduced resemblance. The useful centre correction was retained; the exaggerated land section was reduced in the next loop. This is a partial reversion of the worse result, not a new accepted baseline.
+
+### Loop 4 — selected section and finish, provisional 8.0/10
+
+Three remaining differences: fine groove/chamfer cross-sections are photo estimates; the mesh KMC/WHEELS marks simplify the exact source glyphs; the clean studio response has less fine highlight variation than the photographed finish. These are my visual observations, not independent owner acceptance.
+
+Reduced the crest to 115 mm in section coordinates, retained a recessed 87 mm dish floor and straight low cone, and lowered the black nut heads fully into their pockets on the unchanged 75 mm radius. The cap face is at 101.5 mm, below the broad lands and 119–120 mm lip land; section Z coordinates receive the existing catalogue-width scale. Rejected a large domed centre, protruding grey buttons, a steel-like rolled lip and the over-deep loop-3 step.
+
+Compared same-diameter real/ours pairs, inspected each native 1600×1000 hero/side capture and both 3× wheel close-ups, and also checked an additional quarter capture nearer the reference's camera angle. Final native views show the inner dish, separate circular step edges, black-seated nuts and dark open slots. The selected narrow edge finish keeps the same pigment with roughness .32, metalness .12 and environment 4; pocket walls use the same pigment with environment 3.5. No light, shader or render-pass change.
+
+| KMC state | Triangles per mounted rim | FL / RL bytes each | FR / RR bytes each |
+|---|---:|---:|---:|
+| 02c3810 rejected starting model | 38,572 | 395,476 | 395,344 |
+| Scratch loop 1 | 36,106 | 387,160 | 378,648 |
+| Loop 2 | 38,455 | 397,360 | 393,004 |
+| Loop 3 | 38,429 | 397,168 | 392,552 |
+| Selected loop 4 including final finish | 38,429 | 422,736 | 416,812 |
+
+Validation: all twelve mounted rims decode with finite unit normals and declared triangle counts; no rim exceeds 40k triangles or 700 KB. Decoded bounds match the manifest within .1 mm. All non-KMC manifest entries and the accepted Method/Shanaber asset hashes are unchanged, as are index.html, wheels.json and TARGET. Raw rotor, hat, caliper, backing, brake-detail and rubber-adapter position arrays exactly match the rejected starting build: only the new KMC face, barrel/front-flange construction, seats/cap/nuts and KMC finish changed. Sizes, width/offset catalogue, 462 mm lip, 5×150, stock wheel/tyres, car GLBs and their NORMAL/COLOR_0, Three.js 0.166.1 and body locks remain unchanged.
+
+The final native-rim integration check passed **23/23**: lazy loading, four mounts, source tyre/brake buffer hashes, configured rigid offsets, catalogue fit, repainting, stock restoration, share/reset and no console errors. Python/JavaScript syntax checks and git whitespace checks also pass.

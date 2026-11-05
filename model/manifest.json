@@ -4614,14 +4614,14 @@
       ],
       "rigidClass": "wheel",
       "zones": [
-        "rim",
         "barrel",
+        "rim",
         "edge_catch",
-        "pocket_wall",
         "nut_pocket",
+        "pocket_wall",
         "black",
-        "nut_metal",
         "nut_edge",
+        "nut_dark",
         "lettering",
         "tyre",
         "backing",
@@ -4630,7 +4630,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 38572,
+      "triangles": 38429,
       "bounds": {
         "min": [
           -1.901999989748001,
@@ -4670,11 +4670,11 @@
         },
         "edge_catch": {
           "color": "#55595d",
-          "roughness": 0.3,
-          "metalness": 0.45,
-          "envMapIntensity": 1.8,
+          "roughness": 0.32,
+          "metalness": 0.12,
+          "envMapIntensity": 4,
           "clearcoat": 0.08,
-          "clearcoatRoughness": 0.4,
+          "clearcoatRoughness": 0.32,
           "specularIntensity": 0.35
         },
         "nut_metal": {
@@ -4701,8 +4701,8 @@
         "pocket_wall": {
           "color": "#55595d",
           "roughness": 0.4,
-          "metalness": 0.2,
-          "envMapIntensity": 1.65,
+          "metalness": 0.12,
+          "envMapIntensity": 3.5,
           "clearcoat": 0.08,
           "clearcoatRoughness": 0.4,
           "specularIntensity": 0.35
@@ -4838,14 +4838,14 @@
       ],
       "rigidClass": "wheel",
       "zones": [
-        "rim",
         "barrel",
+        "rim",
         "edge_catch",
-        "pocket_wall",
         "nut_pocket",
+        "pocket_wall",
         "black",
-        "nut_metal",
         "nut_edge",
+        "nut_dark",
         "lettering",
         "tyre",
         "backing",
@@ -4854,7 +4854,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 38572,
+      "triangles": 38429,
       "bounds": {
         "min": [
           -1.901999989748001,
@@ -4894,11 +4894,11 @@
         },
         "edge_catch": {
           "color": "#55595d",
-          "roughness": 0.3,
-          "metalness": 0.45,
-          "envMapIntensity": 1.8,
+          "roughness": 0.32,
+          "metalness": 0.12,
+          "envMapIntensity": 4,
           "clearcoat": 0.08,
-          "clearcoatRoughness": 0.4,
+          "clearcoatRoughness": 0.32,
           "specularIntensity": 0.35
         },
         "nut_metal": {
@@ -4925,8 +4925,8 @@
         "pocket_wall": {
           "color": "#55595d",
           "roughness": 0.4,
-          "metalness": 0.2,
-          "envMapIntensity": 1.65,
+          "metalness": 0.12,
+          "envMapIntensity": 3.5,
           "clearcoat": 0.08,
           "clearcoatRoughness": 0.4,
           "specularIntensity": 0.35
@@ -5062,14 +5062,14 @@
       ],
       "rigidClass": "wheel",
       "zones": [
-        "rim",
         "barrel",
+        "rim",
         "edge_catch",
-        "pocket_wall",
         "nut_pocket",
+        "pocket_wall",
         "black",
-        "nut_metal",
         "nut_edge",
+        "nut_dark",
         "lettering",
         "tyre",
         "backing",
@@ -5078,7 +5078,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 38572,
+      "triangles": 38429,
       "bounds": {
         "min": [
           0.948000010251999,
@@ -5118,11 +5118,11 @@
         },
         "edge_catch": {
           "color": "#55595d",
-          "roughness": 0.3,
-          "metalness": 0.45,
-          "envMapIntensity": 1.8,
+          "roughness": 0.32,
+          "metalness": 0.12,
+          "envMapIntensity": 4,
           "clearcoat": 0.08,
-          "clearcoatRoughness": 0.4,
+          "clearcoatRoughness": 0.32,
           "specularIntensity": 0.35
         },
         "nut_metal": {
@@ -5149,8 +5149,8 @@
         "pocket_wall": {
           "color": "#55595d",
           "roughness": 0.4,
-          "metalness": 0.2,
-          "envMapIntensity": 1.65,
+          "metalness": 0.12,
+          "envMapIntensity": 3.5,
           "clearcoat": 0.08,
           "clearcoatRoughness": 0.4,
           "specularIntensity": 0.35
@@ -5286,14 +5286,14 @@
       ],
       "rigidClass": "wheel",
       "zones": [
-        "rim",
         "barrel",
+        "rim",
         "edge_catch",
-        "pocket_wall",
         "nut_pocket",
+        "pocket_wall",
         "black",
-        "nut_metal",
         "nut_edge",
+        "nut_dark",
         "lettering",
         "tyre",
         "backing",
@@ -5302,7 +5302,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 38572,
+      "triangles": 38429,
       "bounds": {
         "min": [
           0.948000010251999,
@@ -5342,11 +5342,11 @@
         },
         "edge_catch": {
           "color": "#55595d",
-          "roughness": 0.3,
-          "metalness": 0.45,
-          "envMapIntensity": 1.8,
+          "roughness": 0.32,
+          "metalness": 0.12,
+          "envMapIntensity": 4,
           "clearcoat": 0.08,
-          "clearcoatRoughness": 0.4,
+          "clearcoatRoughness": 0.32,
           "specularIntensity": 0.35
         },
         "nut_metal": {
@@ -5373,8 +5373,8 @@
         "pocket_wall": {
           "color": "#55595d",
           "roughness": 0.4,
-          "metalness": 0.2,
-          "envMapIntensity": 1.65,
+          "metalness": 0.12,
+          "envMapIntensity": 3.5,
           "clearcoat": 0.08,
           "clearcoatRoughness": 0.4,
           "specularIntensity": 0.35

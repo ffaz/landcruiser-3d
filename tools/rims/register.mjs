@@ -24,7 +24,10 @@ if(style==='steel'){
  Object.assign(defaults.pocket_wall,{color:'#41484d',roughness:.96,metalness:0,envMapIntensity:.35,clearcoat:0,specularIntensity:.05});
  Object.assign(defaults.barrel,{color:'#495156',roughness:.88,metalness:.04,envMapIntensity:.50,clearcoat:0,specularIntensity:.10});
 }
-if(style==='disc')Object.assign(defaults.pocket_wall,{envMapIntensity:1.65,metalness:.20});
+if(style==='disc'){
+ Object.assign(defaults.edge_catch,{roughness:.32,metalness:.12,envMapIntensity:4.0,clearcoat:.08,clearcoatRoughness:.32,specularIntensity:.35});
+ Object.assign(defaults.pocket_wall,{envMapIntensity:3.5,metalness:.12});
+}
 defaults.nut_edge={color:'#7b858e',roughness:.30,metalness:.60,envMapIntensity:1.5,clearcoat:0,specularIntensity:.35};
 defaults.nut_dark={color:'#262b30',roughness:.38,metalness:.50,envMapIntensity:1.0,clearcoat:.05,specularIntensity:.35};
 defaults.nut_pocket={color:'#303539',roughness:.65,metalness:.15,envMapIntensity:1.0,clearcoat:0,specularIntensity:.25};
