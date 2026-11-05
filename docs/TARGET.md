@@ -75,3 +75,4 @@ Out of scope for the base car: mud, decals and accessories. Those are workshop m
 - **Reviewer views:** hero 3/4, side, rear, top, the 3× close-ups and phone. A change is accepted only if it holds at all of them.
 - three.js 0.166.1, no post-processing, no new per-frame render passes. It must stay fast on iPad.
 - Push to working branches only. main/Pages only when the owner says so.
+- **Only the owner (via Claude) changes TARGET.md; builders never edit it.** If a builder thinks TARGET is wrong, it says so in its reply and in DECISIONS.md.
