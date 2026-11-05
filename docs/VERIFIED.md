@@ -52,8 +52,8 @@ Our car: 2016–21 GCC LC200 GXR V8, front end = the source as built; rims 17″
 
 | File | Variant shown | May judge | Must NOT judge |
 |---|---|---|---|
-| real-front-gxr-2020.png | 2020 GCC LC200, likely GXR Grand Touring / GXR-S front | grille bar layout, Toyota badge, headlamp housing and projectors, fog-lamp shape, plate position, proportions | lower-bumper chrome V-strips and fog bezels (not our variant); plate design; photo finish |
-| real-headlamp-oem-chrome.png | collage: left tile and right tile = OEM GXR chrome-housing lamp; middle tile = AFTERMARKET LED/DRL lamp | housing colour, two projectors, amber corner (left/right tiles only) | anything from the middle tile (aftermarket) |
+| real-front-gxr-2020.png | 2020 GCC LC200 with a DIFFERENT lower-front variant (owner 2026-11-05) | upper grille bar layout, Toyota badge, headlamp housing and projectors, proportions | ANYTHING in the lower bumper: lower grille band, fog lamps and bezels, chrome V-strips, plate; photo finish |
+| real-headlamp-oem-chrome.png | collage: left tile and right tile = OEM GXR chrome-housing lamp; middle tile = AFTERMARKET black LED lamp with light-bar DRL (different variant, owner 2026-11-05) | housing colour, two projectors, amber corner (left/right tiles only) | anything from the middle tile |
 | real-side-privacy-glass-rails.png | 2016+ LC200, white, side | privacy-glass split (front clear, rear dark), roof rails, handles, chrome lower-door strip, side profile | wheel design and size (other trim); glass reflections and finish |
 | real-side-step-handles-chrome-strip.png | collage: tile 1 = OEM fixed step; tiles 2–4 = AFTERMARKET power/illuminated steps | OEM step: rail and black tread pad, handles, chrome door strip (tile 1 only) | tiles 2–4 |
 | real-rear-3q-taillamp-chrome-strip.png | **VXR** with sport rear bumper and VXR badge | tail-lamp shape, chrome strip under the lamps into the LAND CRUISER bar, LAND CRUISER bar | badges (ours is GXR + V8), rear bumper and reflector shape, lamp smoke level |
