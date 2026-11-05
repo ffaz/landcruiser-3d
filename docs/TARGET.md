@@ -61,6 +61,7 @@ If the owner supplies renders of the source model in this look, they go in `docs
 | 2026-11-03 | Method MR705: 10 real openings (a shaded pocket wall, then the brake or barrel visible behind) matching the official photo's shapes and proportions (top and bottom windows are not wider than the rest). Dark recessed lug area with 5 black nuts and a black cap, cap text cast or tone-on-tone. METHOD cast in the face colour, fully on the solid face. Thick rounded matte titanium lip. |
 | 2026-11-03 | Shanaber (Gulf Toyota steel wheel): open centre, no cap, hub and 5 nuts visible as metal. 16 evenly spaced PLAIN pressed holes (no raised flanges), symmetric about the vertical axis, with the valve between two holes at 6. Satin silver-grey paint with a soft broad sheen. Broad rolled lip. |
 | 2026-11-05 | The overall look is a die-cast collectible model (section 1), not photoreal. |
+| 2026-11-05 | Workshop tint_5 (limo tint) may go very dark: the interior does NOT need to show through it. |
 
 Out of scope for the base car: mud, decals and accessories. Those are workshop mods. The overland build (muddy white, #92) belongs to the workshop.
 
