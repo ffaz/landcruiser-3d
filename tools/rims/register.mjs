@@ -1,4 +1,4 @@
-// Standalone, hub-pivoted rim parts; never rewrites an existing GLB.
+// Rebuild only authored aftermarket rims; never rewrite stored car GLBs.
 import fs from 'node:fs/promises';
 import {createRequire} from 'node:module';
 import {pathToFileURL} from 'node:url';
@@ -7,8 +7,8 @@ const{Document,NodeIO}=await imp('@gltf-transform/core'),{ALL_EXTENSIONS,EXTMesh
 const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.decoder':MeshoptDecoder,'meshopt.encoder':MeshoptEncoder});
 const data=JSON.parse(await fs.readFile(work+'/rim-data.json')),manifest=JSON.parse(await fs.readFile(repo+'/model/manifest.json')),style=data.style;
 const names={disc:'KMC KM720 Roswell · matte anthracite',steel:'Shanaber steel · silver',window:'Method MR705 · titanium'};
-const rimFinish={disc:{color:'#7b7f83',roughness:.42,metalness:.70,envMapIntensity:2.5},steel:{color:'#c4c9cc',roughness:.28,metalness:.70,envMapIntensity:2.8},window:{color:'#8a8f94',roughness:.50,metalness:.62,envMapIntensity:1.5}};
-const defaults={rim:rimFinish[style],chrome:{color:'#858c92',roughness:.34,metalness:.85,envMapIntensity:.95},black:{color:'#1b1e20',roughness:.90,metalness:0,envMapIntensity:.15},tyre:{color:'#202326',roughness:.90,metalness:0,envMapIntensity:.22},brake:{color:'#c1c7ca',roughness:.37,metalness:.62,envMapIntensity:2.3},brake_detail:{color:'#707980',roughness:.42,metalness:.72,envMapIntensity:1.8},barrel:{color:'#666c71',roughness:.62,metalness:.40,envMapIntensity:1.4},caliper:{color:'#b5b8b8',roughness:.46,metalness:.48,envMapIntensity:1.8},backing:{color:'#575c61',roughness:.80,metalness:.20,envMapIntensity:.65},lettering:{...rimFinish[style]},hubcap:{color:'#303438',roughness:.36,metalness:.45,envMapIntensity:1.3}},report=[];
+const rimFinish={disc:{color:'#55595d',roughness:.58,metalness:.45,envMapIntensity:1.0},steel:{color:'#a8afb4',roughness:.44,metalness:.42,envMapIntensity:1.35},window:{color:'#8a8f94',roughness:.50,metalness:.62,envMapIntensity:1.5}};
+const defaults={rim:rimFinish[style],chrome:{color:'#858c92',roughness:.34,metalness:.85,envMapIntensity:.95},black:{color:'#1b1e20',roughness:.90,metalness:0,envMapIntensity:.15},tyre:{color:'#202326',roughness:.90,metalness:0,envMapIntensity:.22},brake:{color:'#4c4f52',roughness:.50,metalness:.25,envMapIntensity:.65},hat:{color:'#303438',roughness:.58,metalness:.25,envMapIntensity:.45},brake_detail:{color:'#454a4e',roughness:.52,metalness:.35,envMapIntensity:.60},barrel:{color:style==='steel'?'#50585f':'#292e32',roughness:.62,metalness:.25,envMapIntensity:.65},caliper:{color:'#53585c',roughness:.55,metalness:.25,envMapIntensity:.65},backing:{color:'#14181c',roughness:.82,metalness:.10,envMapIntensity:.25},lettering:{...rimFinish[style]},hubcap:{color:'#303438',roughness:.48,metalness:.35,envMapIntensity:.75},cap_lettering:{color:'#3b4044',roughness:.48,metalness:.35,envMapIntensity:.75}},report=[];
 for(const corner of ['FL','FR','RL','RR']){
  const slot='rim_'+corner,id=slot+'_'+style,pivot=manifest.slots['wheel_'+corner].pivot,sign=corner.endsWith('R')?-1:1;
  manifest.slots[slot]??={default:null,pivot,rigidClass:'wheel'};

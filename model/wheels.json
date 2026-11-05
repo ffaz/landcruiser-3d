@@ -152,7 +152,7 @@
       "boltPattern": "5x150",
       "centreBore_mm": 110.1,
       "model": "steel",
-      "color": "#c4c9cc",
+      "color": "#a8afb4",
       "assetId": "rim_FL_steel",
       "sourceNote": "Reference-inspired face, adapted to the configured LC200 5x150 mount; not manufacturer CAD"
     },
@@ -167,7 +167,7 @@
       "boltPattern": "5x150",
       "centreBore_mm": 110.1,
       "model": "kmc",
-      "color": "#7b7f83",
+      "color": "#55595d",
       "assetId": "rim_FL_disc",
       "sourceNote": "Reference-inspired face, adapted to the configured LC200 5x150 mount; not manufacturer CAD"
     },

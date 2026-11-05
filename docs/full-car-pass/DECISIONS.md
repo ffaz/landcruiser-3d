@@ -204,3 +204,33 @@ Followed `docs/TARGET.md` section 1; the previous appearance thresholds were not
    Chose slightly firmer silver edges within the satin family to separate raised text from white paint; rejected dark mirror patches, painted outlines and altered lettering. Rear and the rear detail show raised silver faces, shaded bevels and crisp GXR/V8 shapes.
 5. **Side-step:** chrome rail roughness/metalness/environment `.13/.82/4.5 → .38/.60/1.0`, coat `.15 → .08`, with the same soft silver fill as item 3; the black tread's material is unchanged.
    Rejected the rail's reflected strip cards and mirror response rather than changing its source construction. Side/hero show a softly shaded light-silver rim around a black tread pad, with the existing edge detail retained.
+
+
+## Task 5 — aftermarket rim pockets, cast marks and steel pressing (2026-11-05)
+
+Followed `docs/TARGET.md` sections 1 and 3; no conflicting owner decision. Built with Blender 4.3.2 and the existing `model.py → register.mjs` pipeline, using external work/dependency directories. Inspected Side, front 3/4 and Rear at 1600×1000, plus one final front and 3/4 on-car view for each rim; screenshots are outside Git. The first Method view exposed a depth conflict; its two review images were replaced after correction. No comparison sheets, new reference collections, test suites or reviewer measurements were made.
+
+- **Shared hardware / K4–M2:** bright rotor `#c1c7ca/.37/.62 → #4c4f52/.50/.25` (colour/roughness/metalness); separate darker `hat`, dark inner barrel and near-black backing, with restrained caliper/fastener reflections.
+  Rejected bright opaque window fills and deleting/shrinking the locked 354 mm rotor. On-car views show darker hardware behind actual cut walls, including the caliper in the left openings; rotor, backing, barrel, adapters, offsets and brakes retain their geometry.
+- **K4:** retained nine identical 40° capsule cuts and their 12-o'clock phase; pocket chamfer `1.2 → 1.8 mm`. Face/lip now share matte anthracite `#55595d/.58/.45`, with environment `2.5 → 1`.
+  Rejected raised pill meshes, painted dark slot decals and a bright machined lip. Front/3/4 show nine recessed openings with narrow lit walls and darker interiors; the formerly harsh edge is subdued without flattening all wall light.
+- **K5:** top lip mark `39×8 → 43×9 mm`, raised relief `.24 → .65 mm`; centred on the solid lip land. KMC retains the face colour rather than a contrasting print material.
+  Rejected white/black printed lettering and a larger badge outside the flange. Both on-car views show the small KMC mark at 12 o'clock with readable cast edges.
+- **M2:** retained the through-cuts and bevel walls; dark shared hardware separates the left caliper from the face. The long-window tangential stretch is reduced by the M3 angular correction below.
+  Rejected filling windows with dark polygons or altering the locked brake package. Front shows ten cut boundaries; 3/4 shows their wall depth and the hardware at a second depth, including the upper-left opening.
+- **M3 — partial; exact official-photo match skipped:** different short/long tangential slopes → common ±12° window half-angle; retained alternating inner/outer radii and rounded corners, so the bottom long window no longer gets an extra width multiplier.
+  Rejected an invented new spoke layout. Front shows consistent angular widths, but the repository-linked official front image returned HTTP 403; exact photo-shape acceptance remains for the reviewer, and is not claimed here.
+- **M4:** face glyph radius `111.5 → 190 mm`, on the solid outer land beyond all window edges; smaller arc pitch keeps the full words on that land. Added raised tone-on-tone cap lettering with the black cap's roughness/metalness.
+  Rejected glyphs crossing window edges/recesses and bright printed cap text. Front/3/4 show both METHOD words fully supported by the solid face and restrained relief on the cap.
+- **Method hub moiré:** the hat front is `.060 + .046/2 = .083 m`, exactly coincident with the previous `.083 m` recessed face. Face plateau `.083 → .0845 m`; all hardware positions stay fixed.
+  Rejected blaming/removing Boolean triangulation, analytic normals or baked AO: the speculative AO substitution was removed. Retaining those systems with 1.5 mm face clearance removes the visible streaks in the final 3/4 view; this was depth fighting, not a reason to replace the shading pipeline.
+- **H1:** steel phase `top-centred → half-pitch (11.25° offset at 22.5° pitch)`; retained plain 29 mm holes, no raised flanges, and the existing valve at 6 o'clock.
+  Rejected a seventeenth hole, moving the valve and hiding a hole behind it. Both on-car views show all sixteen openings, with neither a top nor bottom central hole and the valve between the lower pair.
+- **H2:** steel `#c4c9cc/.28/.70/2.8 → #a8afb4/.44/.42/1.35` (colour/roughness/metalness/environment); hub nose/studs retain a separate metal finish, with an open centre and no cap.
+  Rejected chrome-like mirror glare and a uniform diffuse grey. Front/3/4 show silver-grey paint with a broad curved sheen through the dish and a distinct rolled lip.
+- **H5:** retained the hollow barrel geometry; inner return gets a separate dark silver `#50585f/.62/.25/.65`, separated from the near-black backing and painted face.
+  Rejected adding a fake inner disc or moving the accepted barrel/brakes. Oblique on-car openings show dark inner depth and the barrel return behind the silver pressing.
+- **Nut-size spillover (prior answer 9):** steel nut diameter `20 → 17 mm`; KMC/Method remain 20 mm, five nuts and the 5×150 mount unchanged.
+  Rejected changing the shared radius for every style. Steel views show the smaller five metal nuts and visible open-centre hub.
+
+Build output counts (triangles per rim; bytes summed across its four mounted GLBs): KMC **19,018 → 19,018**, **1,710,568 → 1,722,192 B**; Method **17,774 → 17,770**, **1,602,352 → 1,626,912 B**; Shanaber **13,521 → 13,792**, **1,268,992 → 1,296,920 B**. These are generator/file-size values, not a test report. Regenerated only the twelve authored aftermarket rim GLBs and their material/catalogue metadata; source car GLBs, their NORMAL/COLOR_0, source design, body/overhang/wheelbase locks, three.js version and render-pass count are unchanged. Generated `.blend` working files remain outside the checkout; `model.py` is the reproducible source of these builds.
