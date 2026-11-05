@@ -277,12 +277,13 @@ windowGlass.side=THREE.FrontSide;windowGlass.ior=1.5;
 const blackPlastic=new THREE.MeshStandardMaterial({color:BASE_FINISH.blackColor,roughness:BASE_FINISH.blackRoughness,metalness:0,envMapIntensity:BASE_FINISH.blackEnv});
 const tireMat=new THREE.MeshStandardMaterial({color:'#383a3c',roughness:.88,metalness:0});
 const rimMat=physical('#858c92',.35,.80,.12);
-const lampLens=physical('#dce8f2',.055,0,.9);
-lampLens.transparent=true;lampLens.opacity=.16;lampLens.depthWrite=false;
-lampLens.envMapIntensity=1.0;lampLens.emissive.set('#bfd4ef');lampLens.emissiveIntensity=.025;
+const lampLens=physical('#edf5fa',.065,0,.65);
+lampLens.clearcoatRoughness=.16;lampLens.specularIntensity=.65;
+lampLens.transparent=true;lampLens.opacity=.055;lampLens.depthWrite=false;
+lampLens.envMapIntensity=.65;lampLens.emissiveIntensity=0;
 const tailRed=physical('#ab0616',.12,0,1);
 tailRed.clearcoatRoughness=.05;tailRed.emissive.set('#6a0410');tailRed.emissiveIntensity=.12;
-const orange=physical('#d66b18',.13,0,.8);orange.emissive.set('#8c3505');orange.emissiveIntensity=.06;
+const orange=physical('#ffae29',.19,0,.70);orange.emissive.set('#ff8b08');orange.emissiveIntensity=.16;
 const interiorMat=new THREE.MeshStandardMaterial({color:'#776753',roughness:.88,metalness:0});
 
 // COLOR_0 contains linear data, not paint colour: R=Cycles AO; G=signed curvature.
@@ -480,6 +481,19 @@ function useBakedShading(material,cream=false){
    '#include <begin_vertex>\nvBakedShading=bakedShading.rg;');
   shader.fragmentShader=shader.fragmentShader.replace('#include <common>',
    '#include <common>\nvarying vec2 vBakedShading; uniform float uBakedAO; uniform float uBakedRidge; uniform float uBakedValley; uniform float uFinishSharpGap; uniform float uFinishSeam; uniform vec2 uFinishSeamValley; uniform vec2 uFinishSeamOcclusion; uniform float uFinishBlackSpecular;'+(cream?' uniform float uCreamAOExponent; uniform float uCreamTrimSpecular;':''));
+  if(material.userData.lowerGrille){
+   shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vGrilleSurface;');
+   shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvGrilleSurface=(modelMatrix*vec4(position,1.0)).xyz;');
+   shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vGrilleSurface;');
+   shader.fragmentShader=shader.fragmentShader.replace('#include <roughnessmap_fragment>',`#include <roughnessmap_fragment>
+    vec3 grainPoint=vGrilleSurface*1600.;
+    float grain=sin(grainPoint.x)*sin(grainPoint.y)*sin(grainPoint.z);
+    float grainFade=1.-smoothstep(.25,1.,length(fwidth(grainPoint)));
+    roughnessFactor=clamp(roughnessFactor+.045*grain*grainFade,.55,.9);`);
+   shader.fragmentShader=shader.fragmentShader.replace('#include <color_fragment>',`#include <color_fragment>
+    float topFace=max(inverseTransformDirection(normalize(vNormal),viewMatrix).y,0.);
+    diffuseColor.rgb*=mix(.85,1.65,topFace);`);
+  }
   if(material.userData.silverRole){
    shader.uniforms.uSilverBodyLift=bodyLiftUniform;
    shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vSilverPosition;uniform float uSilverBodyLift;');
@@ -504,6 +518,7 @@ function useBakedShading(material,cream=false){
    #ifdef USE_CLEARCOAT
     clearcoatSpecularIndirect*=mix(1.0,bakedCavity,${cream?'1.00':'0.72'});
    #endif
+   ${material.userData.lowerGrille?'reflectedLight.indirectDiffuse+=diffuseColor.rgb*(.30+.55*topFace);':''}
    // Satin silver gets gentle diffuse studio fill, preserving source cavities.
    // No reflected cards, stripes or mirror surround are added.
    ${material.userData.satinSilver?`
@@ -524,8 +539,8 @@ function useBakedShading(material,cream=false){
      reflectedLight.indirectDiffuse*=mix(1.0,mix(.65,1.0,letterFace),barLetter);
      reflectedLight.indirectSpecular+=diffuseColor.rgb*.34*silverEdge*barLetter*sqrt(bakedCavity);
     `:material.userData.silverRole==='front'?`
-     silverFill=.06+.44*max(silverNormal.y,0.0)+.16*max(-silverNormal.x,0.0);
-     reflectedLight.indirectSpecular+=diffuseColor.rgb*.42*silverEdge*sqrt(bakedCavity);
+     silverFill=.16+.34*max(silverNormal.y,0.0)+.16*max(-silverNormal.x,0.0);
+     reflectedLight.indirectSpecular+=vec3(.72,.78,.82)*.62*silverEdge*sqrt(bakedCavity);
     `:material.userData.silverRole==='doorStrip'?`
      // The source islands identify relief; the rail and handle retain their finish.
      silverFill+=.95*vReliefLetter;
@@ -540,7 +555,7 @@ function useBakedShading(material,cream=false){
    ${material.userData.zone==='black'&&!material.userData.partId?.startsWith('wheel_')?'reflectedLight.directSpecular*=uFinishBlackSpecular; reflectedLight.indirectSpecular*=uFinishBlackSpecular;':''}
   `);
  };
- material.customProgramCacheKey=()=> (cream?'lc200-cream-baked-detail-v5':'lc200-baked-ao-curvature-v5')+(material.userData.zone==='black'&&!material.userData.partId?.startsWith('wheel_')?'-neutral-trim':material.userData.zone==='chrome'&&!material.userData.partId?.startsWith('wheel_')?'-metal-trim':'')+(material.userData.satinSilver?'-satin-silver-v3-'+(material.userData.silverRole||'base'):'');
+ material.customProgramCacheKey=()=> (cream?'lc200-cream-baked-detail-v5':'lc200-baked-ao-curvature-v5')+(material.userData.zone==='black'&&!material.userData.partId?.startsWith('wheel_')?'-neutral-trim':material.userData.zone==='chrome'&&!material.userData.partId?.startsWith('wheel_')?'-metal-trim':'')+(material.userData.lowerGrille?'-grained-lower-grille-v1':'')+(material.userData.satinSilver?'-satin-silver-v3-'+(material.userData.silverRole||'base'):'');
  return material;
 }
 function useCreamPaintShading(material){
@@ -669,7 +684,7 @@ function useFrontCreviceFinish(material){
    #include <opaque_fragment>`);
  };material.customProgramCacheKey=()=>cache()+'-source-front-crevice-v1';
 }
-function applySurfaceFinish(material){useRoofCapMask(material);useRoofEdgeFinish(material);useArchLinerFill(material);useCabinBackingFinish(material);useFrontCreviceFinish(material);return material;}
+function applySurfaceFinish(material){useRoofCapMask(material);useRoofEdgeFinish(material);useArchLinerFill(material);useCabinBackingFinish(material);useFrontCreviceFinish(material);useRearLampBacking(material);return material;}
 function bindBakedAttribute(root){
  let bakedVertices=0;
  root.traverse(part=>{
@@ -833,9 +848,8 @@ function withFinish(material,zone,id){
 }
 const aliases={carpaint:'paint',tire:'tyre',rim_second:'rim',brakedisk:'brake',windowglass:'glass',darkglass:'glass',redglass:'lamp_red',redglass_lower:'lamp_red',redglass_caps:'lamp_red',clearglass:'lamp_clear',orangeglass:'lamp_orange',garnish:'chrome'};
 function zoneFor(material){const name=material.name.replace(/\.\d+$/,'').toLowerCase();return material.userData.zone||aliases[name]||name;}
-// Source lens normals are retained byte-for-byte. Standard flat lens shading
-// derives its lighting normal from the stored surface, without editing attributes.
-lampLens.flatShading=true;tailRed.flatShading=true;orange.flatShading=true;
+// Smooth optical shading uses the original stored normals, without editing attributes.
+lampLens.flatShading=false;tailRed.flatShading=false;orange.flatShading=false;
 // Lens/reflector finish variants read the stored lamp zones; no mesh edits or transmission.
 // Existing source LED-window geometry is seen through a coloured filter.
 // The broad moulded lens face uses stronger absorption; the reverse strip is clear.
@@ -859,6 +873,85 @@ function useRearRedFilter(material,node){
    gl_FragColor.a*=1.0-reverseMask;`);
  };
  material.customProgramCacheKey=()=> 'lc200-rear-red-filter-v5-'+planes.length;
+}
+// Shade domed optics on the source cover over the two existing projector bowls.
+// Only the material's lighting normal changes; stored NORMAL/positions stay intact.
+function useProjectorGlass(material){
+ material.onBeforeCompile=shader=>{
+  shader.uniforms.uProjectorLift=bodyLiftUniform;
+  shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vProjectorPosition;uniform float uProjectorLift;');
+  shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvProjectorPosition=(modelMatrix*vec4(position,1.)).xyz;vProjectorPosition.y-=uProjectorLift;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vProjectorPosition;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <color_fragment>',`#include <color_fragment>
+   vec2 lensPoint=vec2(abs(vProjectorPosition.z),vProjectorPosition.y);
+   vec2 lensA=(lensPoint-vec2(.683,1.010))/.042;
+   vec2 lensB=(lensPoint-vec2(.817,1.023))/.042;
+   vec2 lensUV=dot(lensA,lensA)<dot(lensB,lensB)?lensA:lensB;
+   float lensRadius=length(lensUV);
+   float projectorLens=1.-smoothstep(.90,1.0,lensRadius);
+   diffuseColor.rgb=mix(diffuseColor.rgb,vec3(.12,.18,.23),projectorLens);
+   diffuseColor.a=mix(diffuseColor.a,.56,projectorLens);`);
+  shader.fragmentShader=shader.fragmentShader.replace('#include <normal_fragment_maps>',`#include <normal_fragment_maps>
+   vec3 domeNormal=normalize(vec3(-sqrt(max(.05,1.-dot(lensUV,lensUV)*.65)),lensUV.y*.70,lensUV.x*.70*sign(vProjectorPosition.z)));
+   normal=normalize(mix(normal,normalize((viewMatrix*vec4(domeNormal,0.)).xyz),projectorLens));`);
+  shader.fragmentShader=shader.fragmentShader.replace('#include <roughnessmap_fragment>',`#include <roughnessmap_fragment>
+   roughnessFactor=mix(roughnessFactor,.15,projectorLens);`);
+ };material.customProgramCacheKey=()=> 'source-cover-projector-glass-v1';
+}
+// Optical colour support stays inside the existing bulb surfaces. Dielectric
+// highlights remain small; no metallic diffuse extinction or pink LED faces.
+function useBulbGlass(material,red){
+ material.toneMapped=false;
+ material.onBeforeCompile=shader=>{
+  shader.fragmentShader=shader.fragmentShader.replace('#include <opaque_fragment>',`
+   float bulbFacing=clamp(dot(normal,geometryViewDir),0.,1.);
+   float bulbSheen=pow(max(dot(normal,normalize(vec3(-.35,.65,.7))),0.),18.);
+   vec3 glassBody=${red?'vec3(.66,.006,.017)':'vec3(1.0,.29,.008)'};
+   outgoingLight=mix(outgoingLight,glassBody*(.48+.28*bulbFacing),${red?'.82':'.68'});
+   outgoingLight+=vec3(${red?'.14,.065,.07':'.23,.16,.07'})*bulbSheen;
+   #include <opaque_fragment>`);
+ };material.customProgramCacheKey=()=> 'source-bulb-glass-v1-'+red;
+}
+const rearLampBackings=new WeakSet();
+function useRearLampBacking(material){
+ if(!material.userData.rearLampBacking||rearLampBackings.has(material))return;
+ rearLampBackings.add(material);const compile=material.onBeforeCompile,cache=material.customProgramCacheKey.bind(material);
+ material.onBeforeCompile=shader=>{compile(shader);shader.uniforms.uLampBackingLift=bodyLiftUniform;
+  shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vLampBacking;uniform float uLampBackingLift;');
+  shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvLampBacking=(modelMatrix*vec4(position,1.)).xyz;vLampBacking.y-=uLampBackingLift;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vLampBacking;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <opaque_fragment>',`
+   vec3 lampPoint=vec3(vLampBacking.xy,abs(vLampBacking.z));
+   float amberSocket=1.-smoothstep(.85,1.15,length((lampPoint-vec3(2.204,1.072,.826))/vec3(.025,.018,.020)));
+   float reverseSocket=1.-smoothstep(.85,1.15,length((lampPoint-vec3(2.250,1.078,.650))/vec3(.025,.018,.020)));
+   float lowerBacking=smoothstep(1.030,1.038,lampPoint.y)*(1.-smoothstep(1.090,1.100,lampPoint.y));
+   float backingSilver=.36+.12*max(inverseTransformDirection(normal,viewMatrix).y,0.);
+   outgoingLight=mix(outgoingLight,vec3(backingSilver)*vec3(.96,.99,1.),lowerBacking*(1.-max(amberSocket,reverseSocket)));
+   #include <opaque_fragment>`);
+ };material.customProgramCacheKey=()=>cache()+'-lower-lamp-silver-backing-v1';
+}
+// Clear reverse glass is a small existing source island in the shared clear meshes.
+// Restrict the white interior/highlight to the bulb, leaving black_12 a socket.
+function useClearReverseBulb(material){
+ material.onBeforeCompile=shader=>{
+  shader.uniforms.uReverseBodyLift=bodyLiftUniform;
+  shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vReversePosition;uniform float uReverseBodyLift;');
+  shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvReversePosition=(modelMatrix*vec4(position,1.)).xyz;vReversePosition.y-=uReverseBodyLift;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vReversePosition;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <color_fragment>',`#include <color_fragment>
+   vec3 bulbPoint=vec3(vReversePosition.xy,abs(vReversePosition.z));
+   float reverseBulb=1.-smoothstep(.85,1.1,length((bulbPoint.zy-vec2(.650,1.078))/vec2(.012,.012)));
+   diffuseColor.rgb=mix(diffuseColor.rgb,vec3(.70,.80,.88),reverseBulb);
+   diffuseColor.a=mix(diffuseColor.a,.70,reverseBulb);`);
+  shader.fragmentShader=shader.fragmentShader.replace('#include <emissivemap_fragment>',`#include <emissivemap_fragment>
+   totalEmissiveRadiance+=vec3(.13,.15,.17)*reverseBulb;`);
+  shader.fragmentShader=shader.fragmentShader.replace('#include <opaque_fragment>',`
+   float clearBulbFacing=clamp(dot(normal,geometryViewDir),0.,1.);
+   float clearBulbSheen=pow(max(dot(normal,normalize(vec3(-.35,.65,.7))),0.),18.);
+   vec3 clearBulbLight=vec3(.60,.67,.72)*(.65+.35*clearBulbFacing)+vec3(.24)*clearBulbSheen;
+   outgoingLight=mix(outgoingLight,clearBulbLight,reverseBulb*.65);
+   #include <opaque_fragment>`);
+ };material.customProgramCacheKey=()=> 'oem-crystal-reverse-v3';
 }
 // Model glazing: a cool clear front, translucent factory privacy glass, and
 // one broad pale-sky sheen. Every factory and workshop finish remains see-through.
@@ -921,8 +1014,18 @@ function finishPartMaterial(material,entry,zone,sourceName,node){
   material.color.set('#b7c0c7');material.roughness=.40;material.metalness=.50;material.envMapIntensity=.85;
   material.userData.silverRole='step';
  }
- if(zone==='lamp_orange'){material.color.set('#ff8200');material.roughness=.28;material.metalness=0;material.envMapIntensity=.30;material.clearcoat=.10;material.specularIntensity=.15;material.emissiveIntensity=0;}
+ if(zone==='lamp_orange'){
+  // The source hexagon is a glass bulb, not copper hardware. Alpha supplies
+  // see-through glass without transmission's additional scene render.
+  material.color.set('#ff9208');material.roughness=.16;material.metalness=0;
+  material.envMapIntensity=.55;material.clearcoat=.70;material.clearcoatRoughness=.22;
+  material.specularIntensity=.50;material.transparent=true;material.opacity=.72;material.depthWrite=false;
+  material.emissive.set('#ff8b08');material.emissiveIntensity=.16;
+  material.userData.optical=true;material.userData.restEmission=.16;
+  useBulbGlass(material,false);
+ }
  if(zone==='glass')useFactoryGlass(material,entry,sourceName);
+ if(rear&&zone==='black'&&node.name==='black_12')material.userData.rearLampBacking=true;
 
  if(/^door_[FR][LR]$/.test(entry.id)&&node.name==='chrome_3'){
   material.userData.silverRole='doorStrip';
@@ -931,8 +1034,8 @@ function finishPartMaterial(material,entry,zone,sourceName,node){
  if(sourceName==='paint_plate_hidden')material.visible=false;
  if(entry.id==='front_plate'&&zone==='paint'){material.roughness=.82;material.metalness=0;material.clearcoat=0;material.envMapIntensity=.10;material.specularIntensity=.10;}
  if(rear&&zone==='lamp_red'){
-  material.color.set('#e4000c');material.roughness=.12;material.metalness=0;
-  material.clearcoat=1;material.clearcoatRoughness=.10;material.envMapIntensity=BASE_FINISH.rearLensEnv;
+  material.color.set('#be0615');material.roughness=.18;material.metalness=0;
+  material.clearcoat=.65;material.clearcoatRoughness=.22;material.envMapIntensity=.18;
   material.emissive.set('#970006');material.emissiveIntensity=.32;
   material.transparent=true;material.opacity=.94;material.depthWrite=false;
   if(/_finish(?:3|4b)$/.test(entry.id)&&!sourceName.startsWith('redglass_lower')){
@@ -943,32 +1046,25 @@ function finishPartMaterial(material,entry,zone,sourceName,node){
   material.side=THREE.FrontSide;material.forceSinglePass=true;material.flatShading=false;
  }
  if(rear&&sourceName.startsWith('redglass_caps')){
-  material.color.set('#a30917');material.roughness=.26;material.metalness=1;
-  material.envMapIntensity=.45;material.clearcoat=0;material.clearcoatRoughness=.14;
+  material.color.set('#ea1525');material.roughness=.22;material.metalness=0;
+  material.envMapIntensity=.45;material.clearcoat=.70;material.clearcoatRoughness=.24;
+  material.emissive.set('#d30b1b');material.emissiveIntensity=.10;material.userData.restEmission=.10;
+  useBulbGlass(material,true);
   material.transparent=true;material.opacity=1;material.depthWrite=false;material.blending=THREE.NormalBlending;node.renderOrder=2;
   material.blendSrc=THREE.SrcAlphaFactor;material.blendDst=THREE.OneMinusSrcAlphaFactor;material.blendSrcAlpha=null;material.blendDstAlpha=null;
  }
- if(rear&&zone==='lamp_clear'){
-  material.color.set('#ffffff');material.roughness=.045;material.clearcoat=.40;
-  material.clearcoatRoughness=.08;material.envMapIntensity=1.10;
-  material.opacity=.08;material.emissive.set('#000000');material.emissiveIntensity=0;
+ if((rear||entry.id==='unsorted_05')&&zone==='lamp_clear'){
+  // Both the outer cover and the second source clear object share crystal glass.
+  material.color.set('#edf5fa');material.metalness=0;material.roughness=.065;
+  material.clearcoat=.65;material.clearcoatRoughness=.16;material.envMapIntensity=.65;
+  material.opacity=.055;material.emissiveIntensity=0;material.depthWrite=false;
   material.side=THREE.FrontSide;material.forceSinglePass=true;material.flatShading=false;
-  // The source clear reverse bulb sits in front of its dark socket. Preserve its
-  // geometry and shade the small bulb separately from the broad outer cover.
-  material.onBeforeCompile=shader=>{
-   shader.uniforms.uReverseBodyLift=bodyLiftUniform;
-   shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vReversePosition;uniform float uReverseBodyLift;');
-   shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvReversePosition=(modelMatrix*vec4(position,1.)).xyz;vReversePosition.y-=uReverseBodyLift;');
-   shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vReversePosition;');
-   shader.fragmentShader=shader.fragmentShader.replace('#include <color_fragment>',`#include <color_fragment>
-    vec3 bulbPoint=vec3(vReversePosition.xy,abs(vReversePosition.z));
-    float reverseBulb=(1.-smoothstep(.9,1.15,length((bulbPoint-vec3(2.250,1.078,.650))/vec3(.018,.019,.024))))*(1.-smoothstep(2.260,2.264,vReversePosition.x));
-    diffuseColor.a=mix(diffuseColor.a,.60,reverseBulb);`);
-  };material.customProgramCacheKey=()=> 'oem-clear-reverse-bulb-v1';
+  material.userData.optical=true;
+  useClearReverseBulb(material);
  }
  if(rear&&zone==='chrome'){
-  material.color.set('#d3d9de');material.roughness=.34;material.metalness=.60;
-  material.envMapIntensity=1.0;material.clearcoat=.08;
+  material.color.set('#e3e9ed');material.roughness=.20;material.metalness=.82;
+  material.envMapIntensity=1.6;material.clearcoat=.12;
  }
  if(/^emblem_(front|rear)$/.test(entry.id)&&zone==='chrome'){
   material.color.set('#dce3e8');material.roughness=.32;material.metalness=.65;
@@ -979,13 +1075,23 @@ function finishPartMaterial(material,entry,zone,sourceName,node){
   material.envMapIntensity=1.10;material.clearcoat=.08;material.clearcoatRoughness=.30;
  }
  if(zone==='chrome'&&(entry.id==='grille'||entry.id.startsWith('lamp_front_'))){
-  material.color.set('#cbd2d8');material.roughness=.30;material.metalness=.78;material.envMapIntensity=1.8;
+  material.color.set('#bec8d0');material.roughness=.30;material.metalness=.66;material.envMapIntensity=1.25;
   material.userData.silverRole='front';
-  if(entry.id.startsWith('lamp_front_')){material.color.set('#aeb8c0');material.envMapIntensity=1.4;}
+  if(entry.id.startsWith('lamp_front_')){material.color.set('#8f9da8');material.roughness=.28;material.envMapIntensity=1.15;}
  }
  if(zone==='lamp_clear'&&entry.id.startsWith('lamp_front_')){
-  material.color.set('#ffffff');material.opacity=.035;material.roughness=.035;
-  material.emissive.set(0x000000);material.emissiveIntensity=0;
+  material.color.set('#edf5fa');material.opacity=.075;material.roughness=.065;
+  material.clearcoat=.65;material.clearcoatRoughness=.16;material.envMapIntensity=.70;
+  material.emissive.set(0x000000);material.emissiveIntensity=0;material.userData.optical=true;
+  if(node.name==='clearglass_27')useProjectorGlass(material);
+  if(node.name==='clearglass_33'){
+   // Existing projector glass gets its own surface, separate from the outer cover.
+   material.color.set('#667d8e');material.opacity=.62;material.roughness=.13;
+   material.clearcoat=.85;material.clearcoatRoughness=.22;material.envMapIntensity=.85;
+  }
+ }
+ if(entry.id.startsWith('bumper_front')&&zone==='black'&&['black_11','black_12'].includes(node.name)){
+  material.userData.lowerGrille=true;material.roughness=.72;material.metalness=0;
  }
  if(entry.id==='tailgate'&&sourceName.toLowerCase()==='garnish'){
   material.color.set('#cbd3d9');material.roughness=.40;material.metalness=.40;material.envMapIntensity=.85;material.userData.silverRole='bar';
@@ -1001,13 +1107,13 @@ async function loadPart(entry){
   if(!part.isMesh)return;
   const convert=source=>{
    const storedZone=zoneFor(source);
-   const sourceZone=/^side_step_[LR]$/.test(entry.id)&&storedZone==='paint'?'chrome':['unsorted_09','unsorted_10'].includes(entry.id)&&storedZone==='lamp_red'?'black':storedZone,zone=/_finish(?:3|4b)$/.test(entry.id)&&part.name.startsWith('clearglass_27')&&sourceZone==='lamp_red'?'lamp_clear':sourceZone,key=zone+':'+source.name+(/^door_[FR][LR]$/.test(entry.id)&&part.name==='chrome_3'?':handle':'')+(entry.id==='body_shell'&&zone==='paint'?':'+part.name:'')+(/_finish(?:3|4b)$/.test(entry.id)&&zone==='lamp_red'?':'+part.name:'');
+   const sourceZone=/^side_step_[LR]$/.test(entry.id)&&storedZone==='paint'?'chrome':['unsorted_09','unsorted_10'].includes(entry.id)&&storedZone==='lamp_red'?'black':storedZone,zone=/_finish(?:3|4b)$/.test(entry.id)&&part.name.startsWith('clearglass_27')&&sourceZone==='lamp_red'?'lamp_clear':sourceZone,key=zone+':'+source.name+(/^door_[FR][LR]$/.test(entry.id)&&part.name==='chrome_3'?':handle':'')+(entry.id==='body_shell'&&zone==='paint'||entry.id.startsWith('lamp_front_')||entry.id.startsWith('lamp_rear_')&&zone==='black'||entry.id.startsWith('bumper_front')&&zone==='black'?':'+part.name:'')+(/_finish(?:3|4b)$/.test(entry.id)&&zone==='lamp_red'?':'+part.name:'');
    if(!materialCache.has(key)){
     const template=zoneTemplates[zone]||source;
     const material=template.clone();material.vertexColors=false;
     finishPartMaterial(material,entry,zone,source.name,part);
     if(/_finish(?:3|4b)$/.test(entry.id)&&zone==='lamp_red'&&!source.name.startsWith('redglass_lower')&&!source.name.startsWith('redglass_caps'))useRearRedFilter(material,part);
-    if(!['glass','lamp_clear','mirror'].includes(zone)&&!(entry.id.startsWith('lamp_rear_')&&zone==='lamp_red'))useBakedShading(material);
+    if(!['glass','lamp_clear','mirror'].includes(zone)&&!material.userData.optical&&!(entry.id.startsWith('lamp_rear_')&&zone==='lamp_red'))useBakedShading(material);
     if(entry.rigidClass==='wheel'&&!entry.wheelSlot&&zone==='black'){material.color.set('#0d1115');material.roughness=.56;material.envMapIntensity=1;}
     if(entry.rigidClass==='wheel'&&!entry.wheelSlot&&zone==='chrome'){material.color.set('#e1e4e5');material.roughness=.24;material.metalness=1;material.clearcoat=.15;material.clearcoatRoughness=.23;material.envMapIntensity=.95;}
     // Additive workshop parts author their own finish without changing base materials.
@@ -1094,7 +1200,7 @@ function applyZonePaint(){
  updateLampState();
 }
 function updateLampState(){
- for(const [id,root]of parts)if(id.startsWith('lamp_rear_'))root.traverse(o=>{if(o.isMesh)for(const m of(Array.isArray(o.material)?o.material:[o.material])){if(!m.userData.zone?.startsWith('lamp_'))continue;m.emissiveIntensity=buildState.lamps_on?(m.userData.zone==='lamp_red'?.32:.12):0;}});
+ for(const [id,root]of parts)if(id.startsWith('lamp_rear_'))root.traverse(o=>{if(o.isMesh)for(const m of(Array.isArray(o.material)?o.material:[o.material])){if(!m.userData.zone?.startsWith('lamp_'))continue;m.emissiveIntensity=buildState.lamps_on?Math.max(m.userData.restEmission||0,m.userData.zone==='lamp_red'?.32:.12):(m.userData.restEmission||0);}});
 }
 function applyStudioPartVisibility(){
  const bundledSlots=new Set();for(const entry of partEntries){if(buildState.slots[entry.slot]===entry.id&&!buildState.hidden.includes(entry.id)&&!buildState.hidden.includes(entry.slot))for(const slot of entry.bundlesSlots||[])bundledSlots.add(slot);}
