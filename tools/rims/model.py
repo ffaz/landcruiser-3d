@@ -34,6 +34,8 @@ def bevel(obj,width=.0012,segments=1,zone=None):
   obj.data.materials.append(materials[zone]);mod.material=len(obj.data.materials)-1
  mod.affect='EDGES';mod.limit_method='ANGLE';mod.angle_limit=.65;bpy.ops.object.modifier_apply(modifier=mod.name)
 def face_depth(r):
+ # Float32 boundary vertices must use the inner depth, never the outer fallback.
+ if r<=front[0][0]:return front[0][1]
  for (r0,z0),(r1,z1) in zip(front,front[1:]):
   if r0<=r<=r1:return z0+(z1-z0)*(r-r0)/(r1-r0)
  return front[-1][1]
@@ -48,8 +50,8 @@ def polygon_cut(target,poly,a):
  throat=[(cr+(r-cr)*sr,ct+(t-ct)*st) for r,t in poly]
  if style=='window':
   shoulder=[(r*.65+tr*.35,t*.65+tt*.35) for (r,t),(tr,tt) in zip(poly,throat)]
-  rings=[(throat,lambda r,t:-.02),(throat,lambda r,t:face_depth(math.hypot(r,t))-.0072),
-         (shoulder,lambda r,t:face_depth(math.hypot(r,t))-.0014),
+  rings=[(throat,lambda r,t:-.02),(throat,lambda r,t:face_depth(math.hypot(r,t))-.0055),
+         (shoulder,lambda r,t:face_depth(math.hypot(r,t))-.0010),
          (poly,lambda r,t:face_depth(math.hypot(r,t))+.00005),(poly,lambda r,t:.20)]
  else:
   rings=[(throat,lambda r,t:-.02),(throat,lambda r,t:face_depth(math.hypot(r,t))-.006),
@@ -84,44 +86,42 @@ for poly in barrel_obj.data.polygons:
 if style=='disc':bevel(barrel_obj,.0005,segments=2,zone='edge_catch')
 if style=='disc':
  # KM720 5x150: raised centre cone, two concentric steps and outer vent band.
- front=[(.20*R,.133),(.050,.131),(.058,.125),(.068,.117),(.078,.109),(.088,.105),(.096,.105),(.112,.105),(.117,.109),(.144,.109),(.149,.115),(.155,.115),(.158,.108),(.190,.108),(.196,.117),(.212,.117)]
+ front=[(.20*R,.103),(.088,.094),(.096,.094),(.112,.094),(.117,.107),(.144,.107),(.149,.119),(.155,.119),(.158,.103),(.190,.103),(.196,.119),(.212,.119)]
 elif style=='steel':
  # Five-fold pressed mounting pad, integrated with the shell rather than
  # overlaid on a circular plateau. The actual rear mount bore stays 110.1 mm.
  def steel_profile(theta):
-  def pentagon(t):
-   d=abs((t-math.pi/2+math.pi/5)%(2*math.pi/5)-math.pi/5)
-   return .100*math.cos(math.pi/5)/math.cos(math.pi/5-d)
-  pad=sum(pentagon(theta+d)*w for d,w in [(-.10,.25),(0,.5),(.10,.25)])
-  return [(.27*R,.109),(.065,.113),(pad-.009,.113),(pad-.004,.112),
-          (pad+.001,.109),(pad+.006,.104),(pad+.010,.102),(.114,.100),(.120,.102),(.134,.109),
-          (.138,.109),(.143,.110),(.147,.111),(.151,.1105),(.155,.109),
-          (.184,.109),(.187,.110),(.190,.114),(.192,.116),(.194,.115),
-          (.196,.111),(.197,.110),(.199,.111),(.201,.115),(.203,.117),
-          (.205,.115),(.207,.111),(.208,.110)]
+  # A few millimetres of fivefold pressing, subordinate to the circular dish.
+  pad=.092+.003*math.cos(5*(theta-math.pi/2))
+  return [(.27*R,.092),(.065,.095),(pad-.009,.095),(pad-.004,.0945),
+          (pad+.001,.0935),(pad+.006,.0925),(pad+.010,.092),(.114,.096),(.120,.103),(.134,.116),
+          (.138,.118),(.143,.116),(.147,.113),(.151,.1105),(.155,.109),
+          (.184,.109),(.187,.113),(.190,.117),(.193,.118),(.195,.116),
+          (.197,.112),(.199,.111),(.201,.115),(.204,.119),
+          (.206,.118),(.208,.114)]
  front=steel_profile(math.pi/2)
 
 else:
  # Rebuild the visible casting from the owner's outer-lip-normalized layout.
  # All front surfaces clear the unchanged .083 m rotor-hat front plane.
- front=[(.13*R,.120),(.14*R,.123),(.32*R,.123),(.325*R,.122),
-        (.34*R,.106),(.49*R,.106),(.74*R,.106),(.845*R,.106),(.852*R,.1058),
-        (.86*R,.1045),(.867*R,.1005),(.878*R,.1005),(.883*R,.102),(.89*R,.110),
-        (.94*R,.116),(.97*R,.116)]
+ front=[(.13*R,.110),(.14*R,.113),(.29*R,.113),(.31*R,.111),(.325*R,.104),
+        (.34*R,.096),(.49*R,.096),(.57*R,.105),(.66*R,.119),(.74*R,.125),
+        (.845*R,.125),(.852*R,.124),(.86*R,.122),(.867*R,.116),
+        (.878*R,.116),(.883*R,.118),(.89*R,.124),(.94*R,.128),(.97*R,.124)]
 if style=='window':
  # The smaller cosmetic cap does not shrink the actual rear mounting bore.
- profile=front+[(r,z-.007) for r,z in reversed(front) if r>=BORE/2]
- profile += [(BORE/2,.085),(BORE/2,.101),(.13*R,.108)]
+ profile=front+[(r,z-.012) for r,z in reversed(front) if r>=BORE/2]
+ profile += [(BORE/2,.085),(BORE/2,.091),(.13*R,.098)]
 elif style=='disc':
  profile=front+[(r,z-.007) for r,z in reversed(front) if r>=BORE/2]
- profile += [(BORE/2,.073),(BORE/2,.081),(.20*R,.126)]
+ profile += [(BORE/2,.073),(BORE/2,.081),(.20*R,.096)]
 else:
  profile=front+[(r,z-.007) for r,z in reversed(front)]
 if style=='steel':
  profiles=[]
  for i in range(80):
   q=steel_profile(2*math.pi*i/80)
-  profiles.append(q+[(r,z-.007) for r,z in reversed(q)]+[(BORE/2,.095),(BORE/2,.104),(.27*R,.107)])
+  profiles.append(q+[(r,z-.007) for r,z in reversed(q)]+[(BORE/2,.078),(BORE/2,.086),(.27*R,.090)])
  k=len(profiles[0]);vs=[(r*math.cos(2*math.pi*i/80),r*math.sin(2*math.pi*i/80),z) for i,q in enumerate(profiles) for r,z in q]
  fs=[tuple(reversed((i*k+j,((i+1)%80)*k+j,((i+1)%80)*k+(j+1)%k,i*k+(j+1)%k))) for i in range(80) for j in range(k)]
  face=mesh('Pentagonal pressed stud pad and face',vs,fs)
@@ -130,10 +130,12 @@ else:
 if style=='window':
  face.data.materials.append(materials['bead_groove'])
  face.data.materials.append(materials['groove_shoulder'])
+ face.data.materials.append(materials['lip'])
  for p in face.data.polygons:
   r=sum(math.hypot(face.data.vertices[i].co.x,face.data.vertices[i].co.y) for i in p.vertices)/len(p.vertices)
   if .86*R<=r<=.88*R:p.material_index=1
   elif .84*R<=r<.86*R:p.material_index=2
+  elif r>=.89*R:p.material_index=3
 def rounded(poly,amount=.005,steps=3):
  out=[]
  for i,p in enumerate(poly):
@@ -144,7 +146,7 @@ def rounded(poly,amount=.005,steps=3):
   for j in range(steps+1):
    t=j/steps;out.append(((1-t)**2*a[0]+2*(1-t)*t*p[0]+t*t*b[0],(1-t)**2*a[1]+2*(1-t)*t*p[1]+t*t*b[1]))
  return out
-def rounded_window(ri,ro,inner,outer,corner=.008):
+def rounded_window(ri,ro,inner,outer,corner=.014):
  ai,ao=math.radians(inner/2),math.radians(outer/2)
  def polar(r,a):return (r*math.cos(a),r*math.sin(a))
  v=[polar(ro,-ao),polar(ro,ao),polar(ri,ai),polar(ri,-ai)]
@@ -162,7 +164,7 @@ def rounded_window(ri,ro,inner,outer,corner=.008):
   end=1-min(.35,corner/lengths[i]);steps=5 if i in [0,2] else 1
   for j in range(1,steps):out.append(at(i,g+(end-g)*j/steps))
  return out
-nut_profile=[(.0118,.095),(.0135,.097),(.015,.104),(.0175,.112),(.0195,.123)]
+nut_profile=[(.0118,.081),(.0135,.083),(.015,.088),(.0175,.095),(.0195,.106)]
 if style=='disc':
  for i in range(9):
   poly=[]
@@ -174,7 +176,7 @@ if style=='disc':
 elif style=='steel':
  for i in range(16):
   a=2*math.pi*i/16+math.pi/2+math.pi/16
-  poly=[(.169+.014*math.cos(2*math.pi*j/24),.0115*math.sin(2*math.pi*j/24)) for j in range(24)]
+  poly=[(.169+.0135*math.cos(2*math.pi*j/24),.012*math.sin(2*math.pi*j/24)) for j in range(24)]
   vs=[(r*math.cos(a)-t*math.sin(a),r*math.sin(a)+t*math.cos(a),z) for z in [-.02,.20] for r,t in poly]
   fs=[tuple(range(23,-1,-1)),tuple(range(24,48))]+[(j,(j+1)%24,(j+1)%24+24,j+24) for j in range(24)]
   cut(face,mesh('Plain radially oval pressed hole',vs,fs,'pocket_wall'))
@@ -190,7 +192,7 @@ if style=='disc':
  # the through mounting holes remain exactly 5x150.
  for i in range(LUGS):
   a=math.pi/2+2*math.pi*i/LUGS
-  cutter=lathe('Recessed nut pocket cutter',[(0,.20),(.0195,.20)]+list(reversed(nut_profile))+[(0,.095)],'nut_pocket',32,True)
+  cutter=lathe('Recessed nut pocket cutter',[(0,.20),(.0195,.20)]+list(reversed(nut_profile))+[(0,.081)],'nut_pocket',32,True)
   cutter.location.x=.075*math.cos(a);cutter.location.y=.075*math.sin(a)
   cut(face,cutter)
 # LC200 catalogue fit: accepted five-hole 150 mm PCD is unchanged.
@@ -199,13 +201,13 @@ for i in range(LUGS):
  cut(face,cyl('Lug bore cutter',.0095,.22,.075,n=12,x=x,y=y))
 # Pocket walls are explicit; a small finish bevel softens their mouth edges.
 bevel(face,.0014 if style=='disc' else .0015 if style=='steel' else .0006,segments=2,zone='edge_catch' if style=='disc' else None)
-zlug={'disc':.097,'steel':.113,'window':.123}[style]+.008
+zlug={'disc':.081,'steel':.092,'window':.103}[style]+.008
 for i in range(LUGS):
  a=2*math.pi*i/LUGS+math.pi/2;x=.075*math.cos(a);y=.075*math.sin(a)
  washer=cyl('Lug seat',.0124,.004,zlug-.006,'black' if style!='steel' else 'nut_metal',16,x,y);bevel(washer,.0006)
  nut=cyl('Five service nuts',.0085 if style=='steel' else .0100,.013,zlug,'black' if style=='window' else 'nut_metal',6,x,y);bevel(nut,.001,segments=2)
 if style!='steel':
- z={'disc':.136,'window':.125}[style];cap_r=.20*R if style=='disc' else .13*R
+ z={'disc':.106,'window':.115}[style];cap_r=.20*R if style=='disc' else .13*R
  inner=cap_r-.002
  lathe('Centre-cap shoulder',[(inner,z-.012),(cap_r+.001,z-.012),(cap_r,z+.002),(cap_r,z+.004),(inner,z+.004)],n=40)
  cap=cyl('Flat centre cap',cap_r,.005,z+.002,'rim' if style=='disc' else 'hubcap',n=48);bevel(cap,.0007)
@@ -256,8 +258,8 @@ def kmc_mark(x,y,z,width,height):
   for poly in mark.data.polygons:poly.use_smooth=False
 if style=='disc':
  # Small source-reference cap inside the accepted five service nuts.
- kmc_mark(0,.008,.1415,.059,.014);label('WHEELS',0,-.012,.1417,.054,.0052)
- lathe('Cap perimeter relief',[(.042,.1405),(.0435,.142),(.045,.142),(.20*R,.1405)],n=48)
+ kmc_mark(0,.008,.1115,.059,.014);label('WHEELS',0,-.012,.1117,.054,.0052)
+ lathe('Cap perimeter relief',[(.042,.1105),(.0435,.112),(.045,.112),(.20*R,.1105)],n=48)
  # Tone-on-tone bead/lip step, entirely inside the accepted 462 mm flange.
  lathe('Outer bead ring step',[(.214,.117),(.216,.119),(.224,.119),(.226,.117)],n=64)
  # Centre the small mark on the flat lip land and give it cast edge relief.
@@ -267,9 +269,12 @@ elif style=='window':
  for bottom in [False,True]:
   for i,ch in enumerate('METHOD'):
    a=math.pi/2+(2.5-i)*.14+(math.pi if bottom else 0)
-   label(ch,.41*R*math.cos(a),.41*R*math.sin(a),.1065,.0115,.0105,a-math.pi/2)
- label('METHOD',0,.004,.1307,.044,.0068,zone='cap_lettering')
- label('BEAD GRIP',0,-.006,.1307,.042,.0032,zone='cap_lettering')
+   label(ch,.41*R*math.cos(a),.41*R*math.sin(a),.0965,.0115,.0105,a-math.pi/2)
+ label('METHOD',0,.004,.1207,.044,.0068,zone='cap_lettering')
+ label('BEAD GRIP',0,-.006,.1207,.042,.0032,zone='cap_lettering')
+ mountain=[(-.022,.010),(-.009,.013),(-.006,.011),(.003,.015),(.009,.011),(.017,.013),(.022,.010)]
+ mark=mesh('Cast mountain cap relief',[(x,y,.1208) for x,y in mountain],[tuple(reversed(range(len(mountain))))],'cap_lettering')
+ for p in mark.data.polygons:p.use_smooth=False
 # Valve seated in the rolled flange; restrained rubber and metal details.
 a=-math.pi/2;x=.219*math.cos(a);y=.219*math.sin(a)
 cyl('Valve rubber foot',.005,.010,.111,'black',12,x,y)
@@ -293,8 +298,8 @@ for i in range(16):
 cyl('Closed rotor hat and stud hub',.094,.046,.060,'hat',32)
 if style=='steel':
  # Flat spindle end and stepped shoulder behind the open bore, not a cover.
- nose_profile=[(0,.103),(.003,.103),(.0035,.105),(.030,.105),(.032,.1045),
-       (.034,.103),(.035,.096),(.037,.093),(.058,.093),(.060,.091),(.060,.080),(0,.080)]
+ nose_profile=[(0,.098),(.0025,.098),(.003,.100),(.024,.100),(.027,.0995),
+       (.031,.097),(.034,.090),(.037,.087),(.058,.087),(.060,.085),(.060,.080),(0,.080)]
  nose=lathe('Exposed forged hub nose',nose_profile,'hub_metal',48,True)
  # Planar metal end/annulus must not inherit a dome's averaged boundary normal.
  for p in nose.data.polygons:
@@ -349,8 +354,14 @@ for t in me.loop_triangles:
    normal=Vector((normal.x*.85,normal.y*.85,normal.z+.18)).normalized()
   if style=='window' and zone=='pocket_wall' and normal.z>0:
    normal=Vector((normal.x*.9,normal.y*.9,normal.z+.27)).normalized()
-  disc_hub=style=='disc' and zone=='rim' and abs(z-face_depth(r))<.003 and .20*R-.00002<=r<=.11202
-  if disc_hub:normal=surface_normal(r,math.atan2(me.vertices[vi].co.y,me.vertices[vi].co.x))
+  disc_hub=style=='disc' and zone=='rim' and abs(z-face_depth(r))<.002 and .20*R-.00002<=r<=.11202
+  if disc_hub:
+   # Use the actual radial strip slope, not the Boolean ngon's polygon normal.
+   # Flat bands remain flat; conical strips do not become five triangulated fans.
+   tr=sum(math.hypot(me.vertices[v].co.x,me.vertices[v].co.y) for v in t.vertices)/3
+   slope=next(((z1-z0)/(r1-r0) for (r0,z0),(r1,z1) in zip(front,front[1:]) if r0-1e-5<=tr<=r1+1e-5 and r1-r0>1e-7),0)
+   theta=math.atan2(me.vertices[vi].co.y,me.vertices[vi].co.x)
+   normal=Vector((-slope*math.cos(theta),-slope*math.sin(theta),1/WIDTH_FACTOR)).normalized()
   if style=='disc' and zone=='nut_pocket':
    v=me.vertices[vi].co
    a=min((math.pi/2+2*math.pi*i/LUGS for i in range(LUGS)),key=lambda a:math.hypot(v.x-.075*math.cos(a),v.y-.075*math.sin(a)))
