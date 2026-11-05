@@ -275,7 +275,7 @@ windowGlass.clearcoatRoughness=.28;windowGlass.envMapIntensity=BASE_FINISH.glass
 windowGlass.transparent=true;windowGlass.opacity=BASE_FINISH.glassOpacity;windowGlass.depthWrite=true;
 windowGlass.side=THREE.FrontSide;windowGlass.ior=1.5;
 const blackPlastic=new THREE.MeshStandardMaterial({color:BASE_FINISH.blackColor,roughness:BASE_FINISH.blackRoughness,metalness:0,envMapIntensity:BASE_FINISH.blackEnv});
-const tireMat=new THREE.MeshStandardMaterial({color:'#383a3c',roughness:.88,metalness:0});
+const tireMat=new THREE.MeshStandardMaterial({color:'#3d3f41',roughness:.78,metalness:0,envMapIntensity:.65});
 const rimMat=physical('#858c92',.35,.80,.12);
 const lampLens=physical('#edf5fa',.065,0,.65);
 lampLens.clearcoatRoughness=.16;lampLens.specularIntensity=.65;
@@ -641,6 +641,19 @@ function useRoofEdgeFinish(material){
    #endif`);
  };material.customProgramCacheKey=()=>cache()+'-roof-finish-v1';
 }
+// Tyre-only bounced studio fill preserves the source tread and curvature.
+// No shared wheel/rim material or geometry is changed.
+function useTyreRubberFinish(material){
+ const compile=material.onBeforeCompile,cache=material.customProgramCacheKey.bind(material);
+ material.onBeforeCompile=shader=>{
+  compile(shader);
+  shader.fragmentShader=shader.fragmentShader.replace('#include <opaque_fragment>',`
+   float rubberCavity=mix(.65,1.,bakedAO)*(1.-bakedValley*.25);
+   outgoingLight+=diffuseColor.rgb*(.14*rubberCavity+.06*bakedRidge);
+   #include <opaque_fragment>`);
+ };
+ material.customProgramCacheKey=()=>cache()+'-charcoal-rubber-v1';
+}
 const archFinishMaterials=new WeakSet();
 function useArchLinerFill(material){
  if(!['body_shell','unsorted_03'].includes(material.userData.partId)||material.userData.zone!=='black'||archFinishMaterials.has(material))return;
@@ -651,9 +664,22 @@ function useArchLinerFill(material){
   shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vArchPosition;');
   shader.fragmentShader=shader.fragmentShader.replace('#include <opaque_fragment>',`float archX=min(abs(vArchPosition.x+1.635),abs(vArchPosition.x-1.215));
    float liner=(1.-smoothstep(.48,.58,archX))*smoothstep(.32,.40,vArchPosition.y)*(1.-smoothstep(1.00,1.08,vArchPosition.y))*smoothstep(.45,.50,abs(vArchPosition.z))*(1.-smoothstep(.99,1.04,abs(vArchPosition.z)));
-   outgoingLight=mix(outgoingLight,max(outgoingLight,diffuseColor.rgb*.65),liner);
+   // A soft bounced fill follows depth, the source normal and baked cavities.
+   // It adds light rather than clamping every recessed pixel to the same grey.
+   vec3 archNormal=inverseTransformDirection(geometryNormal,viewMatrix);
+   float archDepth=smoothstep(.52,.98,abs(vArchPosition.z));
+   float archEdge=smoothstep(.85,.97,abs(vArchPosition.z));
+   float archFacing=.5+.5*dot(archNormal,normalize(vec3(-.4,.8,.3*sign(vArchPosition.z))));
+   float archGrain=fract(sin(dot(floor(vArchPosition*900.),vec3(17.13,91.7,43.3)))*43758.5453);
+   float archCavity=mix(.70,1.,bakedAO)*(1.-bakedValley*.30);
+   float archRadius=length(vec2(archX,vArchPosition.y-.3965));
+   float archRim=smoothstep(.36,.52,archRadius);
+   vec3 linerBounce=diffuseColor.rgb*mix(.55,1.65,archRim)*mix(.75,1.,archDepth)*mix(.80,1.20,archFacing)*archCavity;
+   float archGrainFade=1.-smoothstep(.001,.004,length(fwidth(vArchPosition)));
+   linerBounce*=mix(1.,mix(.80,1.20,archGrain),archGrainFade);
+   outgoingLight=mix(outgoingLight,outgoingLight+linerBounce+diffuseColor.rgb*(archEdge*.12+smoothstep(.49,.55,archRadius)*.12),liner);
    #include <opaque_fragment>`);
- };material.customProgramCacheKey=()=>cache()+'-liner-fill-v1';
+ };material.customProgramCacheKey=()=>cache()+'-liner-depth-grain-v2';
 }
 // Interior upholstery seen through a shut gap must not colour the gap brown.
 // Neutral backing below the beltline, including cabin-centre surfaces seen through shut gaps.
@@ -1162,6 +1188,7 @@ async function loadPart(entry){
     finishPartMaterial(material,entry,zone,source.name,part);
     if(/_finish(?:3|4b)$/.test(entry.id)&&zone==='lamp_red'&&!source.name.startsWith('redglass_lower')&&!source.name.startsWith('redglass_caps'))useRearRedFilter(material,part);
     if(!['glass','lamp_clear','mirror'].includes(zone)&&!material.userData.optical&&!(entry.id.startsWith('lamp_rear_')&&zone==='lamp_red'))useBakedShading(material);
+    if(/^wheel_[FR][LR]$/.test(entry.id)&&zone==='tyre')useTyreRubberFinish(material);
     if(entry.rigidClass==='wheel'&&!entry.wheelSlot&&zone==='black'){material.color.set('#0d1115');material.roughness=.56;material.envMapIntensity=1;}
     if(entry.rigidClass==='wheel'&&!entry.wheelSlot&&zone==='chrome'){material.color.set('#e1e4e5');material.roughness=.24;material.metalness=1;material.clearcoat=.15;material.clearcoatRoughness=.23;material.envMapIntensity=.95;}
     // Additive workshop parts author their own finish without changing base materials.
