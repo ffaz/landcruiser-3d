@@ -257,9 +257,9 @@ const physical=(color,roughness=.34,metalness=.03,clearcoat=.5)=>new THREE.MeshP
   color,roughness,metalness,clearcoat,clearcoatRoughness:.23,envMap:scene.environment,side:THREE.DoubleSide
 });
 // Shared satin painted-metal finish; studios retain their own lighting/backgrounds.
-const BASE_FINISH=Object.freeze({paintRoughness:.24,paintClearcoat:1.0,paintCoatRoughness:.075,paintEnv:1.10,
- chromeColor:'#e1e4e5',chromeRoughness:.18,chromeMetalness:1,chromeEnv:3.0,
- glassColor:'#46545f',glassRoughness:.12,glassOpacity:.80,glassEnv:.75,
+const BASE_FINISH=Object.freeze({paintRoughness:.42,paintClearcoat:.35,paintCoatRoughness:.32,paintEnv:.70,
+ chromeColor:'#d3d9de',chromeRoughness:.38,chromeMetalness:.60,chromeEnv:1.0,
+ glassColor:'#aab7bf',glassRoughness:.24,glassOpacity:.18,glassEnv:.22,
  blackColor:'#282a2c',blackRoughness:.65,blackEnv:.30,blackSpecular:.25,
  sharpGapStrength:.45,seamStrength:.70,seamValley:[.040,.180],seamOcclusion:[.120,.500],
  bonnetCreaseDiffuse:.70,rearLensEnv:.006});
@@ -269,9 +269,9 @@ paint.clearcoatRoughness=BASE_FINISH.paintCoatRoughness;paint.envMapIntensity=BA
 const chrome=physical(BASE_FINISH.chromeColor,BASE_FINISH.chromeRoughness,BASE_FINISH.chromeMetalness,.08);chrome.clearcoatRoughness=.30;chrome.envMapIntensity=BASE_FINISH.chromeEnv;
 const softChrome=physical('#a4adb3',.32,.92,.10);
 const metalDark=physical('#434b52',.35,.80,.12);
-const windowGlass=physical(BASE_FINISH.glassColor,BASE_FINISH.glassRoughness,.02,.10);
-windowGlass.specularIntensity=.70;
-windowGlass.clearcoatRoughness=.22;windowGlass.envMapIntensity=BASE_FINISH.glassEnv;
+const windowGlass=physical(BASE_FINISH.glassColor,BASE_FINISH.glassRoughness,0,.06);
+windowGlass.specularIntensity=.35;
+windowGlass.clearcoatRoughness=.28;windowGlass.envMapIntensity=BASE_FINISH.glassEnv;
 windowGlass.transparent=true;windowGlass.opacity=BASE_FINISH.glassOpacity;windowGlass.depthWrite=true;
 windowGlass.side=THREE.FrontSide;windowGlass.ior=1.5;
 const blackPlastic=new THREE.MeshStandardMaterial({color:BASE_FINISH.blackColor,roughness:BASE_FINISH.blackRoughness,metalness:0,envMapIntensity:BASE_FINISH.blackEnv});
@@ -352,20 +352,6 @@ function recordDoorEdges(root,id){
  }
  doorEdgeProfiles.set(id,profile);
 }
-// Analytic reflection of the studio's long side softboxes. Evaluate a reflected
-// world-space ray against the light plane, so bands follow the stored surface
-// normals and move with the view; these are not painted height stripes.
-const finishSoftboxGLSL=`
- float finishBox(float x,float centre,float halfWidth,float feather){
-  return 1.0-smoothstep(halfWidth-feather,halfWidth+feather,abs(x-centre));
- }
- float finishSideBoxes(vec3 p,vec3 ray){
-  float t=(6.0-abs(p.z))/max(abs(ray.z),0.001);
-  vec3 hit=p+ray*t;
-  float lengthMask=finishBox(hit.x,0.0,4.0,.35);
-  return lengthMask*(finishBox(hit.y,2.4,.40,.10)+.85*finishBox(hit.y,.25,.20,.065));
- }
-`;
 function useOriginalPanelShading(material,cream=false){
  const handle=material.userData.partId?.startsWith('door_F')?[-.178,1.066]:material.userData.partId?.startsWith('door_R')?[.845,1.111]:null;
  const retainFineCavity=material.userData.partId==='bonnet';
@@ -379,7 +365,7 @@ function useOriginalPanelShading(material,cream=false){
   shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>',
    '#include <begin_vertex>\nvBakedShading=bakedShading.rg; vPanelPosition=(modelMatrix*vec4(position,1.0)).xyz; vPanelPosition.y-=uPanelBodyLift;');
   shader.fragmentShader=shader.fragmentShader.replace('#include <common>',
-   '#include <common>\n'+finishSoftboxGLSL+'\nvarying vec2 vBakedShading; varying vec3 vPanelPosition; uniform float uBakedAO; uniform float uBakedRidge; uniform float uBakedValley;'+(retainFineCavity?' uniform float uBonnetCreaseDiffuse;':'')+(cream?' uniform float uCreamAOExponent; uniform float uCreamTrimSpecular;':''));
+   '#include <common>\nvarying vec2 vBakedShading; varying vec3 vPanelPosition; uniform float uBakedAO; uniform float uBakedRidge; uniform float uBakedValley;'+(retainFineCavity?' uniform float uBonnetCreaseDiffuse;':'')+(cream?' uniform float uCreamAOExponent; uniform float uCreamTrimSpecular;':''));
   shader.fragmentShader=shader.fragmentShader.replace('#include <aomap_fragment>',`#include <aomap_fragment>
    float bakedAO=${cream?'pow(clamp(vBakedShading.r,0.0,1.0),mix(1.0,uCreamAOExponent,smoothstep(0.02,0.10,abs(vBakedShading.g-0.5)*2.0)))':'clamp(vBakedShading.r,0.0,1.0)'};
    float bakedRidge=max(0.0,(vBakedShading.g-0.5-1.0/255.0)*2.0);
@@ -400,13 +386,6 @@ function useOriginalPanelShading(material,cream=false){
     clearcoatSpecularIndirect*=mix(1.0,bakedCavity,${cream?'0.85':'0.72'});
    #endif
    reflectedLight.indirectDiffuse+=diffuseColor.rgb*bakedRidge*uBakedRidge*0.13;
-   #ifdef USE_CLEARCOAT
-    ${/^(body_shell|bonnet|door_[FR][LR]|bumper_front.*|bumper_rear.*|tailgate|fender.*)$/.test(material.userData.partId)?`
-    vec3 coatRay=inverseTransformDirection(reflect(-geometryViewDir,clearcoatNormal),viewMatrix);
-    float coatFresnel=.04+.96*pow(1.0-clamp(dot(clearcoatNormal,geometryViewDir),0.0,1.0),5.0);
-    clearcoatSpecularIndirect+=vec3(18.0*coatFresnel*finishSideBoxes(vPanelPosition,coatRay));
-    `:''}
-   #endif
    ${retainFineCavity?`// Strong rear softboxes need directional occlusion at the stored bonnet fold.
    vec3 bonnetWorldNormal=inverseTransformDirection(geometryNormal,viewMatrix);
    float bonnetNegativeSide=smoothstep(.25,.85,-bonnetWorldNormal.z);
@@ -436,7 +415,7 @@ function useOriginalPanelShading(material,cream=false){
     gl_FragColor.rgb=mix(gl_FragColor.rgb,vec3(hemShade),hemCoverage);`);
   };
  }
- material.customProgramCacheKey=()=> 'lc200-source-door-edge-v1-'+material.userData.partId;
+ material.customProgramCacheKey=()=> 'lc200-source-door-edge-satin-v2-'+material.userData.partId;
  return material;
 }
 function useBakedShading(material,cream=false){
@@ -446,11 +425,11 @@ function useBakedShading(material,cream=false){
   Object.assign(shader.uniforms,cream?creamDetailUniforms:bakedUniforms,finishSeamUniforms);
   if(material.userData.zone==='tyre')Object.assign(shader.uniforms,{uBakedAO:{value:.35},uBakedValley:{value:.35},uBakedRidge:{value:.35}});
   shader.vertexShader=shader.vertexShader.replace('#include <common>',
-   '#include <common>\nattribute vec3 bakedShading; varying vec2 vBakedShading;'+(material.userData.reflectiveAccent?' varying vec3 vAccentPosition;':''));
+   '#include <common>\nattribute vec3 bakedShading; varying vec2 vBakedShading;');
   shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>',
-   '#include <begin_vertex>\nvBakedShading=bakedShading.rg;'+(material.userData.reflectiveAccent?' vAccentPosition=(modelMatrix*vec4(position,1.0)).xyz;':''));
+   '#include <begin_vertex>\nvBakedShading=bakedShading.rg;');
   shader.fragmentShader=shader.fragmentShader.replace('#include <common>',
-   '#include <common>\n'+(material.userData.reflectiveAccent?finishSoftboxGLSL+' varying vec3 vAccentPosition;':'')+'\nvarying vec2 vBakedShading; uniform float uBakedAO; uniform float uBakedRidge; uniform float uBakedValley; uniform float uFinishSharpGap; uniform float uFinishSeam; uniform vec2 uFinishSeamValley; uniform vec2 uFinishSeamOcclusion; uniform float uFinishBlackSpecular;'+(cream?' uniform float uCreamAOExponent; uniform float uCreamTrimSpecular;':''));
+   '#include <common>\nvarying vec2 vBakedShading; uniform float uBakedAO; uniform float uBakedRidge; uniform float uBakedValley; uniform float uFinishSharpGap; uniform float uFinishSeam; uniform vec2 uFinishSeamValley; uniform vec2 uFinishSeamOcclusion; uniform float uFinishBlackSpecular;'+(cream?' uniform float uCreamAOExponent; uniform float uCreamTrimSpecular;':''));
   shader.fragmentShader=shader.fragmentShader.replace('#include <aomap_fragment>',`#include <aomap_fragment>
    float bakedAO=${cream?'pow(clamp(vBakedShading.r,0.0,1.0),mix(1.0,uCreamAOExponent,smoothstep(0.02,0.10,abs(vBakedShading.g-0.5)*2.0)))':'clamp(vBakedShading.r,0.0,1.0)'};
    float bakedRidge=max(0.0,(vBakedShading.g-0.5-1.0/255.0)*2.0);
@@ -459,26 +438,21 @@ function useBakedShading(material,cream=false){
    
    reflectedLight.directDiffuse*=mix(1.0,bakedCavity,${cream?'1.00':'0.65'});
    reflectedLight.indirectDiffuse*=bakedCavity;
-   reflectedLight.indirectSpecular*=${material.userData.reflectiveAccent?'mix(.60,1.0,bakedAO)':"mix(1.0,bakedCavity,"+(cream?'1.00':'0.72')+")"};
+   reflectedLight.indirectSpecular*=mix(1.0,bakedCavity,${cream?'1.00':'0.72'});
    reflectedLight.directSpecular*=mix(1.0,bakedCavity,${cream?'1.00':'0.25'});
    #ifdef USE_CLEARCOAT
     clearcoatSpecularIndirect*=mix(1.0,bakedCavity,${cream?'1.00':'0.72'});
    #endif
-   ${material.userData.reflectiveAccent?'':"reflectedLight.indirectDiffuse+=diffuseColor.rgb*bakedRidge*uBakedRidge*0.13"+((['black','chrome'].includes(material.userData.zone)&&!material.userData.partId?.startsWith('wheel_'))?'*bakedCavity*bakedAO*bakedAO*bakedAO':'')+";"}
-   ${material.userData.reflectiveAccent?`
-    vec3 accentRay=inverseTransformDirection(reflect(-geometryViewDir,normal),viewMatrix);
-    // A silver studio surround, split by finite dark/bright cards; retain the
-    // PMREM above for the source's smaller bevels and engraved lettering.
-    float rearHitY=vAccentPosition.y+accentRay.y*(6.0-vAccentPosition.x)/max(abs(accentRay.x),.001);
-    float rearCard=finishBox(rearHitY,1.55,.30,.08);
-    float card=mix(finishSideBoxes(vAccentPosition,accentRay),rearCard,smoothstep(.45,.85,abs(accentRay.x)));
-    float silverSurround=mix(.12,1.80,clamp(card,0.0,1.0));
-    reflectedLight.indirectSpecular+=diffuseColor.rgb*silverSurround*mix(.65,1.0,bakedAO);
-   `:''}
+   // Satin silver gets gentle diffuse studio fill, preserving source cavities.
+   // No reflected cards, stripes or mirror surround are added.
+   ${material.userData.satinSilver?`
+    vec3 silverNormal=inverseTransformDirection(geometryNormal,viewMatrix);
+    reflectedLight.indirectDiffuse+=diffuseColor.rgb*(.12+.10*max(silverNormal.y,0.0))*bakedCavity;
+   `: "reflectedLight.indirectDiffuse+=diffuseColor.rgb*bakedRidge*uBakedRidge*0.13"+((['black','chrome'].includes(material.userData.zone)&&!material.userData.partId?.startsWith('wheel_'))?'*bakedCavity*bakedAO*bakedAO*bakedAO':'')+";"}
    ${material.userData.zone==='black'&&!material.userData.partId?.startsWith('wheel_')?'reflectedLight.directSpecular*=uFinishBlackSpecular; reflectedLight.indirectSpecular*=uFinishBlackSpecular;':''}
   `);
  };
- material.customProgramCacheKey=()=> (cream?'lc200-cream-baked-detail-v5':'lc200-baked-ao-curvature-v5')+(material.userData.zone==='black'&&!material.userData.partId?.startsWith('wheel_')?'-neutral-trim':material.userData.zone==='chrome'&&!material.userData.partId?.startsWith('wheel_')?'-metal-trim':'')+(material.userData.reflectiveAccent?'-reflective-accent-v2':'');
+ material.customProgramCacheKey=()=> (cream?'lc200-cream-baked-detail-v5':'lc200-baked-ao-curvature-v5')+(material.userData.zone==='black'&&!material.userData.partId?.startsWith('wheel_')?'-neutral-trim':material.userData.zone==='chrome'&&!material.userData.partId?.startsWith('wheel_')?'-metal-trim':'')+(material.userData.satinSilver?'-satin-silver-v1':'');
  return material;
 }
 function useCreamPaintShading(material){
@@ -493,11 +467,6 @@ function useCreamPaintShading(material){
   if(material.userData.partId==='spoiler'){shader.uniforms.uCreamGrazingFloor={value:.02};shader.uniforms.uCreamGrazingRange={value:new THREE.Vector2(.03,.85)};}
   shader.fragmentShader=shader.fragmentShader.replace('#include <common>',
    '#include <common>\nuniform float uCreamKeyGain; uniform float uCreamFillGain; uniform float uCreamRearFill; uniform vec3 uCreamKeyDirection; uniform vec3 uCreamKeyTint; uniform float uCreamGrazingFloor; uniform vec2 uCreamGrazingRange;');
-  if(material.userData.partId==='body_shell')shader.fragmentShader=shader.fragmentShader.replace('#include <normal_fragment_maps>',`#include <normal_fragment_maps>
-   float roofNormalMask=smoothstep(1.77,1.82,vPanelPosition.y)*(1.0-smoothstep(.75,.83,abs(vPanelPosition.z)));
-   vec3 roofShadingNormal=inverseTransformDirection(normal,viewMatrix);
-   roofShadingNormal=normalize(vec3(roofShadingNormal.x*2.5,roofShadingNormal.y,roofShadingNormal.z*2.5));
-   normal=normalize(mix(normal,mat3(viewMatrix)*roofShadingNormal,roofNormalMask));`);
   if(material.userData.partId==='body_shell')shader.fragmentShader=shader.fragmentShader.replace('#include <aomap_fragment>',`#include <aomap_fragment>
    float roofPaint=smoothstep(1.77,1.82,vPanelPosition.y)*(1.0-smoothstep(.75,.83,abs(vPanelPosition.z)));
    reflectedLight.directDiffuse*=mix(1.0,.90,roofPaint);
@@ -509,7 +478,7 @@ function useCreamPaintShading(material){
   shader.fragmentShader=shader.fragmentShader.replace('#include <aomap_fragment>',
    'float creamFacing=abs(dot(geometryNormal,geometryViewDir));\nfloat creamLowView=1.0-smoothstep(0.04,0.14,abs(cameraPosition.y)/max(length(cameraPosition),0.001));\nfloat creamEdgeGain=mix(1.0,mix(uCreamGrazingFloor,1.0,smoothstep(uCreamGrazingRange.x,uCreamGrazingRange.y,creamFacing)),creamLowView);\nreflectedLight.directDiffuse*=uCreamKeyGain*uCreamKeyTint*creamEdgeGain;\nvec3 creamWorldNormal=inverseTransformDirection(geometryNormal,viewMatrix);\nfloat creamRearWeight=smoothstep(0.15,0.80,creamWorldNormal.x);\nreflectedLight.indirectDiffuse*=uCreamFillGain*mix(1.0,uCreamRearFill,creamRearWeight);\n#include <aomap_fragment>');
  };
- material.customProgramCacheKey=()=> 'lc200-closeup-paint-lighting-v6-'+material.userData.partId;
+ material.customProgramCacheKey=()=> 'lc200-closeup-paint-lighting-satin-v7-'+material.userData.partId;
  return material;
 }
 // Recessed side gaps are filtered in screen space, without moving mesh edges.
@@ -715,9 +684,9 @@ const FINISHES=Object.freeze({
  matte_black:{label:'Matte black',zones:['paint','chrome','black'],color:'#1b1d1f',metalness:0,roughness:.82,clearcoat:0,envMapIntensity:.25},
  body:{label:'Body colour',zones:['chrome','black'],color:'body',metalness:.04,roughness:.42,clearcoat:.35,clearcoatRoughness:.30,envMapIntensity:.70},
  smoked:{label:'Smoked',zones:['lamp_clear','lamp_red','lamp_orange'],shade:.32,opacity:.55},
- tint_35:{label:'Light tint · 35%',zones:['glass'],shade:.70,opacity:.88},
- tint_15:{label:'Dark tint · 15%',zones:['glass'],shade:.42,opacity:.94},
- tint_5:{label:'Limo tint · 5%',zones:['glass'],shade:.20,opacity:.985}
+ tint_35:{label:'Light tint · 35%',zones:['glass'],glassSurface:.75,glassAbsorption:.20},
+ tint_15:{label:'Dark tint · 15%',zones:['glass'],glassSurface:.45,glassAbsorption:.45},
+ tint_5:{label:'Limo tint · 5%',zones:['glass'],glassSurface:.12,glassAbsorption:.85}
 });
 const finishVariants=new WeakMap();
 function withFinish(material,zone,id){
@@ -732,7 +701,7 @@ function withFinish(material,zone,id){
   for(const key of ['metalness','roughness','clearcoat','clearcoatRoughness','envMapIntensity'])if(surface[key]!==undefined&&key in variant)variant[key]=surface[key];
   if(zone==='glass'){
    const compileGlass=material.onBeforeCompile;
-   variant.onBeforeCompile=shader=>{compileGlass(shader);shader.uniforms.uGlassFinishScale.value={tint_35:.55,tint_15:.25,tint_5:.08}[id];};
+   variant.onBeforeCompile=shader=>{compileGlass(shader);shader.uniforms.uGlassFinishScale.value=finish.glassSurface;shader.uniforms.uGlassTintAbsorption.value=finish.glassAbsorption;};
    variant.customProgramCacheKey=()=>material.customProgramCacheKey()+'-'+id;
   }
   byId.set(id,variant);originalMaterials.set(variant,originalMaterials.get(material)||material);
@@ -741,9 +710,7 @@ function withFinish(material,zone,id){
  variant.color.copy(material.color);variant.opacity=material.opacity;variant.emissive?.copy(material.emissive);
  if(finish.color)variant.color.set(finish.color==='body'?body:finish.color);
  if(finish.shade&&zone!=='glass'){variant.color.multiplyScalar(finish.shade);variant.emissive?.multiplyScalar(finish.shade);}
- if(zone==='glass'){
-  variant.opacity=1;
- }else if(finish.opacity&&variant.transparent&&zone!=='lamp_red')variant.opacity=Math.max(material.opacity,finish.opacity);
+ if(finish.opacity&&variant.transparent&&zone!=='lamp_red')variant.opacity=Math.max(material.opacity,finish.opacity);
  return variant;
 }
 const aliases={carpaint:'paint',tire:'tyre',rim_second:'rim',brakedisk:'brake',windowglass:'glass',darkglass:'glass',redglass:'lamp_red',redglass_lower:'lamp_red',redglass_caps:'lamp_red',clearglass:'lamp_clear',orangeglass:'lamp_orange',garnish:'chrome'};
@@ -775,53 +742,52 @@ function useRearRedFilter(material,node){
  };
  material.customProgramCacheKey=()=> 'lc200-rear-red-filter-v5-'+planes.length;
 }
-// Factory privacy glass is a regional material mask; stored vertices/normals are unchanged.
+// Model glazing: a cool clear front, translucent factory privacy glass, and
+// one broad pale-sky sheen. Every factory and workshop finish remains see-through.
 function useFactoryGlass(material,entry,sourceName){
  const rear=/^door_R|^tailgate/.test(entry.id),roof=sourceName.toLowerCase().startsWith('darkglass'),body=entry.id==='body_shell'&&!roof;
- // Absorption belongs in diffuse colour. Keep a dielectric surface on all panes,
- // including the roof. Workshop tints absorb the complete surface response.
- material.specularIntensity=.70;material.clearcoat=.10;material.clearcoatRoughness=.12;
- material.envMapIntensity=roof?.65:.50;
- if(roof)material.opacity=.80;
+ material.specularIntensity=.35;material.clearcoat=.06;material.clearcoatRoughness=.28;
+ material.envMapIntensity=BASE_FINISH.glassEnv;material.opacity=BASE_FINISH.glassOpacity;
  material.onBeforeCompile=shader=>{
-  shader.uniforms.uFactoryGlassLift=bodyLiftUniform;shader.uniforms.uGlassFinishScale={value:1.0};
+  shader.uniforms.uFactoryGlassLift=bodyLiftUniform;
+  shader.uniforms.uGlassFinishScale={value:1.0};shader.uniforms.uGlassTintAbsorption={value:0.0};
   shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vFactoryGlassPosition;uniform float uFactoryGlassLift;');
   shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvFactoryGlassPosition=(modelMatrix*vec4(position,1.0)).xyz;vFactoryGlassPosition.y-=uFactoryGlassLift;');
-  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vFactoryGlassPosition;uniform float uGlassFinishScale;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vFactoryGlassPosition;uniform float uGlassFinishScale;uniform float uGlassTintAbsorption;');
   shader.fragmentShader=shader.fragmentShader.replace('#include <color_fragment>',`#include <color_fragment>
    float privacy=${rear||roof?'1.0':body?'smoothstep(0.10,0.20,vFactoryGlassPosition.x)':'0.0'};
-   diffuseColor.rgb*=mix(vec3(.82),vec3(${roof?'.16,.18,.20':'.15,.17,.19'}),privacy);
-   float glassSky=smoothstep(1.20,1.72,vFactoryGlassPosition.y);
-   diffuseColor.rgb*=mix(.72,1.18,glassSky)*${roof?'0.90':'1.0'};
-   diffuseColor.a=mix(max(diffuseColor.a,.80),1.0,privacy*${roof?'0.0':'1.0'});
+   diffuseColor.rgb*=mix(vec3(1.0),vec3(.45,.49,.52),privacy);
+   float factoryOpacity=mix(.18,${roof?'.50':'.48'},privacy);
+   diffuseColor.a=1.0-(1.0-factoryOpacity)*(1.0-uGlassTintAbsorption);
   `);
-  shader.fragmentShader=shader.fragmentShader.replace('#include <aomap_fragment>',`#include <aomap_fragment>
-   // Sky reflection is stronger above the belt line; keep lower panes reflective too.
-   float glassSkyReflection=${roof?'1.0':'mix(.45,1.65,glassSky)*mix(1.0,.36,privacy)'};
-   reflectedLight.indirectSpecular*=glassSkyReflection;
-   #ifdef USE_CLEARCOAT
-    clearcoatSpecularIndirect*=glassSkyReflection;
-   #endif
-  `);
-  shader.fragmentShader=shader.fragmentShader.replace('#include <opaque_fragment>','outgoingLight*=uGlassFinishScale;\n#include <opaque_fragment>');
- };material.customProgramCacheKey=()=> 'factory-glass-v3-'+entry.id+'-'+sourceName;
+  shader.fragmentShader=shader.fragmentShader.replace('#include <opaque_fragment>',`
+   vec3 skyRay=inverseTransformDirection(reflect(-geometryViewDir,normal),viewMatrix);
+   float paleSky=smoothstep(-.35,.65,skyRay.y);
+   // A single soft sky field has no rectangular inset or hot studio-card edges.
+   outgoingLight=mix(outgoingLight,vec3(.24,.29,.33)*mix(.45,1.0,paleSky),.35);
+   outgoingLight*=uGlassFinishScale;
+   #include <opaque_fragment>`);
+ };material.customProgramCacheKey=()=> 'factory-model-glass-v4-'+entry.id+'-'+sourceName;
 }
 function finishPartMaterial(material,entry,zone,sourceName,node){
  const rear=entry.id.startsWith('lamp_rear_');
- if(zone==='paint'&&!/^(body_shell|bonnet|door_[FR][LR]|bumper_front.*|bumper_rear.*|tailgate|fender.*)$/.test(entry.id)){
-  material.roughness=.30;material.clearcoat=.65;material.clearcoatRoughness=.18;material.envMapIntensity=1.00;
+ // Shared die-cast silver family; bevels and baked cavities supply edge detail.
+ if(zone==='chrome'&&entry.rigidClass!=='wheel'){
+  material.userData.satinSilver=true;
+  material.roughness=.38;material.metalness=.60;material.envMapIntensity=1.0;
+  material.clearcoat=.08;material.clearcoatRoughness=.30;
  }
- // These accents need an unsaturated mirror response, rather than bright diffuse fill.
- if(zone==='chrome'&&/^(lettering_rear(?:_base)?|badge_grade_.*|side_step_[LR])$/.test(entry.id)){
-  material.color.set('#f2f4f5');material.roughness=.13;material.metalness=.82;
-  material.envMapIntensity=4.5;material.clearcoat=.15;material.userData.reflectiveAccent=true;
+ if(zone==='chrome'&&/^tailgate$/.test(entry.id)){
+  material.color.set('#b9c3cb');material.roughness=.46;material.metalness=.50;material.envMapIntensity=.65;
  }
- if(zone==='chrome'&&/^door_/.test(entry.id)){material.roughness=.52;material.metalness=.45;material.envMapIntensity=.85;}
+ if(zone==='chrome'&&/^(lettering_rear(?:_base)?|badge_grade_.*)$/.test(entry.id)){
+  material.color.set('#e9eef1');material.roughness=.30;material.metalness=.65;material.envMapIntensity=1.10;
+ }
  if(zone==='lamp_orange'){material.color.set('#ff8200');material.roughness=.28;material.metalness=0;material.envMapIntensity=.30;material.clearcoat=.10;material.specularIntensity=.15;material.emissiveIntensity=0;}
  if(zone==='glass')useFactoryGlass(material,entry,sourceName);
 
  if(/^door_[FR][LR]$/.test(entry.id)&&node.name==='chrome_3'){
-  material.roughness=.24;material.metalness=1;material.clearcoat=.15;material.clearcoatRoughness=.23;material.envMapIntensity=.95;material.userData.handleHardware=true;
+  material.roughness=.34;material.metalness=.60;material.clearcoat=.08;material.clearcoatRoughness=.30;material.envMapIntensity=1.0;
  }
  if(sourceName==='paint_plate_hidden')material.visible=false;
  if(entry.id==='front_plate'&&zone==='paint'){material.roughness=.82;material.metalness=0;material.clearcoat=0;material.envMapIntensity=.10;material.specularIntensity=.10;}
@@ -862,23 +828,23 @@ function finishPartMaterial(material,entry,zone,sourceName,node){
   };material.customProgramCacheKey=()=> 'oem-clear-reverse-bulb-v1';
  }
  if(rear&&zone==='chrome'){
-  material.color.set('#e1e4e5');material.roughness=.12;material.metalness=1;
-  material.envMapIntensity=3.0;material.clearcoat=.15;
+  material.color.set('#d3d9de');material.roughness=.34;material.metalness=.60;
+  material.envMapIntensity=1.0;material.clearcoat=.08;
  }
  if(/^emblem_(front|rear)$/.test(entry.id)&&zone==='chrome'){
-  material.color.set('#eef0f2');material.roughness=.22;material.metalness=.85;
-  material.envMapIntensity=entry.id==='emblem_front'?22.0:8.0;material.clearcoat=.20;material.clearcoatRoughness=.12;
+  material.color.set('#dce3e8');material.roughness=.32;material.metalness=.65;
+  material.envMapIntensity=1.10;material.clearcoat=.08;material.clearcoatRoughness=.30;
  }
  if(zone==='chrome'&&(entry.id==='grille'||entry.id.startsWith('bumper_front')||entry.id.startsWith('lamp_front_'))){
-  material.color.set('#f4f5f6');material.roughness=.14;material.metalness=1;
-  material.envMapIntensity=16.0;material.clearcoat=.20;material.clearcoatRoughness=.10;
+  material.color.set('#dce3e8');material.roughness=.32;material.metalness=.60;
+  material.envMapIntensity=1.10;material.clearcoat=.08;material.clearcoatRoughness=.30;
  }
  if(zone==='lamp_clear'&&entry.id.startsWith('lamp_front_')){
   material.color.set('#ffffff');material.opacity=.035;material.roughness=.035;
   material.emissive.set(0x000000);material.emissiveIntensity=0;
  }
  if(entry.id==='tailgate'&&sourceName.toLowerCase()==='garnish'){
-  material.color.set('#f2f4f5');material.roughness=.13;material.metalness=.82;material.envMapIntensity=4.5;material.clearcoat=.15;material.userData.reflectiveAccent=true;
+  material.color.set('#b9c3cb');material.roughness=.46;material.metalness=.50;material.envMapIntensity=.65;
  }
 }
 let bakedVertexCount=0;
