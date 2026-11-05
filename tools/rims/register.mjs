@@ -7,12 +7,15 @@ const{Document,NodeIO}=await imp('@gltf-transform/core'),{ALL_EXTENSIONS,EXTMesh
 const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.decoder':MeshoptDecoder,'meshopt.encoder':MeshoptEncoder});
 const data=JSON.parse(await fs.readFile(work+'/rim-data.json')),manifest=JSON.parse(await fs.readFile(repo+'/model/manifest.json')),style=data.style;
 const names={disc:'KMC KM720 Roswell · matte anthracite',steel:'Shanaber steel · silver',window:'Method MR705 · titanium'};
-const rimFinish={disc:{color:'#55595d',roughness:.52,metalness:.25,envMapIntensity:1.5},steel:{color:'#d5dade',roughness:.44,metalness:.25,envMapIntensity:1.2},window:{color:'#8a8f94',roughness:.54,metalness:.14,envMapIntensity:3.0,clearcoat:0,specularIntensity:.35}};
+const rimFinish={disc:{color:'#55595d',roughness:.48,metalness:.12,envMapIntensity:2.8,clearcoat:.08,clearcoatRoughness:.40,specularIntensity:.35},steel:{color:'#d5dade',roughness:.44,metalness:.25,envMapIntensity:1.2},window:{color:'#8a8f94',roughness:.54,metalness:.14,envMapIntensity:3.0,clearcoat:0,specularIntensity:.35}};
 const defaults={rim:rimFinish[style],lip:{...rimFinish[style],roughness:.80,metalness:.08,envMapIntensity:2.4,clearcoat:0,specularIntensity:.20},edge_catch:{...rimFinish[style],roughness:.30,metalness:.45,envMapIntensity:1.8},nut_metal:{color:style==='steel'?'#81898f':'#636b73',roughness:style==='steel'?.65:.38,metalness:.40,envMapIntensity:1.15},bead_groove:{color:'#3b4045',roughness:.78,metalness:.10,envMapIntensity:.50},groove_shoulder:{...rimFinish[style],roughness:.85,metalness:.02,envMapIntensity:2.0,clearcoat:0,specularIntensity:.15},pocket_wall:{...rimFinish[style],roughness:.40,metalness:.30,envMapIntensity:1.1},hub_metal:{color:'#bdc5cb',roughness:.40,metalness:.35,envMapIntensity:1.1},chrome:{color:'#858c92',roughness:.34,metalness:.85,envMapIntensity:.95},black:{color:'#1b1e20',roughness:.90,metalness:0,envMapIntensity:.15},tyre:{color:'#202326',roughness:.90,metalness:0,envMapIntensity:.22},brake:{color:'#4c4f52',roughness:.50,metalness:.25,envMapIntensity:.65},hat:{color:'#303438',roughness:.58,metalness:.25,envMapIntensity:.45},brake_detail:{color:'#454a4e',roughness:.52,metalness:.35,envMapIntensity:.60},barrel:{color:style==='steel'?'#939da5':'#171c20',roughness:.62,metalness:.25,envMapIntensity:.65},caliper:{color:'#53585c',roughness:.55,metalness:.25,envMapIntensity:.65},backing:{color:'#14181c',roughness:.82,metalness:.10,envMapIntensity:.25},lettering:{...rimFinish[style],roughness:.34,envMapIntensity:1.35},hubcap:{color:'#303438',roughness:.48,metalness:.35,envMapIntensity:.75},cap_lettering:{color:'#555b60',roughness:.58,metalness:.35,envMapIntensity:.75}},report=[];
 if(style==='disc')for(const zone of ['brake','hat','brake_detail','caliper','backing'])Object.assign(defaults[zone],{color:'#101418',roughness:.78,metalness:.10,envMapIntensity:.20});
 if(style==='window'){
+ defaults.hub_pad={...rimFinish[style],roughness:.58,metalness:.20,envMapIntensity:2.0,clearcoat:0,specularIntensity:.30};
+ Object.assign(defaults.hubcap,{color:'#50565c',roughness:.60,metalness:.08,envMapIntensity:1.8,clearcoat:0,specularIntensity:.30});
+ Object.assign(defaults.cap_lettering,{color:'#717a82',roughness:.58,metalness:.20,envMapIntensity:1.4,clearcoat:0,specularIntensity:.30});
  Object.assign(defaults.pocket_wall,{...rimFinish[style],roughness:.55,envMapIntensity:4.0});
- Object.assign(defaults.lettering,{...rimFinish[style],roughness:.52,envMapIntensity:3.0});
+ Object.assign(defaults.lettering,{...rimFinish[style],roughness:.58,envMapIntensity:2.4});
  Object.assign(defaults.brake,{color:'#373c41',roughness:.62,metalness:.30,envMapIntensity:.75});
  Object.assign(defaults.caliper,{color:'#292e32',roughness:.70,metalness:.18,envMapIntensity:.55});
 }
@@ -22,6 +25,8 @@ if(style==='steel'){
  Object.assign(defaults.barrel,{color:'#495156',roughness:.88,metalness:.04,envMapIntensity:.50,clearcoat:0,specularIntensity:.10});
 }
 if(style==='disc')Object.assign(defaults.pocket_wall,{envMapIntensity:1.65,metalness:.20});
+defaults.nut_edge={color:'#7b858e',roughness:.30,metalness:.60,envMapIntensity:1.5,clearcoat:0,specularIntensity:.35};
+defaults.nut_dark={color:'#262b30',roughness:.38,metalness:.50,envMapIntensity:1.0,clearcoat:.05,specularIntensity:.35};
 defaults.nut_pocket={color:'#303539',roughness:.65,metalness:.15,envMapIntensity:1.0,clearcoat:0,specularIntensity:.25};
 for(const corner of ['FL','FR','RL','RR']){
  const slot='rim_'+corner,id=slot+'_'+style,pivot=manifest.slots['wheel_'+corner].pivot,sign=corner.endsWith('R')?-1:1;
