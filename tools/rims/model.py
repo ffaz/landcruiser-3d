@@ -22,6 +22,8 @@ def lathe(name,profile,zone='rim',n=64,closed=False):
  for i in range(n):
   for j in range(k if closed else k-1):fs.append((i*k+j,((i+1)%n)*k+j,((i+1)%n)*k+(j+1)%k,i*k+(j+1)%k))
  return mesh(name,vs,[tuple(reversed(f)) for f in fs] if closed else fs,zone)
+def reverse_surface(obj):
+ bm=bmesh.new();bm.from_mesh(obj.data);bmesh.ops.reverse_faces(bm,faces=list(bm.faces));bm.to_mesh(obj.data);bm.free();obj.data.update()
 def cyl(name,r,d,z,zone='rim',n=24,x=0,y=0):
  bpy.ops.mesh.primitive_cylinder_add(vertices=n,radius=r,depth=d*WIDTH_FACTOR,location=(x,y,z*WIDTH_FACTOR));o=bpy.context.object;o.name=name;o.data.materials.append(materials[zone]);objects.append(o)
  for p in o.data.polygons:p.use_smooth=len(p.vertices)==4
@@ -39,6 +41,18 @@ def face_depth(r):
  for (r0,z0),(r1,z1) in zip(front,front[1:]):
   if r0<=r<=r1:return z0+(z1-z0)*(r-r0)/(r1-r0)
  return front[-1][1]
+def offset_outline(poly,distance):
+ # Offset the clear aperture outwards. Its measured radii/angles stay intact;
+ # the cast mouth and chamfer surround it instead of stealing its area.
+ area=sum(poly[i][0]*poly[(i+1)%len(poly)][1]-poly[(i+1)%len(poly)][0]*poly[i][1] for i in range(len(poly)))
+ sign=1 if area>0 else -1;out=[]
+ for i,p in enumerate(poly):
+  prev,nxt=poly[i-1],poly[(i+1)%len(poly)]
+  e0=Vector((p[0]-prev[0],p[1]-prev[1])).normalized();e1=Vector((nxt[0]-p[0],nxt[1]-p[1])).normalized()
+  n0=Vector((e0.y,-e0.x))*sign;n1=Vector((e1.y,-e1.x))*sign
+  n=(n0+n1).normalized();delta=n*(distance/max(.2,n.dot(n0)))
+  out.append((p[0]+delta.x,p[1]+delta.y))
+ return out
 def polygon_cut(target,poly,a):
  # A four-ring cutter makes a real, broad mouth chamfer rather than relying
  # on the Boolean bevel's shortest-edge clamp. The mouth silhouette stays put.
@@ -49,6 +63,7 @@ def polygon_cut(target,poly,a):
  sr=max(.5,1-2*inset/radial);st=max(.5,1-2*inset/tangent)
  throat=[(cr+(r-cr)*sr,ct+(t-ct)*st) for r,t in poly]
  if style=='window':
+  throat=poly;poly=offset_outline(throat,.02*R)
   shoulder=[(r*.65+tr*.35,t*.65+tt*.35) for (r,t),(tr,tt) in zip(poly,throat)]
   rings=[(throat,lambda r,t:-.02),(throat,lambda r,t:face_depth(math.hypot(r,t))-.0055),
          (shoulder,lambda r,t:face_depth(math.hypot(r,t))-.0010),
@@ -76,17 +91,26 @@ if style in ['window','steel']:
 # Inner return wall closes the barrel; bead-seat spacing equals the catalogue width.
 barrel += [(.213,.101),(.201,.063),(.203,-.068),(.213,-.101),barrel[0]]
 barrel_obj=lathe('Rolled lip and hollow barrel',barrel)
+# These profiles run from the inner front shoulder towards the outer flange.
+# Their exposed front roll must face +Z; otherwise FrontSide culls its depth.
+# The owner's accepted steel build is deliberately left byte-for-byte untouched.
+if style in ['disc','window']:reverse_surface(barrel_obj)
 # Separate inner-return finish makes the hollow barrel legible behind the face.
 barrel_obj.data.materials.append(materials['barrel'])
 barrel_obj.data.materials.append(materials['lip'])
 for poly in barrel_obj.data.polygons:
  j=poly.index%(len(barrel)-1)
- if j>=len(barrel)-6:poly.material_index=1
+ if j>=len(barrel)-6 or style in ['disc','window'] and j in [6,7]:poly.material_index=1
  elif style=='window' and 8<=j<=16:poly.material_index=2
 if style=='disc':bevel(barrel_obj,.0005,segments=2,zone='edge_catch')
 if style=='disc':
  # KM720 5x150: raised centre cone, two concentric steps and outer vent band.
- front=[(.20*R,.103),(.088,.094),(.096,.094),(.112,.094),(.117,.107),(.144,.107),(.149,.119),(.155,.119),(.158,.103),(.190,.103),(.196,.119),(.212,.119)]
+ front=[(.20*R,.103),(.088,.094),(.096,.096),(.104,.102),(.110,.109),(.113,.111),
+        (.574*R,.111),(.580*R,.1105),(.585*R,.1085),(.592*R,.108),(.600*R,.109),(.607*R,.111),
+        (.689*R,.111),(.695*R,.110),(.706*R,.106),(.714*R,.1055),(.805*R,.1055),
+        (.812*R,.108),(.820*R,.112),(.864*R,.114),(.872*R,.112),(.880*R,.1085),
+        (.887*R,.1085),(.898*R,.1135),(.917*R,.117),(.928*R,.1185),
+        (.940*R,.119),(.958*R,.119),(.224,.118875)]
 elif style=='steel':
  # Five-fold pressed mounting pad, integrated with the shell rather than
  # overlaid on a circular plateau. The actual rear mount bore stays 110.1 mm.
@@ -105,12 +129,12 @@ else:
  # Rebuild the visible casting from the owner's outer-lip-normalized layout.
  # All front surfaces clear the unchanged .083 m rotor-hat front plane.
  front=[(.13*R,.110),(.14*R,.113),(.29*R,.113),(.31*R,.111),(.325*R,.104),
-        (.34*R,.096),(.49*R,.096),(.57*R,.105),(.66*R,.119),(.74*R,.125),
-        (.845*R,.125),(.852*R,.124),(.86*R,.122),(.867*R,.116),
-        (.878*R,.116),(.883*R,.118),(.89*R,.124),(.94*R,.128),(.97*R,.124)]
+        (.34*R,.096),(.49*R,.096),(.57*R,.101),(.66*R,.108),(.74*R,.113),
+        (.845*R,.113),(.852*R,.1128),(.86*R,.111),(.867*R,.108),
+        (.878*R,.108),(.883*R,.109),(.89*R,.109)]
 if style=='window':
  # The smaller cosmetic cap does not shrink the actual rear mounting bore.
- profile=front+[(r,z-.012) for r,z in reversed(front) if r>=BORE/2]
+ profile=front+[(r,z-(.012+.006*max(0,min(1,(r-.095)/.020)))) for r,z in reversed(front) if r>=BORE/2]
  profile += [(BORE/2,.085),(BORE/2,.091),(.13*R,.098)]
 elif style=='disc':
  profile=front+[(r,z-.007) for r,z in reversed(front) if r>=BORE/2]
@@ -200,7 +224,7 @@ for i in range(LUGS):
  a=2*math.pi*i/LUGS+math.pi/2;x=.075*math.cos(a);y=.075*math.sin(a)
  cut(face,cyl('Lug bore cutter',.0095,.22,.075,n=12,x=x,y=y))
 # Pocket walls are explicit; a small finish bevel softens their mouth edges.
-bevel(face,.0014 if style=='disc' else .0015 if style=='steel' else .0006,segments=2,zone='edge_catch' if style=='disc' else None)
+bevel(face,.0004 if style=='disc' else .0015 if style=='steel' else .0006,segments=2,zone='edge_catch' if style=='disc' else None)
 zlug={'disc':.081,'steel':.092,'window':.103}[style]+.008
 for i in range(LUGS):
  a=2*math.pi*i/LUGS+math.pi/2;x=.075*math.cos(a);y=.075*math.sin(a)
@@ -259,9 +283,8 @@ def kmc_mark(x,y,z,width,height):
 if style=='disc':
  # Small source-reference cap inside the accepted five service nuts.
  kmc_mark(0,.008,.1115,.059,.014);label('WHEELS',0,-.012,.1117,.054,.0052)
- lathe('Cap perimeter relief',[(.042,.1105),(.0435,.112),(.045,.112),(.20*R,.1105)],n=48)
- # Tone-on-tone bead/lip step, entirely inside the accepted 462 mm flange.
- lathe('Outer bead ring step',[(.214,.117),(.216,.119),(.224,.119),(.226,.117)],n=64)
+ reverse_surface(lathe('Cap perimeter relief',[(.042,.1105),(.0435,.112),(.045,.112),(.20*R,.1105)],n=48))
+ # The outer collar is integrated with the face; no overlapping ring shell.
  # Centre the small mark on the flat lip land and give it cast edge relief.
  kmc_mark(0,.219,.1202,.043,.009)
 elif style=='window':

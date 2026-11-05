@@ -4617,8 +4617,8 @@
         "rim",
         "barrel",
         "edge_catch",
-        "nut_pocket",
         "pocket_wall",
+        "nut_pocket",
         "black",
         "nut_metal",
         "lettering",
@@ -4629,7 +4629,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 32022,
+      "triangles": 37398,
       "bounds": {
         "min": [
           -1.901999989748001,
@@ -4810,8 +4810,8 @@
         "rim",
         "barrel",
         "edge_catch",
-        "nut_pocket",
         "pocket_wall",
+        "nut_pocket",
         "black",
         "nut_metal",
         "lettering",
@@ -4822,7 +4822,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 32022,
+      "triangles": 37398,
       "bounds": {
         "min": [
           -1.901999989748001,
@@ -5003,8 +5003,8 @@
         "rim",
         "barrel",
         "edge_catch",
-        "nut_pocket",
         "pocket_wall",
+        "nut_pocket",
         "black",
         "nut_metal",
         "lettering",
@@ -5015,7 +5015,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 32022,
+      "triangles": 37398,
       "bounds": {
         "min": [
           0.948000010251999,
@@ -5196,8 +5196,8 @@
         "rim",
         "barrel",
         "edge_catch",
-        "nut_pocket",
         "pocket_wall",
+        "nut_pocket",
         "black",
         "nut_metal",
         "lettering",
@@ -5208,7 +5208,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 32022,
+      "triangles": 37398,
       "bounds": {
         "min": [
           0.948000010251999,
@@ -6175,8 +6175,8 @@
       "rigidClass": "wheel",
       "zones": [
         "rim",
-        "lip",
         "barrel",
+        "lip",
         "groove_shoulder",
         "bead_groove",
         "pocket_wall",
@@ -6191,7 +6191,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 33878,
+      "triangles": 31456,
       "bounds": {
         "min": [
           -1.901999989748001,
@@ -6383,8 +6383,8 @@
       "rigidClass": "wheel",
       "zones": [
         "rim",
-        "lip",
         "barrel",
+        "lip",
         "groove_shoulder",
         "bead_groove",
         "pocket_wall",
@@ -6399,7 +6399,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 33878,
+      "triangles": 31456,
       "bounds": {
         "min": [
           -1.901999989748001,
@@ -6591,8 +6591,8 @@
       "rigidClass": "wheel",
       "zones": [
         "rim",
-        "lip",
         "barrel",
+        "lip",
         "groove_shoulder",
         "bead_groove",
         "pocket_wall",
@@ -6607,7 +6607,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 33878,
+      "triangles": 31456,
       "bounds": {
         "min": [
           0.948000010251999,
@@ -6799,8 +6799,8 @@
       "rigidClass": "wheel",
       "zones": [
         "rim",
-        "lip",
         "barrel",
+        "lip",
         "groove_shoulder",
         "bead_groove",
         "pocket_wall",
@@ -6815,7 +6815,7 @@
         "caliper",
         "brake_detail"
       ],
-      "triangles": 33878,
+      "triangles": 31456,
       "bounds": {
         "min": [
           0.948000010251999,
