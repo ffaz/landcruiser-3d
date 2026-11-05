@@ -63,9 +63,9 @@ The car: **2016–21 GCC Toyota Land Cruiser 200 GXR, V8, white.**
 | Stock tyres | 265/70R17; 285/60R18; 285/50R20 | 265/70R17 | wheels.json |
 | Side steps | OEM fixed step with rubber tread pad; power/aftermarket steps | OEM fixed step: silver rail, black tread pad | VERIFIED T6; source |
 | Roof | Rails; rails + crossbars (accessory); sunroof yes/no | Source rails and ribs, sunroof as in source | Source |
-| Rim: KMC | KM720 Roswell in 5×150, 6×139.7, 6×135 … | **KMC KM720 Roswell 17×8.5 ET+18 5×150**, matte anthracite #55595d, 5 nuts | wheels.json; owner |
+| Rim: KMC | KM720 Roswell in 5×150, 6×139.7, 6×135 … | **KMC KM720 Roswell 17×8.5 ET+18 5×150**, matte anthracite #55595d, 5 nuts recessed around a raised centre cone (5×150 layout) | wheels.json; owner |
 | Rim: Method | MR705 in 5×150, 6×139.7, 6×135 … | **Method MR705 17×8.5 ET0 5×150**, titanium #8a8f94, 5 nuts on .325 R | wheels.json; owner |
-| Rim: Shanaber | Gulf Toyota steel wheel | **Shanaber steel 17×8 ET+25 5×150**, satin silver, open centre, 5 nuts | wheels.json; owner |
+| Rim: Shanaber | Gulf Toyota steel wheel | **Shanaber steel 17×8 ET+25 5×150**, satin silver, open bore with a raised pentagonal stud pad, 5 nuts | wheels.json; owner |
 
 
 ## 3. Owner decisions (add new ones here)
@@ -88,6 +88,9 @@ The car: **2016–21 GCC Toyota Land Cruiser 200 GXR, V8, white.**
 | 2026-11-05 | KMC stays DARK anthracite (#55595d face and lip). Its slots, steps and cast lettering must read through light (lit walls, edge highlights, relief), not by lightening the colour. |
 | 2026-11-05 | Front-end variant: the ZIRODESIGN source as built. Real front photos (e.g. a 2020 Grand Touring) judge grille and headlamp design only, never the lower-bumper chrome. |
 | 2026-11-05 | VARIANTS rule: variant-dependent facts come from the section 2 Variants table, never from a photo; references are tagged in docs/VERIFIED.md with what they may and may not judge. |
+| 2026-11-05 | KMC KM720 on 5×150 (from the 5×150 KM720 photo): the KMC WHEELS cap sits on a RAISED CENTRE CONE; the 5 nuts are RECESSED in pockets cut into that cone around the cap; cap radius about .20 R, still inside the lug circle. Finish stays dark #55595d. |
+| 2026-11-05 | Shanaber on 5×150 (from the 5×150 16-hole steel photo): large open bore (about .27 R) with a RAISED PENTAGONAL STUD PAD around it carrying the 5 nuts; the 16 holes are slightly oval (taller radially). The shaded raised hub nose sits inside the bore. |
+| 2026-11-05 | Openings on a car read DARK (brake/barrel behind); catalogue photos are off-car. The Method's dark window interiors are correct; only the lit pocket wall must read. |
 
 2026-11-05 Method correction: use outer metal lip radius R = 231 mm. Light matte titanium retains pigment #8a8f94. Black cap radius .13 R; raised titanium hub ring to .34 R; flat bands .34–.49 R and .74–.85 R; narrow dark bead-grip step .86–.88 R; titanium lip .89–1 R. METHOD belongs at .41 R above/below the hub, with the lower word upside-down, superseding the earlier outward placement. Ten windows at exact 36° pitch: short centres 0/72/144/216/288° clockwise from top, radii .59–.74 R and inner/outer angular widths 19°/22°; long centres 36/108/180/252/324°, radii .49–.74 R and widths 30°/27°. Rounded corners and ~.02 R pocket-wall band; dark hardware behind. The 5×150 fit remains locked. Shanaber's open centre needs a shaded raised hub nose, not a flat disc.
 
