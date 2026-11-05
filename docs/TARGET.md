@@ -45,6 +45,29 @@ If the owner supplies renders of the source model in this look, they go in `docs
   - the approved un-stretched rear overhang.
   Stored car GLBs, NORMAL and COLOR_0 are not edited, except to restore a part the export lost.
 
+### Variants (owner rule 2026-11-05)
+
+LC200 parts come in factory variants (region, trim, options, fitment). **Variant-dependent facts (nut count, bolt circle, bumper, grille or lamp type, wheel size) come from this table, never from a photo.** A reference photo of another variant may judge only what its VERIFIED.md tag allows. Every checker gets the known variant differences for its references and must not flag them. When finding references, search for the matching variant first (e.g. "KMC KM720 5x150", Tundra/Sequoia fitment photos), and fall back to another variant only with tags.
+
+The car: **2016–21 GCC Toyota Land Cruiser 200 GXR, V8, white.**
+
+| Part | Variants that exist | We model | Source of the fact |
+|---|---|---|---|
+| Front bumper | 2016–19 GXR; 2020–21 GXR Grand Touring / GXR-S (chrome lower V-strips, chrome fog bezels); VX/VXR; aftermarket kits | **The ZIRODESIGN source as built** (2016+ facelift GXR front) | Owner 2026-11-05 |
+| Grille | GXR 3-bar chrome; Grand Touring; VXR black/dark; Sport | Source: 3 chrome bars, Toyota badge | Source |
+| Headlamps | GXR halogen-projector with chrome housing; VX/VXR LED; aftermarket LED/DRL units | GXR OEM chrome housing, two projectors, amber corner | VERIFIED F1 |
+| Tail lamps | 2016–21 OEM standard (clear lower lens); smoked (source); aftermarket LED/sequential | OEM standard, clear lower lens over chrome reflector, source LED dots | Owner 2026-11-03 |
+| Mirrors | Body-colour cap; chrome caps (accessory) | Body-colour cap, black base, clear repeater | VERIFIED T3 |
+| Rear badges | GXR / VX / VXR; V6 / V8 | GXR + V8 | Owner 2026-11-03 |
+| Stock wheels | GXR 17″ 10-spoke silver; 18″ machined (VX/GT); 20″ | 17×7.5 ET+60 5×150, 10-spoke (5 V-pairs), dark grey by owner choice | wheels.json; owner 2026-11-03 |
+| Stock tyres | 265/70R17; 285/60R18; 285/50R20 | 265/70R17 | wheels.json |
+| Side steps | OEM fixed step with rubber tread pad; power/aftermarket steps | OEM fixed step: silver rail, black tread pad | VERIFIED T6; source |
+| Roof | Rails; rails + crossbars (accessory); sunroof yes/no | Source rails and ribs, sunroof as in source | Source |
+| Rim: KMC | KM720 Roswell in 5×150, 6×139.7, 6×135 … | **KMC KM720 Roswell 17×8.5 ET+18 5×150**, matte anthracite #55595d, 5 nuts | wheels.json; owner |
+| Rim: Method | MR705 in 5×150, 6×139.7, 6×135 … | **Method MR705 17×8.5 ET0 5×150**, titanium #8a8f94, 5 nuts on .325 R | wheels.json; owner |
+| Rim: Shanaber | Gulf Toyota steel wheel | **Shanaber steel 17×8 ET+25 5×150**, satin silver, open centre, 5 nuts | wheels.json; owner |
+
+
 ## 3. Owner decisions (add new ones here)
 
 | Date | Decision |
@@ -63,6 +86,8 @@ If the owner supplies renders of the source model in this look, they go in `docs
 | 2026-11-05 | The overall look is a die-cast collectible model (section 1), not photoreal. |
 | 2026-11-05 | Workshop tint_5 (limo tint) may go very dark: the interior does NOT need to show through it. |
 | 2026-11-05 | KMC stays DARK anthracite (#55595d face and lip). Its slots, steps and cast lettering must read through light (lit walls, edge highlights, relief), not by lightening the colour. |
+| 2026-11-05 | Front-end variant: the ZIRODESIGN source as built. Real front photos (e.g. a 2020 Grand Touring) judge grille and headlamp design only, never the lower-bumper chrome. |
+| 2026-11-05 | VARIANTS rule: variant-dependent facts come from the section 2 Variants table, never from a photo; references are tagged in docs/VERIFIED.md with what they may and may not judge. |
 
 2026-11-05 Method correction: use outer metal lip radius R = 231 mm. Light matte titanium retains pigment #8a8f94. Black cap radius .13 R; raised titanium hub ring to .34 R; flat bands .34–.49 R and .74–.85 R; narrow dark bead-grip step .86–.88 R; titanium lip .89–1 R. METHOD belongs at .41 R above/below the hub, with the lower word upside-down, superseding the earlier outward placement. Ten windows at exact 36° pitch: short centres 0/72/144/216/288° clockwise from top, radii .59–.74 R and inner/outer angular widths 19°/22°; long centres 36/108/180/252/324°, radii .49–.74 R and widths 30°/27°. Rounded corners and ~.02 R pocket-wall band; dark hardware behind. The 5×150 fit remains locked. Shanaber's open centre needs a shaded raised hub nose, not a flat disc.
 
