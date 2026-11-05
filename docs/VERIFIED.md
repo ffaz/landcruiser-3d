@@ -65,6 +65,12 @@ Our car: 2016–21 GCC LC200 GXR V8, front end = the source as built; rims 17″
 | real-kmc-km720-quarter.png | KMC KM720, **5-lug** variant, quarter view | everything above plus nut count and nut seat look | tone (studio lighting; ours stays dark #55595d by owner decision) |
 | real-method-mr705-front.jpg | Method MR705, **6-lug** variant, official catalogue | 10 windows (shape, alternation, radii), face tone, lip and groove, METHOD lettering style and radius, cap style | nut count, bolt circle, lug-well / hub-pad layout (the 5×150 hub follows TARGET: raised titanium hub ring to .34 R, nuts on .325 R) |
 | real-shanaber-open-centre.png | collage: Gulf Shanaber steel wheel, face-on tile | 16 plain holes and spacing, open centre, rolled steps and lip, paint tone | the vehicle hub seen through the centre (TARGET: shaded raised hub nose); dirt and wear |
+| real-method-mr705-oncar-tacoma-6lug.png | Method MR705 titanium ON A CAR (Tacoma, 6-lug), daylight, found 2026-11-05 | how the windows read on a car (dark pockets: brake/barrel behind, lit pocket wall on one side), lip and window proportions at 3/4 | tone (daylight + shade), nut count, bolt circle, hub pad / lug well |
+| real-method-mr705-oncar-4runner-6lug.png | Method MR705 titanium on a 4Runner (6-lug), low-res | window darkness on a car only | everything else |
+| real-kmc-km720-5x150-machined-quarter.png | KMC KM720 Roswell **17×8.5 5×150 ET25**, MACHINED finish, quarter view (our bolt pattern) | 5×150 hub layout: cap on a raised centre cone, 5 nuts recessed in pockets around the cap, cap size relative to the lug circle (about .2 R), slots, steps, lip | colour and finish (ours is matte anthracite, dark by owner decision) |
+| real-steel-16hole-5x150-replica.png | 16-hole steel wheel **16×6.5 PCD 5×150**, aftermarket replica of the Toyota steel wheel, face-on, off-car | 5×150 centre layout: large open bore (about .27 R), raised pentagonal stud pad around it; 16 slightly oval holes; rolled steps; broad rolled lip | brand, exact paint tone, diameter (16″ vs our 17″), what shows through the bore (off-car) |
+
+On-car vs catalogue: catalogue photos are shot OFF the car on white, so their openings look white; on a car the openings read dark (brake/barrel behind). Judge opening darkness only from on-car photos.
 
 Search order for new references: the matching variant first (e.g. "KMC KM720 5x150", Tundra/Sequoia fitment photos for 5×150 rims, GCC GXR dealer photos), then other variants only with a tag here.
 
