@@ -558,9 +558,10 @@ function bakeContactShadow(){
 // All physical dimensions come from the stored asset; no vertex-fitting code.
 const modelManifestURL=new URL('./model/manifest.json',document.baseURI);
 async function readJSON(url){const response=await fetch(url);if(!response.ok)throw new Error(`Cannot load ${url.pathname}: ${response.status}`);return response.json();}
-const [manifest,buildFile,cameraReference,wheelCatalog]=await Promise.all([
+const [manifest,buildFile,cameraReference,wheelCatalog,workshopFile]=await Promise.all([
  readJSON(modelManifestURL),readJSON(new URL('./build.json',document.baseURI)),
- readJSON(new URL('./model/camera-reference.json',document.baseURI)),readJSON(new URL('./model/wheels.json',document.baseURI))
+ readJSON(new URL('./model/camera-reference.json',document.baseURI)),readJSON(new URL('./model/wheels.json',document.baseURI)),
+ readJSON(new URL('./model/workshop.json',document.baseURI))
 ]);
 const tyreById=new Map(wheelCatalog.tyres.map(t=>[t.id,t])),rimById=new Map(wheelCatalog.rims.map(r=>[r.id,r]));
 const loader=new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
@@ -570,6 +571,65 @@ const bodyGroup=new THREE.Group(),wheelGroup=new THREE.Group();bodyGroup.name='R
 const partEntries=[manifest.base,...manifest.parts];
 const entryById=new Map(partEntries.map(entry=>[entry.id,entry]));
 const parts=new Map();
+// Workshop pieces (model/workshop.json): every outside surface belongs to one piece. A piece lists
+// match rules: a slot, optionally zones, a source mesh name and a box (car metres at lift 0) that each
+// connected part of the mesh must sit in. The most specific rule wins. A mesh holding several pieces is
+// split into sibling meshes that share its stored vertex buffers; only the index lists are new.
+const workshopPieces=workshopFile.pieces||[];
+const pieceById=new Map(workshopPieces.map(piece=>[piece.id,piece]));
+const pieceRules=workshopPieces.flatMap((piece,order)=>(piece.match||piece.slots.map(slot=>({slot,zones:piece.zones}))).map(rule=>({
+ piece:piece.id,order,slot:rule.slot,zones:rule.zones||null,mesh:rule.mesh?new RegExp(rule.mesh):null,box:['x','y','z'].map(axis=>rule[axis]||null),
+ rank:(rule.mesh?2:0)+2*['x','y','z'].filter(axis=>rule[axis]).length+(rule.zones?1:0)})));
+function pieceOf(slot,zone,meshName,centre){
+ let best=null;
+ for(const rule of pieceRules){
+  if(rule.slot!==slot||(rule.zones&&!rule.zones.includes(zone))||(rule.mesh&&!rule.mesh.test(meshName)))continue;
+  if(rule.box.some(Boolean)&&(!centre||rule.box.some((range,i)=>range&&(centre[i]<range[0]||centre[i]>range[1]))))continue;
+  if(!best||rule.rank>best.rank||(rule.rank===best.rank&&rule.order<best.order))best=rule;
+ }
+ return best?.piece??null;
+}
+// Connected parts of a mesh (vertices welded at 0.1 mm), each as its triangle list and centre.
+function meshComponents(mesh,toCar){
+ const geometry=mesh.geometry,position=geometry.attributes.position,index=geometry.index?.array,count=index?index.length/3:position.count/3;
+ const weld=new Map(),vertexId=new Int32Array(position.count);
+ for(let i=0;i<position.count;i++){const key=Math.round(position.getX(i)*1e4)+','+Math.round(position.getY(i)*1e4)+','+Math.round(position.getZ(i)*1e4);
+  let id=weld.get(key);if(id===undefined)weld.set(key,id=weld.size);vertexId[i]=id;}
+ const parent=Int32Array.from({length:weld.size},(_,i)=>i),find=x=>{while(parent[x]!==x)x=parent[x]=parent[parent[x]];return x;};
+ const corner=(t,j)=>index?index[t*3+j]:t*3+j;
+ for(let t=0;t<count;t++){const a=find(vertexId[corner(t,0)]);parent[find(vertexId[corner(t,1)])]=a;parent[find(vertexId[corner(t,2)])]=a;}
+ const groups=new Map(),v=new THREE.Vector3();
+ for(let t=0;t<count;t++){const root=find(vertexId[corner(t,0)]);let group=groups.get(root);if(!group)groups.set(root,group={triangles:[],sum:new THREE.Vector3()});
+  group.triangles.push(t);for(let j=0;j<3;j++)group.sum.add(v.fromBufferAttribute(position,corner(t,j)).applyMatrix4(toCar));}
+ return [...groups.values()].map(group=>({triangles:group.triangles,centre:group.sum.divideScalar(group.triangles.length*3).toArray()}));
+}
+function assignPieces(root,entry,group){
+ group.updateMatrixWorld(true);
+ const toGroup=new THREE.Matrix4().copy(group.matrixWorld).invert(),meshes=[];
+ root.traverse(object=>{if(object.isMesh)meshes.push(object);});
+ for(const mesh of meshes){
+  const zone=[].concat(mesh.material)[0].userData.zone,name=mesh.name;
+  const boxed=!Array.isArray(mesh.material)&&pieceRules.some(rule=>rule.slot===entry.slot&&rule.box.some(Boolean)&&(!rule.zones||rule.zones.includes(zone))&&(!rule.mesh||rule.mesh.test(name)));
+  if(!boxed){mesh.userData.piece=pieceOf(entry.slot,zone,name,null);continue;}
+  const byPiece=new Map(),toCar=new THREE.Matrix4().multiplyMatrices(toGroup,mesh.matrixWorld);
+  for(const component of meshComponents(mesh,toCar)){const piece=pieceOf(entry.slot,zone,name,component.centre);
+   if(!byPiece.has(piece))byPiece.set(piece,[]);byPiece.get(piece).push(...component.triangles);}
+  if(byPiece.size===1){mesh.userData.piece=[...byPiece.keys()][0];continue;}
+  const source=mesh.geometry,index=source.index?.array;
+  for(const [piece,triangles] of byPiece){
+   const geometry=new THREE.BufferGeometry(),list=new Uint32Array(triangles.length*3);
+   for(const [name,attribute] of Object.entries(source.attributes))geometry.setAttribute(name,attribute);
+   triangles.forEach((t,i)=>{for(let j=0;j<3;j++)list[i*3+j]=index?index[t*3+j]:t*3+j;});
+   geometry.setIndex(new THREE.BufferAttribute(list,1));geometry.boundingBox=source.boundingBox;geometry.boundingSphere=source.boundingSphere;
+   if(!geometry.boundingSphere)geometry.computeBoundingSphere();
+   const part=new THREE.Mesh(geometry,mesh.material);
+   part.name=mesh.name;part.position.copy(mesh.position);part.quaternion.copy(mesh.quaternion);part.scale.copy(mesh.scale);
+   part.renderOrder=mesh.renderOrder;part.castShadow=false;part.receiveShadow=false;part.userData={...mesh.userData,piece};
+   mesh.parent.add(part);
+  }
+  mesh.removeFromParent();
+ }
+}
 const zoneTemplates={paint,chrome,black:blackPlastic,tyre:tireMat,rim:rimMat,brake:softChrome,
  glass:windowGlass,mirror:chrome,lamp_red:tailRed,lamp_clear:lampLens,lamp_orange:orange,interior:interiorMat};
 // Retain every original studio material; Cream variants are created once, on demand.
@@ -620,6 +680,58 @@ function withFinish(material,zone,id){
  if(finish.color)variant.color.set(finish.color==='body'?body:finish.color);
  if(finish.shade){variant.color.multiplyScalar(finish.shade);variant.emissive?.multiplyScalar(finish.shade);}
  if(finish.opacity&&variant.transparent&&zone!=='lamp_red')variant.opacity=Math.max(material.opacity,finish.opacity);
+ return variant;
+}
+// Workshop looks, keyed by piece (state.look.mirror_caps={material:'carbon',color:'#202326'}): a material,
+// a colour, or both, on the opaque surfaces of that piece. Glass and lenses keep their tint/smoked finishes.
+const LOOKS=Object.freeze({
+ gloss:{label:'Gloss',metalness:.05,roughness:.28,clearcoat:1,clearcoatRoughness:.05,envMapIntensity:.9},
+ metallic:{label:'Metallic',metalness:.62,roughness:.32,clearcoat:1,clearcoatRoughness:.05,envMapIntensity:1.3},
+ satin:{label:'Satin',metalness:.12,roughness:.55,clearcoat:.2,clearcoatRoughness:.45,envMapIntensity:.6},
+ matte:{label:'Matte',metalness:0,roughness:.86,clearcoat:0,envMapIntensity:.25},
+ chrome:{label:'Chrome',metalness:1,roughness:.12,clearcoat:.2,clearcoatRoughness:.1,envMapIntensity:12,color:'#eef0f2'},
+ carbon:{label:'Carbon fibre',metalness:.25,roughness:.38,clearcoat:1,clearcoatRoughness:.04,envMapIntensity:1,color:'#30343a',carbon:true}
+});
+const LOOK_SKIP_ZONES=new Set(['glass','mirror','interior','lamp_clear','lamp_red','lamp_orange']);
+// Carbon fibre: a 2×2 twill of 12 mm tows (die-cast scale, so it reads on close-ups), projected along the
+// surface's main axis in car metres (stored positions are quantised, so object space is not metres).
+// Tows run two ways and catch the light differently; far away the weave fades to an even dark grey.
+const carbonScale={value:1/.012};
+function useCarbonWeave(material){
+ const compile=material.onBeforeCompile,key=material.customProgramCacheKey;
+ material.onBeforeCompile=(shader,renderer)=>{
+  compile?.call(material,shader,renderer);shader.uniforms.uCarbonScale=carbonScale;
+  shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vCarbonP;varying vec3 vCarbonN;')
+   .replace('#include <begin_vertex>','#include <begin_vertex>\nvCarbonP=(modelMatrix*vec4(transformed,1.0)).xyz;vCarbonN=mat3(modelMatrix)*objectNormal;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vCarbonP;varying vec3 vCarbonN;uniform float uCarbonScale;')
+   .replace('#include <color_fragment>',`#include <color_fragment>
+   {vec3 carbonAxis=abs(normalize(vCarbonN));
+    vec2 carbonUV=(carbonAxis.x>carbonAxis.y&&carbonAxis.x>carbonAxis.z?vCarbonP.zy:carbonAxis.y>carbonAxis.z?vCarbonP.xz:vCarbonP.xy)*uCarbonScale;
+    vec2 carbonCell=floor(carbonUV),carbonF=fract(carbonUV);float carbonAlong=mod(carbonCell.x+carbonCell.y,4.0)<2.0?1.0:0.0;
+    float carbonTow=0.5+0.5*sin(3.14159265*mix(carbonF.y,carbonF.x,carbonAlong));
+    float carbonWeave=mix(0.42,1.0,carbonTow)*mix(0.5,1.0,carbonAlong);
+    float carbonBlur=smoothstep(0.5,1.2,fwidth(carbonUV.x)+fwidth(carbonUV.y));
+    diffuseColor.rgb*=mix(carbonWeave,0.58,carbonBlur)*1.45;}`);
+ };
+ material.customProgramCacheKey=()=>(key?key.call(material):'')+'-carbon-v2';
+}
+const lookVariants=new WeakMap();
+function withLook(material,zone,look,piece){
+ if(!look||LOOK_SKIP_ZONES.has(zone))return material;
+ // One variant per piece: split meshes share their source material, and each piece keeps its own colour.
+ const id=piece+'|'+(look.material||'stock'),kind=LOOKS[look.material];
+ let byId=lookVariants.get(material);if(!byId)lookVariants.set(material,byId=new Map());
+ let variant=byId.get(id);
+ if(!variant){
+  variant=material.clone();variant.onBeforeCompile=material.onBeforeCompile;variant.customProgramCacheKey=material.customProgramCacheKey;
+  variant.userData={...material.userData,look:look.material||'stock'};
+  if(kind)for(const key of ['metalness','roughness','clearcoat','clearcoatRoughness','envMapIntensity'])if(kind[key]!==undefined&&key in variant)variant[key]=kind[key];
+  if(kind?.carbon)useCarbonWeave(variant);
+  byId.set(id,variant);originalMaterials.set(variant,originalMaterials.get(material)||material);
+ }
+ variant.color.copy(material.color);variant.opacity=material.opacity;variant.emissive?.copy(material.emissive);
+ const color=look.color==='body'?(buildState.paint.paint||DEFAULT_WHITE):look.color||kind?.color;
+ if(color)variant.color.set(color);
  return variant;
 }
 const aliases={carpaint:'paint',tire:'tyre',rim_second:'rim',brakedisk:'brake',windowglass:'glass',darkglass:'glass',redglass:'lamp_red',redglass_lower:'lamp_red',redglass_caps:'lamp_red',clearglass:'lamp_clear',orangeglass:'lamp_orange',garnish:'chrome'};
@@ -729,7 +841,7 @@ async function loadPart(entry){
  });
  bakedVertexCount+=bindBakedAttribute(root);
  root.name=entry.id;root.userData={...root.userData,partId:entry.id,slot:entry.slot,zones:entry.zones,rigidClass:entry.rigidClass};
- (entry.rigidClass==='wheel'?wheelGroup:bodyGroup).add(root);parts.set(entry.id,root);
+ const group=entry.rigidClass==='wheel'?wheelGroup:bodyGroup;group.add(root);assignPieces(root,entry,group);parts.set(entry.id,root);
 }
 await Promise.all(partEntries.filter(entry=>!entry.lazy).map(loadPart));
 const lazyLoads=new Map();
@@ -759,11 +871,20 @@ const defaultSlots=Object.fromEntries(Object.entries(manifest.slots).map(([slot,
 const availableZones=new Set(partEntries.flatMap(entry=>entry.zones));
 function mergeBuild(base,patch){
  const next={slots:{...base.slots,...patch.slots},paint:{...base.paint},finish:{...base.finish},lift_mm:patch.lift_mm??base.lift_mm,lamps_on:patch.lamps_on??base.lamps_on??false,hidden:patch.hidden===undefined?[...base.hidden]:[...patch.hidden],
-  tyre:patch.tyre??base.tyre??'stock',rim:patch.rim??base.rim??'stock'};
+  tyre:patch.tyre??base.tyre??'stock',rim:patch.rim??base.rim??'stock',look:{...base.look}};
  for(const [key,value] of Object.entries(patch.finish||{})){if(value===null)delete next.finish[key];else next.finish[key]=value;}
+ // Finish keys are "slot:zone" (whole slot) or "piece:zone" (one workshop piece).
  for(const [key,value] of Object.entries(next.finish)){
-  const [slot,zone]=key.split(':');
-  if(!manifest.slots[slot]||!FINISHES[value]?.zones.includes(zone)||!partEntries.some(entry=>entry.slot===slot&&entry.zones.includes(zone)))throw new Error('Invalid finish: '+key+'='+value);
+  const [owner,zone]=key.split(':');
+  if(!FINISHES[value]?.zones.includes(zone)||!(pieceById.has(owner)||(manifest.slots[owner]&&partEntries.some(entry=>entry.slot===owner&&entry.zones.includes(zone)))))throw new Error('Invalid finish: '+key+'='+value);
+ }
+ for(const [piece,value] of Object.entries(patch.look||{})){
+  const look=value&&Object.fromEntries(Object.entries(value).filter(([,v])=>v!==null&&v!==undefined));
+  if(!look||!Object.keys(look).length)delete next.look[piece];else next.look[piece]=look;
+ }
+ for(const [piece,look] of Object.entries(next.look)){
+  if(!pieceById.has(piece)||Object.keys(look).some(key=>!['material','color'].includes(key))||(look.material!==undefined&&!LOOKS[look.material])||
+   (look.color!==undefined&&look.color!=='body'&&!/^#[0-9a-f]{6}$/i.test(look.color)))throw new Error('Invalid look: '+piece);
  }
  if(!tyreById.has(next.tyre))throw new Error('Unknown tyre: '+next.tyre);
  if(!rimById.has(next.rim))throw new Error('Unknown rim: '+next.rim);
@@ -779,17 +900,18 @@ function mergeBuild(base,patch){
   const colon=key.lastIndexOf(':'),id=colon<0?null:key.slice(0,colon),zone=colon<0?key:key.slice(colon+1);
   if(!/^#[0-9a-f]{6}$/i.test(color)||!availableZones.has(zone)||(id&&!entryById.get(id)?.zones.includes(zone)))throw new Error('Invalid paint zone or colour: '+key);
  }
- if(next.hidden.some(id=>typeof id!=='string'||(!entryById.has(id)&&!manifest.slots[id])))throw new Error('Unknown hidden part');
+ if(next.hidden.some(id=>typeof id!=='string'||(!entryById.has(id)&&!manifest.slots[id]&&!pieceById.has(id))))throw new Error('Unknown hidden part');
  return next;
 }
-const baseBuild=mergeBuild({slots:defaultSlots,paint:{paint:DEFAULT_WHITE},finish:{},lift_mm:0,hidden:[],tyre:'stock',rim:'stock'},buildFile);
+const baseBuild=mergeBuild({slots:defaultSlots,paint:{paint:DEFAULT_WHITE},finish:{},lift_mm:0,hidden:[],tyre:'stock',rim:'stock',look:{}},buildFile);
 let buildState=cloneJSON(baseBuild);
 function applyZonePaint(){
  for(const [id,root] of parts){root.traverse(part=>{if(!part.isMesh||part.userData.pickOverlay)return;
   const update=material=>{const original=originalMaterials.get(material)||material;
    const zone=original.userData.zone,authored=buildState.paint[id+':'+zone]??buildState.paint[zone];
    const hex=authored??('#'+original.userData.defaultColor);
-   return withFinish(studioMaterial(original,zone,hex,authored!==undefined,part),zone,buildState.finish[entryById.get(original.userData.partId||id).slot+':'+zone]);
+   const piece=part.userData.piece,finish=buildState.finish[piece+':'+zone]??buildState.finish[entryById.get(original.userData.partId||id).slot+':'+zone];
+   return withLook(withFinish(studioMaterial(original,zone,hex,authored!==undefined,part),zone,finish),zone,buildState.look[piece],piece);
   };
   part.material=Array.isArray(part.material)?part.material.map(update):update(part.material);
  });}
@@ -816,6 +938,14 @@ function applyStudioPartVisibility(){
   root.traverse(mesh=>{if(!mesh.isMesh||mesh.userData.pickOverlay)return;const zone=[].concat(mesh.material)[0].userData.zone;
    mesh.visible=zone==='tyre'?!customTyre:zone==='brake'||!customRim;
    if(zone==='tyre'){mesh.userData.stockZ??=mesh.position.z;mesh.position.z=mesh.userData.stockZ+side*shift;}
+  });
+ }
+ // Workshop pieces taken off: their meshes hide; the wheel halves above are recomputed each time, so only hide those.
+ const hiddenPieces=new Set(buildState.hidden.filter(id=>pieceById.has(id)));
+ for(const [id,root]of parts){const entry=entryById.get(id),managed=entry.rigidClass==='wheel'&&!entry.wheelSlot;
+  root.traverse(mesh=>{if(!mesh.isMesh||mesh.userData.pickOverlay||!mesh.userData.piece)return;
+   const off=hiddenPieces.has(mesh.userData.piece);
+   if(off){mesh.visible=false;mesh.userData.pieceOff=true;}else if(mesh.userData.pieceOff){if(!managed)mesh.visible=true;mesh.userData.pieceOff=false;}
   });
  }
 }
@@ -1135,17 +1265,27 @@ function pickPart(clientX,clientY){
  pickPoint.set((clientX-rect.left)/rect.width*2-1,-(clientY-rect.top)/rect.height*2+1);
  raycaster.setFromCamera(pickPoint,camera);
  const meshes=[];car.traverseVisible(o=>{if(o.isMesh&&!o.userData.pickOverlay)meshes.push(o);});
- for(const hit of raycaster.intersectObjects(meshes,false)){
+ // Flush details (badges, lettering, plate chrome) sit within millimetres of the panel under them; a piece
+ // marked pickFirst wins any hit within 8 mm of the first surface, so a tap on a letter opens the letter.
+ const hits=raycaster.intersectObjects(meshes,false).filter(hit=>{const m=Array.isArray(hit.object.material)?hit.object.material[hit.face.materialIndex]:hit.object.material;return m&&m.visible!==false;});
+ const first=hits[0],detail=first&&hits.find(hit=>hit.distance<=first.distance+.008&&pieceById.get(hit.object.userData.piece)?.pickFirst);
+ for(const hit of detail?[detail,...hits]:hits){
   const material=Array.isArray(hit.object.material)?hit.object.material[hit.face.materialIndex]:hit.object.material;
-  if(!material||material.visible===false)continue;
   let corner=hit.object;while(corner&&!corner.name?.endsWith('_workshop'))corner=corner.parent;
-  if(corner)return {slot:corner.name.replace(/_workshop$/,''),partId:null,zone:material.userData.zone==='tyre'?'tyre':'rim'};
+  if(corner){const zone=material.userData.zone==='tyre'?'tyre':'rim';return {slot:corner.name.replace(/_workshop$/,''),partId:null,zone,piece:zone==='tyre'?'tyres':'rims'};}
   const original=originalMaterials.get(material)||material,{partId,zone}=original.userData,entry=entryById.get(partId);
   if(!entry)continue;
   if(zone==='interior'||(entry.slot==='body_shell'&&zone==='mirror'))return null;
-  return {slot:entry.slot,partId,zone};
+  return {slot:entry.slot,partId,zone,piece:hit.object.userData.piece??null};
  }
  return null;
+}
+// The zones a workshop piece has on the car now (fitted parts only, removed pieces included),
+// so its page offers only what applies and unfitted pieces stay out of the Parts list.
+function pieceZones(id){
+ const zones=new Set();
+ for(const root of parts.values())if(root.visible)root.traverse(mesh=>{if(mesh.isMesh&&!mesh.userData.pickOverlay&&mesh.userData.piece===id)for(const m of [].concat(mesh.material))zones.add((originalMaterials.get(m)||m).userData.zone);});
+ return [...zones];
 }
 // Highlights are see-through overlays sharing each mesh's geometry; nothing stored is touched.
 const highlightMaterials={select:new THREE.MeshBasicMaterial({color:'#2f80d8',transparent:true,opacity:.30,depthWrite:false,toneMapped:false,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-4}),
@@ -1153,18 +1293,23 @@ const highlightMaterials={select:new THREE.MeshBasicMaterial({color:'#2f80d8',tr
 const skipOverlay=new THREE.MeshBasicMaterial({visible:false}),overlays={select:[],hover:[]};
 function setHighlight(kind,targets){
  for(const overlay of overlays[kind])overlay.removeFromParent();overlays[kind]=[];
- const zonesFor=new Map((targets||[]).map(t=>[t.slot,t.zones||null]));
+ const zonesFor=new Map((targets||[]).filter(t=>t.slot).map(t=>[t.slot,t.zones||null]));
  const add=(mesh,zones)=>{
   const ok=m=>{const zone=(originalMaterials.get(m)||m).userData.zone;return zone!=='interior'&&(!zones||zones.includes(zone)||(zones.includes('rim')&&zone!=='tyre'&&mesh.parent?.name?.endsWith?.('_workshop')));};
   const list=[].concat(mesh.material);if(!list.some(ok))return;
   const overlay=new THREE.Mesh(mesh.geometry,Array.isArray(mesh.material)?mesh.material.map(m=>ok(m)?highlightMaterials[kind]:skipOverlay):highlightMaterials[kind]);
   overlay.userData.pickOverlay=true;overlay.renderOrder=20;mesh.add(overlay);overlays[kind].push(overlay);
  };
+ const piecesOn=new Set((targets||[]).filter(t=>t.piece).map(t=>t.piece));
  for(const [id,root] of parts){if(!root.visible)continue;
-  root.traverseVisible(mesh=>{if(!mesh.isMesh||mesh.userData.pickOverlay)return;const own=entryById.get((originalMaterials.get([].concat(mesh.material)[0])||[].concat(mesh.material)[0]).userData.partId);
+  root.traverseVisible(mesh=>{if(!mesh.isMesh||mesh.userData.pickOverlay)return;
+   if(piecesOn.has(mesh.userData.piece))return add(mesh,null);
+   const own=entryById.get((originalMaterials.get([].concat(mesh.material)[0])||[].concat(mesh.material)[0]).userData.partId);
    if(own&&zonesFor.has(own.slot))add(mesh,zonesFor.get(own.slot));});
  }
- for(const corner of customWheels.children){const slot=corner.name.replace(/_workshop$/,'');if(!zonesFor.has(slot))continue;
+ for(const corner of customWheels.children){const slot=corner.name.replace(/_workshop$/,'');
+  if(piecesOn.has('tyres')||piecesOn.has('rims')){corner.traverseVisible(mesh=>{if(mesh.isMesh&&!mesh.userData.pickOverlay&&piecesOn.has(mesh.material.userData?.zone==='tyre'?'tyres':'rims'))add(mesh,null);});continue;}
+  if(!zonesFor.has(slot))continue;
   const zones=zonesFor.get(slot);corner.traverseVisible(mesh=>{if(mesh.isMesh&&!mesh.userData.pickOverlay&&(!zones||zones.includes(mesh.material.userData?.zone==='tyre'?'tyre':'rim')))add(mesh,null);});}
  requestRender();
 }
@@ -1181,7 +1326,7 @@ renderer.domElement.addEventListener('pointerup',e=>{
 },{passive:true});
 renderer.domElement.addEventListener('pointercancel',()=>{viewTap=null;},{passive:true});
 // Workshop panel (workshop.js) is a separate module that only talks to lcBuild/lcView.
-window.lcView=Object.freeze({pick:pickPart,highlight:setHighlight,finishes:FINISHES,canvas:renderer.domElement,setInset(px,bottomPx=0){
+window.lcView=Object.freeze({pick:pickPart,highlight:setHighlight,finishes:FINISHES,looks:LOOKS,pieceZones,canvas:renderer.domElement,setInset(px,bottomPx=0){
  const next=Math.max(0,px|0),nextBottom=Math.max(0,bottomPx|0);if(next===frameInset&&nextBottom===frameInsetBottom)return;
  frameInset=next;frameInsetBottom=nextBottom;
  // Refit the current preset into the space left beside the panel; free orbits just recentre.

@@ -74,30 +74,58 @@ for(const viewport of [{width:1440,height:1000},{width:390,height:844}]){
  await page.click('#workshop [data-home]');
  const target=await page.evaluate(()=>{const rect=document.getElementById('workshop').getBoundingClientRect(),w=window.lcWorkshop;
   const free={x0:innerWidth>650?rect.right+10:0,y1:innerWidth>650?innerHeight:rect.top-10};
-  for(let y=80;y<free.y1;y+=6)for(let x=free.x0;x<innerWidth;x+=6){const piece=w.pieceFor(window.lcView.pick(x,y));if(piece?.id==='door_RL')return {x,y};}
+  for(let y=80;y<free.y1;y+=6)for(let x=free.x0;x<innerWidth;x+=6){const piece=w.pieceFor(window.lcView.pick(x,y));if(piece?.id==='door_panel_RL')return {x,y};}
   return null;});
  check(`${tag}: parts: rear left door found on screen`,!!target,JSON.stringify(target));
  if(target)await page.mouse.click(target.x,target.y);
  check(`${tag}: parts: tapping the car opens that part`,(await page.locator('#workshop .ws-title').innerText())==='Rear left door');
  check(`${tag}: parts: tapped part is highlighted`,await page.evaluate(()=>{let n=0;window.lcBuild.parts.get('door_RL').traverse(o=>{if(o.userData.pickOverlay)n++;});return n>0;}));
- await page.click('#workshop [data-finish="paint:gloss_black"]');
- const door=await page.evaluate(()=>({finish:window.lcBuild.getState().finish,colors:(()=>{const out=new Set();window.lcBuild.parts.get('door_RL').traverse(o=>{if(o.isMesh&&!o.userData.pickOverlay)for(const m of [].concat(o.material))if(m.userData.zone==='paint')out.add(m.color.getHexString());});return [...out];})()}));
- check(`${tag}: parts: gloss black door paint applied`,door.finish['door_RL:paint']==='gloss_black'&&door.colors.length&&door.colors.every(c=>c==='0b0d0f'),JSON.stringify(door));
- const logicParts=await page.evaluate(()=>{const w=window.lcWorkshop;return {interior:w.pieceFor({slot:'body_shell',zone:'interior'}),glass:w.pieceFor({slot:'door_FL',zone:'glass'})?.id,tyre:w.pieceFor({slot:'wheel_FL',zone:'tyre'})?.id,rim:w.pieceFor({slot:'wheel_FL',zone:'rim'})?.id,
-  every:(()=>{const m=window.lcBuild.getManifest(),state=window.lcBuild.getState(),missing=[];for(const [slot,id]of Object.entries(state.slots)){if(!id)continue;const e=[m.base,...m.parts].find(p=>p.id===id);for(const zone of e.zones)if(zone!=='interior'&&!(slot==='body_shell'&&zone==='mirror')&&!w.pieceFor({slot,zone}))missing.push(slot+':'+zone);}return missing;})()};});
- check(`${tag}: parts: interior is never offered`,logicParts.interior===null);
- check(`${tag}: parts: glass → Windows, tyre → Tyres, rim → Rims`,logicParts.glass==='windows'&&logicParts.tyre==='tyres'&&logicParts.rim==='rims',JSON.stringify(logicParts));
- check(`${tag}: parts: every outside surface belongs to a part`,logicParts.every.length===0,logicParts.every.join(' '));
- await page.click('#workshop [data-parts]');await page.click('#workshop [data-piece=badges]');
+ const meshesOf=`(id)=>{const out=[];for(const root of window.lcBuild.parts.values())root.traverse(o=>{if(o.isMesh&&!o.userData.pickOverlay&&o.userData.piece===id)out.push(o);});return out;}`;
+ const colours=id=>page.evaluate(([src,id])=>{const meshesOf=eval(src);return [...new Set(meshesOf(id).flatMap(o=>[].concat(o.material).filter(m=>!['glass','mirror','lamp_clear','lamp_red','lamp_orange'].includes(m.userData.zone)).map(m=>m.color.getHexString())))];},[meshesOf,id]);
+ const handlesBefore=await colours('door_handles');
+ await page.click('#workshop [data-lookmat=gloss]');
+ await page.click('#workshop [data-lookcolor="#15191d"]');
+ const door={look:await page.evaluate(()=>window.lcBuild.getState().look),colors:await colours('door_panel_RL'),handles:await colours('door_handles')};
+ check(`${tag}: parts: gloss + black swatch on the tapped door`,door.look.door_panel_RL?.material==='gloss'&&door.look.door_panel_RL?.color==='#15191d'&&door.colors.length&&door.colors.every(c=>c==='15191d'),JSON.stringify(door));
+ check(`${tag}: parts: the door's handle keeps its own colour`,JSON.stringify(door.handles)===JSON.stringify(handlesBefore),JSON.stringify(door.handles));
+ const split=await page.evaluate(src=>{const meshesOf=eval(src),w=window.lcWorkshop,missing=[],orphans=[];
+  const state=window.lcBuild.getState();
+  for(const piece of w.data.pieces)if(piece.match.some(rule=>state.slots[rule.slot])&&!window.lcView.pieceZones(piece.id).length)missing.push(piece.id);
+  for(const [id,root] of window.lcBuild.parts){if(!root.visible)continue;root.traverseVisible(o=>{if(!o.isMesh||o.userData.pickOverlay)return;const zone=[].concat(o.material)[0].userData.zone;
+   if(zone!=='interior'&&!(id==='body_shell'&&zone==='mirror')&&!o.userData.piece)orphans.push(id+'/'+o.name);});}
+  const one=id=>meshesOf(id).map(o=>o.parent.name||o.name);
+  return {missing,orphans,interior:w.pieceFor({slot:'body_shell',zone:'interior'}),glass:meshesOf('windows').some(o=>o.parent?.name==='door_FL'||o.name==='windowglass_39'),
+   lip:meshesOf('front_lip').length,fog:meshesOf('fog_lamps').length,chrome:meshesOf('headlamp_chrome').length,heads:meshesOf('headlamps').length,
+   rearLip:meshesOf('rear_lip').length,rearLamps:meshesOf('rear_bumper_lamps').length,v8:meshesOf('badge_v8').map(o=>o.name),gxr:meshesOf('badge_gxr').length,garnish:meshesOf('rear_garnish').map(o=>o.name)};},meshesOf);
+ check(`${tag}: parts: every piece with a fitted slot has surfaces on the car`,split.missing.length===0,split.missing.join(' '));
+ check(`${tag}: parts: every outside surface belongs to a piece`,split.orphans.length===0,split.orphans.slice(0,8).join(' '));
+ check(`${tag}: parts: interior is never offered`,split.interior===null);
+ check(`${tag}: parts: lips, fog lamps, headlamp chrome and bumper lamps are their own parts`,split.lip&&split.fog&&split.chrome&&split.heads&&split.rearLip&&split.rearLamps,JSON.stringify(split));
+ check(`${tag}: parts: badges are separate (V8, GX.R, garnish)`,new Set(split.v8).size===2&&split.gxr>0&&split.garnish.join()==='Garnish',JSON.stringify({v8:split.v8,gxr:split.gxr,garnish:split.garnish}));
+ await page.click('#workshop [data-parts]');await page.click('#workshop [data-piece=mirror_caps]');
+ await page.click('#workshop [data-lookmat=carbon]');
+ const carbon=await page.evaluate(src=>{const meshesOf=eval(src);const m=meshesOf('mirror_caps').flatMap(o=>[].concat(o.material));return m.length&&m.every(x=>x.userData.look==='carbon'&&x.customProgramCacheKey().includes('carbon'));},meshesOf);
+ check(`${tag}: parts: carbon fibre on the mirror caps`,carbon);
+ await page.evaluate(()=>{const input=document.querySelector('#workshop [data-lookpick]');input.value='#2a6f4e';input.dispatchEvent(new Event('input',{bubbles:true}));});
+ await page.waitForFunction(()=>window.lcBuild.getState().look.mirror_caps?.color==='#2a6f4e',null,{timeout:5000}).catch(()=>{});
+ check(`${tag}: parts: free colour picker recolours the part`,await page.evaluate(()=>JSON.stringify(window.lcBuild.getState().look.mirror_caps))==='{"material":"carbon","color":"#2a6f4e"}');
+ await page.click('#workshop [data-parts]');await page.click('#workshop [data-piece=toyota_front]');
  await page.click('#workshop [data-remove=remove]');
- check(`${tag}: parts: badges come off`,await page.evaluate(()=>!window.lcBuild.parts.get('emblem_front').visible&&window.lcBuild.getState().hidden.includes('emblem_front')));
+ const removed=await page.evaluate(src=>{const meshesOf=eval(src);return {hidden:window.lcBuild.getState().hidden,off:meshesOf('toyota_front').every(o=>!o.visible),grille:meshesOf('front_grille').every(o=>o.visible)};},meshesOf);
+ check(`${tag}: parts: front Toyota emblem comes off on its own`,removed.hidden.includes('toyota_front')&&removed.off&&removed.grille,JSON.stringify(removed));
+ await page.click('#workshop [data-remove=refit]');
+ check(`${tag}: parts: and refits`,await page.evaluate(src=>{const meshesOf=eval(src);return !window.lcBuild.getState().hidden.includes('toyota_front')&&meshesOf('toyota_front').every(o=>o.visible);},meshesOf));
+ await page.click('#workshop [data-remove=remove]');
  await page.click('#workshop [data-parts]');await page.click('#workshop [data-piece=windows]');
  await page.click('#workshop [data-finish="glass:tint_15"]');
  await page.click('#workshop [data-parts]');await page.click('#workshop [data-home]');await page.click('#workshop [data-share]');
  const partsHash=JSON.parse(decodeURIComponent(await page.evaluate(()=>location.hash)).replace(/^#build=/,'')||'{}');
- check(`${tag}: parts: share link carries finishes and removed parts`,partsHash.finish?.['door_RL:paint']==='gloss_black'&&partsHash.finish?.['door_FL:glass']==='tint_15'&&partsHash.hidden?.includes('emblem_front'),JSON.stringify(partsHash));
+ check(`${tag}: parts: share link carries looks, tints and removed parts`,partsHash.look?.door_panel_RL?.material==='gloss'&&partsHash.look?.mirror_caps?.material==='carbon'&&partsHash.finish?.['windows:glass']==='tint_15'&&partsHash.hidden?.includes('toyota_front'),JSON.stringify(partsHash));
+ const reloaded=await page.evaluate(async hash=>{const s=await window.lcBuild.replaceState(hash);return s.look.mirror_caps?.color==='#2a6f4e'&&s.hidden.includes('toyota_front');},partsHash);
+ check(`${tag}: parts: a shared build loads back`,reloaded);
+ check(`${tag}: parts: a bad look is refused`,await page.evaluate(()=>window.lcBuild.setState({look:{mirror_caps:{material:'gold'}}}).then(()=>false,()=>true)));
  await page.click('#workshop [data-sheet]');await page.click('#workshop [data-reset]');
- check(`${tag}: parts: reset clears finishes and refits parts`,await page.evaluate(()=>{const s=window.lcBuild.getState();return !Object.keys(s.finish).length&&!s.hidden.includes('emblem_front')&&window.lcBuild.parts.get('emblem_front').visible;}));
+ check(`${tag}: parts: reset clears looks and finishes and refits parts`,await page.evaluate(src=>{const meshesOf=eval(src),s=window.lcBuild.getState();return !Object.keys(s.finish).length&&!Object.keys(s.look).length&&!s.hidden.length&&meshesOf('toyota_front').every(o=>o.visible);},meshesOf));
  await page.keyboard.press('Escape');
  check(`${tag}: Escape closes`,!(await page.evaluate(()=>document.body.classList.contains('workshop-open'))));
  check(`${tag}: no page errors`,viewer.errors.length===0,viewer.errors.join(' | '));

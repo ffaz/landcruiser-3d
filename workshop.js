@@ -87,6 +87,7 @@ function dimensions(){
  const body=new THREE.Box3().expandByObject(lcBuild.groups.body),size=box.getSize(new THREE.Vector3());
  return {length:Math.round(size.x*1000),height:Math.round(box.max.y*1000),width:Math.round(size.z*1000),clearance:Math.round(body.min.y*1000)};
 }
+const cloneLook=look=>Object.fromEntries(Object.entries(look).map(([id,value])=>[id,{...value}]));
 function shareState(state){
  const base=lcBuild.getBaseState(),diff={};
  const slots=Object.fromEntries(Object.entries(state.slots).filter(([slot,id])=>base.slots[slot]!==id));
@@ -97,48 +98,58 @@ function shareState(state){
  const paint=Object.fromEntries(Object.entries(state.paint).filter(([key,value])=>base.paint[key]!==value));
  if(Object.keys(paint).length)diff.paint=paint;
  if(Object.keys(state.finish).length)diff.finish={...state.finish};
+ if(Object.keys(state.look||{}).length)diff.look=cloneLook(state.look);
  if(JSON.stringify([...state.hidden].sort())!==JSON.stringify([...base.hidden].sort()))diff.hidden=[...state.hidden];
  return diff;
 }
 
 // ── Pieces: every outside part, picked by tapping the car or from the Parts list ──
-// A piece names slots (and zones) of the stored car, an optional upgrade category,
-// finish choices per zone and whether it can be taken off. The cabin interior is never a piece.
-const FINISHES=lcView.finishes;
-const ZONE_LABEL={paint:'Paint',chrome:'Chrome trim',black:'Black trim',glass:'Window tint',lamp_clear:'Lenses',lamp_red:'Lenses'};
-const pieces=data.pieces.map(piece=>({...piece}));
+// The viewer assigns every outside surface to one piece (model/workshop.json match rules). A piece can
+// take a look (material and colour) on its opaque surfaces, tint or smoked lenses where it has them, an
+// upgrade category, and can be taken off unless fixed. The cabin interior is never a piece.
+const FINISHES=lcView.finishes,LOOKS=lcView.looks;
+const pieces=data.pieces.map(piece=>({...piece,slots:[...new Set(piece.match.map(rule=>rule.slot))],extraSlots:[]}));
 // Accessory parts arriving later belong to their category's piece, so a tap on a bull bar opens Front.
 for(const category of data.categories){
  if(category.catalog)continue;
  const slots=categoryPartSlots(category);if(!slots.length)continue;
  const piece=pieces.find(p=>p.category===category.id);
- if(piece)piece.slots=[...new Set([...piece.slots,...slots])];else pieces.push({id:category.id,label:category.label,slots,category:category.id});
+ if(piece)piece.extraSlots=[...new Set([...piece.extraSlots,...slots])];else pieces.push({id:category.id,label:category.label,slots,extraSlots:slots,match:[],category:category.id});
 }
 const pieceById=new Map(pieces.map(piece=>[piece.id,piece]));
-const pieceFor=hit=>hit&&pieces.find(piece=>piece.slots.includes(hit.slot)&&(!piece.zones||piece.zones.includes(hit.zone)))||null;
-const slotZones=slot=>new Set([manifest.base,...manifest.parts].filter(entry=>entry.slot===slot).flatMap(entry=>entry.zones));
-const zoneSlots=(piece,zone)=>piece.slots.filter(slot=>slotZones(slot).has(zone));
-const pieceFinish=(piece,zone,state)=>state.finish[zoneSlots(piece,zone)[0]+':'+zone]||'stock';
-const pieceRemoved=(piece,state)=>!!piece.removable&&piece.slots.every(slot=>state.hidden.includes(slot));
-const finishPatch=(piece,zone,id)=>({finish:Object.fromEntries(zoneSlots(piece,zone).map(slot=>[slot+':'+zone,id==='stock'?null:id]))});
-function removePatch(piece,remove,state){
- const hidden=state.hidden.filter(slot=>!piece.slots.includes(slot));
- return {hidden:remove?[...hidden,...piece.slots]:hidden};
+const pieceFor=hit=>hit&&(pieceById.get(hit.piece)||pieces.find(piece=>piece.extraSlots.includes(hit.slot)))||null;
+const LENS_ZONES=['lamp_clear','lamp_red','lamp_orange'];
+// What a piece offers comes from the surfaces it really has on the car now.
+function pieceKinds(piece){
+ const zones=lcView.pieceZones(piece.id);
+ return {zones,look:zones.some(zone=>!['glass','mirror','interior',...LENS_ZONES].includes(zone)),glass:zones.includes('glass'),lenses:zones.filter(zone=>LENS_ZONES.includes(zone))};
 }
+const pieceRemoved=(piece,state)=>state.hidden.includes(piece.id)||(piece.extraSlots.length>0&&!piece.match.length&&piece.extraSlots.every(slot=>state.hidden.includes(slot)));
+const removePatch=(piece,remove,state)=>({hidden:remove?[...new Set([...state.hidden,piece.id])]:state.hidden.filter(id=>id!==piece.id)});
+const pieceFinish=(piece,zone,state)=>state.finish[piece.id+':'+zone]||'stock';
+const finishPatch=(piece,zones,id)=>({finish:Object.fromEntries(zones.map(zone=>[piece.id+':'+zone,id==='stock'?null:id]))});
+const pieceLook=(piece,state)=>state.look?.[piece.id]||{};
+const lookPatch=(piece,state,change)=>{const next={...pieceLook(piece,state),...change};for(const key of Object.keys(next))if(next[key]===null)delete next[key];return {look:{[piece.id]:Object.keys(next).length?next:null}};};
 const PAINTS=[...document.querySelectorAll('[data-paint]')].map(button=>({hex:button.dataset.paint,label:button.title}));
+// Part colours: body colour follows the car's paint; the rest are fixed swatches plus a free picker.
+const COLOURS=[{hex:'body',label:'Body colour'},...PAINTS,{hex:'#8c1d1d',label:'Red'},{hex:'#1f3f66',label:'Blue'},{hex:'#4e5a3b',label:'Olive'},
+ {hex:'#b9996a',label:'Desert tan'},{hex:'#d3601b',label:'Orange'},{hex:'#a88a45',label:'Bronze'}];
+const colourName=hex=>COLOURS.find(c=>c.hex.toLowerCase()===String(hex).toLowerCase())?.label||String(hex).toUpperCase();
 const paintName=hex=>PAINTS.find(p=>p.hex===hex)?.label||hex;
 // What changed on a piece, in words, for the Parts list and the build sheet.
 function pieceChanges(piece,state){
  if(pieceRemoved(piece,state))return ['Removed'];
- const out=[];
+ const out=[],look=pieceLook(piece,state);
  if(piece.paint&&state.paint.paint!==lcBuild.getBaseState().paint.paint)out.push(paintName(state.paint.paint));
- for(const zone of Object.keys(piece.finishes||{})){const id=pieceFinish(piece,zone,state);if(id!=='stock')out.push(`${ZONE_LABEL[zone]}: ${FINISHES[id].label.toLowerCase()}`);}
+ if(look.material||look.color)out.push([look.material&&LOOKS[look.material].label,look.color&&colourName(look.color).toLowerCase()].filter(Boolean).join(', ').replace(/^./,c=>c.toUpperCase()));
+ const finishes=[...new Set(Object.entries(state.finish).filter(([key])=>key.startsWith(piece.id+':')).map(([,id])=>FINISHES[id].label))];
+ if(finishes.length)out.push(...finishes);
  return out;
 }
 // The car lights up what the open page is about: the piece, or the wheels behind Tyres/Rims.
+const pieceTargets=piece=>piece?[{piece:piece.id},...piece.extraSlots.map(slot=>({slot}))]:null;
 function highlightTargets(){
- const piece=view.startsWith('piece:')?pieceById.get(view.slice(6)):['tyres','rims'].includes(view)?pieceById.get(view):null;
- return piece?piece.slots.map(slot=>({slot,zones:piece.zones||null})):null;
+ return pieceTargets(view.startsWith('piece:')?pieceById.get(view.slice(6)):['tyres','rims'].includes(view)?pieceById.get(view):null);
 }
 
 // ── Panel ──────────────────────────────────────────────────────────────────
@@ -194,6 +205,16 @@ body.clean-view #workshop{display:none}
 #workshop .ws-chip[aria-checked=true]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset;color:var(--accent)}
 #workshop .ws-chip[disabled]{opacity:.45;cursor:default}
 #workshop .ws-paint i{width:12px;height:12px;border-radius:50%;border:1px solid rgba(0,0,0,.25)}
+#workshop .ws-sws{display:flex;flex-wrap:wrap;gap:7px;margin:-2px 0 0}
+#workshop .ws-sw{position:relative;width:26px;height:26px;flex:none;border-radius:50%;border:1px solid rgba(0,0,0,.22);background:var(--sw);padding:0;display:grid;place-items:center;font-size:9px}
+#workshop .ws-sw b{color:#fff;mix-blend-mode:difference;font-weight:700}
+#workshop .ws-sw[aria-checked=true]{box-shadow:0 0 0 2px var(--panel,#fff),0 0 0 3.5px var(--accent)}
+#workshop .ws-sw[disabled]{opacity:.4;cursor:default}
+#workshop .ws-sw.stock{background:linear-gradient(135deg,transparent 46%,rgba(127,140,150,.9) 46%,rgba(127,140,150,.9) 54%,transparent 54%)}
+#workshop .ws-sw.pick{background:var(--sw);cursor:pointer;overflow:hidden}
+#workshop .ws-sw.pick[aria-checked=false]{background:conic-gradient(#e33,#ec3,#3c6,#3be,#46e,#c4d,#e33)}
+#workshop .ws-sw.pick input{position:absolute;inset:0;opacity:0;width:100%;height:100%;cursor:pointer;border:0;padding:0}
+#workshop .ws-tight{margin:-4px 0 2px}
 #workshopToggle[aria-pressed=true]{background:var(--ink);color:#f4f4ef;border-color:var(--ink)}
 @media (max-width:650px){#workshop{left:10px;right:10px;width:auto;top:auto;bottom:10px;height:52vh;padding:14px 14px}
  body.workshop-open .bottom{visibility:hidden}}
@@ -237,19 +258,26 @@ function render(){
   <div class="ws-actions"><button class="ws-btn" data-reset>Reset to base</button><button class="ws-btn pri" data-share>${flash||'Copy share link'}</button></div>`;
  }else if(view==='parts'){
   body=`<div class="ws-head"><button class="ws-back" data-home aria-label="Back">‹</button><div><div class="ws-micro">Workshop</div><div class="ws-title">Parts</div></div></div>
-  <div class="ws-scroll"><p class="ws-note">Tap a part on the car, or pick it here.</p><div class="ws-list">${pieces.map(piece=>{const changes=pieceChanges(piece,state);
+  <div class="ws-scroll"><p class="ws-note">Tap a part on the car, or pick it here.</p><div class="ws-list">${pieces.filter(piece=>piece.extraSlots.length&&!piece.match.length||lcView.pieceZones(piece.id).length).map(piece=>{const changes=pieceChanges(piece,state);
    return `<button class="ws-row${changes.length?' mod':''}" data-piece="${piece.id}"><span class="ws-t"><div class="ws-n">${esc(piece.label)}</div><div class="ws-v">${esc(changes.length?changes.join(' · '):piece.detail||'Stock')}</div></span><span aria-hidden="true">›</span></button>`;}).join('')}</div></div>${statusHTML(fit)}`;
  }else if(view.startsWith('piece:')){
   const piece=pieceById.get(view.slice(6)),removed=pieceRemoved(piece,state),category=piece.category&&data.categories.find(c=>c.id===piece.category);
-  const chips=(zone,ids,current)=>`<div class="ws-micro">${esc(ZONE_LABEL[zone])}</div><div class="ws-chips" role="radiogroup" aria-label="${esc(ZONE_LABEL[zone])}">${['stock',...ids].map(id=>
-   `<button class="ws-chip" role="radio" data-finish="${zone}:${id}" aria-checked="${current===id}" ${removed?'disabled':''}>${esc(id==='stock'?'Stock':FINISHES[id].label)}</button>`).join('')}</div>`;
+  const kinds=pieceKinds(piece),look=pieceLook(piece,state),changed=pieceChanges(piece,state).length>0;
+  const chip=(attr,value,label,on)=>`<button class="ws-chip" role="radio" ${attr}="${esc(value)}" aria-checked="${on}" ${removed?'disabled':''}>${esc(label)}</button>`;
+  const lensRow=(label,zones,ids)=>{const current=pieceFinish(piece,zones[0],state);
+   return `<div class="ws-micro">${label}</div><div class="ws-chips" role="radiogroup" aria-label="${label}">${['stock',...ids].map(id=>chip('data-finish',zones.join(',')+':'+id,id==='stock'?'Stock':FINISHES[id].label,current===id)).join('')}</div>`;};
+  const colourValue=piece.paint?state.paint.paint:look.color;
+  const custom=!!colourValue&&colourValue!=='body'&&!COLOURS.some(c=>c.hex.toLowerCase()===colourValue.toLowerCase());
+  const swatches=`<div class="ws-micro">Colour</div><div class="ws-sws" role="radiogroup" aria-label="Colour">${piece.paint?'':`<button class="ws-sw stock" role="radio" data-lookcolor="stock" aria-checked="${!look.color}" title="Stock colour" aria-label="Stock colour" ${removed?'disabled':''}></button>`}${COLOURS.filter(c=>!piece.paint||c.hex!=='body').map(c=>`<button class="ws-sw" role="radio" data-lookcolor="${c.hex}" aria-checked="${String(colourValue).toLowerCase()===c.hex.toLowerCase()}" title="${esc(c.label)}" aria-label="${esc(c.label)}" style="--sw:${c.hex==='body'?state.paint.paint:c.hex}" ${removed?'disabled':''}>${c.hex==='body'?'<b>B</b>':''}</button>`).join('')}<label class="ws-sw pick" title="Any colour" aria-checked="${custom}" style="--sw:${custom?colourValue:'transparent'}"><input type="color" data-lookpick value="${custom?colourValue:'#808080'}" ${removed?'disabled':''} aria-label="Any colour"></label></div>
+   <p class="ws-note ws-tight">${esc(piece.paint?paintName(state.paint.paint):look.color?colourName(look.color):'Stock colour')}</p>`;
   body=`<div class="ws-head"><button class="ws-back" data-parts aria-label="Back to parts">‹</button><div><div class="ws-micro">Part</div><div class="ws-title">${esc(piece.label)}</div></div></div>
   <div class="ws-scroll">${piece.detail?`<p class="ws-note">${esc(piece.detail)}</p>`:''}
-  ${piece.paint?`<div class="ws-micro">Colour</div><div class="ws-chips" role="radiogroup" aria-label="Colour">${PAINTS.map(p=>`<button class="ws-chip ws-paint" role="radio" data-painthex="${p.hex}" aria-checked="${state.paint.paint===p.hex}"><i style="background:${p.hex}"></i>${esc(p.label)}</button>`).join('')}</div><p class="ws-note">Other parts can be set to body colour, gloss or matte black from their own pages.</p>`:''}
-  ${Object.entries(piece.finishes||{}).map(([zone,ids])=>chips(zone,ids,pieceFinish(piece,zone,state))).join('')}
+  ${removed?'<p class="ws-note">Taken off. Refit it to change it again.</p>':''}
+  ${kinds.look||piece.paint?`<div class="ws-micro">Material</div><div class="ws-chips" role="radiogroup" aria-label="Material">${chip('data-lookmat','stock','Stock',!look.material)}${Object.entries(LOOKS).map(([id,kind])=>chip('data-lookmat',id,kind.label,look.material===id)).join('')}</div>${swatches}`:''}
+  ${kinds.glass?lensRow('Window tint',['glass'],['tint_35','tint_15','tint_5']):''}
+  ${kinds.lenses.length?lensRow('Lenses',kinds.lenses,['smoked']):''}
   ${category?`<div class="ws-micro">${esc(category.label)}${category.catalog?'':' upgrades'}</div>${optionsHTML(category,state)}`:''}
-  ${piece.removable?`<button class="ws-btn" data-remove="${removed?'refit':'remove'}">${removed?'Refit this part':'Take this part off'}</button>`:''}
-  ${!piece.paint&&!piece.finishes&&!category&&!piece.removable?'<p class="ws-note">Nothing to change on this part yet.</p>':''}</div>${statusHTML(fit)}`;
+  <div class="ws-actions">${piece.fixed?'<span></span>':`<button class="ws-btn${removed?' pri':''}" data-remove="${removed?'refit':'remove'}">${removed?'Refit this part':'Remove this part'}</button>`}<button class="ws-btn" data-piecereset ${changed?'':'disabled'}>Back to stock</button></div></div>${statusHTML(fit)}`;
  }else{
   const category=data.categories.find(c=>c.id===view),current=selectedOption(category,state);
   body=`<div class="ws-head"><button class="ws-back" data-home aria-label="Back">‹</button><div><div class="ws-micro">Workshop</div><div class="ws-title">${esc(category.label)}</div></div></div>
@@ -292,7 +320,14 @@ panel.addEventListener('click',async event=>{
  if(t.dataset.cat){view=t.dataset.cat;return render();}
  if(t.dataset.parts!==undefined){view='parts';return render();}
  if(t.dataset.piece){view='piece:'+t.dataset.piece;return render();}
- if(t.dataset.finish){const piece=pieceById.get(view.slice(6)),[zone,id]=t.dataset.finish.split(':');await lcBuild.setState(finishPatch(piece,zone,id));return render();}
+ if(t.dataset.finish){const piece=pieceById.get(view.slice(6)),[zones,id]=t.dataset.finish.split(':');await lcBuild.setState(finishPatch(piece,zones.split(','),id));return render();}
+ if(t.dataset.lookmat){const piece=pieceById.get(view.slice(6));await lcBuild.setState(lookPatch(piece,lcBuild.getState(),{material:t.dataset.lookmat==='stock'?null:t.dataset.lookmat}));return render();}
+ if(t.dataset.lookcolor){const piece=pieceById.get(view.slice(6)),hex=t.dataset.lookcolor;
+  await lcBuild.setState(piece.paint?{paint:{paint:hex}}:lookPatch(piece,lcBuild.getState(),{color:hex==='stock'?null:hex}));return render();}
+ if(t.dataset.piecereset!==undefined){const piece=pieceById.get(view.slice(6)),state=lcBuild.getState();
+  const patch={...removePatch(piece,false,state),look:{[piece.id]:null},finish:Object.fromEntries(Object.keys(state.finish).filter(key=>key.startsWith(piece.id+':')).map(key=>[key,null]))};
+  if(piece.paint)patch.paint={paint:lcBuild.getBaseState().paint.paint};
+  await lcBuild.setState(patch);return render();}
  if(t.dataset.painthex){await lcBuild.setState({paint:{paint:t.dataset.painthex}});return render();}
  if(t.dataset.remove){const piece=pieceById.get(view.slice(6));await lcBuild.setState(removePatch(piece,t.dataset.remove==='remove',lcBuild.getState()));return render();}
  if(t.dataset.share!==undefined)return share();
@@ -309,6 +344,15 @@ panel.addEventListener('click',async event=>{
   await lcBuild.setState(patchFor(category,option));render();
  }
 });
+// The free colour picker applies as it moves (one change per frame at most) and re-renders when it settles.
+let pickFrame=0,pickValue=null;
+panel.addEventListener('input',event=>{
+ if(!event.target.matches('[data-lookpick]'))return;
+ pickValue=event.target.value;if(pickFrame)return;
+ pickFrame=requestAnimationFrame(async()=>{pickFrame=0;const piece=view.startsWith('piece:')&&pieceById.get(view.slice(6));if(!piece)return;
+  await lcBuild.setState(piece.paint?{paint:{paint:pickValue}}:lookPatch(piece,lcBuild.getState(),{color:pickValue}));});
+});
+panel.addEventListener('change',event=>{if(event.target.matches('[data-lookpick]'))setTimeout(render,50);});
 toggle.addEventListener('click',()=>setOpen(!document.body.classList.contains('workshop-open')));
 // Tapping the car opens that part's page; a tap on empty space goes back to the list.
 const workshopLive=()=>document.body.classList.contains('workshop-open')&&!document.body.classList.contains('clean-view')&&!compareBase;
@@ -324,7 +368,7 @@ lcView.canvas.addEventListener('pointermove',event=>{
  hoverPoint=[event.clientX,event.clientY];if(hoverTimer)return;
  hoverTimer=setTimeout(()=>{hoverTimer=0;const piece=pieceFor(lcView.pick(...hoverPoint));
   if(piece===hoverPiece)return;hoverPiece=piece;lcView.canvas.style.cursor=piece?'pointer':'';
-  lcView.highlight('hover',piece&&view!=='piece:'+piece.id?piece.slots.map(slot=>({slot,zones:piece.zones||null})):null);},60);
+  lcView.highlight('hover',piece&&view!=='piece:'+piece.id?pieceTargets(piece):null);},60);
 },{passive:true});
 lcView.canvas.addEventListener('pointerleave',()=>{hoverPiece=null;lcView.canvas.style.cursor='';lcView.highlight('hover',null);},{passive:true});
 addEventListener('keydown',event=>{if(event.key==='Escape'&&document.body.classList.contains('workshop-open'))setOpen(false);});
