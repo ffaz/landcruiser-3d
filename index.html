@@ -175,6 +175,7 @@ import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { HorizontalBlurShader } from 'three/addons/shaders/HorizontalBlurShader.js';
 import { VerticalBlurShader } from 'three/addons/shaders/VerticalBlurShader.js';
+import {createArchDetail} from './wheels/arch-detail.js';
 
 // ────────────────────────────────────────────────────────────────────────────
 // 1. VERIFIED DIMENSIONS AND EASY CUSTOMISATION
@@ -643,16 +644,33 @@ function useRoofEdgeFinish(material){
 }
 // Tyre-only bounced studio fill preserves the source tread and curvature.
 // No shared wheel/rim material or geometry is changed.
-function useTyreRubberFinish(material){
+const sidewallRelief=await new THREE.TextureLoader().loadAsync(new URL('./model/sidewall-relief.png',import.meta.url).href);
+sidewallRelief.anisotropy=4;
+function useTyreRubberFinish(material,entry){
  const compile=material.onBeforeCompile,cache=material.customProgramCacheKey.bind(material);
  material.onBeforeCompile=shader=>{
   compile(shader);
+  shader.uniforms.uSidewallRelief={value:sidewallRelief};
+  shader.uniforms.uTyreHub={value:new THREE.Vector2(entry.pivot[0],entry.pivot[1])};
+  shader.uniforms.uTyreRise={value:0};material.userData.reliefRise=shader.uniforms.uTyreRise;
+  shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vSidewallPosition;');
+  shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvSidewallPosition=(modelMatrix*vec4(position,1.)).xyz;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vSidewallPosition;uniform sampler2D uSidewallRelief;uniform vec2 uTyreHub;uniform float uTyreRise;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <normal_fragment_maps>',`#include <normal_fragment_maps>
+   vec2 wall=vSidewallPosition.xy-uTyreHub-vec2(0.,uTyreRise);
+   // Opposite side reads outward too; all mapping is on the existing surface.
+   vec2 wallUV=vec2(wall.x*sign(vSidewallPosition.z),wall.y)/.8+.5;
+   float wallMask=smoothstep(.90,.96,abs(vSidewallPosition.z))*(1.-smoothstep(.355,.37,length(wall)));
+   float relief=texture2D(uSidewallRelief,wallUV).r*.00065*wallMask;
+   vec3 sx=dFdx(-vViewPosition),sy=dFdy(-vViewPosition);
+   vec3 rx=cross(sy,normal),ry=cross(normal,sx);float det=dot(sx,rx);
+   normal=normalize(abs(det)*normal-sign(det)*(dFdx(relief)*rx+dFdy(relief)*ry));`);
   shader.fragmentShader=shader.fragmentShader.replace('#include <opaque_fragment>',`
    float rubberCavity=mix(.65,1.,bakedAO)*(1.-bakedValley*.25);
    outgoingLight+=diffuseColor.rgb*(.14*rubberCavity+.06*bakedRidge);
    #include <opaque_fragment>`);
  };
- material.customProgramCacheKey=()=>cache()+'-charcoal-rubber-v1';
+ material.customProgramCacheKey=()=>cache()+'-charcoal-rubber-relief-v2';
 }
 const archFinishMaterials=new WeakSet();
 function useArchLinerFill(material){
@@ -1188,7 +1206,7 @@ async function loadPart(entry){
     finishPartMaterial(material,entry,zone,source.name,part);
     if(/_finish(?:3|4b)$/.test(entry.id)&&zone==='lamp_red'&&!source.name.startsWith('redglass_lower')&&!source.name.startsWith('redglass_caps'))useRearRedFilter(material,part);
     if(!['glass','lamp_clear','mirror'].includes(zone)&&!material.userData.optical&&!(entry.id.startsWith('lamp_rear_')&&zone==='lamp_red'))useBakedShading(material);
-    if(/^wheel_[FR][LR]$/.test(entry.id)&&zone==='tyre')useTyreRubberFinish(material);
+    if(/^wheel_[FR][LR]$/.test(entry.id)&&zone==='tyre')useTyreRubberFinish(material,entry);
     if(entry.rigidClass==='wheel'&&!entry.wheelSlot&&zone==='black'){material.color.set('#0d1115');material.roughness=.56;material.envMapIntensity=1;}
     if(entry.rigidClass==='wheel'&&!entry.wheelSlot&&zone==='chrome'){material.color.set('#e1e4e5');material.roughness=.24;material.metalness=1;material.clearcoat=.15;material.clearcoatRoughness=.23;material.envMapIntensity=.95;}
     // Additive workshop parts author their own finish without changing base materials.
@@ -1321,6 +1339,7 @@ function paintCustomWheels(){
 // Tyre swaps are rigid too: a wheel part declares its tyre diameter (tyre_mm) and
 // the hubs rise by half the difference from stock; the body rides on top.
 const STOCK_TYRE_MM=793;
+const archDetail=createArchDetail(car);
 function tyreDiameterMM(){
  if(buildState.tyre!=='stock')return tyreById.get(buildState.tyre).od_mm;
  const sizes=['wheel_FL','wheel_FR','wheel_RL','wheel_RR'].map(slot=>entryById.get(buildState.slots[slot])?.tyre_mm??STOCK_TYRE_MM);
@@ -1332,6 +1351,8 @@ function applyBuild(){
  const tyreRise=(tyreDiameterMM()-STOCK_TYRE_MM)/2000;
  wheelGroup.position.y=tyreRise;
  bodyGroup.position.y=tyreRise+buildState.lift_mm/1000;bodyLiftUniform.value=bodyGroup.position.y;
+ archDetail.update({lift:buildState.lift_mm/1000,rise:tyreRise,hidden:buildState.hidden});
+ for(const [id,root]of parts)if(/^wheel_[FR][LR]$/.test(id))root.traverse(o=>{if(o.isMesh)for(const m of [].concat(o.material))if(m.userData.reliefRise)m.userData.reliefRise.value=tyreRise;});
  applyStudioPartVisibility();
  applyZonePaint();car.updateMatrixWorld(true);rebuildFramingPoints();refreshCameraSafety();
  const displayedBase=plinth.visible;plinth.visible=false;bakeContactShadow();plinth.visible=displayedBase;
