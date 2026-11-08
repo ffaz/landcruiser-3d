@@ -5337,6 +5337,307 @@
       "purpose": "Unbranded five-rib highway tread from supplied image in 265/70R17; new geometry and Cycles AO; unchanged 17-inch wheel",
       "lazy": true,
       "catalogAsset": true
+    },
+    {
+      "id": "rim_FL_disc",
+      "slot": "catalog_rim_kmc",
+      "url": "review/kmc-reference.glb",
+      "rootNode": "rim_FL_disc",
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "barrel",
+        "rim",
+        "edge_catch",
+        "nut_pocket",
+        "pocket_wall",
+        "black",
+        "nut_dark",
+        "nut_edge",
+        "lettering",
+        "tyre",
+        "backing",
+        "brake",
+        "hat",
+        "caliper",
+        "brake_detail"
+      ],
+      "triangles": 36778,
+      "bounds": {
+        "min": [
+          -1.901999989748001,
+          0.12950001025199892,
+          0.6860000014305114
+        ],
+        "max": [
+          -1.368000010251999,
+          0.6634999897480012,
+          0.9659638375043869
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "width_in": 8.5,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
+      "lazy": true,
+      "replacesWheelHardware": "wheel_FL",
+      "materialDefaults": {
+        "rim": {
+          "color": "#55595d",
+          "roughness": 0.48,
+          "metalness": 0.12,
+          "envMapIntensity": 2.8,
+          "clearcoat": 0.08,
+          "clearcoatRoughness": 0.4,
+          "specularIntensity": 0.35
+        },
+        "lip": {
+          "color": "#55595d",
+          "roughness": 0.8,
+          "metalness": 0.08,
+          "envMapIntensity": 2.4,
+          "clearcoat": 0,
+          "clearcoatRoughness": 0.4,
+          "specularIntensity": 0.2
+        },
+        "edge_catch": {
+          "color": "#55595d",
+          "roughness": 0.32,
+          "metalness": 0.12,
+          "envMapIntensity": 4,
+          "clearcoat": 0.08,
+          "clearcoatRoughness": 0.32,
+          "specularIntensity": 0.35
+        },
+        "nut_metal": {
+          "color": "#636b73",
+          "roughness": 0.38,
+          "metalness": 0.4,
+          "envMapIntensity": 1.15
+        },
+        "bead_groove": {
+          "color": "#3b4045",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.5
+        },
+        "groove_shoulder": {
+          "color": "#55595d",
+          "roughness": 0.85,
+          "metalness": 0.02,
+          "envMapIntensity": 2,
+          "clearcoat": 0,
+          "clearcoatRoughness": 0.4,
+          "specularIntensity": 0.15
+        },
+        "pocket_wall": {
+          "color": "#55595d",
+          "roughness": 0.4,
+          "metalness": 0.12,
+          "envMapIntensity": 3.5,
+          "clearcoat": 0.08,
+          "clearcoatRoughness": 0.4,
+          "specularIntensity": 0.35
+        },
+        "hub_metal": {
+          "color": "#bdc5cb",
+          "roughness": 0.4,
+          "metalness": 0.35,
+          "envMapIntensity": 1.1
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#1b1e20",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.15
+        },
+        "tyre": {
+          "color": "#202326",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "brake": {
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
+        },
+        "hat": {
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
+        },
+        "brake_detail": {
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
+        },
+        "barrel": {
+          "color": "#171c20",
+          "roughness": 0.62,
+          "metalness": 0.25,
+          "envMapIntensity": 0.65
+        },
+        "caliper": {
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
+        },
+        "backing": {
+          "color": "#101418",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.2
+        },
+        "lettering": {
+          "color": "#55595d",
+          "roughness": 0.34,
+          "metalness": 0.12,
+          "envMapIntensity": 1.35,
+          "clearcoat": 0.08,
+          "clearcoatRoughness": 0.4,
+          "specularIntensity": 0.35
+        },
+        "hubcap": {
+          "color": "#303438",
+          "roughness": 0.48,
+          "metalness": 0.35,
+          "envMapIntensity": 0.75
+        },
+        "cap_lettering": {
+          "color": "#555b60",
+          "roughness": 0.58,
+          "metalness": 0.35,
+          "envMapIntensity": 0.75
+        },
+        "nut_edge": {
+          "color": "#7b858e",
+          "roughness": 0.3,
+          "metalness": 0.6,
+          "envMapIntensity": 1.5,
+          "clearcoat": 0,
+          "specularIntensity": 0.35
+        },
+        "nut_dark": {
+          "color": "#262b30",
+          "roughness": 0.38,
+          "metalness": 0.5,
+          "envMapIntensity": 1,
+          "clearcoat": 0.05,
+          "specularIntensity": 0.35
+        },
+        "nut_pocket": {
+          "color": "#303539",
+          "roughness": 0.65,
+          "metalness": 0.15,
+          "envMapIntensity": 1,
+          "clearcoat": 0,
+          "specularIntensity": 0.25
+        }
+      },
+      "bundlesSlots": [
+        "wheel_emblem_FL"
+      ],
+      "features": {
+        "ventCount": 9,
+        "rotorDiameter_mm": 354,
+        "methodWindowRadii_mm": null,
+        "capDiameter_mm": 99,
+        "rubberFillerOuter_mm": 534,
+        "metalFlange_mm": 462,
+        "kmc": {
+          "coneInnerRadius_mm": 80,
+          "coneOuterRadius_mm": 110,
+          "capFaceZ_mm": 90.65703883495145,
+          "lugFloorZ_mm": 73.36407766990291,
+          "lipFrontZ_mm": 125.87179611650484,
+          "nutPhase_deg": -90,
+          "outerLogo": {
+            "ring": "ring2",
+            "radius_mm": 195,
+            "baseZ_mm": 118.2209708737864,
+            "width_mm": 43,
+            "height_mm": 9
+          },
+          "rings": [
+            {
+              "id": "ring1",
+              "level": 1,
+              "innerRadius_mm": 211,
+              "outerRadius_mm": 224,
+              "frontZ_mm": 122.62281553398057
+            },
+            {
+              "id": "ring2",
+              "level": 2,
+              "innerRadius_mm": 188,
+              "outerRadius_mm": 202,
+              "frontZ_mm": 117.80174757281553
+            },
+            {
+              "id": "ring3",
+              "level": 2,
+              "innerRadius_mm": 140,
+              "outerRadius_mm": 160,
+              "frontZ_mm": 117.80174757281553
+            },
+            {
+              "id": "ring4",
+              "level": 2,
+              "innerRadius_mm": 112,
+              "outerRadius_mm": 134,
+              "frontZ_mm": 117.80174757281553
+            }
+          ],
+          "separatorGroove": {
+            "innerRadius_mm": 135.1,
+            "outerRadius_mm": 138.9,
+            "floorZ_mm": 115.28640776699028
+          },
+          "outerLip": {
+            "level": 0,
+            "innerRadius_mm": 228.5,
+            "outerRadius_mm": 230.5,
+            "frontZ_mm": 125.87179611650484
+          },
+          "ventChannel": {
+            "level": 3,
+            "innerRadius_mm": 161.5,
+            "outerRadius_mm": 186,
+            "frontZ_mm": 98.51747572815533,
+            "sampleAngles_deg": [
+              30,
+              70,
+              110
+            ]
+          },
+          "apertures": {
+            "count": 9,
+            "phase_deg": 90,
+            "centerRadius_mm": 174,
+            "mouthLength_mm": 65.5,
+            "mouthRadialWidth_mm": 18.5,
+            "throatLength_mm": 63.9,
+            "throatRadialWidth_mm": 16.3
+          }
+        }
+      },
+      "purpose": "KMC KM720 Roswell \u00b7 matte anthracite; 17-inch metal lip, rubber bead adapter and opaque brake package; stored tyre retained",
+      "catalogAsset": true
     }
   ],
   "displayBase": {
@@ -5817,6 +6118,15 @@
       "rigidClass": "wheel"
     },
     "catalog_tyre_ht26570": {
+      "default": null,
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel"
+    },
+    "catalog_rim_kmc": {
       "default": null,
       "pivot": [
         -1.635,

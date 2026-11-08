@@ -6,10 +6,9 @@ const[deps,chromium,out]=process.argv.slice(2),v=await openViewer({deps,chromium
 const check=(name,pass,detail)=>{checks.push({name,pass:!!pass,detail});if(!pass)throw Error(name+': '+JSON.stringify(detail));};
 try{
  const {page}=v;await page.waitForFunction(()=>!!window.lcWorkshop);
- check('KMC remains unapproved',await page.evaluate(()=>lcWorkshop.wheels.rims.find(r=>r.id==='kmc').built===false));
- check('KMC cannot be installed',await page.evaluate(()=>lcBuild.setState({rim:'kmc'}).then(()=>false,()=>true)));
+ check('KMC is approved',await page.evaluate(()=>lcWorkshop.wheels.rims.find(r=>r.id==='kmc').built===true));
  const tyres=['stock','at285','at26575','at28565','at26570','ht26570'];
- for(const tyre of tyres)for(const rim of ['stock','method','steel']){
+ for(const tyre of tyres)for(const rim of ['stock','method','steel','kmc']){
   await page.evaluate(async({tyre,rim})=>{await lcBuild.setState({tyre,rim});},{tyre,rim});
   const result=await page.evaluate(()=>{
    const state=lcBuild.getState(),root=lcBuild.groups.wheels.getObjectByName('Workshop tyres and rims'),corners=[];
@@ -38,7 +37,7 @@ try{
  await page.click('#workshopToggle');await page.click('#workshop [data-cat=tyres]');
  check('all approved tyres available in UI',await page.evaluate(()=>['at285','at26575','at28565','at26570','ht26570'].every(id=>{const b=document.querySelector('#workshop [data-opt='+id+']');return b&&!b.disabled;})));
  await page.click('#workshop [data-home]');await page.click('#workshop [data-cat=rims]');
- check('approved rims available, KMC disabled in UI',await page.evaluate(()=>['method','steel'].every(id=>!document.querySelector('#workshop [data-opt='+id+']').disabled)&&document.querySelector('#workshop [data-opt=kmc]').disabled));
+ check('all approved rims available in UI',await page.evaluate(()=>['method','steel','kmc'].every(id=>!document.querySelector('#workshop [data-opt='+id+']').disabled)));
  const share=await page.evaluate(()=>lcWorkshop.shareState(lcBuild.getState()));
  await page.evaluate(()=>lcBuild.replaceState({}));await page.evaluate(s=>lcBuild.replaceState(s),share);
  check('shared tyre/rim choices restore',await page.evaluate(()=>lcBuild.getState().tyre==='at26570'&&lcBuild.getState().rim==='method'));

@@ -51,5 +51,5 @@ See [tests](tests/README.md), [parts pipeline](tools/foundation/README.md) and [
 
 Five tyre options, Method MR705 and Shanaber steel rims are now available under
 separate **Tyres** and **Rims** sections. Tyre choices install only the approved
-rubber, retaining whichever rim you select. KMC remains unapproved and disabled.
+rubber, retaining whichever rim you select. KMC is approved and available using the latest reference-matched asset.
 See [approved options, sources and checks](docs/workshop/approved-wheels.md).

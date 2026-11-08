@@ -1,7 +1,7 @@
 # Approved tyres and rims
 
 The owner approved all five tyre options, Method MR705 and Shanaber steel.
-KMC KM720 remains unapproved and disabled in the catalogue.
+KMC KM720 is also approved and enabled, using the latest `model/review/kmc-reference.glb` and its reference-entry metadata.
 
 Tyres and rims are selected independently. Five new tyre casings contribute only
 their `tyre` material meshes; their original bundled review rims/brakes are not

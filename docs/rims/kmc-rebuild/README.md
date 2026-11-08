@@ -1,4 +1,4 @@
-# KMC reference comparison revision — pending owner review
+# KMC reference comparison revision — approved
 
 This candidate corrects the radial layout using the owner's original photograph
 from `IMG_4789.zip`. The [equal-diameter comparison](reference-comparison.png)
@@ -58,7 +58,7 @@ intentionally replaced by the requested five-bolt layout.
 Current artifacts: `model/review/kmc-reference.glb`, `kmc-reference.blend`,
 `reference-entry.json`, `reference-geometry-checks.json`,
 `reference-preservation-checks.json` and `reference-provenance.json`.
-KMC stays `built:false` in the actual Workshop pending visual acceptance.
+KMC is approved and enabled in Workshop using `review/kmc-reference.glb`.
 
 Current neutral renders: [front](reference-front.png), [quarter](reference-quarter.png),
 [opposite quarter](reference-opposite-quarter.png), [steep quarter](reference-steep-quarter.png),
