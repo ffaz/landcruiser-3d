@@ -1,0 +1,36 @@
+{
+  "candidate": "KMC two distinct ring revision",
+  "approval": "pending",
+  "date": "2026-11-07",
+  "reference": "Owner confirmed: outer ring1 slightly slimmer than inner ring2, actual groove between, taper from ring2 inneredge, bluecentre unchanged",
+  "triangles": 38114,
+  "boltPattern": "5x150",
+  "assetSha256": "86fd027fd354656ac070ea13ae347878e06176ba829ddfa982340c2b7154abaa",
+  "hashes": {
+    "tools/rims/kmc.py": "d23cb8fd50f518e80b3419f0089dcd04b437d47f3f87e06095a6e51c1bad3a43",
+    "tools/rims/model.py": "58fc756c3e3f8cabc3d99e5dc5c5054e0efb535a420154c6082ff19082a61243",
+    "tools/rims/export-review.mjs": "e00b744e1c46120e825a54346e9e22a201a6d383409eae3e32016757a852928e",
+    "tools/rims/verify-review.mjs": "00a50191fb4998fad657d688e94740723409d93001b2d20f5d7fd45cb7515315",
+    "tools/rims/capture-review.mjs": "93653635916311fe2638b52bcb67b1f753771a17368ae1f9f5aa95f6f0c03534",
+    "model/review/kmc-two-ring.glb": "86fd027fd354656ac070ea13ae347878e06176ba829ddfa982340c2b7154abaa",
+    "model/review/kmc-two-ring.blend": "1b99bdf1384a9bf8df97ed9377fdcedd069a96f7f2e8dc1ef8492f7cf8b06e9e",
+    "docs/rims/kmc-rebuild/two-ring-front.png": "50ae3bde1c019c5ddd0fb45940b9034f26a1de5e55e6dd97b478dcd574c60465",
+    "docs/rims/kmc-rebuild/two-ring-quarter.png": "cf8f8f81b7fef1c8d0acb9d2f3813f4ed6e148c28e917bcf109ce39a879cfa8a",
+    "docs/rims/kmc-rebuild/two-ring-opposite-quarter.png": "445468ded4e348a19e4dc1801c2e43db026f640b8bb1e106d9195fda303547f6",
+    "docs/rims/kmc-rebuild/two-ring-steep-quarter.png": "3bb290a7aae440750832e650dbed2145bc1ec051ef25b681ee45ef15aafea61d",
+    "docs/rims/kmc-rebuild/two-ring-wheel.png": "63bb49d486f0e661eab766ca5beb78f04deb40a0593f0ff3df2f6dad15c3a01c",
+    "docs/rims/kmc-rebuild/two-ring-on-car.png": "f196cd39638cfdac8dab6a810716630e9b626dd176d5c5fed4329076a85e229b"
+  },
+  "blueGeometryPreservation": {
+    "unchanged": true,
+    "comparedUniqueVertices": 2934,
+    "baseline": "kmc-marked-v1"
+  },
+  "checks": {
+    "geometryPassed": 44,
+    "geometryTotal": 44,
+    "browserCaptures": 6,
+    "browserErrors": 0
+  },
+  "captureProvenance": "two-ring-captures.json"
+}

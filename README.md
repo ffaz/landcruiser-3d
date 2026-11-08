@@ -46,3 +46,10 @@ The retained vehicle is adapted from [Land cruise 2016 by ZIRODESIGN](https://sk
 The owner's car is a GCC **GXR** (Toyota UAE May 2021 5.7L GXR sheet: 5,095 × 1,980 × 1,930 mm). The spec panel reads "Toyota GXR 5,095 mm · model body 5,000 mm". It shows the owner-confirmed **265/70R17** tyres as text only: the stored wheel geometry is still Ø 793 mm until the tyre-swap work.
 
 See [tests](tests/README.md), [parts pipeline](tools/foundation/README.md) and [original bake pipeline](tools/bake/README.md). Tests use an npm-packed local Three.js copy only in temporary pages, including its matching Meshopt decoder. Production CDN URLs stay pinned. WebKit results use a software-rendered 1366×1024 iPad viewport, **not physical iPad Safari**; hardware smoothness is unverified. [Earlier collectible iteration](docs/toy/README.md) remains as history.
+
+## Approved Workshop wheels
+
+Five tyre options, Method MR705 and Shanaber steel rims are now available under
+separate **Tyres** and **Rims** sections. Tyre choices install only the approved
+rubber, retaining whichever rim you select. KMC remains unapproved and disabled.
+See [approved options, sources and checks](docs/workshop/approved-wheels.md).

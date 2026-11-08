@@ -1,0 +1,114 @@
+{
+  "checks": [
+    {
+      "name": "barrel has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "rim has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "edge_catch has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "nut_pocket has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "pocket_wall has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "black has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "nut_dark has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "nut_edge has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "lettering has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "tyre has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "backing has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "brake has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "hat has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "caliper has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "brake_detail has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "finite unit exported normals",
+      "pass": true,
+      "detail": {
+        "normals": 33082,
+        "bad": 0
+      }
+    },
+    {
+      "name": "under 40000 triangles",
+      "pass": true,
+      "detail": 38869
+    },
+    {
+      "name": "LC200 five-stud 150 mm mounting pattern",
+      "pass": true
+    },
+    {
+      "name": "five nut clusters on a pentagon",
+      "pass": true,
+      "detail": [
+        [
+          -3.842089485762177e-13,
+          0.07500000299867426
+        ],
+        [
+          -0.07132923612278877,
+          0.02317627517524922
+        ],
+        [
+          -0.04408389329910278,
+          -0.06067627290933832
+        ],
+        [
+          0.04408389329910278,
+          -0.06067627290933832
+        ],
+        [
+          0.07132923612278877,
+          0.02317627517524922
+        ]
+      ]
+    },
+    {
+      "name": "nut heads stand ahead of the cap",
+      "pass": true,
+      "detail": {
+        "headMaxZ": 0.11528640985488892
+      }
+    }
+  ]
+}

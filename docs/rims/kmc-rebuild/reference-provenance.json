@@ -1,0 +1,47 @@
+{
+  "candidate": "KMC registered-reference radial layout revision",
+  "approval": "pending",
+  "date": "2026-11-08",
+  "triangles": 36778,
+  "boltPattern": "5x150",
+  "assetSha256": "e36bf3a32a668fcec40bdd9b213295f92c739de930fff31a3dda97f1d218abd8",
+  "hashes": {
+    "tools/rims/kmc.py": "7fd6936e0b6a6883ab3823e6cba36402117b2278c668f082c4950fd0662bf94a",
+    "tools/rims/model.py": "85f64e89041342af4d690b0077a95c766534ce077b2ae099057428de4d473423",
+    "tools/rims/export-review.mjs": "e00b744e1c46120e825a54346e9e22a201a6d383409eae3e32016757a852928e",
+    "tools/rims/verify-review.mjs": "c0c56f492a028e3b1545613d102a10567d9d00a5675b1f83bfe99e1614b288c1",
+    "tools/rims/capture-review.mjs": "93653635916311fe2638b52bcb67b1f753771a17368ae1f9f5aa95f6f0c03534",
+    "tools/rims/compare-review.py": "2b433d9236fae0a741bafeabe8570bf1d9ea885b259228e866817f50ced322e0",
+    "model/review/kmc-reference.glb": "e36bf3a32a668fcec40bdd9b213295f92c739de930fff31a3dda97f1d218abd8",
+    "model/review/kmc-reference.blend": "aa99d879cfbb05d6e39f52d25cfc59908e86abc30332d51a5efd3fac15cbdcec",
+    "docs/rims/kmc-rebuild/reference-captures.json": "8f74724944a6fc20050df544f5332d035500fe2f680d69b3c25ab998173b2fdc",
+    "docs/rims/kmc-rebuild/reference-comparison.png": "d085d44b62efae58929a09c9158a93fe17372bf55eab20e08da43384e006f2e9",
+    "docs/rims/kmc-rebuild/reference-entry.json": "03a55bc1634ea6a61e1ed94316f768106e3a75ff0c454ce9200ce70e3d1974bd",
+    "docs/rims/kmc-rebuild/reference-front.png": "ba3c4030a57dda1cbc0f46875518086af916ba4bbb7e68fcb15058c808251592",
+    "docs/rims/kmc-rebuild/reference-geometry-checks.json": "ac932e77b2043a3fc7e26ced21e116a89b29136943b9a008ae59031e22a33012",
+    "docs/rims/kmc-rebuild/reference-half-split.png": "072a098743193b0aa82fa7c98abcb12c6afb56096dbf6fe9cece7b65a1225326",
+    "docs/rims/kmc-rebuild/reference-on-car.png": "380eb3dc3698a31be67df007b513c0ee504599f50b6bd70a6135ea90b4484204",
+    "docs/rims/kmc-rebuild/reference-opposite-quarter.png": "f53f89c321aeabb335de437b7ba2970a841b8e3977770248753e9947de6d8ed8",
+    "docs/rims/kmc-rebuild/reference-original.png": "147d7886c47c62ecb2eac7ab2bd90cc9821c10c281c2eab06332297bf743f352",
+    "docs/rims/kmc-rebuild/reference-overlay.png": "0c61c71ecd4a908c272babaac79bfb4bce37272e6b9791e97d631b38115d438d",
+    "docs/rims/kmc-rebuild/reference-preservation-checks.json": "d4fb3d16c446dcd7296b34784f9863963d3c98f48e843f73d399da275516d827",
+    "docs/rims/kmc-rebuild/reference-quarter.png": "7b5e26980a43486f452d9a57d07d74fe77fee08153d8431d292143aaa99edc25",
+    "docs/rims/kmc-rebuild/reference-registration.json": "f5053dbc39c91679c85e823344d934e77fba069f52b3434a691f1348f975b46c",
+    "docs/rims/kmc-rebuild/reference-steep-quarter.png": "81cab596ff6549c8e6b1dba3d4c87a2769264b3e85a82e77ee0a8f489e1e237b",
+    "docs/rims/kmc-rebuild/reference-wheel.png": "e16b567260e203fad084fe1df1cf8ed260ba867b07fda7690931a8dbfce69847"
+  },
+  "preservationReport": "reference-preservation-checks.json",
+  "comparisonRegistration": "reference-registration.json",
+  "captureProvenance": "reference-captures.json",
+  "checks": {
+    "geometryPassed": 70,
+    "geometryTotal": 70,
+    "browserCaptures": 6,
+    "browserErrors": 0
+  },
+  "comparisonLimits": [
+    "Six-bolt reference and intentional five-bolt model.",
+    "No numerical likeness percentage is claimed.",
+    "Axial depths remain the accepted authored levels; front-photo registration measures radial proportions."
+  ]
+}

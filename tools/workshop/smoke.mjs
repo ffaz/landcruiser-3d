@@ -41,12 +41,12 @@ for(const viewport of [{width:1440,height:1000},{width:390,height:844}]){
  await page.click('#workshop [data-home]');
  // Tyres and rims: two sections. Real LC200 fit rules apply; sizes without 3D models are listed as "soon".
  await page.click('#workshop [data-cat=tyres]');
- check(`${tag}: tyres: stock live, 3 soon, 3 won't fit on the stock rim`,(await page.locator('#workshop .ws-opt:not([disabled])').count())===1&&(await page.locator('#workshop .ws-opt.nofit').count())===3&&(await page.locator('#workshop .ws-soon',{hasText:'soon'}).count())===3);
+ check(`${tag}: tyres: stock plus five approved, three future sizes won't fit the stock rim`,(await page.locator('#workshop .ws-opt:not([disabled])').count())===6&&(await page.locator('#workshop .ws-opt.nofit').count())===3);
  check(`${tag}: 35" says why it won't fit`,(await page.locator('#workshop [data-opt=mt35] .ws-v').innerText()).startsWith('Needs an 8.5–11″ wide rim'));
  await shot('tyres');
  await page.click('#workshop [data-home]');
  await page.click('#workshop [data-cat=rims]');
- check(`${tag}: rims: stock live, 3 soon`,(await page.locator('#workshop .ws-opt:not([disabled])').count())===1&&(await page.locator('#workshop .ws-opt.nofit').count())===0);
+ check(`${tag}: rims: stock, Method and Shanaber live; KMC disabled`,(await page.locator('#workshop .ws-opt:not([disabled])').count())===3&&(await page.locator('#workshop [data-opt=kmc]').isDisabled())&&(await page.locator('#workshop .ws-opt.nofit').count())===0);
  const rules=await page.evaluate(()=>{const w=window.lcWorkshop,c=s=>w.wheelChecks({tyre:'stock',rim:'stock',...s});
   return {stock:c({}).notes,kmc35:c({tyre:'mt35',rim:'kmc'}).notes,stock35:c({tyre:'mt35'}).notes,steel35:c({tyre:'mt35',rim:'steel'}).notes,m285:c({tyre:'at285',rim:'method'}).notes};});
  check(`${tag}: rules: stock wheel has no notes`,rules.stock.length===0,JSON.stringify(rules.stock));

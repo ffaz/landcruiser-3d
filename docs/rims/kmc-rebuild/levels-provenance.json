@@ -1,0 +1,36 @@
+{
+  "candidate": "KMC full depth-level revision",
+  "approval": "pending",
+  "date": "2026-11-07",
+  "reference": "Owner Level 0\u20135 drawing",
+  "triangles": 36578,
+  "boltPattern": "5x150",
+  "assetSha256": "94c63d9ba4a0ce9b7d401a18051a091c6f484681fb63d76e836e89622b68574a",
+  "hashes": {
+    "tools/rims/kmc.py": "210af68a4d63a73884d14243320b5939d591839fd6203f63ce0322f341269b4d",
+    "tools/rims/model.py": "f543d2828a2267f54a3729bce59e76f421321259400f21f119a866f08ed23ce3",
+    "tools/rims/export-review.mjs": "e00b744e1c46120e825a54346e9e22a201a6d383409eae3e32016757a852928e",
+    "tools/rims/verify-review.mjs": "93defb75f72250b4f35cca5c5c4e378ed47a7df577639e3ba15c85e4a8a41a8e",
+    "tools/rims/capture-review.mjs": "93653635916311fe2638b52bcb67b1f753771a17368ae1f9f5aa95f6f0c03534",
+    "model/review/kmc-levels.glb": "94c63d9ba4a0ce9b7d401a18051a091c6f484681fb63d76e836e89622b68574a",
+    "model/review/kmc-levels.blend": "8919d09e3bdf57b29b4a089bc2472b5782064c8e2ba148cc23a6d81dfe9b381a",
+    "docs/rims/kmc-rebuild/levels-front.png": "c17f2649e9b650758b95a8ef8b1e586f3f0d7657f9db68f7e27dac5bac2e314e",
+    "docs/rims/kmc-rebuild/levels-quarter.png": "01fbfecf419c2e8856c6b32d06a658f0ef0617aa867b302d15ff6d9b0686c36b",
+    "docs/rims/kmc-rebuild/levels-opposite-quarter.png": "0573c5065543c8576670e864f12e127084352a5c77f433ed73180ecef10f088e",
+    "docs/rims/kmc-rebuild/levels-steep-quarter.png": "7050b478dcdac7a8b23946cbf60c489e14f1eea5fe1b3149ff3bce2d4649ab20",
+    "docs/rims/kmc-rebuild/levels-wheel.png": "b359b6234ec7550dd1ef7b782c337764d11e44c4bec10f713844baf09ab74b24",
+    "docs/rims/kmc-rebuild/levels-on-car.png": "9f1f9b4cadd8681ac1d3a4d0354708d26be47e0495635c6613fb79a16490901a"
+  },
+  "preservation": {
+    "blueCentreGeometryUnchanged": true,
+    "barrelPositionsUnchanged": true,
+    "baseline": "kmc-two-ring-v1"
+  },
+  "checks": {
+    "geometryPassed": 59,
+    "geometryTotal": 59,
+    "browserCaptures": 6,
+    "browserErrors": 0
+  },
+  "captureProvenance": "levels-captures.json"
+}

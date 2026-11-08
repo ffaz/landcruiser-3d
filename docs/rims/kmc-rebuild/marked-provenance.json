@@ -1,0 +1,32 @@
+{
+  "candidate": "KMC marked-reference build",
+  "approval": "pending",
+  "date": "2026-11-07",
+  "reference": "Owner marked red/orange/green/blue image; neutral colour for shape comparison",
+  "triangles": 39138,
+  "boltPattern": "5x150",
+  "nutPhase_deg": -90,
+  "assetSha256": "f0a95956e025e4c216982629b007c62230ff5682e1ccfd0b7e81798833c41d0d",
+  "hashes": {
+    "tools/rims/kmc.py": "90ad552d59dc292a576b2a66293fbf418103ba9d914269ac43bdaa6919347221",
+    "tools/rims/model.py": "44a632ef2780713f66d30031add57bd3a180d873ff9a3336c6dfa5c79b1b9e75",
+    "tools/rims/export-review.mjs": "e00b744e1c46120e825a54346e9e22a201a6d383409eae3e32016757a852928e",
+    "tools/rims/verify-review.mjs": "c333704008b266c6be0bc8a9eb4b81ad5157974b9ad53647cfd89fc5a82c7a72",
+    "tools/rims/capture-review.mjs": "93653635916311fe2638b52bcb67b1f753771a17368ae1f9f5aa95f6f0c03534",
+    "model/review/kmc-marked.glb": "f0a95956e025e4c216982629b007c62230ff5682e1ccfd0b7e81798833c41d0d",
+    "model/review/kmc-marked.blend": "d40435f387bab13901e0155cf9caf3f64a710d37b8f658f40880777ab7456e74",
+    "docs/rims/kmc-rebuild/marked-front.png": "ee242c0c9e5ec5f9b16333f4a04b8ef55bbfddf83ea1a0c26cb1963ebb2d148a",
+    "docs/rims/kmc-rebuild/marked-quarter.png": "2d00c3e027993e875a286c7fe8e366903a3ad7ab1fca78ed2848677fce9dd07e",
+    "docs/rims/kmc-rebuild/marked-opposite-quarter.png": "fe4672c54ca181f7211e119700d5fee242eb91fb7aabc98a777ccd1162d41efa",
+    "docs/rims/kmc-rebuild/marked-steep-quarter.png": "5d8eede72f0a5ae9cac866e3f1113a75d6a44a8a017020684182458554fd2f0a",
+    "docs/rims/kmc-rebuild/marked-wheel.png": "33d6914306c99a73daabef2292a4c860fd5faca795836ec11e457b416cfd02c1",
+    "docs/rims/kmc-rebuild/marked-on-car.png": "0ac422c2887941bf5da103a82722f9aead3718f61c5f7563855b10ee95b0e30b"
+  },
+  "checks": {
+    "geometryPassed": 38,
+    "geometryTotal": 38,
+    "browserCaptures": 6,
+    "browserErrors": 0
+  },
+  "captureProvenance": "marked-captures.json"
+}

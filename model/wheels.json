@@ -1,34 +1,214 @@
 {
- "version": 1,
- "vehicle": {
-  "name": "Toyota Land Cruiser 200 (GXR)",
-  "boltPattern": "5x150",
-  "centreBore_mm": 110.1,
-  "minRimDiameter_in": 17,
-  "stockOffset_mm": 60,
-  "note": "Hub, brake and arch limits for the LC200. Tyre rim-width ranges are the usual approved ranges for each size; check the exact tyre maker's chart before buying."
- },
- "lateral": {
-  "tyreShoulder": 0.48,
-  "tyreSidewall": 0.51,
-  "archLip_mm": {"front": 166, "rear": 161},
-  "poke_mm": {"ok": 10},
-  "inner_mm": {"ok": 206, "tight": 214},
-  "method": "Arch lip: outer body surface just outside each arch opening, measured on the model at the top of the arch (front 0.991 m, rear 0.983 m; hub planes 0.825 / 0.8225 m). Tyre outer edge = shoulder half-width + (stock offset − rim offset). Inner edge from the hub face = sidewall half-width + rim offset; limits follow common LC200 fitments (285/70R17 on the stock ET60 wheel fits; wider needs less offset)."
- },
- "tyres": [
-  {"id": "stock", "label": "Stock 265/70R17", "detail": "Factory tyre · stored 793 mm", "od_mm": 793, "width_mm": 265, "rim_in": 17, "rimWidth_in": [7.0, 9.0], "stock": true},
-  {"id": "at265", "built": false, "label": "265/70R17 all-terrain", "detail": "BFGoodrich KO2 pattern · 803 mm (31.6\")", "od_mm": 803, "width_mm": 265, "rim_in": 17, "rimWidth_in": [7.0, 9.0], "tread": "at", "code": "LT265/70R17   121/118S   LOAD RANGE E"},
-  {"id": "at285_65", "built": false, "label": "285/65R17 all-terrain", "detail": "BFGoodrich KO2 pattern · 802 mm (31.6\")", "od_mm": 802, "width_mm": 285, "rim_in": 17, "rimWidth_in": [7.5, 9.5], "tread": "at", "code": "285/65R17   116T   M+S"},
-  {"id": "at285", "built": false, "label": "285/70R17 all-terrain", "detail": "BFGoodrich KO2 pattern · 829 mm (32.6\")", "od_mm": 829, "width_mm": 285, "rim_in": 17, "rimWidth_in": [7.5, 9.5], "tread": "at", "code": "LT285/70R17   121/118R   LOAD RANGE E"},
-  {"id": "mt315", "built": false, "label": "315/70R17 mud-terrain", "detail": "BFGoodrich KM3 pattern · 873 mm (34.4\")", "od_mm": 873, "width_mm": 315, "rim_in": 17, "rimWidth_in": [8.0, 11.0], "tread": "mt", "code": "LT315/70R17   121/118Q   LOAD RANGE E"},
-  {"id": "mt35", "built": false, "label": "35×12.50R17 mud-terrain", "detail": "BFGoodrich KM3 pattern · 889 mm (35\")", "od_mm": 889, "width_mm": 318, "rim_in": 17, "rimWidth_in": [8.5, 11.0], "tread": "mt", "code": "LT35x12.50R17   121Q   LOAD RANGE E"},
-  {"id": "mt37", "built": false, "label": "37×12.50R17 mud-terrain", "detail": "BFGoodrich KM3 pattern · 940 mm (37\")", "od_mm": 940, "width_mm": 318, "rim_in": 17, "rimWidth_in": [8.5, 11.0], "tread": "mt", "code": "LT37x12.50R17   124Q   LOAD RANGE D"}
- ],
- "rims": [
-  {"id": "stock", "label": "Stock GXR alloy", "detail": "17×7.5 · ET+60 · 5×150", "diameter_in": 17, "width_in": 7.5, "offset_mm": 60, "boltPattern": "5x150", "centreBore_mm": 110.1, "stock": true},
-  {"id": "steel", "built": false, "label": "Black steel", "detail": "17×8 · ET+25 · 5×150", "diameter_in": 17, "width_in": 8.0, "offset_mm": 25, "boltPattern": "5x150", "centreBore_mm": 110.1, "model": "steel", "color": "#1b1c1e"},
-  {"id": "kmc", "built": false, "label": "KMC KM720 Roswell", "detail": "17×8.5 · ET+18 · 5×150 · satin black", "diameter_in": 17, "width_in": 8.5, "offset_mm": 18, "boltPattern": "5x150", "centreBore_mm": 110.1, "model": "kmc"},
-  {"id": "method", "built": false, "label": "Method MR705", "detail": "17×8.5 · ET0 · 5×150 · matte black", "diameter_in": 17, "width_in": 8.5, "offset_mm": 0, "boltPattern": "5x150", "centreBore_mm": 110.3, "model": "method"}
- ]
+  "version": 1,
+  "vehicle": {
+    "name": "Toyota Land Cruiser 200 (GXR)",
+    "boltPattern": "5x150",
+    "centreBore_mm": 110.1,
+    "minRimDiameter_in": 17,
+    "stockOffset_mm": 60,
+    "note": "Hub, brake and arch limits for the LC200. Tyre rim-width ranges are the usual approved ranges for each size; check the exact tyre maker's chart before buying."
+  },
+  "lateral": {
+    "tyreShoulder": 0.48,
+    "tyreSidewall": 0.51,
+    "archLip_mm": {
+      "front": 166,
+      "rear": 161
+    },
+    "poke_mm": {
+      "ok": 10
+    },
+    "inner_mm": {
+      "ok": 206,
+      "tight": 214
+    },
+    "method": "Arch lip: outer body surface just outside each arch opening, measured on the model at the top of the arch (front 0.991 m, rear 0.983 m; hub planes 0.825 / 0.8225 m). Tyre outer edge = shoulder half-width + (stock offset − rim offset). Inner edge from the hub face = sidewall half-width + rim offset; limits follow common LC200 fitments (285/70R17 on the stock ET60 wheel fits; wider needs less offset)."
+  },
+  "tyres": [
+    {
+      "id": "stock",
+      "label": "Stock 265/70R17",
+      "detail": "Factory tyre · stored 793 mm",
+      "od_mm": 793,
+      "width_mm": 265,
+      "rim_in": 17,
+      "rimWidth_in": [
+        7.0,
+        9.0
+      ],
+      "stock": true
+    },
+    {
+      "id": "mt315",
+      "built": false,
+      "label": "315/70R17 mud-terrain",
+      "detail": "BFGoodrich KM3 pattern · 873 mm (34.4\")",
+      "od_mm": 873,
+      "width_mm": 315,
+      "rim_in": 17,
+      "rimWidth_in": [
+        8.0,
+        11.0
+      ],
+      "tread": "mt",
+      "code": "LT315/70R17   121/118Q   LOAD RANGE E"
+    },
+    {
+      "id": "mt35",
+      "built": false,
+      "label": "35×12.50R17 mud-terrain",
+      "detail": "BFGoodrich KM3 pattern · 889 mm (35\")",
+      "od_mm": 889,
+      "width_mm": 318,
+      "rim_in": 17,
+      "rimWidth_in": [
+        8.5,
+        11.0
+      ],
+      "tread": "mt",
+      "code": "LT35x12.50R17   121Q   LOAD RANGE E"
+    },
+    {
+      "id": "mt37",
+      "built": false,
+      "label": "37×12.50R17 mud-terrain",
+      "detail": "BFGoodrich KM3 pattern · 940 mm (37\")",
+      "od_mm": 940,
+      "width_mm": 318,
+      "rim_in": 17,
+      "rimWidth_in": [
+        8.5,
+        11.0
+      ],
+      "tread": "mt",
+      "code": "LT37x12.50R17   124Q   LOAD RANGE D"
+    },
+    {
+      "id": "at285",
+      "built": true,
+      "assetId": "wheel_FL_at285",
+      "label": "285/70R17 expedition AT",
+      "detail": "830.8 mm · approved Design A tread",
+      "od_mm": 830.8,
+      "width_mm": 285,
+      "rim_in": 17,
+      "rimWidth_in": [
+        7.5,
+        9.5
+      ],
+      "tread": "at"
+    },
+    {
+      "id": "at26575",
+      "built": true,
+      "assetId": "wheel_FL_at26575",
+      "label": "265/75R17 expedition AT",
+      "detail": "829.3 mm · approved Design A tread",
+      "od_mm": 829.3,
+      "width_mm": 265,
+      "rim_in": 17,
+      "rimWidth_in": [
+        7,
+        9
+      ],
+      "tread": "at"
+    },
+    {
+      "id": "at28565",
+      "built": true,
+      "assetId": "wheel_FL_at28565",
+      "label": "285/65R17 expedition AT",
+      "detail": "802.3 mm · approved Design A tread",
+      "od_mm": 802.3,
+      "width_mm": 285,
+      "rim_in": 17,
+      "rimWidth_in": [
+        7.5,
+        9.5
+      ],
+      "tread": "at"
+    },
+    {
+      "id": "at26570",
+      "built": true,
+      "assetId": "wheel_FL_at26570",
+      "label": "265/70R17 expedition AT",
+      "detail": "802.8 mm · approved Design A tread",
+      "od_mm": 802.8,
+      "width_mm": 265,
+      "rim_in": 17,
+      "rimWidth_in": [
+        7,
+        9
+      ],
+      "tread": "at"
+    },
+    {
+      "id": "ht26570",
+      "built": true,
+      "assetId": "wheel_FL_ht26570",
+      "label": "265/70R17 ribbed highway",
+      "detail": "802.8 mm · five continuous ribs",
+      "od_mm": 802.8,
+      "width_mm": 265,
+      "rim_in": 17,
+      "rimWidth_in": [
+        7,
+        9
+      ],
+      "tread": "ht"
+    }
+  ],
+  "rims": [
+    {
+      "id": "stock",
+      "label": "Stock GXR alloy",
+      "detail": "17×7.5 · ET+60 · 5×150",
+      "diameter_in": 17,
+      "width_in": 7.5,
+      "offset_mm": 60,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.1,
+      "stock": true
+    },
+    {
+      "id": "steel",
+      "built": true,
+      "label": "Shanaber steel",
+      "detail": "17×8 · ET+25 · 5×150 · satin silver",
+      "diameter_in": 17,
+      "width_in": 8.0,
+      "offset_mm": 25,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.1,
+      "model": "steel",
+      "color": "#c4c9cc",
+      "assetId": "rim_FL_steel"
+    },
+    {
+      "id": "kmc",
+      "built": false,
+      "label": "KMC KM720 Roswell",
+      "detail": "17×8.5 · ET+18 · 5×150 · satin black",
+      "diameter_in": 17,
+      "width_in": 8.5,
+      "offset_mm": 18,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.1,
+      "model": "kmc"
+    },
+    {
+      "id": "method",
+      "built": true,
+      "label": "Method MR705",
+      "detail": "17×8.5 · ET0 · 5×150 · titanium",
+      "diameter_in": 17,
+      "width_in": 8.5,
+      "offset_mm": 0,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.3,
+      "model": "method",
+      "assetId": "rim_FL_window"
+    }
+  ]
 }

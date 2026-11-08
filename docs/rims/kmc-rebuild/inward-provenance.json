@@ -1,0 +1,34 @@
+{
+  "candidate": "KMC inward-taper revision with rounded lug crowns",
+  "approval": "pending",
+  "date": "2026-11-07",
+  "reference": "Owner attachments; geometry judged, colour excluded",
+  "boltPattern": "5x150",
+  "triangles": 38235,
+  "assetSha256": "c7379b86419a485e59fefba05ebdb5f245ef27d2d08ac6ee4b40329f303ef24a",
+  "hashes": {
+    "tools/rims/model.py": "3dec3269e83de10df3898e7ffa0644094c4d20d5d20f2ae401336a30af361d25",
+    "tools/rims/kmc.py": "80655196d01a8a70f6e008a148bb847de7a1cd08ec7d85499c21504dc1814dde",
+    "tools/rims/export-review.mjs": "e00b744e1c46120e825a54346e9e22a201a6d383409eae3e32016757a852928e",
+    "tools/rims/verify-review.mjs": "bf08c780043b918ba5a62a55e2c258c9830878ec7ec7c6873b37edac0eeac619",
+    "tools/rims/capture-review.mjs": "93653635916311fe2638b52bcb67b1f753771a17368ae1f9f5aa95f6f0c03534",
+    "model/review/kmc-inward.glb": "c7379b86419a485e59fefba05ebdb5f245ef27d2d08ac6ee4b40329f303ef24a",
+    "model/review/kmc-inward.blend": "2ba9940f1965a52fa635aee456bcb0cb03e59c18e2e4f9c638ef90a118e99ea9",
+    "docs/rims/kmc-rebuild/inward-front.png": "eda2ae4f5535816767d26febf8f9445a1d1b08476ddd40383b13f130a02f700f",
+    "docs/rims/kmc-rebuild/inward-quarter.png": "3c5db893ca482c5d19088642a51887b7cd068aaeb9bc0f9e6dd378a8e84dcc25",
+    "docs/rims/kmc-rebuild/inward-opposite-quarter.png": "6d5d64071f2b003852cefb22f24d6f7b8eba53774a624b28a07735ebe7ec7440",
+    "docs/rims/kmc-rebuild/inward-steep-quarter.png": "7b2f7d212e9afea6ee22baf1b5021ebd4a9da14756180bad476531b49ae1fa77",
+    "docs/rims/kmc-rebuild/inward-wheel.png": "271fd671e5a01b7407cd882783a0e829502620b248219eedd9b7f675dc875d06",
+    "docs/rims/kmc-rebuild/inward-on-car.png": "1b0b21294df4f667383b751d48ea9424e0a0efddeb1510bdd4a3e0f0ab64d8e7"
+  },
+  "geometryChecks": {
+    "passed": 33,
+    "total": 33
+  },
+  "captures": {
+    "count": 6,
+    "browserErrors": [],
+    "neutralMaterialStudy": true,
+    "provenance": "inward-captures.json"
+  }
+}

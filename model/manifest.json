@@ -188,7 +188,7 @@
       "pivot": [
         -1.8728359352735762,
         1.189375429359158,
-        0.000005125999450683594
+        5.125999450683594e-06
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -221,7 +221,7 @@
       "pivot": [
         -2.270462211108562,
         0.6223291344332419,
-        0.000005125999450683594
+        5.125999450683594e-06
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -275,7 +275,7 @@
       "pivot": [
         1.9594771415627399,
         0.6756618916344885,
-        2.384185791015625e-7
+        2.384185791015625e-07
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2352,7 +2352,7 @@
       "pivot": [
         0.8241151872408866,
         1.872311859156035,
-        -5.960464477539063e-8
+        -5.960464477539063e-08
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2522,7 +2522,7 @@
       "pivot": [
         2.0817929070861054,
         1.8194443199056058,
-        0.000005125999450683594
+        5.125999450683594e-06
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2569,7 +2569,7 @@
       "pivot": [
         2.1282257953603483,
         1.2537897721212183,
-        0.000005125999450683594
+        5.125999450683594e-06
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2703,7 +2703,7 @@
       "pivot": [
         -0.04204621113618656,
         0.6241265276863783,
-        -6.854534149169922e-7
+        -6.854534149169922e-07
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2802,7 +2802,7 @@
       "pivot": [
         -2.567352621487733,
         0.8737040222628849,
-        2.980232238769531e-7
+        2.980232238769531e-07
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2835,7 +2835,7 @@
       "pivot": [
         -2.340276069084413,
         0.8267573573221186,
-        -6.854534149169922e-7
+        -6.854534149169922e-07
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2868,7 +2868,7 @@
       "pivot": [
         -2.3347774264788237,
         1.0950209210373338,
-        -0.00007868038399067023
+        -7.868038399067023e-05
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -2981,7 +2981,7 @@
       "bounds": {
         "min": [
           -2.031500816345215,
-          -0.000019176829728240197,
+          -1.9176829728240197e-05,
           0.68250633036064
         ],
         "max": [
@@ -3080,7 +3080,7 @@
       "bounds": {
         "min": [
           -2.031500816345215,
-          -0.000020717637172318337,
+          -2.0717637172318337e-05,
           -0.9671811856190511
         ],
         "max": [
@@ -3182,7 +3182,7 @@
       "bounds": {
         "min": [
           0.8185162165870956,
-          -0.000019176829728240197,
+          -1.9176829728240197e-05,
           0.6787821572395277
         ],
         "max": [
@@ -3281,7 +3281,7 @@
       "bounds": {
         "min": [
           0.8185238639574288,
-          -0.000020717637172318337,
+          -2.0717637172318337e-05,
           -0.9650131900948201
         ],
         "max": [
@@ -3373,7 +3373,7 @@
       "pivot": [
         -2.561311371369192,
         0.9761838614940643,
-        3.725290298461914e-8
+        3.725290298461914e-08
       ],
       "pivotBasis": "source badge centre; rigid surface mounting offset",
       "zones": [
@@ -3427,7 +3427,7 @@
       "pivot": [
         2.3273818894459932,
         1.2110044360160828,
-        -1.1175870895385742e-8
+        -1.1175870895385742e-08
       ],
       "pivotBasis": "source badge centre; rigid surface mounting offset",
       "zones": [
@@ -4552,7 +4552,7 @@
       "pivot": [
         -2.270462211108562,
         0.6223291344332419,
-        0.000005125999450683594
+        5.125999450683594e-06
       ],
       "pivotBasis": "component-group bounding-box centre; hinge/mount location not verified",
       "zones": [
@@ -4601,6 +4601,742 @@
       "rootNode": "bumper_front_plate_clean",
       "variantOf": "bumper_front",
       "purpose": "Same stored attributes and triangle union; loose old plate assigned invisible material zone"
+    },
+    {
+      "id": "rim_FL_window",
+      "slot": "catalog_rim_method",
+      "url": "parts/rim_FL_window.glb",
+      "rootNode": "rim_FL_window",
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "barrel",
+        "lip",
+        "hub_pad",
+        "bead_groove",
+        "groove_shoulder",
+        "pocket_wall",
+        "black",
+        "nut_dark",
+        "hubcap",
+        "lettering",
+        "cap_lettering",
+        "tyre",
+        "backing",
+        "brake",
+        "hat",
+        "caliper",
+        "brake_detail"
+      ],
+      "triangles": 38702,
+      "bounds": {
+        "min": [
+          -1.901999989748001,
+          0.12950001025199892,
+          0.6860000014305114
+        ],
+        "max": [
+          -1.368000010251999,
+          0.6634999897480012,
+          0.9659638375043869
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "width_in": 8.5,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.3,
+      "lazy": true,
+      "replacesWheelHardware": "wheel_FL",
+      "materialDefaults": {
+        "rim": {
+          "color": "#8a8f94",
+          "roughness": 0.54,
+          "metalness": 0.14,
+          "envMapIntensity": 3,
+          "clearcoat": 0,
+          "specularIntensity": 0.35
+        },
+        "lip": {
+          "color": "#8a8f94",
+          "roughness": 0.8,
+          "metalness": 0.08,
+          "envMapIntensity": 2.4,
+          "clearcoat": 0,
+          "specularIntensity": 0.2
+        },
+        "edge_catch": {
+          "color": "#8a8f94",
+          "roughness": 0.3,
+          "metalness": 0.45,
+          "envMapIntensity": 1.8,
+          "clearcoat": 0,
+          "specularIntensity": 0.35
+        },
+        "nut_metal": {
+          "color": "#636b73",
+          "roughness": 0.38,
+          "metalness": 0.4,
+          "envMapIntensity": 1.15
+        },
+        "bead_groove": {
+          "color": "#3b4045",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.5
+        },
+        "groove_shoulder": {
+          "color": "#8a8f94",
+          "roughness": 0.85,
+          "metalness": 0.02,
+          "envMapIntensity": 2,
+          "clearcoat": 0,
+          "specularIntensity": 0.15
+        },
+        "pocket_wall": {
+          "color": "#8a8f94",
+          "roughness": 0.55,
+          "metalness": 0.14,
+          "envMapIntensity": 4,
+          "clearcoat": 0,
+          "specularIntensity": 0.35
+        },
+        "hub_metal": {
+          "color": "#bdc5cb",
+          "roughness": 0.4,
+          "metalness": 0.35,
+          "envMapIntensity": 1.1
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#1b1e20",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.15
+        },
+        "tyre": {
+          "color": "#202326",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "brake": {
+          "color": "#373c41",
+          "roughness": 0.62,
+          "metalness": 0.3,
+          "envMapIntensity": 0.75
+        },
+        "hat": {
+          "color": "#303438",
+          "roughness": 0.58,
+          "metalness": 0.25,
+          "envMapIntensity": 0.45
+        },
+        "brake_detail": {
+          "color": "#454a4e",
+          "roughness": 0.52,
+          "metalness": 0.35,
+          "envMapIntensity": 0.6
+        },
+        "barrel": {
+          "color": "#171c20",
+          "roughness": 0.62,
+          "metalness": 0.25,
+          "envMapIntensity": 0.65
+        },
+        "caliper": {
+          "color": "#292e32",
+          "roughness": 0.7,
+          "metalness": 0.18,
+          "envMapIntensity": 0.55
+        },
+        "backing": {
+          "color": "#14181c",
+          "roughness": 0.82,
+          "metalness": 0.1,
+          "envMapIntensity": 0.25
+        },
+        "lettering": {
+          "color": "#8a8f94",
+          "roughness": 0.58,
+          "metalness": 0.14,
+          "envMapIntensity": 2.4,
+          "clearcoat": 0,
+          "specularIntensity": 0.35
+        },
+        "hubcap": {
+          "color": "#50565c",
+          "roughness": 0.6,
+          "metalness": 0.08,
+          "envMapIntensity": 1.8,
+          "clearcoat": 0,
+          "specularIntensity": 0.3
+        },
+        "cap_lettering": {
+          "color": "#717a82",
+          "roughness": 0.58,
+          "metalness": 0.2,
+          "envMapIntensity": 1.4,
+          "clearcoat": 0,
+          "specularIntensity": 0.3
+        },
+        "hub_pad": {
+          "color": "#8a8f94",
+          "roughness": 0.58,
+          "metalness": 0.2,
+          "envMapIntensity": 2,
+          "clearcoat": 0,
+          "specularIntensity": 0.3
+        },
+        "nut_edge": {
+          "color": "#7b858e",
+          "roughness": 0.3,
+          "metalness": 0.6,
+          "envMapIntensity": 1.5,
+          "clearcoat": 0,
+          "specularIntensity": 0.35
+        },
+        "nut_dark": {
+          "color": "#262b30",
+          "roughness": 0.38,
+          "metalness": 0.5,
+          "envMapIntensity": 1,
+          "clearcoat": 0.05,
+          "specularIntensity": 0.35
+        },
+        "nut_pocket": {
+          "color": "#303539",
+          "roughness": 0.65,
+          "metalness": 0.15,
+          "envMapIntensity": 1,
+          "clearcoat": 0,
+          "specularIntensity": 0.25
+        }
+      },
+      "features": {
+        "ventCount": 10,
+        "rotorDiameter_mm": 354,
+        "methodWindowRadii_mm": [
+          136.29,
+          170.94,
+          113.19,
+          170.94
+        ],
+        "capDiameter_mm": 108.57,
+        "rubberFillerOuter_mm": 534,
+        "metalFlange_mm": 462
+      },
+      "purpose": "Method MR705 \u00b7 titanium; 17-inch metal lip, rubber bead adapter and opaque brake package; stored tyre retained",
+      "catalogAsset": true
+    },
+    {
+      "id": "rim_FL_steel",
+      "slot": "catalog_rim_steel",
+      "url": "parts/rim_FL_steel.glb",
+      "rootNode": "rim_FL_steel",
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "rim",
+        "barrel",
+        "pocket_wall",
+        "nut_metal",
+        "black",
+        "tyre",
+        "backing",
+        "brake",
+        "hat",
+        "hub_metal",
+        "caliper",
+        "brake_detail"
+      ],
+      "triangles": 30261,
+      "bounds": {
+        "min": [
+          -1.901999989748001,
+          0.12950001025199892,
+          0.6860000014305114
+        ],
+        "max": [
+          -1.368000010251999,
+          0.6634999897480012,
+          0.9639999985694885
+        ]
+      },
+      "beadSeat_mm": 431.8,
+      "width_in": 8,
+      "boltPattern": "5x150",
+      "centreBore_mm": 110.10000000000001,
+      "lazy": true,
+      "replacesWheelHardware": "wheel_FL",
+      "materialDefaults": {
+        "rim": {
+          "color": "#d5dade",
+          "roughness": 0.44,
+          "metalness": 0.25,
+          "envMapIntensity": 1.2
+        },
+        "lip": {
+          "color": "#d5dade",
+          "roughness": 0.8,
+          "metalness": 0.08,
+          "envMapIntensity": 2.4,
+          "clearcoat": 0,
+          "specularIntensity": 0.2
+        },
+        "edge_catch": {
+          "color": "#d5dade",
+          "roughness": 0.3,
+          "metalness": 0.45,
+          "envMapIntensity": 1.8
+        },
+        "nut_metal": {
+          "color": "#81898f",
+          "roughness": 0.65,
+          "metalness": 0.4,
+          "envMapIntensity": 1.15
+        },
+        "bead_groove": {
+          "color": "#3b4045",
+          "roughness": 0.78,
+          "metalness": 0.1,
+          "envMapIntensity": 0.5
+        },
+        "groove_shoulder": {
+          "color": "#d5dade",
+          "roughness": 0.85,
+          "metalness": 0.02,
+          "envMapIntensity": 2,
+          "clearcoat": 0,
+          "specularIntensity": 0.15
+        },
+        "pocket_wall": {
+          "color": "#41484d",
+          "roughness": 0.96,
+          "metalness": 0,
+          "envMapIntensity": 0.35,
+          "clearcoat": 0,
+          "specularIntensity": 0.05
+        },
+        "hub_metal": {
+          "color": "#92989d",
+          "roughness": 0.86,
+          "metalness": 0.08,
+          "envMapIntensity": 1,
+          "clearcoat": 0,
+          "specularIntensity": 0.2
+        },
+        "chrome": {
+          "color": "#858c92",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.95
+        },
+        "black": {
+          "color": "#1b1e20",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.15
+        },
+        "tyre": {
+          "color": "#202326",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "brake": {
+          "color": "#4c4f52",
+          "roughness": 0.5,
+          "metalness": 0.25,
+          "envMapIntensity": 0.65
+        },
+        "hat": {
+          "color": "#303438",
+          "roughness": 0.58,
+          "metalness": 0.25,
+          "envMapIntensity": 0.45
+        },
+        "brake_detail": {
+          "color": "#454a4e",
+          "roughness": 0.52,
+          "metalness": 0.35,
+          "envMapIntensity": 0.6
+        },
+        "barrel": {
+          "color": "#495156",
+          "roughness": 0.88,
+          "metalness": 0.04,
+          "envMapIntensity": 0.5,
+          "clearcoat": 0,
+          "specularIntensity": 0.1
+        },
+        "caliper": {
+          "color": "#53585c",
+          "roughness": 0.55,
+          "metalness": 0.25,
+          "envMapIntensity": 0.65
+        },
+        "backing": {
+          "color": "#14181c",
+          "roughness": 0.82,
+          "metalness": 0.1,
+          "envMapIntensity": 0.25
+        },
+        "lettering": {
+          "color": "#d5dade",
+          "roughness": 0.34,
+          "metalness": 0.25,
+          "envMapIntensity": 1.35
+        },
+        "hubcap": {
+          "color": "#303438",
+          "roughness": 0.48,
+          "metalness": 0.35,
+          "envMapIntensity": 0.75
+        },
+        "cap_lettering": {
+          "color": "#555b60",
+          "roughness": 0.58,
+          "metalness": 0.35,
+          "envMapIntensity": 0.75
+        },
+        "nut_pocket": {
+          "color": "#303539",
+          "roughness": 0.65,
+          "metalness": 0.15,
+          "envMapIntensity": 1,
+          "clearcoat": 0,
+          "specularIntensity": 0.25
+        }
+      },
+      "features": {
+        "ventCount": 16,
+        "rotorDiameter_mm": 354,
+        "methodWindowRadii_mm": null,
+        "capDiameter_mm": null,
+        "rubberFillerOuter_mm": 534,
+        "metalFlange_mm": 462
+      },
+      "purpose": "Shanaber steel \u00b7 silver; 17-inch metal lip, rubber bead adapter and opaque brake package; stored tyre retained",
+      "catalogAsset": true
+    },
+    {
+      "id": "wheel_FL_at285",
+      "slot": "catalog_tyre_at285",
+      "url": "parts/wheel_FL_at285.glb",
+      "rootNode": "wheel_FL_at285",
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "tyre",
+        "rim",
+        "chrome",
+        "brake"
+      ],
+      "triangles": 14900,
+      "bounds": {
+        "min": [
+          -2.0502273535728452,
+          -0.018662026882171612,
+          0.6825000017881393
+        ],
+        "max": [
+          -1.2197726464271545,
+          0.8116620268821717,
+          0.9674999982118606
+        ]
+      },
+      "tyre_mm": 830.8,
+      "materialDefaults": {
+        "tyre": {
+          "color": "#242629",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "rim": {
+          "color": "#34383c",
+          "roughness": 0.46,
+          "metalness": 0.8,
+          "envMapIntensity": 0.85
+        },
+        "chrome": {
+          "color": "#a7adb1",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.8
+        },
+        "brake": {
+          "color": "#505358",
+          "roughness": 0.62,
+          "metalness": 0.65,
+          "envMapIntensity": 0.45
+        }
+      },
+      "purpose": "Design A: clean all-round expedition 285/70R17, approx 33 inch; new wheel geometry and Cycles vertex AO",
+      "lazy": true,
+      "catalogAsset": true
+    },
+    {
+      "id": "wheel_FL_at26575",
+      "slot": "catalog_tyre_at26575",
+      "url": "parts/wheel_FL_at26575.glb",
+      "rootNode": "wheel_FL_at26575",
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "tyre",
+        "rim",
+        "chrome",
+        "brake"
+      ],
+      "triangles": 14900,
+      "bounds": {
+        "min": [
+          -2.049477914571762,
+          -0.017912468671798687,
+          0.6925000071525573
+        ],
+        "max": [
+          -1.220522085428238,
+          0.8109124686717988,
+          0.9574999928474426
+        ]
+      },
+      "tyre_mm": 829.3,
+      "materialDefaults": {
+        "tyre": {
+          "color": "#242629",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "rim": {
+          "color": "#34383c",
+          "roughness": 0.46,
+          "metalness": 0.8,
+          "envMapIntensity": 0.85
+        },
+        "chrome": {
+          "color": "#a7adb1",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.8
+        },
+        "brake": {
+          "color": "#505358",
+          "roughness": 0.62,
+          "metalness": 0.65,
+          "envMapIntensity": 0.45
+        }
+      },
+      "purpose": "Approved A tread style in 265/75R17; new geometry and Cycles AO; unchanged 17-inch wheel",
+      "lazy": true,
+      "catalogAsset": true
+    },
+    {
+      "id": "wheel_FL_at28565",
+      "slot": "catalog_tyre_at28565",
+      "url": "parts/wheel_FL_at28565.glb",
+      "rootNode": "wheel_FL_at28565",
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "tyre",
+        "rim",
+        "chrome",
+        "brake"
+      ],
+      "triangles": 14900,
+      "bounds": {
+        "min": [
+          -2.035987923145294,
+          -0.004422149419784527,
+          0.6825000017881393
+        ],
+        "max": [
+          -1.2340120768547058,
+          0.7974221494197846,
+          0.9674999982118606
+        ]
+      },
+      "tyre_mm": 802.3,
+      "materialDefaults": {
+        "tyre": {
+          "color": "#242629",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "rim": {
+          "color": "#34383c",
+          "roughness": 0.46,
+          "metalness": 0.8,
+          "envMapIntensity": 0.85
+        },
+        "chrome": {
+          "color": "#a7adb1",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.8
+        },
+        "brake": {
+          "color": "#505358",
+          "roughness": 0.62,
+          "metalness": 0.65,
+          "envMapIntensity": 0.45
+        }
+      },
+      "purpose": "Approved A tread style in 285/65R17; new geometry and Cycles AO; unchanged 17-inch wheel",
+      "lazy": true,
+      "catalogAsset": true
+    },
+    {
+      "id": "wheel_FL_at26570",
+      "slot": "catalog_tyre_at26570",
+      "url": "parts/wheel_FL_at26570.glb",
+      "rootNode": "wheel_FL_at26570",
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "tyre",
+        "rim",
+        "chrome",
+        "brake"
+      ],
+      "triangles": 14660,
+      "bounds": {
+        "min": [
+          -2.0362377262115476,
+          -0.004671922683715801,
+          0.6925000071525573
+        ],
+        "max": [
+          -1.2337622737884522,
+          0.7976719226837159,
+          0.9574999928474426
+        ]
+      },
+      "tyre_mm": 802.8,
+      "materialDefaults": {
+        "tyre": {
+          "color": "#242629",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "rim": {
+          "color": "#34383c",
+          "roughness": 0.46,
+          "metalness": 0.8,
+          "envMapIntensity": 0.85
+        },
+        "chrome": {
+          "color": "#a7adb1",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.8
+        },
+        "brake": {
+          "color": "#505358",
+          "roughness": 0.62,
+          "metalness": 0.65,
+          "envMapIntensity": 0.45
+        }
+      },
+      "purpose": "Approved A expedition tread in 265/70R17; new geometry and Cycles AO; unchanged 17-inch wheel",
+      "lazy": true,
+      "catalogAsset": true
+    },
+    {
+      "id": "wheel_FL_ht26570",
+      "slot": "catalog_tyre_ht26570",
+      "url": "parts/wheel_FL_ht26570.glb",
+      "rootNode": "wheel_FL_ht26570",
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel",
+      "zones": [
+        "tyre",
+        "rim",
+        "chrome",
+        "brake"
+      ],
+      "triangles": 14860,
+      "bounds": {
+        "min": [
+          -2.0363999998569486,
+          -0.0048999998569488334,
+          0.6925000071525573
+        ],
+        "max": [
+          -1.2336000001430512,
+          0.7978999998569489,
+          0.9574999928474426
+        ]
+      },
+      "tyre_mm": 802.8,
+      "materialDefaults": {
+        "tyre": {
+          "color": "#242629",
+          "roughness": 0.9,
+          "metalness": 0,
+          "envMapIntensity": 0.22
+        },
+        "rim": {
+          "color": "#34383c",
+          "roughness": 0.46,
+          "metalness": 0.8,
+          "envMapIntensity": 0.85
+        },
+        "chrome": {
+          "color": "#a7adb1",
+          "roughness": 0.34,
+          "metalness": 0.85,
+          "envMapIntensity": 0.8
+        },
+        "brake": {
+          "color": "#505358",
+          "roughness": 0.62,
+          "metalness": 0.65,
+          "envMapIntensity": 0.45
+        }
+      },
+      "purpose": "Unbranded five-rib highway tread from supplied image in 265/70R17; new geometry and Cycles AO; unchanged 17-inch wheel",
+      "lazy": true,
+      "catalogAsset": true
     }
   ],
   "displayBase": {
@@ -4621,7 +5357,7 @@
       "pivot": [
         -1.8728359352735762,
         1.189375429359158,
-        0.000005125999450683594
+        5.125999450683594e-06
       ],
       "rigidClass": "body"
     },
@@ -4630,7 +5366,7 @@
       "pivot": [
         -2.270462211108562,
         0.6223291344332419,
-        0.000005125999450683594
+        5.125999450683594e-06
       ],
       "rigidClass": "body"
     },
@@ -4639,7 +5375,7 @@
       "pivot": [
         1.9594771415627399,
         0.6756618916344885,
-        2.384185791015625e-7
+        2.384185791015625e-07
       ],
       "rigidClass": "body"
     },
@@ -4747,7 +5483,7 @@
       "pivot": [
         0.8241151872408866,
         1.872311859156035,
-        -5.960464477539063e-8
+        -5.960464477539063e-08
       ],
       "rigidClass": "body"
     },
@@ -4774,7 +5510,7 @@
       "pivot": [
         2.0817929070861054,
         1.8194443199056058,
-        0.000005125999450683594
+        5.125999450683594e-06
       ],
       "rigidClass": "body"
     },
@@ -4783,7 +5519,7 @@
       "pivot": [
         2.1282257953603483,
         1.2537897721212183,
-        0.000005125999450683594
+        5.125999450683594e-06
       ],
       "rigidClass": "body"
     },
@@ -4810,7 +5546,7 @@
       "pivot": [
         -0.04204621113618656,
         0.6241265276863783,
-        -6.854534149169922e-7
+        -6.854534149169922e-07
       ],
       "rigidClass": "body"
     },
@@ -4837,7 +5573,7 @@
       "pivot": [
         -2.567352621487733,
         0.8737040222628849,
-        2.980232238769531e-7
+        2.980232238769531e-07
       ],
       "rigidClass": "body"
     },
@@ -4846,7 +5582,7 @@
       "pivot": [
         -2.340276069084413,
         0.8267573573221186,
-        -6.854534149169922e-7
+        -6.854534149169922e-07
       ],
       "rigidClass": "body"
     },
@@ -4855,7 +5591,7 @@
       "pivot": [
         -2.3347774264788237,
         1.0950209210373338,
-        -0.00007868038399067023
+        -7.868038399067023e-05
       ],
       "rigidClass": "body"
     },
@@ -4928,7 +5664,7 @@
       "pivot": [
         -2.561311371369192,
         0.9761838614940643,
-        3.725290298461914e-8
+        3.725290298461914e-08
       ],
       "rigidClass": "body"
     },
@@ -4937,7 +5673,7 @@
       "pivot": [
         2.3273818894459932,
         1.2110044360160828,
-        -1.1175870895385742e-8
+        -1.1175870895385742e-08
       ],
       "rigidClass": "body"
     },
@@ -5025,6 +5761,69 @@
         0
       ],
       "rigidClass": "body"
+    },
+    "catalog_rim_method": {
+      "default": null,
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel"
+    },
+    "catalog_rim_steel": {
+      "default": null,
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel"
+    },
+    "catalog_tyre_at285": {
+      "default": null,
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel"
+    },
+    "catalog_tyre_at26575": {
+      "default": null,
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel"
+    },
+    "catalog_tyre_at28565": {
+      "default": null,
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel"
+    },
+    "catalog_tyre_at26570": {
+      "default": null,
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel"
+    },
+    "catalog_tyre_ht26570": {
+      "default": null,
+      "pivot": [
+        -1.635,
+        0.3965,
+        0.825
+      ],
+      "rigidClass": "wheel"
     }
   },
   "missingTargets": {

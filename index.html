@@ -831,6 +831,7 @@ async function loadPart(entry){
     if(!['glass','lamp_clear','mirror'].includes(zone)&&!(entry.id.startsWith('lamp_rear_')&&zone==='lamp_red'))useBakedShading(material);
     if(entry.rigidClass==='wheel'&&!entry.wheelSlot&&zone==='black'){material.color.set('#0d1115');material.roughness=.56;material.envMapIntensity=1;}
     if(entry.rigidClass==='wheel'&&!entry.wheelSlot&&zone==='chrome'){material.color.set('#e1e4e5');material.roughness=.24;material.metalness=1;material.clearcoat=.15;material.clearcoatRoughness=.23;material.envMapIntensity=.95;}
+    for(const [key,value]of Object.entries(entry.materialDefaults?.[zone]||{})){if(key==='color')material.color.set(value);else if(key in material)material[key]=value;}
     material.userData={...material.userData,zone,sourceMaterial:source.name,defaultColor:material.color.getHexString(),partId:entry.id};
     materialCache.set(key,material);
    }
@@ -928,12 +929,14 @@ function updateLampState(){
 function applyStudioPartVisibility(){
  const bundledSlots=new Set();for(const entry of partEntries){if(buildState.slots[entry.slot]===entry.id&&!buildState.hidden.includes(entry.id)&&!buildState.hidden.includes(entry.slot))for(const slot of entry.bundlesSlots||[])bundledSlots.add(slot);}
  for(const [id,root]of parts){const entry=entryById.get(id),selectedPart=buildState.slots[entry.slot];let selected=selectedPart;
-  root.visible=selected===id&&!bundledSlots.has(entry.slot)&&!buildState.hidden.includes(id)&&!buildState.hidden.includes(selectedPart)&&!buildState.hidden.includes(entry.slot);
+  root.visible=!entry.catalogAsset&&selected===id&&!bundledSlots.has(entry.slot)&&!buildState.hidden.includes(id)&&!buildState.hidden.includes(selectedPart)&&!buildState.hidden.includes(entry.slot);
+  if(entry.wheelSlot&&buildState.rim!=='stock')root.visible=false;
  }
  // Workshop tyres/rims: the stock wheel keeps only the halves still in use (its centre badge rides on the rim).
  // A stock tyre on an aftermarket rim moves out with the rim's offset; the brake disc stays on the hub.
  const customTyre=buildState.tyre!=='stock',customRim=buildState.rim!=='stock',shift=customRim?(wheelCatalog.vehicle.stockOffset_mm-rimById.get(buildState.rim).offset_mm)/1000:0;
  for(const [id,root]of parts){const entry=entryById.get(id);if(entry.rigidClass!=='wheel'||entry.wheelSlot)continue;
+  if(entry.catalogAsset)continue;
   const side=Math.sign(entry.pivot?.[2]??manifest.slots[entry.slot].pivot[2]);
   root.traverse(mesh=>{if(!mesh.isMesh||mesh.userData.pickOverlay)return;const zone=[].concat(mesh.material)[0].userData.zone;
    mesh.visible=zone==='tyre'?!customTyre:zone==='brake'||!customRim;
@@ -949,16 +952,17 @@ function applyStudioPartVisibility(){
   });
  }
 }
-// Workshop tyres and rims: the builder (wheels/assemble.js) ships with their 3D models; until then every
-// catalog entry other than stock is built:false and never reaches here. Built on first use, then one shared build per tyre/rim, cloned onto
-// each hub; right-hand corners are turned, not mirrored, so lettering reads correctly.
+// Approved tyres and rims load independently, then clone rigidly onto each hub.
+// Right-hand corners are turned, not mirrored, so lettering reads correctly.
 const customWheels=new THREE.Group();customWheels.name='Workshop tyres and rims';wheelGroup.add(customWheels);
 let wheelKit=null,customWheelKey='stock|stock';
-const coarsePointer=matchMedia('(pointer:coarse)').matches;
 async function ensureWheelsFor(state){
  if(state.tyre==='stock'&&state.rim==='stock')return;
  wheelKit??=await import('./wheels/assemble.js');
- await wheelKit.prepare(tyreById.get(state.tyre),rimById.get(state.rim),{texSize:Math.min(coarsePointer?4096:8192,renderer.capabilities.maxTextureSize)});
+ await wheelKit.prepare(tyreById.get(state.tyre),rimById.get(state.rim),{loadAsset:async id=>{
+  const entry=entryById.get(id);if(!entry?.catalogAsset)throw Error('Unknown wheel asset: '+id);
+  await ensurePartsFor({slots:{[entry.slot]:id}});return parts.get(id);
+ }});
 }
 function syncCustomWheels(){
  const key=buildState.tyre+'|'+buildState.rim;if(key===customWheelKey)return;
@@ -969,7 +973,15 @@ function syncCustomWheels(){
  }
 }
 function paintCustomWheels(){
- customWheels.traverse(mesh=>{if(mesh.isMesh&&!mesh.userData.pickOverlay)mesh.material=mesh.userData.ownMaterial??=mesh.material;});
+ const hidden=new Set(buildState.hidden);
+ customWheels.traverse(mesh=>{
+  if(!mesh.isMesh||mesh.userData.pickOverlay||!mesh.userData.wheelComponent)return;
+  const piece=mesh.userData.piece,own=mesh.userData.ownMaterial??=mesh.material,original=originalMaterials.get(own)||own,zone=original.userData.zone;
+  mesh.visible=!hidden.has(piece);
+  const authored=buildState.paint[original.userData.partId+':'+zone]??buildState.paint[zone];
+  const finish=buildState.finish[piece+':'+zone];
+  mesh.material=withLook(withFinish(studioMaterial(original,zone,authored??('#'+original.userData.defaultColor),authored!==undefined),zone,finish),zone,buildState.look[piece],piece);
+ });
 }
 // Tyre swaps are rigid too: a wheel part declares its tyre diameter (tyre_mm) and
 // the hubs rise by half the difference from stock; the body rides on top.

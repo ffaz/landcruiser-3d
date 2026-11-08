@@ -1,0 +1,45 @@
+{
+  "candidate": "KMC narrower taper and ring-2 logo",
+  "approval": "pending",
+  "date": "2026-11-07",
+  "triangles": 36578,
+  "boltPattern": "5x150",
+  "taperWidthChange_mm": [
+    38,
+    30
+  ],
+  "ring4WidthChange_mm": [
+    14.5,
+    22.5
+  ],
+  "logoRing": "ring2",
+  "assetSha256": "da275cbb90f63713c4ca4d066902ea2104ec18c2e5952eb87d091da62551e4d4",
+  "hashes": {
+    "tools/rims/kmc.py": "70c7d2fac07b711c76fb78942321b3ad5f1b676b306367a6f9e6e72445f3dda8",
+    "tools/rims/model.py": "df07468bcdf7973a99de33bec4af722454cd486843ca731b70f3479d4d29119a",
+    "tools/rims/export-review.mjs": "e00b744e1c46120e825a54346e9e22a201a6d383409eae3e32016757a852928e",
+    "tools/rims/verify-review.mjs": "72aeb177ebc8cf0d657c8125139bfe3a1d2d9c6badf9df95096f8a7e255334fd",
+    "tools/rims/capture-review.mjs": "93653635916311fe2638b52bcb67b1f753771a17368ae1f9f5aa95f6f0c03534",
+    "model/review/kmc-proportions.glb": "da275cbb90f63713c4ca4d066902ea2104ec18c2e5952eb87d091da62551e4d4",
+    "model/review/kmc-proportions.blend": "5ec830d38d5240bf2199f8bf13acd2a191b058e29153e286395a373ba8932405",
+    "docs/rims/kmc-rebuild/proportions-front.png": "acc4dcf8381978ca53a8f8a16f86cc52017f7a87203a5f6ac31cd2cc63652463",
+    "docs/rims/kmc-rebuild/proportions-quarter.png": "072c68dc346cfe241bd01d2721bc7575610ad3e0b379d6cc5de177605d3b1b65",
+    "docs/rims/kmc-rebuild/proportions-opposite-quarter.png": "7a526ce2fc921bd1c1bc04d78aaaaa97064f2cc09e2abcdefa5097b244d7e43f",
+    "docs/rims/kmc-rebuild/proportions-steep-quarter.png": "13894ca12ba136728f0df03da53f8f4a1be6c40d3b5c2e95d9500350675e764c",
+    "docs/rims/kmc-rebuild/proportions-wheel.png": "e6b04efb902441d4e7a64e47131b774ca6bbfc9d9b6e212a4b9d6b0d5a4e8237",
+    "docs/rims/kmc-rebuild/proportions-on-car.png": "eb44dfea1bbe326d1feb609764fca4a05bd6e3556a83868d8626826ecde8822a"
+  },
+  "preservation": {
+    "blueCentreGeometryUnchanged": true,
+    "barrelPositionsUnchanged": true,
+    "depthLevelsUnchanged": true,
+    "baseline": "kmc-levels-v1"
+  },
+  "checks": {
+    "geometryPassed": 63,
+    "geometryTotal": 63,
+    "browserCaptures": 6,
+    "browserErrors": 0
+  },
+  "captureProvenance": "proportions-captures.json"
+}

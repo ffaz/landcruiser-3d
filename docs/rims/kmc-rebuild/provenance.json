@@ -1,0 +1,23 @@
+{
+  "candidate": "KMC centre rebuild, final iteration",
+  "approval": "pending",
+  "date": "2026-11-07",
+  "constructionBase": "full-car-pass @ 29f2be5",
+  "boltPattern": "5x150",
+  "colourJudged": false,
+  "capture": "Actual exported GLB, Chromium/SwiftShader, pinned Three.js 0.166.1. Grey background added to transparent canvas captures.",
+  "hashes": {
+    "tools/rims/model.py": "23897806c8f43b985914828af3044b3f77adf6b4d1712cf7b2228d24258d1663",
+    "tools/rims/kmc.py": "e87d4a25b8563296a86bd4d7f3a0d1bd8d14ff29a6b3bfc36041b0a264cc6fe4",
+    "tools/rims/export-review.mjs": "e00b744e1c46120e825a54346e9e22a201a6d383409eae3e32016757a852928e",
+    "model/review/kmc-centre.glb": "38ba6e235b629657079e6f32b145a011be033a86ed1063c84f39bd37bbbb3112",
+    "model/review/kmc-centre.blend": "5af8943edf9538d2decc33b729bdaba7964491438bb3c97e98bfff1713c95325",
+    "docs/rims/kmc-rebuild/front.png": "8b8cea04ba140c096fb2f8a15848ea7b722ef14e3d205b33bbf2c50ac69743b1",
+    "docs/rims/kmc-rebuild/quarter.png": "26dda99dbc02c9abe6ec69b21ace263d4f8e4867ea0f564f346fc5f56a588eb8"
+  },
+  "checks": {
+    "geometry": 20,
+    "approvedWheelIntegration": 236,
+    "workshopDesktopAndPhone": 81
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "baseline": "/workspace/mod-review/kmc-proportions-v1/rim-data.json",
+  "candidate": "/workspace/mod-review/kmc-reference-v4/rim-data.json",
+  "inputSha256": {
+    "baseline": "b9226920571d825236424d2cfed52bb40bd5324a92a5d802ba2b676b6aa6f2e7",
+    "candidate": "cf0206dae275260d96a89570fe470afb6c87b41c04c388d3ba5b9cff88370e81"
+  },
+  "checks": [
+    {
+      "name": "accepted blue centre unique source positions unchanged",
+      "pass": true,
+      "baselineUniqueVertices": 2934,
+      "candidateUniqueVertices": 2934,
+      "baselineOnlyVertices": 0,
+      "candidateOnlyVertices": 0,
+      "selection": "rim + lettering, radius <= 0.05501 m, z > 0.075 m, positions rounded to 6 decimals"
+    },
+    {
+      "name": "all barrel source position values unchanged",
+      "pass": true,
+      "baselinePositionValues": 31104,
+      "candidatePositionValues": 31104
+    },
+    {
+      "name": "all six depth levels unchanged",
+      "pass": true,
+      "baseline": {
+        "level0_lip_mm": 125.87179611650484,
+        "level1_ring1_mm": 122.62281553398057,
+        "level2_ring2_mm": 117.80174757281553,
+        "level2_ring3_mm": 117.80174757281553,
+        "level2_ring4_mm": 117.80174757281553,
+        "level3_vent_mm": 98.51747572815533,
+        "level4_cap_mm": 90.65703883495145,
+        "level5_lug_floor_mm": 73.36407766990291
+      },
+      "candidate": {
+        "level0_lip_mm": 125.87179611650484,
+        "level1_ring1_mm": 122.62281553398057,
+        "level2_ring2_mm": 117.80174757281553,
+        "level2_ring3_mm": 117.80174757281553,
+        "level2_ring4_mm": 117.80174757281553,
+        "level3_vent_mm": 98.51747572815533,
+        "level4_cap_mm": 90.65703883495145,
+        "level5_lug_floor_mm": 73.36407766990291
+      }
+    }
+  ],
+  "allPassed": true
+}

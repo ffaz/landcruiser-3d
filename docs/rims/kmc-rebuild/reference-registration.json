@@ -1,0 +1,33 @@
+{
+  "method": "Uniform scaling and translation from measured outer metal circles; no shape warping.",
+  "normalization": {
+    "commonDiameter_px": 620,
+    "commonCenter_px": [
+      340,
+      340
+    ]
+  },
+  "original": {
+    "path": "/workspace/mod-review/stackup/IMG_4789.PNG",
+    "sha256": "147d7886c47c62ecb2eac7ab2bd90cc9821c10c281c2eab06332297bf743f352",
+    "center_px": [
+      309.5192277462159,
+      310.3605948429081
+    ],
+    "radius_px": 308.06926905537904
+  },
+  "render": {
+    "path": "/workspace/mod-review/kmc-reference-v4/neutral/front.png",
+    "sha256": "ba3c4030a57dda1cbc0f46875518086af916ba4bbb7e68fcb15058c808251592",
+    "center_px": [
+      719.54197701,
+      525.82667217
+    ],
+    "radius_px": 429.61442896812133
+  },
+  "limitations": [
+    "Six-bolt reference compared to intentional five-bolt model.",
+    "Lighting and finish differ.",
+    "Image-derived radial proportions do not establish axial depth or manufacturer dimensions."
+  ]
+}

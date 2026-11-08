@@ -1,0 +1,980 @@
+{
+  "checks": [
+    {
+      "name": "finite complete source attributes",
+      "pass": true,
+      "detail": {
+        "invalid": 0
+      }
+    },
+    {
+      "name": "source triangle count matches export declaration",
+      "pass": true,
+      "detail": {
+        "sourceTriangles": 38235,
+        "declared": 38235
+      }
+    },
+    {
+      "name": "source normals agree with triangle winding",
+      "pass": true,
+      "detail": {
+        "barrel": {
+          "triangles": 3456,
+          "opposedNormals": 0,
+          "degenerate": 0,
+          "zMin_mm": -113.19029331207275,
+          "zMax_mm": 119.47864294052124
+        },
+        "rim": {
+          "triangles": 18058,
+          "opposedNormals": 0,
+          "degenerate": 5,
+          "zMin_mm": 64.97961282730103,
+          "zMax_mm": 125.87179243564606
+        },
+        "edge_catch": {
+          "triangles": 2048,
+          "opposedNormals": 0,
+          "degenerate": 0,
+          "zMin_mm": 115.81043899059296,
+          "zMax_mm": 125.76699256896973
+        },
+        "nut_pocket": {
+          "triangles": 857,
+          "opposedNormals": 0,
+          "degenerate": 17,
+          "zMin_mm": 66.23728573322296,
+          "zMax_mm": 88.0129411816597
+        },
+        "pocket_wall": {
+          "triangles": 2160,
+          "opposedNormals": 0,
+          "degenerate": 0,
+          "zMin_mm": 90.13301134109497,
+          "zMax_mm": 98.51747751235962
+        },
+        "black": {
+          "triangles": 752,
+          "opposedNormals": 0,
+          "degenerate": 0,
+          "zMin_mm": 73.36407899856567,
+          "zMax_mm": 140.9638375043869
+        },
+        "nut_dark": {
+          "triangles": 3940,
+          "opposedNormals": 0,
+          "degenerate": 0,
+          "zMin_mm": 73.88810813426971,
+          "zMax_mm": 97.99344837665558
+        },
+        "nut_edge": {
+          "triangles": 1320,
+          "opposedNormals": 0,
+          "degenerate": 0,
+          "zMin_mm": 77.556312084198,
+          "zMax_mm": 90.13301134109497
+        },
+        "lettering": {
+          "triangles": 1864,
+          "opposedNormals": 0,
+          "degenerate": 0,
+          "zMin_mm": 90.01664817333221,
+          "zMax_mm": 128.54434549808502
+        },
+        "tyre": {
+          "triangles": 1792,
+          "opposedNormals": 0,
+          "degenerate": 0,
+          "zMin_mm": -138.99999856948853,
+          "zMax_mm": 138.99999856948853
+        },
+        "backing": {
+          "triangles": 124,
+          "opposedNormals": 0,
+          "degenerate": 0,
+          "zMin_mm": -76.50825381278992,
+          "zMax_mm": -70.21990418434143
+        },
+        "brake": {
+          "triangles": 1152,
+          "opposedNormals": 0,
+          "degenerate": 0,
+          "zMin_mm": 23.057281970977783,
+          "zMax_mm": 46.114563941955566
+        },
+        "hat": {
+          "triangles": 356,
+          "opposedNormals": 0,
+          "degenerate": 0,
+          "zMin_mm": 30.39368987083435,
+          "zMax_mm": 68.12378764152527
+        },
+        "caliper": {
+          "triangles": 44,
+          "opposedNormals": 0,
+          "degenerate": 0,
+          "zMin_mm": 28.29757332801819,
+          "zMax_mm": 91.18106961250305
+        },
+        "brake_detail": {
+          "triangles": 312,
+          "opposedNormals": 0,
+          "degenerate": 0,
+          "zMin_mm": 46.19840905070305,
+          "zMax_mm": 94.3252444267273
+        }
+      }
+    },
+    {
+      "name": "barrel has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "rim has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "edge_catch has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "nut_pocket has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "pocket_wall has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "black has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "nut_dark has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "nut_edge has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "lettering has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "tyre has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "backing has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "brake has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "hat has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "caliper has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "brake_detail has baked attributes",
+      "pass": true
+    },
+    {
+      "name": "finite unit exported normals",
+      "pass": true,
+      "detail": {
+        "normals": 35610,
+        "bad": 0
+      }
+    },
+    {
+      "name": "under 40000 triangles",
+      "pass": true,
+      "detail": 38235
+    },
+    {
+      "name": "LC200 five-stud 150 mm mounting pattern",
+      "pass": true
+    },
+    {
+      "name": "five nut clusters on a pentagon",
+      "pass": true,
+      "detail": [
+        [
+          -1.9698023851027593e-13,
+          0.07500000298968729
+        ],
+        [
+          -0.07132923607785387,
+          0.023176275179508675
+        ],
+        [
+          -0.04408389329910278,
+          -0.060676273034157485
+        ],
+        [
+          0.04408389329910278,
+          -0.060676273034157485
+        ],
+        [
+          0.07132923607785387,
+          0.023176275179508675
+        ]
+      ]
+    },
+    {
+      "name": "explicit inward-section metadata is present",
+      "pass": true,
+      "detail": {
+        "coneInnerRadius_mm": 88,
+        "coneOuterRadius_mm": 128,
+        "capFaceZ_mm": 90.65703883495145,
+        "lugFloorZ_mm": 73.36407766990291,
+        "lipFrontZ_mm": 125.87179611650484
+      }
+    },
+    {
+      "name": "no detached front cutter caps",
+      "pass": true,
+      "detail": {
+        "lipFrontZ_mm": 125.87179611650484,
+        "groups": {
+          "barrel": {
+            "triangles": 3456,
+            "opposedNormals": 0,
+            "degenerate": 0,
+            "zMin_mm": -113.19029331207275,
+            "zMax_mm": 119.47864294052124
+          },
+          "rim": {
+            "triangles": 18058,
+            "opposedNormals": 0,
+            "degenerate": 5,
+            "zMin_mm": 64.97961282730103,
+            "zMax_mm": 125.87179243564606
+          },
+          "edge_catch": {
+            "triangles": 2048,
+            "opposedNormals": 0,
+            "degenerate": 0,
+            "zMin_mm": 115.81043899059296,
+            "zMax_mm": 125.76699256896973
+          },
+          "nut_pocket": {
+            "triangles": 857,
+            "opposedNormals": 0,
+            "degenerate": 17,
+            "zMin_mm": 66.23728573322296,
+            "zMax_mm": 88.0129411816597
+          },
+          "pocket_wall": {
+            "triangles": 2160,
+            "opposedNormals": 0,
+            "degenerate": 0,
+            "zMin_mm": 90.13301134109497,
+            "zMax_mm": 98.51747751235962
+          },
+          "black": {
+            "triangles": 752,
+            "opposedNormals": 0,
+            "degenerate": 0,
+            "zMin_mm": 73.36407899856567,
+            "zMax_mm": 140.9638375043869
+          },
+          "nut_dark": {
+            "triangles": 3940,
+            "opposedNormals": 0,
+            "degenerate": 0,
+            "zMin_mm": 73.88810813426971,
+            "zMax_mm": 97.99344837665558
+          },
+          "nut_edge": {
+            "triangles": 1320,
+            "opposedNormals": 0,
+            "degenerate": 0,
+            "zMin_mm": 77.556312084198,
+            "zMax_mm": 90.13301134109497
+          },
+          "lettering": {
+            "triangles": 1864,
+            "opposedNormals": 0,
+            "degenerate": 0,
+            "zMin_mm": 90.01664817333221,
+            "zMax_mm": 128.54434549808502
+          },
+          "tyre": {
+            "triangles": 1792,
+            "opposedNormals": 0,
+            "degenerate": 0,
+            "zMin_mm": -138.99999856948853,
+            "zMax_mm": 138.99999856948853
+          },
+          "backing": {
+            "triangles": 124,
+            "opposedNormals": 0,
+            "degenerate": 0,
+            "zMin_mm": -76.50825381278992,
+            "zMax_mm": -70.21990418434143
+          },
+          "brake": {
+            "triangles": 1152,
+            "opposedNormals": 0,
+            "degenerate": 0,
+            "zMin_mm": 23.057281970977783,
+            "zMax_mm": 46.114563941955566
+          },
+          "hat": {
+            "triangles": 356,
+            "opposedNormals": 0,
+            "degenerate": 0,
+            "zMin_mm": 30.39368987083435,
+            "zMax_mm": 68.12378764152527
+          },
+          "caliper": {
+            "triangles": 44,
+            "opposedNormals": 0,
+            "degenerate": 0,
+            "zMin_mm": 28.29757332801819,
+            "zMax_mm": 91.18106961250305
+          },
+          "brake_detail": {
+            "triangles": 312,
+            "opposedNormals": 0,
+            "degenerate": 0,
+            "zMin_mm": 46.19840905070305,
+            "zMax_mm": 94.3252444267273
+          }
+        }
+      }
+    },
+    {
+      "name": "cone surface is present at angle 0.11",
+      "pass": true,
+      "detail": [
+        {
+          "r": 0.089,
+          "z": 0.08801655115626313
+        },
+        {
+          "r": 0.09533333333333333,
+          "z": 0.09244819379443428
+        },
+        {
+          "r": 0.10166666666666667,
+          "z": 0.09687983643260545
+        },
+        {
+          "r": 0.108,
+          "z": 0.10131147907077662
+        },
+        {
+          "r": 0.11433333333333333,
+          "z": 0.10574312170894778
+        },
+        {
+          "r": 0.12066666666666667,
+          "z": 0.1101747641625694
+        },
+        {
+          "r": 0.127,
+          "z": 0.11460640658131412
+        }
+      ]
+    },
+    {
+      "name": "cone surface is present at angle 0.81",
+      "pass": true,
+      "detail": [
+        {
+          "r": 0.089,
+          "z": 0.08802158772507901
+        },
+        {
+          "r": 0.09533333333333333,
+          "z": 0.09245358956862336
+        },
+        {
+          "r": 0.10166666666666667,
+          "z": 0.09688559141216774
+        },
+        {
+          "r": 0.108,
+          "z": 0.10131759319960362
+        },
+        {
+          "r": 0.11433333333333333,
+          "z": 0.10574959494915995
+        },
+        {
+          "r": 0.12066666666666667,
+          "z": 0.11018159669871627
+        },
+        {
+          "r": 0.127,
+          "z": 0.11461359844827257
+        }
+      ]
+    },
+    {
+      "name": "cone surface is present at angle 1.77",
+      "pass": true,
+      "detail": [
+        {
+          "r": 0.089,
+          "z": 0.08800693876566748
+        },
+        {
+          "r": 0.09533333333333333,
+          "z": 0.09243789867589995
+        },
+        {
+          "r": 0.10166666666666667,
+          "z": 0.09686885858613248
+        },
+        {
+          "r": 0.108,
+          "z": 0.10129981849636496
+        },
+        {
+          "r": 0.11433333333333333,
+          "z": 0.10573077840659745
+        },
+        {
+          "r": 0.12066666666666667,
+          "z": 0.11016173831682993
+        },
+        {
+          "r": 0.127,
+          "z": 0.1145926979240192
+        }
+      ]
+    },
+    {
+      "name": "broad annulus slopes inward, not a flat land",
+      "pass": true,
+      "detail": [
+        {
+          "angle": 0.11,
+          "samples": [
+            {
+              "r": 0.089,
+              "z": 0.08801655115626313
+            },
+            {
+              "r": 0.09533333333333333,
+              "z": 0.09244819379443428
+            },
+            {
+              "r": 0.10166666666666667,
+              "z": 0.09687983643260545
+            },
+            {
+              "r": 0.108,
+              "z": 0.10131147907077662
+            },
+            {
+              "r": 0.11433333333333333,
+              "z": 0.10574312170894778
+            },
+            {
+              "r": 0.12066666666666667,
+              "z": 0.1101747641625694
+            },
+            {
+              "r": 0.127,
+              "z": 0.11460640658131412
+            }
+          ],
+          "depth_mm": 26.58985542505099,
+          "maxLinearDeviation_mm": 2.6931733232427035e-7
+        },
+        {
+          "angle": 0.81,
+          "samples": [
+            {
+              "r": 0.089,
+              "z": 0.08802158772507901
+            },
+            {
+              "r": 0.09533333333333333,
+              "z": 0.09245358956862336
+            },
+            {
+              "r": 0.10166666666666667,
+              "z": 0.09688559141216774
+            },
+            {
+              "r": 0.108,
+              "z": 0.10131759319960362
+            },
+            {
+              "r": 0.11433333333333333,
+              "z": 0.10574959494915995
+            },
+            {
+              "r": 0.12066666666666667,
+              "z": 0.11018159669871627
+            },
+            {
+              "r": 0.127,
+              "z": 0.11461359844827257
+            }
+          ],
+          "depth_mm": 26.59201072319356,
+          "maxLinearDeviation_mm": 1.1292783375083104e-7
+        },
+        {
+          "angle": 1.77,
+          "samples": [
+            {
+              "r": 0.089,
+              "z": 0.08800693876566748
+            },
+            {
+              "r": 0.09533333333333333,
+              "z": 0.09243789867589995
+            },
+            {
+              "r": 0.10166666666666667,
+              "z": 0.09686885858613248
+            },
+            {
+              "r": 0.108,
+              "z": 0.10129981849636496
+            },
+            {
+              "r": 0.11433333333333333,
+              "z": 0.10573077840659745
+            },
+            {
+              "r": 0.12066666666666667,
+              "z": 0.11016173831682993
+            },
+            {
+              "r": 0.127,
+              "z": 0.1145926979240192
+            }
+          ],
+          "depth_mm": 26.58575915835172,
+          "maxLinearDeviation_mm": 2.5253601987351715e-7
+        }
+      ]
+    },
+    {
+      "name": "inward annulus is a taper, not a rounded torus",
+      "pass": true,
+      "detail": [
+        {
+          "angle": 0.11,
+          "samples": [
+            {
+              "r": 0.089,
+              "z": 0.08801655115626313
+            },
+            {
+              "r": 0.09533333333333333,
+              "z": 0.09244819379443428
+            },
+            {
+              "r": 0.10166666666666667,
+              "z": 0.09687983643260545
+            },
+            {
+              "r": 0.108,
+              "z": 0.10131147907077662
+            },
+            {
+              "r": 0.11433333333333333,
+              "z": 0.10574312170894778
+            },
+            {
+              "r": 0.12066666666666667,
+              "z": 0.1101747641625694
+            },
+            {
+              "r": 0.127,
+              "z": 0.11460640658131412
+            }
+          ],
+          "depth_mm": 26.58985542505099,
+          "maxLinearDeviation_mm": 2.6931733232427035e-7
+        },
+        {
+          "angle": 0.81,
+          "samples": [
+            {
+              "r": 0.089,
+              "z": 0.08802158772507901
+            },
+            {
+              "r": 0.09533333333333333,
+              "z": 0.09245358956862336
+            },
+            {
+              "r": 0.10166666666666667,
+              "z": 0.09688559141216774
+            },
+            {
+              "r": 0.108,
+              "z": 0.10131759319960362
+            },
+            {
+              "r": 0.11433333333333333,
+              "z": 0.10574959494915995
+            },
+            {
+              "r": 0.12066666666666667,
+              "z": 0.11018159669871627
+            },
+            {
+              "r": 0.127,
+              "z": 0.11461359844827257
+            }
+          ],
+          "depth_mm": 26.59201072319356,
+          "maxLinearDeviation_mm": 1.1292783375083104e-7
+        },
+        {
+          "angle": 1.77,
+          "samples": [
+            {
+              "r": 0.089,
+              "z": 0.08800693876566748
+            },
+            {
+              "r": 0.09533333333333333,
+              "z": 0.09243789867589995
+            },
+            {
+              "r": 0.10166666666666667,
+              "z": 0.09686885858613248
+            },
+            {
+              "r": 0.108,
+              "z": 0.10129981849636496
+            },
+            {
+              "r": 0.11433333333333333,
+              "z": 0.10573077840659745
+            },
+            {
+              "r": 0.12066666666666667,
+              "z": 0.11016173831682993
+            },
+            {
+              "r": 0.127,
+              "z": 0.1145926979240192
+            }
+          ],
+          "depth_mm": 26.58575915835172,
+          "maxLinearDeviation_mm": 2.5253601987351715e-7
+        }
+      ]
+    },
+    {
+      "name": "cap closes the centre with a flat front",
+      "pass": true,
+      "detail": {
+        "capPoints": [
+          [
+            0,
+            0
+          ],
+          [
+            0.034125,
+            0
+          ],
+          [
+            -0.034125,
+            0
+          ],
+          [
+            0,
+            0.034125
+          ],
+          [
+            0,
+            -0.034125
+          ]
+        ],
+        "capDepths": [
+          0.09065704047679901,
+          0.09065704047679901,
+          0.09065704047679901,
+          0.09065704047679901,
+          0.09065704047679901
+        ],
+        "expected_mm": 90.65703883495145
+      }
+    },
+    {
+      "name": "lug floor lies behind the cap face",
+      "pass": true,
+      "detail": {
+        "floorRadius": 0.06375,
+        "floor": 0.07336407899856567,
+        "capDepths": [
+          0.09065704047679901,
+          0.09065704047679901,
+          0.09065704047679901,
+          0.09065704047679901,
+          0.09065704047679901
+        ]
+      }
+    },
+    {
+      "name": "nut heads stand ahead of the cap but behind the lip",
+      "pass": true,
+      "detail": {
+        "headMaxZ": 0.09799344837665558,
+        "capDepths": [
+          0.09065704047679901,
+          0.09065704047679901,
+          0.09065704047679901,
+          0.09065704047679901,
+          0.09065704047679901
+        ],
+        "lipFrontZ_mm": 125.87179611650484
+      }
+    },
+    {
+      "name": "cap is recessed behind the surrounding face",
+      "pass": true,
+      "detail": {
+        "capDepths": [
+          0.09065704047679901,
+          0.09065704047679901,
+          0.09065704047679901,
+          0.09065704047679901,
+          0.09065704047679901
+        ],
+        "outerConeDepths": [
+          0.11460640658131412,
+          0.11461359844827257,
+          0.1145926979240192
+        ]
+      }
+    }
+  ],
+  "winding": {
+    "barrel": {
+      "triangles": 3456,
+      "opposedNormals": 0,
+      "degenerate": 0,
+      "zMin_mm": -113.19029331207275,
+      "zMax_mm": 119.47864294052124
+    },
+    "rim": {
+      "triangles": 18058,
+      "opposedNormals": 0,
+      "degenerate": 5,
+      "zMin_mm": 64.97961282730103,
+      "zMax_mm": 125.87179243564606
+    },
+    "edge_catch": {
+      "triangles": 2048,
+      "opposedNormals": 0,
+      "degenerate": 0,
+      "zMin_mm": 115.81043899059296,
+      "zMax_mm": 125.76699256896973
+    },
+    "nut_pocket": {
+      "triangles": 857,
+      "opposedNormals": 0,
+      "degenerate": 17,
+      "zMin_mm": 66.23728573322296,
+      "zMax_mm": 88.0129411816597
+    },
+    "pocket_wall": {
+      "triangles": 2160,
+      "opposedNormals": 0,
+      "degenerate": 0,
+      "zMin_mm": 90.13301134109497,
+      "zMax_mm": 98.51747751235962
+    },
+    "black": {
+      "triangles": 752,
+      "opposedNormals": 0,
+      "degenerate": 0,
+      "zMin_mm": 73.36407899856567,
+      "zMax_mm": 140.9638375043869
+    },
+    "nut_dark": {
+      "triangles": 3940,
+      "opposedNormals": 0,
+      "degenerate": 0,
+      "zMin_mm": 73.88810813426971,
+      "zMax_mm": 97.99344837665558
+    },
+    "nut_edge": {
+      "triangles": 1320,
+      "opposedNormals": 0,
+      "degenerate": 0,
+      "zMin_mm": 77.556312084198,
+      "zMax_mm": 90.13301134109497
+    },
+    "lettering": {
+      "triangles": 1864,
+      "opposedNormals": 0,
+      "degenerate": 0,
+      "zMin_mm": 90.01664817333221,
+      "zMax_mm": 128.54434549808502
+    },
+    "tyre": {
+      "triangles": 1792,
+      "opposedNormals": 0,
+      "degenerate": 0,
+      "zMin_mm": -138.99999856948853,
+      "zMax_mm": 138.99999856948853
+    },
+    "backing": {
+      "triangles": 124,
+      "opposedNormals": 0,
+      "degenerate": 0,
+      "zMin_mm": -76.50825381278992,
+      "zMax_mm": -70.21990418434143
+    },
+    "brake": {
+      "triangles": 1152,
+      "opposedNormals": 0,
+      "degenerate": 0,
+      "zMin_mm": 23.057281970977783,
+      "zMax_mm": 46.114563941955566
+    },
+    "hat": {
+      "triangles": 356,
+      "opposedNormals": 0,
+      "degenerate": 0,
+      "zMin_mm": 30.39368987083435,
+      "zMax_mm": 68.12378764152527
+    },
+    "caliper": {
+      "triangles": 44,
+      "opposedNormals": 0,
+      "degenerate": 0,
+      "zMin_mm": 28.29757332801819,
+      "zMax_mm": 91.18106961250305
+    },
+    "brake_detail": {
+      "triangles": 312,
+      "opposedNormals": 0,
+      "degenerate": 0,
+      "zMin_mm": 46.19840905070305,
+      "zMax_mm": 94.3252444267273
+    }
+  },
+  "cone": [
+    {
+      "angle": 0.11,
+      "samples": [
+        {
+          "r": 0.089,
+          "z": 0.08801655115626313
+        },
+        {
+          "r": 0.09533333333333333,
+          "z": 0.09244819379443428
+        },
+        {
+          "r": 0.10166666666666667,
+          "z": 0.09687983643260545
+        },
+        {
+          "r": 0.108,
+          "z": 0.10131147907077662
+        },
+        {
+          "r": 0.11433333333333333,
+          "z": 0.10574312170894778
+        },
+        {
+          "r": 0.12066666666666667,
+          "z": 0.1101747641625694
+        },
+        {
+          "r": 0.127,
+          "z": 0.11460640658131412
+        }
+      ],
+      "depth_mm": 26.58985542505099,
+      "maxLinearDeviation_mm": 2.6931733232427035e-7
+    },
+    {
+      "angle": 0.81,
+      "samples": [
+        {
+          "r": 0.089,
+          "z": 0.08802158772507901
+        },
+        {
+          "r": 0.09533333333333333,
+          "z": 0.09245358956862336
+        },
+        {
+          "r": 0.10166666666666667,
+          "z": 0.09688559141216774
+        },
+        {
+          "r": 0.108,
+          "z": 0.10131759319960362
+        },
+        {
+          "r": 0.11433333333333333,
+          "z": 0.10574959494915995
+        },
+        {
+          "r": 0.12066666666666667,
+          "z": 0.11018159669871627
+        },
+        {
+          "r": 0.127,
+          "z": 0.11461359844827257
+        }
+      ],
+      "depth_mm": 26.59201072319356,
+      "maxLinearDeviation_mm": 1.1292783375083104e-7
+    },
+    {
+      "angle": 1.77,
+      "samples": [
+        {
+          "r": 0.089,
+          "z": 0.08800693876566748
+        },
+        {
+          "r": 0.09533333333333333,
+          "z": 0.09243789867589995
+        },
+        {
+          "r": 0.10166666666666667,
+          "z": 0.09686885858613248
+        },
+        {
+          "r": 0.108,
+          "z": 0.10129981849636496
+        },
+        {
+          "r": 0.11433333333333333,
+          "z": 0.10573077840659745
+        },
+        {
+          "r": 0.12066666666666667,
+          "z": 0.11016173831682993
+        },
+        {
+          "r": 0.127,
+          "z": 0.1145926979240192
+        }
+      ],
+      "depth_mm": 26.58575915835172,
+      "maxLinearDeviation_mm": 2.5253601987351715e-7
+    }
+  ]
+}
